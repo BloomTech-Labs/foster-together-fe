@@ -1,58 +1,29 @@
 import React from 'react'
-import logo from './logo.svg'
-import { Counter } from './features/counter/Counter'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import LoginForm from './features/LogInForm/LoginForm'
 import './App.css'
+import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react'
 
+function onAuthRequired({ history }) {
+  history.push('/login')
+}
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>THIS IS A TEST!!!</p>
-        <span>
-          <span>Learn </span>
-          <a
-            className='App-link'
-            href='https://reactjs.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className='App-link'
-            href='https://redux.js.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className='App-link'
-            href='https://redux-toolkit.js.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className='App-link'
-            href='https://react-redux.js.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Security
+      issuer='https://dev-529730.okta.com/oauth2/default'
+      clientId='0oa2lku5jYtkeMkYg4x6'
+      redirectUri={window.location.origin + '/implicit/callback'}
+      onAuthRequired={onAuthRequired}
+      pkce={true}
+    >
+      <div className='App'>
+        <Route
+          path='/login'
+          render={() => <LoginForm baseUrl='https://dev-529730.okta.com' />}
+        />
+        <Route path='/implicit/callback' component={ImplicitCallback} />
+      </div>
+    </Security>
   )
 }
 
