@@ -2,9 +2,7 @@
   "name": "foster",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "12.x"
-  },
+
   "dependencies": {
     "@material-ui/core": "^4.9.4",
     "@material-ui/styles": "^4.9.0",

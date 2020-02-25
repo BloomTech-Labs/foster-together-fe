@@ -9,14 +9,16 @@ import {
   MenuItem,
   InputLabel,
 } from '@material-ui/core'
+import { useSelector, useDispatch } from 'react-redux'
 import { sizing } from '@material-ui/system'
 import { setUserFirstName, setUserLastName } from './SignUpSlice'
 
 export default function AddressForm(props) {
-    console.log(props)
-    useEffect(() => {
-        console.log('hi')
-    }, [props.step])
+    if(props.step != 0){
+        props.next("hi")
+    }
+
+
   return (
     <React.Fragment>
       <Typography variant='h6' gutterBottom>
