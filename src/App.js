@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import Login from './features/LogInForm/LoginForm'
+import Login from './components/login/LoginForm'
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react'
-import Home from './features/Dashboard/Home'
+import Home from './components/dashboard/Home'
 import SignUp from './components/signUpForm/SignUpOverlay'
 import { CssBaseline } from '@material-ui/core'
 

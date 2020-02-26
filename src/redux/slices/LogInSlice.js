@@ -35,5 +35,5 @@ export const logInSlice = createSlice({
   },
 })
 
-export const { setUsername, setPassword, setAuth } = signUpSlice.actions
-export default signUpSlice.reducer
+export const { setUsername, setPassword, setAuth } = LoginSlice.actions
+export default LoginSlice.reducer
