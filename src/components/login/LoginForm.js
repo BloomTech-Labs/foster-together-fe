@@ -13,32 +13,31 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import OktaAuth from '@okta/okta-auth-js'
 import { withAuth } from '@okta/okta-react'
-import { withStyles } from '@material-ui/core/styles'
+import styled from 'styled-components'
 
-const useStyles = makeStyles(theme => ({
+const Wrapper = styled.section({
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: '8px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },
   avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    margin: '8px',
+    backgroundColor: 'red',
   },
   form: {
     width: '100%',
-    marginTop: theme.spacing(1),
+    marginTop: '1px',
   },
   submit: {
-    margin: theme.spacing(1, 4),
+    margin: '1px, 4px',
   },
-}))
+})
 
 export default withAuth(
   class LoginForm extends React.Component {
     constructor(props) {
-      const classes = useStyles()
       super(props)
       this.state = {
         sessionToken: null,
@@ -51,7 +50,6 @@ export default withAuth(
       this.handleSubmit = this.handleSubmit.bind(this)
       this.handleUsernameChange = this.handleUsernameChange.bind(this)
       this.handlePasswordChange = this.handlePasswordChange.bind(this)
-      this.useStyles = this.useStyles.bind(this)
     }
 
     handleSubmit(e) {
@@ -82,65 +80,62 @@ export default withAuth(
         this.props.auth.redirect({ sessionToken: this.state.sessionToken })
         return null
       }
-      const { classes } = this.props
 
       return (
-        <Container component='main' maxWidth='xs'>
-          <CssBaseline />
-          <div className={this.classes.paper}>
-            <Avatar className={this.classes.avatar}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component='h1' variant='h5'>
-              Sign in
-            </Typography>
-            <form
-              onSubmit={this.handleSubmit}
-              className={this.classes.form}
-              noValidate
-            >
-              <TextField
-                variant='outlined'
-                margin='normal'
-                required
-                fullWidth
-                id='username'
-                label='Username'
-                name='username'
-                autoComplete='username'
-                value={this.state.username}
-                onChange={this.handleUsernameChange}
-                autoFocus
-              />
-              <TextField
-                variant='outlined'
-                margin='normal'
-                required
-                fullWidth
-                name='password'
-                label='Password'
-                type='password'
-                id='password'
-                value={this.state.password}
-                onChange={this.handlePasswordChange}
-                autoComplete='current-password'
-              />
-              <FormControlLabel
-                control={<Checkbox value='remember' color='primary' />}
-                label='Keep Me Signed In'
-                className={this.classes.submit}
-              />
-              <Button
-                type='submit'
-                variant='contained'
-                color='primary'
-                className={this.classes.submit}
-              >
-                Sign In
-              </Button>
-            </form>
-          </div>
-        </Container>
+        <Wrapper>
+          <Container component='main' maxWidth='xs'>
+            <CssBaseline />
+            <div className='paper'>
+              <Avatar className='avatar'>
+                <LockOutlinedIcon />
+              </Avatar>
+              <Typography component='h1' variant='h5'>
+                Sign in
+              </Typography>
+              <form onSubmit={this.handleSubmit} className='form' noValidate>
+                <TextField
+                  variant='outlined'
+                  margin='normal'
+                  required
+                  fullWidth
+                  id='username'
+                  label='Username'
+                  name='username'
+                  autoComplete='username'
+                  value={this.state.username}
+                  onChange={this.handleUsernameChange}
+                  autoFocus
+                />
+                <TextField
+                  variant='outlined'
+                  margin='normal'
+                  required
+                  fullWidth
+                  name='password'
+                  label='Password'
+                  type='password'
+                  id='password'
+                  value={this.state.password}
+                  onChange={this.handlePasswordChange}
+                  autoComplete='current-password'
+                />
+                <FormControlLabel
+                  control={<Checkbox value='remember' color='primary' />}
+                  label='Keep Me Signed In'
+                  className='submit'
+                />
+                <Button
+                  type='submit'
+                  variant='contained'
+                  color='primary'
+                  className='submit'
+                >
+                  Sign In
+                </Button>
+              </form>
+            </div>
+          </Container>
+        </Wrapper>
       )
     }
   }
