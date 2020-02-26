@@ -1,5 +1,5 @@
 import React from 'react'
-import SignUp from './features/signUpForm/SignUpOverlay'
+import SignUp from './components/signUpForm/SignUpOverlay'
 import { Route } from 'react-router-dom'
 import { CssBaseline } from '@material-ui/core'
 
