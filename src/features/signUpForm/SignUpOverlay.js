@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Paper from '@material-ui/core/Paper'
-import Stepper from '@material-ui/core/Stepper'
-import Step from '@material-ui/core/Step'
-import StepLabel from '@material-ui/core/StepLabel'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
 import ContactInfo from './signUpComponents/ContactInfo'
 import LocationInfo from './signUpComponents/LocationInfo'
 import ReviewInfo from './signUpComponents/ReviewInfo'
 import { useSignUpStyles } from './signUpOverlayStyles'
+import {
+  Paper,
+  Typography,
+  Stepper,
+  Step,
+  StepLabel,
+  Button,
+} from '@material-ui/core'
 
 export default function SignUp(props) {
   const classes = useSignUpStyles()
@@ -88,8 +89,6 @@ export default function SignUp(props) {
 
   return (
     <>
-      <CssBaseline />
-
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography component='h1' variant='h4' align='center'>
