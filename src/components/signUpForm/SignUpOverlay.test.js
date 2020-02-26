@@ -13,21 +13,3 @@ test('renders ui components', () => {
   getByText(/sign up/i)
   getByText(/next/i)
 })
-
-test('phone is required', async () => {
-  const { getByText, queryByText, findByText } = render(<SignUp />)
-  const nextButton = getByText(/next/i)
-
-  //no error message at first
-  expect(
-    queryByText(/please enter a valid phone number/i)
-  ).not.toBeInTheDocument()
-
-  //submit blank form
-  fireEvent.click(nextButton)
-
-  //should show required messages
-  expect(
-    await findByText(/please enter a valid phone number/i)
-  ).toBeInTheDocument()
-})
