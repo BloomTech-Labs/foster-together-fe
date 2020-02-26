@@ -27,6 +27,7 @@ export default function SignUp(props) {
     zip: '',
     state: '',
     country: '',
+    preferredContact: '',
   })
 
   function GetStepContent(step) {

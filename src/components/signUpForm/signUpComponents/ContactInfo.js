@@ -70,6 +70,9 @@ const ContactInfo = ({ user, changeHandler }) => (
           label='Prefered Comunication'
           placeholder='Prefered Comunication'
           fullWidth
+          name='preferredContact'
+          value={user.preferredContact}
+          onChange={changeHandler}
         >
           <MenuItem value='Email'>Email</MenuItem>
           <MenuItem value='Phone'>Phone Call</MenuItem>
