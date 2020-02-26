@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
-import LoginForm from './LoginForm'
+import { Link } from 'react-router-dom'
 import { withAuth } from '@okta/okta-react'
 
 export default withAuth(
-  class Login extends Component {
+  class Home extends Component {
     constructor(props) {
       super(props)
       this.state = { authenticated: null }
@@ -25,10 +24,31 @@ export default withAuth(
 
     render() {
       if (this.state.authenticated === null) return null
-      return this.state.authenticated ? (
-        <Redirect to={{ pathname: '/' }} />
+
+      const button = this.state.authenticated ? (
+        <button
+          onClick={() => {
+            this.props.auth.logout()
+          }}
+        >
+          Logout
+        </button>
       ) : (
-        <LoginForm baseUrl={this.props.baseUrl} />
+        <button
+          onClick={() => {
+            this.props.auth.login()
+          }}
+        >
+          Sign In
+        </button>
+      )
+
+      return (
+        <div>
+          <Link to='/'>Home</Link>
+          <br />
+          {button}
+        </div>
       )
     }
   }

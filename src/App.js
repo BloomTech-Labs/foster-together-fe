@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import LoginForm from './features/LogInForm/LoginForm'
+import Login from './features/LogInForm/LoginForm'
 import './App.css'
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react'
+import Home from './features/Dashboard/Home'
 
 function onAuthRequired({ history }) {
   history.push('/login')
@@ -17,9 +18,10 @@ function App() {
       pkce={true}
     >
       <div className='App'>
+        <Route path='/' exact={true} component={Home} />
         <Route
           path='/login'
-          render={() => <LoginForm baseUrl='https://dev-529730.okta.com' />}
+          render={() => <Login baseUrl='https://dev-529730.okta.com' />}
         />
         <Route path='/implicit/callback' component={ImplicitCallback} />
       </div>
