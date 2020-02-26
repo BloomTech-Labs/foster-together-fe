@@ -58,7 +58,7 @@ export default function SignUp(props) {
         alert('Please enter a valid phone number')
       } else {
         if (!user.email.includes('@' && '.')) {
-          alert('please enter a valid email')
+          alert('Please enter a valid email')
         } else {
           if (user.firstName && user.lastName && user.email && user.phone) {
             setActiveStep(activeStep + 1)
@@ -75,7 +75,6 @@ export default function SignUp(props) {
           user.address &&
           user.state &&
           user.zip &&
-          user.country &&
           user.city
         ) {
           setActiveStep(activeStep + 1)

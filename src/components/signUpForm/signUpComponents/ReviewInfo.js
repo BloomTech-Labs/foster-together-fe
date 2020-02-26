@@ -11,7 +11,6 @@ const ReviewInfo = ({ user }) => (
     <h3>City: {user.city}</h3>
     <h3>State: {user.state}</h3>
     <h3>Zip: {user.zip}</h3>
-    <h3>Country: {user.country}</h3>
   </div>
 )
 

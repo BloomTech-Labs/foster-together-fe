@@ -62,22 +62,6 @@ const ContactInfo = ({ user, changeHandler }) => (
         />
       </Grid>
       <Grid item xs={12}>
-        <InputLabel htmlFor='age-native-helper'>
-          Prefered Comunication
-        </InputLabel>
-        <Select
-          id='demo-simple-select'
-          label='Prefered Comunication'
-          placeholder='Prefered Comunication'
-          fullWidth
-          name='preferredContact'
-          value={user.preferredContact}
-          onChange={changeHandler}
-        >
-          <MenuItem value='Email'>Email</MenuItem>
-          <MenuItem value='Phone'>Phone Call</MenuItem>
-          <MenuItem value='Text'>Text</MenuItem>
-        </Select>
       </Grid>
     </Grid>
   </>

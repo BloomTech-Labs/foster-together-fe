@@ -1,5 +1,6 @@
 import React from 'react'
-import { Typography, Grid, TextField } from '@material-ui/core'
+import { Typography, Grid, TextField, MenuItem } from '@material-ui/core'
+import {States} from './States';
 
 const LocationInfo = ({ user, changeHandler }) => (
   <>
@@ -34,13 +35,19 @@ const LocationInfo = ({ user, changeHandler }) => (
       <Grid item xs={12} sm={6}>
         <TextField
           required
+          select
           id='state'
           name='state'
           label='State/Province/Region'
           value={user.state}
           fullWidth
-          onChange={changeHandler}
-        />
+          onChange={changeHandler}>
+        {States.map(option => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+        </TextField>
       </Grid>
       <Grid item xs={12} sm={6}>
         <TextField
@@ -54,18 +61,6 @@ const LocationInfo = ({ user, changeHandler }) => (
           value={user.zip}
           required
           fullWidth
-        />
-      </Grid>
-      <Grid item xs={12} sm={6}>
-        <TextField
-          required
-          id='country'
-          name='country'
-          onChange={changeHandler}
-          value={user.country}
-          label='Country'
-          fullWidth
-          autoComplete='billing country'
         />
       </Grid>
     </Grid>
