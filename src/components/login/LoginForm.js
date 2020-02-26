@@ -21,10 +21,12 @@ const Wrapper = styled.section({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    margin: '0 auto',
   },
   avatar: {
-    margin: '8px',
+    margin: 'auto',
     backgroundColor: 'red',
+    alignItems: 'center',
   },
   form: {
     width: '100%',
@@ -32,6 +34,9 @@ const Wrapper = styled.section({
   },
   submit: {
     margin: '1px, 4px',
+  },
+  LockOutlinedIcon: {
+    margin: 'auto',
   },
 })
 
@@ -86,7 +91,7 @@ export default withAuth(
           <Container component='main' maxWidth='xs'>
             <CssBaseline />
             <div className='paper'>
-              <Avatar className='avatar'>
+              <Avatar>
                 <LockOutlinedIcon />
               </Avatar>
               <Typography component='h1' variant='h5'>
