@@ -5,17 +5,15 @@ import { CssBaseline } from '@material-ui/core'
 import { createBrowserHistory } from 'history'
 import ReactGA from 'react-ga'
 
-const analytics = createBrowserHistory()
-// google analytics page view tracking
-analytics.listen(location => {
-  ReactGA.set({ page: location.pathname }) // Update the user's current page
-  ReactGA.pageview(location.pathname) // Record a pageview for the given page
-})
+function initializeReactGA() {
+  ReactGA.initialize('UA-123791717-1')
+  ReactGA.pageview('/homepage')
+}
 
 function App() {
   return (
     <>
-      <Router history={analytics}>
+      <Router>
         <CssBaseline />
         <Route exact path='/signup' component={SignUp} />
       </Router>
