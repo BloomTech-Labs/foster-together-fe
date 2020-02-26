@@ -13,7 +13,6 @@ import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import InputLabel from '@material-ui/core/InputLabel'
 
-
 export default function SignUp(props) {
   const useStyles = makeStyles(theme => ({
     appBar: {
@@ -233,15 +232,15 @@ export default function SignUp(props) {
           </div>
         )
       case 3:
-        return null
         console.log(user)
+        return null
       default:
         throw new Error('Unknown step')
     }
   }
 
   const handleNext = () => {
-    if (activeStep == 0) {
+    if (activeStep === 0) {
       const phoneno = /^\d{10}$/
       if (!user.phone.match(phoneno)) {
         alert('Please enter a valid phone number')
@@ -255,8 +254,8 @@ export default function SignUp(props) {
         }
       }
     }
-    if (activeStep == 1) {
-      const zip = /^\d{5}$/ 
+    if (activeStep === 1) {
+      const zip = /^\d{5}$/
       if (!user.zip.match(zip)) {
         alert('Please enter a valid zip code')
       } else {
