@@ -35,9 +35,6 @@ const Wrapper = styled.section({
   submit: {
     margin: '1px, 4px',
   },
-  LockOutlinedIcon: {
-    margin: 'auto',
-  },
 })
 
 export default withAuth(
