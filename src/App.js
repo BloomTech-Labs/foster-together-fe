@@ -16,10 +16,11 @@ analytics.listen(location => {
 function App() {
   return (
     <>
-      <CssBaseline />
-      <Route exact path='/signup' component={SignUp} />
-      <Route exact path='/dash' component={AdminDash} />
       <Router history={analytics}>
+        <CssBaseline />
+        <Route exact path='/signup' component={SignUp} />
+        <Route exact path='/dash' component={AdminDash} />
+
         <CssBaseline />
       </Router>
     </>
