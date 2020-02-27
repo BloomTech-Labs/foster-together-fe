@@ -11,6 +11,7 @@ import {
   StepLabel,
   Button,
 } from '@material-ui/core'
+import Axios from 'axios'
 
 export default function SignUp(props) {
   const classes = useSignUpStyles()
@@ -18,16 +19,14 @@ export default function SignUp(props) {
   const steps = ['Contact Info', 'Location Info', 'Review your Profile']
 
   const [user, setUser] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     phone: '',
     email: '',
     address: '',
     city: '',
     zip: '',
     state: '',
-    country: '',
-    preferredContact: '',
   })
 
   function GetStepContent(step) {
@@ -80,6 +79,15 @@ export default function SignUp(props) {
           setActiveStep(activeStep + 1)
         } else alert('Missing a required field')
       }
+    }
+    if (activeStep === 2){
+      Axios.post('https://foster-together-back.herokuapp.com/api/neighbors', user)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
     }
   }
 
