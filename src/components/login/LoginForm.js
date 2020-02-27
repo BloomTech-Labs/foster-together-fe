@@ -66,7 +66,7 @@ export default withAuth(
             sessionToken: res.sessionToken,
           })
         )
-        .catch(err => console.log('Found an error', err))
+        .catch(err => console.log('Error logging in', err))
     }
 
     handleUsernameChange(e) {
@@ -82,7 +82,6 @@ export default withAuth(
         this.props.auth.redirect({ sessionToken: this.state.sessionToken })
         return null
       }
-
       return (
         <Wrapper>
           <Container component='main' maxWidth='xs'>
