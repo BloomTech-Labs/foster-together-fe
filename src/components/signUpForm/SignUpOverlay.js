@@ -18,8 +18,8 @@ export default function SignUp(props) {
   const steps = ['Contact Info', 'Location Info', 'Review your Profile']
 
   const [user, setUser] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     phone: '',
     email: '',
     address: '',
@@ -71,12 +71,7 @@ export default function SignUp(props) {
       if (!user.zip.match(zip)) {
         alert('Please enter a valid zip code')
       } else {
-        if (
-          user.address &&
-          user.state &&
-          user.zip &&
-          user.city
-        ) {
+        if (user.address && user.state && user.zip && user.city) {
           setActiveStep(activeStep + 1)
         } else alert('Missing a required field')
       }
