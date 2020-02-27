@@ -24,10 +24,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll --coverage || true ",
+    "test": "react-scripts test --watchAll --coverage",
     "eject": "react-scripts eject",
     "heroku-prebuild": "npm install --only=dev",
-    "coverage": "react-scripts test --coverage"
+    "coverage": "CI=true npm test --coverage  || true "
   },
   "eslintConfig": {
     "extends": "react-app"
