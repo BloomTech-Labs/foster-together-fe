@@ -70,12 +70,7 @@ export default function SignUp(props) {
       if (!user.zip.match(zip)) {
         alert('Please enter a valid zip code')
       } else {
-        if (
-          user.address &&
-          user.state &&
-          user.zip &&
-          user.city
-        ) {
+        if (user.address && user.state && user.zip && user.city) {
           setActiveStep(activeStep + 1)
         } else alert('Missing a required field')
       }
