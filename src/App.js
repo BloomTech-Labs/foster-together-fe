@@ -6,6 +6,8 @@ import { CssBaseline } from '@material-ui/core'
 import { createBrowserHistory } from 'history'
 import ReactGA from 'react-ga'
 
+const trackingId = 'UA-159166357-1'
+ReactGA.initialize(trackingId)
 const analytics = createBrowserHistory()
 // google analytics page view tracking
 analytics.listen(location => {
