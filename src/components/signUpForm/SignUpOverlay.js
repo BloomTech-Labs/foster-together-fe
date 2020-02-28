@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ContactInfo from './signUpComponents/ContactInfo'
 import LocationInfo from './signUpComponents/LocationInfo'
 import ReviewInfo from './signUpComponents/ReviewInfo'
@@ -12,6 +12,7 @@ import {
   Button,
 } from '@material-ui/core'
 import Axios from 'axios'
+import { PageView } from '../../Analytics'
 
 export default function SignUp(props) {
   const classes = useSignUpStyles()
@@ -70,30 +71,32 @@ export default function SignUp(props) {
       if (!user.zip.match(zip)) {
         alert('Please enter a valid zip code')
       } else {
-        if (
-          user.address &&
-          user.state &&
-          user.zip &&
-          user.city
-        ) {
+        if (user.address && user.state && user.zip && user.city) {
           setActiveStep(activeStep + 1)
         } else alert('Missing a required field')
       }
     }
-    if (activeStep === 2){
-      Axios.post('https://foster-together-back.herokuapp.com/api/neighbors', user)
-      .then(res => {
-        console.log(res)
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    if (activeStep === 2) {
+      Axios.post(
+        'https://foster-together-back.herokuapp.com/api/neighbors',
+        user
+      )
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 
   const handleBack = () => {
     setActiveStep(activeStep - 1)
   }
+
+  useEffect(() => {
+    PageView()
+  })
 
   return (
     <>
