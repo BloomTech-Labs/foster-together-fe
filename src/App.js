@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import SignUp from './components/signUpForm/SignUpOverlay'
 import AdminDash from './components/AdminDash/AdminDashboard'
 import { Route } from 'react-router-dom'
 import { CssBaseline } from '@material-ui/core'
-import { initGA, PageView } from './Analytics'
 import ReactGA from 'react-ga'
 import { createBrowserHistory } from 'history'
 
