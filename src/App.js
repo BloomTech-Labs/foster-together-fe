@@ -4,6 +4,8 @@ import AdminDash from './components/AdminDash/AdminDashboard'
 import { Route } from 'react-router-dom'
 import { CssBaseline } from '@material-ui/core'
 import { initGA, PageView } from './Analytics'
+import ReactGA from 'react-ga'
+import { createBrowserHistory } from 'history'
 
 function initializeAnalytics() {
   ReactGA.initialize('UA-159166357-1')
