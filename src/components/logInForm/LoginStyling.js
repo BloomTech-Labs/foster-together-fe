@@ -1,19 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles'
-import {
-  Avatar,
-  Button,
-  CssBaseline,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Typography,
-  Container,
-  Paper,
-  Grid,
-  Tabs,
-  Tab,
-} from '@material-ui/core'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 
 const useStyles = makeStyles(theme => ({
   submit: {
