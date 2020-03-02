@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Login from './components/logInForm/LoginForm'
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react'
@@ -9,6 +9,7 @@ import { CssBaseline } from '@material-ui/core'
 import ReactGA from 'react-ga'
 import { createBrowserHistory } from 'history'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { initGA, PageView } from './Analytics'
 
 const theme = createMuiTheme({
   palette: {
@@ -39,7 +40,10 @@ function onAuthRequired({ history }) {
   history.push('/login')
 }
 function App() {
-  initializeAnalytics()
+  useEffect(() => {
+    initGA('UA-159166357-1')
+    PageView()
+  }, [])
   return (
     <Security
       issuer='https://dev-529730.okta.com/oauth2/default'
