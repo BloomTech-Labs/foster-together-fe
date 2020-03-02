@@ -1,15 +1,25 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import Login from './features/LogInForm/LoginForm'
-import './App.css'
+import Login from './components/logInForm/LoginForm'
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react'
 import Home from './features/Dashboard/Home'
 import SignUp from './components/signUpForm/SignUpOverlay'
 import AdminDash from './components/AdminDash/AdminDashboard'
-import { Route } from 'react-router-dom'
 import { CssBaseline } from '@material-ui/core'
 import ReactGA from 'react-ga'
 import { createBrowserHistory } from 'history'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#517E92',
+    },
+    secondary: {
+      main: '#FF8D86',
+    },
+  },
+})
 
 function initializeAnalytics() {
   ReactGA.initialize('UA-159166357-1')
@@ -38,7 +48,7 @@ function App() {
       onAuthRequired={onAuthRequired}
       pkce={true}
     >
-      <div className='App'>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <Route path='/' exact={true} component={Home} />
         <Route
@@ -48,7 +58,7 @@ function App() {
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/dash' component={AdminDash} />
         <Route path='/implicit/callback' component={ImplicitCallback} />
-      </div>
+      </ThemeProvider>
     </Security>
   )
 }

@@ -10,6 +10,9 @@ import {
   Step,
   StepLabel,
   Button,
+  Tabs,
+  Tab,
+  Grid,
 } from '@material-ui/core'
 import Axios from 'axios'
 import { PageView } from '../../Analytics'
@@ -17,7 +20,8 @@ import { PageView } from '../../Analytics'
 export default function SignUp(props) {
   const classes = useSignUpStyles()
   const [activeStep, setActiveStep] = useState(0)
-  const steps = ['Contact Info', 'Location Info', 'Review your Profile']
+  const [value, setValue] = useState(1)
+  const steps = ['Contact Info', 'Location Info', 'Review']
 
   const [user, setUser] = useState({
     first_name: '',
@@ -94,6 +98,10 @@ export default function SignUp(props) {
     setActiveStep(activeStep - 1)
   }
 
+  const handleChange = (e, newValue) => {
+    setValue(newValue)
+  }
+
   useEffect(() => {
     PageView()
   })
@@ -101,43 +109,65 @@ export default function SignUp(props) {
   return (
     <>
       <main className={classes.layout}>
-        <Paper className={classes.paper}>
-          <Typography component='h1' variant='h4' align='center'>
-            Sign Up
-          </Typography>
-          <Stepper activeStep={activeStep} className={classes.stepper}>
-            {steps.map(label => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          <>
-            {activeStep === steps.length ? (
-              props.history.push('/home')
-            ) : (
+        <Paper className={classes.paper} elevation={0}>
+          <Grid
+            container
+            direction='row'
+            alignItems='stretch'
+            className={classes.container}
+          >
+            <Grid item direction='column' xs={3} className={classes.sideBar}>
+              <img
+                src='https://via.placeholder.com/200x85'
+                alt='Foster Together logo'
+              />
+            </Grid>
+            <Grid item direction='column' xs={9} className={classes.form}>
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                indicatorColor='primary'
+                textColor='primary'
+                centered
+              >
+                <Tab label='Log In' />
+                <Tab label='Register' />
+              </Tabs>
+              <Stepper activeStep={activeStep} className={classes.stepper}>
+                {steps.map(label => (
+                  <Step key={label}>
+                    <StepLabel>{label}</StepLabel>
+                  </Step>
+                ))}
+              </Stepper>
               <>
-                {GetStepContent(activeStep)}
-                <div className={classes.buttons}>
-                  {activeStep !== 0 && (
-                    <Button onClick={handleBack} className={classes.button}>
-                      Back
-                    </Button>
-                  )}
-                  <Button
-                    variant='contained'
-                    color='primary'
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {activeStep === steps.length - 1
-                      ? 'Confirm Information'
-                      : 'Next'}
-                  </Button>
-                </div>
+                {activeStep === steps.length ? (
+                  props.history.push('/home')
+                ) : (
+                  <>
+                    {GetStepContent(activeStep)}
+                    <div className={classes.buttons}>
+                      {activeStep !== 0 && (
+                        <Button onClick={handleBack} className={classes.button}>
+                          Back
+                        </Button>
+                      )}
+                      <Button
+                        variant='contained'
+                        color='primary'
+                        onClick={handleNext}
+                        className={classes.button}
+                      >
+                        {activeStep === steps.length - 1
+                          ? 'Confirm Information'
+                          : 'Next'}
+                      </Button>
+                    </div>
+                  </>
+                )}
               </>
-            )}
-          </>
+            </Grid>
+          </Grid>
         </Paper>
       </main>
     </>
