@@ -81,7 +81,7 @@ const ContactInfo = ({ user, changeHandler }) => (
         />
       </Grid>
       <Grid item xs={12}>
-        <InputLabel htmlFor='password'>Comfirm Password</InputLabel>
+        <InputLabel htmlFor='password'>Confirm Password</InputLabel>
         <TextField
           required
           id='confirmPassword'
