@@ -85,12 +85,13 @@ const ContactInfo = ({ user, changeHandler }) => (
         <TextField
           required
           id='confirmPassword'
+          type='password'
           name='confirmPassword'
           placeholder='Confirm Password'
           variant='filled'
           value={user.phone}
           fullWidth
-          autoComplete='phone'
+          autoComplete='password'
           onChange={changeHandler}
         />
       </Grid>

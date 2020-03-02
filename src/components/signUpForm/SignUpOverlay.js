@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import ContactInfo from './signUpComponents/ContactInfo'
 import LocationInfo from './signUpComponents/LocationInfo'
 import ReviewInfo from './signUpComponents/ReviewInfo'
@@ -18,6 +19,7 @@ import Axios from 'axios'
 import { PageView } from '../../Analytics'
 
 export default function SignUp(props) {
+  const history = useHistory()
   const classes = useSignUpStyles()
   const [activeStep, setActiveStep] = useState(0)
   const [value, setValue] = useState(1)
@@ -130,7 +132,7 @@ export default function SignUp(props) {
                 textColor='primary'
                 centered
               >
-                <Tab label='Log In' />
+                <Tab label='Log In' onClick={() => history.push('/login')} />
                 <Tab label='Register' />
               </Tabs>
               <Stepper activeStep={activeStep} className={classes.stepper}>
