@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     initGA('UA-159166357-1')
     PageView()
-  })
+  }, [])
   return (
     <>
       <CssBaseline />
