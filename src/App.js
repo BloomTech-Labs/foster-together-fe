@@ -2,37 +2,12 @@ import React, { useEffect } from 'react'
 import { Route } from 'react-router-dom'
 import Login from './components/logInForm/LoginForm'
 import { Security, ImplicitCallback } from '@okta/okta-react'
-import SignUp from './components/signUpForm/SignUpOverlay'
+import SignUp from './components/signUpForm/SignUpOverlay/SignUpOverlay'
 import AdminDash from './components/AdminDash/AdminDashboard'
 import { CssBaseline } from '@material-ui/core'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from 'styled-components'
+import { theme } from './theme'
 import { initGA, PageView } from './Analytics'
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#517E92',
-      light: '#91BCCF',
-    },
-    secondary: {
-      main: '#FF8D86',
-      light: '#F0B6A7',
-    },
-  },
-  overrides: {
-    MuiStepIcon: {
-      root: {
-        color: '#A1A1A1',
-        '&$active': {
-          color: '#FF8D86',
-        },
-        '&$completed': {
-          color: '#FF8D86',
-        },
-      },
-    },
-  },
-})
 
 function onAuthRequired({ history }) {
   history.push('/login')
