@@ -1,37 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ContactInfo from '../signUpComponents/ContactInfo'
 import LocationInfo from '../signUpComponents/LocationInfo'
 import ReviewInfo from '../signUpComponents/ReviewInfo'
-import { useSignUpStyles } from '../styles/signUpOverlayStyles'
-import {
-  Paper,
-  Typography,
-  Stepper,
-  Step,
-  StepLabel,
-  Button,
-  Tabs,
-  Tab,
-  Grid,
-} from '@material-ui/core'
+import { Stepper, Step, StepLabel, Button, Tabs, Tab } from '@material-ui/core'
 import {
   Container,
   Sidebar,
   MainContent,
+  Logo,
   SidebarTitle,
   Instructions,
   ListItem,
-  Btn,
+  BackArrow,
+  BtnContainer,
+  BackBtn,
+  NextBtn,
 } from '../styles/signUpOverlayStyles'
+import logo from '../../../images/logo.svg'
+import backArrow from '../../../images/icons/back-arrow.svg'
 import Axios from 'axios'
 import { PageView } from '../../../Analytics'
 
 export default function SignUp(props) {
   const history = useHistory()
-  const classes = useSignUpStyles()
   const [activeStep, setActiveStep] = useState(0)
   const [value, setValue] = useState(1)
   const steps = ['Contact Info', 'Location Info', 'Review']
@@ -120,13 +112,12 @@ export default function SignUp(props) {
   })
 
   return (
-    <>
-      <Container>
-        <Sidebar>
-          <img
-            src='https://via.placeholder.com/200x85'
-            alt='Foster Together logo'
-          />
+    <Container>
+      <Sidebar>
+        <div>
+          <Logo>
+            <img src={logo} alt='Foster Together logo' />
+          </Logo>
           <SidebarTitle>Registering as a Foster Neighbor</SidebarTitle>
           <Instructions>
             <ListItem>Fill out the application below.</ListItem>
@@ -140,77 +131,51 @@ export default function SignUp(props) {
               training.
             </ListItem>
           </Instructions>
-          <div>
-            <FontAwesomeIcon icon={faArrowLeft} />
-          </div>
-        </Sidebar>
-        <MainContent>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor='primary'
-            textColor='primary'
-            centered
-            classes={{
-              indicator: classes.tabIndicator,
-            }}
-          >
-            <Tab
-              label={<span className={classes.tabLabel}>Log In</span>}
-              onClick={() => history.push('/login')}
-            />
-            <Tab
-              className={classes.tab}
-              label={
-                <span
-                  className={`${classes.tabLabel} ${classes.tabLabelActive}`}
+        </div>
+        <BackArrow>
+          <img src={backArrow} />
+        </BackArrow>
+      </Sidebar>
+      <MainContent>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor='primary'
+          textColor='primary'
+          centered
+        >
+          <Tab label='Log In' onClick={() => history.push('/login')} />
+          <Tab label='Register' />
+        </Tabs>
+        <Stepper activeStep={activeStep}>
+          {steps.map(label => (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+        <>
+          {activeStep === steps.length ? (
+            props.history.push('/home')
+          ) : (
+            <>
+              {GetStepContent(activeStep)}
+              <BtnContainer>
+                {activeStep !== 0 && (
+                  <BackBtn onClick={handleBack}>Back</BackBtn>
+                )}
+                <NextBtn
+                  variant='contained'
+                  color='primary'
+                  onClick={handleNext}
                 >
-                  Register
-                </span>
-              }
-            />
-          </Tabs>
-          <Stepper activeStep={activeStep} className={classes.stepper}>
-            {steps.map(label => (
-              <Step key={label}>
-                <StepLabel
-                  StepIconProps={{
-                    classes: { root: classes.icon },
-                  }}
-                >
-                  {label}
-                </StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          <>
-            {activeStep === steps.length ? (
-              props.history.push('/home')
-            ) : (
-              <>
-                {GetStepContent(activeStep)}
-                <div className={classes.buttons}>
-                  {activeStep !== 0 && (
-                    <Button onClick={handleBack} className={classes.button}>
-                      Back
-                    </Button>
-                  )}
-                  <Btn
-                    variant='contained'
-                    color='primary'
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {activeStep === steps.length - 1
-                      ? 'Confirm Information'
-                      : 'Next'}
-                  </Btn>
-                </div>
-              </>
-            )}
-          </>
-        </MainContent>
-      </Container>
-    </>
+                  {activeStep === steps.length - 1 ? 'Confirm' : 'Next'}
+                </NextBtn>
+              </BtnContainer>
+            </>
+          )}
+        </>
+      </MainContent>
+    </Container>
   )
 }
