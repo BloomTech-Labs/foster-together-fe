@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { Route } from 'react-router-dom'
 import Login from './components/logInForm/LoginForm'
 import { Security, ImplicitCallback } from '@okta/okta-react'
-import Home from './features/Dashboard/Home'
 import SignUp from './components/signUpForm/SignUpOverlay'
 import AdminDash from './components/AdminDash/AdminDashboard'
 import { CssBaseline } from '@material-ui/core'
@@ -58,7 +57,7 @@ function App() {
     >
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Route path='/' exact={true} component={Home} />
+        <Route path='/' exact={true} component={AdminDash} />
         <Route
           path='/login'
           render={() => <Login baseUrl='https://dev-529730.okta.com' />}

@@ -12,8 +12,6 @@ margin-left: 20px;
 top: -50%;
 `
 
-const Input = styled.input`
-`
 export default function Header() {
 
     return (
