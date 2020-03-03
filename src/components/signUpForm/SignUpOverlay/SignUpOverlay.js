@@ -18,7 +18,11 @@ import {
   Stepper,
   Step,
   StepLabel,
+  ActiveStepLabel,
   StepTitle,
+  ActiveStepTitle,
+  StepConnector,
+  ActiveStepConnector,
   BtnContainer,
   BackBtn,
   NextBtn,
@@ -154,11 +158,21 @@ export default function SignUp(props) {
           </ActiveTab>
         </TabContainer>
         <Stepper>
-          {steps.map(step => (
-            <Step>
-              <StepLabel></StepLabel>
-            </Step>
-          ))}
+          {steps.map((step, index) =>
+            activeStep >= index ? (
+              <Step>
+                {index > 0 && <ActiveStepConnector />}
+                <ActiveStepLabel>{index + 1}</ActiveStepLabel>
+                <ActiveStepTitle>{step.title}</ActiveStepTitle>
+              </Step>
+            ) : (
+              <Step>
+                {index > 0 && <StepConnector />}
+                <StepLabel>{index + 1}</StepLabel>
+                <StepTitle>{step.title}</StepTitle>
+              </Step>
+            )
+          )}
         </Stepper>
         <>
           {activeStep === steps.length ? (

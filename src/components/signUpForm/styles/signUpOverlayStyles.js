@@ -71,12 +71,7 @@ export const Tab = styled.div`
     `5px solid ${palette.primary.light}`};
 `
 
-export const ActiveTab = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10rem;
-  height: 5rem;
+export const ActiveTab = styled(Tab)`
   color: ${({ theme: { palette } }) => palette.primary.main};
   border-bottom: ${({ theme: { palette } }) =>
     `5px solid ${palette.primary.main}`};
@@ -88,6 +83,7 @@ export const Stepper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 50px 0;
 `
 
 export const Step = styled.div`
@@ -105,11 +101,31 @@ export const StepLabel = styled.div`
   background: #a1a1a1;
   color: #fff;
   font-size: 1.6rem;
+  margin-right: 8px;
+`
+
+export const ActiveStepLabel = styled(StepLabel)`
+  background: ${({ theme: { palette } }) => palette.secondary.main};
 `
 
 export const StepTitle = styled.div`
   color: #a1a1a1;
   font-size: 1.6rem;
+`
+
+export const ActiveStepTitle = styled(StepTitle)`
+  color: ${({ theme: { palette } }) => palette.secondary.main};
+`
+
+export const StepConnector = styled.div`
+  width: 60px;
+  border-bottom: 1px solid #a1a1a1;
+  margin: 0 8px;
+`
+
+export const ActiveStepConnector = styled(StepConnector)`
+  border-bottom: ${({ theme: { palette } }) =>
+    `1px solid ${palette.secondary.main}`};
 `
 
 export const BtnContainer = styled.div`
