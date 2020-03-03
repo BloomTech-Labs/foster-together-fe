@@ -9,15 +9,23 @@ import {
   FormControlLabel,
   Checkbox,
   Typography,
-  Container,
   Paper,
   Grid,
   Tabs,
   Tab,
 } from '@material-ui/core'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
-import axios from 'axios'
 import OktaAuth from '@okta/okta-auth-js'
+import useStyles from './styles/LoginSyles'
+import {
+  Container,
+  Sidebar,
+  Logo,
+  SidebarTitle,
+  ListItem,
+  BackArrow,
+} from '../signUpForm/styles/signUpOverlayStyles'
+import logo from '../../images/logo.svg'
+import arrowImg from '../../images/icons/back-arrow.svg'
 
 const LoginForm = props => {
   const history = useHistory()
@@ -53,139 +61,75 @@ const LoginForm = props => {
     setValue(newValue)
   }
 
-  // const onSubmit = e => {
-  //   e.preventDefault()
-  //   axios.post('', values).then(response => {
-  //     localStorage.setItem('token', response.data.token)
-  //   })
-  // }
-
-  const useStyles = makeStyles(theme => ({
-    submit: {
-      margin: theme.spacing(1, 4),
-    },
-    appBar: {
-      position: 'relative',
-    },
-    layout: {
-      width: 'auto',
-      marginLeft: theme.spacing(2),
-      marginRight: theme.spacing(2),
-      [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
-        width: '70%',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-      },
-    },
-    paper: {
-      marginTop: theme.spacing(3),
-      marginBottom: theme.spacing(3),
-      boxShadow:
-        '0 4px 8px 0 rgba(180, 180, 180, 0.2), 0 6px 20px 0 rgba(180, 180, 180, 0.19)',
-      [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-        marginTop: theme.spacing(6),
-        marginBottom: theme.spacing(6),
-      },
-    },
-    container: {
-      padding: 0,
-      minHeight: '80vh',
-    },
-    sideBar: {
-      background: '#F9F9F9',
-      minHeight: '80vh',
-      padding: theme.spacing(4, 3),
-    },
-    form: {
-      padding: theme.spacing(4, 12),
-    },
-    stepper: {
-      padding: theme.spacing(5, 2, 5, 2),
-    },
-    buttons: {
-      display: 'flex',
-      justifyContent: 'flex-end',
-    },
-    button: {
-      marginTop: theme.spacing(3),
-      marginLeft: theme.spacing(1),
-    },
-  }))
-
   const classes = useStyles()
 
   return (
-    <main className={classes.layout}>
-      <CssBaseline />
-      <Paper className={classes.paper} elevation={0}>
-        <Grid
-          container
-          direction='row'
-          alignItems='stretch'
-          className={classes.container}
+    <Container>
+      <Sidebar>
+        <div>
+          <Logo>
+            <img src={logo} alt='Foster Together logo' />
+          </Logo>
+          <SidebarTitle>
+            Children need families <h3> And families need support</h3>
+          </SidebarTitle>
+        </div>
+        <BackArrow>
+          <img src={arrowImg} />
+        </BackArrow>
+      </Sidebar>
+      <Tabs
+        value={value}
+        onChange={handleToggle}
+        indicatorColor='primary'
+        textColor='primary'
+        centered
+      >
+        <Tab label='Log In' />
+        <Tab label='Register' onClick={() => history.push('/signup')} />
+      </Tabs>
+      <form onSubmit={handleSubmit} noValidate>
+        <TextField
+          variant='filled'
+          margin='normal'
+          required
+          fullWidth
+          id='email'
+          placeholder='Email'
+          name='email'
+          autoComplete='email'
+          value={values.email}
+          onChange={handleChange}
+          autoFocus
+        />
+        <TextField
+          variant='filled'
+          margin='normal'
+          required
+          fullWidth
+          name='password'
+          label='Password'
+          type='password'
+          id='password'
+          value={values.password}
+          onChange={handleChange}
+          autoComplete='current-password'
+        />
+        <FormControlLabel
+          control={<Checkbox value='remember' color='primary' />}
+          label='Keep Me Signed In'
+          className={classes.submit}
+        />
+        <Button
+          type='submit'
+          variant='contained'
+          color='primary'
+          className={classes.submit}
         >
-          <Grid item direction='column' xs={3} className={classes.sideBar}>
-            <img
-              src='https://via.placeholder.com/200x85'
-              alt='Foster Together logo'
-            />
-          </Grid>
-          <Grid item direction='column' xs={9} className={classes.form}>
-            <Tabs
-              value={value}
-              onChange={handleToggle}
-              indicatorColor='primary'
-              textColor='primary'
-              centered
-            >
-              <Tab label='Log In' />
-              <Tab label='Register' onClick={() => history.push('/signup')} />
-            </Tabs>
-            <form onSubmit={handleSubmit} noValidate>
-              <TextField
-                variant='filled'
-                margin='normal'
-                required
-                fullWidth
-                id='email'
-                placeholder='Email'
-                name='email'
-                autoComplete='email'
-                value={values.email}
-                onChange={handleChange}
-                autoFocus
-              />
-              <TextField
-                variant='filled'
-                margin='normal'
-                required
-                fullWidth
-                name='password'
-                label='Password'
-                type='password'
-                id='password'
-                value={values.password}
-                onChange={handleChange}
-                autoComplete='current-password'
-              />
-              <FormControlLabel
-                control={<Checkbox value='remember' color='primary' />}
-                label='Keep Me Signed In'
-                className={classes.submit}
-              />
-              <Button
-                type='submit'
-                variant='contained'
-                color='primary'
-                className={classes.submit}
-              >
-                Sign In
-              </Button>
-            </form>
-          </Grid>
-        </Grid>
-      </Paper>
-    </main>
+          Sign In
+        </Button>
+      </form>
+    </Container>
   )
 }
 
