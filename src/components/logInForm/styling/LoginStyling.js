@@ -4,9 +4,6 @@ const useStyles = makeStyles(theme => ({
   submit: {
     margin: theme.spacing(1, 4),
   },
-  appBar: {
-    position: 'relative',
-  },
   layout: {
     width: 'auto',
     marginLeft: theme.spacing(2),

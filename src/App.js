@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import Login from './components/logInForm/LoginForm'
+import LoginComponents from './components/logInForm/LoginComponents'
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react'
 import Home from './features/Dashboard/Home'
 import SignUp from './components/signUpForm/SignUpOverlay'
@@ -57,7 +57,9 @@ function App() {
         <Route path='/' exact={true} component={Home} />
         <Route
           path='/login'
-          render={() => <Login baseUrl='https://dev-529730.okta.com' />}
+          render={() => (
+            <LoginComponents baseUrl='https://dev-529730.okta.com' />
+          )}
         />
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/dash' component={AdminDash} />
