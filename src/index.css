@@ -2,9 +2,30 @@
 
 * {
   box-sizing: border-box;
-  /* border: 1px solid red; */
+  font-size: 62.5%;
 }
 
 body {
   background: #e5e5e5;
+  font-family: 'Roboto', sans-serif;
+}
+
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+address,
+ol,
+ul,
+li,
+form,
+label,
+table,
+caption {
+  font-size: 1.6rem;
 }

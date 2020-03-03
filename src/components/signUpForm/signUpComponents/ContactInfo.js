@@ -1,16 +1,16 @@
 import React from 'react'
 import {
-  Typography,
   Grid,
   TextField,
   InputLabel,
   Select,
   MenuItem,
 } from '@material-ui/core'
+import { ContactContainer } from '../styles/contactInfoStyles'
 
 const ContactInfo = ({ user, changeHandler }) => (
   <>
-    <Grid container spacing={3}>
+    <ContactContainer>
       <Grid item xs={12} sm={6}>
         <InputLabel htmlFor='firstName'>First Name</InputLabel>
         <TextField
@@ -95,7 +95,7 @@ const ContactInfo = ({ user, changeHandler }) => (
           onChange={changeHandler}
         />
       </Grid>
-    </Grid>
+    </ContactContainer>
   </>
 )
 
