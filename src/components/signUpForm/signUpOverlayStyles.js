@@ -9,7 +9,7 @@ export const useSignUpStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
     [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
-      width: '70%',
+      width: '80%',
       marginLeft: 'auto',
       marginRight: 'auto',
     },
@@ -33,8 +33,32 @@ export const useSignUpStyles = makeStyles(theme => ({
     minHeight: '80vh',
     padding: theme.spacing(4, 3),
   },
+  logo: {
+    marginLeft: theme.spacing(2),
+  },
+  list: {
+    color: theme.palette.primary.main,
+  },
   form: {
     padding: theme.spacing(4, 12),
+  },
+  tab: {
+    maxWidth: 100,
+  },
+  tabLabel: {
+    color: theme.palette.primary.light,
+    textTransform: 'capitalize',
+    fontSize: '1.2rem',
+    lineHeight: '21px',
+    maxWidth: 100,
+  },
+  tabLabelActive: {
+    color: theme.palette.primary.main,
+  },
+  tabIndicator: {
+    height: 5,
+    maxWidth: 100,
+    marginLeft: 30,
   },
   stepper: {
     padding: theme.spacing(5, 2, 5, 2),

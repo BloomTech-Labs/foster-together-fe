@@ -123,6 +123,21 @@ export default function SignUp(props) {
                 src='https://via.placeholder.com/200x85'
                 alt='Foster Together logo'
               />
+              <Typography variant='h6' color='primary'>
+                Registering as a Foster Neighbor
+              </Typography>
+              <ol className={classes.list}>
+                <li>Fill out the application below.</li>
+                <li>
+                  We’ll email or call to confirm your spot, and set up your
+                  background check.
+                </li>
+                <li>Process your background check online ($20).</li>
+                <li>
+                  We’ll send an outline of our agenda a few days before the
+                  training.
+                </li>
+              </ol>
             </Grid>
             <Grid item direction='column' xs={9} className={classes.form}>
               <Tabs
@@ -131,14 +146,35 @@ export default function SignUp(props) {
                 indicatorColor='primary'
                 textColor='primary'
                 centered
+                classes={{
+                  indicator: classes.tabIndicator,
+                }}
               >
-                <Tab label='Log In' onClick={() => history.push('/login')} />
-                <Tab label='Register' />
+                <Tab
+                  label={<span className={classes.tabLabel}>Log In</span>}
+                  onClick={() => history.push('/login')}
+                />
+                <Tab
+                  className={classes.tab}
+                  label={
+                    <span
+                      className={`${classes.tabLabel} ${classes.tabLabelActive}`}
+                    >
+                      Register
+                    </span>
+                  }
+                />
               </Tabs>
               <Stepper activeStep={activeStep} className={classes.stepper}>
                 {steps.map(label => (
                   <Step key={label}>
-                    <StepLabel>{label}</StepLabel>
+                    <StepLabel
+                      StepIconProps={{
+                        classes: { root: classes.icon },
+                      }}
+                    >
+                      {label}
+                    </StepLabel>
                   </Step>
                 ))}
               </Stepper>

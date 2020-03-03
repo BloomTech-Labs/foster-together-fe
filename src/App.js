@@ -15,9 +15,24 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#517E92',
+      light: '#91BCCF',
     },
     secondary: {
       main: '#FF8D86',
+      light: '#F0B6A7',
+    },
+  },
+  overrides: {
+    MuiStepIcon: {
+      root: {
+        color: '#A1A1A1',
+        '&$active': {
+          color: '#FF8D86',
+        },
+        '&$completed': {
+          color: '#FF8D86',
+        },
+      },
     },
   },
 })
