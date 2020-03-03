@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { lighten, makeStyles } from '@material-ui/core/styles';
 import {Table ,TableBody, TableCell, TableContainer, TableHead, TableRow , TableSortLabel, Typography, Paper } from '@material-ui/core';
-
+import { tableStyle} from './TableStyles'
 
 export default function EnhancedTable(props) {
     const rows = [
@@ -10,13 +10,23 @@ export default function EnhancedTable(props) {
     ];
     props.Data.map(people => {
         if(people.match_name == undefined){
-        rows.push({"Name": people.last_name, "registered": people.memberSince, "contacted": people.contact, match: " None" ,"complete": "True", "id": people.id})
+        rows.push({"name": people.last_name, "registered": people.memberSince, "contacted": people.contact, match: " None" ,"complete": "True", "id": people.family_id})
         console.log(rows)
         }
         else{
-        rows.push({"name": people.last_name, "registered": people.memberSince, "contacted": people.contact, match: people.match_name ,"complete": "True", "id": people.id})
+        rows.push({"name": people.last_name, "registered": people.memberSince, "contacted": people.contact, match: people.match_name ,"complete": "True", "id": people.family_id})
         }
     })
+
+    props.Data2.map(people => {
+      if(people.match_name == undefined){
+      rows.push({"name": people.last_name, "registered": people.memberSince, "contacted": people.contact, match: " None" ,"complete": "True", "id": people.family_id})
+      console.log(rows)
+      }
+      else{
+      rows.push({"name": people.last_name, "registered": people.memberSince, "contacted": people.contact, match: people.match_name ,"complete": "True", "id": people.family_id})
+      }
+  })
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -99,28 +109,9 @@ EnhancedTableHead.propTypes = {
   rowCount: PropTypes.number.isRequired,
 };
 
-const useToolbarStyles = makeStyles(theme => ({
-  root: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(1),
-  },
-  highlight:
-    theme.palette.type === 'light'
-      ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-        }
-      : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark,
-        },
-  title: {
-    flex: '1 1 100%',
-  },
-}));
 
 const EnhancedTableToolbar = () => {
-  const classes = useToolbarStyles();
+  const classes = tableStyle();
 
   return (
         <Typography style={{textAlign: "center", padding: "10px"}} className={classes.title} variant="h6" id="tableTitle">
@@ -129,39 +120,9 @@ const EnhancedTableToolbar = () => {
   );
 };
 
-EnhancedTableToolbar.propTypes = {
-  numSelected: PropTypes.number.isRequired,
-};
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-  },
-  paper: {
-    width: '100%',
-    marginBottom: theme.spacing(2),
-  },
-  table: {
-    minWidth: 750,
-  },
-  visuallyHidden: {
-    border: 0,
-    clip: 'rect(0 0 0 0)',
-    height: 1,
-    margin: -1,
-    overflow: 'hidden',
-    padding: 0,
-    position: 'absolute',
-    top: 20,
-    width: 1,
-  },
-}));
-
-
-  const classes = useStyles();
+  const classes = tableStyle();
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');
-  const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -171,12 +132,6 @@ const useStyles = makeStyles(theme => ({
     setOrder(isAsc ? 'desc' : 'asc');
     setOrderBy(property);
   };
-
-//   const handleClick = (props, id) => {
-//       props.history.push(`/volunteer/${id}`)
-//     }
-
-  const isSelected = name => selected.indexOf(name) !== -1;
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -202,7 +157,6 @@ const useStyles = makeStyles(theme => ({
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
@@ -211,10 +165,8 @@ const useStyles = makeStyles(theme => ({
                       onClick={() => props.props.history.push(`/volunteer/${row.id}`)}
                       onHover={event => console.log(row.id)}
                       role="checkbox"
-                      aria-checked={isItemSelected}
                       tabIndex={-1}
                       key={row.name}
-                      selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
                       </TableCell>

@@ -78,8 +78,7 @@ export default function SignUp(props) {
     }
     if (activeStep === 2) {
       Axios.post(
-        'https://foster-together-back.herokuapp.com/api/neighbors',
-        user
+        'https://foster-together-back.herokuapp.com/api/neighbors', user
       )
         .then(res => {
           console.log(res)

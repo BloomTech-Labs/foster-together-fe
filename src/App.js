@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom'
 import { CssBaseline } from '@material-ui/core'
 import ReactGA from 'react-ga'
 import { createBrowserHistory } from 'history'
+import UserProfile from './components/AdminDash/UsersProfile'
 
 function initializeAnalytics() {
   ReactGA.initialize('UA-159166357-1')
@@ -27,6 +28,7 @@ function App() {
       <CssBaseline />
       <Route exact path='/signup' component={SignUp} />
       <Route exact path='/dash' component={AdminDash} />
+      <Route path ='/volunteer/:id' component={UserProfile} />
     </>
   )
 }
