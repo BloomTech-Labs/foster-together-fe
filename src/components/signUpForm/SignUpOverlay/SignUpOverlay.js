@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import ContactInfo from '../signUpComponents/ContactInfo'
-import LocationInfo from '../signUpComponents/LocationInfo'
-import ReviewInfo from '../signUpComponents/ReviewInfo'
-import { Stepper, Step, StepLabel, Button, Tabs, Tab } from '@material-ui/core'
+import Axios from 'axios'
+import { PageView } from '../../../Analytics'
+//styled components
 import {
   Container,
   Sidebar,
@@ -13,20 +12,33 @@ import {
   Instructions,
   ListItem,
   BackArrow,
+  TabContainer,
+  Tab,
+  ActiveTab,
+  Stepper,
+  Step,
+  StepLabel,
+  StepTitle,
   BtnContainer,
   BackBtn,
   NextBtn,
 } from '../styles/signUpOverlayStyles'
+//images
 import logo from '../../../images/logo.svg'
 import backArrow from '../../../images/icons/back-arrow.svg'
-import Axios from 'axios'
-import { PageView } from '../../../Analytics'
+// child components
+import ContactInfo from '../signUpComponents/ContactInfo'
+import LocationInfo from '../signUpComponents/LocationInfo'
+import ReviewInfo from '../signUpComponents/ReviewInfo'
 
 export default function SignUp(props) {
   const history = useHistory()
   const [activeStep, setActiveStep] = useState(0)
-  const [value, setValue] = useState(1)
-  const steps = ['Contact Info', 'Location Info', 'Review']
+  const steps = [
+    { title: 'Contact Info' },
+    { title: 'Location Info' },
+    { title: 'Review' },
+  ]
 
   const [user, setUser] = useState({
     first_name: '',
@@ -103,10 +115,6 @@ export default function SignUp(props) {
     setActiveStep(activeStep - 1)
   }
 
-  const handleChange = (e, newValue) => {
-    setValue(newValue)
-  }
-
   useEffect(() => {
     PageView()
   })
@@ -137,20 +145,18 @@ export default function SignUp(props) {
         </BackArrow>
       </Sidebar>
       <MainContent>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor='primary'
-          textColor='primary'
-          centered
-        >
-          <Tab label='Log In' onClick={() => history.push('/login')} />
-          <Tab label='Register' />
-        </Tabs>
-        <Stepper activeStep={activeStep}>
-          {steps.map(label => (
-            <Step key={label}>
-              <StepLabel>{label}</StepLabel>
+        <TabContainer>
+          <Tab onClick={() => history.push('/login')}>
+            <span>Log In</span>
+          </Tab>
+          <ActiveTab>
+            <span>Register</span>
+          </ActiveTab>
+        </TabContainer>
+        <Stepper>
+          {steps.map(step => (
+            <Step>
+              <StepLabel></StepLabel>
             </Step>
           ))}
         </Stepper>
