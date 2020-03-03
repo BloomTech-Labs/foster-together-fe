@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
-import NeighborTable from './NeighborTable'
+import NeighborTable from './Table/NeighborTable'
 import { Container, Switch, Grid } from '@material-ui/core'
 import { PageView } from '../../Analytics';
 import { useAdminDashStyle } from './adminDashStyles'

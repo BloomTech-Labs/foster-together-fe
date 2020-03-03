@@ -30,7 +30,7 @@ export const useAdminDashStyle = makeStyles(theme => ({
     borderRadius: '5px',
   },
   leftSelect: {
-    position: 'absolute',
+    position: 'fixed',
     left: '0',
     backgroundColor: ' #848484',
     height: '100vh',
@@ -38,15 +38,15 @@ export const useAdminDashStyle = makeStyles(theme => ({
     minWidth: "80px",
     paddingTop: " 30px",
     zIndex: "2",
-    color: "#9B9B9B"
+    color: "#FF8D86",
+    fontSize: '1.2rem'
   },
   icons: {
     display: "flex",
     justifyContent: "flex-start",
     textAlign: "center",
     marginTop: "10%",
-    backgroundColor: '#DBEEF8',
-    padding: "10px",
+    padding: "5px",
     marginRight: "25px",
     marginLeft: "10px"
   }
