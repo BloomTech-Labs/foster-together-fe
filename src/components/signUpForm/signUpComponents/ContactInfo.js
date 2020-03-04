@@ -6,29 +6,34 @@ import {
   Label,
 } from '../styles/contactInfoStyles'
 
-const ContactInfo = ({ user, changeHandler }) => (
+const ContactInfo = ({
+  user,
+  changeHandler,
+  passwordConfirm,
+  changePasswordConfirm,
+}) => (
   <FormContainer>
     <FormGroup width='49%'>
       <Input
-        id='firstName'
-        name='firstName'
+        id='first_name'
+        name='first_name'
         value={user.first_name}
         placeholder='First Name'
         onChange={changeHandler}
         autoComplete='fname'
       />
-      <Label htmlFor='firstName'>What's your first name?</Label>
+      <Label htmlFor='firstNfirst_nameame'>What's your first name?</Label>
     </FormGroup>
     <FormGroup width='49%'>
       <Input
-        id='lastName'
-        name='lastName'
+        id='last_name'
+        name='last_name'
         placeholder='Last Name'
         value={user.last_name}
         autoComplete='lname'
         onChange={changeHandler}
       />
-      <Label htmlFor='lastName'>What's your last name?</Label>
+      <Label htmlFor='last_name'>What's your last name?</Label>
     </FormGroup>
     <FormGroup width='59%'>
       <Input
@@ -70,11 +75,10 @@ const ContactInfo = ({ user, changeHandler }) => (
         type='password'
         name='confirmPassword'
         placeholder='Confirm Password'
-        value={user.password}
-        autoComplete='password'
-        onChange={changeHandler}
+        value={passwordConfirm}
+        onChange={changePasswordConfirm}
       />
-      <Label htmlFor='password'>
+      <Label htmlFor='confirmPassword'>
         Enter your login password again to make sure it matches the first one
       </Label>
     </FormGroup>

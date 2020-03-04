@@ -49,14 +49,25 @@ export default function SignUp(props) {
   })
 
   function GetStepContent(step) {
+    const [passwordConfirm, setPasswordConfirm] = useState('')
     const changeHandler = e => {
       setUser({ ...user, [e.target.name]: e.target.value })
-      console.log(user)
+    }
+
+    const changePasswordConfirm = e => {
+      setPasswordConfirm(e.target.value)
     }
 
     switch (step) {
       case 0:
-        return <ContactInfo user={user} changeHandler={changeHandler} />
+        return (
+          <ContactInfo
+            user={user}
+            changeHandler={changeHandler}
+            passwordConfirm={passwordConfirm}
+            changePasswordConfirm={changePasswordConfirm}
+          />
+        )
       case 1:
         return <LocationInfo user={user} changeHandler={changeHandler} />
       case 2:
