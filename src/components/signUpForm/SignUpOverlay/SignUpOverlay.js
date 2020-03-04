@@ -161,13 +161,13 @@ export default function SignUp(props) {
           {steps.map((step, index) =>
             activeStep >= index ? (
               <Step>
-                {index > 0 && <ActiveStepConnector />}
-                <ActiveStepLabel>{index + 1}</ActiveStepLabel>
-                <ActiveStepTitle>{step.title}</ActiveStepTitle>
+                {index > 0 && <StepConnector />}
+                <StepLabel active>{index + 1}</StepLabel>
+                <StepTitle active>{step.title}</StepTitle>
               </Step>
             ) : (
               <Step>
-                {index > 0 && <StepConnector />}
+                {index > 0 && <StepConnector active />}
                 <StepLabel>{index + 1}</StepLabel>
                 <StepTitle>{step.title}</StepTitle>
               </Step>
