@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  margin-top: 80px;
+  width: 100%;
+  align-items: baseline;
+  border: black solid 1px;
+}
+
+.for {
+  align-self: flex-start;
+}
+
+.submit {
+  align-self: flex-end;
+}
+
+h3 {
+  font-size: 16px;
+  text-decoration-line: underline;
+  color: #ff8d86;
+}
+
+button {
+  color: #fff;
+  background: #517e92;
+  height: 5.6rem;
+  width: 14rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

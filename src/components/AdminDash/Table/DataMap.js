@@ -3,7 +3,7 @@ const rows = [];
 
 props.Data.map(people => {
     if(people.match_name == undefined){
-    rows.push({"name": `${people.first_name}, ${people.last_name}`, "type": "https://i.pinimg.com/564x/9d/47/93/9d4793cdf76566cee5cb0acabd9aee67.jpg", match: "none", city: people.city})
+    rows.push({"name": `${people.first_name}, ${people.last_name}`, "type": "https://i.pinimg.com/564x/9d/47/93/9d4793cdf76566cee5cb0acabd9aee67.jpg", match: "none", city: people.city, "id": people.id})
     }
     else{
     rows.push({"name": `${people.first_name}, ${people.last_name}`, "type": "family", match: "none", city: people.city})
