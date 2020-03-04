@@ -34,6 +34,8 @@ import ReviewInfo from '../signUpComponents/ReviewInfo'
 export default function SignUp(props) {
   const history = useHistory()
   const [activeStep, setActiveStep] = useState(0)
+  const [passwordConfirm, setPasswordConfirm] = useState('')
+  const [isNeighbor, setIsNeighbor] = useState(true)
   const steps = ['Contact Info', 'Location Info', 'Review']
 
   const [user, setUser] = useState({
@@ -49,7 +51,6 @@ export default function SignUp(props) {
   })
 
   function GetStepContent(step) {
-    const [passwordConfirm, setPasswordConfirm] = useState('')
     const changeHandler = e => {
       setUser({ ...user, [e.target.name]: e.target.value })
     }
@@ -85,15 +86,19 @@ export default function SignUp(props) {
       const phoneno = /^\d{10}$/
       if (!user.phone.match(phoneno)) {
         alert('Please enter a valid phone number')
-      } else {
-        if (!user.email.includes('@' && '.')) {
-          alert('Please enter a valid email')
-        } else {
-          if (user.first_name && user.last_name && user.email && user.phone) {
-            setActiveStep(activeStep + 1)
-          } else alert('Missing a required field')
-        }
-      }
+      } else if (!user.email.includes('@' && '.')) {
+        alert('Please enter a valid email')
+      } else if (user.password !== passwordConfirm) {
+        alert('Password does not match')
+      } else if (
+        user.first_name &&
+        user.last_name &&
+        user.email &&
+        user.phone &&
+        user.password
+      ) {
+        setActiveStep(activeStep + 1)
+      } else alert('Missing a required field')
     }
     if (activeStep === 1) {
       const zip = /^\d{5}$/
@@ -106,17 +111,31 @@ export default function SignUp(props) {
       }
     }
     if (activeStep === 2) {
-      Axios.post(
-        'http://fostertogether-mmaws.us-west-2.elasticbeanstalk.com/api/neighbors/',
-        user
-      )
-        .then(res => {
-          console.log(res)
-          history.push('/dash')
-        })
-        .catch(err => {
-          console.log(err)
-        })
+      if (isNeighbor) {
+        Axios.post(
+          'http://fostertogether-mmaws.us-west-2.elasticbeanstalk.com/api/neighbors/',
+          user
+        )
+          .then(res => {
+            console.log(res)
+            history.push('/dash')
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      } else {
+        Axios.post(
+          'http://fostertogether-mmaws.us-west-2.elasticbeanstalk.com/api/families/',
+          user
+        )
+          .then(res => {
+            console.log(res)
+            history.push('/dash')
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      }
     }
   }
 
