@@ -48,8 +48,9 @@ export default function SignUp(props) {
     state: '',
   })
 
+  const [passwordConfirm, setPasswordConfirm] = useState('')
+
   function GetStepContent(step) {
-    const [passwordConfirm, setPasswordConfirm] = useState('')
     const changeHandler = e => {
       setUser({ ...user, [e.target.name]: e.target.value })
     }
@@ -85,15 +86,19 @@ export default function SignUp(props) {
       const phoneno = /^\d{10}$/
       if (!user.phone.match(phoneno)) {
         alert('Please enter a valid phone number')
-      } else {
-        if (!user.email.includes('@' && '.')) {
-          alert('Please enter a valid email')
-        } else {
-          if (user.first_name && user.last_name && user.email && user.phone) {
-            setActiveStep(activeStep + 1)
-          } else alert('Missing a required field')
-        }
-      }
+      } else if (!user.email.includes('@' && '.')) {
+        alert('Please enter a valid email')
+      } else if (user.password !== passwordConfirm) {
+        alert('Password does not match')
+      } else if (
+        user.first_name &&
+        user.last_name &&
+        user.email &&
+        user.phone &&
+        user.password
+      ) {
+        setActiveStep(activeStep + 1)
+      } else alert('Missing a required field')
     }
     if (activeStep === 1) {
       const zip = /^\d{5}$/
