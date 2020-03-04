@@ -7,7 +7,6 @@ position: relative;
 text-align: left;
 font-size: 3rem;
 width: 70%;
-border-top: 30px solid #C4C4C4;
 margin-left: 7%;
 top: 30px;
 margin-bottom: 3%;

@@ -27,7 +27,7 @@ export const Styles = styled.div`
     td {
       margin: auto;
       text-align: left;
-      min-width: 120px;
+      min-width: 180px;
       padding: 0.5rem;
       border-bottom: 1px solid grey;
 

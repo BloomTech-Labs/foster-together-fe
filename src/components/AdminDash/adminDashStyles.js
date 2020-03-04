@@ -6,6 +6,7 @@ export const useAdminDashStyle = makeStyles(theme => ({
     alignItems: 'center',
     marginLeft: "10%",
     backgroundColor: 'white',
+    height: 'auto',
     minHeight: '100vh',
     width: '90%',
     maxWidth: '10000px'
@@ -17,7 +18,7 @@ export const useAdminDashStyle = makeStyles(theme => ({
     left: '0vw',
     top: '5vh',
     backgroundColor: 'lightgrey',
-    height: '50vh',
+    height: '20vh',
     width: '75vw',
     borderRadius: '5px',
   },
@@ -32,7 +33,7 @@ export const useAdminDashStyle = makeStyles(theme => ({
   leftSelect: {
     position: 'fixed',
     left: '0',
-    backgroundColor: ' #848484',
+    backgroundColor: ' white',
     height: '100vh',
     width: '14vw',
     minWidth: "80px",

@@ -1,9 +1,8 @@
 import React from 'react'
-import { useTable, useSortBy } from "react-table"
+import { useTable, useSortBy, useRowSelect } from "react-table"
 
 
 export default function Table({ columns, data }) {
-
     const {
       getTableProps,
       getTableBodyProps,
@@ -18,7 +17,7 @@ export default function Table({ columns, data }) {
       useSortBy
     );
 
-    const firstPageRows = rows.slice(0, 10)
+    const firstPageRows = rows.slice(0, 15)
     
     return (
       <div className="tableContain">
@@ -41,7 +40,7 @@ export default function Table({ columns, data }) {
               </tr>
             ))}
           </thead>
-          <tbody>
+          <tbody {...getTableBodyProps()}>
             {firstPageRows.map(
               row => {
                 prepareRow(row);
