@@ -9,7 +9,8 @@
     "@okta/okta-react": "^2.0.0",
     "@okta/okta-signin-widget": "^3.8.0",
     "@reduxjs/toolkit": "^1.2.5",
-    "@sentry/browser": "^5.13.0",
+    "@sentry/browser": "^5.12.4",
+    "animate-components": "^1.4.8",
     "axios": "^0.19.2",
     "history": "^4.10.1",
     "node-sass": "^4.13.1",
@@ -19,8 +20,10 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
+    "react-table": "^7.0.0-rc.16",
     "react-stepper-horizontal": "^1.0.11",
     "sass": "^1.26.2",
+
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
@@ -36,6 +39,12 @@
     "coverage": "CI=true yarn test --coverage || true",
     "eject": "react-scripts eject",
     "heroku-prebuild": "npm install --only=dev"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
