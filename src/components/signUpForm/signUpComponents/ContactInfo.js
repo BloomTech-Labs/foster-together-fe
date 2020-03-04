@@ -56,10 +56,11 @@ const ContactInfo = ({ user, changeHandler }) => (
       <FormGroup>
         <Input
           id='password'
+          type='password'
           name='password'
           placeholder='Password'
-          value={user.phone}
-          autoComplete='phone'
+          value={user.password}
+          autoComplete='password'
           onChange={changeHandler}
         />
         <Label htmlFor='password'>Enter your login password</Label>
@@ -70,7 +71,7 @@ const ContactInfo = ({ user, changeHandler }) => (
           type='password'
           name='confirmPassword'
           placeholder='Confirm Password'
-          value={user.phone}
+          value={user.password}
           autoComplete='password'
           onChange={changeHandler}
         />

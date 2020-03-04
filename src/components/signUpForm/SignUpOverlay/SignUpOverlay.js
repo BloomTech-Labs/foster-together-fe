@@ -172,7 +172,7 @@ export default function SignUp(props) {
                 {activeStep !== 0 && (
                   <BackBtn onClick={handleBack}>Back</BackBtn>
                 )}
-                <NextBtn>
+                <NextBtn onClick={handleNext}>
                   {activeStep === steps.length - 1 ? 'Confirm' : 'Next'}
                 </NextBtn>
               </BtnContainer>
