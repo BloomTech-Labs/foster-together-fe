@@ -38,7 +38,7 @@
     "watch": "react-scripts test --watchAll",
     "coverage": "CI=true yarn test --coverage || true",
     "eject": "react-scripts eject",
-    "heroku-prebuild": "npm install --only=dev",
+    "heroku-prebuild": "npm install --only=dev"
   },
   "jest": {
     "collectCoverageFrom": [
