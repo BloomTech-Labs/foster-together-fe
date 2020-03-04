@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTable, useSortBy, useRowSelect } from "react-table"
+import { TableContain } from '../adminDashStyles'
 
 
 export default function Table({ columns, data }) {

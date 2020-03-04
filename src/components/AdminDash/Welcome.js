@@ -5,7 +5,7 @@ import { BounceRight } from 'animate-components'
 const WelcomeDiv = styled.div`
 position: relative;
 text-align: left;
-font-size: 3rem;
+font-size: 4rem;
 width: 70%;
 margin-left: 7%;
 top: 30px;
