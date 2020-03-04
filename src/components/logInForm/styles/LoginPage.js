@@ -53,17 +53,17 @@ export const Submit = styled.button`
 `
 
 export const BtnContainer = styled.div`
-  display:flex
-  flex-flow: row no wrap
+  display: flex;
+  flex-flow: row nowrap;
   margin-top: 80px;
   width: 100%;
   align-items: baseline;
-
 `
 
 export const Btn = styled.div`
   display: flex;
   justify-content: flex-end;
+  width: 50%;
 `
 
 export const Forgot = styled.h3`
@@ -75,4 +75,5 @@ export const Forgot = styled.h3`
 export const ForContainer = styled.div`
   display: flex;
   justify-content: flex-start;
+  width: 50%;
 `
