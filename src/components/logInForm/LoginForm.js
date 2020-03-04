@@ -27,6 +27,8 @@ import {
   Forgot,
   ForContainer,
 } from './styles/LoginPage'
+import { axiosWithBaseURL } from '../../../Auth/axiosWithBaseUrl'
+import axios from 'axios'
 
 const LoginForm = props => {
   const history = useHistory()
@@ -61,6 +63,12 @@ const LoginForm = props => {
   const handleToggle = (e, newValue) => {
     setValue(newValue)
   }
+  const onSubmit = e => {
+    e.preventDefault()
+    axios.post(axiosWithBaseURL('./admins/login'), values).then(response => {
+      localStorage.setItem('token', response.data.token)
+    })
+  }
 
   return (
     <Container>
@@ -87,7 +95,7 @@ const LoginForm = props => {
             <span>Register</span>
           </Tab>
         </TabContainer>
-        <InputContainer>
+        <InputContainer onSubmit={onSubmit}>
           <InputBox>
             <Input
               variant='filled'
