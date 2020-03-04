@@ -41,6 +41,7 @@ export default function SignUp(props) {
     last_name: '',
     phone: '',
     email: '',
+    password: '',
     address: '',
     city: '',
     zip: '',
@@ -48,14 +49,25 @@ export default function SignUp(props) {
   })
 
   function GetStepContent(step) {
+    const [passwordConfirm, setPasswordConfirm] = useState('')
     const changeHandler = e => {
       setUser({ ...user, [e.target.name]: e.target.value })
-      console.log(user)
+    }
+
+    const changePasswordConfirm = e => {
+      setPasswordConfirm(e.target.value)
     }
 
     switch (step) {
       case 0:
-        return <ContactInfo user={user} changeHandler={changeHandler} />
+        return (
+          <ContactInfo
+            user={user}
+            changeHandler={changeHandler}
+            passwordConfirm={passwordConfirm}
+            changePasswordConfirm={changePasswordConfirm}
+          />
+        )
       case 1:
         return <LocationInfo user={user} changeHandler={changeHandler} />
       case 2:
@@ -77,7 +89,7 @@ export default function SignUp(props) {
         if (!user.email.includes('@' && '.')) {
           alert('Please enter a valid email')
         } else {
-          if (user.firstName && user.lastName && user.email && user.phone) {
+          if (user.first_name && user.last_name && user.email && user.phone) {
             setActiveStep(activeStep + 1)
           } else alert('Missing a required field')
         }
@@ -172,7 +184,7 @@ export default function SignUp(props) {
                 {activeStep !== 0 && (
                   <BackBtn onClick={handleBack}>Back</BackBtn>
                 )}
-                <NextBtn>
+                <NextBtn onClick={handleNext}>
                   {activeStep === steps.length - 1 ? 'Confirm' : 'Next'}
                 </NextBtn>
               </BtnContainer>

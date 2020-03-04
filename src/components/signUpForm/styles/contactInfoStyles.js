@@ -29,4 +29,15 @@ export const Label = styled.label`
   margin: 4px 10px;
 `
 
-export const FirstName = styled.div``
+export const Select = styled.select`
+  height: 5.6rem;
+  font-size: 1.6rem;
+  background: #f9f9f9;
+  border: none;
+  border-bottom: 1px solid #a1a1a1;
+  padding: 10px;
+`
+
+export const Option = styled.option`
+  font-size: 1.6rem;
+`
