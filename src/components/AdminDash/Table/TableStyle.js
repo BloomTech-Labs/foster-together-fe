@@ -19,9 +19,11 @@ export const Styles = styled.div`
     th {
       background-color: #517E92;
       color: white;
+      font-size: 2rem;
     }
     td {
-      color: "#5580AA"
+      color: "#5580AA";
+      font-size: 1.6rem;
     }
     th,
     td {

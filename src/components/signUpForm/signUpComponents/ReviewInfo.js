@@ -3,7 +3,7 @@ import React from 'react'
 const ReviewInfo = ({ user }) => (
   <div>
     <h3>
-      Name: {user.firstName} {user.lastName}{' '}
+      Name: {user.first_name} {user.last_name}{' '}
     </h3>
     <h3>Phone: {user.phone} </h3>
     <h3> Email: {user.email}</h3>
