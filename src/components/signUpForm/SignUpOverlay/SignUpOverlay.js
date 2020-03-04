@@ -14,15 +14,11 @@ import {
   BackArrow,
   TabContainer,
   Tab,
-  ActiveTab,
   Stepper,
   Step,
   StepLabel,
-  ActiveStepLabel,
   StepTitle,
-  ActiveStepTitle,
   StepConnector,
-  ActiveStepConnector,
   BtnContainer,
   BackBtn,
   NextBtn,
@@ -38,11 +34,7 @@ import ReviewInfo from '../signUpComponents/ReviewInfo'
 export default function SignUp(props) {
   const history = useHistory()
   const [activeStep, setActiveStep] = useState(0)
-  const steps = [
-    { title: 'Contact Info' },
-    { title: 'Location Info' },
-    { title: 'Review' },
-  ]
+  const steps = ['Contact Info', 'Location Info', 'Review']
 
   const [user, setUser] = useState({
     first_name: '',
@@ -145,7 +137,7 @@ export default function SignUp(props) {
           </Instructions>
         </div>
         <BackArrow>
-          <img src={backArrow} />
+          <img src={backArrow} alt='Back arrow icon' />
         </BackArrow>
       </Sidebar>
       <MainContent>
@@ -153,26 +145,22 @@ export default function SignUp(props) {
           <Tab onClick={() => history.push('/login')}>
             <span>Log In</span>
           </Tab>
-          <ActiveTab>
+          <Tab active>
             <span>Register</span>
-          </ActiveTab>
+          </Tab>
         </TabContainer>
         <Stepper>
-          {steps.map((step, index) =>
-            activeStep >= index ? (
+          {steps.map((step, index) => {
+            // returns true or false and determines the color of the step
+            const active = activeStep >= index
+            return (
               <Step>
-                {index > 0 && <ActiveStepConnector />}
-                <ActiveStepLabel>{index + 1}</ActiveStepLabel>
-                <ActiveStepTitle>{step.title}</ActiveStepTitle>
-              </Step>
-            ) : (
-              <Step>
-                {index > 0 && <StepConnector />}
-                <StepLabel>{index + 1}</StepLabel>
-                <StepTitle>{step.title}</StepTitle>
+                {index > 0 && <StepConnector active={active} />}
+                <StepLabel active={active}>{index + 1}</StepLabel>
+                <StepTitle active={active}>{step}</StepTitle>
               </Step>
             )
-          )}
+          })}
         </Stepper>
         <>
           {activeStep === steps.length ? (
@@ -184,11 +172,7 @@ export default function SignUp(props) {
                 {activeStep !== 0 && (
                   <BackBtn onClick={handleBack}>Back</BackBtn>
                 )}
-                <NextBtn
-                  variant='contained'
-                  color='primary'
-                  onClick={handleNext}
-                >
+                <NextBtn>
                   {activeStep === steps.length - 1 ? 'Confirm' : 'Next'}
                 </NextBtn>
               </BtnContainer>
