@@ -9,6 +9,7 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
 import { initGA, PageView } from './Analytics'
 
+
 function onAuthRequired({ history }) {
   history.push('/login')
 }
@@ -18,6 +19,7 @@ function App() {
     PageView()
   }, [])
   return (
+
     <Security
       issuer='https://dev-529730.okta.com/oauth2/default'
       clientId='0oa2lku5jYtkeMkYg4x6'
@@ -36,6 +38,7 @@ function App() {
         <Route path='/implicit/callback' component={ImplicitCallback} />
       </ThemeProvider>
     </Security>
+
   )
 }
 
