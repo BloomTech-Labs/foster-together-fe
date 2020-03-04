@@ -66,16 +66,14 @@ export const Tab = styled.div`
   align-items: center;
   width: 10rem;
   height: 5rem;
-  color: ${({ theme: { palette } }) => palette.primary.light};
-  border-bottom: ${({ theme: { palette } }) =>
-    `5px solid ${palette.primary.light}`};
-`
-
-export const ActiveTab = styled(Tab)`
-  color: ${({ theme: { palette } }) => palette.primary.main};
-  border-bottom: ${({ theme: { palette } }) =>
-    `5px solid ${palette.primary.main}`};
-  font-weight: bold;
+  color: ${props =>
+    props.active
+      ? ({ theme: { palette } }) => palette.primary.main
+      : ({ theme: { palette } }) => palette.primary.light};
+  border-bottom: ${props =>
+    props.active
+      ? ({ theme: { palette } }) => `5px solid ${palette.primary.main}`
+      : ({ theme: { palette } }) => `5px solid ${palette.primary.light}`};
 `
 
 export const Stepper = styled.div`
@@ -107,10 +105,6 @@ export const StepLabel = styled.div`
   margin-right: 8px;
 `
 
-export const ActiveStepLabel = styled(StepLabel)`
-  background: ${({ theme: { palette } }) => palette.secondary.main};
-`
-
 export const StepTitle = styled.div`
   color: ${props =>
     props.active
@@ -119,21 +113,13 @@ export const StepTitle = styled.div`
   font-size: 1.6rem;
 `
 
-export const ActiveStepTitle = styled(StepTitle)`
-  color: ${({ theme: { palette } }) => palette.secondary.main};
-`
-
 export const StepConnector = styled.div`
   width: 60px;
-  border-bottom: 1px solid #a1a1a1;
-  margin: 0 8px;
-`
-
-export const ActiveStepConnector = styled(StepConnector)`
   border-bottom: ${props =>
     props.active
       ? ({ theme: { palette } }) => `1px solid ${palette.secondary.main}`
       : '1px solid #a1a1a1'};
+  margin: 0 8px;
 `
 
 export const BtnContainer = styled.div`
