@@ -1,101 +1,84 @@
 import React from 'react'
 import {
-  Typography,
-  Grid,
-  TextField,
-  InputLabel,
-  Select,
-  MenuItem,
-} from '@material-ui/core'
+  FormContainer,
+  FormGroup,
+  Input,
+  Label,
+} from '../styles/contactInfoStyles'
 
 const ContactInfo = ({ user, changeHandler }) => (
   <>
-    <Grid container spacing={3}>
-      <Grid item xs={12} sm={6}>
-        <InputLabel htmlFor='firstName'>First Name</InputLabel>
-        <TextField
-          required
+    <FormContainer>
+      <FormGroup width='49%'>
+        <Input
           id='firstName'
           name='firstName'
           value={user.firstName}
-          placeholder='Type first name here'
-          variant='filled'
-          fullWidth
+          placeholder='First Name'
           onChange={changeHandler}
+          autoComplete='fname'
         />
-      </Grid>
-      <Grid item xs={12} sm={6}>
-        <InputLabel htmlFor='lastName'>Last Name</InputLabel>
-        <TextField
-          required
+        <Label htmlFor='firstName'>What's your first name?</Label>
+      </FormGroup>
+      <FormGroup width='49%'>
+        <Input
           id='lastName'
           name='lastName'
-          placeholder='Type last name here'
-          variant='filled'
+          placeholder='Last Name'
           value={user.lastName}
-          fullWidth
           autoComplete='lname'
           onChange={changeHandler}
         />
-      </Grid>
-      <Grid item xs={12} sm={12} md={6}>
-        <InputLabel htmlFor='email'>Email</InputLabel>
-        <TextField
-          required
+        <Label htmlFor='lastName'>What's your last name?</Label>
+      </FormGroup>
+      <FormGroup width='59%'>
+        <Input
           id='Email'
           name='email'
           placeholder='Email'
-          variant='filled'
           value={user.email}
-          fullWidth
           autoComplete='email'
           onChange={changeHandler}
         />
-      </Grid>
-      <Grid item xs={12} sm={12} md={6}>
-        <InputLabel htmlFor='phone'>Phone</InputLabel>
-        <TextField
-          required
+        <Label htmlFor='email'>Enter your email here</Label>
+      </FormGroup>
+      <FormGroup width='39%'>
+        <Input
           id='phone'
           name='phone'
           placeholder='Phone Number'
-          variant='filled'
           value={user.phone}
-          fullWidth
           autoComplete='phone'
           onChange={changeHandler}
         />
-      </Grid>
-      <Grid item xs={12}>
-        <InputLabel htmlFor='password'>Password</InputLabel>
-        <TextField
-          required
+        <Label htmlFor='phone'>Your 10-digit phone number</Label>
+      </FormGroup>
+      <FormGroup>
+        <Input
           id='password'
           name='password'
           placeholder='Password'
-          variant='filled'
           value={user.phone}
-          fullWidth
           autoComplete='phone'
           onChange={changeHandler}
         />
-      </Grid>
-      <Grid item xs={12}>
-        <InputLabel htmlFor='password'>Confirm Password</InputLabel>
-        <TextField
-          required
+        <Label htmlFor='password'>Enter your login password</Label>
+      </FormGroup>
+      <FormGroup>
+        <Input
           id='confirmPassword'
           type='password'
           name='confirmPassword'
           placeholder='Confirm Password'
-          variant='filled'
           value={user.phone}
-          fullWidth
           autoComplete='password'
           onChange={changeHandler}
         />
-      </Grid>
-    </Grid>
+        <Label htmlFor='password'>
+          Enter your login password again to make sure it matches the first one
+        </Label>
+      </FormGroup>
+    </FormContainer>
   </>
 )
 
