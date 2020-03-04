@@ -112,6 +112,7 @@ export default function SignUp(props) {
       )
         .then(res => {
           console.log(res)
+          history.push('/dash')
         })
         .catch(err => {
           console.log(err)
