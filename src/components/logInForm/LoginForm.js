@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles'
-import { TextField } from '@material-ui/core'
 import OktaAuth from '@okta/okta-auth-js'
 import {
   Container,
@@ -27,7 +25,7 @@ import {
   Forgot,
   ForContainer,
 } from './styles/LoginPage'
-import { axiosWithBaseURL } from '../../../Auth/axiosWithBaseUrl'
+import { axiosWithBaseURL } from '../../Auth/axiosWithBaseUrl'
 import axios from 'axios'
 
 const LoginForm = props => {
@@ -65,9 +63,13 @@ const LoginForm = props => {
   }
   const onSubmit = e => {
     e.preventDefault()
-    axios.post(axiosWithBaseURL('./admins/login'), values).then(response => {
-      localStorage.setItem('token', response.data.token)
-    })
+    axiosWithBaseURL
+      .post('admins/login', values)
+      .then(response => {
+        localStorage.setItem('token', response.data.token)
+        props.history.push('/dash')
+      })
+      .catch(err => console.error(err))
   }
 
   return (
@@ -95,11 +97,9 @@ const LoginForm = props => {
             <span>Register</span>
           </Tab>
         </TabContainer>
-        <InputContainer onSubmit={onSubmit}>
+        <InputContainer onSubmit={onSubmit} handleSubmit={handleSubmit}>
           <InputBox>
             <Input
-              variant='filled'
-              margin='normal'
               required
               fullWidth
               id='email'
@@ -114,10 +114,6 @@ const LoginForm = props => {
           </InputBox>
           <InputBox>
             <Input
-              variant='filled'
-              margin='normal'
-              required
-              fullWidth
               placeholder='Password'
               name='password'
               label='Password'
@@ -134,7 +130,7 @@ const LoginForm = props => {
               <Forgot>I forgot my password</Forgot>
             </ForContainer>
             <Btn>
-              <Submit>Submit</Submit>
+              <Submit handleSubmit={handleSubmit}>Submit</Submit>
             </Btn>
           </BtnContainer>
         </InputContainer>

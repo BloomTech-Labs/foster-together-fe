@@ -23,7 +23,7 @@ export const InputBox = styled.div`
   margin-bottom: 20px;
 `
 
-export const Input = styled.div`
+export const Input = styled.input`
   height: 5.6rem;
   font-size: 1.6rem;
   background: #f9f9f9;
