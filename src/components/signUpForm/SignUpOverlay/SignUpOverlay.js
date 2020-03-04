@@ -95,7 +95,7 @@ export default function SignUp(props) {
     }
     if (activeStep === 2) {
       Axios.post(
-        'https://foster-together-back.herokuapp.com/api/neighbors',
+        'http://fostertogether-mmaws.us-west-2.elasticbeanstalk.com/api/neighbors/',
         user
       )
         .then(res => {
