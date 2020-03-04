@@ -41,6 +41,7 @@ export default function SignUp(props) {
     last_name: '',
     phone: '',
     email: '',
+    password: '',
     address: '',
     city: '',
     zip: '',
@@ -77,7 +78,7 @@ export default function SignUp(props) {
         if (!user.email.includes('@' && '.')) {
           alert('Please enter a valid email')
         } else {
-          if (user.firstName && user.lastName && user.email && user.phone) {
+          if (user.first_name && user.last_name && user.email && user.phone) {
             setActiveStep(activeStep + 1)
           } else alert('Missing a required field')
         }

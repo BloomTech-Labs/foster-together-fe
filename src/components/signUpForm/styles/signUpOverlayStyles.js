@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   margin: 10vh auto;
+  border-radius: 10px;
   background: #fff;
   min-height: 80vh;
   width: 80%;
