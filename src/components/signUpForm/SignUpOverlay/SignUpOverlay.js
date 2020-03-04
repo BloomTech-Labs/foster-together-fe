@@ -34,6 +34,8 @@ import ReviewInfo from '../signUpComponents/ReviewInfo'
 export default function SignUp(props) {
   const history = useHistory()
   const [activeStep, setActiveStep] = useState(0)
+  const [passwordConfirm, setPasswordConfirm] = useState('')
+  const [isNeighbor, setIsNeighbor] = useState(true)
   const steps = ['Contact Info', 'Location Info', 'Review']
 
   const [user, setUser] = useState({
@@ -47,8 +49,6 @@ export default function SignUp(props) {
     zip: '',
     state: '',
   })
-
-  const [passwordConfirm, setPasswordConfirm] = useState('')
 
   function GetStepContent(step) {
     const changeHandler = e => {
@@ -111,17 +111,31 @@ export default function SignUp(props) {
       }
     }
     if (activeStep === 2) {
-      Axios.post(
-        'http://fostertogether-mmaws.us-west-2.elasticbeanstalk.com/api/neighbors/',
-        user
-      )
-        .then(res => {
-          console.log(res)
-          history.push('/dash')
-        })
-        .catch(err => {
-          console.log(err)
-        })
+      if (isNeighbor) {
+        Axios.post(
+          'http://fostertogether-mmaws.us-west-2.elasticbeanstalk.com/api/neighbors/',
+          user
+        )
+          .then(res => {
+            console.log(res)
+            history.push('/dash')
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      } else {
+        Axios.post(
+          'http://fostertogether-mmaws.us-west-2.elasticbeanstalk.com/api/families/',
+          user
+        )
+          .then(res => {
+            console.log(res)
+            history.push('/dash')
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      }
     }
   }
 
