@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import Axios from 'axios'
+import axiosWithBaseURL from '../../../Auth/axiosWithBaseUrl'
 import { PageView } from '../../../Analytics'
 //styled components
 import {
@@ -112,10 +112,8 @@ export default function SignUp(props) {
     }
     if (activeStep === 2) {
       if (isNeighbor) {
-        Axios.post(
-          'http://fostertogether-mmaws.us-west-2.elasticbeanstalk.com/api/neighbors/',
-          user
-        )
+        axiosWithBaseURL()
+          .post('/neighbors', user)
           .then(res => {
             console.log(res)
             history.push('/dash')
@@ -124,10 +122,8 @@ export default function SignUp(props) {
             console.log(err)
           })
       } else {
-        Axios.post(
-          'http://fostertogether-mmaws.us-west-2.elasticbeanstalk.com/api/families/',
-          user
-        )
+        axiosWithBaseURL()
+          .post('/families', user)
           .then(res => {
             console.log(res)
             history.push('/dash')
@@ -196,7 +192,7 @@ export default function SignUp(props) {
         </Stepper>
         <>
           {activeStep === steps.length ? (
-            props.history.push('/home')
+            history.push('/home')
           ) : (
             <>
               {GetStepContent(activeStep)}
