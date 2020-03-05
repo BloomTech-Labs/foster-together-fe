@@ -7,11 +7,18 @@ import {
   Nav,
   Tab,
   Utilities,
-  BtnImg,
+  IconContainer,
+  PulseContainer,
 } from './NavigationStyles'
-import { People, Map, DashboardIcon } from '../AdminDashPics/icons'
+import {
+  People,
+  Map,
+  DashboardIcon,
+  Pulse,
+  UserShield,
+} from '../AdminDashPics/icons'
 
-export default function Navigation() {
+export default function Navigation(props) {
   const location = useLocation()
 
   return (
@@ -34,7 +41,12 @@ export default function Navigation() {
         </Tab>
       </Nav>
       <Utilities>
-        <BtnImg src={require('../AdminDashPics/user-inactive.svg')} />
+        <PulseContainer>
+          <Pulse color='#E2EDEC' />
+        </PulseContainer>
+        <IconContainer>
+          <UserShield color='#E2EDEC' />
+        </IconContainer>
       </Utilities>
     </NavBar>
   )

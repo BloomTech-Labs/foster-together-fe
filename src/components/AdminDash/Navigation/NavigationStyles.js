@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import activeTab from '../AdminDashPics/active-tab.svg'
+import circle from '../AdminDashPics/circle.svg'
 
 export const NavBar = styled.div`
   background: ${({ theme: { palette } }) => palette.primary.main};
@@ -35,24 +36,39 @@ export const Tab = styled.div`
   justify-content: space-evenly;
   align-items: center;
   color: ${props =>
-    props.active ? '#fff' : ({ theme: { palette } }) => palette.primary.light};
+    props.active
+      ? '#E2EDEC'
+      : ({ theme: { palette } }) => palette.primary.light};
   background-image: ${props => (props.active ? `url(${activeTab})` : 'none')};
   background-position: center bottom;
   background-repeat: no-repeat;
 
   &:hover {
-    color: #fff;
+    color: #e2edec;
     cursor: pointer;
   }
 `
 
 export const Utilities = styled.div`
   display: flex;
+  justify-content: space-between;
   padding-right: 40px;
+  width: 12rem;
 `
-
 export const BtnImg = styled.img`
   &:hover {
     cursor: pointer;
   }
+`
+
+export const IconContainer = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const PulseContainer = styled(IconContainer)`
+  background-image: url(${circle});
+  background-repeat: no-repeat;
+  background-position: right top;
 `
