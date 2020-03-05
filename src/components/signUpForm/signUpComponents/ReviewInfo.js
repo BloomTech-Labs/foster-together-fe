@@ -5,7 +5,12 @@ import {
   BtnContainer,
   Reviewtextone,
   CityStateZip,
+  Input,
+  Label,
+  InputArea,
+  Span,
 } from '../styles/reviewStyles'
+
 const ReviewInfo = ({ user }) => (
   <div>
     <p>Almost Done! Does this information look correct to you?</p>
@@ -20,7 +25,7 @@ const ReviewInfo = ({ user }) => (
       <CityStateZip>
         <p>{user.address},</p>
         <p>
-          {user.city}, {user.state}
+          {user.city}, {user.state} &nbsp;
           {user.zip}
         </p>
       </CityStateZip>
@@ -30,14 +35,16 @@ const ReviewInfo = ({ user }) => (
       Family?
     </p>
     <BtnContainer>
-      <div>
-        <input type='radio' name='type' id='families' value='families' />
-        <label for='families'>Family</label>
-      </div>
-      <div>
-        <input type='radio' name='type' id='neighbors' value='neighbors' />
-        <label for='neighbors'>Neighbor</label>
-      </div>
+      <InputArea>
+        <Input type='radio' name='type' id='families' value='families' />
+        <Label for='families'>Family</Label>
+        <Span />
+      </InputArea>
+      <InputArea>
+        <Input type='radio' name='type' id='neighbors' value='neighbors' />
+        <Label for='neighbors'>Neighbor</Label>
+        <Span />
+      </InputArea>
     </BtnContainer>
   </div>
 )
