@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const DashContainer = styled.div`
   align-items: center;
-  background-color: white;
   min-height: 100vh;
+  margin: 0 32px;
 `
 
 export const TableContain = styled.div`
