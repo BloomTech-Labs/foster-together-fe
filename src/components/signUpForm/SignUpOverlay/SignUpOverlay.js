@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import axiosWithBaseURL from '../../../Auth/axiosWithBaseUrl'
+import { axiosWithBaseURL } from '../../../Auth/axiosWithBaseUrl'
 import { PageView } from '../../../Analytics'
 //styled components
 import {
