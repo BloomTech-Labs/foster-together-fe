@@ -40,13 +40,9 @@ export default function Distance(props) {
   return (
     <>
       {/* <AdminHeader /> */}
-      <LeftMenu />
+      <LeftMenu routing = {props}/>
       <DashContainer>
         <Welcome />
-        <Updates>
-          <h1 style={{ margin: "0", color: "black" }}>Updates</h1>
-          <p>FUTURE RELEASE</p>
-        </Updates>
         <TaskBar />
         <TableContain>
             <NeighborTable

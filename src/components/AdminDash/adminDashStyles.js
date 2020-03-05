@@ -5,17 +5,6 @@ export const DashContainer = styled.div`
     background-color: white;
     min-height: 100vh;
   `
-  export const Updates = styled.div`
-    padding: 0;
-    text-align: center;
-    position: relative;
-    left: 0vw;
-    top: 5vh;
-    background-color: lightgrey;
-    height: 20vh;
-    width: 75vw;
-    border-radius: 5px;
-    `
 
     export const TableContain = styled.div`
     position: relative;

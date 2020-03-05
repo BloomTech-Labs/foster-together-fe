@@ -9,26 +9,22 @@ const TaskBar = () => {
     {
       id: 1,
       description: "Volunteer applications to review.",
-      number: 12,
-      icon: People
+      number: 12
     },
     {
       id: 2,
       description: "Background checks awaiting confirmation",
-      number: 23,
-      icon: People
+      number: 23
     },
     {
       id: 3,
       description: "Volunteers ready to match",
-      number: 6,
-      icon: People
+      number: 6
     },
     {
       id: 4,
       description: "Families needing to be matched to a neighbor",
-      number: 2,
-      icon: People
+      number: 2
     }
   ]);
   return (

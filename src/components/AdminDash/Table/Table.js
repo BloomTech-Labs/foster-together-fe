@@ -21,7 +21,7 @@ export default function Table( { columns, data, props }) {
     const firstPageRows = rows.slice(0, 15)
     
     return (
-      <div className="tableContain">
+      <TableContain>
         <table {...getTableProps()}>
           <thead>
             {headerGroups.map(headerGroup => (
@@ -59,6 +59,6 @@ export default function Table( { columns, data, props }) {
           </tbody>
         </table>
         <br />
-      </div>
+      </TableContain>
     );
   }
