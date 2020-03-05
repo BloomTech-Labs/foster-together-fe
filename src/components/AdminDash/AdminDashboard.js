@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import axiosWithBaseURL from '../../Auth/axiosWithBaseUrl'
+import { axiosWithBaseURL } from '../../Auth/axiosWithBaseUrl'
 import NeighborTable from './Table/NeighborTable'
 import { PageView } from '../../Analytics'
 import AdminHeader from './AdminHeader'

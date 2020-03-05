@@ -6,34 +6,29 @@
 
 # Foster Together
 
-You can find the deployed project at [Heroku](https://foster-together-fe.herokuapp.com/).
+You can find the deployed project at [AWS](https://app.fostertogether.co/signup).
 
-## 4️⃣ Contributors
+## Contributors
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
-
-|                                       [Steve Dole](https://github.com/stevedole808)                                        |                                       [Michelangelo Markus](https://github.com/michelangelo17)                                        |                                       [Brendan Schatz](https://github.com/bschatz)                                        |                                       [Bianca Severino](https://github.com/bseverino)                                        |                                       [Jarrod Skahill](https://github.com/jarrod847)                                        |
+|                                       [Steve Dole](https://github.com/stevedole808)                                        |                                       [Michelangelo Markus](https://github.com/michelangelo17)                                        |                                       [Brendan Schatz](https://github.com/bschatzj)                                        |                                       [Bianca Severino](https://github.com/bseverino)                                        |                                       [Jarrod Skahill](https://github.com/jarrod847)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://avatars2.githubusercontent.com/u/56047787?s=460&v=4" width = "150" />](https://github.com/stevedole808)                       |                      [<img src="https://avatars3.githubusercontent.com/u/13295777?s=460&v=4" width = "150" />](https://github.com/michelangelo17)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "150" />](https://github.com/bschatz)                       |                      [<img src="https://avatars0.githubusercontent.com/u/10442143?s=460&v=4" width = "150" />](https://github.com/bseverino)                       |                      [<img src="https://avatars0.githubusercontent.com/u/54871000?s=460&v=4" width = "150" />](https://github.com/jarrod847)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/stevedole808)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/michelangelo17)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/bschatz)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/bseverino)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jarrod847)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+|                      [<img src="https://avatars2.githubusercontent.com/u/56047787?s=460&v=4" width = "150" />](https://github.com/stevedole808)                       |                      [<img src="https://avatars3.githubusercontent.com/u/13295777?s=460&v=4" width = "150" />](https://github.com/michelangelo17)                       |                      [<img src="https://avatars1.githubusercontent.com/u/52711762?s=460&v=4" width = "150" />](https://github.com/bschatzj)                       |                      [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQGmiKEkrD7QJA/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=00HFvO7R1K2lozKvqNi3H4pPwY4VOTUq_ftHoIL-SDk" width = "150" />](https://github.com/bseverino)                       |                      [<img src="https://avatars0.githubusercontent.com/u/54871000?s=460&v=4" width = "150" />](https://github.com/jarrod847)                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/stevedole808)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/michelangelo17)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/bschatzj)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/bseverino)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jarrod847)             |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/steve-dole-a7a560189) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/michelangelo-markus) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/brendan-schatz-ba7b1a191) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/biancasev) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jarrod-skahill-561059197) |
 
-|                                       Khadijatu Deen Karim                                        |                                       Marc Dandoy                                       |                                       Frantz Audige                                        |                                       [Stacy Williams](https://github.com/StacyWilliams)                                        |
+|                                       [Khadijatu Deen Karim](https://github.com/dijahdeen)                                        |                                       [Marc Dandoy](https://www.linkedin.com/in/marcdandoy)                                       |                                       [Frantz Audige](https://www.linkedin.com/in/frantz-eder-audige)                                        |                                       [Stacy Williams](https://github.com/StacyWilliams)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "150" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "150" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "150" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "150" />](https://github.com/)                       |                                             |                                             |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)            |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/StacyWilliams)                 |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+|                      [<img src="https://avatars3.githubusercontent.com/u/54092509?s=460&v=4" width = "150" />](https://github.com/dijahdeen)                       |                      [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQEyPGfJEt5rgw/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=_cmfqOqrQzTxLdZJjbn1O7YNmc6jhhX266SjNUUhi_g" width = "150" />](https://www.linkedin.com/in/marcdandoy)                       |                      [<img src="https://media-exp1.licdn.com/dms/image/C4D03AQFthDsGWIUlcA/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=eGN2WeFNPq9bVwjTTxhiV1bZBC0jSubiOTLXKZ0akgM" width = "150" />](https://www.linkedin.com/in/frantz-eder-audige)                       |                      [<img src="https://avatars0.githubusercontent.com/u/49852311?s=460&v=4" width = "150" />](https://github.com/StacyWilliams)                       |                                             |                                             |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/dijahdeen)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)            |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/StacyWilliams)                 |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/khadijatu-deen-karim-633a2a153/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/marcdandoy) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/frantz-eder-audige) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/stacy-marie-williams) |
 
 <br>
 <br>
-
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+![Code Climate coverage](https://img.shields.io/codeclimate/coverage/Lambda-School-Labs/foster-together-fe)
 
 🚫 more info on using badges [here](https://github.com/badges/shields)
 
@@ -43,7 +38,7 @@ You can find the deployed project at [Heroku](https://foster-together-fe.herokua
 
 [Product Canvas](https://www.notion.so/Foster-Together-f7ff4ab169724a83a9eec6500829ec18)
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
+[UX Design files](https://www.figma.com/file/NRkSfUIkcMXwxkVVNtH97P/Foster-Together-Marc-%26-Frantz?node-id=582%3A95597)
 
 🚫 Replace lorem ipsum with a description of your project
 
@@ -64,26 +59,19 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 ### Front end built using:
 
-#### _Front end framework goes here_
+#### React
 
-🚫 Why did you choose this framework?
-
--    point one
--    point two
--    point three
--    point four
+-    Ideal create profiles and components with forms to submit information.
 
 🚫List the rest of the front end features and libraries in the same format as the framework above.
 
-#### Front end deployed to `Heroku`
+#### Front end deployed to `AWS`
 
 #### [Back end](https://github.com/Lambda-School-Labs/foster-together-be) built using:
 
 #### Express.js
 
--    point one
--    point two
--    point three
+-    Integrates well with SQL database.
 
 🚫 List the rest of the back end features and libraries in the same format as the framework above
 
@@ -113,22 +101,11 @@ When you do it your way you can go anywhere you choose. Let your heart take you 
 
 Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
 
-# 3️⃣ Environment Variables
+# Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
-🚫These are just examples, replace them with the specifics for your app
-
-    *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
-    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
-    *  REACT_APP_databaseURL - in the Firebase dashboard
-    *  REACT_APP_projectID - in the Firebase dashboard
-    *  REACT_APP_storageBucket - in the Firebase dashboard
-    *  REACT_APP_messagingSenderId - in the Firebase dashboard
-    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
-    *  REACT_APP_backendURL - optional for your local development server
-    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
-    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
+    *  REACT_APP_API_URL - base URL for backend API
 
 # 5️⃣ Content Licenses
 
@@ -194,4 +171,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
+See [Backend Documentation](https://github.com/Lambda-School-Labs/foster-together-be/blob/master/README.md) for details on the backend of our project.
