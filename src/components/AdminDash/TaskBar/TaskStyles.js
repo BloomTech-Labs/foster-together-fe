@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 100%;
+  width: 92%;
+  margin-left: 8%;
 `;
 
 export const Title = styled.h2`

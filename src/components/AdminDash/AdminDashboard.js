@@ -39,18 +39,17 @@ export default function Distance(props) {
 
   return (
     <>
-      {/* <AdminHeader /> */}
-      <LeftMenu routing = {props}/>
+      <LeftMenu routing={props} />
       <DashContainer>
         <Welcome />
         <TaskBar />
         <TableContain>
-            <NeighborTable
-              userType="Neighbors"
-              Data={neighbors}
-              Data2={families}
-              props={props}
-            />
+          <NeighborTable
+            userType="Neighbors"
+            Data={neighbors}
+            Data2={families}
+            props={props}
+          />
         </TableContain>
       </DashContainer>
     </>
