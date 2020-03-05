@@ -10,7 +10,7 @@ export default function EnhancedTable(props) {
 
   return (
     <Styles>
-      <Table columns={columns} data={data} />
+      <Table columns={columns} data={data} props={props} />
     </Styles>
   );
 }

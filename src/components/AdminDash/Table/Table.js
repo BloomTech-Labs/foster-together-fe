@@ -3,7 +3,7 @@ import { useTable, useSortBy, useRowSelect } from "react-table"
 import { TableContain } from '../adminDashStyles'
 
 
-export default function Table({ columns, data }) {
+export default function Table( { columns, data, props }) {
     const {
       getTableProps,
       getTableBodyProps,
@@ -49,7 +49,7 @@ export default function Table({ columns, data }) {
                   <tr {...row.getRowProps()}>
                   {row.cells.map(cell => {
                     return (
-                      <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                      <td onClick={() => props.props.history.push(`/${cell.row.original.userType}/${cell.row.original.id}`)}{...cell.getCellProps()}>{cell.render('Cell')}</td>
                     )
                   })}
                 </tr>

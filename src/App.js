@@ -8,7 +8,8 @@ import { CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
 import { initGA, PageView } from './Analytics'
-import UserProfile from './components/UserDash/UsersProfile'
+import FamilyProfile from './components/UserDash/FamilyProfile'
+import NeighborProfile from './components/UserDash/NeighborProfile'
 
 
 function onAuthRequired({ history }) {
@@ -37,7 +38,8 @@ function App() {
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/dash' component={AdminDash} />
         <Route path='/implicit/callback' component={ImplicitCallback} />
-        <Route path='/Profile/:id' component={UserProfile} />
+        <Route path='/neighbor/:id' component={NeighborProfile} />
+        <Route path='/family/:id' component={FamilyProfile} />
       </ThemeProvider>
     </Security>
 

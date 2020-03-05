@@ -12,7 +12,6 @@ import { DashContainer, Updates, TableContain } from "./adminDashStyles";
 export default function Distance(props) {
   const [neighbors, setNeighbors] = useState([]);
   const [families, setFamilies] = useState([]);
-  const [famNeighbor, setFamNeighbor] = useState(true);
 
   useEffect(() => {
     axios
@@ -50,16 +49,12 @@ export default function Distance(props) {
         </Updates>
         <TaskBar />
         <TableContain>
-          {famNeighbor ? (
             <NeighborTable
               userType="Neighbors"
               Data={neighbors}
               Data2={families}
               props={props}
             />
-          ) : (
-            <NeighborTable userType="Families" Data={families} props={props} />
-          )}
         </TableContain>
       </DashContainer>
     </>

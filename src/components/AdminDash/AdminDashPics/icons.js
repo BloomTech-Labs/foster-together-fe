@@ -46,3 +46,16 @@ export const DashboardIcon = props => (
     <rect x="16.5" y="16.5" width="4.5" height="4.5" fill={props.color} />
   </svg>
 );
+
+export const Circle = props => (
+  <svg
+    
+    width="12"
+    height="12"
+    viewBox="0 0 10 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle center cx="5" cy="5" r="5" fill={props.color} />
+  </svg>
+);
