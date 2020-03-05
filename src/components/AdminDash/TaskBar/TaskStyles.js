@@ -1,20 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  width: 92%;
   margin-left: 8%;
-`;
+`
 
 export const Title = styled.h2`
   color: ${({ theme: { palette } }) => palette.primary.main};
   font-size: 2.4rem;
   font-weight: bold;
-`;
+`
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
-`;
+`
 
 export const Card = styled.div`
   width: 24%;
@@ -28,7 +27,7 @@ export const Card = styled.div`
   color: #fff;
   border-radius: 5px;
   background: ${({ theme: { palette } }) => palette.primary.main};
-`;
+`
 
 export const CardTop = styled.div`
   width: 100%;
@@ -37,19 +36,19 @@ export const CardTop = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 export const Number = styled.h3`
   font-size: 3.2rem;
   font-weight: bold;
   padding: 0;
   margin: 0;
-`;
+`
 
 export const Icon = styled.div`
   cursor: pointer;
-`;
+`
 
 export const Description = styled.p`
   font-size: 1.4rem;
-`;
+`
