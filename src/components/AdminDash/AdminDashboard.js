@@ -35,7 +35,7 @@ export default function Distance(props) {
 
   return (
     <>
-      <LeftMenu routing={props} />
+      <Navigation routing={props} />
       <DashContainer>
         <Welcome />
         <TaskBar />
