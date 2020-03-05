@@ -1,65 +1,41 @@
 import React, { useState, useEffect } from 'react'
-import { NavBar, Logo, Nav, Tab } from './NavigationStyles'
+import { useLocation } from 'react-router-dom'
+import {
+  NavBar,
+  Logo,
+  LogoImg,
+  Nav,
+  Tab,
+  Utilities,
+  BtnImg,
+} from './NavigationStyles'
 import { People, Map, DashboardIcon } from '../AdminDashPics/icons'
 
-export default function Navigation(props) {
-  const inactive = '#fff'
-  const active = '#A6C9D8'
-  const [color, setColor] = useState(active)
-  const [color2, setColor2] = useState(active)
-  const [color3, setColor3] = useState(active)
-  useEffect(() => {
-    if (props.routing.history.location.pathname == '/dash') {
-      setColor(inactive)
-    }
-  }, [color])
+export default function Navigation() {
+  const location = useLocation()
 
   return (
     <NavBar>
       <Logo>
-        <img
-          src={require('../AdminDashPics/foster.png')}
-          style={{ marginLeft: '10px' }}
-          width='auto'
-          height='100%'
-        />
+        <LogoImg src={require('../AdminDashPics/foster.png')} />
       </Logo>
       <Nav>
-        <Tab
-          onMouseEnter={() => {
-            setColor(inactive)
-          }}
-          onMouseLeave={() => {
-            setColor(active)
-          }}
-          active
-        >
-          <DashboardIcon color={color} />
+        <Tab active={location.pathname === '/dash' ? true : false}>
+          <DashboardIcon color='#A6C9D8' />
           <p>Dashboard</p>
         </Tab>
-        <Tab
-          onMouseEnter={() => {
-            setColor2(inactive)
-          }}
-          onMouseLeave={() => {
-            setColor2(active)
-          }}
-        >
-          <People color={color2} />
+        <Tab active={location.pathname === '/data' ? true : false}>
+          <People color='#A6C9D8' />
           <p>Database</p>
         </Tab>
-        <Tab
-          onMouseEnter={() => {
-            setColor3(inactive)
-          }}
-          onMouseLeave={() => {
-            setColor3(active)
-          }}
-        >
-          <Map color={color3} />
+        <Tab active={location.pathname === '/map' ? true : false}>
+          <Map color='#A6C9D8' />
           <p>Map</p>
         </Tab>
       </Nav>
+      <Utilities>
+        <BtnImg src={require('../AdminDashPics/user-inactive.svg')} />
+      </Utilities>
     </NavBar>
   )
 }
