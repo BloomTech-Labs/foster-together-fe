@@ -1,17 +1,63 @@
-import React from 'react'
-import { useAdminDashStyle } from './adminDashStyles'
-
+import React, { useState, useEffect } from "react";
+import { LeftSelect, Icon } from "./adminDashStyles";
+import { People, Map, DashboardIcon } from "./AdminDashPics/icons";
 
 export default function LeftMenu(props) {
-  const classes = useAdminDashStyle()
-return(
-<div className={classes.leftSelect}>
-<img src={require('./AdminDashPics/foster.png')} style={{marginLeft:"10px"}} width="180px" />
-<div className={classes.icons}><img src={require("./AdminDashPics/squares.png")} style={{height:"60px"}}/><p>Dashboard</p></div>
-<div className={classes.icons}><img src={require("./AdminDashPics/family.png")} style={{height:"60px"}}/><p>Fosters</p> </div>
-<div className={classes.icons}><img src={require("./AdminDashPics/map.png")} style={{height:"60px"}}/><p>Map</p> </div>
-<div className={classes.icons}><img src={require("./AdminDashPics/person.png")} style={{height:"60px"}}/><p>Profile</p> </div>
-<div className={classes.icons}><img src={require("./AdminDashPics/settings.png")} style={{height:"60px"}}/><p>Settings</p> </div>
-</div>
-)
+  const inactive = "#396087";
+  const active = "#A6C9D8";
+  const [color, setColor] = useState(active);
+  const [color2, setColor2] = useState(active);
+  const [color3, setColor3] = useState(active);
+  useEffect(() => {
+    if (props.routing.history.location.pathname == "/dash") {
+      setColor(inactive);
+    }
+  }, [color]);
+
+  return (
+    <LeftSelect>
+      <img
+        src={require("./AdminDashPics/foster.png")}
+        style={{ marginLeft: "10px" }}
+        width="200px"
+        height="auto"
+      />
+      <Icon
+        style={{ cursor: "pointer" }}
+        onMouseEnter={() => {
+          setColor(inactive);
+        }}
+        onMouseLeave={() => {
+          setColor(active);
+        }}
+      >
+        <DashboardIcon color={color} />
+        <p>Dashboard</p>
+      </Icon>
+      <Icon
+        style={{ cursor: "pointer" }}
+        onMouseEnter={() => {
+          setColor2(inactive);
+        }}
+        onMouseLeave={() => {
+          setColor2(active);
+        }}
+      >
+        <People color={color2} />
+        <p>Database</p>
+      </Icon>
+      <Icon
+        style={{ cursor: "pointer" }}
+        onMouseEnter={() => {
+          setColor3(inactive);
+        }}
+        onMouseLeave={() => {
+          setColor3(active);
+        }}
+      >
+        <Map color={color3} />
+        <p>Map</p>
+      </Icon>
+    </LeftSelect>
+  );
 }
