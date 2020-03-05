@@ -7,6 +7,8 @@ export const Styles = styled.div`
     border-spacing: 0;
 
     tr {
+      display: flex;
+      flex-direction: row;
       :last-child {
         td {
           border-bottom: 0;
