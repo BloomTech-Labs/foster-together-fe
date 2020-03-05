@@ -26,7 +26,6 @@ import {
   ForContainer,
 } from './styles/LoginPage'
 import { axiosWithBaseURL } from '../../Auth/axiosWithBaseUrl'
-import axios from 'axios'
 
 const LoginForm = props => {
   const history = useHistory()
@@ -63,11 +62,11 @@ const LoginForm = props => {
   }
   const onSubmit = e => {
     e.preventDefault()
-    axiosWithBaseURL
-      .post('admins/login', values)
+    axiosWithBaseURL()
+      .post('/admins/login', values)
       .then(response => {
         localStorage.setItem('token', response.data.token)
-        props.history.push('/dash')
+        history.push('/dash')
       })
       .catch(err => console.error(err))
   }
