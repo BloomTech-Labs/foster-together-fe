@@ -3,23 +3,31 @@ import styled from 'styled-components'
 import { BounceRight } from 'animate-components'
 
 const WelcomeDiv = styled.div`
-position: relative;
-text-align: left;
-font-size: 4rem;
-width: 70%;
-margin-left: 7%;
-top: 30px;
-margin-bottom: 3%;
+  position: relative;
+  text-align: left;
+  width: 70%;
+  top: 30px;
+  margin-bottom: 3%;
 `
 
-export default function WelcomeMessage(props){
+const Title = styled.h2`
+  font-size: 3.2rem;
+  color: ${({ theme: { palette } }) => palette.primary.main};
+`
 
-    return(
-        <WelcomeDiv>
-            <BounceRight as="div" iterations="1">
-                Welcome back, Ana Jones
-            </BounceRight>
+const Name = styled.span`
+  font-size: 3.2rem;
+  color: ${({ theme: { palette } }) => palette.secondary.main};
+`
 
-         </WelcomeDiv>
-    )
+export default function WelcomeMessage(props) {
+  return (
+    <WelcomeDiv>
+      <BounceRight as='div' iterations='1'>
+        <Title>
+          Welcome back, <Name>Ana Jones</Name>
+        </Title>
+      </BounceRight>
+    </WelcomeDiv>
+  )
 }
