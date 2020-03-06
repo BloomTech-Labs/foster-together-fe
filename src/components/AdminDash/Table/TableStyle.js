@@ -22,7 +22,7 @@ export const Styles = styled.div`
       height: 7vh;
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
     }
     td {
       border-spacing: 0;
