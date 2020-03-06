@@ -8,7 +8,7 @@ export const columns = [
     Header: 'MEMBER TYPE',
     accessor: 'type',
     Cell: props => (
-      <img src={props.data[props.row.id].type} height={60} width={60} />
+      <img src={props.data[props.row.id].type} height={45} width={45} />
     ),
   },
   { Header: 'MATCH', accessor: 'match' },
@@ -37,5 +37,13 @@ export const columns = [
       ) : (
         <Circle color={'red'} />
       ),
+  },
+  {
+    Header: 'EMAIL',
+    accessor: 'email',
+  },
+  {
+    Header: 'PHONE',
+    accessor: 'phone',
   },
 ]
