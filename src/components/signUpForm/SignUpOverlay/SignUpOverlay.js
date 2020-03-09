@@ -4,16 +4,9 @@ import { axiosWithBaseURL } from '../../../Auth/axiosWithBaseUrl'
 import { PageView } from '../../../Analytics'
 //styled components
 import {
-  Container,
-  Sidebar,
   MainContent,
-  Logo,
-  SidebarTitle,
   Instructions,
   ListItem,
-  BackArrow,
-  TabContainer,
-  Tab,
   Stepper,
   Step,
   StepLabel,
@@ -23,6 +16,15 @@ import {
   BackBtn,
   NextBtn,
 } from '../styles/signUpOverlayStyles'
+import {
+  Container,
+  Sidebar,
+  Logo,
+  SidebarTitle,
+  BackArrow,
+  TabContainer,
+  Tab,
+} from '../../style/style'
 //images
 import logo from '../../../images/logo.svg'
 import backArrow from '../../../images/icons/back-arrow.svg'

@@ -8,7 +8,7 @@ import {
   BackArrow,
   TabContainer,
   Tab,
-} from '../signUpForm/styles/signUpOverlayStyles'
+} from '../style/style'
 import logo from '../../images/logo.svg'
 import arrowImg from '../../images/icons/back-arrow.svg'
 import {
