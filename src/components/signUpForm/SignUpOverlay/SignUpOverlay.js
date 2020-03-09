@@ -129,15 +129,13 @@ export default function SignUp() {
       <MainContent>
         <Tabs />
         <Stepper steps={steps} activeStep={activeStep} />
-        <>
-          {GetStepContent(activeStep)}
-          <Buttons
-            steps={steps}
-            activeStep={activeStep}
-            handleNext={handleNext}
-            handleBack={handleBack}
-          />
-        </>
+        {GetStepContent(activeStep)}
+        <Buttons
+          steps={steps}
+          activeStep={activeStep}
+          handleNext={handleNext}
+          handleBack={handleBack}
+        />
       </MainContent>
     </Container>
   )
