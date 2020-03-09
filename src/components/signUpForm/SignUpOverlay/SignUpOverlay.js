@@ -39,15 +39,15 @@ export default function SignUp(props) {
   const steps = ['Contact Info', 'Location Info', 'Review']
 
   const [user, setUser] = useState({
-    first_name: 'jay',
-    last_name: 'skae',
-    phone: '9096389007',
-    email: 'jay@email.com',
-    password: 'abc',
-    address: '123 N Dakota',
-    city: 'Dakota',
-    zip: '91760',
-    state: 'CA',
+    first_name: '',
+    last_name: '',
+    phone: '',
+    email: '',
+    password: '',
+    address: '',
+    city: '',
+    zip: '',
+    state: '',
   })
 
   function GetStepContent(step) {
