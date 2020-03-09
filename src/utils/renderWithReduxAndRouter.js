@@ -4,6 +4,8 @@ import { createStore } from '@reduxjs/toolkit'
 import { render } from '@testing-library/react'
 import signUpReducer from '../redux/slices/signUpSlice'
 import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
+import { theme } from '../theme'
 
 export const renderWithReduxAndRouter = (
   ui,
@@ -11,7 +13,9 @@ export const renderWithReduxAndRouter = (
 ) => {
   const rendered = render(
     <Provider store={store}>
-      <BrowserRouter>{ui}</BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>{ui}</BrowserRouter>
+      </ThemeProvider>
     </Provider>,
     ({ initialState, store = createStore(signUpReducer, initialState) } = {})
   )

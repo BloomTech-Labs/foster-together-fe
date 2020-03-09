@@ -36,23 +36,23 @@ const LoginForm = props => {
   })
   const [value, setValue] = useState(0)
 
-  const oktaAuth = OktaAuth({
-    url: `https://dev-529730.okta.com/oauth2/default`,
-  })
+  // const oktaAuth = OktaAuth({
+  //   url: `https://dev-529730.okta.com/oauth2/default`,
+  // })
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    oktaAuth
-      .signIn({
-        email: values.email,
-        password: values.password,
-      })
-      .then(res =>
-        setValues({
-          sessionToken: res.sessionToken,
-        })
-      )
-  }
+  // const handleSubmit = e => {
+  //   e.preventDefault()
+  //   oktaAuth
+  //     .signIn({
+  //       email: values.email,
+  //       password: values.password,
+  //     })
+  //     .then(res =>
+  //       setValues({
+  //         sessionToken: res.sessionToken,
+  //       })
+  //     )
+  // }
   const handleChange = e => {
     setValues({ ...values, [e.target.name]: e.target.value })
   }
@@ -96,7 +96,7 @@ const LoginForm = props => {
             <span>Register</span>
           </Tab>
         </TabContainer>
-        <InputContainer onSubmit={onSubmit} handleSubmit={handleSubmit}>
+        <InputContainer onSubmit={onSubmit}>
           <InputBox>
             <Input
               required
@@ -129,7 +129,7 @@ const LoginForm = props => {
               <Forgot>I forgot my password</Forgot>
             </ForContainer>
             <Btn>
-              <Submit handleSubmit={handleSubmit}>Submit</Submit>
+              <Submit>Submit</Submit>
             </Btn>
           </BtnContainer>
         </InputContainer>
