@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Circle } from '../AdminDashPics/icons'
-import { green, blue } from '@material-ui/core/colors'
 
 export const columns = [
   { Header: 'FULL NAME', accessor: 'name' },
