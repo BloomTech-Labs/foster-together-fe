@@ -116,7 +116,7 @@ export default function SignUp(props) {
           .post('/neighbors', user)
           .then(res => {
             console.log(res)
-            history.push('/dash')
+            history.push('/confirmation')
           })
           .catch(err => {
             console.log(err)
@@ -126,7 +126,7 @@ export default function SignUp(props) {
           .post('/families', user)
           .then(res => {
             console.log(res)
-            history.push('/dash')
+            history.push('/confirmation')
           })
           .catch(err => {
             console.log(err)
