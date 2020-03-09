@@ -2,17 +2,14 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { axiosWithBaseURL } from '../../Auth/axiosWithBaseUrl'
 import NeighborTable from './Table/NeighborTable'
-import { PageView } from '../../Analytics'
-import AdminHeader from './AdminHeader'
 import Navigation from './Navigation/Navigation'
 import Welcome from './Welcome'
 import TaskBar from './TaskBar/TaskBar'
-import { DashContainer, Updates, TableContain } from './adminDashStyles'
+import { DashContainer, TableContain } from './adminDashStyles'
 
 export default function Distance(props) {
   const [neighbors, setNeighbors] = useState([])
   const [families, setFamilies] = useState([])
-
   useEffect(() => {
     axiosWithBaseURL()
       .get('/neighbors')
@@ -32,7 +29,6 @@ export default function Distance(props) {
         console.log(err)
       })
   }, [])
-
   return (
     <>
       <Navigation routing={props} />
