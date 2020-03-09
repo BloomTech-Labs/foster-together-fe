@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import map from './DataMap'
 import { columns } from './TableHead'
 import Table from './Table'
