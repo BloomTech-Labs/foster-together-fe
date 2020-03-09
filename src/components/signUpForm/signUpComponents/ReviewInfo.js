@@ -10,6 +10,7 @@ import {
   InputArea,
   Span,
 } from '../styles/reviewStyles'
+import RadioButton from './RadioButton'
 
 const ReviewInfo = ({ user }) => (
   <div>
@@ -35,16 +36,7 @@ const ReviewInfo = ({ user }) => (
       Family?
     </p>
     <BtnContainer>
-      <InputArea>
-        <Input type='radio' name='type' id='families' value='families' />
-        <Label for='families'>Family</Label>
-        <Span />
-      </InputArea>
-      <InputArea>
-        <Input type='radio' name='type' id='neighbors' value='neighbors' />
-        <Label for='neighbors'>Neighbor</Label>
-        <Span />
-      </InputArea>
+      <RadioButton />
     </BtnContainer>
   </div>
 )

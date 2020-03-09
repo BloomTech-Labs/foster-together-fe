@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import OktaAuth from '@okta/okta-auth-js'
 import {
   Container,
   Sidebar,
   Logo,
   SidebarTitle,
-  ListItem,
   BackArrow,
   TabContainer,
   Tab,
@@ -34,32 +32,11 @@ const LoginForm = props => {
     email: '',
     password: '',
   })
-  const [value, setValue] = useState(0)
 
-  // const oktaAuth = OktaAuth({
-  //   url: `https://dev-529730.okta.com/oauth2/default`,
-  // })
-
-  // const handleSubmit = e => {
-  //   e.preventDefault()
-  //   oktaAuth
-  //     .signIn({
-  //       email: values.email,
-  //       password: values.password,
-  //     })
-  //     .then(res =>
-  //       setValues({
-  //         sessionToken: res.sessionToken,
-  //       })
-  //     )
-  // }
   const handleChange = e => {
     setValues({ ...values, [e.target.name]: e.target.value })
   }
 
-  const handleToggle = (e, newValue) => {
-    setValue(newValue)
-  }
   const onSubmit = e => {
     e.preventDefault()
     axiosWithBaseURL()
@@ -84,7 +61,7 @@ const LoginForm = props => {
           </SidebarTitle>
         </div>
         <BackArrow>
-          <img src={arrowImg} />
+          <img src={arrowImg} alt='back arrow' />
         </BackArrow>
       </Sidebar>
       <ContentBox>
