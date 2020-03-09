@@ -11,6 +11,9 @@ import { initGA, PageView } from './Analytics'
 import FamilyProfile from './components/UserDash/FamilyProfile'
 import NeighborProfile from './components/UserDash/NeighborProfile'
 
+// temporary sign up confirmation, will be replaced with user dashboard
+import ConfirmationPage from './components/signUpForm/ConfirmationPage/ConfirmationPage'
+
 function onAuthRequired({ history }) {
   history.push('/login')
 }
@@ -35,6 +38,7 @@ function App() {
         />
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/dash' component={AdminDash} />
+        <Route path='/confirmation' component={ConfirmationPage} />
         <Route path='/implicit/callback' component={ImplicitCallback} />
         <Route path='/neighbor/:id' component={NeighborProfile} />
         <Route path='/family/:id' component={FamilyProfile} />

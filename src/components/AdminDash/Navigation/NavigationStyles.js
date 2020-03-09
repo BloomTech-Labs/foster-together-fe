@@ -8,6 +8,7 @@ export const NavBar = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 6.4rem;
+  width: 100%;
 `
 
 export const Logo = styled.div`
