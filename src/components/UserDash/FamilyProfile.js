@@ -10,7 +10,7 @@ export default function UserProfile (props) {
         .then(res => {
             setUser(res.data)
         })
-    }, [])
+    }, )
 
 
     return(

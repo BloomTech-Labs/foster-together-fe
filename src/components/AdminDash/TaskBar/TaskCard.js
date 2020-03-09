@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardTop, Number, Icon, Description } from "./TaskStyles";
+import { Card, CardTop, Number, Description } from "./TaskStyles";
 import {
   PaperMagnify,
   Shield,

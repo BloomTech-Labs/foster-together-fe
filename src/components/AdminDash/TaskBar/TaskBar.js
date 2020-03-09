@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { People } from "../AdminDashPics/icons";
+import React from "react";
 import { Wrapper, Title, Container } from "./TaskStyles";
 
 import TaskCard from "./TaskCard";
 
 const TaskBar = () => {
-  const [tasks, setTasks] = useState([
+  const tasks = [
     {
       id: 1,
       description: "Volunteer applications to review.",
@@ -26,7 +25,7 @@ const TaskBar = () => {
       description: "Families needing to be matched to a neighbor",
       number: 2
     }
-  ]);
+  ]
   return (
     <Wrapper>
       <Title>Tasks</Title>

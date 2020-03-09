@@ -2,7 +2,7 @@ export default function mapping(props) {
   const rows = []
 
   props.Data.map(people => {
-    if (people.match_name == undefined) {
+    if (people.match_name === undefined) {
       rows.push({
         name: `${people.first_name}, ${people.last_name}`,
         type:
@@ -29,10 +29,11 @@ export default function mapping(props) {
         training: people.training,
       })
     }
+    return rows
   })
 
   props.Data2.map(people => {
-    if (people.match_name == undefined) {
+    if (people.match_name === undefined) {
       rows.push({
         name: `${people.first_name}, ${people.last_name}`,
         type:
@@ -59,7 +60,7 @@ export default function mapping(props) {
         training: people.training,
       })
     }
+    return rows
   })
-
   return rows
 }
