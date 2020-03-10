@@ -10,7 +10,7 @@ export const Styles = styled.div`
       height: 7vh;
       :last-child {
         td {
-          border-bottom: 0;
+          // border-bottom: 0;
         }
       }
     }
