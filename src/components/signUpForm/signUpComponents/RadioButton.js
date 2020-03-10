@@ -80,7 +80,7 @@ Radio.defaultProps = {
 }
 
 const RadioButton = ({ setIsNeighbor }) => {
-  const [state, setState] = useState({ selectedValue: '' })
+  const [state, setState] = useState({ selectedValue: 'Neighbor' })
   const onClickRadioButton = selectedValue => {
     setState({ selectedValue })
   }
@@ -104,8 +104,8 @@ const RadioButton = ({ setIsNeighbor }) => {
         justifyContent: 'space-between',
       }}
     >
-      <Radio labelText='Family' />
       <Radio labelText='Neighbor' />
+      <Radio labelText='Family' />
     </RadioGroup>
   )
 }

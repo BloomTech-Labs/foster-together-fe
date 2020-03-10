@@ -27,20 +27,8 @@ export default function SignUp() {
 
   const handleNext = user => {
     if (activeStep === 0) {
-      // const phoneno = /^\d{10}$/
-      // if (!user.phone.match(phoneno)) {
-      //   alert('Please enter a valid phone number')
-      // } else if (!user.email.includes('@' && '.')) {
-      //   alert('Please enter a valid email')
-      // } else if (user.password !== passwordConfirm) {
-      //   alert('Password does not match')
-      // }
       setActiveStep(activeStep + 1)
     } else if (activeStep === 1) {
-      // const zip = /^\d{5}$/
-      // if (!user.zip.match(zip)) {
-      //   alert('Please enter a valid zip code')
-      // }
       setActiveStep(activeStep + 1)
     } else if (activeStep === 2) {
       if (isNeighbor) {
@@ -75,7 +63,7 @@ export default function SignUp() {
     PageView()
   }, [])
 
-  const SignUpSchema = Yup.object().shape({
+  const ContactSchema = Yup.object().shape({
     first_name: Yup.string().required('First name is required'),
     last_name: Yup.string().required('Last name is required'),
     phone: Yup.string()
@@ -85,6 +73,15 @@ export default function SignUp() {
       .email('Invalid email')
       .required('Email is required'),
     password: Yup.string().required('Password is required'),
+  })
+
+  const LocationSchema = Yup.object().shape({
+    address: Yup.string().required('Address is required'),
+    city: Yup.string().required('City is required'),
+    state: Yup.string().required('State is required'),
+    zip: Yup.string()
+      .matches(/^\d{5}$/, 'Invalid ZIP')
+      .required('ZIP is required'),
   })
 
   return (
@@ -100,12 +97,13 @@ export default function SignUp() {
             phone: '',
             email: '',
             password: '',
+            confirmPassword: '',
             address: '',
             city: '',
             zip: '',
             state: '',
           }}
-          validationSchema={SignUpSchema}
+          validationSchema={activeStep === 0 ? ContactSchema : LocationSchema}
           onSubmit={values => handleNext(values)}
         >
           {props => (

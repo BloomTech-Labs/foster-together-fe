@@ -4,12 +4,13 @@ import {
   FormGroup,
   Input,
   Label,
+  Error,
   Select,
   Option,
 } from '../styles/contactInfoStyles'
 import { States } from './States'
 
-const LocationInfo = ({ values, handleChange }) => (
+const LocationInfo = ({ values, handleChange, errors, touched }) => (
   <FormContainer>
     <FormGroup>
       <Input
@@ -20,6 +21,9 @@ const LocationInfo = ({ values, handleChange }) => (
         value={values.address}
       />
       <Label htmlFor='address'>Street name, and house/apt number</Label>
+      {errors.address && touched.address ? (
+        <Error>{errors.address}</Error>
+      ) : null}
     </FormGroup>
     <FormGroup width='79%'>
       <Input
@@ -31,6 +35,7 @@ const LocationInfo = ({ values, handleChange }) => (
         autoComplete='billing address-level2'
       />
       <Label htmlFor='city'>Which city do you live in?</Label>
+      {errors.city && touched.city ? <Error>{errors.city}</Error> : null}
     </FormGroup>
     <FormGroup width='19%'>
       <Select
@@ -48,6 +53,7 @@ const LocationInfo = ({ values, handleChange }) => (
           </Option>
         ))}
       </Select>
+      {errors.state && touched.state ? <Error>{errors.state}</Error> : null}
     </FormGroup>
     <FormGroup width='79%'>
       <Input
@@ -57,7 +63,8 @@ const LocationInfo = ({ values, handleChange }) => (
         onChange={handleChange}
         value={values.zip}
       />
-      <Label htmlFor='address'>Enter your 5-digit postal code</Label>
+      <Label htmlFor='zip'>Enter your 5-digit postal code</Label>
+      {errors.zip && touched.zip ? <Error>{errors.zip}</Error> : null}
     </FormGroup>
   </FormContainer>
 )
