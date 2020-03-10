@@ -27,7 +27,7 @@ export default function Navigation(props) {
         <LogoImg src={require('../AdminDashPics/foster.png')} />
       </Logo>
       <Nav>
-        <Tab active={location.pathname === '/dash' ? true : false}>
+        <Tab active={location.pathname === '/dashboard' ? true : false}>
           <DashboardIcon color='#A6C9D8' />
           <p>Dashboard</p>
         </Tab>

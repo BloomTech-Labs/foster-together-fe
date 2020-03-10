@@ -6,7 +6,7 @@ import store from './redux/store'
 import * as Sentry from '@sentry/browser'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { initGA } from './Analytics'
+import { initGA } from './utils/analytics'
 ;(function initAnalytics() {
   initGA('UA-159166357-1')
 })()

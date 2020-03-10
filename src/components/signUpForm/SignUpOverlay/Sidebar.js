@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sidebar, Logo, SidebarTitle, BackArrow } from '../../style/style'
+import { Sidebar, Logo, SidebarTitle, BackArrow } from '../../style'
 import { Instructions, ListItem } from '../styles/signUpOverlayStyles'
 import logo from '../../../images/logo.svg'
 import backArrow from '../../../images/icons/back-arrow.svg'

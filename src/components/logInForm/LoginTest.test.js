@@ -1,15 +1,15 @@
 import React from 'react'
-import { renderWithReduxAndRouter as render } from '../../utils/renderWithReduxAndRouter'
-import Login from './LoginForm'
+import { renderWithReduxAndRouter as render } from '../../utils/testHelpers'
+import LoginForm from './LoginForm'
 import { Input } from './styles/LoginPage'
 import { Logo } from '../signUpForm/styles/signUpOverlayStyles'
 
-test('Login Renders', async () => {
-  render(<Login />)
+test('LoginForm Renders', async () => {
+  render(<LoginForm />)
 })
 
 test('render components', () => {
-  const { getByText } = render(<Login />)
+  const { getByText } = render(<LoginForm />)
   getByText(/I forgot my password/i)
   getByText(/Enter your email here/i)
   getByText(/Enter your password here/i)
@@ -19,11 +19,11 @@ test('render components', () => {
 })
 
 test('img is displayed', () => {
-  const { findByDisplayValue } = render(<Login />)
+  const { findByDisplayValue } = render(<LoginForm />)
   findByDisplayValue(Logo)
 })
 
 test('inputs displayed', () => {
-  const { findByDisplayValue } = render(<Login />)
+  const { findByDisplayValue } = render(<LoginForm />)
   findByDisplayValue(Input)
 })

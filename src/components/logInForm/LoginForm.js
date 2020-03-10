@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import {
   Container,
@@ -8,7 +8,7 @@ import {
   BackArrow,
   TabContainer,
   Tab,
-} from '../style/style'
+} from '../style'
 import logo from '../../images/logo.svg'
 import arrowImg from '../../images/icons/back-arrow.svg'
 import {
@@ -23,15 +23,19 @@ import {
   Forgot,
   ForContainer,
 } from './styles/LoginPage'
-import { axiosWithBaseURL } from '../../Auth/axiosWithBaseUrl'
+import { useDispatch, useSelector } from 'react-redux'
+import { login } from '../../redux/thunks/authThunks'
 
-const LoginForm = props => {
-  const history = useHistory()
-  const [values, setValues] = React.useState({
-    sessionToken: null,
-    email: '',
-    password: '',
-  })
+const LoginForm = () => {
+  const { push } = useHistory()
+  const { userType } = useSelector(state => state.auth)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    userType === 'admin' && push('/dashboard')
+  }, [userType, push])
+
+  const [values, setValues] = useState({ email: '', password: '' })
 
   const handleChange = e => {
     setValues({ ...values, [e.target.name]: e.target.value })
@@ -39,13 +43,7 @@ const LoginForm = props => {
 
   const onSubmit = e => {
     e.preventDefault()
-    axiosWithBaseURL()
-      .post('/admins/login', values)
-      .then(response => {
-        localStorage.setItem('token', response.data.token)
-        history.push('/dash')
-      })
-      .catch(err => console.error(err))
+    dispatch(login(values))
   }
 
   return (
@@ -69,7 +67,7 @@ const LoginForm = props => {
           <Tab active>
             <span>Log In</span>
           </Tab>
-          <Tab onClick={() => history.push('/signup')}>
+          <Tab onClick={() => push('/signup')}>
             <span>Register</span>
           </Tab>
         </TabContainer>
