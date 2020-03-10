@@ -25,7 +25,7 @@ import {
 } from './styles/LoginPage'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../redux/thunks/authThunks'
-import { Event, initGA } from '../../utils/analytics/index'
+import { Event, initGA, Timing } from '../../utils/analytics/index'
 
 const LoginForm = () => {
   const { push } = useHistory()
@@ -49,6 +49,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     initGA('UA-159166357-1')
+    Timing()
   })
 
   return (

@@ -10,7 +10,7 @@ import Buttons from './Buttons'
 import ContactInfo from '../signUpComponents/ContactInfo'
 import LocationInfo from '../signUpComponents/LocationInfo'
 import ReviewInfo from '../signUpComponents/ReviewInfo'
-import { initGA, Event, PageView } from '../../../utils/analytics/index'
+import { initGA, Event, PageView, Timing } from '../../../utils/analytics/index'
 
 export default function SignUp() {
   const history = useHistory()
@@ -123,6 +123,7 @@ export default function SignUp() {
   useEffect(() => {
     PageView()
     initGA('UA-159166357-1')
+    Timing('SignUp', 'SignUp', 15, 'SignUp timing')
   })
 
   return (
