@@ -8,7 +8,7 @@ export const neighSlice = createSlice({
   },
   reducers: {
     setNeighborsArray(state, action) {
-      state.first_name = action.payload
+      state.neighborsArray = action.payload
     },
     setNeighError(state, action) {
       state.authError = action.payload
