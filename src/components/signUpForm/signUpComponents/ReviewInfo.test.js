@@ -15,6 +15,8 @@ const user = {
   preferredContact: '',
 }
 
+const mockSetIsNeighbor = () => jest.mock()
+
 test('renders ReviewInfo without crashing', () => {
-  render(<ReviewInfo user={user} />)
+  render(<ReviewInfo user={user} setIsNeighbor={mockSetIsNeighbor} />)
 })

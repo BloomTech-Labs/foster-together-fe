@@ -7,22 +7,22 @@ import {
 } from '../styles/reviewStyles'
 import RadioButton from './RadioButton'
 
-const ReviewInfo = ({ user, setIsNeighbor }) => (
+const ReviewInfo = ({ setIsNeighbor, values }) => (
   <div>
     <p>Almost Done! Does this information look correct to you?</p>
     <ReviewContainer>
       <div>
         <Reviewtextone>
-          Name: {user.first_name} {user.last_name}{' '}
+          Name: {values?.first_name} {values?.last_name}{' '}
         </Reviewtextone>
-        <Reviewtextone>Phone: {user.phone} </Reviewtextone>
-        <Reviewtextone> Email: {user.email}</Reviewtextone>
+        <Reviewtextone>Phone: {values?.phone} </Reviewtextone>
+        <Reviewtextone> Email: {values?.email}</Reviewtextone>
       </div>
       <CityStateZip>
-        <p>{user.address},</p>
+        <p>{values?.address},</p>
         <p>
-          {user.city}, {user.state} &nbsp;
-          {user.zip}
+          {values?.city}, {values?.state} &nbsp;
+          {values?.zip}
         </p>
       </CityStateZip>
     </ReviewContainer>
