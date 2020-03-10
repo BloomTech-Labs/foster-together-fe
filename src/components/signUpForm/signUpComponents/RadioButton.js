@@ -98,6 +98,11 @@ const RadioButton = ({ setIsNeighbor }) => {
       name='setYAxis'
       onClickRadioButton={onClickRadioButton}
       selectedValue={state.selectedValue}
+      style={{
+        display: 'flex',
+        width: 150,
+        justifyContent: 'space-between',
+      }}
     >
       <Radio labelText='Family' />
       <Radio labelText='Neighbor' />
