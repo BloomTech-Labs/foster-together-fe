@@ -25,6 +25,7 @@ import {
 } from './styles/LoginPage'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../redux/thunks/authThunks'
+import { Event, initGA } from '../../utils/analytics/index'
 
 const LoginForm = () => {
   const { push } = useHistory()
@@ -45,6 +46,10 @@ const LoginForm = () => {
     e.preventDefault()
     dispatch(login(values))
   }
+
+  useEffect(() => {
+    initGA('UA-159166357-1')
+  })
 
   return (
     <Container>
@@ -104,7 +109,11 @@ const LoginForm = () => {
               <Forgot>I forgot my password</Forgot>
             </ForContainer>
             <Btn>
-              <Submit>Submit</Submit>
+              <Submit
+                onClick={() => Event('Login', 'Tried to login', 'submit')}
+              >
+                Submit
+              </Submit>
             </Btn>
           </BtnContainer>
         </InputContainer>
