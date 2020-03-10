@@ -1,49 +1,35 @@
 import React, { useEffect } from 'react'
 import { Route } from 'react-router-dom'
-import Login from './components/logInForm/LoginForm'
-import { Security, ImplicitCallback } from '@okta/okta-react'
+import LoginForm from './components/logInForm/LoginForm'
 import SignUp from './components/signUpForm/SignUpOverlay/SignUpOverlay'
 import AdminDash from './components/AdminDash/AdminDashboard'
-import { CssBaseline } from '@material-ui/core'
+import { Normalize } from 'styled-normalize'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
-import { initGA, PageView } from './Analytics'
-import FamilyProfile from './components/UserDash/FamilyProfile'
-import NeighborProfile from './components/UserDash/NeighborProfile'
-
+import { initGA, PageView } from './utils/analytics'
+import FamilyProfile from './components/userDash/FamilyProfile'
+import NeighborProfile from './components/userDash/NeighborProfile'
+import { PrivateRoute } from './utils/customRoutes'
 // temporary sign up confirmation, will be replaced with user dashboard
 import ConfirmationPage from './components/signUpForm/ConfirmationPage/ConfirmationPage'
 
-function onAuthRequired({ history }) {
-  history.push('/login')
-}
 function App() {
   useEffect(() => {
     initGA('UA-159166357-1')
     PageView()
   }, [])
   return (
-    <Security
-      issuer='https://dev-529730.okta.com/oauth2/default'
-      clientId='0oa2lku5jYtkeMkYg4x6'
-      redirectUri={window.location.origin + '/implicit/callback'}
-      onAuthRequired={onAuthRequired}
-      pkce={true}
-    >
+    <>
+      <Normalize />
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Route
-          path='/login'
-          render={() => <Login baseUrl='https://dev-529730.okta.com' />}
-        />
+        <Route path='/login' component={LoginForm} />
         <Route exact path='/signup' component={SignUp} />
-        <Route exact path='/dash' component={AdminDash} />
+        <PrivateRoute exact path='/dashboard' component={AdminDash} />
         <Route path='/confirmation' component={ConfirmationPage} />
-        <Route path='/implicit/callback' component={ImplicitCallback} />
-        <Route path='/neighbor/:id' component={NeighborProfile} />
-        <Route path='/family/:id' component={FamilyProfile} />
+        <PrivateRoute path='/neighbor/:id' component={NeighborProfile} />
+        <PrivateRoute path='/family/:id' component={FamilyProfile} />
       </ThemeProvider>
-    </Security>
+    </>
   )
 }
 

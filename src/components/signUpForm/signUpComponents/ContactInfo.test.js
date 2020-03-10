@@ -1,5 +1,5 @@
 import React from 'react'
-import { renderWithReduxAndRouter as render } from '../../../utils/renderWithReduxAndRouter'
+import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
 import ContactInfo from './ContactInfo'
 
 const user = {

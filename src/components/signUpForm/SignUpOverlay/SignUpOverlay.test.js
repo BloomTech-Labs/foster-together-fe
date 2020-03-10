@@ -1,5 +1,6 @@
 import React from 'react'
-import { renderWithReduxAndRouter as render } from '../../../utils/renderWithReduxAndRouter'
+
+import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
 import SignUp from './SignUpOverlay'
 
 test('renders SignUp without crashing', () => {

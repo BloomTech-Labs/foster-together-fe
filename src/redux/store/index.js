@@ -1,8 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import signUpReducer from '../slices/signUpSlice'
+import authReducer from '../slices/authSlice'
+import famReducer from '../slices/famSlice'
+import neighReducer from '../slices/neighSlice'
+
 export default configureStore({
   reducer: {
-    signUp: signUpReducer,
+    auth: authReducer,
+    fam: famReducer,
+    neigh: neighReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
 })

@@ -1,14 +1,9 @@
 import React from 'react'
 import {
-  RadioBtn,
   ReviewContainer,
   BtnContainer,
   Reviewtextone,
   CityStateZip,
-  Input,
-  Label,
-  InputArea,
-  Span,
 } from '../styles/reviewStyles'
 import RadioButton from './RadioButton'
 

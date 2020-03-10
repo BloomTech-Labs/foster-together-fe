@@ -8,7 +8,7 @@ export const ContentBox = styled.div`
   align-items: center;
 `
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
   width: 75%;
   display: flex;
   flex-wrap: wrap;

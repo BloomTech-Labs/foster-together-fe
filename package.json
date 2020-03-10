@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.9.5",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/styles": "^4.9.0",
-    "@okta/okta-react": "^2.0.0",
-    "@okta/okta-signin-widget": "^3.8.0",
     "@reduxjs/toolkit": "^1.2.5",
     "@sentry/browser": "^5.12.4",
     "animate-components": "^1.4.8",
@@ -20,10 +15,11 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
-    "react-table": "^7.0.0-rc.16",
     "react-stepper-horizontal": "^1.0.11",
+    "react-table": "^7.0.0-rc.16",
     "sass": "^1.26.2",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.1.1",

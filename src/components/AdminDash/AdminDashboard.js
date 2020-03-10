@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { axiosWithBaseURL } from '../../Auth/axiosWithBaseUrl'
+import { axiosWithBaseURL } from '../../utils/axios/axiosWithBaseUrl'
 import NeighborTable from './Table/NeighborTable'
 import Navigation from './Navigation/Navigation'
 import Welcome from './Welcome'

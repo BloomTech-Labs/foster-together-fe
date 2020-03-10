@@ -55,7 +55,7 @@ export const Circle = props => (
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
   >
-    <circle center cx='5' cy='5' r='5' fill={props.color} />
+    <circle center='true' cx='5' cy='5' r='5' fill={props.color} />
   </svg>
 )
 

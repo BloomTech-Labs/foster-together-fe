@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { TabContainer, Tab } from '../../style/style'
+import { TabContainer, Tab } from '../../style'
 
 const Tabs = () => {
   const history = useHistory()
