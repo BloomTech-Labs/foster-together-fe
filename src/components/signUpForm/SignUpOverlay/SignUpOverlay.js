@@ -53,7 +53,7 @@ export default function SignUp() {
       case 1:
         return <LocationInfo user={user} changeHandler={changeHandler} />
       case 2:
-        return <ReviewInfo user={user} />
+        return <ReviewInfo user={user} setIsNeighbor={setIsNeighbor} />
       case 3:
         console.log(user)
         return null
