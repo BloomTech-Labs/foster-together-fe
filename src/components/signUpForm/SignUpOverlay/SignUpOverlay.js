@@ -21,56 +21,28 @@ export default function SignUp() {
   const [isNeighbor, setIsNeighbor] = useState(true)
   const steps = ['Contact Info', 'Location Info', 'Review']
 
-  const [user, setUser] = useState({
-    first_name: '',
-    last_name: '',
-    phone: '',
-    email: '',
-    password: '',
-    address: '',
-    city: '',
-    zip: '',
-    state: '',
-  })
-
-  const changeHandler = e => {
-    setUser({ ...user, [e.target.name]: e.target.value })
-  }
-
   const changePasswordConfirm = e => {
     setPasswordConfirm(e.target.value)
   }
 
-  const handleNext = () => {
+  const handleNext = user => {
     if (activeStep === 0) {
-      const phoneno = /^\d{10}$/
-      if (!user.phone.match(phoneno)) {
-        alert('Please enter a valid phone number')
-      } else if (!user.email.includes('@' && '.')) {
-        alert('Please enter a valid email')
-      } else if (user.password !== passwordConfirm) {
-        alert('Password does not match')
-      } else if (
-        user.first_name &&
-        user.last_name &&
-        user.email &&
-        user.phone &&
-        user.password
-      ) {
-        setActiveStep(activeStep + 1)
-      } else alert('Missing a required field')
-    }
-    if (activeStep === 1) {
-      const zip = /^\d{5}$/
-      if (!user.zip.match(zip)) {
-        alert('Please enter a valid zip code')
-      } else {
-        if (user.address && user.state && user.zip && user.city) {
-          setActiveStep(activeStep + 1)
-        } else alert('Missing a required field')
-      }
-    }
-    if (activeStep === 2) {
+      // const phoneno = /^\d{10}$/
+      // if (!user.phone.match(phoneno)) {
+      //   alert('Please enter a valid phone number')
+      // } else if (!user.email.includes('@' && '.')) {
+      //   alert('Please enter a valid email')
+      // } else if (user.password !== passwordConfirm) {
+      //   alert('Password does not match')
+      // }
+      setActiveStep(activeStep + 1)
+    } else if (activeStep === 1) {
+      // const zip = /^\d{5}$/
+      // if (!user.zip.match(zip)) {
+      //   alert('Please enter a valid zip code')
+      // }
+      setActiveStep(activeStep + 1)
+    } else if (activeStep === 2) {
       if (isNeighbor) {
         axiosWithBaseURL()
           .post('/neighbors', user)
@@ -101,6 +73,18 @@ export default function SignUp() {
 
   useEffect(() => {
     PageView()
+  }, [])
+
+  const SignUpSchema = Yup.object().shape({
+    first_name: Yup.string().required('First name is required'),
+    last_name: Yup.string().required('Last name is required'),
+    phone: Yup.string()
+      .matches(/^\d{10}$/, 'Invalid phone number')
+      .required('Phone number is required'),
+    email: Yup.string()
+      .email('Invalid email')
+      .required('Email is required'),
+    password: Yup.string().required('Password is required'),
   })
 
   return (
@@ -121,30 +105,21 @@ export default function SignUp() {
             zip: '',
             state: '',
           }}
+          validationSchema={SignUpSchema}
           onSubmit={values => handleNext(values)}
         >
           {props => (
             <form onSubmit={props.handleSubmit}>
               {activeStep === 0 ? (
                 <ContactInfo
-                  user={user}
-                  changeHandler={changeHandler}
                   passwordConfirm={passwordConfirm}
                   changePasswordConfirm={changePasswordConfirm}
                   {...props}
                 />
               ) : activeStep === 1 ? (
-                <LocationInfo
-                  user={user}
-                  changeHandler={changeHandler}
-                  {...props}
-                />
+                <LocationInfo {...props} />
               ) : (
-                <ReviewInfo
-                  user={user}
-                  setIsNeighbor={setIsNeighbor}
-                  {...props}
-                />
+                <ReviewInfo setIsNeighbor={setIsNeighbor} {...props} />
               )}
               <Buttons
                 steps={steps}

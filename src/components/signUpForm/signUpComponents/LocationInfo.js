@@ -9,7 +9,7 @@ import {
 } from '../styles/contactInfoStyles'
 import { States } from './States'
 
-const LocationInfo = ({ user, changeHandler, values, handleChange }) => (
+const LocationInfo = ({ values, handleChange }) => (
   <FormContainer>
     <FormGroup>
       <Input
