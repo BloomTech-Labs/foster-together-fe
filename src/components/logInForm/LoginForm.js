@@ -25,7 +25,7 @@ import {
 } from './styles/LoginPage'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../redux/thunks/authThunks'
-import { Event, initGA, Timing } from '../../utils/analytics/index'
+import { Event } from '../../utils/analytics/index'
 
 const LoginForm = () => {
   const { push } = useHistory()

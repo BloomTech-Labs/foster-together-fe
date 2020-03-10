@@ -10,7 +10,7 @@ import Buttons from './Buttons'
 import ContactInfo from '../signUpComponents/ContactInfo'
 import LocationInfo from '../signUpComponents/LocationInfo'
 import ReviewInfo from '../signUpComponents/ReviewInfo'
-import { initGA, Event, PageView, Timing } from '../../../utils/analytics/index'
+import { Event, PageView } from '../../../utils/analytics/index'
 
 export default function SignUp() {
   const history = useHistory()
