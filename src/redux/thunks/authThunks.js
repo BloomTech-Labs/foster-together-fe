@@ -1,8 +1,6 @@
 import { axiosWithBaseURL } from '../../utils/axios/axiosWithBaseUrl'
 import axiosWithAuth from '../../utils/axios/axiosWithAuth'
 import { setFirstName, setAuthError, setUserType } from '../slices/authSlice'
-import { getFamilies } from './famThunks'
-import { getNeighbors } from './neighThunks'
 
 export const login = values => async dispatch => {
   try {
@@ -10,8 +8,6 @@ export const login = values => async dispatch => {
     localStorage.setItem('token', data.token)
     dispatch(setFirstName(data.first_name))
     dispatch(setUserType(data.user_type))
-    if (data.user_type === 'admin')
-      dispatch(getFamilies()) && dispatch(getNeighbors())
   } catch (e) {
     localStorage.setItem('token', false)
     dispatch(setAuthError(e.response.data))

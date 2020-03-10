@@ -9,7 +9,7 @@ import { theme } from './theme'
 import { initGA, PageView } from './utils/analytics'
 import FamilyProfile from './components/userDash/FamilyProfile'
 import NeighborProfile from './components/userDash/NeighborProfile'
-import { SignInRoute, PrivateRoute } from './utils/customRoutes'
+import { PrivateRoute } from './utils/customRoutes'
 // temporary sign up confirmation, will be replaced with user dashboard
 import ConfirmationPage from './components/signUpForm/ConfirmationPage/ConfirmationPage'
 
