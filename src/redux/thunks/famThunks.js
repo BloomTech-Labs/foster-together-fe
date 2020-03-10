@@ -11,9 +11,10 @@ export const getFamilies = () => async dispatch => {
   }
 }
 
-export const postFamily = values => async dispatch => {
+export const postFamily = (values, push) => async dispatch => {
   try {
     await axiosWithBaseURL().post('/families', values)
+    push('/confirmation')
   } catch (e) {
     dispatch(setFamError(e.response.data))
   }

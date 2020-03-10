@@ -11,9 +11,10 @@ export const getNeighbors = () => async dispatch => {
   }
 }
 
-export const postNeighbor = values => async dispatch => {
+export const postNeighbor = (values, push) => async dispatch => {
   try {
     await axiosWithBaseURL().post('/neighbors', values)
+    push('/confirmation')
   } catch (e) {
     dispatch(setNeighError(e.response.data))
   }

@@ -13,16 +13,16 @@ const ReviewInfo = ({ setIsNeighbor, values }) => (
     <ReviewContainer>
       <div>
         <Reviewtextone>
-          Name: {values.first_name} {values.last_name}{' '}
+          Name: {values?.first_name} {values?.last_name}{' '}
         </Reviewtextone>
-        <Reviewtextone>Phone: {values.phone} </Reviewtextone>
-        <Reviewtextone> Email: {values.email}</Reviewtextone>
+        <Reviewtextone>Phone: {values?.phone} </Reviewtextone>
+        <Reviewtextone> Email: {values?.email}</Reviewtextone>
       </div>
       <CityStateZip>
-        <p>{values.address},</p>
+        <p>{values?.address},</p>
         <p>
-          {values.city}, {values.state} &nbsp;
-          {values.zip}
+          {values?.city}, {values?.state} &nbsp;
+          {values?.zip}
         </p>
       </CityStateZip>
     </ReviewContainer>
