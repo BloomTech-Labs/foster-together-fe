@@ -14,21 +14,21 @@ import ReviewInfo from '../signUpComponents/ReviewInfo'
 
 export default function SignUp() {
   const history = useHistory()
-  const [activeStep, setActiveStep] = useState(2)
-  const [passwordConfirm, setPasswordConfirm] = useState('password')
+  const [activeStep, setActiveStep] = useState(0)
+  const [passwordConfirm, setPasswordConfirm] = useState('')
   const [isNeighbor, setIsNeighbor] = useState(true)
   const steps = ['Contact Info', 'Location Info', 'Review']
 
   const [user, setUser] = useState({
-    first_name: 'test',
-    last_name: 'test',
-    phone: '5555555555',
-    email: 'test@test.com',
-    password: 'password',
-    address: 'test',
-    city: 'West Haven',
-    zip: '06516',
-    state: 'Connecticut',
+    first_name: '',
+    last_name: '',
+    phone: '',
+    email: '',
+    password: '',
+    address: '',
+    city: '',
+    zip: '',
+    state: '',
   })
 
   function GetStepContent(step) {
