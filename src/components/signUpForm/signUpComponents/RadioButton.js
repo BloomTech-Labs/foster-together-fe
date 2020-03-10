@@ -91,7 +91,7 @@ const RadioButton = ({ setIsNeighbor }) => {
     } else if (state.selectedValue === 'Family') {
       setIsNeighbor(false)
     }
-  }, [state.selectedValue])
+  }, [state.selectedValue, setIsNeighbor])
 
   return (
     <RadioGroup
