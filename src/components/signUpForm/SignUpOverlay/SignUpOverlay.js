@@ -20,13 +20,8 @@ export default function SignUp() {
   const { push } = useHistory()
   const dispatch = useDispatch()
   const [activeStep, setActiveStep] = useState(0)
-  const [passwordConfirm, setPasswordConfirm] = useState('')
   const [isNeighbor, setIsNeighbor] = useState(true)
   const steps = ['Contact Info', 'Location Info', 'Review']
-
-  const changePasswordConfirm = e => {
-    setPasswordConfirm(e.target.value)
-  }
 
   const handleNext = user => {
     if (activeStep === 0) {
@@ -72,11 +67,7 @@ export default function SignUp() {
           {props => (
             <form onSubmit={props.handleSubmit}>
               {activeStep === 0 ? (
-                <ContactInfo
-                  passwordConfirm={passwordConfirm}
-                  changePasswordConfirm={changePasswordConfirm}
-                  {...props}
-                />
+                <ContactInfo {...props} />
               ) : activeStep === 1 ? (
                 <LocationInfo {...props} />
               ) : (
