@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
 import SignUp from './SignUpOverlay'
 
