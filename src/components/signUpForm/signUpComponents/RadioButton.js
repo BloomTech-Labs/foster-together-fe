@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import { Root, RadioContainer, Fill, Input } from '../styles/radioButtonStyles'
+import { Root, Fill, Input } from '../styles/radioButtonStyles'
 
 export class RadioGroup extends React.Component {
   render() {
