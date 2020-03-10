@@ -3,7 +3,7 @@ import { axiosWithBaseURL } from '../../utils/axios/axiosWithBaseUrl'
 
 export const getFamilies = () => async dispatch => {
   try {
-    const { data } = axiosWithBaseURL().get('/families')
+    const { data } = await axiosWithBaseURL().get('/families')
     dispatch(setFamiliesArray(data))
   } catch (e) {
     dispatch(setFamError(e.response.data))

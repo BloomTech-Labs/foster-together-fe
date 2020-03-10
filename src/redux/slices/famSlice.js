@@ -8,7 +8,7 @@ export const famSlice = createSlice({
   },
   reducers: {
     setFamiliesArray(state, action) {
-      state.first_name = action.payload
+      state.familiesArray = action.payload
     },
     setFamError(state, action) {
       state.authError = action.payload
