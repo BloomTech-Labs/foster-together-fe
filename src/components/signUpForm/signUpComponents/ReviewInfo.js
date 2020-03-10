@@ -7,7 +7,7 @@ import {
 } from '../styles/reviewStyles'
 import RadioButton from './RadioButton'
 
-const ReviewInfo = ({ user }) => (
+const ReviewInfo = ({ user, setIsNeighbor }) => (
   <div>
     <p>Almost Done! Does this information look correct to you?</p>
     <ReviewContainer>
@@ -26,12 +26,9 @@ const ReviewInfo = ({ user }) => (
         </p>
       </CityStateZip>
     </ReviewContainer>
-    <p>
-      One last thing. Are you volunteering to be a Foster Neighbor or Foster
-      Family?
-    </p>
+    <p>One last thing. Are you volunteering to be a Neighbor or Family?</p>
     <BtnContainer>
-      <RadioButton />
+      <RadioButton setIsNeighbor={setIsNeighbor} />
     </BtnContainer>
   </div>
 )

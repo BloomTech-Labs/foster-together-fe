@@ -7,7 +7,7 @@ export const Root = styled.div`
   height: ${props => (props.size ? props.size : 20)}px;
   position: relative;
   label {
-    margin-left: 25px;
+    margin-left: 35px;
   }
   &::before {
     content: '';
@@ -28,9 +28,10 @@ export const Root = styled.div`
 
 export const RadioContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  flex-flow: nowrap row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
 `
+
 export const Fill = styled.div`
   background: ${props => (props.fillColor ? props.fillColor : '#DADADA')};
   width: 0;

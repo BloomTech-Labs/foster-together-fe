@@ -57,7 +57,7 @@ const LocationInfo = ({ user, changeHandler }) => (
         onChange={changeHandler}
         value={user.zip}
       />
-      <Label htmlFor='address'>Enter your 6-digit postal code</Label>
+      <Label htmlFor='address'>Enter your 5-digit postal code</Label>
     </FormGroup>
   </FormContainer>
 )
