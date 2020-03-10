@@ -7,12 +7,9 @@ export const DashContainer = styled.div`
 `
 
 export const TableContain = styled.div`
-  position: relative;
-  left: 0vw;
-  top: 10vh;
   height: auto;
-  width: '80vw';
-  border-radius: '5px';
+  width: 80vw;
+  border-radius: 5px;
 `
 export const LeftSelect = styled.div`
   display: flex;
