@@ -47,10 +47,7 @@ const LoginForm = () => {
     dispatch(login(values))
   }
 
-  useEffect(() => {
-    initGA('UA-159166357-1')
-    Timing()
-  })
+  useEffect(() => {}, [])
 
   return (
     <Container>

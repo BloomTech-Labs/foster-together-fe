@@ -7,7 +7,6 @@ export const DashContainer = styled.div`
 
 export const TableContain = styled.div`
   border-radius: 5px;
-  border: 2px;
 `
 export const LeftSelect = styled.div`
   display: flex;

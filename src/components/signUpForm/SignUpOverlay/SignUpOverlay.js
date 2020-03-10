@@ -122,9 +122,7 @@ export default function SignUp() {
 
   useEffect(() => {
     PageView()
-    initGA('UA-159166357-1')
-    Timing('SignUp', 'SignUp', 15, 'SignUp timing')
-  })
+  }, [])
 
   return (
     <Container>
