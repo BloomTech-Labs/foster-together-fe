@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
-export const Title = styled.h1``
+export const Title = styled.h1`
+  font-size: 2.4rem;
+  color: ${({ theme: { palette } }) => palette.primary.main};
+`
 
 export const TableCtn = styled.div`
   display: flex;
@@ -10,5 +13,5 @@ export const TableCtn = styled.div`
 `
 
 export const TitleCtn = styled.div`
-  margin-bottom: -25;
+  margin-bottom: 23px;
 `
