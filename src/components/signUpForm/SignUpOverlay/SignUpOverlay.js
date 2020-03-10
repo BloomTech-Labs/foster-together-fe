@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { axiosWithBaseURL } from '../../../utils/axios/axiosWithBaseUrl'
-import { PageView } from '../../../utils/analytics'
 import { MainContent } from '../styles/signUpOverlayStyles'
 import { Container } from '../../style'
 import Sidebar from './Sidebar'
@@ -11,6 +10,7 @@ import Buttons from './Buttons'
 import ContactInfo from '../signUpComponents/ContactInfo'
 import LocationInfo from '../signUpComponents/LocationInfo'
 import ReviewInfo from '../signUpComponents/ReviewInfo'
+import { initGA, Event, PageView, Timing } from '../../../utils/analytics/index'
 
 export default function SignUp() {
   const history = useHistory()
@@ -122,6 +122,8 @@ export default function SignUp() {
 
   useEffect(() => {
     PageView()
+    initGA('UA-159166357-1')
+    Timing('SignUp', 'SignUp', 15, 'SignUp timing')
   })
 
   return (
@@ -136,6 +138,7 @@ export default function SignUp() {
           activeStep={activeStep}
           handleNext={handleNext}
           handleBack={handleBack}
+          onClick={() => Event('SignUp', 'next form', 'next')}
         />
       </MainContent>
     </Container>
