@@ -29,7 +29,7 @@ export const Root = styled.div`
 export const RadioContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-flow: nowrap row;
+  flex-wrap: nowrap;
 `
 export const Fill = styled.div`
   background: ${props => (props.fillColor ? props.fillColor : '#DADADA')};

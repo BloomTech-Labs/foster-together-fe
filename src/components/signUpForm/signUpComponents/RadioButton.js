@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Root, Fill, Input } from '../styles/radioButtonStyles'
 
@@ -79,9 +79,19 @@ Radio.defaultProps = {
   labelText: '',
 }
 
-const RadioButton = () => {
+const RadioButton = ({ setIsNeighbor }) => {
   const [state, setState] = useState({ selectedValue: '' })
-  const onClickRadioButton = selectedValue => setState({ selectedValue })
+  const onClickRadioButton = selectedValue => {
+    setState({ selectedValue })
+  }
+
+  useEffect(() => {
+    if (state.selectedValue === 'Neighbor') {
+      setIsNeighbor(true)
+    } else if (state.selectedValue === 'Family') {
+      setIsNeighbor(false)
+    }
+  }, [state.selectedValue])
 
   return (
     <RadioGroup
@@ -89,8 +99,8 @@ const RadioButton = () => {
       onClickRadioButton={onClickRadioButton}
       selectedValue={state.selectedValue}
     >
-      <Radio value='families' labelText='Family' />
-      <Radio value='neighbors' labelText='Neighbor' />
+      <Radio labelText='Family' />
+      <Radio labelText='Neighbor' />
     </RadioGroup>
   )
 }
