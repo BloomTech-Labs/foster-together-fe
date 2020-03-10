@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { axiosWithBaseURL } from '../../../utils/axios/axiosWithBaseUrl'
-import { PageView } from '../../../utils/analytics'
 import { MainContent } from '../styles/signUpOverlayStyles'
 import { Container } from '../../style'
 import Sidebar from './Sidebar'
@@ -13,6 +12,7 @@ import Buttons from './Buttons'
 import ContactInfo from '../signUpComponents/ContactInfo'
 import LocationInfo from '../signUpComponents/LocationInfo'
 import ReviewInfo from '../signUpComponents/ReviewInfo'
+import { Event, PageView } from '../../../utils/analytics/index'
 
 export default function SignUp() {
   const history = useHistory()

@@ -10,5 +10,13 @@ export const Event = (category, action, label) => {
     category,
     action,
     label,
-  }) 
+  })
 }
+// export const Timing = (category, variable, value, label) => {
+//   ReactGA.timing({
+//     category,
+//     variable,
+//     value,
+//     label,
+//   })
+// }

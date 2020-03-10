@@ -25,6 +25,7 @@ import {
 } from './styles/LoginPage'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../redux/thunks/authThunks'
+import { Event } from '../../utils/analytics/index'
 
 const LoginForm = () => {
   const { push } = useHistory()
@@ -46,6 +47,8 @@ const LoginForm = () => {
     dispatch(login(values))
   }
 
+  useEffect(() => {}, [])
+
   return (
     <Container>
       <Sidebar>
@@ -55,7 +58,7 @@ const LoginForm = () => {
           </Logo>
           <SidebarTitle>
             Children need families{' '}
-            <p font-weight='none'> And families need support</p>
+            <p fontWeight='none'> And families need support</p>
           </SidebarTitle>
         </div>
         <BackArrow>
@@ -104,7 +107,11 @@ const LoginForm = () => {
               <Forgot>I forgot my password</Forgot>
             </ForContainer>
             <Btn>
-              <Submit>Submit</Submit>
+              <Submit
+                onClick={() => Event('Login', 'Tried to login', 'submit')}
+              >
+                Submit
+              </Submit>
             </Btn>
           </BtnContainer>
         </InputContainer>

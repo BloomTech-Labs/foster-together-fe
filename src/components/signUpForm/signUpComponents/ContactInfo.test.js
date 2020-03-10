@@ -2,23 +2,20 @@ import React from 'react'
 import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
 import ContactInfo from './ContactInfo'
 
-const user = {
-  firstName: '',
-  lastName: '',
+const values = {
+  first_name: '',
+  last_name: '',
   phone: '',
   email: '',
   address: '',
-  city: '',
-  zip: '',
-  state: '',
-  country: '',
-  preferredContact: '',
+  password: '',
+  passwordConfirm: '',
 }
 
-const changeHandler = e => {
-  console.log(user)
+const handleChange = e => {
+  console.log(values)
 }
 
 test('renders ContactInfo without crashing', () => {
-  render(<ContactInfo user={user} changeHandler={changeHandler} />)
+  render(<ContactInfo values={values} handleChange={handleChange} />)
 })

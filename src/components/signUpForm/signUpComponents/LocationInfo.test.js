@@ -2,23 +2,17 @@ import React from 'react'
 import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
 import LocationInfo from './LocationInfo'
 
-const user = {
-  firstName: '',
-  lastName: '',
-  phone: '',
-  email: '',
+const values = {
   address: '',
   city: '',
   zip: '',
   state: '',
-  country: '',
-  preferredContact: '',
 }
 
-const changeHandler = e => {
-  console.log(user)
+const handleChange = e => {
+  console.log(values)
 }
 
 test('renders LocationInfo without crashing', () => {
-  render(<LocationInfo user={user} changeHandler={changeHandler} />)
+  render(<LocationInfo values={values} handleChange={handleChange} />)
 })

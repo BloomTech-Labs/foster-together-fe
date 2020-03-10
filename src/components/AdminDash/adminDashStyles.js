@@ -2,13 +2,10 @@ import styled from 'styled-components'
 
 export const DashContainer = styled.div`
   align-items: center;
-  min-height: 100vh;
   margin: 0 32px;
 `
 
 export const TableContain = styled.div`
-  height: auto;
-  width: 80vw;
   border-radius: 5px;
 `
 export const LeftSelect = styled.div`

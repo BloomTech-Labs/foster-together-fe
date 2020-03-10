@@ -1,34 +1,21 @@
 import React, { useEffect } from 'react'
-import { useState } from 'react'
-import { axiosWithBaseURL } from '../../utils/axios/axiosWithBaseUrl'
 import NeighborTable from './Table/NeighborTable'
 import Navigation from './Navigation/Navigation'
 import Welcome from './Welcome'
 import TaskBar from './TaskBar/TaskBar'
 import { DashContainer, TableContain } from './adminDashStyles'
+import { useSelector, useDispatch } from 'react-redux'
+import { getNeighbors } from '../../redux/thunks/neighThunks'
+import { getFamilies } from '../../redux/thunks/famThunks'
 
 export default function Distance(props) {
-  const [neighbors, setNeighbors] = useState([])
-  const [families, setFamilies] = useState([])
+  const dispatch = useDispatch()
   useEffect(() => {
-    axiosWithBaseURL()
-      .get('/neighbors')
-      .then(res => {
-        setNeighbors(res.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-
-    axiosWithBaseURL()
-      .get('/families')
-      .then(res => {
-        setFamilies(res.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }, [])
+    dispatch(getFamilies())
+    dispatch(getNeighbors())
+  }, [dispatch])
+  const { neighborsArray } = useSelector(state => state.neigh)
+  const { familiesArray } = useSelector(state => state.fam)
   return (
     <>
       <Navigation routing={props} />
@@ -38,8 +25,8 @@ export default function Distance(props) {
         <TableContain>
           <NeighborTable
             userType='Neighbors'
-            Data={neighbors}
-            Data2={families}
+            Data={neighborsArray}
+            Data2={familiesArray}
             props={props}
           />
         </TableContain>
