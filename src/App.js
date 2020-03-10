@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import LoginForm from './components/logInForm/LoginForm'
 import SignUp from './components/signUpForm/SignUpOverlay/SignUpOverlay'
 import AdminDash from './components/AdminDash/AdminDashboard'
-import { CssBaseline } from '@material-ui/core'
+import { Normalize } from 'styled-normalize'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
 import { initGA, PageView } from './utils/analytics'
@@ -19,15 +19,17 @@ function App() {
     PageView()
   }, [])
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Route path='/login' component={LoginForm} />
-      <Route exact path='/signup' component={SignUp} />
-      <PrivateRoute exact path='/dashboard' component={AdminDash} />
-      <Route path='/confirmation' component={ConfirmationPage} />
-      <PrivateRoute path='/neighbor/:id' component={NeighborProfile} />
-      <PrivateRoute path='/family/:id' component={FamilyProfile} />
-    </ThemeProvider>
+    <>
+      <Normalize />
+      <ThemeProvider theme={theme}>
+        <Route path='/login' component={LoginForm} />
+        <Route exact path='/signup' component={SignUp} />
+        <PrivateRoute exact path='/dashboard' component={AdminDash} />
+        <Route path='/confirmation' component={ConfirmationPage} />
+        <PrivateRoute path='/neighbor/:id' component={NeighborProfile} />
+        <PrivateRoute path='/family/:id' component={FamilyProfile} />
+      </ThemeProvider>
+    </>
   )
 }
 
