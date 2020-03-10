@@ -37,8 +37,8 @@ const ContactInfo = ({
           autoComplete='fname'
         />
         <Label htmlFor='first_name'>What's your first name?</Label>
-        {errors.first_name && touched.first_name ? (
-          <Error>{errors.first_name}</Error>
+        {errors?.first_name && touched?.first_name ? (
+          <Error>{errors?.first_name}</Error>
         ) : null}
       </FormGroup>
       <FormGroup width='49%'>
@@ -51,8 +51,8 @@ const ContactInfo = ({
           onChange={handleChange}
         />
         <Label htmlFor='last_name'>What's your last name?</Label>
-        {errors.last_name && touched.last_name ? (
-          <Error>{errors.last_name}</Error>
+        {errors?.last_name && touched?.last_name ? (
+          <Error>{errors?.last_name}</Error>
         ) : null}
       </FormGroup>
       <FormGroup width='59%'>
@@ -65,7 +65,9 @@ const ContactInfo = ({
           onChange={handleChange}
         />
         <Label htmlFor='email'>Enter your email here</Label>
-        {errors.email && touched.email ? <Error>{errors.email}</Error> : null}
+        {errors?.email && touched?.email ? (
+          <Error>{errors?.email}</Error>
+        ) : null}
       </FormGroup>
       <FormGroup width='39%'>
         <Input
@@ -77,7 +79,9 @@ const ContactInfo = ({
           onChange={handleChange}
         />
         <Label htmlFor='phone'>Your 10-digit phone number</Label>
-        {errors.phone && touched.phone ? <Error>{errors.phone}</Error> : null}
+        {errors?.phone && touched?.phone ? (
+          <Error>{errors?.phone}</Error>
+        ) : null}
       </FormGroup>
       <FormGroup>
         <Input
@@ -90,8 +94,8 @@ const ContactInfo = ({
           onChange={handleChange}
         />
         <Label htmlFor='password'>Enter your login password</Label>
-        {errors.password && touched.password ? (
-          <Error>{errors.password}</Error>
+        {errors?.password && touched?.password ? (
+          <Error>{errors?.password}</Error>
         ) : null}
       </FormGroup>
       <FormGroup>
@@ -107,8 +111,8 @@ const ContactInfo = ({
         <Label htmlFor='confirmPassword'>
           Enter your login password again to make sure it matches the first one
         </Label>
-        {errors.confirmPassword && touched.confirmPassword ? (
-          <Error>{errors.confirmPassword}</Error>
+        {errors?.confirmPassword && touched?.confirmPassword ? (
+          <Error>{errors?.confirmPassword}</Error>
         ) : null}
       </FormGroup>
     </FormContainer>
