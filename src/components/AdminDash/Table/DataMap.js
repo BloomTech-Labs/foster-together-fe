@@ -1,3 +1,6 @@
+import neighbors from '../AdminDashPics/fosterNeighbor.png'
+import families from '../AdminDashPics/fosterFamily.png'
+
 export default function mapping(props) {
   const rows = []
 
@@ -5,8 +8,7 @@ export default function mapping(props) {
     if (people.match_name === undefined) {
       rows.push({
         name: `${people.first_name}, ${people.last_name}`,
-        type:
-          'https://i.pinimg.com/564x/9d/47/93/9d4793cdf76566cee5cb0acabd9aee67.jpg',
+        type: neighbors,
         match: 'none',
         city: people.city,
         id: people.neighbor_id,
@@ -36,8 +38,7 @@ export default function mapping(props) {
     if (people.match_name === undefined) {
       rows.push({
         name: `${people.first_name}, ${people.last_name}`,
-        type:
-          'https://i.pinimg.com/564x/5f/99/f2/5f99f21f4612118074d38d6a619a0a78.jpg',
+        type: families,
         match: 'none',
         city: people.city,
         id: people.family_id,
