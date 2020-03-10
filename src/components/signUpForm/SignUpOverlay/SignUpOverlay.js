@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import { Formik } from 'formik'
+import * as Yup from 'yup'
 import { axiosWithBaseURL } from '../../../utils/axios/axiosWithBaseUrl'
 import { PageView } from '../../../utils/analytics'
 import { MainContent } from '../styles/signUpOverlayStyles'
@@ -31,35 +33,12 @@ export default function SignUp() {
     state: '',
   })
 
-  function GetStepContent(step) {
-    const changeHandler = e => {
-      setUser({ ...user, [e.target.name]: e.target.value })
-    }
+  const changeHandler = e => {
+    setUser({ ...user, [e.target.name]: e.target.value })
+  }
 
-    const changePasswordConfirm = e => {
-      setPasswordConfirm(e.target.value)
-    }
-
-    switch (step) {
-      case 0:
-        return (
-          <ContactInfo
-            user={user}
-            changeHandler={changeHandler}
-            passwordConfirm={passwordConfirm}
-            changePasswordConfirm={changePasswordConfirm}
-          />
-        )
-      case 1:
-        return <LocationInfo user={user} changeHandler={changeHandler} />
-      case 2:
-        return <ReviewInfo user={user} setIsNeighbor={setIsNeighbor} />
-      case 3:
-        console.log(user)
-        return null
-      default:
-        throw new Error('Unknown step')
-    }
+  const changePasswordConfirm = e => {
+    setPasswordConfirm(e.target.value)
   }
 
   const handleNext = () => {
@@ -130,13 +109,52 @@ export default function SignUp() {
       <MainContent>
         <Tabs />
         <Stepper steps={steps} activeStep={activeStep} />
-        {GetStepContent(activeStep)}
-        <Buttons
-          steps={steps}
-          activeStep={activeStep}
-          handleNext={handleNext}
-          handleBack={handleBack}
-        />
+        <Formik
+          initialValues={{
+            first_name: '',
+            last_name: '',
+            phone: '',
+            email: '',
+            password: '',
+            address: '',
+            city: '',
+            zip: '',
+            state: '',
+          }}
+          onSubmit={values => handleNext(values)}
+        >
+          {props => (
+            <form onSubmit={props.handleSubmit}>
+              {activeStep === 0 ? (
+                <ContactInfo
+                  user={user}
+                  changeHandler={changeHandler}
+                  passwordConfirm={passwordConfirm}
+                  changePasswordConfirm={changePasswordConfirm}
+                  {...props}
+                />
+              ) : activeStep === 1 ? (
+                <LocationInfo
+                  user={user}
+                  changeHandler={changeHandler}
+                  {...props}
+                />
+              ) : (
+                <ReviewInfo
+                  user={user}
+                  setIsNeighbor={setIsNeighbor}
+                  {...props}
+                />
+              )}
+              <Buttons
+                steps={steps}
+                activeStep={activeStep}
+                handleNext={handleNext}
+                handleBack={handleBack}
+              />
+            </form>
+          )}
+        </Formik>
       </MainContent>
     </Container>
   )

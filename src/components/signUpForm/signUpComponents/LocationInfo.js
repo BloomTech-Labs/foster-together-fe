@@ -9,15 +9,15 @@ import {
 } from '../styles/contactInfoStyles'
 import { States } from './States'
 
-const LocationInfo = ({ user, changeHandler }) => (
+const LocationInfo = ({ user, changeHandler, values, handleChange }) => (
   <FormContainer>
     <FormGroup>
       <Input
         id='address'
         name='address'
         placeholder='Street Address'
-        onChange={changeHandler}
-        value={user.address}
+        onChange={handleChange}
+        value={values.address}
       />
       <Label htmlFor='address'>Street name, and house/apt number</Label>
     </FormGroup>
@@ -26,8 +26,8 @@ const LocationInfo = ({ user, changeHandler }) => (
         id='city'
         name='city'
         placeholder='City'
-        onChange={changeHandler}
-        value={user.city}
+        onChange={handleChange}
+        value={values.city}
         autoComplete='billing address-level2'
       />
       <Label htmlFor='city'>Which city do you live in?</Label>
@@ -36,8 +36,8 @@ const LocationInfo = ({ user, changeHandler }) => (
       <Select
         id='state'
         name='state'
-        value={user.state}
-        onChange={changeHandler}
+        value={values.state}
+        onChange={handleChange}
       >
         <Option value='' disabled selected>
           State
@@ -54,8 +54,8 @@ const LocationInfo = ({ user, changeHandler }) => (
         id='zip'
         name='zip'
         placeholder='Zip/Postal Code'
-        onChange={changeHandler}
-        value={user.zip}
+        onChange={handleChange}
+        value={values.zip}
       />
       <Label htmlFor='address'>Enter your 5-digit postal code</Label>
     </FormGroup>

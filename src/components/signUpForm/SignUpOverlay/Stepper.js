@@ -14,7 +14,7 @@ const StepperComponent = ({ steps, activeStep }) => {
         // returns true or false and determines the color of the step
         const active = activeStep >= index
         return (
-          <Step>
+          <Step key={step}>
             {index > 0 && <StepConnector active={active} />}
             <StepLabel active={active}>{index + 1}</StepLabel>
             <StepTitle active={active}>{step}</StepTitle>
