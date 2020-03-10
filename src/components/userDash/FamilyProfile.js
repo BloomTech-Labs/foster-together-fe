@@ -1,25 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-export default function UserProfile(props) {
-  const [user, setUser] = useState({})
-  const id = props.match.params.id
-  useEffect(() => {
-    axios
-      .get(
-        `http://fostertogether-mmaws.us-west-2.elasticbeanstalk.com/api/families/${id}`
-      )
-      .then(res => {
-        setUser(res.data)
-      })
-  })
-
+export default function UserProfile() {
+  const { id } = useParams()
+  const profile = useSelector(state =>
+    state.fam.familiesArray.find(item => item.family_id === Number(id))
+  )
   return (
     <>
       <h1> Coming Soon! </h1>
       <h1>
         {' '}
-        {user.first_name} {user.last_name}'s Profile
+        {profile?.first_name} {profile?.last_name}'s Profile
       </h1>
     </>
   )

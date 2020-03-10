@@ -55,7 +55,7 @@ const LoginForm = () => {
           </Logo>
           <SidebarTitle>
             Children need families{' '}
-            <p font-weight='none'> And families need support</p>
+            <p fontWeight='none'> And families need support</p>
           </SidebarTitle>
         </div>
         <BackArrow>
