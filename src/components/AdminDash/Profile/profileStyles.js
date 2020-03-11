@@ -64,6 +64,57 @@ export const AppProgress = styled.div`
   width: 60%;
 `
 
+export const Stepper = styled.div`
+  width: 80rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0;
+`
+
+export const Step = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  font-weight: 500;
+  width: 28%;
+
+  &:last-child {
+    width: 12%;
+    justify-content: flex-end;
+  }
+`
+
+export const StepWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const StepLabel = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.6rem;
+  width: 2.6rem;
+  border-radius: 100%;
+  background: ${props =>
+    props.active
+      ? ({ theme: { palette } }) => palette.primary.main
+      : '#EDEDED'};
+  color: #fff;
+  font-size: 1.4rem;
+  margin-right: 8px;
+`
+
+export const StepConnector = styled.div`
+  border-bottom: ${props =>
+    props.active
+      ? ({ theme: { palette } }) => `1px solid ${palette.primary.main}`
+      : '1px solid #EDEDED'};
+  width: ${props => (props.width ? props.width : '20%')};
+`
+
 export const Activity = styled.div`
-  wdith: 35%;
+  width: 30%;
 `

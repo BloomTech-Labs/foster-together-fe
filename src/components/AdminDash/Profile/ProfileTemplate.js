@@ -16,6 +16,7 @@ import {
 } from './profileStyles'
 import { Edit, Address, Email, Phone } from './profileIcons'
 import Navigation from '../Navigation/Navigation'
+import Stepper from './Stepper'
 
 const ProfileTemplate = props => {
   return (
@@ -54,6 +55,7 @@ const ProfileTemplate = props => {
       <ContentWrapper>
         <AppProgress>
           <ContentTitle>Application Progress</ContentTitle>
+          <Stepper />
         </AppProgress>
         <Activity>
           <ContentTitle>Activity</ContentTitle>
