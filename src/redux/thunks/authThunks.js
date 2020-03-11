@@ -10,7 +10,9 @@ export const login = values => async dispatch => {
     dispatch(setUserType(data.user_type))
   } catch (e) {
     localStorage.setItem('token', false)
-    dispatch(setAuthError(e.response.data))
+    e.response
+      ? dispatch(setAuthError(e.response.data))
+      : dispatch(setAuthError(e))
   }
 }
 
@@ -25,7 +27,9 @@ export const register = ({ first_name, email, password }) => async dispatch => {
     localStorage.setItem('firstName', data.first_name)
   } catch (e) {
     localStorage.setItem('token', false)
-    dispatch(setAuthError(e.response.data))
+    e.response
+      ? dispatch(setAuthError(e.response.data))
+      : dispatch(setAuthError(e))
   }
 }
 
@@ -37,6 +41,8 @@ export const logout = () => async dispatch => {
   } catch (e) {
     localStorage.setItem('token', false)
     localStorage.setItem('firstName', '')
-    dispatch(setAuthError(e.response.data))
+    e.response
+      ? dispatch(setAuthError(e.response.data))
+      : dispatch(setAuthError(e))
   }
 }

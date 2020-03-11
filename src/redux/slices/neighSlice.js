@@ -11,7 +11,7 @@ export const neighSlice = createSlice({
       state.neighborsArray = action.payload
     },
     setNeighError(state, action) {
-      state.authError = action.payload
+      state.neighError = action.payload
     },
   },
 })
