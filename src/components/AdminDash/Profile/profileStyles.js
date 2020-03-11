@@ -48,6 +48,44 @@ export const ContactInfo = styled.address`
 
 export const HeaderRight = styled.div``
 
+export const StatusContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`
+
+export const StatusRow = styled.div`
+  display: flex;
+  margin-bottom: 15px;
+`
+
+export const StatusTag = styled.div`
+  display: flex;
+  width: 15rem;
+  justify-content: flex-end;
+  font-size: 1.6rem;
+`
+
+export const Status = styled.div`
+  display: flex;
+  width: 15rem;
+  font-size: 1.6rem;
+  margin-left: 8px;
+`
+
+export const StatusIcon = styled.div`
+  height: 1.8rem;
+  width: 1.8rem;
+  margin-left: 8px;
+  border-radius: 100%;
+  background: ${({ status }) =>
+    status === 'done'
+      ? '#6FD0A2'
+      : status === 'inprogress'
+      ? '#FFE871'
+      : '#FF666F'};
+`
+
 export const ContentWrapper = styled.section`
   width: 95%;
   margin: 55px auto;

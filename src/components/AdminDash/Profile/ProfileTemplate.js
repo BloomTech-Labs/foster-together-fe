@@ -9,6 +9,11 @@ import {
   ContactCard,
   ContactInfo,
   HeaderRight,
+  StatusContainer,
+  Status,
+  StatusRow,
+  StatusTag,
+  StatusIcon,
   ContentWrapper,
   ContentTitle,
   AppProgress,
@@ -50,7 +55,25 @@ const ProfileTemplate = props => {
             </ContactCard>
           </Contact>
         </HeaderLeft>
-        <HeaderRight></HeaderRight>
+        <HeaderRight>
+          <StatusContainer>
+            <StatusRow>
+              <StatusTag>Application:</StatusTag>{' '}
+              <Status>Awaiting Approval</Status>
+              <StatusIcon status='inprogress' />
+            </StatusRow>
+            <StatusRow>
+              <StatusTag>Background Check:</StatusTag>{' '}
+              <Status>Not Started</Status>
+              <StatusIcon />
+            </StatusRow>
+            <StatusRow>
+              <StatusTag>Training:</StatusTag>
+              <Status>-</Status>
+              <StatusIcon />
+            </StatusRow>
+          </StatusContainer>
+        </HeaderRight>
       </Header>
       <ContentWrapper>
         <AppProgress>
