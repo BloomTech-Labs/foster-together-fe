@@ -12,9 +12,9 @@ import LocationInfo from '../signUpComponents/LocationInfo'
 import ReviewInfo from '../signUpComponents/ReviewInfo'
 import { PageView } from '../../../utils/analytics/index'
 import { useDispatch } from 'react-redux'
-import { postNeighbor } from '../../../redux/thunks/neighThunks'
-import { postFamily } from '../../../redux/thunks/famThunks'
 import { ContactSchema, LocationSchema } from '../../../utils/yupSchemas'
+import { handleNext } from './handles'
+import { user } from './initialValues'
 
 export default function SignUp() {
   const { push } = useHistory()
@@ -22,21 +22,6 @@ export default function SignUp() {
   const [activeStep, setActiveStep] = useState(0)
   const [isNeighbor, setIsNeighbor] = useState(true)
   const steps = ['Contact Info', 'Location Info', 'Review']
-
-  const handleNext = user => {
-    if (activeStep === 0) {
-      setActiveStep(activeStep + 1)
-    } else if (activeStep === 1) {
-      setActiveStep(activeStep + 1)
-    } else if (activeStep === 2) {
-      if (isNeighbor) dispatch(postNeighbor(user, push))
-      else dispatch(postFamily(user, push))
-    }
-  }
-
-  const handleBack = () => {
-    setActiveStep(activeStep - 1)
-  }
 
   useEffect(() => {
     PageView()
@@ -49,20 +34,18 @@ export default function SignUp() {
         <Tabs />
         <Stepper steps={steps} activeStep={activeStep} />
         <Formik
-          initialValues={{
-            first_name: '',
-            last_name: '',
-            phone: '',
-            email: '',
-            password: '',
-            confirmPassword: '',
-            address: '',
-            city: '',
-            zip: '',
-            state: '',
-          }}
+          initialValues={user}
           validationSchema={activeStep === 0 ? ContactSchema : LocationSchema}
-          onSubmit={values => handleNext(values)}
+          onSubmit={values =>
+            handleNext(
+              values,
+              activeStep,
+              setActiveStep,
+              isNeighbor,
+              dispatch,
+              push
+            )
+          }
         >
           {props => (
             <form onSubmit={props.handleSubmit}>
@@ -76,8 +59,7 @@ export default function SignUp() {
               <Buttons
                 steps={steps}
                 activeStep={activeStep}
-                handleNext={handleNext}
-                handleBack={handleBack}
+                setActiveStep={setActiveStep}
               />
             </form>
           )}
