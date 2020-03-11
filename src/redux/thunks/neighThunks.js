@@ -7,7 +7,9 @@ export const getNeighbors = () => async dispatch => {
     const { data } = await axiosWithAuth().get('/neighbors')
     dispatch(setNeighborsArray(data))
   } catch (e) {
-    dispatch(setNeighError(e.response.data))
+    e.response
+      ? dispatch(setNeighError(e.response.data))
+      : dispatch(setNeighError(e))
   }
 }
 
@@ -16,6 +18,8 @@ export const postNeighbor = (values, push) => async dispatch => {
     await axiosWithBaseURL().post('/neighbors', values)
     push('/confirmation')
   } catch (e) {
-    dispatch(setNeighError(e.response.data))
+    e.response
+      ? dispatch(setNeighError(e.response.data))
+      : dispatch(setNeighError(e))
   }
 }
