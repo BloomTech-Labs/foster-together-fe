@@ -21,7 +21,10 @@ export const RadioButton = ({ setIsNeighbor }) => {
         Neighbor
         <RadioSpan checked={checked.neighbor}></RadioSpan>
       </LabelContainer>
-      <LabelContainer onClick={() => handleCheck('family')} class='container'>
+      <LabelContainer
+        onClick={() => handleCheck(checked, setChecked, 'family')}
+        class='container'
+      >
         Family
         <RadioSpan checked={checked.family}></RadioSpan>
       </LabelContainer>
