@@ -27,15 +27,15 @@ export default function Navigation(props) {
         <LogoImg src={require('../AdminDashPics/foster.png')} />
       </Logo>
       <Nav>
-        <Tab active={location.pathname === '/dashboard' ? true : false}>
+        <Tab active={location.pathname === '/dashboard'}>
           <DashboardIcon color='#A6C9D8' />
           <p>Dashboard</p>
         </Tab>
-        <Tab active={location.pathname === '/data' ? true : false}>
+        <Tab active={location.pathname === '/data'}>
           <People color='#A6C9D8' />
           <p>Database</p>
         </Tab>
-        <Tab active={location.pathname === '/map' ? true : false}>
+        <Tab active={location.pathname === '/map'}>
           <Map color='#A6C9D8' />
           <p>Map</p>
         </Tab>
