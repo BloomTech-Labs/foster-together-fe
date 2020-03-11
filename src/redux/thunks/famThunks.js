@@ -1,4 +1,8 @@
-import { setFamiliesArray, setFamError } from '../slices/famSlice'
+import {
+  setFamiliesArray,
+  setFamError,
+  setSelectedFamily,
+} from '../slices/famSlice'
 import { axiosWithBaseURL } from '../../utils/axios/axiosWithBaseUrl'
 import axiosWithAuth from '../../utils/axios/axiosWithAuth'
 
@@ -6,6 +10,17 @@ export const getFamilies = () => async dispatch => {
   try {
     const { data } = await axiosWithAuth().get('/families')
     data && dispatch(setFamiliesArray(data))
+  } catch (e) {
+    e.response
+      ? dispatch(setFamError(e.response.data))
+      : dispatch(setFamError(e))
+  }
+}
+
+export const getFamilyById = id => async dispatch => {
+  try {
+    const { data } = await axiosWithAuth().get(`/families/${id}`)
+    data && dispatch(setSelectedFamily(data))
   } catch (e) {
     e.response
       ? dispatch(setFamError(e.response.data))

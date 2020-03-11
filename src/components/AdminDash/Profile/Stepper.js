@@ -19,7 +19,7 @@ const StepperComponent = props => {
       </Step>
       <Step>
         <StepWrapper>
-          <StepLabel>2</StepLabel>
+          <StepLabel active>2</StepLabel>
           <p>Background Check</p>
         </StepWrapper>
         <StepConnector width='20%' />

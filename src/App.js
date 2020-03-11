@@ -12,7 +12,6 @@ import NeighborProfile from './components/AdminDash/Profile/NeighborProfile'
 import { PrivateRoute } from './utils/customRoutes'
 // temporary sign up confirmation, will be replaced with user dashboard
 import ConfirmationPage from './components/signUpForm/ConfirmationPage/ConfirmationPage'
-import Profile from './components/AdminDash/Profile/ProfileTemplate'
 
 function App() {
   useEffect(() => {
@@ -23,7 +22,6 @@ function App() {
     <>
       <Normalize />
       <ThemeProvider theme={theme}>
-        <Route path='/profile' component={Profile} />
         <Route path='/login' component={LoginForm} />
         <Route exact path='/signup' component={SignUp} />
         <PrivateRoute exact path='/dashboard' component={AdminDash} />

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link as ReactLink } from 'react-router-dom'
 
 export const Header = styled.header`
   width: 100%;
@@ -146,13 +147,38 @@ export const StepLabel = styled.div`
 `
 
 export const StepConnector = styled.div`
-  border-bottom: ${props =>
-    props.active
-      ? ({ theme: { palette } }) => `1px solid ${palette.primary.main}`
-      : '1px solid #EDEDED'};
+  border-bottom: 1px solid #ededed;
   width: ${props => (props.width ? props.width : '20%')};
 `
 
-export const Activity = styled.div`
+export const Link = styled(ReactLink)`
+  color: ${({ theme: { palette } }) => palette.primary.main};
+  margin-left: 20px;
+
+  &:hover {
+    color: ${({ theme: { palette } }) => palette.secondary.main};
+  }
+`
+
+export const ActivityContainer = styled.div`
   width: 30%;
+`
+
+export const ActivityList = styled.div`
+  width: 100%;
+  margin-top: 30px;
+`
+
+export const ActivityCard = styled.div`
+  height: 8.3rem;
+  width: 100%;
+  background: #f9f9f9;
+  border-radius: 4px;
+  margin-top: 15px;
+  padding: 18px 16px;
+`
+
+export const Activity = styled.p`
+  padding: 0;
+  margin: 0;
 `

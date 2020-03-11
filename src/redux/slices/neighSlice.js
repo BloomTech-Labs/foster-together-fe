@@ -5,6 +5,7 @@ export const neighSlice = createSlice({
   initialState: {
     neighborsArray: [],
     neighError: null,
+    selectedNeighbor: {},
   },
   reducers: {
     setNeighborsArray(state, action) {
@@ -13,8 +14,15 @@ export const neighSlice = createSlice({
     setNeighError(state, action) {
       state.neighError = action.payload
     },
+    setSelectedNeighbor(state, action) {
+      state.selectedNeighbor = action.payload
+    },
   },
 })
 
-export const { setNeighborsArray, setNeighError } = neighSlice.actions
+export const {
+  setNeighborsArray,
+  setNeighError,
+  setSelectedNeighbor,
+} = neighSlice.actions
 export default neighSlice.reducer

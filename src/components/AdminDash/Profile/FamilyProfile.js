@@ -1,19 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { getFamilyById } from '../../../redux/thunks/famThunks'
+import Profile from './Profile'
 
 export default function UserProfile() {
+  const dispatch = useDispatch()
   const { id } = useParams()
-  const profile = useSelector(state =>
-    state.fam.familiesArray.find(item => item.family_id === Number(id))
-  )
-  return (
-    <>
-      <h1> Coming Soon! </h1>
-      <h1>
-        {' '}
-        {profile?.first_name} {profile?.last_name}'s Profile
-      </h1>
-    </>
-  )
+
+  useEffect(() => {
+    dispatch(getFamilyById(id))
+  }, [dispatch, id])
+
+  const { selectedFamily } = useSelector(state => state.fam)
+
+  return <Profile profile={selectedFamily} type='Family' />
 }

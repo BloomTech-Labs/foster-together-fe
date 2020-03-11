@@ -1,19 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { getNeighborById } from '../../../redux/thunks/neighThunks'
+import Profile from './Profile'
 
 export default function UserProfile() {
+  const dispatch = useDispatch()
   const { id } = useParams()
-  const profile = useSelector(state =>
-    state.neigh.neighborsArray.find(item => item.neighbor_id === Number(id))
-  )
-  return (
-    <>
-      <h1> Coming Soon! </h1>
-      <h1>
-        {' '}
-        {profile?.first_name} {profile?.last_name}'s Profile
-      </h1>
-    </>
-  )
+
+  useEffect(() => {
+    dispatch(getNeighborById(id))
+  }, [dispatch, id])
+
+  const { selectedNeighbor } = useSelector(state => state.neigh)
+
+  return <Profile profile={selectedNeighbor} type='Neighbor' />
 }

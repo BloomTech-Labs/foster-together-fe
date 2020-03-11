@@ -5,6 +5,7 @@ export const famSlice = createSlice({
   initialState: {
     familiesArray: [],
     famError: null,
+    selectedFamily: {},
   },
   reducers: {
     setFamiliesArray(state, action) {
@@ -13,8 +14,15 @@ export const famSlice = createSlice({
     setFamError(state, action) {
       state.famError = action.payload
     },
+    setSelectedFamily(state, action) {
+      state.selectedFamily = action.payload
+    },
   },
 })
 
-export const { setFamiliesArray, setFamError } = famSlice.actions
+export const {
+  setFamiliesArray,
+  setFamError,
+  setSelectedFamily,
+} = famSlice.actions
 export default famSlice.reducer
