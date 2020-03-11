@@ -7,7 +7,7 @@ export const authSlice = createSlice({
     userType: null,
   },
   reducers: {
-    setFirstName(state, action) {
+    setAuthError(state, action) {
       state.firstName = action.payload
     },
     setUserType(state, action) {

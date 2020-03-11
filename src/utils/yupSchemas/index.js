@@ -10,6 +10,10 @@ export const ContactSchema = Yup.object().shape({
     .email('Invalid email')
     .required('Email is required'),
   password: Yup.string().required('Password is required'),
+  confirmPassword: Yup.string().oneOf(
+    [Yup.ref('password'), null],
+    'Passwords must match'
+  ),
 })
 
 export const LocationSchema = Yup.object().shape({

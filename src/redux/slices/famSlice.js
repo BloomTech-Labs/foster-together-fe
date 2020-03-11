@@ -11,7 +11,7 @@ export const famSlice = createSlice({
       state.familiesArray = action.payload
     },
     setFamError(state, action) {
-      state.authError = action.payload
+      state.famError = action.payload
     },
   },
 })

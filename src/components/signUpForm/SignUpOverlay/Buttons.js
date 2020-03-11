@@ -1,11 +1,11 @@
 import React from 'react'
 import { BtnContainer, BackBtn, NextBtn } from '../styles/signUpOverlayStyles'
 
-const Buttons = ({ steps, activeStep, handleBack }) => {
+const Buttons = ({ steps, activeStep, setActiveStep }) => {
   return (
     <BtnContainer>
       {activeStep !== 0 && (
-        <BackBtn type='button' onClick={handleBack}>
+        <BackBtn type='button' onClick={() => setActiveStep(activeStep - 1)}>
           Back
         </BackBtn>
       )}

@@ -5,7 +5,7 @@ import {
   Reviewtextone,
   CityStateZip,
 } from '../styles/reviewStyles'
-import RadioButton from './RadioButton'
+import { RadioButton } from './RadioButton'
 
 const ReviewInfo = ({ setIsNeighbor, values }) => (
   <div>
