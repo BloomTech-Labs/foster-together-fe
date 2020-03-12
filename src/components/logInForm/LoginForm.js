@@ -25,7 +25,7 @@ import {
 } from './styles/LoginPage'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../redux/thunks/authThunks'
-import { Event } from '../../utils/analytics/index'
+import LoginInputs from './InputContainer'
 
 const LoginForm = () => {
   const { push } = useHistory()
@@ -74,47 +74,11 @@ const LoginForm = () => {
             <span>Register</span>
           </Tab>
         </TabContainer>
-        <InputContainer onSubmit={onSubmit}>
-          <InputBox>
-            <Input
-              required
-              fullWidth
-              id='email'
-              placeholder='Email'
-              name='email'
-              autoComplete='email'
-              value={values.email}
-              onChange={handleChange}
-              autoFocus
-            />
-            <InputLabel>Enter your email here</InputLabel>
-          </InputBox>
-          <InputBox>
-            <Input
-              placeholder='Password'
-              name='password'
-              label='Password'
-              type='password'
-              id='password'
-              value={values.password}
-              onChange={handleChange}
-              autoComplete='current-password'
-            />
-            <InputLabel>Enter your password here</InputLabel>
-          </InputBox>
-          <BtnContainer>
-            <ForContainer>
-              <Forgot>I forgot my password</Forgot>
-            </ForContainer>
-            <Btn>
-              <Submit
-                onClick={() => Event('Login', 'Tried to login', 'submit')}
-              >
-                Submit
-              </Submit>
-            </Btn>
-          </BtnContainer>
-        </InputContainer>
+        <LoginInputs
+          onSubmit={onSubmit}
+          handleChange={handleChange}
+          values={values}
+        />
       </ContentBox>
     </Container>
   )
