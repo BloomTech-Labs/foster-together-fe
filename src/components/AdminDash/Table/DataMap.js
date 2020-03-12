@@ -7,7 +7,7 @@ export default function mapping(props) {
   props.Data.map(people => {
     if (people.match_name === undefined) {
       rows.push({
-        name: `${people.first_name}, ${people.last_name}`,
+        name: `${people.last_name}, ${people.first_name}`,
         type: neighbors,
         match: 'none',
         city: people.city,
@@ -21,7 +21,7 @@ export default function mapping(props) {
       })
     } else {
       rows.push({
-        name: `${people.first_name}, ${people.last_name}`,
+        name: `${people.last_name}, ${people.first_name}`,
         type: 'family',
         match: 'none',
         city: people.city,
@@ -37,7 +37,7 @@ export default function mapping(props) {
   props.Data2.map(people => {
     if (people.match_name === undefined) {
       rows.push({
-        name: `${people.first_name}, ${people.last_name}`,
+        name: `${people.last_name}, ${people.first_name}`,
         type: families,
         match: 'none',
         city: people.city,
@@ -51,7 +51,7 @@ export default function mapping(props) {
       })
     } else {
       rows.push({
-        name: `${people.first_name}, ${people.last_name}`,
+        name: `${people.last_name}, ${people.first_name}`,
         type: 'neighbor',
         match: 'none',
         city: people.city,
