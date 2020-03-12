@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper, Title, Container } from './TaskStyles'
+import { Wrapper, Title, Container } from './taskStyles'
 
 import TaskCard from './TaskCard'
 
@@ -7,7 +7,7 @@ const TaskBar = () => {
   const tasks = [
     {
       id: 1,
-      description: 'Volunteer applications to review.',
+      description: 'Applications to review.',
       number: 12,
     },
     {

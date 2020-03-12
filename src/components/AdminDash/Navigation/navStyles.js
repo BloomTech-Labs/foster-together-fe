@@ -63,7 +63,7 @@ export const BtnImg = styled.img`
 `
 
 export const IconContainer = styled.div`
-  height: 1000%;
+  height: 100%;
   &:hover {
     cursor: pointer;
   }
@@ -98,10 +98,11 @@ export const Display = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   color: white;
   border-radius: 1px;
   &:hover {
-    color: palevioletred;
+    color: ${({ theme: { palette } }) => palette.primary.main};
   }
 `
