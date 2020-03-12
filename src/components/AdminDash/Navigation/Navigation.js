@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import {
   NavBar,
   Logo,
@@ -21,7 +21,8 @@ import Container from '../UserOptions/OptionContainer'
 
 export default function Navigation() {
   const [open, setOpen] = useState(false)
-  const location = useLocation()
+  const { pathname } = useLocation()
+  const { push } = useHistory()
 
   return (
     <NavBar>
@@ -29,15 +30,18 @@ export default function Navigation() {
         <LogoImg src={require('../AdminDashPics/foster.png')} />
       </Logo>
       <Nav>
-        <Tab active={location.pathname === '/dashboard'}>
+        <Tab
+          onClick={() => push('/dashboard')}
+          active={pathname === '/dashboard'}
+        >
           <DashboardIcon color='#A6C9D8' />
           <p>Dashboard</p>
         </Tab>
-        <Tab active={location.pathname === '/data'}>
+        <Tab active={pathname === '/data'}>
           <People color='#A6C9D8' />
           <p>Database</p>
         </Tab>
-        <Tab active={location.pathname === '/map'}>
+        <Tab active={pathname === '/map'}>
           <Map color='#A6C9D8' />
           <p>Map</p>
         </Tab>

@@ -1,5 +1,6 @@
 import neighbors from '../AdminDashPics/fosterNeighbor.png'
 import families from '../AdminDashPics/fosterFamily.png'
+import { formatPhone } from '../../../utils/formatPhone'
 
 export default function mapping(props) {
   const rows = []
@@ -17,7 +18,7 @@ export default function mapping(props) {
         background: people.background,
         training: people.training,
         email: people.email,
-        phone: people.phone,
+        phone: formatPhone(people.phone),
       })
     } else {
       rows.push({
@@ -47,7 +48,7 @@ export default function mapping(props) {
         background: people.background,
         training: people.training,
         email: people.email,
-        phone: people.phone,
+        phone: formatPhone(people.phone),
       })
     } else {
       rows.push({
