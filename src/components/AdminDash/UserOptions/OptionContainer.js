@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Menu, LogOut, Display } from '../Navigation/NavigationStyles'
 import { useHistory } from 'react-router-dom'
 

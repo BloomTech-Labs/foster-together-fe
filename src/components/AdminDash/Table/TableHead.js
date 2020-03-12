@@ -7,7 +7,12 @@ export const columns = [
     Header: 'MEMBER TYPE',
     accessor: 'type',
     Cell: props => (
-      <img src={props.data[props.row.id].type} height={45} width={45} alt="either an f for family or n for neighbor" />
+      <img
+        src={props.data[props.row.id].type}
+        height={45}
+        width={45}
+        alt='either an f for family or n for neighbor'
+      />
     ),
   },
   { Header: 'MATCH', accessor: 'match' },
