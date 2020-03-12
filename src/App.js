@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import LoginForm from './components/logInForm/LoginForm'
 import SignUp from './components/signUpForm/SignUpOverlay/SignUpOverlay'
 import AdminDash from './components/AdminDash/AdminDashboard'
-import { Normalize } from 'styled-normalize'
+import { GlobalStyle } from './GlobalStyle'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
 import { initGA, PageView } from './utils/analytics'
@@ -20,7 +20,7 @@ function App() {
   }, [])
   return (
     <>
-      <Normalize />
+      <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Route path='/login' component={LoginForm} />
         <Route exact path='/signup' component={SignUp} />

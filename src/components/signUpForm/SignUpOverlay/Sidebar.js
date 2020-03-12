@@ -1,7 +1,7 @@
 import React from 'react'
 import { Sidebar, Logo, SidebarTitle, BackArrow } from '../../style'
 import { Instructions, ListItem } from '../styles/signUpOverlayStyles'
-import logo from '../../../images/logo.svg'
+import logo from '../../../images/logo.png'
 import backArrow from '../../../images/icons/back-arrow.svg'
 
 const SidebarComponent = () => {

@@ -9,14 +9,8 @@ import {
   Utilities,
   IconContainer,
   PulseContainer,
-} from './NavigationStyles'
-import {
-  People,
-  Map,
-  DashboardIcon,
-  Pulse,
-  UserShield,
-} from '../AdminDashPics/icons'
+} from './navStyles'
+import { People, Map, DashboardIcon, Pulse, UserShield } from './navIcons'
 import Container from '../UserOptions/OptionContainer'
 
 export default function Navigation() {
@@ -27,7 +21,7 @@ export default function Navigation() {
   return (
     <NavBar>
       <Logo>
-        <LogoImg src={require('../AdminDashPics/foster.png')} />
+        <LogoImg src={require('../../../images/logo.png')} />
       </Logo>
       <Nav>
         <Tab

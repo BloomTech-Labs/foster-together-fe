@@ -25,6 +25,8 @@ export const Sidebar = styled.div`
 
 export const Logo = styled.div`
   margin-left: 25px;
+  width: 20rem;
+  height: auto;
 `
 
 export const SidebarTitle = styled.h2`

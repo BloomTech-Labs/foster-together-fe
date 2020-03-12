@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import activeTab from '../AdminDashPics/active-tab.svg'
-import circle from '../AdminDashPics/circle.svg'
+import activeTab from './active-tab.svg'
+import dot from './notification-dot.svg'
 
 export const NavBar = styled.div`
   background: ${({ theme: { palette } }) => palette.primary.main};
@@ -63,14 +63,14 @@ export const BtnImg = styled.img`
 `
 
 export const IconContainer = styled.div`
-  height: 1000%;
+  height: 100%;
   &:hover {
     cursor: pointer;
   }
 `
 
 export const PulseContainer = styled(IconContainer)`
-  background-image: url(${circle});
+  background-image: url(${dot});
   background-repeat: no-repeat;
   background-position: right top;
 `
@@ -98,10 +98,11 @@ export const Display = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   color: white;
   border-radius: 1px;
   &:hover {
-    color: palevioletred;
+    color: ${({ theme: { palette } }) => palette.primary.main};
   }
 `

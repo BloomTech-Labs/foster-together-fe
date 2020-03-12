@@ -1,11 +1,6 @@
 import React from 'react'
-import { Card, CardTop, Number, Description } from './TaskStyles'
-import {
-  PaperMagnify,
-  Shield,
-  PersonCheck,
-  HouseMagnify,
-} from '../AdminDashPics/icons'
+import { Card, CardTop, Number, Description } from './taskStyles'
+import { PaperMagnify, Shield, PersonCheck, HouseMagnify } from './taskIcons'
 
 const TaskCard = ({ task }) => {
   return (
@@ -13,13 +8,13 @@ const TaskCard = ({ task }) => {
       <CardTop>
         <Number>{task.number}</Number>
         {task.id === 1 ? (
-          <PaperMagnify color='#fff' />
+          <PaperMagnify />
         ) : task.id === 2 ? (
-          <Shield color='#fff' />
+          <Shield />
         ) : task.id === 3 ? (
-          <PersonCheck color='#fff' />
+          <PersonCheck />
         ) : (
-          <HouseMagnify color='#fff' />
+          <HouseMagnify />
         )}
       </CardTop>
       <Description>{task.description}</Description>

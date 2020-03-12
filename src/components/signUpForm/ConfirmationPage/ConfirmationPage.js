@@ -7,8 +7,8 @@ import {
   Utilities,
   IconContainer,
   PulseContainer,
-} from '../../AdminDash/Navigation/NavigationStyles'
-import { Pulse, UserShield } from '../../AdminDash/AdminDashPics/icons'
+} from '../../AdminDash/Navigation/navStyles'
+import { Pulse, UserShield } from '../../AdminDash/Navigation/navIcons'
 
 const Wrapper = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const ConfirmationPage = () => {
     <Wrapper>
       <NavBar>
         <Logo>
-          <LogoImg src={require('../../AdminDash/AdminDashPics/foster.png')} />
+          <LogoImg src={require('../../../images/logo.png')} />
         </Logo>
         <Utilities>
           <PulseContainer>

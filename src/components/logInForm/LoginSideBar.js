@@ -1,6 +1,6 @@
 import React from 'react'
 import { Sidebar, Logo, SidebarTitle, BackArrow } from '../style'
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.png'
 import arrowImg from '../../images/icons/back-arrow.svg'
 
 const LoginSideBar = () => {
