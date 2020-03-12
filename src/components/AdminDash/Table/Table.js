@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTable, useSortBy } from 'react-table'
 import { TableContain } from '../adminDashStyles'
+import { TableHtml, TableRow, TableHeader, TableData } from './TableStyle'
 
 export default function Table({ columns, data, props }) {
   const {
@@ -21,12 +22,14 @@ export default function Table({ columns, data, props }) {
 
   return (
     <TableContain>
-      <table {...getTableProps()}>
+      <TableHtml {...getTableProps()}>
         <thead>
           {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
+            <TableRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                <TableHeader
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                >
                   {column.render('Header')}
                   <span>
                     {column.isSorted
@@ -35,19 +38,19 @@ export default function Table({ columns, data, props }) {
                         : ' 🔼'
                       : ''}
                   </span>
-                </th>
+                </TableHeader>
               ))}
-            </tr>
+            </TableRow>
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
           {firstPageRows.map(row => {
             prepareRow(row)
             return (
-              <tr {...row.getRowProps()}>
+              <TableRow {...row.getRowProps()}>
                 {row.cells.map(cell => {
                   return (
-                    <td
+                    <TableData
                       onClick={() =>
                         props.props.history.push(
                           `/${cell.row.original.userType}/${cell.row.original.id}`
@@ -56,14 +59,14 @@ export default function Table({ columns, data, props }) {
                       {...cell.getCellProps()}
                     >
                       {cell.render('Cell')}
-                    </td>
+                    </TableData>
                   )
                 })}
-              </tr>
+              </TableRow>
             )
           })}
         </tbody>
-      </table>
+      </TableHtml>
       <br />
     </TableContain>
   )
