@@ -1,8 +1,7 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import Navigation from "./Navigation";
-import { useLocation } from 'react-router-dom'
+import React from 'react'
+import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
+import Navigation from './Navigation'
 
-test("renders navigation without crashing", () => {
-
-});
+test('renders navigation without crashing', () => {
+  render(<Navigation />)
+})

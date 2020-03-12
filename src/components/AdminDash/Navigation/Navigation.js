@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import {
   NavBar,
@@ -19,7 +19,7 @@ import {
 } from '../AdminDashPics/icons'
 import Container from '../UserOptions/OptionContainer'
 
-export default function Navigation(props) {
+export default function Navigation() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
 
@@ -46,9 +46,12 @@ export default function Navigation(props) {
         <PulseContainer>
           <Pulse color='#E2EDEC' />
         </PulseContainer>
-        <IconContainer onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+        <IconContainer
+          onMouseEnter={() => setOpen(true)}
+          onMouseLeave={() => setOpen(false)}
+        >
           <UserShield color='#E2EDEC' />
-          {open ? <Container/> : null }
+          {open ? <Container /> : null}
         </IconContainer>
       </Utilities>
     </NavBar>
