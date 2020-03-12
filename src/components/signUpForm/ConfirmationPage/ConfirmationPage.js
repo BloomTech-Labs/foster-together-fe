@@ -8,7 +8,7 @@ import {
   IconContainer,
   PulseContainer,
 } from '../../AdminDash/Navigation/NavigationStyles'
-import { Pulse, UserShield } from '../../AdminDash/AdminDashPics/icons'
+import { Pulse, UserShield } from '../../AdminDash/Navigation/navIcons'
 
 const Wrapper = styled.div`
   display: flex;

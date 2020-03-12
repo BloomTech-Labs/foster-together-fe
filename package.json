@@ -9,7 +9,6 @@
     "axios": "^0.19.2",
     "formik": "^2.1.4",
     "history": "^4.10.1",
-    "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-ga": "^2.7.0",
@@ -18,9 +17,9 @@
     "react-scripts": "^3.4.0",
     "react-stepper-horizontal": "^1.0.11",
     "react-table": "^7.0.0-rc.16",
-    "sass": "^1.26.2",
     "styled-components": "^5.0.1",
     "styled-normalize": "^8.0.7",
+    "webfontloader": "^1.6.28",
     "yup": "^0.28.3"
   },
   "devDependencies": {
