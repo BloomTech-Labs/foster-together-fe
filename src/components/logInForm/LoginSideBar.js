@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  Sidebar,
-  Logo,
-  SidebarTitle,
-  BackArrow,
-  TabContainer,
-  Tab,
-} from '../style'
+import { Sidebar, Logo, SidebarTitle, BackArrow } from '../style'
 import logo from '../../images/logo.svg'
 import arrowImg from '../../images/icons/back-arrow.svg'
 
