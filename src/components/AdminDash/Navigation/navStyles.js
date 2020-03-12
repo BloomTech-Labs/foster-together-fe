@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import activeTab from '../AdminDashPics/active-tab.svg'
-import circle from '../AdminDashPics/circle.svg'
+import activeTab from './active-tab.svg'
+import dot from './notification-dot.svg'
 
 export const NavBar = styled.div`
   background: ${({ theme: { palette } }) => palette.primary.main};
@@ -70,7 +70,7 @@ export const IconContainer = styled.div`
 `
 
 export const PulseContainer = styled(IconContainer)`
-  background-image: url(${circle});
+  background-image: url(${dot});
   background-repeat: no-repeat;
   background-position: right top;
 `

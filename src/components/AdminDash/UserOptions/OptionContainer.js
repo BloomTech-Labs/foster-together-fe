@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, LogOut, Display } from '../Navigation/NavigationStyles'
+import { Menu, LogOut, Display } from '../Navigation/navStyles'
 import { useHistory } from 'react-router-dom'
 
 const Container = () => {

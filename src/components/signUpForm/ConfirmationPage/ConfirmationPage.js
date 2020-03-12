@@ -7,7 +7,7 @@ import {
   Utilities,
   IconContainer,
   PulseContainer,
-} from '../../AdminDash/Navigation/NavigationStyles'
+} from '../../AdminDash/Navigation/navStyles'
 import { Pulse, UserShield } from '../../AdminDash/Navigation/navIcons'
 
 const Wrapper = styled.div`
