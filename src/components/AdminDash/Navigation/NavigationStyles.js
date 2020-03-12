@@ -63,7 +63,7 @@ export const BtnImg = styled.img`
 `
 
 export const IconContainer = styled.div`
-height: 1000%;
+  height: 1000%;
   &:hover {
     cursor: pointer;
   }
@@ -76,31 +76,32 @@ export const PulseContainer = styled(IconContainer)`
 `
 
 export const Menu = styled.div`
-position: absolute;
-top: 3rem;
-padding-top: 3.4rem;
-right: 0rem;
-height: 16rem;
-width: 28rem;
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-justify-content: flex-start;
+  position: absolute;
+  top: 3rem;
+  padding-top: 3.4rem;
+  right: 0rem;
+  height: 16rem;
+  width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
 `
 
 export const LogOut = styled.h1`
-color: grey;
-font-size: 5rem;
-&:hover{
-color: blue
-}
+  font-size: 2rem;
 `
 
 export const Display = styled.div`
-background-color: orange;
-height: 100%;
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
+  background-color: ${({ theme: { palette } }) => palette.primary.light};
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  border-radius: 1px;
+  &:hover {
+    color: palevioletred;
+  }
 `
