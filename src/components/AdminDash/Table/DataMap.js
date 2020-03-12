@@ -1,5 +1,6 @@
 import neighbors from '../AdminDashPics/fosterNeighbor.png'
 import families from '../AdminDashPics/fosterFamily.png'
+import { formatPhone } from '../../../utils/formatPhone'
 
 export default function mapping(props) {
   const rows = []
@@ -7,7 +8,7 @@ export default function mapping(props) {
   props.Data.map(people => {
     if (people.match_name === undefined) {
       rows.push({
-        name: `${people.first_name}, ${people.last_name}`,
+        name: `${people.first_name} ${people.last_name}`,
         type: neighbors,
         match: 'none',
         city: people.city,
@@ -17,11 +18,11 @@ export default function mapping(props) {
         background: people.background,
         training: people.training,
         email: people.email,
-        phone: people.phone,
+        phone: formatPhone(people.phone),
       })
     } else {
       rows.push({
-        name: `${people.first_name}, ${people.last_name}`,
+        name: `${people.first_name} ${people.last_name}`,
         type: 'family',
         match: 'none',
         city: people.city,
@@ -37,7 +38,7 @@ export default function mapping(props) {
   props.Data2.map(people => {
     if (people.match_name === undefined) {
       rows.push({
-        name: `${people.first_name}, ${people.last_name}`,
+        name: `${people.first_name} ${people.last_name}`,
         type: families,
         match: 'none',
         city: people.city,
@@ -47,11 +48,11 @@ export default function mapping(props) {
         background: people.background,
         training: people.training,
         email: people.email,
-        phone: people.phone,
+        phone: formatPhone(people.phone),
       })
     } else {
       rows.push({
-        name: `${people.first_name}, ${people.last_name}`,
+        name: `${people.first_name} ${people.last_name}`,
         type: 'neighbor',
         match: 'none',
         city: people.city,
