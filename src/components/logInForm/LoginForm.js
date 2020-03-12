@@ -1,31 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import {
-  Container,
-  Sidebar,
-  Logo,
-  SidebarTitle,
-  BackArrow,
-  TabContainer,
-  Tab,
-} from '../style'
-import logo from '../../images/logo.svg'
-import arrowImg from '../../images/icons/back-arrow.svg'
-import {
-  ContentBox,
-  Input,
-  InputBox,
-  InputContainer,
-  InputLabel,
-  Submit,
-  BtnContainer,
-  Btn,
-  Forgot,
-  ForContainer,
-} from './styles/LoginPage'
+import { Container, TabContainer, Tab } from '../style'
+import { ContentBox } from './styles/LoginPage'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../redux/thunks/authThunks'
 import LoginInputs from './InputContainer'
+import LoginSideBar from './LoginSideBar'
 
 const LoginForm = () => {
   const { push } = useHistory()
@@ -51,20 +31,7 @@ const LoginForm = () => {
 
   return (
     <Container>
-      <Sidebar>
-        <div>
-          <Logo>
-            <img src={logo} alt='Foster Together logo' />
-          </Logo>
-          <SidebarTitle>
-            Children need families{' '}
-            <p fontWeight='none'> And families need support</p>
-          </SidebarTitle>
-        </div>
-        <BackArrow>
-          <img src={arrowImg} alt='back arrow' />
-        </BackArrow>
-      </Sidebar>
+      <LoginSideBar />
       <ContentBox>
         <TabContainer>
           <Tab active>
