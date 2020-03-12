@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     font-size: 62.5%;
+    max-width: 100%;
   }
 
   body {

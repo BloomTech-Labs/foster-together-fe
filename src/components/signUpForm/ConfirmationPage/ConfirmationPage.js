@@ -26,7 +26,7 @@ const ConfirmationPage = () => {
     <Wrapper>
       <NavBar>
         <Logo>
-          <LogoImg src={require('../../AdminDash/AdminDashPics/foster.png')} />
+          <LogoImg src={require('../../../images/logo.png')} />
         </Logo>
         <Utilities>
           <PulseContainer>

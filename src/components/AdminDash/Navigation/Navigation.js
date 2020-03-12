@@ -21,7 +21,7 @@ export default function Navigation() {
   return (
     <NavBar>
       <Logo>
-        <LogoImg src={require('../AdminDashPics/foster.png')} />
+        <LogoImg src={require('../../../images/logo.png')} />
       </Logo>
       <Nav>
         <Tab

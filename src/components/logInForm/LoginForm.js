@@ -9,7 +9,7 @@ import {
   TabContainer,
   Tab,
 } from '../style'
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.png'
 import arrowImg from '../../images/icons/back-arrow.svg'
 import {
   ContentBox,
