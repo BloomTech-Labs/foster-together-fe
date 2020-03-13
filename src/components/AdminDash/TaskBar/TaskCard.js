@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardTop, Number, Description } from './taskStyles'
+import { Card, CardTop, Number, Description } from './TaskStyles'
 import { PaperMagnify, Shield, PersonCheck, HouseMagnify } from './taskIcons'
 
 const TaskCard = ({ task }) => {

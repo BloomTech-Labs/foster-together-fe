@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper, Title, Container } from './taskStyles'
+import { Wrapper, Title, Container } from './TaskStyles'
 
 import TaskCard from './TaskCard'
 
