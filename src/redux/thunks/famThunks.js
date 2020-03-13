@@ -9,7 +9,7 @@ import axiosWithAuth from '../../utils/axios/axiosWithAuth'
 export const getFamilies = () => async dispatch => {
   try {
     const { data } = await axiosWithAuth().get('/families')
-    data && dispatch(setFamiliesArray(data))
+    dispatch(setFamiliesArray(data))
   } catch (e) {
     e.response
       ? dispatch(setFamError(e.response.data))
@@ -20,7 +20,7 @@ export const getFamilies = () => async dispatch => {
 export const getFamilyById = id => async dispatch => {
   try {
     const { data } = await axiosWithAuth().get(`/families/${id}`)
-    data && dispatch(setSelectedFamily(data))
+    dispatch(setSelectedFamily(data))
   } catch (e) {
     e.response
       ? dispatch(setFamError(e.response.data))

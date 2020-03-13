@@ -20,7 +20,7 @@ export const getNeighbors = () => async dispatch => {
 export const getNeighborById = id => async dispatch => {
   try {
     const { data } = await axiosWithAuth().get(`/neighbors/${id}`)
-    data && dispatch(setSelectedNeighbor(data))
+    dispatch(setSelectedNeighbor(data))
   } catch (e) {
     e.response
       ? dispatch(setNeighError(e.response.data))
