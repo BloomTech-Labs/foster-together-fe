@@ -32,7 +32,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "watch": "react-scripts test --watchAll",
-    "coverage": "CI=true yarn test --coverage || true",
+    "coverage": "CI=true react-scripts test --coverage || true",
     "eject": "react-scripts eject",
     "heroku-prebuild": "npm install --only=dev"
   },
