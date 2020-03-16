@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Form, Field } from 'formik'
 
 export const ContentBox = styled.div`
   width: 70%;
@@ -8,7 +9,7 @@ export const ContentBox = styled.div`
   align-items: center;
 `
 
-export const InputContainer = styled.form`
+export const InputContainer = styled(Form)`
   width: 75%;
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +24,7 @@ export const InputBox = styled.div`
   margin-bottom: 20px;
 `
 
-export const Input = styled.input`
+export const Input = styled(Field)`
   height: 5.6rem;
   font-size: 1.6rem;
   background: #f9f9f9;

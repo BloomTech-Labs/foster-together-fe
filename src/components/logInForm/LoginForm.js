@@ -1,33 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Container, TabContainer, Tab } from '../style'
 import { ContentBox } from './styles/LoginPage'
-import { useDispatch, useSelector } from 'react-redux'
-import { login } from '../../redux/thunks/authThunks'
+import { useSelector } from 'react-redux'
 import LoginInputs from './InputContainer'
 import LoginSideBar from './LoginSideBar'
 
 const LoginForm = () => {
   const { push } = useHistory()
   const { userType } = useSelector(state => state.auth)
-  const dispatch = useDispatch()
 
   useEffect(() => {
     userType === 'admin' && push('/dashboard')
   }, [userType, push])
-
-  const [values, setValues] = useState({ email: '', password: '' })
-
-  const handleChange = e => {
-    setValues({ ...values, [e.target.name]: e.target.value })
-  }
-
-  const onSubmit = e => {
-    e.preventDefault()
-    dispatch(login(values))
-  }
-
-  useEffect(() => {}, [])
 
   return (
     <Container>
@@ -41,11 +26,7 @@ const LoginForm = () => {
             <span>Register</span>
           </Tab>
         </TabContainer>
-        <LoginInputs
-          onSubmit={onSubmit}
-          handleChange={handleChange}
-          values={values}
-        />
+        <LoginInputs />
       </ContentBox>
     </Container>
   )
