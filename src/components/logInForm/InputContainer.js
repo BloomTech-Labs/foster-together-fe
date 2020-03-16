@@ -11,49 +11,51 @@ import {
   ForContainer,
 } from './styles/LoginPage'
 import { Event } from '../../utils/analytics/index'
+import { Formik } from 'formik'
+import { useDispatch } from 'react-redux'
+import { login } from '../../redux/thunks/authThunks'
 
-const LoginInputs = ({ onSubmit, handleChange, values }) => {
+const LoginInputs = () => {
+  const dispatch = useDispatch()
   return (
-    <InputContainer onSubmit={onSubmit}>
-      <InputBox>
-        <Input
-          required
-          fullWidth
-          id='email'
-          placeholder='Email'
-          name='email'
-          autoComplete='email'
-          value={values.email}
-          onChange={handleChange}
-          autoFocus
-        />
-        <InputLabel>Enter your email here</InputLabel>
-      </InputBox>
-      <InputBox>
-        <Input
-          placeholder='Password'
-          name='password'
-          label='Password'
-          type='password'
-          id='password'
-          value={values.password}
-          onChange={handleChange}
-          autoComplete='current-password'
-        />
-        <InputLabel>Enter your password here</InputLabel>
-      </InputBox>
-      <BtnContainer>
-        <ForContainer>
-          <Forgot>I forgot my password</Forgot>
-        </ForContainer>
-        <Btn>
-          <Submit onClick={() => Event('Login', 'Tried to login', 'submit')}>
-            Submit
-          </Submit>
-        </Btn>
-      </BtnContainer>
-    </InputContainer>
+    <Formik
+      initialValues={{ email: '', password: '' }}
+      onSubmit={values => dispatch(login(values))}
+    >
+      <InputContainer>
+        <InputBox>
+          <Input
+            required
+            id='email'
+            placeholder='Email'
+            name='email'
+            autoFocus
+          />
+          <InputLabel>Enter your email here</InputLabel>
+        </InputBox>
+        <InputBox>
+          <Input
+            required
+            placeholder='Password'
+            name='password'
+            label='Password'
+            type='password'
+            id='password'
+          />
+          <InputLabel>Enter your password here</InputLabel>
+        </InputBox>
+        <BtnContainer>
+          <ForContainer>
+            <Forgot>I forgot my password</Forgot>
+          </ForContainer>
+          <Btn>
+            <Submit onClick={() => Event('Login', 'Tried to login', 'submit')}>
+              Submit
+            </Submit>
+          </Btn>
+        </BtnContainer>
+      </InputContainer>
+    </Formik>
   )
 }
-
 export default LoginInputs

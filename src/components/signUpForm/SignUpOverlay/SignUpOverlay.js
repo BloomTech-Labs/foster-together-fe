@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import { Formik } from 'formik'
+import { Formik, Form } from 'formik'
 import { MainContent } from '../styles/signUpOverlayStyles'
 import { Container } from '../../style'
 import Sidebar from './Sidebar'
@@ -48,7 +48,7 @@ export default function SignUp() {
           }
         >
           {props => (
-            <form onSubmit={props.handleSubmit}>
+            <Form>
               {activeStep === 0 ? (
                 <ContactInfo {...props} />
               ) : activeStep === 1 ? (
@@ -61,7 +61,7 @@ export default function SignUp() {
                 activeStep={activeStep}
                 setActiveStep={setActiveStep}
               />
-            </form>
+            </Form>
           )}
         </Formik>
       </MainContent>

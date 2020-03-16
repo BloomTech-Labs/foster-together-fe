@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-//styles that is being used in both LofinForm.js and signUpOverlay.js
+//styles that is being used in both LoginForm.js and signUpOverlay.js
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
