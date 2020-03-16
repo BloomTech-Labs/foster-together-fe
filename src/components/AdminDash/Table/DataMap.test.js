@@ -12,8 +12,7 @@ test('length is four', () => {
 })
 
 test('test that name is coming through correctly', () => {
-  const expected = 'bob, smith'
-  console.log(DataMap(data)[0])
+  const expected = 'smith, bob'
   const actual = DataMap(data)[0].name
   expect(expected).toEqual(actual)
 })
