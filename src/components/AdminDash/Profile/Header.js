@@ -15,7 +15,7 @@ import {
   StatusTag,
   StatusIcon,
 } from './profileStyles'
-import { Edit, Address, Email, Phone } from './profileIcons'
+import { edit, address, email, phone } from './icons'
 import { formatPhone } from '../../../utils/formatPhone'
 
 const ProfileHeader = ({ profile, type }) => {
@@ -27,13 +27,13 @@ const ProfileHeader = ({ profile, type }) => {
             <Name>
               {profile.first_name} {profile.last_name}
             </Name>
-            <Edit />
+            <img src={edit} alt='Edit icon' />
           </NameWrapper>
           <Role>{type}</Role>
         </div>
         <Contact>
           <ContactCard>
-            <Address />
+            <img src={address} alt='Icon of buildings' />
             <ContactInfo>
               {profile.address}
               <br />
@@ -41,11 +41,11 @@ const ProfileHeader = ({ profile, type }) => {
             </ContactInfo>
           </ContactCard>
           <ContactCard>
-            <Email />
+            <img src={email} alt='Icon of an envelope' />
             <ContactInfo>{profile.email}</ContactInfo>
           </ContactCard>
           <ContactCard>
-            <Phone />
+            <img src={phone} alt='Icon of a mobile phone' />
             <ContactInfo>{formatPhone(profile.phone)}</ContactInfo>
           </ContactCard>
         </Contact>
