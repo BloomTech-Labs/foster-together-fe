@@ -40,6 +40,7 @@ export const Contact = styled.div`
 export const ContactCard = styled.div`
   display: flex;
   margin-right: 30px;
+  align-items: flex-start;
 `
 
 export const ContactInfo = styled.address`

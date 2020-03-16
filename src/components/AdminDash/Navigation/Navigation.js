@@ -10,7 +10,7 @@ import {
   IconContainer,
   PulseContainer,
 } from './navStyles'
-import { People, Map, DashboardIcon, Pulse, UserShield } from './navIcons'
+import { people, map, dashboard, pulse, userShield } from './icons'
 import Container from '../UserOptions/OptionContainer'
 
 export default function Navigation() {
@@ -28,27 +28,27 @@ export default function Navigation() {
           onClick={() => push('/dashboard')}
           active={pathname === '/dashboard'}
         >
-          <DashboardIcon color='#A6C9D8' />
+          <img src={dashboard} alt='Icon of a dashboard' />
           <p>Dashboard</p>
         </Tab>
         <Tab active={pathname === '/data'}>
-          <People color='#A6C9D8' />
+          <img src={people} alt='Icon of two people' />
           <p>Database</p>
         </Tab>
         <Tab active={pathname === '/map'}>
-          <Map color='#A6C9D8' />
+          <img src={map} alt='Icon of a map' />
           <p>Map</p>
         </Tab>
       </Nav>
       <Utilities>
         <PulseContainer>
-          <Pulse color='#E2EDEC' />
+          <img src={pulse} alt='Icon of a pulse' />
         </PulseContainer>
         <IconContainer
           onMouseEnter={() => setOpen(true)}
           onMouseLeave={() => setOpen(false)}
         >
-          <UserShield color='#E2EDEC' />
+          <img src={userShield} alt='Icon of a shield with a person' />
           {open ? <Container /> : null}
         </IconContainer>
       </Utilities>
