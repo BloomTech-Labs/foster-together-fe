@@ -8,7 +8,7 @@ import {
   IconContainer,
   PulseContainer,
 } from '../../AdminDash/Navigation/navStyles'
-import { Pulse, UserShield } from '../../AdminDash/Navigation/navIcons'
+import { pulse, userShield } from '../../AdminDash/Navigation/icons'
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,10 +30,10 @@ const ConfirmationPage = () => {
         </Logo>
         <Utilities>
           <PulseContainer>
-            <Pulse color='#E2EDEC' />
+            <img src={pulse} alt='Icon of a pulse' />
           </PulseContainer>
           <IconContainer>
-            <UserShield color='#E2EDEC' />
+            <img src={userShield} alt='Icon of a shield with a person' />
           </IconContainer>
         </Utilities>
       </NavBar>
