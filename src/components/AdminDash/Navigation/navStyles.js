@@ -36,10 +36,7 @@ export const Tab = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  color: ${props =>
-    props.active
-      ? '#E2EDEC'
-      : ({ theme: { palette } }) => palette.primary.light};
+  color: #fff;
   background-image: ${props => (props.active ? `url(${activeTab})` : 'none')};
   background-position: center bottom;
   background-repeat: no-repeat;
