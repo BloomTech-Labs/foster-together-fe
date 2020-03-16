@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormGroup, Input, Label, Error } from '../../styles/contactInfoStyles'
 
-const LastInput = ({ handleChange, errors, values, touched }) => {
+const LastInput = ({ handleChange, values, errors, touched }) => {
   return (
     <FormGroup width='49%'>
       <Input

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormGroup, Input, Label, Error } from '../../styles/contactInfoStyles'
 
-const EmailInput = ({ handleChange, values, errors, touched }) => {
+const EmailInput = ({ values, errors, handleChange, touched }) => {
   return (
     <FormGroup width='59%'>
       <Input
