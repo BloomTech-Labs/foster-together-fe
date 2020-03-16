@@ -1,68 +1,27 @@
 import neighbors from '../AdminDashPics/fosterNeighbor.png'
 import families from '../AdminDashPics/fosterFamily.png'
-import { formatPhone } from '../../../utils/formatPhone'
 
 export default function mapping(props) {
   const rows = []
-
-  props.Data.map(people => {
-    if (people.match_name === undefined) {
-      rows.push({
-        name: `${people.last_name}, ${people.first_name}`,
-        type: neighbors,
-        match: 'none',
-        city: people.city,
-        id: people.neighbor_id,
-        userType: 'neighbor',
-        application: true,
-        background: people.background,
-        training: people.training,
-        email: people.email,
-        phone: formatPhone(people.phone),
-      })
-    } else {
-      rows.push({
-        name: `${people.last_name}, ${people.first_name}`,
-        type: 'family',
-        match: 'none',
-        city: people.city,
-        userType: 'neighbor',
-        application: true,
-        background: people.background,
-        training: people.training,
-      })
-    }
-    return rows
-  })
-
-  props.Data2.map(people => {
-    if (people.match_name === undefined) {
-      rows.push({
-        name: `${people.last_name}, ${people.first_name}`,
-        type: families,
-        match: 'none',
-        city: people.city,
-        id: people.family_id,
-        userType: 'family',
-        application: true,
-        background: people.background,
-        training: people.training,
-        email: people.email,
-        phone: formatPhone(people.phone),
-      })
-    } else {
-      rows.push({
-        name: `${people.last_name}, ${people.first_name}`,
-        type: 'neighbor',
-        match: 'none',
-        city: people.city,
-        userType: 'family',
-        application: true,
-        background: people.background,
-        training: people.training,
-      })
-    }
-    return rows
-  })
+  function TableRowData(DataSet, Type, Picture, id) {
+    DataSet.map(data => {
+        rows.push({
+          name: `${data.first_name}, ${data.last_name}`,
+          type: Picture,
+          match: 'none',
+          city: data.city,
+          userType: Type,
+          application: true,
+          background: data.background,
+          training: data.training,
+          email: data.email,
+          phone: data.phone,
+          neighbor_id: data.neighbor_id,
+          family_id: data.family_id
+        })
+    })
+  }
+  TableRowData(props.Neighbors, 'neighbor', neighbors)
+  TableRowData(props.Families, 'family', families)
   return rows
 }

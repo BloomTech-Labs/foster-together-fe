@@ -50,14 +50,7 @@ export default function Table({ columns, data, props }) {
               <TableRow {...row.getRowProps()}>
                 {row.cells.map(cell => {
                   return (
-                    <TableData
-                      onClick={() =>
-                        props.props.history.push(
-                          `/${cell.row.original.userType}/${cell.row.original.id}`
-                        )
-                      }
-                      {...cell.getCellProps()}
-                    >
+                    <TableData onClick={() => props.props.history.push(cell.row.original.family_id ? `/${cell.row.original.userType}/${cell.row.original.family_id}` : `/${cell.row.original.userType}/${cell.row.original.neighbor_id}` )}{...cell.getCellProps()}>
                       {cell.render('Cell')}
                     </TableData>
                   )

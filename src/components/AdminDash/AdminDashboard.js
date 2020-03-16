@@ -25,8 +25,8 @@ export default function Distance(props) {
         <TableContain>
           <NeighborTable
             userType='Neighbors'
-            Data={neighborsArray}
-            Data2={familiesArray}
+            Neighbors={neighborsArray}
+            Families={familiesArray}
             props={props}
           />
         </TableContain>
