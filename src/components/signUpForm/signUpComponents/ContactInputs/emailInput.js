@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormGroup, Input, Label, Error } from '../../styles/contactInfoStyles'
 
-const EmailInput = ({ values, errors, handleChange, touched }) => {
+const Email = ({ values, errors, handleChange, touched }) => {
   return (
     <FormGroup width='59%'>
       <Input
@@ -18,4 +18,4 @@ const EmailInput = ({ values, errors, handleChange, touched }) => {
   )
 }
 
-export default EmailInput
+export default Email

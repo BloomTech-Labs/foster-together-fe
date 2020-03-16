@@ -1,33 +1,33 @@
 import React from 'react'
 import { FormContainer } from '../styles/contactInfoStyles'
-import FirstInput from './ContactInputs/firstName'
-import EmailInput from './ContactInputs/emailInput'
+import FirstName from './ContactInputs/firstName'
+import Email from './ContactInputs/emailInput'
 import PasswordInput from './ContactInputs/passwordInput'
-import LastInput from './ContactInputs/lastName'
-import PhoneInput from './ContactInputs/phoneInput'
+import LastName from './ContactInputs/lastName'
+import Phone from './ContactInputs/phoneInput'
 import ConfirmInput from './ContactInputs/ConfirmPW'
 
 const ContactInfo = ({ values, handleChange, errors, touched }) => (
   <FormContainer>
-    <FirstInput
+    <FirstName
       touched={touched}
       values={values}
       handleChange={handleChange}
       errors={errors}
     />
-    <LastInput
+    <LastName
       touched={touched}
       values={values}
       handleChange={handleChange}
       errors={errors}
     />
-    <EmailInput
+    <Email
       touched={touched}
       values={values}
       handleChange={handleChange}
       errors={errors}
     />
-    <PhoneInput
+    <Phone
       touched={touched}
       values={values}
       handleChange={handleChange}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormGroup, Input, Label, Error } from '../../styles/contactInfoStyles'
 
-const FirstInput = ({ handleChange, values, errors, touched }) => {
+const FirstName = ({ handleChange, values, errors, touched }) => {
   return (
     <FormGroup width='49%'>
       <Input
@@ -20,4 +20,4 @@ const FirstInput = ({ handleChange, values, errors, touched }) => {
   )
 }
 
-export default FirstInput
+export default FirstName
