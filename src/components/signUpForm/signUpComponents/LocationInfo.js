@@ -1,9 +1,9 @@
 import React from 'react'
 import { FormContainer } from '../styles/contactInfoStyles'
-import AddressInput from './Inputs/addressInput'
-import StateInput from './Inputs/stateInput'
-import ZipInput from './Inputs/zipInput'
-import CityInput from './Inputs/cityInput'
+import AddressInput from './LocationInputs/addressInput'
+import StateInput from './LocationInputs/stateInput'
+import ZipInput from './LocationInputs/zipInput'
+import CityInput from './LocationInputs/cityInput'
 
 const LocationInfo = ({ values, handleChange, errors, touched }) => (
   <FormContainer>
