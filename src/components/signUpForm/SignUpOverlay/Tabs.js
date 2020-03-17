@@ -6,14 +6,10 @@ const Tabs = () => {
   const history = useHistory()
   return (
     <TabContainer>
-      <Tab
-        justify='center'
-        align='center'
-        onClick={() => history.push('/login')}
-      >
+      <Tab onClick={() => history.push('/login')}>
         <span>Log In</span>
       </Tab>
-      <Tab justify='center' align='center' active>
+      <Tab active>
         <span>Register</span>
       </Tab>
     </TabContainer>

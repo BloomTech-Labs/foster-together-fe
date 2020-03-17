@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Container, TabContainer, Tab } from '../style'
-import { ContentBox } from './styles/LoginPage'
+import { ContentBox } from './styles'
 import { useSelector } from 'react-redux'
 import LoginInputs from './InputContainer'
 import LoginSideBar from './LoginSideBar'
@@ -19,10 +19,10 @@ const LoginForm = () => {
       <LoginSideBar />
       <ContentBox>
         <TabContainer>
-          <Tab justify='center' align='center' active>
+          <Tab active>
             <span>Log In</span>
           </Tab>
-          <Tab justify='center' align='center' onClick={() => push('/signup')}>
+          <Tab onClick={() => push('/signup')}>
             <span>Register</span>
           </Tab>
         </TabContainer>

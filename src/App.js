@@ -1,13 +1,6 @@
 import React, { useEffect } from 'react'
 import { Route } from 'react-router-dom'
-<<<<<<< HEAD
-import LoginForm from './components/logInForm/LoginForm'
-import SignUp from './components/signUpForm/SignUpOverlay/SignUpOverlay'
-import AdminDash from './components/AdminDash/AdminDashboard'
 import { GlobalStyle } from './GlobalStyles'
-=======
-import { GlobalStyle } from './GlobalStyle'
->>>>>>> 87432ec8bc9562d826e03b642b51b6fde34b146a
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
 import { initGA, PageView } from './utils/analytics'

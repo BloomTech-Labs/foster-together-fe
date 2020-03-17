@@ -1,10 +1,11 @@
 import styled from 'styled-components'
-import { FlexContainer, Btn, Circle } from '../../../GlobalStyles'
+import { Flex, FlexCenter, Btn, Circle } from '../../../GlobalStyles'
 
-export const MainContent = styled(FlexContainer)`
+export const MainContent = styled(Flex)`
   width: 70%;
   padding: 25px 120px;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const Instructions = styled.ol`
@@ -19,7 +20,7 @@ export const ListItem = styled.li`
 
 export const BackArrow = styled.div``
 
-export const TabContainer = styled(FlexContainer)`
+export const TabContainer = styled(Flex)`
   font-size: 1.8rem;
 
   &:hover {
@@ -27,7 +28,7 @@ export const TabContainer = styled(FlexContainer)`
   }
 `
 
-export const Stepper = styled(FlexContainer)`
+export const Stepper = styled(FlexCenter)`
   width: 100%;
   margin: 50px 0;
 `
@@ -61,9 +62,10 @@ export const StepConnector = styled.div`
   margin: 0 8px;
 `
 
-export const BtnContainer = styled(FlexContainer)`
+export const BtnContainer = styled(Flex)`
   margin-top: 80px;
   width: 100%;
+  justify-content: flex-end;
 `
 
 export const BackBtn = styled(Btn)`

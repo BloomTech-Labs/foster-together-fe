@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FlexContainer } from '../../../GlobalStyles'
+import { Flex } from '../../../GlobalStyles'
 
 export const ReviewContainer = styled.div`
   background: #f9f9f9;
@@ -11,7 +11,7 @@ export const Reviewtextone = styled.p`
   font-weight: 100;
 `
 
-export const BtnContainer = styled(FlexContainer)`
+export const BtnContainer = styled(Flex)`
   flex-flow: nowrap row;
 `
 

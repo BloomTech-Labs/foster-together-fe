@@ -32,7 +32,7 @@ export default function SignUp() {
   return (
     <Container>
       <Sidebar />
-      <MainContent direction='column' justify='center' align='center'>
+      <MainContent>
         <Tabs />
         <Stepper steps={steps} activeStep={activeStep} />
         <Formik

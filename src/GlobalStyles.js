@@ -42,12 +42,14 @@ export const GlobalStyle = createGlobalStyle`
 }
 `
 
-export const FlexContainer = styled.div`
+export const Flex = styled.div`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: ${props => props.direction};
-  justify-content: ${props => props.justify};
-  align-items: ${props => props.align};
+`
+
+export const FlexCenter = styled(Flex)`
+  justify-content: center;
+  align-items: center;
 `
 
 export const Btn = styled.button`
@@ -61,8 +63,6 @@ export const Btn = styled.button`
   }
 `
 
-export const Circle = styled(FlexContainer)`
-  justify-content: center;
-  align-items: center;
+export const Circle = styled(FlexCenter)`
   border-radius: 100%;
 `

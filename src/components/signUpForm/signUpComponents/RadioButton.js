@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FlexContainer } from '../../../GlobalStyles'
+import { Flex } from '../../../GlobalStyles'
 import { LabelContainer, RadioSpan } from '../styles/radioButtonStyles'
 import { handleCheck } from './handleCheck'
 
@@ -10,7 +10,7 @@ export const RadioButton = ({ setIsNeighbor }) => {
   }, [setIsNeighbor, checked])
 
   return (
-    <FlexContainer>
+    <Flex>
       <LabelContainer
         onClick={() => handleCheck(checked, setChecked, 'neighbor')}
         class='container'
@@ -25,6 +25,6 @@ export const RadioButton = ({ setIsNeighbor }) => {
         Family
         <RadioSpan checked={checked.family}></RadioSpan>
       </LabelContainer>
-    </FlexContainer>
+    </Flex>
   )
 }
