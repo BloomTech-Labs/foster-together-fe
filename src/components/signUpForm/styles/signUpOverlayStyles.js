@@ -1,11 +1,10 @@
 import styled from 'styled-components'
+import { FlexContainer } from '../../../GlobalStyles'
 
-export const MainContent = styled.div`
+export const MainContent = styled(FlexContainer)`
   width: 70%;
   padding: 25px 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
 `
 
 export const Instructions = styled.ol`
@@ -20,8 +19,7 @@ export const ListItem = styled.li`
 
 export const BackArrow = styled.div``
 
-export const TabContainer = styled.div`
-  display: flex;
+export const TabContainer = styled(FlexContainer)`
   font-size: 1.8rem;
 
   &:hover {
@@ -29,23 +27,12 @@ export const TabContainer = styled.div`
   }
 `
 
-export const Stepper = styled.div`
+export const Stepper = styled(FlexContainer)`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 50px 0;
 `
 
-export const Step = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-export const StepLabel = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+export const StepLabel = styled(FlexContainer)`
   height: 3.6rem;
   width: 3.5rem;
   border-radius: 100%;
@@ -75,9 +62,7 @@ export const StepConnector = styled.div`
   margin: 0 8px;
 `
 
-export const BtnContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
+export const BtnContainer = styled(FlexContainer)`
   margin-top: 80px;
   width: 100%;
 `

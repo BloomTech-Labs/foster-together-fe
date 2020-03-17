@@ -1,5 +1,5 @@
 import WebFont from 'webfontloader'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
 
 WebFont.load({
@@ -40,4 +40,12 @@ export const GlobalStyle = createGlobalStyle`
   caption {
     font-size: 1.6rem;
 }
+`
+
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: ${props => props.direction};
+  justify-content: ${props => props.justify};
+  align-items: ${props => props.align};
 `

@@ -3,6 +3,13 @@ import { useHistory } from 'react-router-dom'
 import { Formik, Form } from 'formik'
 import { MainContent } from '../styles/signUpOverlayStyles'
 import { Container } from '../../style'
+import { PageView } from '../../../utils/analytics/index'
+import { useDispatch } from 'react-redux'
+import { ContactSchema, LocationSchema } from '../../../utils/yupSchemas'
+import { handleNext } from './handles'
+import { user } from './initialValues'
+
+// child components
 import Sidebar from './Sidebar'
 import Tabs from './Tabs'
 import Stepper from './Stepper'
@@ -10,11 +17,6 @@ import Buttons from './Buttons'
 import ContactInfo from '../signUpComponents/ContactInfo'
 import LocationInfo from '../signUpComponents/LocationInfo'
 import ReviewInfo from '../signUpComponents/ReviewInfo'
-import { PageView } from '../../../utils/analytics/index'
-import { useDispatch } from 'react-redux'
-import { ContactSchema, LocationSchema } from '../../../utils/yupSchemas'
-import { handleNext } from './handles'
-import { user } from './initialValues'
 
 export default function SignUp() {
   const { push } = useHistory()
@@ -30,7 +32,7 @@ export default function SignUp() {
   return (
     <Container>
       <Sidebar />
-      <MainContent>
+      <MainContent direction='column' justify='center' align='center'>
         <Tabs />
         <Stepper steps={steps} activeStep={activeStep} />
         <Formik

@@ -3,7 +3,7 @@ import { BtnContainer, BackBtn, NextBtn } from '../styles/signUpOverlayStyles'
 
 const Buttons = ({ steps, activeStep, setActiveStep }) => {
   return (
-    <BtnContainer>
+    <BtnContainer justify='flex-end'>
       {activeStep !== 0 && (
         <BackBtn type='button' onClick={() => setActiveStep(activeStep - 1)}>
           Back

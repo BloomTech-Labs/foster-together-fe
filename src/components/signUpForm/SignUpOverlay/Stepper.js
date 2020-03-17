@@ -1,4 +1,5 @@
 import React from 'react'
+import { FlexContainer } from '../../../GlobalStyles'
 import {
   Stepper,
   Step,
@@ -9,16 +10,18 @@ import {
 
 const StepperComponent = ({ steps, activeStep }) => {
   return (
-    <Stepper>
+    <Stepper justify='center' align='center'>
       {steps.map((step, index) => {
         // returns true or false and determines the color of the step
         const active = activeStep >= index
         return (
-          <Step key={step}>
+          <FlexContainer justify='center' align='center' key={step}>
             {index > 0 && <StepConnector active={active} />}
-            <StepLabel active={active}>{index + 1}</StepLabel>
+            <StepLabel justify='center' align='center' active={active}>
+              {index + 1}
+            </StepLabel>
             <StepTitle active={active}>{step}</StepTitle>
-          </Step>
+          </FlexContainer>
         )
       })}
     </Stepper>
