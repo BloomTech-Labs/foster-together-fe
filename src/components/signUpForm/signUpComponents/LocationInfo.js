@@ -8,7 +8,7 @@ import {
   Select,
   Option,
 } from '../styles/formStyles'
-import { States } from './States'
+import { states } from './states'
 
 const AddressInput = ({ handleChange, values, errors, touched }) => {
   return (
@@ -57,7 +57,7 @@ const StateInput = ({ handleChange, values, errors, touched }) => {
         <Option value='' disabled selected>
           State
         </Option>
-        {States.map(state => (
+        {states.map(state => (
           <Option key={state.value} value={state.value}>
             {state.label}
           </Option>

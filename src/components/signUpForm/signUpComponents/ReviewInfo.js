@@ -7,7 +7,28 @@ import {
   CityStateZip,
 } from '../styles/reviewStyles'
 import { LabelContainer, RadioSpan } from '../styles/radioButtonStyles'
-import { handleCheck } from './handleCheck'
+
+const handleCheck = (checked, setChecked, checkbox) => {
+  if (!checked.family && !checked.neighbor && checkbox === 'family') {
+    setChecked({
+      ...checked,
+      family: !checked.family,
+      neighbor: checked.neighbor,
+    })
+  } else if (!checked.family && !checked.neighbor && checkbox === 'neighbor') {
+    setChecked({
+      ...checked,
+      family: checked.family,
+      neighbor: !checked.neighbor,
+    })
+  } else {
+    setChecked({
+      ...checked,
+      family: !checked.family,
+      neighbor: !checked.neighbor,
+    })
+  }
+}
 
 const RadioButton = ({ setIsNeighbor }) => {
   const [checked, setChecked] = useState({ family: true, neighbor: false })
