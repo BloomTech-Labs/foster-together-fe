@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Flex } from '../../../GlobalStyles'
 
 export const TableHtml = styled.table`
   border-spacing: 0;
@@ -50,9 +51,8 @@ export const Title = styled.h1`
   color: ${({ theme: { palette } }) => palette.primary.main};
 `
 
-export const TableCtn = styled.div`
-  display: flex;
-  flex-flow: column wrap;
+export const TableCtn = styled(Flex)`
+  flex-direction: column;
   line-height: 0;
   margin: 0;
 `

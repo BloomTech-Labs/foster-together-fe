@@ -15,9 +15,9 @@ const LoginSideBar = () => {
           <p fontWeight='none'> And families need support</p>
         </SidebarTitle>
       </div>
-      <BackArrow>
+      <div>
         <img src={arrowImg} alt='back arrow' />
-      </BackArrow>
+      </div>
     </Sidebar>
   )
 }

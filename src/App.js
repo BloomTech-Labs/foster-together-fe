@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Route } from 'react-router-dom'
-import { GlobalStyle } from './GlobalStyle'
+import { GlobalStyle } from './GlobalStyles'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
 import { initGA, PageView } from './utils/analytics'

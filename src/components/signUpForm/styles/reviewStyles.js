@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { Flex } from '../../../GlobalStyles'
+
 export const ReviewContainer = styled.div`
   background: #f9f9f9;
   margin: auto;
@@ -9,10 +11,8 @@ export const Reviewtextone = styled.p`
   font-weight: 100;
 `
 
-export const BtnContainer = styled.div`
-  display: flex;
+export const BtnContainer = styled(Flex)`
   flex-flow: nowrap row;
-  justify-content: flex-start;
 `
 
 export const CityStateZip = styled.div`

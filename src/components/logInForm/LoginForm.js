@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Container, TabContainer, Tab } from '../style'
-import { ContentBox } from './styles/LoginPage'
+import { ContentBox } from './styles'
 import { useSelector } from 'react-redux'
 import LoginInputs from './InputContainer'
 import LoginSideBar from './LoginSideBar'

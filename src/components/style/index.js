@@ -1,8 +1,8 @@
 import styled from 'styled-components'
+import { Flex, FlexCenter } from '../../GlobalStyles'
+
 //styles that is being used in both LoginForm.js and signUpOverlay.js
-export const Container = styled.div`
-  display: flex;
-  flex-direction: row;
+export const Container = styled(Flex)`
   margin: 10vh auto;
   border-radius: 10px;
   background: #fff;
@@ -12,8 +12,7 @@ export const Container = styled.div`
     0 6px 20px 0 rgba(180, 180, 180, 0.19);
 `
 
-export const Sidebar = styled.div`
-  display: flex;
+export const Sidebar = styled(Flex)`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
@@ -38,19 +37,19 @@ export const ListItem = styled.li`
   margin-bottom: 20px;
 `
 
-export const BackArrow = styled.div``
+export const BackArrow = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+`
 
-export const TabContainer = styled.div`
-  display: flex;
+export const TabContainer = styled(Flex)`
   font-size: 1.8rem;
   &:hover {
     cursor: pointer;
   }
 `
-export const Tab = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const Tab = styled(FlexCenter)`
   width: 10rem;
   height: 5rem;
   color: ${props =>

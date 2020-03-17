@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import { Form, Field } from 'formik'
+import { Flex, Btn } from '../../../GlobalStyles'
 
-export const ContentBox = styled.div`
+export const ContentBox = styled(Flex)`
   width: 70%;
   padding: 25px 120px;
-  display: flex;
   flex-direction: column;
   align-items: center;
 `
@@ -17,8 +17,7 @@ export const InputContainer = styled(Form)`
   margin: auto 0;
 `
 
-export const InputBox = styled.div`
-  display: flex;
+export const InputBox = styled(Flex)`
   flex-direction: column;
   width: ${props => (props.width ? props.width : '100%')};
   margin-bottom: 20px;
@@ -39,30 +38,20 @@ export const InputLabel = styled.div`
   margin: 4px 10px;
 `
 
-export const Submit = styled.button`
+export const Submit = styled(Btn)`
   color: #fff;
   background: ${({ theme: { palette } }) => palette.primary.main};
-  height: 5.6rem;
   width: 14rem;
-  font-size: 1.8rem;
   text-transform: uppercase;
-  border: none;
-  border-radius: 4px;
-  &:hover {
-    cursor: pointer;
-  }
 `
 
-export const BtnContainer = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
+export const BtnContainer = styled(Flex)`
   margin-top: 80px;
   width: 100%;
   align-items: baseline;
 `
 
-export const Btn = styled.div`
-  display: flex;
+export const Button = styled(Flex)`
   justify-content: flex-end;
   width: 50%;
 `
@@ -73,8 +62,7 @@ export const Forgot = styled.h3`
   color: #ff8d86;
 `
 
-export const ForContainer = styled.div`
-  display: flex;
+export const ForContainer = styled(Flex)`
   justify-content: flex-start;
   width: 50%;
 `

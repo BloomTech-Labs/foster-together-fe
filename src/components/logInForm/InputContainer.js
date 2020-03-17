@@ -6,10 +6,10 @@ import {
   InputLabel,
   Submit,
   BtnContainer,
-  Btn,
+  Button,
   Forgot,
   ForContainer,
-} from './styles/LoginPage'
+} from './styles'
 import { Event } from '../../utils/analytics/index'
 import { Formik } from 'formik'
 import { useDispatch } from 'react-redux'
@@ -48,11 +48,11 @@ const LoginInputs = () => {
           <ForContainer>
             <Forgot>I forgot my password</Forgot>
           </ForContainer>
-          <Btn>
+          <Button>
             <Submit onClick={() => Event('Login', 'Tried to login', 'submit')}>
               Submit
             </Submit>
-          </Btn>
+          </Button>
         </BtnContainer>
       </InputContainer>
     </Formik>

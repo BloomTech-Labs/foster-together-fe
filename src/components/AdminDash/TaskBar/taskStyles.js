@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Flex, FlexCenter } from '../../../GlobalStyles'
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -11,18 +12,16 @@ export const Title = styled.h2`
   font-weight: bold;
 `
 
-export const Container = styled.div`
+export const Container = styled(Flex)`
   width: 100%;
-  display: flex;
 `
 
-export const Card = styled.div`
+export const Card = styled(Flex)`
   width: 24%;
   max-width: 26.9rem;
   height: 10.4rem;
   margin-right: 20px;
   padding: 0 20px;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: #fff;
@@ -30,13 +29,11 @@ export const Card = styled.div`
   background: ${({ theme: { palette } }) => palette.primary.main};
 `
 
-export const CardTop = styled.div`
+export const CardTop = styled(FlexCenter)`
   width: 100%;
   padding-top: 10px;
   margin-bottom: -15px;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
 `
 
 export const Number = styled.h3`
@@ -44,10 +41,6 @@ export const Number = styled.h3`
   font-weight: bold;
   padding: 0;
   margin: 0;
-`
-
-export const Icon = styled.div`
-  cursor: pointer;
 `
 
 export const Description = styled.p`
