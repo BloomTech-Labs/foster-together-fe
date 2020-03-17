@@ -5,7 +5,7 @@ import arrowImg from '../../images/icons/back-arrow.svg'
 
 const LoginSideBar = () => {
   return (
-    <Sidebar>
+    <Sidebar direction='column' justify='space-between'>
       <div>
         <Logo>
           <img src={logo} alt='Foster Together logo' />

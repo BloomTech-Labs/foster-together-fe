@@ -13,8 +13,6 @@ export const Container = styled(FlexContainer)`
 `
 
 export const Sidebar = styled(FlexContainer)`
-  flex-direction: column;
-  justify-content: space-between;
   position: relative;
   background: #f9f9f9;
   width: 30%;
@@ -37,7 +35,11 @@ export const ListItem = styled.li`
   margin-bottom: 20px;
 `
 
-export const BackArrow = styled.div``
+export const BackArrow = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+`
 
 export const TabContainer = styled(FlexContainer)`
   font-size: 1.8rem;
@@ -46,8 +48,6 @@ export const TabContainer = styled(FlexContainer)`
   }
 `
 export const Tab = styled(FlexContainer)`
-  justify-content: center;
-  align-items: center;
   width: 10rem;
   height: 5rem;
   color: ${props =>

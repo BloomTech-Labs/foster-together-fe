@@ -17,9 +17,7 @@ const StepperComponent = ({ steps, activeStep }) => {
         return (
           <FlexContainer justify='center' align='center' key={step}>
             {index > 0 && <StepConnector active={active} />}
-            <StepLabel justify='center' align='center' active={active}>
-              {index + 1}
-            </StepLabel>
+            <StepLabel active={active}>{index + 1}</StepLabel>
             <StepTitle active={active}>{step}</StepTitle>
           </FlexContainer>
         )

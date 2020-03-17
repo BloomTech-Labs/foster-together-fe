@@ -19,10 +19,10 @@ const LoginForm = () => {
       <LoginSideBar />
       <ContentBox>
         <TabContainer>
-          <Tab active>
+          <Tab justify='center' align='center' active>
             <span>Log In</span>
           </Tab>
-          <Tab onClick={() => push('/signup')}>
+          <Tab justify='center' align='center' onClick={() => push('/signup')}>
             <span>Register</span>
           </Tab>
         </TabContainer>

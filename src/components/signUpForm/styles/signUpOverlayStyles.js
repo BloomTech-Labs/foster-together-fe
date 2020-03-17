@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FlexContainer } from '../../../GlobalStyles'
+import { FlexContainer, Btn, Circle } from '../../../GlobalStyles'
 
 export const MainContent = styled(FlexContainer)`
   width: 70%;
@@ -32,10 +32,9 @@ export const Stepper = styled(FlexContainer)`
   margin: 50px 0;
 `
 
-export const StepLabel = styled(FlexContainer)`
+export const StepLabel = styled(Circle)`
   height: 3.6rem;
   width: 3.5rem;
-  border-radius: 100%;
   background: ${props =>
     props.active
       ? ({ theme: { palette } }) => palette.secondary.main
@@ -67,30 +66,15 @@ export const BtnContainer = styled(FlexContainer)`
   width: 100%;
 `
 
-export const BackBtn = styled.button`
+export const BackBtn = styled(Btn)`
   color: #757575;
   background: #fff;
-  border: none;
   width: 8rem;
-  height: 5.6rem;
-  font-size: 1.8rem;
-
-  &:hover {
-    cursor: pointer;
-  }
 `
 
-export const NextBtn = styled.button`
+export const NextBtn = styled(Btn)`
   color: #fff;
   background: ${({ theme: { palette } }) => palette.primary.main};
-  height: 5.6rem;
   width: 14rem;
-  font-size: 1.8rem;
   text-transform: uppercase;
-  border: none;
-  border-radius: 4px;
-
-  &:hover {
-    cursor: pointer;
-  }
 `

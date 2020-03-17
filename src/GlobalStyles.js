@@ -49,3 +49,20 @@ export const FlexContainer = styled.div`
   justify-content: ${props => props.justify};
   align-items: ${props => props.align};
 `
+
+export const Btn = styled.button`
+  border: none;
+  border-radius: 4px;
+  font-size: 1.8rem;
+  height: 5.6rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const Circle = styled(FlexContainer)`
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+`
