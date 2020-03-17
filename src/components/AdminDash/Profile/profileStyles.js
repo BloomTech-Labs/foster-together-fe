@@ -2,19 +2,21 @@ import styled from 'styled-components'
 import { Link as ReactLink } from 'react-router-dom'
 
 export const Header = styled.header`
-  width: 100%;
-  height: 20.7rem;
+  width: 20%;
   background: #f9f9f9;
+  height: 100vh;
   color: #676767;
-  margin: 0;
   padding: 46px 48px;
   display: flex;
-  justify-content: space-between;
+  flex-flow: column;
 `
 export const HeaderLeft = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`
+export const ProfileContainer = styled.div`
+  display: flex;
 `
 
 export const NameWrapper = styled.div`
@@ -31,19 +33,25 @@ export const Role = styled.p`
   margin: 5px 0 0 0;
 `
 
+export const NameContainer = styled.div`
+  margin-bottom: 10%;
+`
+
 export const Contact = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-evenly;
 `
 
 export const ContactCard = styled.div`
   display: flex;
-  margin-right: 30px;
-  align-items: flex-start;
 `
 
-export const ContactInfo = styled.address`
+export const AppStatus = styled.p`
+  margin: 0px 10px 20px 25px;
+`
+
+export const ContactInfo = styled.p`
   font-style: normal;
   margin-left: 15px;
 `
@@ -55,6 +63,12 @@ export const StatusContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
 `
+
+export const AssignedContainer = styled.div`
+  margin: 5% 0;
+`
+
+export const DocumentsContainer = styled.div``
 
 export const StatusRow = styled.div`
   display: flex;
@@ -98,10 +112,12 @@ export const ContentWrapper = styled.section`
 
 export const ContentTitle = styled.h3`
   font-size: 1.8rem;
+  margin: 0px 0px 10px 25px;
 `
 
 export const AppProgress = styled.div`
   width: 60%;
+  margin: -15px 0px;
 `
 
 export const Stepper = styled.div`
@@ -109,7 +125,7 @@ export const Stepper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 50px 0;
+  margin: 0px 0px 20px 25px;
 `
 
 export const Step = styled.div`

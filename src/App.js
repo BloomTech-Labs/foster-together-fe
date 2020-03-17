@@ -26,7 +26,7 @@ function App() {
         <Route exact path='/signup' component={SignUp} />
         <PrivateRoute exact path='/dashboard' component={AdminDash} />
         <Route path='/confirmation' component={ConfirmationPage} />
-        <PrivateRoute path='/neighbor/:id' component={NeighborProfile} />
+        <Route path='/neighbor/:id' component={NeighborProfile} />
         <PrivateRoute path='/family/:id' component={FamilyProfile} />
       </ThemeProvider>
     </>

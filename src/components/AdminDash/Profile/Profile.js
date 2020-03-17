@@ -8,38 +8,42 @@ import {
   ActivityList,
   ActivityCard,
   Activity,
+  ProfileContainer,
+  AppStatus,
 } from './profileStyles'
 import Navigation from '../Navigation/Navigation'
 import Header from './Header'
 import Stepper from './Stepper'
 
-const Profile = ({ profile, type }) => {
+const profile = {
+  first_name: 'Jarrod',
+  last_name: 'Skahill',
+  email: 'jarrod@gmail.com',
+  address: '1111 Cool St',
+  zip: '99999',
+  phone: '8089111496',
+  state: 'CA',
+  city: 'San Dimas',
+}
+
+const Profile = ({ type }) => {
   return (
     <>
       <Navigation />
-      <Header profile={profile} type={type} />
-      <ContentWrapper>
-        <AppProgress>
-          <ContentTitle>Application Progress</ContentTitle>
-          <Stepper />
-          <p>
-            {profile.first_name}'s {type.toLowerCase()} application has been
-            approved.
-            <Link to='#'>Start Background Check Process</Link>
-          </p>
-        </AppProgress>
-        <ActivityContainer>
-          <ContentTitle>Activity</ContentTitle>
-          <ActivityList>
-            <ActivityCard>
-              <Activity>{type} application approved.</Activity>
-            </ActivityCard>
-            <ActivityCard>
-              <Activity>{type} application received.</Activity>
-            </ActivityCard>
-          </ActivityList>
-        </ActivityContainer>
-      </ContentWrapper>
+      <ProfileContainer>
+        <Header profile={profile} type={type} />
+        <ContentWrapper>
+          <AppProgress>
+            <ContentTitle>Application Progress</ContentTitle>
+            <Stepper />
+            <AppStatus>
+              {profile.first_name}'s {type.toLowerCase()} application has been
+              approved.
+              <Link to='#'>Start Background Check Process</Link>
+            </AppStatus>
+          </AppProgress>
+        </ContentWrapper>
+      </ProfileContainer>
     </>
   )
 }
