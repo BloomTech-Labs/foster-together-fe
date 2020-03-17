@@ -33,9 +33,3 @@ export const RadioSpan = styled.span`
     background: #dadada;
   }
 `
-
-export const RadioContainer = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-`

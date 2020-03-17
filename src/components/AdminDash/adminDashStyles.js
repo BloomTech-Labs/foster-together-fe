@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FlexContainer } from '../../GlobalStyles'
 
 export const DashContainer = styled.div`
   align-items: center;
@@ -14,8 +15,7 @@ export const LeftSelect = styled.div`
   height: 74px;
   padding: 10px;
 `
-export const Icon = styled.div`
-  display: flex;
+export const Icon = styled(FlexContainer)`
   justify-content: flex-start;
   text-align: center;
   padding: 5px;

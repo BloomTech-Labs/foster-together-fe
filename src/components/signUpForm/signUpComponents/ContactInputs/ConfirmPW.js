@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormGroup, Input, Label, Error } from '../../styles/contactInfoStyles'
 
-const ConfirmInput = ({ values, handleChange, errors, touched }) => {
+const ConfirmInput = ({ errors, touched }) => {
   return (
     <FormGroup>
       <Input
@@ -9,8 +9,6 @@ const ConfirmInput = ({ values, handleChange, errors, touched }) => {
         type='password'
         name='confirmPassword'
         placeholder='Confirm Password'
-        value={values.confirmPassword}
-        onChange={handleChange}
       />
       <Label htmlFor='confirmPassword'>
         Enter your login password again to make sure it matches the first one

@@ -27,7 +27,7 @@ const ReviewInfo = ({ setIsNeighbor, values }) => (
       </CityStateZip>
     </ReviewContainer>
     <p>One last thing. Are you volunteering to be a Neighbor or Family?</p>
-    <BtnContainer>
+    <BtnContainer justify='flex-start'>
       <RadioButton setIsNeighbor={setIsNeighbor} />
     </BtnContainer>
   </div>
