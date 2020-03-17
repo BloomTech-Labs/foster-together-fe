@@ -1,5 +1,4 @@
-import { postNeighbor } from '../../../redux/thunks/neighThunks'
-import { postFamily } from '../../../redux/thunks/famThunks'
+import { postMember } from '../../../redux/thunks/memThunks'
 
 export const handleNext = (
   user,
@@ -14,7 +13,7 @@ export const handleNext = (
   } else if (activeStep === 1) {
     setActiveStep(activeStep + 1)
   } else if (activeStep === 2) {
-    if (isNeighbor) dispatch(postNeighbor(user, push))
-    else dispatch(postFamily(user, push))
+    if (isNeighbor) dispatch(postMember('neighbors', user, push))
+    else dispatch(postMember('families', user, push))
   }
 }

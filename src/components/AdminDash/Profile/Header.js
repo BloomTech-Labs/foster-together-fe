@@ -18,14 +18,14 @@ import {
 import { edit, address, email, phone } from './icons'
 import { formatPhone } from '../../../utils/formatPhone'
 
-const ProfileHeader = ({ profile, type }) => {
+const ProfileHeader = ({ member, type }) => {
   return (
     <Header>
       <HeaderLeft>
         <div>
           <NameWrapper>
             <Name>
-              {profile.first_name} {profile.last_name}
+              {member.first_name} {member.last_name}
             </Name>
             <img src={edit} alt='Edit icon' />
           </NameWrapper>
@@ -35,18 +35,18 @@ const ProfileHeader = ({ profile, type }) => {
           <ContactCard>
             <img src={address} alt='Icon of buildings' />
             <ContactInfo>
-              {profile.address}
+              {member.address}
               <br />
-              {profile.city} {profile.state} {profile.zip}
+              {member.city} {member.state} {member.zip}
             </ContactInfo>
           </ContactCard>
           <ContactCard>
             <img src={email} alt='Icon of an envelope' />
-            <ContactInfo>{profile.email}</ContactInfo>
+            <ContactInfo>{member.email}</ContactInfo>
           </ContactCard>
           <ContactCard>
             <img src={phone} alt='Icon of a mobile phone' />
-            <ContactInfo>{formatPhone(profile.phone)}</ContactInfo>
+            <ContactInfo>{formatPhone(member.phone)}</ContactInfo>
           </ContactCard>
         </Contact>
       </HeaderLeft>
