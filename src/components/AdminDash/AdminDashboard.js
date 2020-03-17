@@ -5,17 +5,14 @@ import Welcome from './Welcome'
 import TaskBar from './TaskBar/TaskBar'
 import { DashContainer, TableContain } from './adminDashStyles'
 import { useSelector, useDispatch } from 'react-redux'
-import { getNeighbors } from '../../redux/thunks/neighThunks'
-import { getFamilies } from '../../redux/thunks/famThunks'
+import { getMembers } from '../../redux/thunks/memThunks'
 
 export default function Distance(props) {
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getFamilies())
-    dispatch(getNeighbors())
+    dispatch(getMembers())
   }, [dispatch])
-  const { neighborsArray } = useSelector(state => state.neigh)
-  const { familiesArray } = useSelector(state => state.fam)
+  const { membersArray } = useSelector(state => state.mem)
   return (
     <>
       <Navigation routing={props} />
@@ -25,8 +22,7 @@ export default function Distance(props) {
         <TableContain>
           <NeighborTable
             userType='Neighbors'
-            Neighbors={neighborsArray}
-            Families={familiesArray}
+            Neighbors={membersArray}
             props={props}
           />
         </TableContain>
