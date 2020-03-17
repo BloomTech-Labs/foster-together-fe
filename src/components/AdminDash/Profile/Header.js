@@ -11,16 +11,25 @@ import {
   NameContainer,
   AssignedContainer,
   DocumentsContainer,
+  MemberIcon,
 } from './profileStyles'
 import { edit, address, email, phone } from './icons'
 import { formatPhone } from '../../../utils/formatPhone'
 
 const ProfileHeader = ({ member, type }) => {
+  function changeIcon() {
+    if (type === 'Family') {
+      return <MemberIcon background='#3e8392'>F</MemberIcon>
+    } else {
+      return <MemberIcon background='#FF8D86'>N</MemberIcon>
+    }
+  }
   return (
     <Header>
       <HeaderLeft>
         <NameContainer>
           <NameWrapper>
+            <div>{changeIcon()}</div>
             <Name>
               {member.first_name} {member.last_name}
             </Name>

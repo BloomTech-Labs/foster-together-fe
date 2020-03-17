@@ -23,9 +23,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <Route path='/login' component={LoginForm} />
         <Route exact path='/signup' component={SignUp} />
-        <PrivateRoute exact path='/dashboard' component={AdminDash} />
+        <Route exact path='/dashboard' component={AdminDash} />
         <Route path='/confirmation' component={ConfirmationPage} />
-        <PrivateRoute path='/:membertype/:id' component={Profile} />
+        <Route path='/:membertype/:id' component={Profile} />
       </ThemeProvider>
     </>
   )

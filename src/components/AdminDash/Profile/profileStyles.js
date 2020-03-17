@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link as ReactLink } from 'react-router-dom'
 
 export const Header = styled.header`
-  width: 20%;
+  width: 400px;
   background: #f9f9f9;
   height: 100vh;
   color: #676767;
@@ -24,13 +24,25 @@ export const NameWrapper = styled.div`
   align-items: center;
 `
 
+export const MemberIcon = styled.div`
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: ${props => props.background};
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+`
+
 export const Name = styled.h2`
   font-size: 2.4rem;
-  margin: 0 8px 0 0;
+  margin: 0 25px;
 `
 
 export const Role = styled.p`
-  margin: 5px 0 0 0;
+  margin-left: 60px;
 `
 
 export const NameContainer = styled.div`
@@ -153,7 +165,6 @@ export const StepLabel = styled.div`
   justify-content: center;
   height: 2.6rem;
   width: 2.6rem;
-  border-radius: 100%;
   background: ${props =>
     props.active
       ? ({ theme: { palette } }) => palette.primary.main
@@ -198,4 +209,8 @@ export const ActivityCard = styled.div`
 export const Activity = styled.p`
   padding: 0;
   margin: 0;
+`
+export const Arrow = styled.img`
+  background: red;
+  position: absolute;
 `
