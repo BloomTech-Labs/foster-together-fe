@@ -139,11 +139,48 @@ const Buttons = ({ steps, activeStep, setActiveStep }) => {
   )
 }
 
-export default function SignUp() {
+const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   const { push } = useHistory()
   const dispatch = useDispatch()
-  const [activeStep, setActiveStep] = useState(0)
   const [isNeighbor, setIsNeighbor] = useState(true)
+
+  return (
+    <Formik
+      initialValues={user}
+      validationSchema={activeStep === 0 ? ContactSchema : LocationSchema}
+      onSubmit={values =>
+        handleNext(
+          values,
+          activeStep,
+          setActiveStep,
+          isNeighbor,
+          dispatch,
+          push
+        )
+      }
+    >
+      {props => (
+        <Form>
+          {activeStep === 0 ? (
+            <ContactInfo {...props} />
+          ) : activeStep === 1 ? (
+            <LocationInfo {...props} />
+          ) : (
+            <ReviewInfo setIsNeighbor={setIsNeighbor} {...props} />
+          )}
+          <Buttons
+            steps={steps}
+            activeStep={activeStep}
+            setActiveStep={setActiveStep}
+          />
+        </Form>
+      )}
+    </Formik>
+  )
+}
+
+export default function SignUp() {
+  const [activeStep, setActiveStep] = useState(0)
   const steps = ['Contact Info', 'Location Info', 'Review']
 
   useEffect(() => {
@@ -156,37 +193,11 @@ export default function SignUp() {
       <MainContent>
         <Tabs />
         <StepperWrapper steps={steps} activeStep={activeStep} />
-        <Formik
-          initialValues={user}
-          validationSchema={activeStep === 0 ? ContactSchema : LocationSchema}
-          onSubmit={values =>
-            handleNext(
-              values,
-              activeStep,
-              setActiveStep,
-              isNeighbor,
-              dispatch,
-              push
-            )
-          }
-        >
-          {props => (
-            <Form>
-              {activeStep === 0 ? (
-                <ContactInfo {...props} />
-              ) : activeStep === 1 ? (
-                <LocationInfo {...props} />
-              ) : (
-                <ReviewInfo setIsNeighbor={setIsNeighbor} {...props} />
-              )}
-              <Buttons
-                steps={steps}
-                activeStep={activeStep}
-                setActiveStep={setActiveStep}
-              />
-            </Form>
-          )}
-        </Formik>
+        <FormWrapper
+          steps={steps}
+          activeStep={activeStep}
+          setActiveStep={setActiveStep}
+        />
       </MainContent>
     </Container>
   )
