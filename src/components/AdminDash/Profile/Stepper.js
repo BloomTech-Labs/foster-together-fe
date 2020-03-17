@@ -7,7 +7,7 @@ import {
   StepConnector,
 } from './profileStyles'
 
-const StepperComponent = props => {
+const StepperComponent = () => {
   return (
     <Stepper>
       <Step>

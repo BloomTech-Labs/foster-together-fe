@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import {
   Link,
   ContentWrapper,
@@ -12,33 +13,45 @@ import {
 import Navigation from '../Navigation/Navigation'
 import Header from './Header'
 import Stepper from './Stepper'
+import { useDispatch, useSelector } from 'react-redux'
+import { getMemberById } from '../../../redux/thunks/memThunks'
 
-const Profile = ({ profile, type }) => {
+const ProfileActivity = () => (
+  <ActivityContainer>
+    <ContentTitle>Activity</ContentTitle>
+    <ActivityList>
+      <ActivityCard>
+        <Activity>Application approved.</Activity>
+      </ActivityCard>
+      <ActivityCard>
+        <Activity>Application received.</Activity>
+      </ActivityCard>
+    </ActivityList>
+  </ActivityContainer>
+)
+
+const Profile = () => {
+  const { id, membertype } = useParams()
+  const { selectedMember } = useSelector(state => state.mem)
+  const singleType = membertype === 'families' ? 'Family' : 'Neighbor'
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getMemberById(membertype, id))
+  }, [dispatch, id, membertype])
   return (
     <>
       <Navigation />
-      <Header profile={profile} type={type} />
+      <Header member={selectedMember} type={singleType} />
       <ContentWrapper>
         <AppProgress>
           <ContentTitle>Application Progress</ContentTitle>
           <Stepper />
           <p>
-            {profile.first_name}'s {type.toLowerCase()} application has been
-            approved.
+            {selectedMember.first_name}'s application has been approved.
             <Link to='#'>Start Background Check Process</Link>
           </p>
         </AppProgress>
-        <ActivityContainer>
-          <ContentTitle>Activity</ContentTitle>
-          <ActivityList>
-            <ActivityCard>
-              <Activity>{type} application approved.</Activity>
-            </ActivityCard>
-            <ActivityCard>
-              <Activity>{type} application received.</Activity>
-            </ActivityCard>
-          </ActivityList>
-        </ActivityContainer>
+        <ProfileActivity />
       </ContentWrapper>
     </>
   )
