@@ -1,8 +1,8 @@
 import React from 'react'
 import { renderWithReduxAndRouter as render } from '../../utils/testHelpers'
 import LoginForm from './LoginForm'
-import { Input } from './styles/LoginPage'
-import { Logo } from '../signUpForm/styles/signUpOverlayStyles'
+import { Input } from './styles'
+import { Logo } from '../signUpForm/SignUpOverlay/signUpOverlayStyles'
 
 test('LoginForm Renders', async () => {
   render(<LoginForm />)
