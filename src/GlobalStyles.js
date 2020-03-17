@@ -52,6 +52,12 @@ export const FlexCenter = styled(Flex)`
   align-items: center;
 `
 
+export const ClickDiv = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+`
+
 export const Btn = styled.button`
   border: none;
   border-radius: 4px;

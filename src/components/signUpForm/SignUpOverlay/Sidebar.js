@@ -24,9 +24,9 @@ const SidebarComponent = () => {
           </ListItem>
         </Instructions>
       </div>
-      <BackArrow>
+      <div>
         <img src={backArrow} alt='Back arrow icon' />
-      </BackArrow>
+      </div>
     </Sidebar>
   )
 }

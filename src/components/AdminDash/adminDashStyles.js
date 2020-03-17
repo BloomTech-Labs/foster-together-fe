@@ -9,8 +9,7 @@ export const DashContainer = styled.div`
 export const TableContain = styled.div`
   border-radius: 5px;
 `
-export const LeftSelect = styled.div`
-  display: flex;
+export const LeftSelect = styled(Flex)`
   justify-content: space-evenly;
   height: 74px;
   padding: 10px;

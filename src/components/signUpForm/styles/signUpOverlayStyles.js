@@ -18,8 +18,6 @@ export const ListItem = styled.li`
   margin-bottom: 20px;
 `
 
-export const BackArrow = styled.div``
-
 export const TabContainer = styled(Flex)`
   font-size: 1.8rem;
 
