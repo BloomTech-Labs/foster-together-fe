@@ -1,34 +1,26 @@
 import React, { useEffect } from 'react'
-import NeighborTable from './Table/NeighborTable'
+import MemberTable from './Table/MemberTable'
 import Navigation from './Navigation/Navigation'
 import Welcome from './Welcome'
 import TaskBar from './TaskBar/TaskBar'
 import { DashContainer, TableContain } from './adminDashStyles'
 import { useSelector, useDispatch } from 'react-redux'
-import { getNeighbors } from '../../redux/thunks/neighThunks'
-import { getFamilies } from '../../redux/thunks/famThunks'
+import { getMembers } from '../../redux/thunks/memThunks'
 
-export default function Distance(props) {
+export default function Distance() {
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getFamilies())
-    dispatch(getNeighbors())
+    dispatch(getMembers())
   }, [dispatch])
-  const { neighborsArray } = useSelector(state => state.neigh)
-  const { familiesArray } = useSelector(state => state.fam)
+  const { membersArray } = useSelector(state => state.mem)
   return (
     <>
-      <Navigation routing={props} />
+      <Navigation />
       <DashContainer>
         <Welcome />
         <TaskBar />
         <TableContain>
-          <NeighborTable
-            userType='Neighbors'
-            Neighbors={neighborsArray}
-            Families={familiesArray}
-            props={props}
-          />
+          <MemberTable members={membersArray} />
         </TableContain>
       </DashContainer>
     </>

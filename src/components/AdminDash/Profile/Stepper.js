@@ -1,13 +1,7 @@
 import React from 'react'
-import {
-  Stepper,
-  Step,
-  StepWrapper,
-  StepLabel,
-  StepConnector,
-} from './profileStyles'
+import { Stepper, Step, StepWrapper, StepLabel } from './profileStyles'
 
-const StepperComponent = props => {
+const StepperComponent = () => {
   return (
     <Stepper>
       <Step>

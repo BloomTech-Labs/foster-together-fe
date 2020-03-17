@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import {
   Link,
   ContentWrapper,
@@ -8,42 +9,51 @@ import {
   ActivityList,
   ActivityCard,
   Activity,
-  ProfileContainer,
   AppStatus,
 } from './profileStyles'
 import Navigation from '../Navigation/Navigation'
 import Header from './Header'
 import Stepper from './Stepper'
+import { useDispatch, useSelector } from 'react-redux'
+import { getMemberById } from '../../../redux/thunks/memThunks'
 
-const profile = {
-  first_name: 'Jarrod',
-  last_name: 'Skahill',
-  email: 'jarrod@gmail.com',
-  address: '1111 Cool St',
-  zip: '99999',
-  phone: '8089111496',
-  state: 'CA',
-  city: 'San Dimas',
-}
+const ProfileActivity = () => (
+  <ActivityContainer>
+    <ContentTitle>Activity</ContentTitle>
+    <ActivityList>
+      <ActivityCard>
+        <Activity>Application approved.</Activity>
+      </ActivityCard>
+      <ActivityCard>
+        <Activity>Application received.</Activity>
+      </ActivityCard>
+    </ActivityList>
+  </ActivityContainer>
+)
 
-const Profile = ({ type }) => {
+const Profile = () => {
+  const { id, membertype } = useParams()
+  const { selectedMember } = useSelector(state => state.mem)
+  const singleType = membertype === 'families' ? 'Family' : 'Neighbor'
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getMemberById(membertype, id))
+  }, [dispatch, id, membertype])
   return (
     <>
       <Navigation />
-      <ProfileContainer>
-        <Header profile={profile} type={type} />
-        <ContentWrapper>
-          <AppProgress>
-            <ContentTitle>Application Progress</ContentTitle>
-            <Stepper />
-            <AppStatus>
-              {profile.first_name}'s {type.toLowerCase()} application has been
-              approved.
-              <Link to='#'>Start Background Check Process</Link>
-            </AppStatus>
-          </AppProgress>
-        </ContentWrapper>
-      </ProfileContainer>
+      <Header member={selectedMember} type={singleType} />
+      <ContentWrapper>
+        <AppProgress>
+          <ContentTitle>Application Progress</ContentTitle>
+          <Stepper />
+          <AppStatus>
+            {selectedMember.first_name}'s application has been approved.
+            <Link to='#'>Start Background Check Process</Link>
+          </AppStatus>
+        </AppProgress>
+        <ProfileActivity />
+      </ContentWrapper>
     </>
   )
 }
