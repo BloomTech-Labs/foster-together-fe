@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link as ReactLink } from 'react-router-dom'
 
 export const Header = styled.header`
-  width: 400px;
+  width: 450px;
   background: #f9f9f9;
   height: 100vh;
   color: #676767;
@@ -115,10 +115,11 @@ export const StatusIcon = styled.div`
 `
 
 export const ContentWrapper = styled.section`
-  width: 95%;
-  margin: 55px auto;
+  width: 75%;
+  margin: 55px 55px;
   display: flex;
   justify-content: space-between;
+  flex-flow: wrap column;
   color: #676767;
 `
 
@@ -157,6 +158,7 @@ export const Step = styled.div`
 export const StepWrapper = styled.div`
   display: flex;
   align-items: center;
+  border: red solid 1px;
 `
 
 export const StepLabel = styled.div`
@@ -193,7 +195,6 @@ export const ActivityContainer = styled.div`
 `
 
 export const ActivityList = styled.div`
-  width: 100%;
   margin-top: 30px;
 `
 
@@ -211,6 +212,17 @@ export const Activity = styled.p`
   margin: 0;
 `
 export const Arrow = styled.img`
-  background: red;
+  z-index: -1;
+  position: relative;
+`
+export const Application = styled.img`
   position: absolute;
+  color: white;
+  z-index: 1;
+  margin-left: 5rem;
+`
+export const ProfileLabel = styled.label`
+  color: red;
+  z-index: 1;
+  position: relative; 
 `

@@ -1,5 +1,13 @@
 import React from 'react'
-import { Stepper, Step, StepWrapper, StepLabel, Arrow } from './profileStyles'
+import {
+  Stepper,
+  Step,
+  StepWrapper,
+  StepLabel,
+  Arrow,
+  Application,
+  ProfileLabel,
+} from './profileStyles'
 import {
   application,
   bgc,
@@ -17,9 +25,9 @@ const StepperComponent = () => {
         <StepWrapper>
           <Arrow src={stepper} />
           <StepLabel active>
-            <img src={application} />
+            <ProfileLabel>Application</ProfileLabel>
           </StepLabel>
-          <p>Application</p>
+          <Application src={application} />
         </StepWrapper>
       </Step>
       <Step>

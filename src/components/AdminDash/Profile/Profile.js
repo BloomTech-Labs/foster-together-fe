@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+div import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import {
   Link,
@@ -54,6 +54,7 @@ const Profile = () => {
               <Link to='#'>Start Background Check Process</Link>
             </AppStatus>
           </AppProgress>
+          <ProfileActivity />
         </ContentWrapper>
       </ProfileContainer>
     </>
