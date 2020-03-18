@@ -2,19 +2,21 @@ import styled from 'styled-components'
 import { Link as ReactLink } from 'react-router-dom'
 
 export const Header = styled.header`
-  width: 100%;
-  height: 20.7rem;
+  width: 450px;
   background: #f9f9f9;
+  height: 100vh;
   color: #676767;
-  margin: 0;
   padding: 46px 48px;
   display: flex;
-  justify-content: space-between;
+  flex-flow: column;
 `
 export const HeaderLeft = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`
+export const ProfileContainer = styled.div`
+  display: flex;
 `
 
 export const NameWrapper = styled.div`
@@ -22,28 +24,46 @@ export const NameWrapper = styled.div`
   align-items: center;
 `
 
+export const MemberIcon = styled.div`
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: ${props => props.background};
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+`
+
 export const Name = styled.h2`
   font-size: 2.4rem;
-  margin: 0 8px 0 0;
+  margin: 0 25px;
 `
 
 export const Role = styled.p`
-  margin: 5px 0 0 0;
+  margin-left: 60px;
+`
+
+export const NameContainer = styled.div`
+  margin-bottom: 10%;
 `
 
 export const Contact = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-evenly;
 `
 
 export const ContactCard = styled.div`
   display: flex;
-  margin-right: 30px;
-  align-items: flex-start;
 `
 
-export const ContactInfo = styled.address`
+export const AppStatus = styled.p`
+  margin: 0px 10px 20px 25px;
+`
+
+export const ContactInfo = styled.p`
   font-style: normal;
   margin-left: 15px;
 `
@@ -55,6 +75,12 @@ export const StatusContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
 `
+
+export const AssignedContainer = styled.div`
+  margin: 5% 0;
+`
+
+export const DocumentsContainer = styled.div``
 
 export const StatusRow = styled.div`
   display: flex;
@@ -89,19 +115,22 @@ export const StatusIcon = styled.div`
 `
 
 export const ContentWrapper = styled.section`
-  width: 95%;
-  margin: 55px auto;
+  width: 75%;
+  margin: 55px 55px;
   display: flex;
   justify-content: space-between;
+  flex-flow: wrap column;
   color: #676767;
 `
 
 export const ContentTitle = styled.h3`
   font-size: 1.8rem;
+  margin: 0px 0px 10px 25px;
 `
 
 export const AppProgress = styled.div`
   width: 60%;
+  margin: -15px 0px;
 `
 
 export const Stepper = styled.div`
@@ -109,7 +138,7 @@ export const Stepper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 50px 0;
+  margin: 0px 0px 20px 25px;
 `
 
 export const Step = styled.div`
@@ -129,6 +158,7 @@ export const Step = styled.div`
 export const StepWrapper = styled.div`
   display: flex;
   align-items: center;
+  border: red solid 1px;
 `
 
 export const StepLabel = styled.div`
@@ -137,7 +167,6 @@ export const StepLabel = styled.div`
   justify-content: center;
   height: 2.6rem;
   width: 2.6rem;
-  border-radius: 100%;
   background: ${props =>
     props.active
       ? ({ theme: { palette } }) => palette.primary.main
@@ -166,7 +195,6 @@ export const ActivityContainer = styled.div`
 `
 
 export const ActivityList = styled.div`
-  width: 100%;
   margin-top: 30px;
 `
 
@@ -182,4 +210,19 @@ export const ActivityCard = styled.div`
 export const Activity = styled.p`
   padding: 0;
   margin: 0;
+`
+export const Arrow = styled.img`
+  z-index: -1;
+  position: relative;
+`
+export const Application = styled.img`
+  position: absolute;
+  color: white;
+  z-index: 1;
+  margin-left: 5rem;
+`
+export const ProfileLabel = styled.label`
+  color: red;
+  z-index: 1;
+  position: relative; 
 `
