@@ -1,5 +1,4 @@
 import React from 'react'
-import Navigation from '../../AdminDash/Navigation/Navigation'
 import { Page, Letter, MainContent, Circle } from '../TrainStyles'
 import next from '../TrainingIcons/next.png'
 import TrainingNav from '../TrainingNav/NavBar'
@@ -7,6 +6,7 @@ import TrainingNav from '../TrainingNav/NavBar'
 const ModuleLetter = props => {
   return (
     <div>
+      <TrainingNav />
       <Page>
         <Letter>
           <MainContent>

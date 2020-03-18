@@ -4,12 +4,15 @@ export const Page = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 85%;
+  margin: auto;
 `
 
 export const MainContent = styled.text`
   font-size: 1.7rem;
-  line-height: 4rem;
+  line-height: 2.5rem;
   text-align: left;
+  margin: 0 2%;
 `
 
 export const Letter = styled.div`
@@ -17,6 +20,16 @@ export const Letter = styled.div`
   width: 50%;
   padding: 2% 5%;
   margin: 5% 0 0 0;
+`
+export const ContextContainer = styled.div`
+  display: flex;
+  width: 65%;
+`
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 3% 0 3% 10%;
 `
 
 export const Circle = styled.div`
@@ -29,9 +42,7 @@ export const Circle = styled.div`
 
 export const BigTitle = styled.h1`
   font-size: 3.5rem;
-  text-align: center;
-  border-bottom: 1px solid black;
-  width: 60%;
+  margin: 0 5%;
 `
 
 export const Header = styled.h1`
@@ -42,16 +53,22 @@ export const Header = styled.h1`
 
 export const Section = styled.div`
   display: flex;
-  width: 75%;
-  max-width: 850px;
-  border-top: 1px solid black;
+  width: 100%;
 `
 
 export const PlayerWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-flow: column;
+  align-items: center;
   margin-bottom: 5%;
+`
+
+export const VideoText = styled.p`
+  width: 30%;
+  font-size: 1.2rem;
+  color: #676767;
+  line-height: 2rem;
 `
 
 export const Bold = styled.text`
@@ -82,15 +99,24 @@ export const Arrow = styled.img`
   width: 10%;
 `
 
+export const AnswerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  align-items: center;
+`
+
 export const Input = styled.textarea`
   width: 64%;
   height: 150px;
   resize: none;
   font-size: 2rem;
   padding: 1rem;
+  margin: 4%;
 `
 
 export const Footer = styled.div`
+  display: flex;
   width: 100%;
   background-color: #253b44;
   margin-top: 5%;
