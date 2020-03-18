@@ -8,7 +8,7 @@ import {
   Select,
   Option,
 } from '../styles/formStyles'
-import { states } from './states'
+import { states } from './States'
 
 const AddressInput = ({ handleChange, values, errors, touched }) => {
   return (
