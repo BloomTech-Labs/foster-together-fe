@@ -14,6 +14,7 @@ import {
   VideoText,
   TitleContainer,
   AnswerContainer,
+  QuestionContainer,
 } from '../TrainStyles'
 import Stepper from '../TrainingStepper'
 import Navigation from '../../AdminDash/Navigation/Navigation'
@@ -163,6 +164,26 @@ const Context7 = () => {
   )
 }
 
+const Context8 = ({ form, handleChange }) => {
+  return (
+    <QuestionContainer>
+      <Header>WHAT YOU OFFER: COMPLETE BEFORE PROCEEDING</Header>
+      <MainContent>
+        Are any of the "reasons to help" listed above new to you? In your own
+        words, how do you anticipate this aspect enriching your life or the
+        foster parents' lives? (2+ sentences) *
+      </MainContent>
+      <Input name='answer1' value={form.answer1} onChange={handleChange} />
+      <MainContent>
+        How can we improve this module? What would you add, shorten, or
+        eliminate? This program is just getting started, so your feedback is
+        helpful!
+      </MainContent>
+      <Input name='answer2' value={form.answer2} onChange={handleChange} />
+    </QuestionContainer>
+  )
+}
+
 function Title(props) {
   return (
     <TitleContainer>
@@ -245,19 +266,7 @@ function ModuleOne(props) {
           </div>
         </ContextContainer>
         <AnswerContainer>
-          <Header>WHAT YOU OFFER: COMPLETE BEFORE PROCEEDING</Header>
-          <MainContent>
-            Are any of the "reasons to help" listed above new to you? In your
-            own words, how do you anticipate this aspect enriching your life or
-            the foster parents' lives? (2+ sentences) *
-          </MainContent>
-          <Input name='answer1' value={form.answer1} onChange={handleChange} />
-          <MainContent>
-            How can we improve this module? What would you add, shorten, or
-            eliminate? This program is just getting started, so your feedback is
-            helpful!
-          </MainContent>
-          <Input name='answer2' value={form.answer2} onChange={handleChange} />
+          <Context8 handleChange={handleChange} form={form} />
           <Submit
             onClick={() => {
               props.history.push('/module2')

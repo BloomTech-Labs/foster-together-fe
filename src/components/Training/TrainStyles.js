@@ -137,6 +137,12 @@ export const Submit = styled.button`
   }
 `
 
+export const QuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 export const Container = styled.div`
   width: 80%;
   height: 100%;
