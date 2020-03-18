@@ -1,12 +1,11 @@
 import React from 'react'
 import Navigation from '../../AdminDash/Navigation/Navigation'
-import { Page, Letter, MainContent, Circle } from './letterStyles'
+import { Page, Letter, MainContent, Circle } from '../TrainStyles'
 import next from '../TrainingIcons/next.png'
 
 const ModuleLetter = props => {
   return (
     <div>
-      <Navigation />
       <Page>
         <Letter>
           <MainContent>
@@ -29,7 +28,7 @@ const ModuleLetter = props => {
         </Letter>
         <Circle
           onClick={() => {
-            props.history.push('/training/1')
+            props.history.push('/module1')
           }}
         >
           <img src={next} width='100%' alt='next button' />
