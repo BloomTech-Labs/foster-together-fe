@@ -43,9 +43,9 @@ export const fiveSteps = {
 }
 
 export const bestPractices = {
-  title: 'Best Practices for a Happy Match',
+  title: 'Best practices for a happy match',
   question: {
-    title: 'Understanding of Responsibility: Complete Before Proceeding',
+    title: 'Understanding of responsibility: Complete before proceeding',
     text:
       'Please summarize your responsibility (relationally and practically) in this match with a sentence or two. *',
   },
