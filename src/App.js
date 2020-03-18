@@ -11,6 +11,7 @@ import AdminDash from './components/AdminDash/AdminDashboard'
 import Profile from './components/AdminDash/Profile/Profile'
 // temporary sign up confirmation, will be replaced with user dashboard
 import ConfirmationPage from './components/signUpForm/ConfirmationPage/ConfirmationPage'
+import ModuleTwo from './components/training/moduleTwo'
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
         <PrivateRoute exact path='/dashboard' component={AdminDash} />
         <Route path='/confirmation' component={ConfirmationPage} />
         <PrivateRoute path='/:membertype/:id' component={Profile} />
+        <Route path='/moduletwo' component={ModuleTwo} />
       </ThemeProvider>
     </>
   )
