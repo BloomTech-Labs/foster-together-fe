@@ -209,6 +209,7 @@ export const survey = {
   content: [
     {
       id: 1,
+      name: 'time',
       question: 'How much time do you want to spend helping a foster family? *',
       type: 'radio',
       answers: [
@@ -240,6 +241,7 @@ export const survey = {
     },
     {
       id: 2,
+      name: 'additional',
       question:
         'Do you understand that the decision to add additional meals or helping tasks is at the discretion of you and the foster family? *',
       type: 'radio',
@@ -257,6 +259,7 @@ export const survey = {
     },
     {
       id: 3,
+      name: 'practical',
       question:
         'As you get to know them, are you open to providing practical support to the foster family, beyond meals?',
       type: 'checkbox',
@@ -305,6 +308,7 @@ export const survey = {
     },
     {
       id: 4,
+      name: 'background',
       question:
         'Do you understand that you may need a background check in order to provide assistance beyond meal drop-off? *',
       type: 'radio',
@@ -322,6 +326,7 @@ export const survey = {
     },
     {
       id: 5,
+      name: 'process',
       question: `Do you understand that Foster Together and the foster parents are here to help facilitate any needed background checks with the family's foster care agency or county, and that this process can take one to four weeks, depending on the requirements of the specific county or agency? *`,
       type: 'radio',
       answers: [

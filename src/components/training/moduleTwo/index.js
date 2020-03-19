@@ -8,7 +8,12 @@ import {
   survey,
 } from './data'
 import { Btn, Flex } from '../../../GlobalStyles'
-import { gettingMatchedVideo, fiveStepsImage, keepItSimpleVideo } from './img'
+import {
+  gettingMatchedVideo,
+  fiveStepsImage,
+  keepItSimpleVideo,
+  mealTipsImage,
+} from './img'
 
 const Wrapper = styled.div`
   width: 80%;
@@ -26,9 +31,29 @@ const Title = styled.h2`
   font-weight: normal;
 `
 
+const Text = styled.p`
+  font-size: 2.4rem;
+`
+
+const List = styled.ol`
+  margin: 0;
+  padding: 0 0 0 2.5rem;
+`
+
+const BulletList = styled.ul`
+  margin: 0;
+  padding: 0 0 0 2.5rem;
+`
+
+const SmallList = styled(BulletList)`
+  padding: 0 0 0 9rem;
+`
+
 const Step = styled.li`
   font-size: 2.4rem;
   margin: 50px 0;
+  padding-left: 1.7rem;
+  font-weight: bold;
   h3,
   p,
   span {
@@ -36,9 +61,22 @@ const Step = styled.li`
   }
   p {
     margin: 0 0 30px;
+    font-weight: normal;
   }
   span {
     font-weight: bold;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+`
+
+const SmallStep = styled(Step)`
+  margin: 25px 0;
+  p,
+  span {
+    font-size: 2rem;
   }
 `
 
@@ -46,14 +84,24 @@ const MediaWrapper = styled(Flex)`
   width: 100%;
   justify-content: space-between;
   div {
-    width: 48%;
+    width: 50%;
   }
+`
+
+const Media = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
 `
 
 const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
+`
+
+const FormGroup = styled.div`
+  margin: 25px 0;
 `
 
 const Label = styled.label`
@@ -71,6 +119,25 @@ const Input = styled.textarea`
   border-bottom: 1px solid #a1a1a1;
 `
 
+const Check = styled.input`
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  border: 1px solid #000;
+  margin-top: 2rem;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+`
+
+const CheckLabel = styled.label`
+  display: block;
+  position: relative;
+  font-size: 1.8rem;
+  padding-left: 1rem;
+`
+
 const Continue = styled(Btn)`
   align-self: center;
   width: 22rem;
@@ -83,7 +150,7 @@ const FiveSteps = ({ handleNext }) => {
     <Wrapper>
       <Title>{fiveSteps.title}</Title>
       <Section>
-        <ol>
+        <List>
           <Step>
             <h3>Submit your application. You're already DONE with this one!</h3>
             <p>
@@ -122,9 +189,9 @@ const FiveSteps = ({ handleNext }) => {
                   find a match for you, but rest assured, it’s a priority!
                 </p>
               </div>
-              <div>
+              <Media>
                 <img src={gettingMatchedVideo} />
-              </div>
+              </Media>
             </MediaWrapper>
           </Step>
           <Step>
@@ -159,9 +226,9 @@ const FiveSteps = ({ handleNext }) => {
                   as getting to know a caring nextdoor neighbor.
                 </p>
               </div>
-              <div>
+              <Media>
                 <img src={fiveStepsImage} />
-              </div>
+              </Media>
             </MediaWrapper>
           </Step>
           <Step>
@@ -178,7 +245,7 @@ const FiveSteps = ({ handleNext }) => {
               agency (for childcare or transportation).
             </p>
           </Step>
-        </ol>
+        </List>
       </Section>
       <Title>{fiveSteps.question.title}</Title>
       <Form>
@@ -195,7 +262,7 @@ const BestPractices = ({ handleNext }) => {
     <Wrapper>
       <Title>{bestPractices.title}</Title>
       <Section>
-        <ol>
+        <List>
           <Step>
             <h3>Be clear.</h3>
             <p>
@@ -218,9 +285,9 @@ const BestPractices = ({ handleNext }) => {
                   drop-off) within your time/money budget before adding more.
                 </p>
               </div>
-              <div>
+              <Media>
                 <img src={keepItSimpleVideo} />
-              </div>
+              </Media>
             </MediaWrapper>
             <p>
               In the past, some Helpers have jumped in enthusiastically (for
@@ -287,7 +354,7 @@ const BestPractices = ({ handleNext }) => {
               requirements in Module Four.
             </p>
           </Step>
-        </ol>
+        </List>
       </Section>
       <Title>{bestPractices.question.title}</Title>
       <Form>
@@ -295,6 +362,259 @@ const BestPractices = ({ handleNext }) => {
         <Input placeholder='Your answer here' />
         <Continue onClick={handleNext}>Continue</Continue>
       </Form>
+    </Wrapper>
+  )
+}
+
+const MealTips = ({ handleNext }) => {
+  return (
+    <Wrapper>
+      <Title>{mealTips.title}</Title>
+      <Section>
+        <MediaWrapper>
+          <div>
+            <BulletList>
+              <Step>
+                <p>Buy foil baking pans on sale to keep on hand.</p>
+              </Step>
+              <Step>
+                <p>Enclose baking/cooking instructions (if needed).</p>
+              </Step>
+              <Step>
+                <p>
+                  <span>Less logistical coordination is better.</span> I told
+                  the foster mom, “Leave a cooler on your porch, and I’ll fill
+                  it up on Monday mornings.” (This may change over time--keep
+                  reading!)
+                </p>
+              </Step>
+              <Step>
+                <p>
+                  <span>Use containers you don't need back.</span> The last
+                  thing I want to do is add to her burden, so if she's not able
+                  to clean them, she is welcome to recycle or toss.
+                </p>
+              </Step>
+              <Step>
+                <p>
+                  If something should be refrigerated quickly (i.e., raw cookie
+                  dough, potato salad, etc.) I over-communicate (sending an
+                  extra text after drop-off) to make sure the foster mom
+                  remembers to grab it from the cooler.
+                </p>
+              </Step>
+            </BulletList>
+          </div>
+          <Media>
+            <img src={mealTipsImage} />
+          </Media>
+        </MediaWrapper>
+        <BulletList>
+          <Step>
+            <p>
+              I am flexible on the day of the week I drop off, and so is she!
+              With the first kids she fostered, there was one day a week in
+              which she spent most of the day in meetings with the kids'
+              families, so she didn't have much time to cook. So while she had
+              those kids, I made a point of dropping off the same day each week.
+              Now with a new set of siblings, she doesn't have the same
+              restriction on her schedule, so I drop off when it works for me.
+            </p>
+          </Step>
+          <Step>
+            <p>
+              If I don't have time to cook something elaborate, I put in all the
+              components for an easy & kid-friendly dinner. Last week, for
+              example, I gave her the ingredients for naan bread pizzas, along
+              with a salad and several other items.
+            </p>
+          </Step>
+          <Step>
+            <p>
+              Consider what mealtime would be most helpful for the family.
+              Dinner is always the first thought, but would breakfast be more
+              helpful, as the foster parent is rushing to get kids to school on
+              time?
+            </p>
+          </Step>
+          <Step>
+            <p>
+              <span>
+                I try to take good care of all the kids in the house--kids born
+                to the foster family, and kids in foster care--so no one feels
+                left out.
+              </span>{' '}
+              It just so happens that she has nine year old twins, and I have an
+              11 year old daughter and a 10 year old son: perfect ages to pass
+              along my kids' clothes & books.
+            </p>
+          </Step>
+          <Step>
+            <p>
+              If I drop off clothes or supplies,{' '}
+              <span>I organize by size and gender,</span> and only drop off what
+              the foster parent can use. Extra can go to the thrift store or one
+              of Foster Together's clothing partners.
+            </p>
+          </Step>
+          <Step>
+            <p>
+              I keep track of the foods I drop off to avoid too much repetition
+              and make notes if there's something in particular that a certain
+              kid or parent likes/dislikes.
+            </p>
+          </Step>
+          <Step>
+            <p>
+              Find out the best method of communication for the foster parent
+              (phone, text, email, IM, etc.). I think for the first few weeks,
+              she and I were emailing until we both realized that neither of us
+              check our email regularly, then we switched to text for most of
+              it.
+            </p>
+          </Step>
+          <Step>
+            <p>
+              While a well-rounded, delicious, and kid-friendly meal is the most
+              requested support, you are free to get creative! Foster Family
+              Helpers sometimes include a treat like fresh-baked cookies, the
+              kids’ favorite fruit or veggies already sliced for snack time
+              throughout the week, a loaf of fresh bread, breakfast burritos, or
+              a bar of chocolate or tub of gelato as a post-bedtime treat for
+              mom or dad.{' '}
+              <span>
+                Have fun thinking of ways to make the family feel special and
+                supported.
+              </span>
+            </p>
+          </Step>
+          <Step>
+            <p>
+              Friendly gestures are always a bonus. Some Family Helpers write
+              short notes of gratitude and solidarity to the foster parents.
+              Others text an encouraging message every few weeks. When many
+              foster parents feel isolated, being thoughtful goes a long way.
+            </p>
+          </Step>
+          <Step>
+            <p>
+              <span>
+                Some Family Helpers prefer picking up takeout over cooking,
+              </span>{' '}
+              and some families think takeout is a treat! One Helper simply
+              doubles her own recipe for her family’s dinner every Thursday.
+              Another Family Helpers picks up{' '}
+              <span>
+                fried chicken and sides at the grocery store, or lasagna at
+                Costco.
+              </span>{' '}
+              Listening to what the family wants and needs will make this an
+              extremely effective gift.
+            </p>
+          </Step>
+          <Step>
+            <p>
+              Consider the family’s desires and needs, then find the best option
+              to fit your schedule.
+            </p>
+          </Step>
+          <Step>
+            <p>
+              Offer specific drop-off times to choose from (“Tuesday at 6,
+              Thursday at 4, or Sunday at noon?”). This is better than an
+              open-ended question, (“Is there a good day for me to bring a
+              meal?”) which can lead to a slower process.
+            </p>
+          </Step>
+          <Step>
+            <p>
+              When foster parents go on to adopt, they can use support through
+              that process, too.
+            </p>
+          </Step>
+        </BulletList>
+      </Section>
+      <Title>Tips for those who want to go beyond the meal</Title>
+      <Section>
+        <Text>
+          If you're the type who wants to customize the match to the foster
+          parent's most-needed tasks, here's how you do that:
+        </Text>
+        <SmallList>
+          <SmallStep>
+            <p>
+              If you and the foster parent decide to make arrangements for you
+              providing babysitting or transportation, the{' '}
+              <span>
+                foster parent’s agency or county may require a background check,
+                which can take up to three weeks.
+              </span>{' '}
+              We are here to help with that process. Email
+              connect@fostertogether.co to get started.
+            </p>
+          </SmallStep>
+          <SmallStep>
+            <p>
+              After a few meal deliveries, consider asking the family if they’d
+              like to meet for a playdate, or would like help with a specific
+              chore.
+            </p>
+          </SmallStep>
+          <SmallStep>
+            <p>
+              When your foster family receives a new placement of a child,
+              consider asking if the child needs any additional supplies or
+              clothes. You’re welcome to collect items from friends or family.
+              For example, after her foster family welcomed two little ones in
+              November, who did not have their own coats, one Helper posted a
+              request for winter gear with the children’s sizes--explaining they
+              are in foster care and giving no additional identifying
+              information--on a local buy-sell-trade group. The next week, she
+              dropped off five bags full of clothes, toys, coats, and boots
+              along with the family’s weekly meal.
+            </p>
+          </SmallStep>
+          <SmallStep>
+            <p>
+              Foster Together also collaborates with three foster parent-owned
+              nonprofits to provide additional resources, physical supplies, and
+              support to foster families. If a need arises, please let us know
+              so that our group can partner with you find and deliver the items.
+              Connect@fostertogether.co.
+            </p>
+          </SmallStep>
+        </SmallList>
+      </Section>
+      <Title>{survey.title}</Title>
+      <Form>
+        {survey.content.map((item, index) => (
+          <FormGroup key={item.id}>
+            <Label>
+              {item.question}
+              {item.answers.map((answer, i) => (
+                <div key={answer.id}>
+                  <Check
+                    type={item.type}
+                    name={item.name}
+                    id={`${item.name}${i}`}
+                    value={`${item.name}${i}`}
+                  />
+                  <CheckLabel for={`${item.name}${i}`}>
+                    {answer.text}
+                  </CheckLabel>
+                </div>
+              ))}
+            </Label>
+            {index === 3 && (
+              <Label>
+                Other ways I'd like to help (if any)
+                <Input placeholder='Your answer here' />
+              </Label>
+            )}
+          </FormGroup>
+        ))}
+      </Form>
+      <Continue onClick={handleNext}>Complete Module 2</Continue>
     </Wrapper>
   )
 }
@@ -317,8 +637,10 @@ const ModuleTwo = () => {
 
   if (activeStep === 0) {
     return <FiveSteps handleNext={handleNext} />
-  } else if (activeStep > 0) {
+  } else if (activeStep === 1) {
     return <BestPractices handleNext={handleNext} />
+  } else if (activeStep === 2) {
+    return <MealTips handleNext={handleNext} />
   }
 }
 
