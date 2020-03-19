@@ -8,30 +8,40 @@ import {
   Contact,
   ContactCard,
   ContactInfo,
-  HeaderRight,
-  StatusContainer,
-  Status,
-  StatusRow,
-  StatusTag,
-  StatusIcon,
+  NameContainer,
+  AssignedContainer,
+  DocumentsContainer,
+  MemberIcon,
 } from './profileStyles'
 import { edit, address, email, phone } from './icons'
 import { formatPhone } from '../../../utils/formatPhone'
 
 const ProfileHeader = ({ member, type }) => {
+  function changeIcon() {
+    if (type === 'Family') {
+      return <MemberIcon background='#3e8392'>F</MemberIcon>
+    } else {
+      return <MemberIcon background='#FF8D86'>N</MemberIcon>
+    }
+  }
   return (
     <Header>
       <HeaderLeft>
-        <div>
+        <NameContainer>
           <NameWrapper>
+            <div>{changeIcon()}</div>
             <Name>
               {member.first_name} {member.last_name}
             </Name>
             <img src={edit} alt='Edit icon' />
           </NameWrapper>
           <Role>{type}</Role>
-        </div>
+        </NameContainer>
+        <AssignedContainer>
+          <h2>Assigned Family</h2>
+        </AssignedContainer>
         <Contact>
+          <h2>Contact Info</h2>
           <ContactCard>
             <img src={address} alt='Icon of buildings' />
             <ContactInfo>
@@ -49,25 +59,10 @@ const ProfileHeader = ({ member, type }) => {
             <ContactInfo>{formatPhone(member.phone)}</ContactInfo>
           </ContactCard>
         </Contact>
+        <DocumentsContainer>
+          <h2>Documents</h2>
+        </DocumentsContainer>
       </HeaderLeft>
-      <HeaderRight>
-        <StatusContainer>
-          <StatusRow>
-            <StatusTag>Application:</StatusTag> <Status>Approved</Status>
-            <StatusIcon status='done' />
-          </StatusRow>
-          <StatusRow>
-            <StatusTag>Background Check:</StatusTag>{' '}
-            <Status>Not Started</Status>
-            <StatusIcon status='inprogress' />
-          </StatusRow>
-          <StatusRow>
-            <StatusTag>Training:</StatusTag>
-            <Status>-</Status>
-            <StatusIcon />
-          </StatusRow>
-        </StatusContainer>
-      </HeaderRight>
     </Header>
   )
 }

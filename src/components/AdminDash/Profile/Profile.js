@@ -9,6 +9,8 @@ import {
   ActivityList,
   ActivityCard,
   Activity,
+  AppStatus,
+  ProfileContainer,
 } from './profileStyles'
 import Navigation from '../Navigation/Navigation'
 import Header from './Header'
@@ -41,18 +43,20 @@ const Profile = () => {
   return (
     <>
       <Navigation />
-      <Header member={selectedMember} type={singleType} />
-      <ContentWrapper>
-        <AppProgress>
-          <ContentTitle>Application Progress</ContentTitle>
-          <Stepper />
-          <p>
-            {selectedMember.first_name}'s application has been approved.
-            <Link to='#'>Start Background Check Process</Link>
-          </p>
-        </AppProgress>
-        <ProfileActivity />
-      </ContentWrapper>
+      <ProfileContainer>
+        <Header member={selectedMember} type={singleType} />
+        <ContentWrapper>
+          <AppProgress>
+            <ContentTitle>Application Progress</ContentTitle>
+            <Stepper />
+            <AppStatus>
+              {selectedMember.first_name}'s application has been approved.
+              <Link to='#'>Start Background Check Process</Link>
+            </AppStatus>
+          </AppProgress>
+          <ProfileActivity />
+        </ContentWrapper>
+      </ProfileContainer>
     </>
   )
 }
