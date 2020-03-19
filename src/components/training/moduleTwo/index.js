@@ -119,23 +119,28 @@ const Input = styled.textarea`
   border-bottom: 1px solid #a1a1a1;
 `
 
-const Check = styled.input`
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  border: 1px solid #000;
-  margin-top: 2rem;
-  height: 20px;
-  width: 20px;
-  background: #fff;
-`
-
 const CheckLabel = styled.label`
   display: block;
   position: relative;
   font-size: 1.8rem;
   padding-left: 1rem;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+`
+
+const Check = styled.input`
+  position: absolute;
+  border: 1px solid #000;
+  margin-top: 2rem;
+  height: 20px;
+  width: 20px;
+  background: #fff;
 `
 
 const Continue = styled(Btn)`
@@ -593,14 +598,15 @@ const MealTips = ({ handleNext }) => {
               {item.question}
               {item.answers.map((answer, i) => (
                 <div key={answer.id}>
-                  <Check
-                    type={item.type}
-                    name={item.name}
-                    id={`${item.name}${i}`}
-                    value={`${item.name}${i}`}
-                  />
-                  <CheckLabel for={`${item.name}${i}`}>
+                  <CheckLabel>
                     {answer.text}
+                    <input
+                      type={item.type}
+                      name={item.name}
+                      id={`${item.name}${i}`}
+                      value={`${item.name}${i}`}
+                    />
+                    <Check />
                   </CheckLabel>
                 </div>
               ))}
