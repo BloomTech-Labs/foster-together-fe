@@ -12,7 +12,7 @@ export const MainContent = styled.text`
   font-size: 1.7rem;
   line-height: 2.5rem;
   text-align: left;
-  margin: 0 2%;
+  margin: 0;
 `
 
 export const Letter = styled.div`

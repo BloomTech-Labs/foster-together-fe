@@ -236,7 +236,7 @@ function ModuleOne(props) {
           <Context1 />
           <img
             src={require('../TrainingIcons/image1.png')}
-            style={{ 'max-height': '350px', margin: 'auto' }}
+            style={{ 'max-height': '350px', margin: '2%' }}
             alt=''
           />
         </ContextContainer>
@@ -248,7 +248,7 @@ function ModuleOne(props) {
             style={{
               'max-height': '350px',
               'max-width': '300px',
-              margin: 'auto',
+              margin: '2%',
               'border-radius': '10px',
             }}
             alt=''
