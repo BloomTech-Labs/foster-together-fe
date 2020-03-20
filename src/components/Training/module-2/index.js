@@ -718,7 +718,7 @@ const ModuleTwo = () => {
   const handleNext = e => {
     e.preventDefault()
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    if (activeStep <= 1) {
+    if (activeStep === 0 || activeStep === 1) {
       setActiveStep(activeStep + 1)
     } else if (activeStep === 2) {
       setActiveStep(0)
@@ -730,7 +730,7 @@ const ModuleTwo = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     if (activeStep === 0) {
       push('/module1')
-    } else if (activeStep > 0) {
+    } else if (activeStep === 1 || activeStep === 2) {
       setActiveStep(activeStep - 1)
     }
   }
