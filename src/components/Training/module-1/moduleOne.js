@@ -12,38 +12,18 @@ import {
   TitleContainer,
   AnswerContainer,
   QuestionContainer,
+  LetterContainer,
+  ContextDiv,
+  FlexRow,
+  Div,
 } from '../TrainStyles'
 import Stepper from '../TrainingStepper'
 
 import TrainingNav from '../TrainingNav/NavBar'
 
-const Context2 = () => {
-  return (
-    <MainContent>
-      “Anyone who has ever volunteered for anything knows that oftentimes, the
-      scope of the volunteer role grows and grows and often becomes
-      overwhelming. I can honestly say that I’ve been doing this for almost 6
-      months and at no point have I felt overwhelmed in the least. This is a way
-      to help that is super customized based on what I can do, and it’s
-      manageable in real life.” - Michele, Foster Family Helper in Broomfield{' '}
-      <br />
-      <br />
-      “Doubling my dinner recipe or taking a walk to the park with my new little
-      friend doesn't take much extra effort, compared to the satisfaction of
-      investing in my neighbors.” - Nicole, Foster Family Helper in Arvada{' '}
-      <br />
-      <br />
-      “The process has been easy and wonderful. You're creating something
-      beautiful!” - Sara, Foster Family Helper and monthly donor in Castle Pines
-      <br />
-      <br />
-    </MainContent>
-  )
-}
-
 const Context3 = () => {
   return (
-    <div>
+    <Div>
       <h1>1. Help families beat isolation.</h1>
       <MainContent>
         You’ve probably heard the idea that foster parents are heroes or saints.
@@ -61,13 +41,13 @@ const Context3 = () => {
         aims to be the “next best thing” to meeting a new neighbor who commits
         to regular, simple support--no guilt, no pressure.'
       </MainContent>
-    </div>
+    </Div>
   )
 }
 
 const Context4 = () => {
   return (
-    <div>
+    <Div>
       <h1>2. Go beyond transactions. Build relationships.</h1>
       <MainContent>
         You might be surprised to hear that delivering a meal is only half of
@@ -79,13 +59,13 @@ const Context4 = () => {
         We wanted to create a simple, practical way for you to be present in the
         life of your foster family neighbors.
       </MainContent>
-    </div>
+    </Div>
   )
 }
 
 const Context5 = () => {
   return (
-    <div>
+    <Div>
       <h1>3. More relationships = more transparency = safer kids. </h1>
       <MainContent>
         While Foster Together tends to attract excellent, caring, engaged foster
@@ -95,13 +75,13 @@ const Context5 = () => {
         natural, friendly ways, the risks of abuse or neglect while in foster
         care will decrease.
       </MainContent>
-    </div>
+    </Div>
   )
 }
 
 const Context6 = () => {
   return (
-    <div>
+    <Div>
       <h1>4. See beyond your comfort zone/social circle.</h1>
       <MainContent>
         This one’s just for you, helper. We are in an era of political tension,
@@ -118,13 +98,13 @@ const Context6 = () => {
         your town. And we, and the foster parents, are always here to help
         answer your questions.
       </MainContent>
-    </div>
+    </Div>
   )
 }
 
 const Context7 = () => {
   return (
-    <div>
+    <Div>
       <h1>5. Help great foster homes stay "open"</h1>
       <MainContent>
         Help great foster homes stay "open"' content='In Colorado, the average
@@ -136,7 +116,7 @@ const Context7 = () => {
         homes ultimately hurts the kids. Your investment of a few hours a month
         may help excellent families stay in it for the long haul.'
       </MainContent>
-    </div>
+    </Div>
   )
 }
 
@@ -170,8 +150,54 @@ function Title({ props }) {
         }}
         alt=''
       />
-      <BigTitle>A Letter of gratitude continued...</BigTitle>
+      <BigTitle>BENEFITS OF SUPPORTING FOSTER FAMILIES</BigTitle>
     </TitleContainer>
+  )
+}
+
+const Img1 = () => {
+  return (
+    <FlexRow>
+      <Context3 />
+      <img
+        src={require('../TrainingIcons/image2.png')}
+        style={{
+          'max-height': '350px',
+          'max-width': '300px',
+          'border-radius': '10px',
+        }}
+        alt=''
+      />
+    </FlexRow>
+  )
+}
+
+const Img2 = () => {
+  return (
+    <FlexRow>
+      <Context6 />
+      <img
+        src={require('../TrainingIcons/image19.png')}
+        style={{
+          'max-height': '350px',
+          'max-width': '300px',
+          'border-radius': '10px',
+        }}
+        alt=''
+      />
+    </FlexRow>
+  )
+}
+
+const Context = () => {
+  return (
+    <ContextDiv>
+      <Img1 />
+      <Context4 />
+      <Context5 />
+      <Img2 />
+      <Context7 />
+    </ContextDiv>
   )
 }
 
@@ -189,29 +215,7 @@ function ModuleOne(props) {
       <TrainingNav />
       <Title />
       <Page>
-        <ContextContainer>
-          <img
-            src={require('../TrainingIcons/image2.png')}
-            style={{
-              'max-height': '350px',
-              'max-width': '300px',
-              margin: '2%',
-              'border-radius': '10px',
-            }}
-            alt=''
-          />
-          <Context2 />
-        </ContextContainer>
-        <Header>BENEFITS OF SUPPORTING FOSTER FAMILIES</Header>
-        <ContextContainer>
-          <div>
-            <Context3 />
-            <Context4 />
-            <Context5 />
-            <Context6 />
-            <Context7 />
-          </div>
-        </ContextContainer>
+        <Context />
         <AnswerContainer>
           <Context8 handleChange={handleChange} form={form} />
           <Submit

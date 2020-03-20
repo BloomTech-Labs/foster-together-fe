@@ -133,7 +133,7 @@ const ModuleLetter = props => {
         <LetterCircle>
           <Circle
             onClick={() => {
-              props.history.push('/module1')
+              props.history.push('/modulestart')
             }}
           >
             <img src={next} type='button' width='100%' alt='next button' />

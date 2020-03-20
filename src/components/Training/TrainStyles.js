@@ -328,3 +328,20 @@ export const TestText = styled.p`
   margin: 3% 0;
   font-size: 2.2rem;
 `
+
+export const ContextDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin: 0 auto;
+  align-content: space-between;
+`
+
+export const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
+export const Div = styled.div`
+  margin: 2% 0;
+`
