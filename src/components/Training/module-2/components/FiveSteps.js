@@ -13,7 +13,6 @@ import {
   Input,
   Continue,
 } from '../styles'
-import { fiveSteps } from '../data'
 import { gettingMatchedVideo, fiveStepsImage } from '../img'
 import { SimpleStep } from './index'
 
@@ -36,7 +35,7 @@ export const FiveSteps = ({ handleNext, handleBack }) => {
     <Wrapper>
       <Title>
         <BackArrow onClick={handleBack} />
-        {fiveSteps.title}
+        Five steps in the matching process
       </Title>
       <Section>
         <List>
@@ -120,9 +119,12 @@ export const FiveSteps = ({ handleNext, handleBack }) => {
           </Step>
         </List>
       </Section>
-      <Title>{fiveSteps.question.title}</Title>
+      <Title>Understanding the five steps: Complete before proceeding</Title>
       <Form>
-        <Label>{fiveSteps.question.text}</Label>
+        <Label>
+          Do you have any questions about the five steps? Write them here so we
+          can provide clarity. *
+        </Label>
         <Input placeholder='Your answer here' />
         <Continue onClick={handleNext}>Continue</Continue>
       </Form>
