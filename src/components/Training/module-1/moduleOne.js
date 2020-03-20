@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import {
   BigTitle,
@@ -141,12 +142,13 @@ const Context8 = ({ form, handleChange }) => {
 }
 
 function Title({ props }) {
+  const { push } = useHistory()
   return (
     <TitleContainer>
       <img
         src={require('../../../images/icons/back-arrow.svg')}
         onClick={() => {
-          props.history.push('/module0')
+          push('/module0')
         }}
         alt=''
       />
@@ -202,6 +204,7 @@ const Context = () => {
 }
 
 function ModuleOne(props) {
+  const { push } = useHistory()
   const [form, setForm] = useState({
     answer1: '',
     answer2: '',
@@ -220,7 +223,7 @@ function ModuleOne(props) {
           <Context8 handleChange={handleChange} form={form} />
           <Submit
             onClick={() => {
-              props.history.push('/module2')
+              push('/module2')
             }}
           >
             Submit
