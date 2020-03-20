@@ -1,5 +1,19 @@
 import styled from 'styled-components'
 import { Btn, Flex } from '../../../GlobalStyles'
+import { backArrow as arrow } from './img'
+
+export const BackArrow = styled.div`
+  position: relative;
+  top: 30px;
+  left: -45px;
+  height: 24px;
+  width: 27px;
+  background-image: url(${arrow});
+
+  &:hover {
+    cursor: pointer;
+  }
+`
 
 export const Wrapper = styled.div`
   width: 80%;

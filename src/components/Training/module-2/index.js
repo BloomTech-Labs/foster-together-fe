@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import {
   fiveSteps,
   bestPractices,
@@ -7,6 +8,7 @@ import {
   survey,
 } from './data'
 import {
+  BackArrow,
   Wrapper,
   Section,
   Title,
@@ -32,11 +34,15 @@ import {
   keepItSimpleVideo,
   mealTipsImage,
 } from './img'
+import NavBar from '../TrainingNav/NavBar'
 
-const FiveSteps = ({ handleNext }) => {
+const FiveSteps = ({ handleNext, handleBack }) => {
   return (
     <Wrapper>
-      <Title>{fiveSteps.title}</Title>
+      <Title>
+        <BackArrow onClick={handleBack} />
+        {fiveSteps.title}
+      </Title>
       <Section>
         <List>
           <Step>
@@ -145,10 +151,13 @@ const FiveSteps = ({ handleNext }) => {
   )
 }
 
-const BestPractices = ({ handleNext }) => {
+const BestPractices = ({ handleNext, handleBack }) => {
   return (
     <Wrapper>
-      <Title>{bestPractices.title}</Title>
+      <Title>
+        <BackArrow onClick={handleBack} />
+        {bestPractices.title}
+      </Title>
       <Section>
         <List>
           <Step>
@@ -473,10 +482,13 @@ const Survey = ({ handleNext }) => {
   )
 }
 
-const MealTips = () => {
+const MealTips = ({ handleBack }) => {
   return (
     <Wrapper>
-      <Title>{mealTips.title}</Title>
+      <Title>
+        <BackArrow onClick={handleBack} />
+        {mealTips.title}
+      </Title>
       <Section>
         <MediaWrapper>
           <div>
@@ -699,28 +711,42 @@ const MealTips = () => {
 }
 
 const ModuleTwo = () => {
+  const { push } = useHistory()
   const [activeStep, setActiveStep] = useState(0)
   console.log(activeStep)
 
   const handleNext = e => {
     e.preventDefault()
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    if (activeStep === 0) {
-      setActiveStep(activeStep + 1)
-    } else if (activeStep === 1) {
+    if (activeStep <= 1) {
       setActiveStep(activeStep + 1)
     } else if (activeStep === 2) {
       setActiveStep(0)
     }
   }
 
-  if (activeStep === 0) {
-    return <FiveSteps handleNext={handleNext} />
-  } else if (activeStep === 1) {
-    return <BestPractices handleNext={handleNext} />
-  } else if (activeStep === 2) {
-    return <MealTips handleNext={handleNext} />
+  const handleBack = e => {
+    e.preventDefault()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    if (activeStep === 0) {
+      push('/module1')
+    } else if (activeStep > 0) {
+      setActiveStep(activeStep - 1)
+    }
   }
+
+  return (
+    <>
+      <NavBar />
+      {activeStep === 0 ? (
+        <FiveSteps handleNext={handleNext} handleBack={handleBack} />
+      ) : activeStep === 1 ? (
+        <BestPractices handleNext={handleNext} handleBack={handleBack} />
+      ) : activeStep === 2 ? (
+        <MealTips handleNext={handleNext} handleBack={handleBack} />
+      ) : null}
+    </>
+  )
 }
 
 export default ModuleTwo
