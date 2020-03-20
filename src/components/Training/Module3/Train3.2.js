@@ -1,23 +1,33 @@
 import React, { useState } from 'react'
-import Player from 'react-player'
-import Module3Text from './Train3.json'
 import {
   Page,
   Header,
-  BigTitle,
   MainContent,
   Image3,
   Input,
   ATag,
   Submit,
   Half,
-  VideoHolder,
   Bold,
-  Section2,
   Indented,
 } from './TrainStyle'
+import axios from 'axios'
 
 export default function TrainingThreeTwo(props) {
+  const [answers, setAnswers] = useState({answerTwo: ''})
+  const handleChange = e => {
+    setAnswers({ ...answers, [e.target.name]: e.target.value })
+  }
+  const handleSubmit = () => {
+    props.setModule(2)
+    axios.post("", answers) 
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
   return (
     <Page>
       <Header>WHAT MAKES A GREAT FOSTER FAMILY HELPER? </Header>
@@ -59,9 +69,11 @@ export default function TrainingThreeTwo(props) {
         After reading this list, please name one or two strengths you will bring
         to the match. *
       </MainContent>
-      <Input />
+      <Input name="answerTwo" onChange={handleChange} />
       <ATag href='#section3'>
-        <Submit>Continue</Submit>
+        <Submit             onClick={() => {
+              handleSubmit()
+            }}>Continue</Submit>
       </ATag>
     </Page>
   )

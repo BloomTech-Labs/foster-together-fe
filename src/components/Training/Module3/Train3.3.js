@@ -1,23 +1,34 @@
 import React, { useState } from 'react'
 import Player from 'react-player'
-import Module3Text from './Train3.json'
 import {
   Page,
   Header,
-  BigTitle,
   MainContent,
-  Image3,
   Input,
   ATag,
   Submit,
   Half,
   VideoHolder,
   Bold,
-  Section2,
   Indented,
 } from './TrainStyle'
+import axios from 'axios'
 
 export default function TrainingThreeTwo(props) {
+  const [answers, setAnswers] = useState({answerThree: ''})
+  const handleChange = e => {
+    setAnswers({ ...answers, [e.target.name]: e.target.value })
+  }
+  const handleSubmit = () => {
+    props.setModule(3)
+    axios.post("", answers) 
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
   return (
     <Page>
       <Header>
@@ -92,9 +103,11 @@ export default function TrainingThreeTwo(props) {
       <MainContent>
       To you, what is the most surprising phrase on the "to avoid saying" list? *
       </MainContent>
-      <Input />
+      <Input name="answerThree" onChange={handleChange}/>
       <ATag href='#section3'>
-        <Submit>Continue</Submit>
+        <Submit             onClick={() => {
+              handleSubmit()
+            }}>Continue</Submit>
       </ATag>
     </Page>
   )

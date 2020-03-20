@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import TrainingThreeOne from './Training3.1'
 import TrainingThreeTwo from './Train3.2'
 import TrainingThreeThree from './Train3.3'
 import TrainingThreeFour from './Train3.4'
-import Scroller from './Scroller'
+
 
 function Overlay(props) {
   switch (props.module) {

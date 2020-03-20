@@ -1,6 +1,5 @@
-import React, { useState, createRef } from 'react'
+import React, { useState} from 'react'
 import Player from 'react-player'
-import Module3Text from './Train3.json'
 import {
   Page,
   Header,
@@ -13,16 +12,27 @@ import {
   Half,
   VideoHolder,
 } from './TrainStyle'
-import ReadingProgress from './Scroller'
+import axios from 'axios'
+
 
 export default function TrainingThreeOne(props) {
-  console.log(props)
-  const target = createRef()
-
+  const [answers, setAnswers] = useState({answerOne: ''})
+  const handleChange = e => {
+    setAnswers({ ...answers, [e.target.name]: e.target.value })
+  }
+  const handleSubmit = () => {
+    props.setModule(1)
+    axios.post("", answers) 
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
   return (
     <>
-      <ReadingProgress target={target} module={'m'} />
-      <Page ref={target}>
+      <Page>
         <BigTitle> THREE: WHAT YOU NEED TO KNOW</BigTitle>
         <Header>WHAT'S YOUR VISION OF A FOSTER FAMILY?</Header>
         <MainContent>
@@ -113,11 +123,11 @@ export default function TrainingThreeOne(props) {
           sentences) *
         </MainContent>
         r,
-        <Input />
+        <Input name="answerOne" value={answers.answerOne} onChange={handleChange} />
         <ATag>
           <Submit
             onClick={() => {
-              props.setModule(1)
+              handleSubmit()
             }}
           >
             Continue

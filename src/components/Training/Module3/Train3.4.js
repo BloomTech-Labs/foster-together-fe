@@ -1,32 +1,37 @@
-import React, { useState, createRef } from 'react'
-import Player from 'react-player'
-import Module3Text from './Train3.json'
+import React, { useState } from 'react'
 import {
   Page,
   Header,
-  BigTitle,
   MainContent,
   Image3,
   Input,
   ATag,
   Submit,
   Half,
-  VideoHolder,
   Bold,
-  Section2,
   Indented,
   Link,
 } from './TrainStyle'
-import ReadingProgress from './Scroller'
+import axios from 'axios'
 
 export default function TrainingThreeTwo(props) {
-    const target = createRef();
-    console.log(props)
-
+  const [answers, setAnswers] = useState({answerFour: '', answerFive: ''})
+  const handleChange = e => {
+    setAnswers({ ...answers, [e.target.name]: e.target.value })
+  }
+  const handleSubmit = () => {
+    props.history.push('./training/4')
+    axios.post("", answers) 
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
   return (
     <div>
-    <ReadingProgress target={target} props={props.module}/>
-    <Page ref={target} >
+    <Page  >
       <Header>WHAT KIDS NEED</Header>
       <MainContent>
         From Homecoming FAQs and Straight from a Foster Mom:
@@ -98,13 +103,13 @@ export default function TrainingThreeTwo(props) {
       <MainContent>
       What, if anything, was new to you in this section on how to approach the kids? *
       </MainContent>
-      <Input />
+      <Input onChange={handleChange} name="answerFour" vale={answers.answerFour}/>
       <MainContent>
       Do you anticipate any of these foster parent requests will be difficult for you? Why or why not? *
       </MainContent>
-      <Input />
+      <Input onChange={handleChange} name="answerFive" vale={answers.answerFive} />
       <ATag href='#section3'>
-        <Submit>Continue</Submit>
+        <Submit onClick={handleSubmit()}>Continue</Submit>
       </ATag>
     </Page>
     </div>
