@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Page = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
   width: 85%;
   margin: auto;
@@ -23,17 +22,19 @@ export const MainContent = styled.text`
 export const Letter = styled.div`
   background-color: #faf9f6;
   width: 65%;
+  margin: 0 auto;
   padding: 2% 5%;
 `
 export const ContextContainer = styled.div`
   display: flex;
+  align-content: center;
   width: 65%;
+  margin: 0 auto;
 `
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
-  margin: 3% 0 5% 10%;
+  margin: 3% 0 3% 10%;
 `
 
 export const Circle = styled.div`
@@ -52,8 +53,10 @@ export const BigTitle = styled.h1`
 
 export const Header = styled.h1`
   font-size: 3.1rem;
-  text-align: left;
   font-weight: 500;
+  display: flex;
+  text-align: left;
+  color: ${props => props.color};
 `
 
 export const Section = styled.div`
@@ -109,6 +112,7 @@ export const AnswerContainer = styled.div`
   flex-direction: column;
   width: 65%;
   align-items: center;
+  margin: 0 auto;
 `
 
 export const Input = styled.textarea`
@@ -130,12 +134,12 @@ export const Footer = styled.div`
 export const Submit = styled.button`
   width: 223px;
   height: 56px;
-  font-size: 4rem;
+  font-size: 1.8rem;
   color: white;
   background-color: #375762;
   border: none;
   margin: 2rem;
-  border-radius: 10px;
+  border-radius: 4px;
   &:hover {
     color: black;
     cursor: pointer;
@@ -310,4 +314,17 @@ export const LetterText = styled.p`
   b {
     font-size: 1.8rem;
   }
+`
+export const LetterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin: 3% auto;
+  align-items: center;
+`
+export const TestText = styled.p`
+  line-height: 3rem;
+  color: #343434;
+  margin: 3% 0;
+  font-size: 2.2rem;
 `

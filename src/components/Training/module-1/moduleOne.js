@@ -1,45 +1,21 @@
 import React, { useState } from 'react'
-import Player from 'react-player'
+
 import {
   BigTitle,
   Page,
   Header,
   MainContent,
-  Section,
-  PlayerWrapper,
   Submit,
   Footer,
   Input,
   ContextContainer,
-  VideoText,
   TitleContainer,
   AnswerContainer,
   QuestionContainer,
 } from '../TrainStyles'
 import Stepper from '../TrainingStepper'
-import Navigation from '../../AdminDash/Navigation/Navigation'
-import TrainingNav from '../TrainingNav/NavBar'
 
-const Context1 = () => {
-  return (
-    <MainContent>
-      My goal is NEVER to overwhelm you or give you needless busywork (who has
-      time for that?), but to set you up for success by answering common
-      misconceptions and answering the questions you may not know to ask yet.
-      This is what makes a Family Helper match last for a long time, rather than
-      quickly fizzling out. <br /> <br />
-      Hope Forti <br /> At the end of each section, fill out the short form to
-      show your comprehension and help you prepare for your match. When you're
-      done with the whole thing, complete the contract, and you'll be ready to
-      be matched! <br />
-      Enjoy, and drop me a line if you think of any way I can improve the
-      process. connect@fostertogether.co <br />
-      <br />
-      Thrilled to change the story of foster care together, <br />
-      Hope Forti, Founding Foster Mom.
-    </MainContent>
-  )
-}
+import TrainingNav from '../TrainingNav/NavBar'
 
 const Context2 = () => {
   return (
@@ -199,24 +175,6 @@ function Title({ props }) {
   )
 }
 
-function VideoPlayer(props) {
-  return (
-    <PlayerWrapper>
-      <Player
-        url='https://player.vimeo.com/video/288657929'
-        controls='false'
-        margin='auto'
-      />
-      <VideoText>
-        When a specific family in your area, or a family you meet at a
-        Neighborhood Party, is ready for help, Foster Together will email or
-        call you with a basic overview of the family. If you agree, we'll help
-        you exchange info and meet up.
-      </VideoText>
-    </PlayerWrapper>
-  )
-}
-
 function ModuleOne(props) {
   const [form, setForm] = useState({
     answer1: '',
@@ -231,17 +189,6 @@ function ModuleOne(props) {
       <TrainingNav />
       <Title />
       <Page>
-        <VideoPlayer />
-        <ContextContainer>
-          <Context1 />
-          <img
-            src={require('../TrainingIcons/image1.png')}
-            style={{ 'max-height': '350px', margin: '2%' }}
-            alt=''
-          />
-        </ContextContainer>
-
-        <Header>Testimonials</Header>
         <ContextContainer>
           <img
             src={require('../TrainingIcons/image2.png')}
