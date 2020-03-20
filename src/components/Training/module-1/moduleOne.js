@@ -184,7 +184,7 @@ const Context8 = ({ form, handleChange }) => {
   )
 }
 
-function Title(props) {
+function Title({ props }) {
   return (
     <TitleContainer>
       <img
@@ -194,7 +194,7 @@ function Title(props) {
         }}
         alt=''
       />
-      <BigTitle>ONE: WHY HELP A FOSTER FAMILY?</BigTitle>
+      <BigTitle>A Letter of gratitude continued...</BigTitle>
     </TitleContainer>
   )
 }
@@ -229,8 +229,8 @@ function ModuleOne(props) {
   return (
     <section>
       <TrainingNav />
+      <Title />
       <Page>
-        <Title />
         <VideoPlayer />
         <ContextContainer>
           <Context1 />

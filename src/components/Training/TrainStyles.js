@@ -8,18 +8,22 @@ export const Page = styled.div`
   margin: auto;
 `
 
+export const LetterCircle = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`
+
 export const MainContent = styled.text`
   font-size: 1.7rem;
   line-height: 2.5rem;
   text-align: left;
-  margin: 0;
 `
 
 export const Letter = styled.div`
   background-color: #faf9f6;
-  width: 50%;
+  width: 65%;
   padding: 2% 5%;
-  margin: 5% 0 0 0;
 `
 export const ContextContainer = styled.div`
   display: flex;
@@ -29,12 +33,13 @@ export const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin: 3% 0 3% 10%;
+  margin: 3% 0 5% 10%;
 `
 
 export const Circle = styled.div`
   width: 3%;
   display: flex;
+  margin-bottom: -25px;
   justify-content: center;
   position: relative;
   top: -20px;
@@ -291,4 +296,18 @@ export const BigLink = styled.a`
   text-align: left;
   font-weight: 500;
   color: black;
+`
+
+export const LetterDiv = styled.div``
+
+export const LetterText = styled.p`
+  font-size: 1.8rem;
+  text-align: left;
+  line-height: 3rem;
+  color: #375762;
+  margin: 3% 0;
+
+  b {
+    font-size: 1.8rem;
+  }
 `
