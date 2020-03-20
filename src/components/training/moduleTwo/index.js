@@ -334,50 +334,117 @@ const QuestionThree = () => {
   })
 
   return (
+    <>
+      <FormGroup>
+        <Label>
+          As you get to know them, are you open to providing practical support
+          to the foster family, beyond meals?
+          <CheckLabel onClick={() => setState({ ...state, one: !state.one })}>
+            Additional meal drop-offs monthly (option to have foster parent
+            provide a gift card for groceries)
+            <Checkbox checked={state.one} />
+          </CheckLabel>
+          <CheckLabel onClick={() => setState({ ...state, two: !state.two })}>
+            Help around the house: Cleaning the kitchen
+            <Checkbox checked={state.two} />
+          </CheckLabel>
+          <CheckLabel
+            onClick={() => setState({ ...state, three: !state.three })}
+          >
+            Help around the house: Laundry
+            <Checkbox checked={state.three} />
+          </CheckLabel>
+          <CheckLabel onClick={() => setState({ ...state, four: !state.four })}>
+            Help around the house: Yardwork
+            <Checkbox checked={state.four} />
+          </CheckLabel>
+          <CheckLabel onClick={() => setState({ ...state, five: !state.five })}>
+            Help around the house: Sweeping/cleaning floors
+            <Checkbox checked={state.five} />
+          </CheckLabel>
+          <CheckLabel onClick={() => setState({ ...state, six: !state.six })}>
+            Driving kids to visits with parents, therapy, or school activity
+            (Requires foster agency/county approval. Contact Hope for help with
+            approval.)
+            <Checkbox checked={state.six} />
+          </CheckLabel>
+          <CheckLabel
+            onClick={() => setState({ ...state, seven: !state.seven })}
+          >
+            Babysitting under six hours (May require foster agency/county
+            approval. Contact Hope for help with approval.)
+            <Checkbox checked={state.seven} />
+          </CheckLabel>
+          <CheckLabel
+            onClick={() => setState({ ...state, eight: !state.eight })}
+          >
+            Respite for more than six hours or overnight (Requires CPA/county
+            approval. Contact Hope for help with approval.)
+            <Checkbox checked={state.eight} />
+          </CheckLabel>
+          <CheckLabel onClick={() => setState({ ...state, nine: !state.nine })}>
+            Other (please specify below)
+            <Checkbox checked={state.nine} />
+          </CheckLabel>
+        </Label>
+      </FormGroup>
+      <FormGroup>
+        <Label>
+          Other ways I'd like to help (if any)
+          <Input placeholder='Your answer here' />
+        </Label>
+      </FormGroup>
+    </>
+  )
+}
+
+const QuestionFour = () => {
+  const [selected, setSelected] = useState(0)
+
+  const handleClick = id => {
+    setSelected(id)
+  }
+
+  return (
     <FormGroup>
       <Label>
-        As you get to know them, are you open to providing practical support to
-        the foster family, beyond meals?
-        <CheckLabel onClick={() => setState({ ...state, one: !state.one })}>
-          Additional meal drop-offs monthly (option to have foster parent
-          provide a gift card for groceries)
-          <Checkbox checked={state.one} />
+        Do you understand that you may need a background check in order to
+        provide assistance beyond meal drop-off? *
+        <CheckLabel onClick={() => handleClick(1)}>
+          Yes, I understand that may need a background check in order to provide
+          assistance beyond meal meal drop-off.
+          <Checkbox radio checked={selected === 1} />
         </CheckLabel>
-        <CheckLabel onClick={() => setState({ ...state, two: !state.two })}>
-          Help around the house: Cleaning the kitchen
-          <Checkbox checked={state.two} />
+        <CheckLabel onClick={() => handleClick(2)}>
+          No.
+          <Checkbox radio checked={selected === 2} />
         </CheckLabel>
-        <CheckLabel onClick={() => setState({ ...state, three: !state.three })}>
-          Help around the house: Laundry
-          <Checkbox checked={state.three} />
+      </Label>
+    </FormGroup>
+  )
+}
+
+const QuestionFive = () => {
+  const [selected, setSelected] = useState(0)
+
+  const handleClick = id => {
+    setSelected(id)
+  }
+
+  return (
+    <FormGroup>
+      <Label>
+        Do you understand that Foster Together and the foster parents are here
+        to help facilitate any needed background checks with the family's foster
+        care agency or county, and that this process can take one to four weeks,
+        depending on the requirements of the specific county or agency? *
+        <CheckLabel onClick={() => handleClick(1)}>
+          Yes
+          <Checkbox radio checked={selected === 1} />
         </CheckLabel>
-        <CheckLabel onClick={() => setState({ ...state, four: !state.four })}>
-          Help around the house: Yardwork
-          <Checkbox checked={state.four} />
-        </CheckLabel>
-        <CheckLabel onClick={() => setState({ ...state, five: !state.five })}>
-          Help around the house: Sweeping/cleaning floors
-          <Checkbox checked={state.five} />
-        </CheckLabel>
-        <CheckLabel onClick={() => setState({ ...state, six: !state.six })}>
-          Driving kids to visits with parents, therapy, or school activity
-          (Requires foster agency/county approval. Contact Hope for help with
-          approval.)
-          <Checkbox checked={state.six} />
-        </CheckLabel>
-        <CheckLabel onClick={() => setState({ ...state, seven: !state.seven })}>
-          Babysitting under six hours (May require foster agency/county
-          approval. Contact Hope for help with approval.)
-          <Checkbox checked={state.seven} />
-        </CheckLabel>
-        <CheckLabel onClick={() => setState({ ...state, eight: !state.eight })}>
-          Respite for more than six hours or overnight (Requires CPA/county
-          approval. Contact Hope for help with approval.)
-          <Checkbox checked={state.eight} />
-        </CheckLabel>
-        <CheckLabel onClick={() => setState({ ...state, nine: !state.nine })}>
-          Other (please specify below)
-          <Checkbox checked={state.nine} />
+        <CheckLabel onClick={() => handleClick(2)}>
+          No
+          <Checkbox radio checked={selected === 2} />
         </CheckLabel>
       </Label>
     </FormGroup>
@@ -390,6 +457,17 @@ const Survey = ({ handleNext }) => {
       <QuestionOne />
       <QuestionTwo />
       <QuestionThree />
+      <QuestionFour />
+      <QuestionFive />
+      <FormGroup>
+        <Label>
+          From what you’ve learned so far how can we improve the modules you’ve
+          completed? What would you add, shorten, or eliminate? This program is
+          always looking for ways to be better, so your feedback is definitely
+          helpful!
+          <Input placeholder='Your answer here' />
+        </Label>
+      </FormGroup>
       <Continue onClick={handleNext}>Complete Module 2</Continue>
     </Form>
   )

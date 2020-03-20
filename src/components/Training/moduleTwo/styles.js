@@ -97,6 +97,7 @@ export const Label = styled.label`
 export const Input = styled.textarea`
   width: 100%;
   margin: 40px 0 60px;
+  font-size: 1.8rem;
   height: 16rem;
   padding: 20px 15px;
   background: #f9f9f9;
