@@ -11,7 +11,7 @@ import AdminDash from './components/AdminDash/AdminDashboard'
 import Profile from './components/AdminDash/Profile/Profile'
 // temporary sign up confirmation, will be replaced with user dashboard
 import ConfirmationPage from './components/signUpForm/ConfirmationPage/ConfirmationPage'
-import ModuleTwo from './components/training/moduleTwo'
+import ModuleTwo from './components/Training/moduleTwo'
 import ModuleLetter from './components/Training/module-0/trainingLetter'
 import ModuleOne from './components/Training/module-1/moduleOne'
 

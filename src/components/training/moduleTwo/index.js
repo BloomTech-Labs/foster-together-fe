@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import {
   fiveSteps,
   bestPractices,
@@ -7,148 +6,32 @@ import {
   beyondTheMeal,
   survey,
 } from './data'
-import { Btn, Flex } from '../../../GlobalStyles'
+import {
+  Wrapper,
+  Section,
+  Title,
+  Text,
+  List,
+  BulletList,
+  SmallList,
+  Step,
+  SmallStep,
+  MediaWrapper,
+  Media,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  CheckLabel,
+  Checkbox,
+  Continue,
+} from './styles'
 import {
   gettingMatchedVideo,
   fiveStepsImage,
   keepItSimpleVideo,
   mealTipsImage,
 } from './img'
-
-const Wrapper = styled.div`
-  width: 80%;
-  max-width: 1075px;
-  margin: 75px auto;
-`
-
-const Section = styled.section`
-  width: 100%;
-  margin: 50px 0 75px;
-`
-
-const Title = styled.h2`
-  font-size: 3.2rem;
-  font-weight: normal;
-`
-
-const Text = styled.p`
-  font-size: 2.4rem;
-`
-
-const List = styled.ol`
-  margin: 0;
-  padding: 0 0 0 2.5rem;
-`
-
-const BulletList = styled.ul`
-  margin: 0;
-  padding: 0 0 0 2.5rem;
-`
-
-const SmallList = styled(BulletList)`
-  padding: 0 0 0 9rem;
-`
-
-const Step = styled.li`
-  font-size: 2.4rem;
-  margin: 50px 0;
-  padding-left: 1.7rem;
-  font-weight: bold;
-  h3,
-  p,
-  span {
-    font-size: 2.4rem;
-  }
-  p {
-    margin: 0 0 30px;
-    font-weight: normal;
-  }
-  span {
-    font-weight: bold;
-  }
-
-  &:first-child {
-    margin-top: 0;
-  }
-`
-
-const SmallStep = styled(Step)`
-  margin: 25px 0;
-  p,
-  span {
-    font-size: 2rem;
-  }
-`
-
-const MediaWrapper = styled(Flex)`
-  width: 100%;
-  justify-content: space-between;
-  div {
-    width: 50%;
-  }
-`
-
-const Media = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-`
-
-const Form = styled.form`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`
-
-const FormGroup = styled.div`
-  margin: 25px 0;
-`
-
-const Label = styled.label`
-  font-size: 2.4rem;
-`
-
-const Input = styled.textarea`
-  width: 100%;
-  margin: 40px 0 60px;
-  height: 16rem;
-  padding: 20px 15px;
-  background: #f9f9f9;
-  border-radius: 4px 4px 0 0;
-  border: none;
-  border-bottom: 1px solid #a1a1a1;
-`
-
-const CheckLabel = styled.label`
-  display: block;
-  position: relative;
-  font-size: 1.8rem;
-  padding-left: 1rem;
-
-  input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-`
-
-const Check = styled.input`
-  position: absolute;
-  border: 1px solid #000;
-  margin-top: 2rem;
-  height: 20px;
-  width: 20px;
-  background: #fff;
-`
-
-const Continue = styled(Btn)`
-  align-self: center;
-  width: 22rem;
-  background: ${({ theme: { palette } }) => palette.primary.main};
-  color: #fff;
-`
 
 const FiveSteps = ({ handleNext }) => {
   return (
@@ -371,7 +254,148 @@ const BestPractices = ({ handleNext }) => {
   )
 }
 
-const MealTips = ({ handleNext }) => {
+const QuestionOne = () => {
+  const [selected, setSelected] = useState(0)
+
+  const handleClick = id => {
+    setSelected(id)
+  }
+
+  return (
+    <FormGroup>
+      <Label>
+        How much time do you want to spend helping a foster family? *
+        <CheckLabel onClick={() => handleClick(1)}>
+          2 hours a month (minimum for monthly meal drop-off)
+          <Checkbox radio checked={selected === 1} />
+        </CheckLabel>
+        <CheckLabel onClick={() => handleClick(2)}>
+          5 hours a month
+          <Checkbox radio checked={selected === 2} />
+        </CheckLabel>
+        <CheckLabel onClick={() => handleClick(3)}>
+          2 hours a week
+          <Checkbox radio checked={selected === 3} />
+        </CheckLabel>
+        <CheckLabel onClick={() => handleClick(4)}>
+          5 hours a week
+          <Checkbox radio checked={selected === 4} />
+        </CheckLabel>
+        <CheckLabel onClick={() => handleClick(5)}>
+          One weekend every two months
+          <Checkbox radio checked={selected === 5} />
+        </CheckLabel>
+        <CheckLabel onClick={() => handleClick(6)}>
+          One weekend a month
+          <Checkbox radio checked={selected === 6} />
+        </CheckLabel>
+      </Label>
+    </FormGroup>
+  )
+}
+
+const QuestionTwo = () => {
+  const [selected, setSelected] = useState(0)
+
+  const handleClick = id => {
+    setSelected(id)
+  }
+
+  return (
+    <FormGroup>
+      <Label>
+        Do you understand that the decision to add additional meals or helping
+        tasks is at the discretion of you and the foster family? *
+        <CheckLabel onClick={() => handleClick(1)}>
+          Yes, I understand that adding additional meal and helping tasks would
+          be at the discretion of me and the foster family.
+          <Checkbox radio checked={selected === 1} />
+        </CheckLabel>
+        <CheckLabel onClick={() => handleClick(2)}>
+          No.
+          <Checkbox radio checked={selected === 2} />
+        </CheckLabel>
+      </Label>
+    </FormGroup>
+  )
+}
+
+const QuestionThree = () => {
+  const [state, setState] = useState({
+    one: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false,
+    six: false,
+    seven: false,
+    eight: false,
+    nine: false,
+  })
+
+  return (
+    <FormGroup>
+      <Label>
+        As you get to know them, are you open to providing practical support to
+        the foster family, beyond meals?
+        <CheckLabel onClick={() => setState({ ...state, one: !state.one })}>
+          Additional meal drop-offs monthly (option to have foster parent
+          provide a gift card for groceries)
+          <Checkbox checked={state.one} />
+        </CheckLabel>
+        <CheckLabel onClick={() => setState({ ...state, two: !state.two })}>
+          Help around the house: Cleaning the kitchen
+          <Checkbox checked={state.two} />
+        </CheckLabel>
+        <CheckLabel onClick={() => setState({ ...state, three: !state.three })}>
+          Help around the house: Laundry
+          <Checkbox checked={state.three} />
+        </CheckLabel>
+        <CheckLabel onClick={() => setState({ ...state, four: !state.four })}>
+          Help around the house: Yardwork
+          <Checkbox checked={state.four} />
+        </CheckLabel>
+        <CheckLabel onClick={() => setState({ ...state, five: !state.five })}>
+          Help around the house: Sweeping/cleaning floors
+          <Checkbox checked={state.five} />
+        </CheckLabel>
+        <CheckLabel onClick={() => setState({ ...state, six: !state.six })}>
+          Driving kids to visits with parents, therapy, or school activity
+          (Requires foster agency/county approval. Contact Hope for help with
+          approval.)
+          <Checkbox checked={state.six} />
+        </CheckLabel>
+        <CheckLabel onClick={() => setState({ ...state, seven: !state.seven })}>
+          Babysitting under six hours (May require foster agency/county
+          approval. Contact Hope for help with approval.)
+          <Checkbox checked={state.seven} />
+        </CheckLabel>
+        <CheckLabel onClick={() => setState({ ...state, eight: !state.eight })}>
+          Respite for more than six hours or overnight (Requires CPA/county
+          approval. Contact Hope for help with approval.)
+          <Checkbox checked={state.eight} />
+        </CheckLabel>
+        <CheckLabel onClick={() => setState({ ...state, nine: !state.nine })}>
+          Other (please specify below)
+          <Checkbox checked={state.nine} />
+        </CheckLabel>
+      </Label>
+    </FormGroup>
+  )
+}
+
+const Survey = ({ handleNext }) => {
+  return (
+    <Form>
+      <QuestionOne />
+      <QuestionTwo />
+      <QuestionThree />
+      <Continue onClick={handleNext}>Complete Module 2</Continue>
+    </Form>
+  )
+}
+
+const MealTips = () => {
   return (
     <Wrapper>
       <Title>{mealTips.title}</Title>
@@ -539,7 +563,7 @@ const MealTips = ({ handleNext }) => {
           </Step>
         </BulletList>
       </Section>
-      <Title>Tips for those who want to go beyond the meal</Title>
+      <Title>{beyondTheMeal.title}</Title>
       <Section>
         <Text>
           If you're the type who wants to customize the match to the foster
@@ -591,36 +615,7 @@ const MealTips = ({ handleNext }) => {
         </SmallList>
       </Section>
       <Title>{survey.title}</Title>
-      <Form>
-        {survey.content.map((item, index) => (
-          <FormGroup key={item.id}>
-            <Label>
-              {item.question}
-              {item.answers.map((answer, i) => (
-                <div key={answer.id}>
-                  <CheckLabel>
-                    {answer.text}
-                    <input
-                      type={item.type}
-                      name={item.name}
-                      id={`${item.name}${i}`}
-                      value={`${item.name}${i}`}
-                    />
-                    <Check />
-                  </CheckLabel>
-                </div>
-              ))}
-            </Label>
-            {index === 3 && (
-              <Label>
-                Other ways I'd like to help (if any)
-                <Input placeholder='Your answer here' />
-              </Label>
-            )}
-          </FormGroup>
-        ))}
-      </Form>
-      <Continue onClick={handleNext}>Complete Module 2</Continue>
+      <Survey />
     </Wrapper>
   )
 }
