@@ -14,6 +14,7 @@ import ConfirmationPage from './components/signUpForm/ConfirmationPage/Confirmat
 import ModuleLetter from './components/Training/module-0/trainingLetter'
 import ModuleOne from './components/Training/module-1/moduleOne'
 import StartTraining from './components/Training/module-1/moduleOneLetter'
+import ModuleFive from './components/Training/module-5/moduleFive'
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
         <Route path='/module0' component={ModuleLetter} />
         <Route path='/module1' component={ModuleOne} />
         <Route path='/modulestart' component={StartTraining} />
+        <Route path='/moduleFive' component={ModuleFive} />
       </ThemeProvider>
     </>
   )

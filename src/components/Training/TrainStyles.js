@@ -120,8 +120,14 @@ export const Input = styled.textarea`
   height: 150px;
   resize: none;
   font-size: 2rem;
-  padding: 1rem;
   margin: 4%;
+`
+
+export const QuestionsInput = styled.textarea`
+  width: 64%;
+  height: 150px;
+  resize: none;
+  font-size: 2rem;
 `
 
 export const Footer = styled.div`
