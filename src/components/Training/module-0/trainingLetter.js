@@ -1,38 +1,35 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import {
+  Wrapper,
+  BackArrow,
+  Title,
   Page,
   Letter,
-  MainContent,
   Circle,
-  TitleContainer,
-  BigTitle,
   LetterCircle,
-  LetterDiv,
   LetterText,
 } from '../TrainStyles'
 import next from '../TrainingIcons/next.png'
 import TrainingNav from '../TrainingNav/NavBar'
 
-function LetterTitle({ props }) {
+function LetterTitle() {
   const { push } = useHistory()
   return (
-    <TitleContainer>
-      <img
-        src={require('../../../images/icons/back-arrow.svg')}
+    <Title>
+      <BackArrow
         onClick={() => {
           push('/module0')
         }}
-        alt=''
       />
-      <BigTitle>A letter of gratitude</BigTitle>
-    </TitleContainer>
+      A letter of gratitude
+    </Title>
   )
 }
 
 const Text1 = () => {
   return (
-    <LetterDiv>
+    <>
       <LetterText> Dear Foster Neighbor,</LetterText>
       <LetterText>
         As one of our first matches, you are about to be living proof that
@@ -47,13 +44,13 @@ const Text1 = () => {
         In a system so confusing and demanding as child welfare, the humanity
         and customization of a match like yours is where the magic happens.
       </LetterText>
-    </LetterDiv>
+    </>
   )
 }
 
 const Text2 = () => {
   return (
-    <LetterDiv>
+    <>
       <LetterText>
         While good neighbors want to do something simple to help a foster
         family, most people in Colorado don’t know a foster parent. We're fixing
@@ -68,13 +65,13 @@ const Text2 = () => {
         All four modules of this training should take under two hours to read
         and complete.
       </LetterText>
-    </LetterDiv>
+    </>
   )
 }
 
 const Text3 = () => {
   return (
-    <LetterDiv>
+    <>
       <LetterText>
         My goal is NEVER to overwhelm you or give you needless busywork (who has
         time for that?),
@@ -92,13 +89,13 @@ const Text3 = () => {
         the whole thing, complete the contract, and you'll be ready to be
         matched!
       </LetterText>
-    </LetterDiv>
+    </>
   )
 }
 
 const Text4 = () => {
   return (
-    <LetterDiv>
+    <>
       <LetterText>
         Enjoy, and drop me a line if you think of any way I can improve the
         process. <br />
@@ -108,43 +105,45 @@ const Text4 = () => {
         Thrilled to change the story of foster care together,
       </LetterText>
       <LetterText>Hope Forti, Founding Foster Mom</LetterText>
-    </LetterDiv>
+    </>
   )
 }
 
 const LetterContext = () => {
   return (
-    <LetterDiv>
+    <>
       <Text1 />
       <Text2 />
       <Text3 />
       <Text4 />
-    </LetterDiv>
+    </>
   )
 }
 
-const ModuleLetter = props => {
+const ModuleLetter = () => {
   const { push } = useHistory()
   return (
-    <div>
+    <>
       <TrainingNav />
-      <LetterTitle />
-      <Page>
-        <Letter>
-          <LetterContext />
-        </Letter>
-        <LetterCircle>
-          <Circle
-            onClick={() => {
-              push('/modulestart')
-            }}
-          >
-            <img src={next} type='button' width='100%' alt='next button' />
-          </Circle>
-          <h3>Continue</h3>
-        </LetterCircle>
-      </Page>
-    </div>
+      <Wrapper>
+        <LetterTitle />
+        <Page>
+          <Letter>
+            <LetterContext />
+          </Letter>
+          <LetterCircle>
+            <Circle
+              onClick={() => {
+                push('/modulestart')
+              }}
+            >
+              <img src={next} type='button' width='100%' alt='next button' />
+            </Circle>
+            <h3>Continue</h3>
+          </LetterCircle>
+        </Page>
+      </Wrapper>
+    </>
   )
 }
 

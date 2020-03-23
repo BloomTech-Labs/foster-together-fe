@@ -4,7 +4,9 @@ import { Formik, Form } from 'formik'
 import { ModuleOneSchema } from '../../../utils/yupSchemas'
 
 import {
-  BigTitle,
+  Wrapper,
+  Title,
+  BackArrow,
   Page,
   Header,
   MainContent,
@@ -147,19 +149,17 @@ const Context8 = ({ errors, touched }) => {
   )
 }
 
-function Title() {
+function TitleWrapper() {
   const { push } = useHistory()
   return (
-    <TitleContainer>
-      <img
-        src={require('../../../images/icons/back-arrow.svg')}
+    <Title>
+      <BackArrow
         onClick={() => {
           push('/module0')
         }}
-        alt=''
       />
-      <BigTitle>BENEFITS OF SUPPORTING FOSTER FAMILIES</BigTitle>
-    </TitleContainer>
+      Benefits of supporting foster families
+    </Title>
   )
 }
 
@@ -199,13 +199,13 @@ const Img2 = () => {
 
 const Context = () => {
   return (
-    <ContextDiv>
+    <>
       <Img1 />
       <Context4 />
       <Context5 />
       <Img2 />
       <Context7 />
-    </ContextDiv>
+    </>
   )
 }
 
@@ -215,8 +215,8 @@ function ModuleOne() {
   return (
     <section>
       <TrainingNav />
-      <Title />
-      <Page>
+      <Wrapper>
+        <TitleWrapper />
         <Context />
         <AnswerContainer>
           <Formik
@@ -235,7 +235,7 @@ function ModuleOne() {
             )}
           </Formik>
         </AnswerContainer>
-      </Page>
+      </Wrapper>
       <Footer>
         <Stepper activeStep={0} />
       </Footer>

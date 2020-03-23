@@ -1,5 +1,32 @@
 import styled from 'styled-components'
 import { Field } from 'formik'
+import backArrow from '../../images/icons/back-arrow.svg'
+import { Btn, Flex } from '../../GlobalStyles'
+
+export const BackArrow = styled.div`
+  position: relative;
+  top: 30px;
+  left: -45px;
+  height: 24px;
+  width: 27px;
+  background-image: url(${backArrow});
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const Wrapper = styled.div`
+  width: 80%;
+  max-width: 1075px;
+  margin: 75px auto;
+  color: #343434;
+`
+
+export const Title = styled.h2`
+  font-size: 3.2rem;
+  font-weight: normal;
+`
 
 export const Page = styled.div`
   display: flex;
@@ -22,7 +49,7 @@ export const MainContent = styled.text`
 
 export const Letter = styled.div`
   background-color: #faf9f6;
-  width: 65%;
+  width: 100%;
   margin: 0 auto;
   padding: 2% 5%;
 `
@@ -52,12 +79,10 @@ export const BigTitle = styled.h1`
   margin: 0 5%;
 `
 
-export const Header = styled.h1`
-  font-size: 3.1rem;
-  font-weight: 500;
-  display: flex;
-  text-align: left;
-  color: ${props => props.color};
+export const Header = styled.h2`
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #676767;
 `
 
 export const Section = styled.div`
@@ -70,11 +95,11 @@ export const PlayerWrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-bottom: 5%;
+  margin: 5% 0;
 `
 
 export const VideoText = styled.p`
-  width: 30%;
+  width: 50%;
   font-size: 1.2rem;
   color: #676767;
   line-height: 2rem;
@@ -138,19 +163,11 @@ export const Footer = styled.div`
   margin-top: 5%;
 `
 
-export const Submit = styled.button`
-  width: 223px;
-  height: 56px;
-  font-size: 1.8rem;
-  color: white;
-  background-color: #375762;
-  border: none;
-  margin: 2rem;
-  border-radius: 4px;
-  &:hover {
-    color: black;
-    cursor: pointer;
-  }
+export const Submit = styled(Btn)`
+  align-self: center;
+  width: 22rem;
+  background: ${({ theme: { palette } }) => palette.primary.main};
+  color: #fff;
 `
 
 export const QuestionContainer = styled.div`
@@ -309,8 +326,6 @@ export const BigLink = styled.a`
   color: black;
 `
 
-export const LetterDiv = styled.div``
-
 export const LetterText = styled.p`
   font-size: 1.8rem;
   text-align: left;
@@ -325,15 +340,15 @@ export const LetterText = styled.p`
 export const LetterContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 100%;
   margin: 3% auto;
-  align-items: center;
 `
 export const TestText = styled.p`
-  line-height: 3rem;
   color: #343434;
   margin: 3% 0;
   font-size: 2.2rem;
+  font-style: italic;
+  line-height: 4.2rem;
 `
 
 export const ContextDiv = styled.div`
