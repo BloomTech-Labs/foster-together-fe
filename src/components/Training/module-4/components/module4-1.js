@@ -18,10 +18,9 @@ import {
   Video,
   Or,
   Header2,
-} from './module1styles'
+} from '../styles.js/module4-1styles'
 import Player from 'react-player'
 import TrainingNav from '../TrainingNav/NavBar'
-import { TitleContainer } from '../TrainStyles'
 
 export default function Module1(props) {
   const [section, setSection] = useState(1)
