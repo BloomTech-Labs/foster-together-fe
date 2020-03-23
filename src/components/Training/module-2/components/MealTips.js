@@ -19,7 +19,7 @@ import {
   Continue,
   Text,
 } from '../styles'
-import { mealTipsImage } from '../img'
+import { mealTipsImage } from '../../img'
 
 const questionOneData = [
   '2 hours a month (minimum for monthly meal drop-off)',
