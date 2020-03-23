@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import {
   Page,
-  Section2,
+  Section,
   MainContent,
   Input,
   Submit,
@@ -18,7 +17,7 @@ import {
   Video,
   Or,
   Header2,
-} from '../styles.js/module4-1styles'
+} from './styles'
 import Player from 'react-player'
 
 export const Module41 = ({ handleNext, handleBack }) => {
@@ -41,9 +40,9 @@ export const Module41 = ({ handleNext, handleBack }) => {
         When do you need a background check?
       </Header>
       <Page>
-        <Section2>
+        <Section>
           <Title>Basic Overview of Safety and Legal Requirements: </Title>
-          <MainContent1>
+          <MainContent>
             <Paragraph>
               We perform a basic Colorado Arrest Records check before each
               match. Foster Together defers to foster parents whether to reveal
@@ -61,8 +60,8 @@ export const Module41 = ({ handleNext, handleBack }) => {
                 height='300px'
               />
             </Video>
-          </MainContent1>
-          <MainContent>
+          </MainContent>
+          <MainContent1>
             <Question>Option One: Casual Helping</Question>
             <Paragraph1>
               While there is no legal requirement for a background check or
@@ -163,9 +162,9 @@ export const Module41 = ({ handleNext, handleBack }) => {
               checks, but Foster Together is willing to subsidize these costs if
               needed.
             </Paragraph1>
-          </MainContent>
-        </Section2>
-        <Section2>
+          </MainContent1>
+        </Section>
+        <Section>
           <Header1>
             Understanding legal requirements: Complete before proceeding
           </Header1>
@@ -173,7 +172,7 @@ export const Module41 = ({ handleNext, handleBack }) => {
             Please let us know if you have any questions about the requirements
             listed here, so we can clarify. *
           </Header2>
-        </Section2>
+        </Section>
         <Input placeholder='Your Answer Here' />
         <ATag>
           <Submit onClick={handleNext}>Continue</Submit>

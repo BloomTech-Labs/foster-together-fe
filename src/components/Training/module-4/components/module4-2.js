@@ -1,32 +1,31 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import {
-  Page,
+  Page1,
   Header,
   Body,
   Body1,
-  MainContent,
-  MainContent1,
-  Body2,
-  Half,
-  Question,
   MainContent2,
-  Section3,
+  MainContent3,
+  Body2,
+  Half1,
+  Question1,
+  MainContent4,
+  Section2,
   Header3,
   Image2,
   Span,
-  Section2,
+  Section1,
   Input,
   Submit,
   ClickHere,
-  ATag,
-  Header2,
+  ATag1,
+  Header4,
   Body3,
   Link,
   Quote,
   Statement,
-  Video,
-} from '../styles.js/module4-2styles.js'
+  Video1,
+} from './styles'
 import Player from 'react-player'
 
 export const Module42 = ({ handleNext, handleBack }) => {
@@ -48,10 +47,10 @@ export const Module42 = ({ handleNext, handleBack }) => {
         </svg>
         Sexual abuse prevention{' '}
       </Header>
-      <Page>
-        <Section2>
-          <MainContent>
-            <Section3>
+      <Page1>
+        <Section1>
+          <MainContent2>
+            <Section2>
               <Body>
                 Because one in three girls and one in four boys will be targets
                 for sexual abuse, we can't leave this part out. <br />
@@ -78,15 +77,15 @@ export const Module42 = ({ handleNext, handleBack }) => {
                 uncomfortable in this training, so that they can <br />
                 decrease the likelihood of abuse for the kids they care about.{' '}
               </Body1>
-            </Section3>
-            <Video>
+            </Section2>
+            <Video1>
               <Player
                 url='https://www.youtube.com/embed/ULGJphesPnk'
                 width='600px'
                 height='450px'
               />
-            </Video>
-          </MainContent>
+            </Video1>
+          </MainContent2>
           <Body1>
             <Span>
               We do not include this section to scare you or make people
@@ -96,13 +95,13 @@ export const Module42 = ({ handleNext, handleBack }) => {
             conversations and clarity.
             <br />
           </Body1>
-          <Half>
+          <Half1>
             <Image2
               src='https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525386132069-86G9CUPJYIFKEVYT5SKY/ke17ZwdGBToddI8pDm48kAUFOTPMSVxuKvNFAx6DKiZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ouw-8l5B_J38LMU7OZFvYc0yAe_x11zxahcI_hfw238yWAp0jGKzhuVZoU5dfkFlA/FT+37.jpg?format=750w'
               width='450px'
               height='570px'
             />
-            <MainContent1>
+            <MainContent3>
               <Body2>
                 The main point is that secrets and wrong motivations can't exist
                 in the light of open communication and savvy supervision. So if
@@ -129,10 +128,10 @@ export const Module42 = ({ handleNext, handleBack }) => {
                   for sexual abuse, and regularly enforcing the rules below.
                 </Span>
               </Body2>
-            </MainContent1>
-          </Half>
-          <Header2>Again, thank you for sticking with us.</Header2>
-        </Section2>
+            </MainContent3>
+          </Half1>
+          <Header4>Again, thank you for sticking with us.</Header4>
+        </Section1>
         <Section2>
           <Body3>
             <Span>PLEASE CLICK TO READ:</Span>
@@ -141,7 +140,7 @@ export const Module42 = ({ handleNext, handleBack }) => {
               WHAT SEXUAL OFFENDERS WANT YOU TO KNOW
             </Link>
           </Body3>
-          <MainContent2>
+          <MainContent4>
             <Statement>
               Excerpt: Pay attention to our behaviors. <br />
             </Statement>
@@ -167,10 +166,10 @@ export const Module42 = ({ handleNext, handleBack }) => {
             rest by <Link href=''>clicking here.</Link>
             <br />
             <br />
-          </MainContent2>
+          </MainContent4>
         </Section2>
         <Section2>
-          <MainContent>
+          <MainContent4>
             <ClickHere>
               <Span>
                 For a deeper idea of how to keep kids safe, you might want to
@@ -179,19 +178,19 @@ export const Module42 = ({ handleNext, handleBack }) => {
               Top 10 Questions on Preventing Sexual Abuse (Includes
               developmentally appropriate explanations, click HERE to read)
             </ClickHere>
-          </MainContent>
+          </MainContent4>
           <Header3>
             Understanding sexual abuse prevention: Complete before proceeding
           </Header3>
-          <Question>
+          <Question1>
             What did you learn from the above article(s)? (3+ sentences)
-          </Question>
+          </Question1>
         </Section2>
         <Input placeholder='Your Answer Here' />
-        <ATag>
+        <ATag1>
           <Submit onClick={handleNext}>Continue</Submit>
-        </ATag>
-      </Page>
+        </ATag1>
+      </Page1>
     </>
   )
 }

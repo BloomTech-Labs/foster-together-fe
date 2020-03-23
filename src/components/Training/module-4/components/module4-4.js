@@ -1,23 +1,24 @@
 import React, { useState } from 'react'
 import {
   Page,
-  Section2,
-  MainContent,
+  MainContent7,
   Signature,
   Submit,
   Header,
   BigLink,
+  BigInput,
   InputHolder,
   SignContain,
   Link,
-  Section,
-  Header2,
+  Header7,
   Body,
-  Header1,
+  Header6,
   Signature2,
   Todo,
-  Span,
-} from '../styles.js/module4-4styles'
+  Span2,
+  Header8,
+  NewSection,
+} from './styles'
 
 export const Module44 = ({ handleBack }) => {
   return (
@@ -39,10 +40,10 @@ export const Module44 = ({ handleBack }) => {
         What to do if you suspect abuse, or a child discloses abuse{' '}
       </Header>
       <Page>
-        <Header1>
+        <Header6>
           <ol>
             <li>
-              <Span>Be prepared: </Span>
+              <Span2>Be prepared: </Span2>
               <BigLink
                 href='https://themamabeareffect.org/prevent/when-to-speak-up/'
                 target='blank'
@@ -83,7 +84,7 @@ export const Module44 = ({ handleBack }) => {
               completely anonymous: atsa.com/referral
             </li>
           </ol>
-        </Header1>
+        </Header6>
         <Body>
           P.S. For those who want to do even more to help kids: For Foster
           Together to recruit and train our average volunteer, it costs us $200.
@@ -91,42 +92,40 @@ export const Module44 = ({ handleBack }) => {
           providing to foster families. If you'd like to help us cover the costs
           for the next volunteer, please join our donor team! CLICK HERE.
         </Body>
-        <Header2>
+        <Header7>
           Understanding actions in cases of potential abuse: Complete before
           proceeding
-        </Header2>
-        <Section2>
-          <MainContent>
+        </Header7>
+        <NewSection>
+          <MainContent7>
             What Colorado-based number do you call if you suspect a child is
             being abused?
-          </MainContent>
+          </MainContent7>
           <InputHolder>
             <Signature placeholder='Your Answer Here' />
           </InputHolder>
-          <MainContent>
+          <MainContent7>
             What is the name of the local program that walks abused kids through
             the investigation and initial recovery process? *
-          </MainContent>
+          </MainContent7>
           <InputHolder>
             <Signature placeholder='Your Answer Here' />
           </InputHolder>
-          <MainContent>
+          <MainContent7>
             Where can you request a referral for the treatment of someone who
             has abused children? *
-          </MainContent>
+          </MainContent7>
           <InputHolder>
             <Signature placeholder='Your Answer Here' />
           </InputHolder>
-          <MainContent>
+          <MainContent7>
             From what you’ve learned so far how can we improve the modules
             you’ve completed? What would you add, shorten, or eliminate? This
             program is always looking for ways to be better, so your feedback is
             definitely helpful!
-          </MainContent>
-          <InputHolder>
-            <Signature2 placeholder='Your Answer Here' />
-          </InputHolder>
-        </Section2>
+          </MainContent7>
+        </NewSection>
+        <BigInput placeholder='Your Answer Here' />
         <Submit>Submit</Submit>
       </Page>
     </>
