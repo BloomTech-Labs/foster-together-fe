@@ -1,5 +1,4 @@
 import React from 'react'
-import Player from 'react-player'
 import {
   Wrapper,
   Title,
@@ -66,7 +65,7 @@ export const FiveSteps = ({ handleNext, handleBack }) => {
               <Media>
                 <Video
                   url='https://player.vimeo.com/video/288660938'
-                  controls='false'
+                  controls={false}
                   width={480}
                 />
               </Media>
@@ -105,7 +104,7 @@ export const FiveSteps = ({ handleNext, handleBack }) => {
                 </p>
               </div>
               <Media>
-                <img src={fiveStepsImage} />
+                <img src={fiveStepsImage} alt='' />
               </Media>
             </MediaWrapper>
           </Step>
@@ -131,8 +130,15 @@ export const FiveSteps = ({ handleNext, handleBack }) => {
           Do you have any questions about the five steps? Write them here so we
           can provide clarity. *
         </Label>
-        <Input placeholder='Your answer here' />
-        <Continue onClick={handleNext}>Continue</Continue>
+        <Input
+          component='textarea'
+          id='m2_q1'
+          name='m2_q1'
+          placeholder='Your answer here'
+        />
+        <Continue type='button' onClick={handleNext}>
+          Continue
+        </Continue>
       </Form>
     </Wrapper>
   )

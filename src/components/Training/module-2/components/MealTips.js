@@ -30,21 +30,20 @@ const questionOneData = [
   'One weekend a month',
 ]
 
-const QuestionOne = () => {
-  const [selected, setSelected] = useState(0)
-
-  const handleClick = id => {
-    setSelected(id)
-  }
-
+const QuestionOne = ({ setFieldValue, values }) => {
   return (
     <FormGroup>
       <Label>
         How much time do you want to spend helping a foster family? *
         {questionOneData.map((answer, index) => (
-          <CheckLabel onClick={() => handleClick(index + 1)}>
+          <CheckLabel
+            key={index}
+            onClick={() => {
+              setFieldValue('m2_q3', index + 1)
+            }}
+          >
             {answer}
-            <Checkbox radio checked={selected === index + 1} />
+            <Checkbox radio checked={values.m2_q3 === index + 1} />
           </CheckLabel>
         ))}
       </Label>
@@ -52,11 +51,9 @@ const QuestionOne = () => {
   )
 }
 
-const QuestionTwo = () => {
-  const [selected, setSelected] = useState(0)
-
-  const handleClick = id => {
-    setSelected(id)
+const QuestionTwo = ({ setFieldValue, values }) => {
+  const handleClick = () => {
+    setFieldValue('m2_q4', !values.m2_q4)
   }
 
   return (
@@ -64,108 +61,82 @@ const QuestionTwo = () => {
       <Label>
         Do you understand that the decision to add additional meals or helping
         tasks is at the discretion of you and the foster family? *
-        <CheckLabel onClick={() => handleClick(1)}>
+        <CheckLabel onClick={handleClick}>
           Yes, I understand that adding additional meal and helping tasks would
           be at the discretion of me and the foster family.
-          <Checkbox radio checked={selected === 1} />
+          <Checkbox radio checked={values.m2_q4 === true} />
         </CheckLabel>
-        <CheckLabel onClick={() => handleClick(2)}>
+        <CheckLabel onClick={handleClick}>
           No.
-          <Checkbox radio checked={selected === 2} />
+          <Checkbox radio checked={values.m2_q4 === false} />
         </CheckLabel>
       </Label>
     </FormGroup>
   )
 }
 
-const questionThreeData = [
-  'Additional meal drop-offs monthly (option to have foster parent provide a gift card for groceries)',
-  'Help around the house: Cleaning the kitchen',
-  'Help around the house: Laundry',
-  'Help around the house: Yardwork',
-  'Help around the house: Sweeping/cleaning floors',
-  'Driving kids to visits with parents, therapy, or school activity (Requires foster agency/county approval. Contact Hope for help with approval.)',
-  'Babysitting under six hours (May require foster agency/county approval. Contact Hope for help with approval.)',
-  'Respite for more than six hours or overnight (Requires CPA/county approval. Contact Hope for help with approval.)',
-  'Other (please specify below)',
-]
-
-const QuestionThree = () => {
-  const [state, setState] = useState({
-    one: false,
-    two: false,
-    three: false,
-    four: false,
-    five: false,
-    six: false,
-    seven: false,
-    eight: false,
-    nine: false,
-  })
-
-  const handleClick = check => {
-    setState({ ...state, [check]: !state.check })
-  }
-
+const QuestionThree = ({ setFieldValue, values }) => {
+  const questionThreeData = [
+    {
+      text:
+        'Additional meal drop-offs monthly (option to have foster parent provide a gift card for groceries)',
+      value: values.answer_a1,
+    },
+    {
+      text: 'Help around the house: Cleaning the kitchen',
+      value: values.answer_a2,
+    },
+    { text: 'Help around the house: Laundry', value: values.answer_a3 },
+    { text: 'Help around the house: Yardwork', value: values.answer_a4 },
+    {
+      text: 'Help around the house: Sweeping/cleaning floors',
+      value: values.answer_a5,
+    },
+    {
+      text:
+        'Driving kids to visits with parents, therapy, or school activity (Requires foster agency/county approval. Contact Hope for help with approval.)',
+      value: values.answer_a6,
+    },
+    {
+      text:
+        'Babysitting under six hours (May require foster agency/county approval. Contact Hope for help with approval.)',
+      value: values.answer_a7,
+    },
+    {
+      text:
+        'Respite for more than six hours or overnight (Requires CPA/county approval. Contact Hope for help with approval.)',
+      value: values.answer_a8,
+    },
+    { text: 'Other (please specify below)', value: values.answer_a9 },
+  ]
   return (
     <>
       <FormGroup>
         <Label>
           As you get to know them, are you open to providing practical support
           to the foster family, beyond meals?
-          <CheckLabel onClick={() => setState({ ...state, one: !state.one })}>
-            Additional meal drop-offs monthly (option to have foster parent
-            provide a gift card for groceries)
-            <Checkbox checked={state.one} />
-          </CheckLabel>
-          <CheckLabel onClick={() => setState({ ...state, two: !state.two })}>
-            Help around the house: Cleaning the kitchen
-            <Checkbox checked={state.two} />
-          </CheckLabel>
-          <CheckLabel
-            onClick={() => setState({ ...state, three: !state.three })}
-          >
-            Help around the house: Laundry
-            <Checkbox checked={state.three} />
-          </CheckLabel>
-          <CheckLabel onClick={() => setState({ ...state, four: !state.four })}>
-            Help around the house: Yardwork
-            <Checkbox checked={state.four} />
-          </CheckLabel>
-          <CheckLabel onClick={() => setState({ ...state, five: !state.five })}>
-            Help around the house: Sweeping/cleaning floors
-            <Checkbox checked={state.five} />
-          </CheckLabel>
-          <CheckLabel onClick={() => setState({ ...state, six: !state.six })}>
-            Driving kids to visits with parents, therapy, or school activity
-            (Requires foster agency/county approval. Contact Hope for help with
-            approval.)
-            <Checkbox checked={state.six} />
-          </CheckLabel>
-          <CheckLabel
-            onClick={() => setState({ ...state, seven: !state.seven })}
-          >
-            Babysitting under six hours (May require foster agency/county
-            approval. Contact Hope for help with approval.)
-            <Checkbox checked={state.seven} />
-          </CheckLabel>
-          <CheckLabel
-            onClick={() => setState({ ...state, eight: !state.eight })}
-          >
-            Respite for more than six hours or overnight (Requires CPA/county
-            approval. Contact Hope for help with approval.)
-            <Checkbox checked={state.eight} />
-          </CheckLabel>
-          <CheckLabel onClick={() => setState({ ...state, nine: !state.nine })}>
-            Other (please specify below)
-            <Checkbox checked={state.nine} />
-          </CheckLabel>
+          {questionThreeData.map((question, index) => (
+            <CheckLabel
+              key={index}
+              onClick={() =>
+                setFieldValue(`answer_a${index + 1}`, !question.value)
+              }
+            >
+              {question.text}
+              <Checkbox checked={question.value} />
+            </CheckLabel>
+          ))}
         </Label>
       </FormGroup>
       <FormGroup>
         <Label>
           Other ways I'd like to help (if any)
-          <Input placeholder='Your answer here' />
+          <Input
+            component='textarea'
+            id='answer_b'
+            name='answer_b'
+            placeholder='Your answer here'
+          />
         </Label>
       </FormGroup>
     </>
@@ -225,14 +196,14 @@ const QuestionFive = () => {
   )
 }
 
-const Survey = ({ handleNext }) => {
+const Survey = props => {
   return (
     <Form>
-      <QuestionOne />
-      <QuestionTwo />
-      <QuestionThree />
-      <QuestionFour />
-      <QuestionFive />
+      <QuestionOne {...props} />
+      <QuestionTwo {...props} />
+      <QuestionThree {...props} />
+      <QuestionFour {...props} />
+      <QuestionFive {...props} />
       <FormGroup>
         <Label>
           From what you’ve learned so far how can we improve the modules you’ve
@@ -242,12 +213,12 @@ const Survey = ({ handleNext }) => {
           <Input placeholder='Your answer here' />
         </Label>
       </FormGroup>
-      <Continue onClick={handleNext}>Complete Module 2</Continue>
+      <Continue type='submit'>Complete Module 2</Continue>
     </Form>
   )
 }
 
-export const MealTips = ({ handleBack }) => {
+export const MealTips = ({ handleBack, ...props }) => {
   return (
     <Wrapper>
       <Title>
@@ -290,7 +261,7 @@ export const MealTips = ({ handleBack }) => {
             </BulletList>
           </div>
           <Media>
-            <img src={mealTipsImage} />
+            <img src={mealTipsImage} alt='' />
           </Media>
         </MediaWrapper>
         <BulletList>
@@ -470,7 +441,7 @@ export const MealTips = ({ handleBack }) => {
         </SmallList>
       </Section>
       <Title>Capacity Survey: Complete Before Proceeding</Title>
-      <Survey />
+      <Survey {...props} />
     </Wrapper>
   )
 }

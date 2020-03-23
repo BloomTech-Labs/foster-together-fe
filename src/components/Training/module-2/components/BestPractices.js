@@ -1,5 +1,4 @@
 import React from 'react'
-import Player from 'react-player'
 import {
   Wrapper,
   Title,
@@ -79,7 +78,7 @@ export const BestPractices = ({ handleNext, handleBack }) => {
                     <Media>
                       <Video
                         url='https://player.vimeo.com/video/288657931'
-                        controls='false'
+                        controls={false}
                         width={480}
                       />
                     </Media>
@@ -103,8 +102,15 @@ export const BestPractices = ({ handleNext, handleBack }) => {
           Please summarize your responsibility (relationally and practically) in
           this match with a sentence or two. *
         </Label>
-        <Input placeholder='Your answer here' />
-        <Continue onClick={handleNext}>Continue</Continue>
+        <Input
+          component='textarea'
+          id='m2_q2'
+          name='m2_q2'
+          placeholder='Your answer here'
+        />
+        <Continue type='button' onClick={handleNext}>
+          Continue
+        </Continue>
       </Form>
     </Wrapper>
   )

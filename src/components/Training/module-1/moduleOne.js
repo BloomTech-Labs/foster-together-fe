@@ -222,7 +222,7 @@ function ModuleOne() {
             {props => (
               <Form>
                 <Context8 />
-                <Submit>Submit</Submit>
+                <Submit type='submit'>Submit</Submit>
               </Form>
             )}
           </Formik>

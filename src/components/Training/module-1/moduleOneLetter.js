@@ -37,7 +37,7 @@ function VideoPlayer() {
     <PlayerWrapper>
       <Player
         url='https://player.vimeo.com/video/288657929'
-        controls='false'
+        controls={false}
         margin='auto'
       />
       <VideoText>
