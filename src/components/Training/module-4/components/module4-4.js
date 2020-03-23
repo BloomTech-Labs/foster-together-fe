@@ -12,18 +12,11 @@ import {
   Link,
   Section,
   Header1,
-} from './module4styles.js'
-import Player from 'react-player'
-import { useHistory } from 'react-router-dom'
-import TrainingNav from '../TrainingNav/NavBar'
+} from '../styles.js/module4-4styles'
 
-export default function Module4(props) {
-  const [section, setSection] = useState(1)
-  const { push } = useHistory()
-
+export const Module44 = ({ handleNext, handleBack }) => {
   return (
     <>
-      <TrainingNav />
       <Header>
         <svg
           width='21'
@@ -31,7 +24,7 @@ export default function Module4(props) {
           viewBox='0 0 27 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
-          onClick={() => push('/Module4')}
+          onClick={handleBack}
         >
           <path
             d='M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z'

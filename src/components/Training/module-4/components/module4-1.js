@@ -20,14 +20,10 @@ import {
   Header2,
 } from '../styles.js/module4-1styles'
 import Player from 'react-player'
-import TrainingNav from '../TrainingNav/NavBar'
 
-export default function Module1(props) {
-  const [section, setSection] = useState(1)
-  const { push } = useHistory()
+export const Module41 = ({ handleNext, handleBack }) => {
   return (
     <>
-      <TrainingNav />
       <Header>
         <svg
           width='21'
@@ -35,7 +31,7 @@ export default function Module1(props) {
           viewBox='0 0 27 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
-          onClick={() => push('/Module5')}
+          onClick={handleBack}
         >
           <path
             d='M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z'
@@ -179,14 +175,8 @@ export default function Module1(props) {
           </Header2>
         </Section2>
         <Input />
-        <ATag href='#section2'>
-          <Submit
-            onClick={() => {
-              setSection(2)
-            }}
-          >
-            Continue
-          </Submit>
+        <ATag>
+          <Submit onClick={handleNext}>Continue</Submit>
         </ATag>
       </Page>
     </>

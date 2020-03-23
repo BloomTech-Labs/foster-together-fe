@@ -14,17 +14,12 @@ import {
   Link,
   Header2,
   Body,
-} from './module3styles.js'
+} from '../styles.js/module4-3styles.js'
 import Player from 'react-player'
-import { useHistory } from 'react-router-dom'
-import TrainingNav from '../TrainingNav/NavBar'
 
-export default function Module3(props) {
-  const [section, setSection] = useState(1)
-  const { push } = useHistory()
+export const Module43 = ({ handleBack, handleNext }) => {
   return (
     <>
-      <TrainingNav />
       <Header>
         <svg
           width='21'
@@ -32,7 +27,7 @@ export default function Module3(props) {
           viewBox='0 0 27 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
-          onClick={() => push('/Module4')}
+          onClick={handleBack}
         >
           <path
             d='M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z'
@@ -137,13 +132,7 @@ export default function Module3(props) {
           </InputHolder>
         </>
         <ATag href='#section4'>
-          <Submit
-            onClick={() => {
-              setSection(4)
-            }}
-          >
-            Continue
-          </Submit>
+          <Submit onClick={handleNext}>Continue</Submit>
         </ATag>
       </Page>
     </>

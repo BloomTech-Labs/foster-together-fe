@@ -13,7 +13,7 @@ import {
   Input,
   Continue,
 } from '../styles'
-import { gettingMatchedVideo, fiveStepsImage } from '../img'
+import { gettingMatchedVideo, fiveStepsImage } from '../../img'
 import { SimpleStep } from './index'
 
 const simpleStepData = [
