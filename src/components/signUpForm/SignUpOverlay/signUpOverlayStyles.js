@@ -78,3 +78,8 @@ export const NextBtn = styled(Btn)`
   width: 14rem;
   text-transform: uppercase;
 `
+
+export const Step = styled.div`
+  display: flex;
+  align-items: center;
+`

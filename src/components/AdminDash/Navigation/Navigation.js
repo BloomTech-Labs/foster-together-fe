@@ -34,7 +34,7 @@ const routes = [
   },
 ]
 
-const UtilitiesContainer = ({ setOpen, open }) => {
+export const UtilitiesContainer = ({ setOpen, open }) => {
   return (
     <Utilities>
       <PulseContainer>
