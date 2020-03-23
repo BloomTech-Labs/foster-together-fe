@@ -16,9 +16,10 @@ import Training from './components/Training/Module3/TrainingOverlay'
 
 import ModuleLetter from './components/Training/module-0/trainingLetter'
 import StartTraining from './components/Training/module-1/moduleOneLetter'
-import ModuleFive from './components/Training/module-5/moduleFive'
 import ModuleOne from './components/Training/module-1/moduleOne'
 import ModuleTwo from './components/Training/module-2'
+import ModuleThree from './components/Training/Module3/TrainingOverlay'
+import ModuleFive from './components/Training/module-5/moduleFive'
 
 function App() {
   useEffect(() => {
@@ -29,7 +30,7 @@ function App() {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Route path ='/training' component={Training} />
+        <Route path='/training' component={Training} />
         <Route path='/login' component={LoginForm} />
         <Route exact path='/signup' component={SignUp} />
         <PrivateRoute exact path='/dashboard' component={AdminDash} />
@@ -40,8 +41,8 @@ function App() {
         <Route path='/module0' component={ModuleLetter} />
         <Route path='/module1' component={ModuleOne} />
         <Route path='/module2' component={ModuleTwo} />
-        <Route path='/moduleFive' component={ModuleFive} />
-        <Route path='/modulestart' component={StartTraining} />
+        <Route path='/module3' component={ModuleThree} />
+        <Route path='/module5' component={ModuleFive} />
       </ThemeProvider>
     </>
   )

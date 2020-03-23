@@ -8,12 +8,12 @@ import {
   Step,
   MediaWrapper,
   Media,
+  Video,
   Form,
   Label,
   Input,
   Continue,
 } from '../styles'
-import { keepItSimpleVideo } from '../img'
 import { SimpleStep } from './index'
 
 const simpleStepData = [
@@ -47,7 +47,7 @@ const simpleStepData = [
   },
 ]
 
-export const BestPractices = ({ handleNext, handleBack }) => {
+export const BestPractices = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
       <Title>
@@ -76,7 +76,11 @@ export const BestPractices = ({ handleNext, handleBack }) => {
                       </p>
                     </div>
                     <Media>
-                      <img src={keepItSimpleVideo} />
+                      <Video
+                        url='https://player.vimeo.com/video/288657931'
+                        controls={false}
+                        width={480}
+                      />
                     </Media>
                   </MediaWrapper>
                   <p>
@@ -98,8 +102,16 @@ export const BestPractices = ({ handleNext, handleBack }) => {
           Please summarize your responsibility (relationally and practically) in
           this match with a sentence or two. *
         </Label>
-        <Input placeholder='Your answer here' />
-        <Continue onClick={handleNext}>Continue</Continue>
+        <Input
+          component='textarea'
+          id='m2_q2'
+          name='m2_q2'
+          placeholder='Your answer here'
+        />
+        {errors?.m2_q2 && touched?.m2_q2 && (
+          <p style={{ color: 'red' }}>{errors?.m2_q2}</p>
+        )}
+        <Continue type='submit'>Continue</Continue>
       </Form>
     </Wrapper>
   )

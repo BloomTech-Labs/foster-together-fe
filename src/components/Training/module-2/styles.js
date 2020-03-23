@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import Player from 'react-player'
+import { Field } from 'formik'
 import { Btn, Flex } from '../../../GlobalStyles'
 import { backArrow as arrow } from './img'
 
@@ -94,7 +96,11 @@ export const Media = styled.div`
   align-items: flex-start;
 `
 
-export const Form = styled.form`
+export const Video = styled(Player)`
+  margin-top: -45px;
+`
+
+export const Form = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -108,7 +114,7 @@ export const Label = styled.label`
   font-size: 2.4rem;
 `
 
-export const Input = styled.textarea`
+export const Input = styled(Field)`
   width: 100%;
   margin: 40px 0 60px;
   font-size: 1.8rem;

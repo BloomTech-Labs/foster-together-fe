@@ -1,5 +1,7 @@
 import * as Yup from 'yup'
 
+const generic = 'Answer is required'
+
 export const ContactSchema = Yup.object().shape({
   first_name: Yup.string().required('First name is required'),
   last_name: Yup.string().required('Last name is required'),
@@ -23,4 +25,21 @@ export const LocationSchema = Yup.object().shape({
   zip: Yup.string()
     .matches(/^\d{5}$/, 'Invalid ZIP')
     .required('ZIP is required'),
+})
+
+export const ModuleOneSchema = Yup.object().shape({
+  m1_q1: Yup.string().required(generic),
+  m1_q2: Yup.string().required(generic),
+})
+
+export const ModuleTwoSchema1 = Yup.object().shape({
+  m2_q1: Yup.string().required(generic),
+})
+
+export const ModuleTwoSchema2 = Yup.object().shape({
+  m2_q2: Yup.string().required(generic),
+})
+
+export const ModuleTwoSchema3 = Yup.object().shape({
+  m2_q3: Yup.number().min(1, generic),
 })
