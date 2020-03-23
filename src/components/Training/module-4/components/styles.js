@@ -34,6 +34,7 @@ export const MainContent1 = styled.text`
     li {
       position: relative;
       left: 6rem;
+      list-style-type: url('/images/Rectangle232.jpg');
     }
   }
 `
