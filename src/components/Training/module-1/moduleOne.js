@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { Formik, Form } from 'formik'
+import { ModuleOneSchema } from '../../../utils/yupSchemas'
 
 import {
   BigTitle,
@@ -120,7 +121,7 @@ const Context7 = () => {
   )
 }
 
-const Context8 = () => {
+const Context8 = ({ errors, touched }) => {
   return (
     <QuestionContainer>
       <Header>WHAT YOU OFFER: COMPLETE BEFORE PROCEEDING</Header>
@@ -129,13 +130,19 @@ const Context8 = () => {
         words, how do you anticipate this aspect enriching your life or the
         foster parents' lives? (2+ sentences) *
       </MainContent>
-      <Input component='textarea' id='answer1' name='answer1' />
+      <Input component='textarea' id='m1_q1' name='m1_q1' />
+      {errors?.m1_q1 && touched?.m1_q1 && (
+        <p style={{ color: 'red' }}>{errors?.m1_q1}</p>
+      )}
       <MainContent>
         How can we improve this module? What would you add, shorten, or
         eliminate? This program is just getting started, so your feedback is
         helpful!
       </MainContent>
-      <Input component='textarea' id='answer2' name='answer2' />
+      <Input component='textarea' id='m1_q2' name='m1_q2' />
+      {errors?.m1_q2 && touched?.m1_q2 && (
+        <p style={{ color: 'red' }}>{errors?.m1_q2}</p>
+      )}
     </QuestionContainer>
   )
 }
@@ -214,14 +221,15 @@ function ModuleOne() {
         <AnswerContainer>
           <Formik
             initialValues={{
-              answer1: '',
-              answer2: '',
+              m1_q1: '',
+              m1_q2: '',
             }}
+            validationSchema={ModuleOneSchema}
             onSubmit={() => push('/module2')}
           >
             {props => (
               <Form>
-                <Context8 />
+                <Context8 {...props} />
                 <Submit type='submit'>Submit</Submit>
               </Form>
             )}

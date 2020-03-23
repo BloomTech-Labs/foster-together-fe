@@ -1,23 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   FormGroup,
   Label,
   CheckLabel,
-  Wrapper,
-  Title,
-  BackArrow,
-  Section,
-  MediaWrapper,
-  Media,
-  BulletList,
-  Step,
-  SmallList,
-  SmallStep,
   Checkbox,
   Input,
   Form,
   Continue,
-  Text,
 } from '../styles'
 
 const questionOneData = [
