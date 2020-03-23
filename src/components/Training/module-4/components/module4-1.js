@@ -174,7 +174,7 @@ export const Module41 = ({ handleNext, handleBack }) => {
             listed here, so we can clarify. *
           </Header2>
         </Section2>
-        <Input />
+        <Input placeholder='Your Answer Here' />
         <ATag>
           <Submit onClick={handleNext}>Continue</Submit>
         </ATag>

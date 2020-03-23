@@ -47,7 +47,7 @@ export const Question = styled.li`
 
 export const Title = styled.h1`
   display: flex;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 2rem;
   margin-bottom: -1rem;
 `
@@ -61,25 +61,30 @@ export const Section2 = styled.div``
 
 export const Input = styled.textarea`
   resize: none;
-  font-size: 2rem;
-  placeholderTextColor: "grey"
-}),
-  background-color: "#f9f9f9";
+  font-size: 1.6rem;
   width: 100vw;
-  height: 10vh;
+  height: 15vh;
   margin: 0rem 2rem 4rem 0rem;
+  width: 100%;
+  resize: none;
+  padding: 1.4rem;
+  background: #f9f9f9;
+  border-radius: 4px 4px 0 0;
+  border: none;
+  border-bottom: 1px solid #a1a1a1;
 `
 
 export const Submit = styled.button`
   font-size: 1.8rem;
-  color: white;
-  background-color: #385763;
+  background: ${({ theme: { palette } }) => palette.primary.main};
+  color: #fff;
   width: 20rem;
   height: 5rem;
   &:hover {
     color: black;
     cursor: pointer;
   }
+  border-radius: 4px;
 `
 
 export const ATag = styled.a`
@@ -137,6 +142,7 @@ export const Header1 = styled.h1`
   width: 100vw;
   position: relative;
   right: 1rem;
+  margin: 5rem 0rem 4rem 0rem;
 `
 export const Header2 = styled.h2`
   font-size: 1.8rem;

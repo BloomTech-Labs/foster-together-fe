@@ -12,23 +12,30 @@ export const Page = styled.div`
 export const MainContent = styled.text`
   font-size: 2rem;
   display: block;
-  justify-content: center;
   line-height: 3rem;
   margin-bottom: 3rem;
-  text-align: left;
+  font-weight: 400;
+  align-items: center;
+`
+
+export const Span = styled.text`
+  color: #b7b7b7;
+  font-size: 2rem;
 `
 
 export const Submit = styled.button`
   font-size: 1.8rem;
-  color: white;
-  background-color: #385763;
-  width: 20rem;
   height: 5rem;
   &:hover {
     color: black;
     cursor: pointer;
   }
   margin: 5rem 0rem 10rem 0rem;
+  align-self: center;
+  width: 22rem;
+  background: ${({ theme: { palette } }) => palette.primary.main};
+  color: #fff;
+  border-radius: 4px;
 `
 
 export const ATag = styled.a`
@@ -42,6 +49,7 @@ export const Link = styled.a`
   color: black;
   font-size: 2rem;
   line-height: 3rem;
+  text-decoration: none;
 `
 
 export const InputHolder = styled.div`
@@ -54,13 +62,18 @@ export const BigInput = styled.textarea`
   width: 100%;
   height: 150px;
   resize: none;
-  font-size: 2rem;
-  padding: 1rem;
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 4px 4px 0 0;
+  border: none;
+  border-bottom: 1px solid #a1a1a1;
 `
 
 export const Body = styled.text`
   font-size: 2rem;
   margin: 4rem 0rem 3rem 0rem;
+  font-style: italic;
 `
 
 export const Image4 = styled.img`
@@ -70,14 +83,15 @@ export const Image4 = styled.img`
 
 export const Signature = styled.input`
   width: 100%;
-  height: 4.4rem;
-  resize: none;
-  font-size: 2rem;
+  height: 4.6rem;
   margin-bottom: 3rem;
+  font-size: 1.6rem;
+  resize: none;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 4px 4px 0 0;
   border: none;
-  &::-webkit-input-placeholder {
-    color: 'red';
-  }
+  border-bottom: 1px solid #a1a1a1;
 `
 
 export const SignContain = styled.div`
@@ -107,4 +121,13 @@ export const Header2 = styled.h1`
   margin-bottom: 3rem;
   font-weight: 400;
   line-height: 4rem;
+`
+
+export const MainContent1 = styled.h1`
+  width: 100%;
+  font-size: 2rem;
+  display: block;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+  text-align: left;
 `

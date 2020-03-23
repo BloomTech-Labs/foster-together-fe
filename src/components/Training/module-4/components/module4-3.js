@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {
   Page,
-  Section,
+  MainContent1,
   MainContent,
   Signature,
   Submit,
@@ -14,6 +14,7 @@ import {
   Link,
   Header2,
   Body,
+  Span,
 } from '../styles.js/module4-3styles.js'
 import Player from 'react-player'
 
@@ -36,7 +37,7 @@ export const Module43 = ({ handleBack, handleNext }) => {
         </svg>
         Body Safety Rules by The Mama Bear Effect{' '}
       </Header>
-      <Page id='section3'>
+      <Page>
         <>
           <MainContent>
             Foster parents wishing to use a Foster Together parent helper are
@@ -54,12 +55,17 @@ export const Module43 = ({ handleBack, handleNext }) => {
           <Image4 src='https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1524686041133-7YL55J2UUCA0HGFQ9DFQ/ke17ZwdGBToddI8pDm48kGrEzKbmlT1aXa03pZYZUlJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmD3GJgI7_jN764QbmlaUTk5WyFFzHgH39gSTvnaFnniHmMoF0B1QmrvergKLtg00N/mama+bear+effect.jpg?format=1500w' />
         </>
         <Body>
-          Guidelines adapted from the book Off Limits: A Parent's Guide to
-          Keeping Children Safe from Sexual Abuse and the live workshop
-          Parenting Safe Children. To book a Parenting Safe Children workshop
-          with Feather Berkower in Colorado, click here. It's a half-day
-          training with your neighborhood, school, church, or club teaching you
-          to prevent child abuse from happening right under your nose.
+          Guidelines adapted from the book{' '}
+          <Span>
+            Off Limits: A Parent's Guide to Keeping Children Safe from Sexual
+            Abuse{' '}
+          </Span>
+          and the live workshop Parenting Safe Children. To book a Parenting
+          Safe Children workshop with Feather Berkower in Colorado,{' '}
+          <Span>click here.</Span>
+          It's a half-day training with your neighborhood, school, church, or
+          club teaching you to prevent child abuse from happening right under
+          your nose.
         </Body>
         <>
           <Header2>
@@ -124,14 +130,14 @@ export const Module43 = ({ handleBack, handleNext }) => {
               <Signature placeholder='If you understand, please type your full name here to agree' />
             </InputHolder>
           </SignContain>
-          <MainContent>
+          <MainContent1>
             Any questions or concerns about this section?
-          </MainContent>
+          </MainContent1>
           <InputHolder>
-            <BigInput />
+            <BigInput placeholder='Your Answer Here' />
           </InputHolder>
         </>
-        <ATag href='#section4'>
+        <ATag>
           <Submit onClick={handleNext}>Continue</Submit>
         </ATag>
       </Page>

@@ -35,7 +35,7 @@ export const Module42 = ({ handleNext, handleBack }) => {
       <Header>
         <svg
           width='21'
-          height='18'
+          height='22'
           viewBox='0 0 27 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
@@ -83,7 +83,7 @@ export const Module42 = ({ handleNext, handleBack }) => {
               <Player
                 url='https://www.youtube.com/embed/ULGJphesPnk'
                 width='600px'
-                height='400px'
+                height='450px'
               />
             </Video>
           </MainContent>
@@ -188,7 +188,7 @@ export const Module42 = ({ handleNext, handleBack }) => {
           </Question>
         </Section2>
         <Input placeholder='Your Answer Here' />
-        <ATag href='#section3'>
+        <ATag>
           <Submit onClick={handleNext}>Continue</Submit>
         </ATag>
       </Page>

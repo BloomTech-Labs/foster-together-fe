@@ -11,10 +11,15 @@ import {
   SignContain,
   Link,
   Section,
+  Header2,
+  Body,
   Header1,
+  Signature2,
+  Todo,
+  Span,
 } from '../styles.js/module4-4styles'
 
-export const Module44 = ({ handleNext, handleBack }) => {
+export const Module44 = ({ handleBack }) => {
   return (
     <>
       <Header>
@@ -33,69 +38,93 @@ export const Module44 = ({ handleNext, handleBack }) => {
         </svg>
         What to do if you suspect abuse, or a child discloses abuse{' '}
       </Header>
-      <Page id='section4'>
-        <Section2>
-          <Header1>
-            1. Be prepared:{' '}
-            <BigLink
-              href='https://themamabeareffect.org/prevent/when-to-speak-up/'
-              target='blank'
-            >
-              {'  '}How to Know, Who to Call, What to Say (Click to read){' '}
-            </BigLink>
-          </Header1>{' '}
-          <br />
-          <Header1>
-            2. You need to call it in: Colorado has our own child abuse hotline:
-            1-800-CO4KIDS. Remember, you don't have to investigate abuse before
-            making the call. That's not your job. Most people are too afraid to
-            take this step, but the child needs you to do it. <br /> TO DO: Save
-            this number, and send a screenshot of the contact in your phone to
-            connect@fostertogether.co.
-          </Header1>{' '}
-          <br />
-          <Header1>
-            3. Seek treatment for the child.{' '}
-            <BigLink href='https://www.safepassagecac.org/'>
-              Safe Passage Colorado{' '}
-            </BigLink>{' '}
-            provides a seamless referral and treatment system, lessening the
-            trauma to the child and caretaker during an investigation. Contact
-            them here: safepassagecac.org/
-          </Header1>
-          <Header1>
-            4. Get help for the offender. If, after reading this, you realize
-            that someone you know (or yourself) is abusing children, please get
-            help. Treatment can be very effective and may even save a life.{' '}
-            <BigLink href='https://www.atsa.com/referral'>
-              {' '}
-              This referral form{' '}
-            </BigLink>{' '}
-            with the Association for Treatment of Sexual Offenders is completely
-            anonymous: atsa.com/referral
-          </Header1>
-        </Section2>
+      <Page>
+        <Header1>
+          <ol>
+            <li>
+              <Span>Be prepared: </Span>
+              <BigLink
+                href='https://themamabeareffect.org/prevent/when-to-speak-up/'
+                target='blank'
+              >
+                {'  '}How to Know, Who to Call, What to Say (Click to read){' '}
+              </BigLink>
+            </li>
+            <li>
+              You need to call it in: Colorado has our own child abuse hotline:
+              1-800-CO4KIDS. Remember, you don't have to investigate abuse
+              before making the call. That's not your job. Most people are too
+              afraid to take this step, but the child needs you to do it.
+              <br />
+              <Todo>
+                TO DO: Save this number, and send a screenshot of the contact in
+                your phone to connect@fostertogether.co.
+              </Todo>
+            </li>
+            <li>
+              Seek treatment for the child.{' '}
+              <BigLink href='https://www.safepassagecac.org/'>
+                Safe Passage Colorado{' '}
+              </BigLink>{' '}
+              provides a seamless referral and treatment system, lessening the
+              trauma to the child and caretaker during an investigation. Contact
+              them here: safepassagecac.org/
+            </li>
+            <li>
+              Get help for the offender. If, after reading this, you realize
+              that someone you know (or yourself) is abusing children, please
+              get help. Treatment can be very effective and may even save a
+              life.{' '}
+              <BigLink href='https://www.atsa.com/referral'>
+                {' '}
+                This referral form{' '}
+              </BigLink>{' '}
+              with the Association for Treatment of Sexual Offenders is
+              completely anonymous: atsa.com/referral
+            </li>
+          </ol>
+        </Header1>
+        <Body>
+          P.S. For those who want to do even more to help kids: For Foster
+          Together to recruit and train our average volunteer, it costs us $200.
+          That's pretty good when you consider the long term friendships we're
+          providing to foster families. If you'd like to help us cover the costs
+          for the next volunteer, please join our donor team! CLICK HERE.
+        </Body>
+        <Header2>
+          Understanding actions in cases of potential abuse: Complete before
+          proceeding
+        </Header2>
         <Section2>
           <MainContent>
             What Colorado-based number do you call if you suspect a child is
             being abused?
           </MainContent>
           <InputHolder>
-            <Signature />
+            <Signature placeholder='Your Answer Here' />
           </InputHolder>
           <MainContent>
             What is the name of the local program that walks abused kids through
             the investigation and initial recovery process? *
           </MainContent>
           <InputHolder>
-            <Signature />
+            <Signature placeholder='Your Answer Here' />
           </InputHolder>
           <MainContent>
             Where can you request a referral for the treatment of someone who
             has abused children? *
           </MainContent>
           <InputHolder>
-            <Signature />
+            <Signature placeholder='Your Answer Here' />
+          </InputHolder>
+          <MainContent>
+            From what you’ve learned so far how can we improve the modules
+            you’ve completed? What would you add, shorten, or eliminate? This
+            program is always looking for ways to be better, so your feedback is
+            definitely helpful!
+          </MainContent>
+          <InputHolder>
+            <Signature2 placeholder='Your Answer Here' />
           </InputHolder>
         </Section2>
         <Submit>Submit</Submit>
