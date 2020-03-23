@@ -22,6 +22,7 @@ const initialValues = {
   answer_b: '',
   m2_q6: false,
   m2_q7: false,
+  m2_q8: '',
 }
 
 const ModuleTwo = () => {
