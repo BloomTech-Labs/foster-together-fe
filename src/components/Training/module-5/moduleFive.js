@@ -7,7 +7,6 @@ import {
   LetterText,
   ContextDiv,
   Header,
-  Input,
   QuestionContainer,
   Submit,
   Half,
