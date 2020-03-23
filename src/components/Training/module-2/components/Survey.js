@@ -203,6 +203,9 @@ const Survey = props => {
         </Label>
       </FormGroup>
       <Continue type='submit'>Complete Module 2</Continue>
+      {props.errors.m2_q3 && props.touched.m2_q3 && (
+        <p style={{ color: 'red' }}>Please answer all required questions</p>
+      )}
     </Form>
   )
 }

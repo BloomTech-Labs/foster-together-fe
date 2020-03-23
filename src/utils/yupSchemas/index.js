@@ -32,7 +32,14 @@ export const ModuleOneSchema = Yup.object().shape({
   m1_q2: Yup.string().required(generic),
 })
 
-export const ModuleTwoSchema = Yup.object().shape({
+export const ModuleTwoSchema1 = Yup.object().shape({
   m2_q1: Yup.string().required(generic),
+})
+
+export const ModuleTwoSchema2 = Yup.object().shape({
   m2_q2: Yup.string().required(generic),
+})
+
+export const ModuleTwoSchema3 = Yup.object().shape({
+  m2_q3: Yup.number().min(1, generic),
 })

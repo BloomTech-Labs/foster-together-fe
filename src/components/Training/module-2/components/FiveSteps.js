@@ -31,7 +31,7 @@ const simpleStepData = [
   },
 ]
 
-export const FiveSteps = ({ handleNext, handleBack }) => {
+export const FiveSteps = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
       <Title>
@@ -136,9 +136,10 @@ export const FiveSteps = ({ handleNext, handleBack }) => {
           name='m2_q1'
           placeholder='Your answer here'
         />
-        <Continue type='button' onClick={handleNext}>
-          Continue
-        </Continue>
+        {errors?.m2_q1 && touched?.m2_q1 && (
+          <p style={{ color: 'red' }}>{errors?.m2_q1}</p>
+        )}
+        <Continue type='submit'>Continue</Continue>
       </Form>
     </Wrapper>
   )

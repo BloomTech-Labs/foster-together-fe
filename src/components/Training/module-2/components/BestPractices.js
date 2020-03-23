@@ -47,7 +47,7 @@ const simpleStepData = [
   },
 ]
 
-export const BestPractices = ({ handleNext, handleBack }) => {
+export const BestPractices = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
       <Title>
@@ -108,9 +108,10 @@ export const BestPractices = ({ handleNext, handleBack }) => {
           name='m2_q2'
           placeholder='Your answer here'
         />
-        <Continue type='button' onClick={handleNext}>
-          Continue
-        </Continue>
+        {errors?.m2_q2 && touched?.m2_q2 && (
+          <p style={{ color: 'red' }}>{errors?.m2_q2}</p>
+        )}
+        <Continue type='submit'>Continue</Continue>
       </Form>
     </Wrapper>
   )

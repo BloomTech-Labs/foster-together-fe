@@ -3,6 +3,11 @@ import { useHistory } from 'react-router-dom'
 import { Formik, Form } from 'formik'
 import NavBar from '../TrainingNav/NavBar'
 import { FiveSteps, BestPractices, MealTips } from './components'
+import {
+  ModuleTwoSchema1,
+  ModuleTwoSchema2,
+  ModuleTwoSchema3,
+} from '../../../utils/yupSchemas'
 
 const initialValues = {
   m2_q1: '',
@@ -30,8 +35,7 @@ const ModuleTwo = () => {
   const [activeStep, setActiveStep] = useState(0)
   console.log(activeStep)
 
-  const handleNext = e => {
-    e.preventDefault()
+  const handleNext = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     if (activeStep === 0 || activeStep === 1) {
       setActiveStep(activeStep + 1)
@@ -40,8 +44,7 @@ const ModuleTwo = () => {
     }
   }
 
-  const handleBack = e => {
-    e.preventDefault()
+  const handleBack = () => {
     if (activeStep === 0) {
       push('/module1')
     } else if (activeStep === 1 || activeStep === 2) {
@@ -52,20 +55,25 @@ const ModuleTwo = () => {
   return (
     <>
       <NavBar />
-      <Formik initialValues={initialValues} onSubmit={() => push('#')}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleNext}
+        validationSchema={
+          activeStep === 0
+            ? ModuleTwoSchema1
+            : activeStep === 1
+            ? ModuleTwoSchema2
+            : ModuleTwoSchema3
+        }
+      >
         {props => (
           <Form>
             {activeStep === 0 ? (
-              <FiveSteps handleNext={handleNext} handleBack={handleBack} />
+              <FiveSteps handleBack={handleBack} {...props} />
             ) : activeStep === 1 ? (
-              <BestPractices handleNext={handleNext} handleBack={handleBack} />
+              <BestPractices handleBack={handleBack} {...props} />
             ) : activeStep === 2 ? (
-              <MealTips
-                handleNext={handleNext}
-                handleBack={handleBack}
-                values={props.values}
-                setFieldValue={props.setFieldValue}
-              />
+              <MealTips handleBack={handleBack} {...props} />
             ) : null}
           </Form>
         )}
