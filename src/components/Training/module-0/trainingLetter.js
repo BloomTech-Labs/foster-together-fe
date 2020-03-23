@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import {
   Page,
   Letter,
@@ -14,12 +15,13 @@ import next from '../TrainingIcons/next.png'
 import TrainingNav from '../TrainingNav/NavBar'
 
 function LetterTitle({ props }) {
+  const { push } = useHistory()
   return (
     <TitleContainer>
       <img
         src={require('../../../images/icons/back-arrow.svg')}
         onClick={() => {
-          props.history.push('/module0')
+          push('/module0')
         }}
         alt=''
       />
@@ -122,6 +124,7 @@ const LetterContext = () => {
 }
 
 const ModuleLetter = props => {
+  const { push } = useHistory()
   return (
     <div>
       <TrainingNav />
@@ -133,7 +136,7 @@ const ModuleLetter = props => {
         <LetterCircle>
           <Circle
             onClick={() => {
-              props.history.push('/modulestart')
+              push('/modulestart')
             }}
           >
             <img src={next} type='button' width='100%' alt='next button' />
