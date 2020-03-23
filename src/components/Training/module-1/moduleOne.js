@@ -202,7 +202,7 @@ const Context = () => {
   )
 }
 
-function ModuleOne(props) {
+function ModuleOne() {
   const { push } = useHistory()
 
   return (

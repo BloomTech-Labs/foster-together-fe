@@ -1,4 +1,5 @@
 import React from 'react'
+import Player from 'react-player'
 import {
   Wrapper,
   Title,
@@ -8,12 +9,12 @@ import {
   Step,
   MediaWrapper,
   Media,
+  Video,
   Form,
   Label,
   Input,
   Continue,
 } from '../styles'
-import { keepItSimpleVideo } from '../img'
 import { SimpleStep } from './index'
 
 const simpleStepData = [
@@ -76,7 +77,11 @@ export const BestPractices = ({ handleNext, handleBack }) => {
                       </p>
                     </div>
                     <Media>
-                      <img src={keepItSimpleVideo} />
+                      <Video
+                        url='https://player.vimeo.com/video/288657931'
+                        controls='false'
+                        width={480}
+                      />
                     </Media>
                   </MediaWrapper>
                   <p>

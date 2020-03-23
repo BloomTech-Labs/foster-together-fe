@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Player from 'react-player'
 import { Btn, Flex } from '../../../GlobalStyles'
 import { backArrow as arrow } from './img'
 
@@ -92,6 +93,10 @@ export const Media = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+`
+
+export const Video = styled(Player)`
+  margin-top: -45px;
 `
 
 export const Form = styled.form`

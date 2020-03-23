@@ -1,4 +1,5 @@
 import React from 'react'
+import Player from 'react-player'
 import {
   Wrapper,
   Title,
@@ -8,12 +9,13 @@ import {
   Step,
   MediaWrapper,
   Media,
+  Video,
   Form,
   Label,
   Input,
   Continue,
 } from '../styles'
-import { gettingMatchedVideo, fiveStepsImage } from '../img'
+import { fiveStepsImage } from '../img'
 import { SimpleStep } from './index'
 
 const simpleStepData = [
@@ -62,7 +64,11 @@ export const FiveSteps = ({ handleNext, handleBack }) => {
                 </p>
               </div>
               <Media>
-                <img src={gettingMatchedVideo} />
+                <Video
+                  url='https://player.vimeo.com/video/288660938'
+                  controls='false'
+                  width={480}
+                />
               </Media>
             </MediaWrapper>
           </Step>
