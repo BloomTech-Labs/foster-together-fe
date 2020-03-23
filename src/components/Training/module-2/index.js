@@ -40,7 +40,7 @@ const ModuleTwo = () => {
     if (activeStep === 0 || activeStep === 1) {
       setActiveStep(activeStep + 1)
     } else if (activeStep === 2) {
-      setActiveStep(0)
+      push('/module3')
     }
   }
 
