@@ -13,6 +13,7 @@ import Profile from './components/AdminDash/Profile/Profile'
 import ConfirmationPage from './components/signUpForm/ConfirmationPage/ConfirmationPage'
 import ModuleLetter from './components/Training/module-0/trainingLetter'
 import StartTraining from './components/Training/module-1/moduleOneLetter'
+import ModuleFive from './components/Training/module-5/moduleFive'
 import ModuleOne from './components/Training/module-1/moduleOne'
 import ModuleTwo from './components/Training/module-2'
 
@@ -34,6 +35,8 @@ function App() {
         <Route path='/module0' component={ModuleLetter} />
         <Route path='/module1' component={ModuleOne} />
         <Route path='/module2' component={ModuleTwo} />
+        <Route path='/moduleFive' component={ModuleFive} />
+        <Route path='/modulestart' component={StartTraining} />
       </ThemeProvider>
     </>
   )
