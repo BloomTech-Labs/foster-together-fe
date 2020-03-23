@@ -225,7 +225,7 @@ const QuestionFive = () => {
   )
 }
 
-const Survey = ({ handleNext }) => {
+export const Survey = ({ handleNext }) => {
   return (
     <Form>
       <QuestionOne />

@@ -34,12 +34,11 @@ function App() {
         <Route path='/confirmation' component={ConfirmationPage} />
         {/* <PrivateRoute path='/:membertype/:id' component={Profile} /> */}
         <PrivateRoute path='/:membertype/:id' component={Profile} />
-        <Route path='/modulestart' component={StartTraining} />
-        <Route path='/module0' component={ModuleLetter} />
+        <Route path='/module0' component={StartTraining} />
+        <Route path='/modulestart' component={ModuleLetter} />
         <Route path='/module1' component={ModuleOne} />
         <Route path='/module2' component={ModuleTwo} />
         <Route path='/module5' component={ModuleFive} />
-        <Route path='/modulestart' component={StartTraining} />
       </ThemeProvider>
     </>
   )

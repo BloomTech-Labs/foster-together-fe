@@ -110,6 +110,7 @@ const StartTraining = props => {
           <Submit
             onClick={() => {
               props.history.push('/module1')
+              window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
           >
             Start Training

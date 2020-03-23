@@ -224,6 +224,7 @@ function ModuleOne(props) {
           <Submit
             onClick={() => {
               push('/module2')
+              window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
           >
             Submit
