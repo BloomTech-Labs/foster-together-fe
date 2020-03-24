@@ -20,7 +20,7 @@ export default function Distance() {
       <DashContainer>
         <Welcome />
         <TaskBar />
-        <SearchBar />
+        <SearchBar members={membersArray} />
         <TableContain>
           <MemberTable members={membersArray} />
         </TableContain>

@@ -10,7 +10,7 @@ export const SearchDiv = styled.div`
     font-size: 2.4rem;
     margin-right: 15px;
   }
-  a {
+  p {
     margin-right: 15px;
     text-decoration: underline;
     color: #3a6e79;
