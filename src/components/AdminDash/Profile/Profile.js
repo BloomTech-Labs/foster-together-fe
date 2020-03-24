@@ -38,8 +38,8 @@ const Profile = () => {
   const singleType = membertype === 'families' ? 'Family' : 'Neighbor'
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getMemberById(membertype, id))
-  }, [dispatch, id, membertype])
+    dispatch(getMemberById(id))
+  }, [dispatch, id])
   return (
     <>
       <Navigation />

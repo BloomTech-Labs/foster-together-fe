@@ -18,9 +18,9 @@ export const getMembers = () => async dispatch => {
   }
 }
 
-export const getMemberById = (type, id) => async dispatch => {
+export const getMemberById = id => async dispatch => {
   try {
-    const { data } = await axiosWithAuth().get(`/members/${type}/${id}`)
+    const { data } = await axiosWithAuth().get(`/members/${id}`)
     dispatch(setSelectedMember(data))
   } catch (e) {
     e.response
