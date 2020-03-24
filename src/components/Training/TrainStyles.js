@@ -45,6 +45,11 @@ export const MainSection = styled.section`
   margin: 50px 0 75px;
 `
 
+export const BulletList = styled.ul`
+  margin: 0;
+  padding: 0 0 0 2.5rem;
+`
+
 export const Step = styled.li`
   font-size: 2.4rem;
   margin: 50px 0;

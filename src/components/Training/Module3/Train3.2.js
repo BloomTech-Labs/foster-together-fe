@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Wrapper,
   BackArrow,
@@ -7,16 +7,12 @@ import {
   MainSection,
   MediaWrapper,
   Media,
-  MediaLeft,
-  Video,
-  Step,
   Form,
   Label,
   Input,
   Submit,
 } from '../TrainStyles'
-import { Image3, Half, Indented } from './TrainStyle'
-import axios from 'axios'
+import { Indented } from './TrainStyle'
 
 export default function TrainingThreeTwo(props) {
   const handleSubmit = () => {
