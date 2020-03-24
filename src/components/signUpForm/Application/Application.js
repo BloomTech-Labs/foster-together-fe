@@ -10,11 +10,6 @@ import {
   Step,
   LittleImages,
   LittleImage,
-  LittleImageOverlay,
-  MiddleSection,
-  HalfInput,
-  BigInput,
-  Label,
 } from './ApplicationStyles'
 import AppForm from './ApplicationForm'
 
@@ -43,7 +38,7 @@ export default function Application() {
   return (
     <Centerer>
       <Page>
-        <Header>Get Trained as a Foster Neighbor</Header>
+        <Header>Get Trained as a Foster Neighbor!</Header>
         <UpperSection>
           <LittleImages>
             {imageArray.map(image => {

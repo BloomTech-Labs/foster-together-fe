@@ -1,86 +1,79 @@
 import styled from 'styled-components'
+import { Flex, FlexCenter } from '../../../GlobalStyles'
 
-export const Page= styled.div`
-width: 80%;
-display: flex;
-flex-direction: column;
+export const Page = styled(Flex)`
+  width: 100%;
+  flex-direction: column;
 `
-export const UpperSection = styled.div`
-display: flex; 
-align-items: flex-start;
-width: 100%;
-height: 70%;
+export const UpperSection = styled(Flex)`
+  width: 100%;
+  height: 70%;
+  justify-content: space-between;
 `
-export const UpperImage = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 60%;
+export const UpperImage = styled(Flex)`
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 `
 export const Image = styled.img`
-height: 90%;
+  height: auto;
 `
 export const Header = styled.h1`
-text-align: left;
-font-size: 3rem;
-margin-top: 6rem;
-margin-bottom: 4rem;
+  text-align: left;
+  font-size: 3.2rem;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  font-weight: normal;
 `
 export const List = styled.ol`
-width: 30%;
-
+  width: 40%;
 `
 export const Step = styled.li`
-font-size: 2.5rem;
-padding: 2rem;
+  font-size: 2.4rem;
+  margin-bottom: 32px;
 `
-export const Centerer = styled.div`
-display: flex; 
-flex-direction: column;
-align-items: center;
+export const Centerer = styled(FlexCenter)`
+  flex-direction: column;
+  width: 80%;
+  max-width: 1072px;
+  margin: 0 auto;
 `
-export const LittleImages = styled.div`
-display: flex; 
-flex-direction: column;
-justify-content: space-evenly;
-width: 6%;
+export const LittleImages = styled(Flex)`
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 6%;
 `
 export const LittleImage = styled.img`
-width: 100%;
-margin-top: 4%;
+  width: 100%;
+  margin-top: 4%;
 `
 export const LittleImageOverlay = styled.div`
-width: 100%;
-border-radius: 50%;
+  width: 100%;
+  border-radius: 50%;
 `
-export const MiddleSection = styled.div`
-display: flex;
-flex-wrap: wrap;
-margin-top: 5%;
+export const MiddleSection = styled(Flex)`
+  margin-top: 5%;
 `
 
 export const BigInput = styled.input`
-width: 90%;
+  width: 100%;
 `
 
 export const HalfInput = styled.input`
-width: 40%;
-margin-right: 10%;
+  width: 40%;
+  margin-right: 10%;
 `
 
 export const Label = styled.label`
-font-size: 2rem;
+  font-size: 2rem;
 `
 
-export const FormContainer = styled.div`
+export const FormContainer = styled(Flex)`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 `
 
-export const FormGroup = styled.div`
-  display: flex;
+export const FormGroup = styled(Flex)`
   flex-direction: column;
   width: ${props => (props.width ? props.width : '100%')};
   margin-bottom: 20px;
@@ -121,12 +114,11 @@ export const Option = styled.option`
   font-size: 1.6rem;
 `
 export const RadioOption = styled.p`
-font-size: 2rem; 
-padding: 1%;
-width: 100%;
+  font-size: 2rem;
+  padding: 1%;
+  width: 100%;
 `
 
-export const RadioHolder = styled.div`
-display: flex;
-align-items: center;
+export const RadioHolder = styled(Flex)`
+  align-items: center;
 `
