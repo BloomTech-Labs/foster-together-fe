@@ -7,16 +7,12 @@ import {
   Wrapper,
   Title,
   BackArrow,
-  Page,
-  Header,
   MainContent,
   Submit,
   Footer,
+  Label,
   Input,
-  TitleContainer,
-  AnswerContainer,
-  QuestionContainer,
-  ContextDiv,
+  Error,
   FlexRow,
   Div,
 } from '../TrainStyles'
@@ -110,14 +106,13 @@ const Context7 = () => {
     <Div>
       <h1>5. Help great foster homes stay "open"</h1>
       <MainContent>
-        Help great foster homes stay "open"' content='In Colorado, the average
-        foster home “deactivates” (or stops fostering) after two years.
-        Sometimes this is due to adopting, and needing space to focus on helping
-        the child feel secure and permanent in the home. But often, it is due to
-        frustration with the way things work, especially exhaustion and
-        isolation. A lack of experienced, savvy, compassionate, tested foster
-        homes ultimately hurts the kids. Your investment of a few hours a month
-        may help excellent families stay in it for the long haul.'
+        In Colorado, the average foster home “deactivates” (or stops fostering)
+        after two years. Sometimes this is due to adopting, and needing space to
+        focus on helping the child feel secure and permanent in the home. But
+        often, it is due to frustration with the way things work, especially
+        exhaustion and isolation. A lack of experienced, savvy, compassionate,
+        tested foster homes ultimately hurts the kids. Your investment of a few
+        hours a month may help excellent families stay in it for the long haul.
       </MainContent>
     </Div>
   )
@@ -125,27 +120,23 @@ const Context7 = () => {
 
 const Context8 = ({ errors, touched }) => {
   return (
-    <QuestionContainer>
-      <Header>WHAT YOU OFFER: COMPLETE BEFORE PROCEEDING</Header>
-      <MainContent>
+    <>
+      <Title>What you offer: Complete before proceeding</Title>
+      <Label>
         Are any of the "reasons to help" listed above new to you? In your own
         words, how do you anticipate this aspect enriching your life or the
         foster parents' lives? (2+ sentences) *
-      </MainContent>
-      <Input component='textarea' id='m1_q1' name='m1_q1' />
-      {errors?.m1_q1 && touched?.m1_q1 && (
-        <p style={{ color: 'red' }}>{errors?.m1_q1}</p>
-      )}
-      <MainContent>
+        <Input component='textarea' id='m1_q1' name='m1_q1' />
+        {errors?.m1_q1 && touched?.m1_q1 && <Error>{errors?.m1_q1}</Error>}
+      </Label>
+      <Label>
         How can we improve this module? What would you add, shorten, or
         eliminate? This program is just getting started, so your feedback is
         helpful!
-      </MainContent>
-      <Input component='textarea' id='m1_q2' name='m1_q2' />
-      {errors?.m1_q2 && touched?.m1_q2 && (
-        <p style={{ color: 'red' }}>{errors?.m1_q2}</p>
-      )}
-    </QuestionContainer>
+        <Input component='textarea' id='m1_q2' name='m1_q2' />
+        {errors?.m1_q2 && touched?.m1_q2 && <Error>{errors?.m1_q2}</Error>}
+      </Label>
+    </>
   )
 }
 
@@ -218,23 +209,21 @@ function ModuleOne() {
       <Wrapper>
         <TitleWrapper />
         <Context />
-        <AnswerContainer>
-          <Formik
-            initialValues={{
-              m1_q1: '',
-              m1_q2: '',
-            }}
-            validationSchema={ModuleOneSchema}
-            onSubmit={() => push('/module2')}
-          >
-            {props => (
-              <Form>
-                <Context8 {...props} />
-                <Submit type='submit'>Submit</Submit>
-              </Form>
-            )}
-          </Formik>
-        </AnswerContainer>
+        <Formik
+          initialValues={{
+            m1_q1: '',
+            m1_q2: '',
+          }}
+          validationSchema={ModuleOneSchema}
+          onSubmit={() => push('/module2')}
+        >
+          {props => (
+            <Form>
+              <Context8 {...props} />
+              <Submit type='submit'>Submit</Submit>
+            </Form>
+          )}
+        </Formik>
       </Wrapper>
       <Footer>
         <Stepper activeStep={0} />

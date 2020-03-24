@@ -3,6 +3,8 @@ import { Field } from 'formik'
 import backArrow from '../../images/icons/back-arrow.svg'
 import { Btn, Flex } from '../../GlobalStyles'
 
+// shared styles
+
 export const BackArrow = styled.div`
   position: relative;
   top: 30px;
@@ -27,6 +29,38 @@ export const Title = styled.h2`
   font-size: 3.2rem;
   font-weight: normal;
 `
+
+export const Label = styled.label`
+  font-size: 2.4rem;
+`
+
+export const Input = styled(Field)`
+  width: 100%;
+  margin: 40px 0 60px;
+  font-size: 1.8rem;
+  height: 16rem;
+  padding: 20px 15px;
+  background: #f9f9f9;
+  border-radius: 4px 4px 0 0;
+  border: none;
+  border-bottom: 1px solid #a1a1a1;
+`
+
+export const Error = styled.p`
+  position: relative;
+  left: 0;
+  bottom: 50px;
+  color: red;
+`
+
+export const Submit = styled(Btn)`
+  align-self: center;
+  width: 22rem;
+  background: ${({ theme: { palette } }) => palette.primary.main};
+  color: #fff;
+`
+
+// end shared styles
 
 export const Page = styled.div`
   display: flex;
@@ -141,14 +175,6 @@ export const AnswerContainer = styled.div`
   margin: 0 auto;
 `
 
-export const Input = styled(Field)`
-  width: 64%;
-  height: 150px;
-  resize: none;
-  font-size: 2rem;
-  margin: 4%;
-`
-
 export const QuestionsInput = styled.textarea`
   width: 64%;
   height: 150px;
@@ -161,13 +187,6 @@ export const Footer = styled.div`
   width: 100%;
   background-color: #253b44;
   margin-top: 5%;
-`
-
-export const Submit = styled(Btn)`
-  align-self: center;
-  width: 22rem;
-  background: ${({ theme: { palette } }) => palette.primary.main};
-  color: #fff;
 `
 
 export const QuestionContainer = styled.div`
