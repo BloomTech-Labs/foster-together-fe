@@ -1,21 +1,59 @@
 import React from 'react'
 import { renderWithReduxAndRouter as render } from '../../../../utils/testHelpers'
+import { Formik, Form } from 'formik'
 import ModuleTwo from '..'
 import { BestPractices } from './BestPractices'
 import { Checkbox, FormGroup, CheckLabel } from '../styles'
 import { MealTips, Survey } from './MealTips'
 import { fireEvent } from '@testing-library/react'
 
+const initialValues = {
+  m2_q1: '',
+  m2_q2: '',
+  m2_q3: 0,
+  m2_q4: false,
+  // m2_q5
+  answer_a1: false,
+  answer_a2: false,
+  answer_a3: false,
+  answer_a4: false,
+  answer_a5: false,
+  answer_a6: false,
+  answer_a7: false,
+  answer_a8: false,
+  answer_a9: false,
+  answer_b: '',
+  m2_q6: false,
+  m2_q7: false,
+  m2_q8: '',
+}
+
 test('ModuleTwo is rendered', async () => {
   render(<ModuleTwo />)
 })
 
 test('Best Practices is rendered', async () => {
-  render(<BestPractices />)
+  render(
+    <Formik initialValues={initialValues}>
+      {props => (
+        <Form>
+          <BestPractices {...props} />
+        </Form>
+      )}
+    </Formik>
+  )
 })
 
 test('Radio button', () => {
-  render(<MealTips />)
+  render(
+    <Formik initialValues={initialValues}>
+      {props => (
+        <Form>
+          <MealTips {...props} />
+        </Form>
+      )}
+    </Formik>
+  )
 })
 
 test('renders button correctly', () => {

@@ -12,11 +12,9 @@ export const NotifyText = styled.label`
   font-size: 1.6rem;
   line-height: 1.9rem;
   color: #676767;
-  display: inline-block;
-  margin-left: 25px;
 `
 
-export const NotifyLink = styled.a`
+export const NotifyLink = styled.p`
   color: #676767;
   text-decoration: underline;
 `

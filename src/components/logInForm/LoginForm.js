@@ -15,6 +15,8 @@ const LoginForm = () => {
       push('/dashboard')
     } else if (userType === 'families' || userType === 'neighbors') {
       push('/userProfile')
+    } else {
+      push('./login')
     }
   }, [userType, push])
 
