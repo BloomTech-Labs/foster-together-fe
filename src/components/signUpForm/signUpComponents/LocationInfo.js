@@ -21,9 +21,7 @@ const AddressInput = ({ handleChange, values, errors, touched }) => {
         value={values.address}
       />
       <Label htmlFor='address'>Street name, and house/apt number</Label>
-      {errors.address && touched.address ? (
-        <Error>{errors.address}</Error>
-      ) : null}
+      {errors.address && touched.address && <Error>{errors.address}</Error>}
     </FormGroup>
   )
 }
@@ -40,7 +38,7 @@ const CityInput = ({ handleChange, values, errors, touched }) => {
         autoComplete='billing address-level2'
       />
       <Label htmlFor='city'>Which city do you live in?</Label>
-      {errors.city && touched.city ? <Error>{errors.city}</Error> : null}
+      {errors.city && touched.city && <Error>{errors.city}</Error>}
     </FormGroup>
   )
 }
@@ -54,7 +52,7 @@ const StateInput = ({ handleChange, values, errors, touched }) => {
         value={values.state}
         onChange={handleChange}
       >
-        <Option value='' disabled selected>
+        <Option value='' disabled>
           State
         </Option>
         {states.map(state => (
@@ -63,7 +61,7 @@ const StateInput = ({ handleChange, values, errors, touched }) => {
           </Option>
         ))}
       </Select>
-      {errors.state && touched.state ? <Error>{errors.state}</Error> : null}
+      {errors.state && touched.state && <Error>{errors.state}</Error>}
     </FormGroup>
   )
 }
@@ -79,7 +77,7 @@ const ZipInput = ({ handleChange, values, errors, touched }) => {
         value={values.zip}
       />
       <Label htmlFor='zip'>Enter your 5-digit postal code</Label>
-      {errors.zip && touched.zip ? <Error>{errors.zip}</Error> : null}
+      {errors.zip && touched.zip && <Error>{errors.zip}</Error>}
     </FormGroup>
   )
 }

@@ -7,7 +7,7 @@ export const login = values => async dispatch => {
     const { data } = await axiosWithBaseURL().post('/login', values)
     localStorage.setItem('token', data.token)
     localStorage.setItem('firstName', data.first_name)
-    dispatch(setUserType(data.user_type))
+    dispatch(setUserType(data.type))
   } catch (e) {
     localStorage.setItem('token', false)
     e.response

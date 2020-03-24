@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Field } from 'formik'
 
 export const Page = styled.div`
   display: flex;
@@ -115,13 +116,19 @@ export const AnswerContainer = styled.div`
   margin: 0 auto;
 `
 
-export const Input = styled.textarea`
+export const Input = styled(Field)`
   width: 64%;
   height: 150px;
   resize: none;
   font-size: 2rem;
-  padding: 1rem;
   margin: 4%;
+`
+
+export const QuestionsInput = styled.textarea`
+  width: 64%;
+  height: 150px;
+  resize: none;
+  font-size: 2rem;
 `
 
 export const Footer = styled.div`

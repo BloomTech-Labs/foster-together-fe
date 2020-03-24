@@ -45,6 +45,8 @@ const user = {
   city: '',
   zip: '',
   state: '',
+  latitude: '',
+  longitude: '',
 }
 
 const handleNext = (
