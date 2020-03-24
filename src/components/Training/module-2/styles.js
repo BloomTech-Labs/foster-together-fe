@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Player from 'react-player'
 import { Field } from 'formik'
 import { Btn, Flex } from '../../../GlobalStyles'
-import { backArrow as arrow } from './img'
+import { backArrow as arrow } from '../img'
 
 export const BackArrow = styled.div`
   position: relative;

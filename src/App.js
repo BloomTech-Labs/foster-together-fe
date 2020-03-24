@@ -19,6 +19,7 @@ import StartTraining from './components/Training/module-1/moduleOneLetter'
 import ModuleOne from './components/Training/module-1/moduleOne'
 import ModuleTwo from './components/Training/module-2'
 import ModuleThree from './components/Training/Module3/TrainingOverlay'
+import ModuleFour from './components/Training/module-4'
 import ModuleFive from './components/Training/module-5/moduleFive'
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path='/module1' component={ModuleOne} />
         <Route path='/module2' component={ModuleTwo} />
         <Route path='/module3' component={ModuleThree} />
+        <Route path='/module4' component={ModuleFour} />
         <Route path='/module5' component={ModuleFive} />
       </ThemeProvider>
     </>

@@ -13,7 +13,7 @@ import {
   Text,
 } from '../styles'
 import { SimpleStep } from './index'
-import { mealTipsImage } from '../img'
+import { mealTipsImage } from '../../img'
 import Survey from './Survey'
 
 const mealTipsData = [

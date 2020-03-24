@@ -14,7 +14,7 @@ import {
   Input,
   Continue,
 } from '../styles'
-import { fiveStepsImage } from '../img'
+import { fiveStepsImage } from '../../img'
 import { SimpleStep } from './index'
 
 const simpleStepData = [
