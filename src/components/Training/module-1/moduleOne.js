@@ -225,7 +225,10 @@ function ModuleOne() {
               m1_q2: '',
             }}
             validationSchema={ModuleOneSchema}
-            onSubmit={() => push('/module2')}
+            onSubmit={() => {
+              push('/module2')
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
           >
             {props => (
               <Form>
