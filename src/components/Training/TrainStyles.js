@@ -33,6 +33,11 @@ export const Title = styled.h2`
 
 export const Text = styled.p`
   font-size: 2.4rem;
+
+  span {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
 `
 
 export const MainSection = styled.section`
