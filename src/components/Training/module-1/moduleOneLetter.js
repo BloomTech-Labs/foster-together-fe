@@ -110,6 +110,7 @@ const StartTraining = () => {
           <Submit
             onClick={() => {
               push('/module1')
+              window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
           >
             Start Training

@@ -207,7 +207,7 @@ function ModuleOne() {
   const { push } = useHistory()
 
   return (
-    <section>
+    <>
       <TrainingNav />
       <Wrapper>
         <TitleWrapper />
@@ -218,7 +218,10 @@ function ModuleOne() {
             m1_q2: '',
           }}
           validationSchema={ModuleOneSchema}
-          onSubmit={() => push('/module2')}
+          onSubmit={() => {
+            push('/module2')
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }}
         >
           {props => (
             <FormikForm>
@@ -230,7 +233,7 @@ function ModuleOne() {
       <Footer>
         <Stepper activeStep={0} />
       </Footer>
-    </section>
+    </>
   )
 }
 

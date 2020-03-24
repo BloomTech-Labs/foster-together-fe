@@ -12,7 +12,7 @@ import {
   Submit,
 } from '../../TrainStyles'
 import { Section, List, Step } from '../styles'
-import { fiveStepsImage } from '../img'
+import { fiveStepsImage } from '../../img'
 import { SimpleStep } from './index'
 
 const simpleStepData = [

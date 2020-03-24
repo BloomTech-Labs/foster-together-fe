@@ -134,7 +134,8 @@ const ModuleLetter = () => {
           <LetterCircle>
             <Circle
               onClick={() => {
-                push('/modulestart')
+                push('/module0')
+                window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
             >
               <img src={next} type='button' width='100%' alt='next button' />

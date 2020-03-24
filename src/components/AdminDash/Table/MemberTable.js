@@ -68,7 +68,7 @@ function mapping(members) {
   const rows = []
   members.map(data =>
     rows.push({
-      name: `${data.first_name}, ${data.last_name}`,
+      name: `${data.last_name}, ${data.first_name}`,
       type: data.type === 'neighbors' ? neighbors : families,
       match: 'none',
       city: data.city,
