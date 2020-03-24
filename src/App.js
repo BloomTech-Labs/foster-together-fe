@@ -12,6 +12,8 @@ import Profile from './components/AdminDash/Profile/Profile'
 // temporary sign up confirmation, will be replaced with user dashboard
 import ConfirmationPage from './components/signUpForm/ConfirmationPage/ConfirmationPage'
 import Training from './components/Training/Module3/TrainingOverlay'
+import Application from './components/signUpForm/Application/Application'
+
 function App() {
   useEffect(() => {
     initGA('UA-159166357-1')
@@ -21,6 +23,7 @@ function App() {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <Route path = '/application' component={Application} />
         <Route path ='/training' component={Training} />
         <Route path='/login' component={LoginForm} />
         <Route exact path='/signup' component={SignUp} />
