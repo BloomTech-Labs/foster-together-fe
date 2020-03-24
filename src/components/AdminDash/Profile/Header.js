@@ -15,8 +15,10 @@ import {
 } from './profileStyles'
 import { edit, address, email, phone } from './icons'
 import { formatPhone } from '../../../utils/formatPhone'
+import { useSelector } from 'react-redux'
 
 const ProfileHeader = ({ member, type }) => {
+  const { selectedMember } = useSelector(state => state.mem)
   function changeIcon() {
     if (type === 'Family') {
       return <MemberIcon background='#3e8392'>F</MemberIcon>
@@ -31,7 +33,7 @@ const ProfileHeader = ({ member, type }) => {
           <NameWrapper>
             <div>{changeIcon()}</div>
             <Name>
-              {member.first_name} {member.last_name}
+              {selectedMember.first_name} {selectedMember.last_name}
             </Name>
             <img src={edit} alt='Edit icon' />
           </NameWrapper>
@@ -45,18 +47,18 @@ const ProfileHeader = ({ member, type }) => {
           <ContactCard>
             <img src={address} alt='Icon of buildings' />
             <ContactInfo>
-              {member.address}
+              {selectedMember.address}
               <br />
-              {member.city} {member.state} {member.zip}
+              {selectedMember.city} {selectedMember.state} {selectedMember.zip}
             </ContactInfo>
           </ContactCard>
           <ContactCard>
             <img src={email} alt='Icon of an envelope' />
-            <ContactInfo>{member.email}</ContactInfo>
+            <ContactInfo>{selectedMember.email}</ContactInfo>
           </ContactCard>
           <ContactCard>
             <img src={phone} alt='Icon of a mobile phone' />
-            <ContactInfo>{formatPhone(member.phone)}</ContactInfo>
+            <ContactInfo>{formatPhone(selectedMember.phone)}</ContactInfo>
           </ContactCard>
         </Contact>
         <DocumentsContainer>

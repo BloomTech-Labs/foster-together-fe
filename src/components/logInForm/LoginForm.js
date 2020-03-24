@@ -11,7 +11,11 @@ const LoginForm = () => {
   const { userType } = useSelector(state => state.auth)
 
   useEffect(() => {
-    userType === 'admins' && push('/dashboard')
+    if (userType === 'admins') {
+      push('/dashboard')
+    } else if (userType === 'families' || userType === 'neighbors') {
+      push('/userProfile')
+    }
   }, [userType, push])
 
   return (

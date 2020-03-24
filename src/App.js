@@ -18,6 +18,7 @@ import ModuleTwo from './components/Training/module-2'
 import ModuleThree from './components/Training/Module3/TrainingOverlay'
 import ModuleFour from './components/Training/module-4'
 import ModuleFive from './components/Training/module-5/moduleFive'
+import UserProfile from './components/AdminDash/Profile/User/UserProfile'
 
 function App() {
   useEffect(() => {
@@ -41,6 +42,7 @@ function App() {
         <Route path='/module3' component={ModuleThree} />
         <Route path='/module4' component={ModuleFour} />
         <Route path='/module5' component={ModuleFive} />
+        <Route path='/userProfile' component={UserProfile} />
       </ThemeProvider>
     </>
   )

@@ -5,6 +5,7 @@ export const NotifyDiv = styled.div`
   flex-direction: row;
   background: #f5f5f5;
   padding: 5%;
+  margin: 5%;
 `
 
 export const NotifyText = styled.label`

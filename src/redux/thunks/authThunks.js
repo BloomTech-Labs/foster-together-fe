@@ -38,6 +38,7 @@ export const logout = () => async dispatch => {
     await axiosWithAuth().get('/logout')
     localStorage.setItem('token', false)
     localStorage.setItem('firstName', '')
+    dispatch(setUserType(null))
   } catch (e) {
     localStorage.setItem('token', false)
     localStorage.setItem('firstName', '')
