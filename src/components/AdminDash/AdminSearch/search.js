@@ -15,8 +15,6 @@ const SearchBar = ({ members }) => {
   return (
     <SearchDiv>
       <h1>People</h1>
-      <p>Latest Activity</p>
-      <p onClick={() => alphabetical(members)}>Alphabetical</p>
     </SearchDiv>
   )
 }
