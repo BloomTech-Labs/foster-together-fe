@@ -12,7 +12,6 @@ import {
   Half,
   QuestionsInput,
 } from '../TrainStyles'
-import { MainContent } from '../../signUpForm/SignUpOverlay/signUpOverlayStyles'
 
 function Title({ props }) {
   return (

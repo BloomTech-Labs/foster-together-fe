@@ -8,12 +8,13 @@ import {
   Step,
   MediaWrapper,
   Media,
+  Video,
   Form,
   Label,
   Input,
   Continue,
 } from '../styles'
-import { gettingMatchedVideo, fiveStepsImage } from '../img'
+import { fiveStepsImage } from '../../img'
 import { SimpleStep } from './index'
 
 const simpleStepData = [
@@ -30,7 +31,7 @@ const simpleStepData = [
   },
 ]
 
-export const FiveSteps = ({ handleNext, handleBack }) => {
+export const FiveSteps = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
       <Title>
@@ -62,7 +63,11 @@ export const FiveSteps = ({ handleNext, handleBack }) => {
                 </p>
               </div>
               <Media>
-                <img src={gettingMatchedVideo} />
+                <Video
+                  url='https://player.vimeo.com/video/288660938'
+                  controls={false}
+                  width={480}
+                />
               </Media>
             </MediaWrapper>
           </Step>
@@ -99,7 +104,7 @@ export const FiveSteps = ({ handleNext, handleBack }) => {
                 </p>
               </div>
               <Media>
-                <img src={fiveStepsImage} />
+                <img src={fiveStepsImage} alt='' />
               </Media>
             </MediaWrapper>
           </Step>
@@ -125,8 +130,16 @@ export const FiveSteps = ({ handleNext, handleBack }) => {
           Do you have any questions about the five steps? Write them here so we
           can provide clarity. *
         </Label>
-        <Input placeholder='Your answer here' />
-        <Continue onClick={handleNext}>Continue</Continue>
+        <Input
+          component='textarea'
+          id='m2_q1'
+          name='m2_q1'
+          placeholder='Your answer here'
+        />
+        {errors?.m2_q1 && touched?.m2_q1 && (
+          <p style={{ color: 'red' }}>{errors?.m2_q1}</p>
+        )}
+        <Continue type='submit'>Continue</Continue>
       </Form>
     </Wrapper>
   )

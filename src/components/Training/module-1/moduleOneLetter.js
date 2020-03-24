@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import TrainingNav from '../TrainingNav/NavBar'
 import {
   Page,
@@ -15,13 +16,14 @@ import {
 } from '../TrainStyles'
 import Player from 'react-player'
 
-function Title({ props }) {
+function Title() {
+  const { push } = useHistory()
   return (
     <TitleContainer>
       <img
         src={require('../../../images/icons/back-arrow.svg')}
         onClick={() => {
-          props.history.push('/module0')
+          push('/module0')
         }}
         alt=''
       />
@@ -30,12 +32,12 @@ function Title({ props }) {
   )
 }
 
-function VideoPlayer(props) {
+function VideoPlayer() {
   return (
     <PlayerWrapper>
       <Player
         url='https://player.vimeo.com/video/288657929'
-        controls='false'
+        controls={false}
         margin='auto'
       />
       <VideoText>
@@ -95,7 +97,8 @@ const TestContext2 = () => {
   )
 }
 
-const StartTraining = props => {
+const StartTraining = () => {
+  const { push } = useHistory()
   return (
     <section>
       <TrainingNav />
@@ -109,7 +112,7 @@ const StartTraining = props => {
         <Half>
           <Submit
             onClick={() => {
-              props.history.push('/module1')
+              push('/module1')
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
           >

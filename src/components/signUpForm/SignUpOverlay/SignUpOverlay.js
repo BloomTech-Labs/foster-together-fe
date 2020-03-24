@@ -33,7 +33,6 @@ import backArrow from '../../../images/icons/back-arrow.svg'
 import ContactInfo from '../signUpComponents/ContactInfo'
 import LocationInfo from '../signUpComponents/LocationInfo'
 import ReviewInfo from '../signUpComponents/ReviewInfo'
-import axios from 'axios'
 
 const user = {
   first_name: '',
@@ -61,16 +60,6 @@ const handleNext = (
   if (activeStep === 0) {
     setActiveStep(activeStep + 1)
   } else if (activeStep === 1) {
-    axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${user.address}%20${user.city}%20${user.state}.json?country=US&access_token=pk.eyJ1IjoiYnNjaGF0emoiLCJhIjoiY2s3MHlnMGRiMDFndjNmbGN5NGN6aDllcSJ9.6U2mM86ENxVdKiXRRt6bYw`)
-    .then(res => {
-      //longitude
-      console.log(res.data.features[0].geometry.coordinates[0])
-      user = ({...user, longitude: res.data.features[0].geometry.coordinates[0]})
-      //latitude
-      console.log(res.data.features[0].geometry.coordinates[1])
-      user = ({...user, latitude: res.data.features[0].geometry.coordinates[1]})
-      console.log(user)
-  })
     setActiveStep(activeStep + 1)
   } else if (activeStep === 2) {
     if (isNeighbor) dispatch(postMember('neighbors', user, push))

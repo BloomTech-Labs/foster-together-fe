@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom'
 import {
   Page,
   Letter,
-  MainContent,
   Circle,
   TitleContainer,
   BigTitle,

@@ -5,6 +5,7 @@ import {
 } from '../slices/memSlice'
 import { axiosWithBaseURL } from '../../utils/axios/axiosWithBaseUrl'
 import axiosWithAuth from '../../utils/axios/axiosWithAuth'
+import axios from 'axios'
 
 export const getMembers = () => async dispatch => {
   try {
@@ -29,8 +30,17 @@ export const getMemberById = (type, id) => async dispatch => {
 }
 
 export const postMember = (type, values, push) => async dispatch => {
+  const { data } = await axios.get(
+    `https://api.mapbox.com/geocoding/v5/mapbox.places/${values.address}%20${values.city}%20${values.state}.json?country=US&access_token=pk.eyJ1IjoiYnNjaGF0emoiLCJhIjoiY2s3MHlnMGRiMDFndjNmbGN5NGN6aDllcSJ9.6U2mM86ENxVdKiXRRt6bYw`
+  )
+  const user = {
+    ...values,
+    longitude: data.features[0].geometry.coordinates[0],
+    latitude: data.features[0].geometry.coordinates[1],
+  }
+
   try {
-    await axiosWithBaseURL().post(`/members/${type}`, values)
+    await axiosWithBaseURL().post(`/members/${type}`, user)
     push('/confirmation')
   } catch (e) {
     e.response
