@@ -3,17 +3,14 @@ import {
   Wrapper,
   Title,
   BackArrow,
-  Section,
-  List,
-  Step,
   MediaWrapper,
   Media,
   Video,
-  Form,
   Label,
   Input,
-  Continue,
-} from '../styles'
+  Submit,
+} from '../../TrainStyles'
+import { Section, List, Step, Form } from '../styles'
 import { SimpleStep } from './index'
 
 const simpleStepData = [
@@ -111,7 +108,7 @@ export const BestPractices = ({ handleBack, errors, touched }) => {
         {errors?.m2_q2 && touched?.m2_q2 && (
           <p style={{ color: 'red' }}>{errors?.m2_q2}</p>
         )}
-        <Continue type='submit'>Continue</Continue>
+        <Submit type='submit'>Continue</Submit>
       </Form>
     </Wrapper>
   )

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Player from 'react-player'
 import { Field } from 'formik'
 import backArrow from '../../images/icons/back-arrow.svg'
 import { Btn, Flex } from '../../GlobalStyles'
@@ -28,6 +29,24 @@ export const Wrapper = styled.div`
 export const Title = styled.h2`
   font-size: 3.2rem;
   font-weight: normal;
+`
+
+export const MediaWrapper = styled(Flex)`
+  width: 100%;
+  justify-content: space-between;
+  div {
+    width: 50%;
+  }
+`
+
+export const Media = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+`
+
+export const Video = styled(Player)`
+  margin-top: -45px;
 `
 
 export const Label = styled.label`
@@ -67,6 +86,18 @@ export const Page = styled.div`
   flex-direction: column;
   width: 85%;
   margin: auto;
+`
+
+export const Div = styled.div`
+  margin: 2% 0;
+  h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+  p {
+    font-size: 2.4rem;
+    margin-left: 2.5rem;
+  }
 `
 
 export const LetterCircle = styled.div`
@@ -381,8 +412,4 @@ export const ContextDiv = styled.div`
 export const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
-`
-
-export const Div = styled.div`
-  margin: 2% 0;
 `
