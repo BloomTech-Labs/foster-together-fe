@@ -20,7 +20,7 @@ export default function TrainingThreeTwo() {
   const { push } = useHistory()
 
   const handleSubmit = () => {
-    push('/module5')
+    push('/module4')
   }
 
   return (
