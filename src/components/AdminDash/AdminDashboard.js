@@ -6,6 +6,7 @@ import TaskBar from './TaskBar/TaskBar'
 import { DashContainer, TableContain } from './adminDashStyles'
 import { useSelector, useDispatch } from 'react-redux'
 import { getMembers } from '../../redux/thunks/memThunks'
+import SearchBar from './AdminSearch/search'
 
 export default function Distance() {
   const dispatch = useDispatch()
@@ -19,6 +20,7 @@ export default function Distance() {
       <DashContainer>
         <Welcome />
         <TaskBar />
+        <SearchBar members={membersArray} />
         <TableContain>
           <MemberTable members={membersArray} />
         </TableContain>

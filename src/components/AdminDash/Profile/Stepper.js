@@ -4,36 +4,45 @@ import {
   Step,
   StepWrapper,
   StepLabel,
-  StepConnector,
+  Arrow,
+  Application,
+  ProfileLabel,
 } from './profileStyles'
+import { application, bgc, match, stepper, stepper_arrow } from './icons'
 
 const StepperComponent = () => {
   return (
     <Stepper>
       <Step>
         <StepWrapper>
-          <StepLabel active>1</StepLabel>
-          <p>Application</p>
+          <Arrow src={stepper} />
+          <StepLabel active>
+            <ProfileLabel>Application</ProfileLabel>
+          </StepLabel>
+          <Application src={application} />
         </StepWrapper>
-        <StepConnector width='45%' />
       </Step>
       <Step>
         <StepWrapper>
-          <StepLabel active>2</StepLabel>
-          <p>Background Check</p>
-        </StepWrapper>
-        <StepConnector width='20%' />
-      </Step>
-      <Step>
-        <StepWrapper>
-          <StepLabel>3</StepLabel>
+          <img src={stepper_arrow} alt='' />
+          <StepLabel active></StepLabel>
           <p>Training</p>
         </StepWrapper>
-        <StepConnector width='50%' />
       </Step>
       <Step>
         <StepWrapper>
-          <StepLabel>4</StepLabel>
+          <StepLabel active>
+            <img src={bgc} alt='' />
+          </StepLabel>
+          <p>Background Check</p>
+        </StepWrapper>
+      </Step>
+      <Step>
+        <StepWrapper>
+          <StepLabel>
+            {' '}
+            <img src={match} alt='' />
+          </StepLabel>
           <p>Match</p>
         </StepWrapper>
       </Step>

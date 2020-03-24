@@ -34,7 +34,7 @@ const routes = [
   },
 ]
 
-const UtilitiesContainer = ({ setOpen, open }) => {
+export const UtilitiesContainer = ({ setOpen, open }) => {
   return (
     <Utilities>
       <PulseContainer>
@@ -62,8 +62,9 @@ export default function Navigation() {
         <LogoImg src={require('../../../images/logo.png')} />
       </Logo>
       <Nav>
-        {routes.map(route => (
+        {routes.map((route, i) => (
           <Tab
+            key={i}
             onClick={() => push(route.path)}
             active={pathname === route.path}
           >
