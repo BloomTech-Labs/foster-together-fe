@@ -6,11 +6,12 @@ import {
   MediaWrapper,
   Media,
   Video,
+  Form,
   Label,
   Input,
   Submit,
 } from '../../TrainStyles'
-import { Section, List, Step, Form } from '../styles'
+import { Section, List, Step } from '../styles'
 import { SimpleStep } from './index'
 
 const simpleStepData = [

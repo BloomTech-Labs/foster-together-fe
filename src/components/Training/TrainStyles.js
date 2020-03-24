@@ -31,11 +31,43 @@ export const Title = styled.h2`
   font-weight: normal;
 `
 
+export const Text = styled.p`
+  font-size: 2.4rem;
+`
+
+export const MainSection = styled.section`
+  width: 100%;
+  margin: 50px 0 75px;
+`
+
+export const Step = styled.li`
+  font-size: 2.4rem;
+  margin: 50px 0;
+  padding-left: 1.7rem;
+  font-weight: bold;
+  h3,
+  p,
+  span {
+    font-size: 2.4rem;
+  }
+  p {
+    margin: 0 0 30px;
+    font-weight: normal;
+  }
+  span {
+    font-weight: bold;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+`
+
 export const MediaWrapper = styled(Flex)`
   width: 100%;
   justify-content: space-between;
   div {
-    width: 50%;
+    width: 49%;
   }
 `
 
@@ -45,8 +77,18 @@ export const Media = styled.div`
   align-items: flex-start;
 `
 
+export const MediaLeft = styled(Media)`
+  justify-content: flex-start;
+`
+
 export const Video = styled(Player)`
   margin-top: -45px;
+`
+
+export const Form = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `
 
 export const Label = styled.label`

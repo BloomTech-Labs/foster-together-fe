@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { Formik, Form } from 'formik'
+import { Formik, Form as FormikForm } from 'formik'
 import { ModuleOneSchema } from '../../../utils/yupSchemas'
 
 import {
@@ -10,11 +10,12 @@ import {
   MediaWrapper,
   Media,
   Video,
-  Submit,
   Footer,
+  Form,
   Label,
   Input,
   Error,
+  Submit,
   Div,
 } from '../TrainStyles'
 import Stepper from '../TrainingStepper'
@@ -117,20 +118,22 @@ const Context8 = ({ errors, touched }) => {
   return (
     <>
       <Title>What you offer: Complete before proceeding</Title>
-      <Label>
-        Are any of the "reasons to help" listed above new to you? In your own
-        words, how do you anticipate this aspect enriching your life or the
-        foster parents' lives? (2+ sentences) *
-        <Input component='textarea' id='m1_q1' name='m1_q1' />
-        {errors?.m1_q1 && touched?.m1_q1 && <Error>{errors?.m1_q1}</Error>}
-      </Label>
-      <Label>
-        How can we improve this module? What would you add, shorten, or
-        eliminate? This program is just getting started, so your feedback is
-        helpful!
-        <Input component='textarea' id='m1_q2' name='m1_q2' />
-        {errors?.m1_q2 && touched?.m1_q2 && <Error>{errors?.m1_q2}</Error>}
-      </Label>
+      <Form>
+        <Label>
+          Are any of the "reasons to help" listed above new to you? In your own
+          words, how do you anticipate this aspect enriching your life or the
+          foster parents' lives? (2+ sentences) *
+          <Input component='textarea' id='m1_q1' name='m1_q1' />
+          {errors?.m1_q1 && touched?.m1_q1 && <Error>{errors?.m1_q1}</Error>}
+        </Label>
+        <Label>
+          How can we improve this module? What would you add, shorten, or
+          eliminate? This program is just getting started, so your feedback is
+          helpful!
+          <Input component='textarea' id='m1_q2' name='m1_q2' />
+        </Label>
+        <Submit type='submit'>Submit</Submit>
+      </Form>
     </>
   )
 }
@@ -218,10 +221,9 @@ function ModuleOne() {
           onSubmit={() => push('/module2')}
         >
           {props => (
-            <Form>
+            <FormikForm>
               <Context8 {...props} />
-              <Submit type='submit'>Submit</Submit>
-            </Form>
+            </FormikForm>
           )}
         </Formik>
       </Wrapper>

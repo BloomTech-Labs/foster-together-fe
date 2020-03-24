@@ -1,13 +1,6 @@
 import React from 'react'
-import {
-  FormGroup,
-  Label,
-  CheckLabel,
-  Checkbox,
-  Input,
-  Form,
-  Continue,
-} from '../styles'
+import { Label, Input, Submit, Form } from '../../TrainStyles'
+import { FormGroup, CheckLabel, Checkbox } from '../styles'
 
 const questionOneData = [
   '2 hours a month (minimum for monthly meal drop-off)',
@@ -202,7 +195,7 @@ const Survey = props => {
           />
         </Label>
       </FormGroup>
-      <Continue type='submit'>Complete Module 2</Continue>
+      <Submit type='submit'>Complete Module 2</Submit>
       {props.errors.m2_q3 && props.touched.m2_q3 && (
         <p style={{ color: 'red' }}>Please answer all required questions</p>
       )}

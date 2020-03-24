@@ -3,17 +3,15 @@ import {
   Wrapper,
   Title,
   BackArrow,
-  Section,
-  List,
-  Step,
   MediaWrapper,
   Media,
   Video,
   Form,
   Label,
   Input,
-  Continue,
-} from '../styles'
+  Submit,
+} from '../../TrainStyles'
+import { Section, List, Step } from '../styles'
 import { fiveStepsImage } from '../img'
 import { SimpleStep } from './index'
 
@@ -139,7 +137,7 @@ export const FiveSteps = ({ handleBack, errors, touched }) => {
         {errors?.m2_q1 && touched?.m2_q1 && (
           <p style={{ color: 'red' }}>{errors?.m2_q1}</p>
         )}
-        <Continue type='submit'>Continue</Continue>
+        <Submit type='submit'>Continue</Submit>
       </Form>
     </Wrapper>
   )
