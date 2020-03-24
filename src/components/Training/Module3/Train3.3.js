@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import Player from 'react-player'
+import React from 'react'
 import {
   Wrapper,
   BackArrow,
@@ -16,7 +15,6 @@ import {
   Input,
   Submit,
 } from '../TrainStyles'
-import { MainContent, Indented, Header, Bold } from './TrainStyle'
 
 export default function TrainingThreeTwo(props) {
   const handleSubmit = () => {

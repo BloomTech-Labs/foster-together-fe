@@ -33,10 +33,18 @@ export const Title = styled.h2`
 
 export const Text = styled.p`
   font-size: 2.4rem;
-
   span {
     font-size: 2.4rem;
     font-weight: bold;
+  }
+  a {
+    font-size: 2.4rem;
+    color: #bababa;
+    text-decoration: none;
+
+    &:hover {
+      color: #343434;
+    }
   }
 `
 
