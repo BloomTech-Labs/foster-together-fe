@@ -7,13 +7,11 @@ import {
   LetterText,
   ContextDiv,
   Header,
-  Input,
   QuestionContainer,
   Submit,
   Half,
   QuestionsInput,
 } from '../TrainStyles'
-import { MainContent } from '../../signUpForm/SignUpOverlay/signUpOverlayStyles'
 
 function Title({ props }) {
   return (

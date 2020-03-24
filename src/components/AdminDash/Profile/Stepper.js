@@ -8,15 +8,7 @@ import {
   Application,
   ProfileLabel,
 } from './profileStyles'
-import {
-  application,
-  bgc,
-  match,
-  training,
-  stepper,
-  stepper_last,
-  stepper_arrow,
-} from './icons'
+import { application, bgc, match, stepper, stepper_arrow } from './icons'
 
 const StepperComponent = () => {
   return (
@@ -32,7 +24,7 @@ const StepperComponent = () => {
       </Step>
       <Step>
         <StepWrapper>
-          <img src={stepper_arrow} />
+          <img src={stepper_arrow} alt='' />
           <StepLabel active></StepLabel>
           <p>Training</p>
         </StepWrapper>
@@ -40,7 +32,7 @@ const StepperComponent = () => {
       <Step>
         <StepWrapper>
           <StepLabel active>
-            <img src={bgc} />
+            <img src={bgc} alt='' />
           </StepLabel>
           <p>Background Check</p>
         </StepWrapper>
@@ -49,7 +41,7 @@ const StepperComponent = () => {
         <StepWrapper>
           <StepLabel>
             {' '}
-            <img src={match} />
+            <img src={match} alt='' />
           </StepLabel>
           <p>Match</p>
         </StepWrapper>
