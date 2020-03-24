@@ -14,3 +14,8 @@ export const NotifyText = styled.label`
   display: inline-block;
   margin-left: 25px;
 `
+
+export const NotifyLink = styled.a`
+  color: #676767;
+  text-decoration: underline;
+`

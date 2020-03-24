@@ -33,7 +33,7 @@ const ProfileActivity = () => (
   </ActivityContainer>
 )
 
-const Profile = () => {
+const Profile = (steps, activeStep) => {
   const { id, membertype } = useParams()
   const { selectedMember } = useSelector(state => state.mem)
   const singleType = membertype === 'families' ? 'Family' : 'Neighbor'
