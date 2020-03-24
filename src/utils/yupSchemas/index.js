@@ -29,7 +29,6 @@ export const LocationSchema = Yup.object().shape({
 
 export const ModuleOneSchema = Yup.object().shape({
   m1_q1: Yup.string().required(generic),
-  m1_q2: Yup.string().required(generic),
 })
 
 export const ModuleTwoSchema1 = Yup.object().shape({
