@@ -3,9 +3,11 @@ import {
   Wrapper,
   Title,
   BackArrow,
-  Section,
   MediaWrapper,
   Media,
+} from '../../TrainStyles'
+import {
+  Section,
   BulletList,
   Step,
   SmallList,

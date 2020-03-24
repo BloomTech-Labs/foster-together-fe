@@ -1,11 +1,163 @@
 import styled from 'styled-components'
+import Player from 'react-player'
 import { Field } from 'formik'
+import backArrow from '../../images/icons/back-arrow.svg'
+import { Btn, Flex } from '../../GlobalStyles'
+
+// shared styles
+
+export const BackArrow = styled.div`
+  position: relative;
+  top: 30px;
+  left: -45px;
+  height: 24px;
+  width: 27px;
+  background-image: url(${backArrow});
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const Wrapper = styled.div`
+  width: 80%;
+  max-width: 1075px;
+  margin: 75px auto;
+  color: #343434;
+`
+
+export const Title = styled.h2`
+  font-size: 3.2rem;
+  font-weight: normal;
+`
+
+export const Text = styled.p`
+  font-size: 2.4rem;
+  span {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+  a {
+    font-size: 2.4rem;
+    color: #bababa;
+    text-decoration: none;
+
+    &:hover {
+      color: #343434;
+    }
+  }
+`
+
+export const MainSection = styled.section`
+  width: 100%;
+  margin: 50px 0 75px;
+`
+
+export const BulletList = styled.ul`
+  margin: 0;
+  padding: 0 0 0 2.5rem;
+`
+
+export const Step = styled.li`
+  font-size: 2.4rem;
+  margin: 50px 0;
+  padding-left: 1.7rem;
+  font-weight: bold;
+  h3,
+  p,
+  span {
+    font-size: 2.4rem;
+  }
+  p {
+    margin: 0 0 30px;
+    font-weight: normal;
+  }
+  span {
+    font-weight: bold;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+`
+
+export const MediaWrapper = styled(Flex)`
+  width: 100%;
+  justify-content: space-between;
+  div {
+    width: 49%;
+  }
+`
+
+export const Media = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+`
+
+export const MediaLeft = styled(Media)`
+  justify-content: flex-start;
+`
+
+export const Video = styled(Player)`
+  margin-top: -45px;
+`
+
+export const Form = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`
+
+export const Label = styled.label`
+  font-size: 2.4rem;
+`
+
+export const Input = styled(Field)`
+  width: 100%;
+  margin: 40px 0 60px;
+  font-size: 1.8rem;
+  height: 16rem;
+  padding: 20px 15px;
+  background: #f9f9f9;
+  border-radius: 4px 4px 0 0;
+  border: none;
+  border-bottom: 1px solid #a1a1a1;
+`
+
+export const Error = styled.p`
+  position: relative;
+  left: 0;
+  bottom: 50px;
+  color: red;
+`
+
+export const Submit = styled(Btn)`
+  align-self: center;
+  width: 22rem;
+  background: ${({ theme: { palette } }) => palette.primary.main};
+  color: #fff;
+`
+
+// end shared styles
 
 export const Page = styled.div`
   display: flex;
   flex-direction: column;
   width: 85%;
   margin: auto;
+`
+
+export const Div = styled.div`
+  margin: 2% 0;
+  h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+  p {
+    font-size: 2.4rem;
+    margin-left: 2.5rem;
+  }
 `
 
 export const LetterCircle = styled.div`
@@ -22,7 +174,7 @@ export const MainContent = styled.text`
 
 export const Letter = styled.div`
   background-color: #faf9f6;
-  width: 65%;
+  width: 100%;
   margin: 0 auto;
   padding: 2% 5%;
 `
@@ -52,12 +204,10 @@ export const BigTitle = styled.h1`
   margin: 0 5%;
 `
 
-export const Header = styled.h1`
-  font-size: 3.1rem;
-  font-weight: 500;
-  display: flex;
-  text-align: left;
-  color: ${props => props.color};
+export const Header = styled.h2`
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #676767;
 `
 
 export const Section = styled.div`
@@ -70,11 +220,11 @@ export const PlayerWrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-bottom: 5%;
+  margin: 5% 0;
 `
 
 export const VideoText = styled.p`
-  width: 30%;
+  width: 50%;
   font-size: 1.2rem;
   color: #676767;
   line-height: 2rem;
@@ -116,14 +266,6 @@ export const AnswerContainer = styled.div`
   margin: 0 auto;
 `
 
-export const Input = styled(Field)`
-  width: 64%;
-  height: 150px;
-  resize: none;
-  font-size: 2rem;
-  margin: 4%;
-`
-
 export const QuestionsInput = styled.textarea`
   width: 64%;
   height: 150px;
@@ -136,21 +278,6 @@ export const Footer = styled.div`
   width: 100%;
   background-color: #253b44;
   margin-top: 5%;
-`
-
-export const Submit = styled.button`
-  width: 223px;
-  height: 56px;
-  font-size: 1.8rem;
-  color: white;
-  background-color: #375762;
-  border: none;
-  margin: 2rem;
-  border-radius: 4px;
-  &:hover {
-    color: black;
-    cursor: pointer;
-  }
 `
 
 export const QuestionContainer = styled.div`
@@ -309,8 +436,6 @@ export const BigLink = styled.a`
   color: black;
 `
 
-export const LetterDiv = styled.div``
-
 export const LetterText = styled.p`
   font-size: 1.8rem;
   text-align: left;
@@ -325,15 +450,15 @@ export const LetterText = styled.p`
 export const LetterContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 100%;
   margin: 3% auto;
-  align-items: center;
 `
 export const TestText = styled.p`
-  line-height: 3rem;
   color: #343434;
   margin: 3% 0;
   font-size: 2.2rem;
+  font-style: italic;
+  line-height: 4.2rem;
 `
 
 export const ContextDiv = styled.div`
@@ -347,8 +472,4 @@ export const ContextDiv = styled.div`
 export const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
-`
-
-export const Div = styled.div`
-  margin: 2% 0;
 `

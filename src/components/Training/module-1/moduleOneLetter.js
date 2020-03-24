@@ -2,33 +2,30 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import TrainingNav from '../TrainingNav/NavBar'
 import {
-  Page,
-  TitleContainer,
-  BigTitle,
+  Wrapper,
+  BackArrow,
+  Title,
   PlayerWrapper,
   VideoText,
   Header,
   LetterContainer,
-  LetterDiv,
   TestText,
   Submit,
   Half,
 } from '../TrainStyles'
 import Player from 'react-player'
 
-function Title() {
+function TitleWrapper() {
   const { push } = useHistory()
   return (
-    <TitleContainer>
-      <img
-        src={require('../../../images/icons/back-arrow.svg')}
+    <Title>
+      <BackArrow
         onClick={() => {
           push('/module0')
         }}
-        alt=''
       />
-      <BigTitle>A Letter of gratitude continued...</BigTitle>
-    </TitleContainer>
+      A letter of gratitude continued...
+    </Title>
   )
 }
 
@@ -52,16 +49,16 @@ function VideoPlayer() {
 
 const Testimonies = () => {
   return (
-    <LetterDiv>
+    <>
       <TestContext1 />
       <TestContext2 />
-    </LetterDiv>
+    </>
   )
 }
 
 const TestContext1 = () => {
   return (
-    <LetterDiv>
+    <>
       <TestText>
         I have been so grateful for the support Nicole (helper) gives us. The
         stress [of fostering as a single mom] has been really difficult to
@@ -78,13 +75,13 @@ const TestContext1 = () => {
         satisfaction of investing in my neighbors.” - Nicole, Foster Family
         Helper in Arvada
       </TestText>
-    </LetterDiv>
+    </>
   )
 }
 
 const TestContext2 = () => {
   return (
-    <LetterDiv>
+    <>
       <TestText>
         “Anyone who has ever volunteered for anything knows that oftentimes, the
         scope of the volunteer role grows and grows and often becomes
@@ -93,20 +90,20 @@ const TestContext2 = () => {
         way to help that is super customized based on what I can do, and it’s
         manageable in real life.” - Michele, Foster Family Helper in Broomfield
       </TestText>
-    </LetterDiv>
+    </>
   )
 }
 
 const StartTraining = () => {
   const { push } = useHistory()
   return (
-    <section>
+    <>
       <TrainingNav />
-      <Title />
-      <Page>
+      <Wrapper>
+        <TitleWrapper />
         <VideoPlayer />
         <LetterContainer>
-          <Header color='#676767'>Testimonials from foster parents</Header>
+          <Header>Testimonials from foster parents</Header>
           <Testimonies />
         </LetterContainer>
         <Half>
@@ -119,8 +116,8 @@ const StartTraining = () => {
             Start Training
           </Submit>
         </Half>
-      </Page>
-    </section>
+      </Wrapper>
+    </>
   )
 }
 
