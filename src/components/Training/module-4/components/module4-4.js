@@ -5,7 +5,7 @@ import {
   Signature,
   Submit,
   Header,
-  BigLink,
+  BigLink1,
   BigInput,
   InputHolder,
   SignContain,
@@ -18,6 +18,8 @@ import {
   Span2,
   Header8,
   NewSection,
+  Span,
+  BigLink,
 } from './styles'
 
 export const Module44 = ({ handleBack }) => {
@@ -44,18 +46,19 @@ export const Module44 = ({ handleBack }) => {
           <ol>
             <li>
               <Span2>Be prepared: </Span2>
-              <BigLink
+              <BigLink1
                 href='https://themamabeareffect.org/prevent/when-to-speak-up/'
                 target='blank'
               >
                 {'  '}How to Know, Who to Call, What to Say (Click to read){' '}
-              </BigLink>
+              </BigLink1>
             </li>
             <li>
-              You need to call it in: Colorado has our own child abuse hotline:
-              1-800-CO4KIDS. Remember, you don't have to investigate abuse
-              before making the call. That's not your job. Most people are too
-              afraid to take this step, but the child needs you to do it.
+              <span>You need to call it in:</span> Colorado has our own child
+              abuse hotline: 1-800-CO4KIDS. Remember, you don't have to
+              investigate abuse before making the call. That's not your job.
+              Most people are too afraid to take this step, but the child needs
+              you to do it.
               <br />
               <Todo>
                 TO DO: Save this number, and send a screenshot of the contact in
@@ -63,7 +66,7 @@ export const Module44 = ({ handleBack }) => {
               </Todo>
             </li>
             <li>
-              Seek treatment for the child.{' '}
+              <span>Seek treatment for the child. </span>
               <BigLink href='https://www.safepassagecac.org/'>
                 Safe Passage Colorado{' '}
               </BigLink>{' '}
@@ -72,10 +75,10 @@ export const Module44 = ({ handleBack }) => {
               them here: safepassagecac.org/
             </li>
             <li>
-              Get help for the offender. If, after reading this, you realize
-              that someone you know (or yourself) is abusing children, please
-              get help. Treatment can be very effective and may even save a
-              life.{' '}
+              <span>Get help for the offender.</span> If, after reading this,
+              you realize that someone you know (or yourself) is abusing
+              children, please get help. Treatment can be very effective and may
+              even save a life.{' '}
               <BigLink href='https://www.atsa.com/referral'>
                 {' '}
                 This referral form{' '}

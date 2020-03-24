@@ -81,8 +81,8 @@ export const Module42 = ({ handleNext, handleBack }) => {
             <Video1>
               <Player
                 url='https://www.youtube.com/embed/ULGJphesPnk'
-                width='600px'
-                height='450px'
+                width='550px'
+                height='400px'
               />
             </Video1>
           </MainContent2>
@@ -163,7 +163,10 @@ export const Module42 = ({ handleNext, handleBack }) => {
             break rules, gift-giving, lots of attention, a listening ear, taking
             a child’s side, manipulation, introducing kids to sexual material,
             or talking about sex (i.e., sexualizing the relationship). Read the
-            rest by <Link href=''>clicking here.</Link>
+            rest by clicking{' '}
+            <Link href='https://parentingsafechildren.com/what-offenders-want-you-to-know/'>
+              here.
+            </Link>
             <br />
             <br />
           </MainContent4>
@@ -176,7 +179,11 @@ export const Module42 = ({ handleNext, handleBack }) => {
                 read
               </Span>{' '}
               Top 10 Questions on Preventing Sexual Abuse (Includes
-              developmentally appropriate explanations, click HERE to read)
+              developmentally appropriate explanations, click{' '}
+              <Link href='https://parentingsafechildren.com/your-top-10-questions-about-body-safety-2/'>
+                HERE
+              </Link>{' '}
+              to read)
             </ClickHere>
           </MainContent4>
           <Header3>

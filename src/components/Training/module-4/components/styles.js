@@ -33,15 +33,20 @@ export const MainContent1 = styled.text`
   ul {
     li {
       position: relative;
-      left: 6rem;
-      list-style-type: url('/images/Rectangle232.jpg');
+      left: 5rem;
+      list-style-type: none;
     }
   }
 `
 
+export const Diamond = styled.div`
+  font-size: 1rem;
+  position: relative;
+  left: 1rem;
+`
 export const Question = styled.li`
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: bold;
   line-height: 3rem;
   margin: 0rem 8rem 1.8rem 0rem;
 `
@@ -56,6 +61,7 @@ export const Title = styled.h1`
 export const Span = styled.text`
   font-weight: bold;
   font-size: 1.8rem;
+  color: black;
 `
 
 export const Section = styled.div``
@@ -112,6 +118,7 @@ export const Link = styled.a`
   color: black;
   text-decoration: none;
   color: Grey;
+  font-size: 2rem;
 `
 
 export const MainContent = styled.h1`
@@ -139,6 +146,7 @@ export const Page1 = styled.div`
 
 export const Paragraph = styled.text`
   font-size: 1.8rem;
+  font-weight: 400;
   width: 45%;
   height: 100%;
   line-height: 3rem;
@@ -149,7 +157,15 @@ export const Paragraph1 = styled.text`
   display: flex;
   font-size: 1.8rem;
   line-height: 3rem;
+  flex-direction: column;
   margin-left: 2.6rem;
+  p {
+    font-size: 1.8rem;
+  }
+  span {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
 `
 export const Header1 = styled.h1`
   font-size: 3rem;
@@ -175,7 +191,9 @@ export const Section1 = styled.div`
   font-size: 1.8rem;
 `
 
-export const Section2 = styled.text``
+export const Section2 = styled.text`
+  margin-bottom: 3rem;
+`
 
 export const Body = styled.div`
   flex-direction: coloumn;
@@ -192,13 +210,14 @@ export const Body1 = styled.text`
 `
 
 export const Video1 = styled.div`
-  margin-left: 10rem;
+  margin: 1rem 0rem 0rem 5rem;
 `
 
 export const MainContent2 = styled.div`
   display: flex;
   width: 100%;
   flex-dirction: row;
+  margin-bottom: -1rem;
 `
 
 export const MainContent3 = styled.text`
@@ -274,6 +293,13 @@ export const MainContent5 = styled.text`
   margin-bottom: 3rem;
   font-weight: 400;
   align-items: center;
+  color: black;
+`
+export const MainContent8 = styled.text`
+  font-size: 2rem;
+  line-height: 3rem;
+  margin: 0rem 0rem 3rem 3.5rem;
+  color; black;
 `
 
 export const Span1 = styled.text`
@@ -385,6 +411,10 @@ export const Header6 = styled.li`
       position: relative;
       right: 1.8rem;
     }
+    span {
+      font-weight: bold;
+      font-size: 2.1rem;
+    }
   }
 `
 export const MainContent7 = styled.text`
@@ -401,9 +431,16 @@ export const BigLink = styled.a`
   color: #b7b7b7;
 `
 
+export const BigLink1 = styled.a`
+  font-size: 2.1rem;
+  text-align: left;
+  text-decoration: none;
+  color: #a1a1a1;
+`
+
 export const Span2 = styled.text`
   font-size: 2.1rem;
-  font-weight: 500;
+  font-weight: bold;
 `
 
 export const Body5 = styled.p`

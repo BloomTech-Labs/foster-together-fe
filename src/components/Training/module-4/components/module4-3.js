@@ -3,6 +3,7 @@ import {
   Page1,
   MainContent6,
   MainContent5,
+  MainContent8,
   Signature,
   Submit,
   ATag1,
@@ -38,7 +39,7 @@ export const Module43 = ({ handleBack, handleNext }) => {
       </Header>
       <Page1>
         <>
-          <MainContent5>
+          <MainContent8>
             Foster parents wishing to use a Foster Together parent helper are
             required to post the body safety rules in their home. We purchase a
             poster for each of our foster families, and if you'd like one for
@@ -50,7 +51,7 @@ export const Module43 = ({ handleBack, handleNext }) => {
               {' '}
               here.
             </Link>
-          </MainContent5>
+          </MainContent8>
           <Image4 src='https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1524686041133-7YL55J2UUCA0HGFQ9DFQ/ke17ZwdGBToddI8pDm48kGrEzKbmlT1aXa03pZYZUlJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmD3GJgI7_jN764QbmlaUTk5WyFFzHgH39gSTvnaFnniHmMoF0B1QmrvergKLtg00N/mama+bear+effect.jpg?format=1500w' />
         </>
         <Body4>
@@ -61,7 +62,9 @@ export const Module43 = ({ handleBack, handleNext }) => {
           </Span1>
           and the live workshop Parenting Safe Children. To book a Parenting
           Safe Children workshop with Feather Berkower in Colorado,{' '}
-          <Span1>click here.</Span1>
+          <Link href='https://parentingsafechildren.com/parents/calendar-register'>
+            click here.
+          </Link>
           It's a half-day training with your neighborhood, school, church, or
           club teaching you to prevent child abuse from happening right under
           your nose.
