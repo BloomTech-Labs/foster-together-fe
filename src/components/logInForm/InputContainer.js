@@ -51,7 +51,10 @@ const ForgotPass = () => {
 const SubmitBtn = () => {
   return (
     <Button>
-      <Submit onClick={() => Event('Login', 'Tried to login', 'submit')}>
+      <Submit
+        type='submit'
+        onClick={() => Event('Login', 'Tried to login', 'submit')}
+      >
         Submit
       </Submit>
     </Button>
