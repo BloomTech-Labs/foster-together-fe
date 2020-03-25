@@ -4,8 +4,11 @@ export const NotifyDiv = styled.div`
   display: flex;
   flex-direction: row;
   background: #f5f5f5;
-  padding: 5%;
   margin: 5%;
+  width: 1021px;
+  height: 168px;
+  align-items: center;
+  padding: 5%;
 `
 
 export const NotifyText = styled.label`
