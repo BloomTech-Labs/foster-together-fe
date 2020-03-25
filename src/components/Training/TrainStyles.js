@@ -137,6 +137,7 @@ export const Submit = styled(Btn)`
   width: 22rem;
   background: ${({ theme: { palette } }) => palette.primary.main};
   color: #fff;
+  margin: 5%;
 `
 
 // end shared styles

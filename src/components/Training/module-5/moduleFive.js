@@ -12,6 +12,7 @@ import {
   Half,
   QuestionsInput,
 } from '../TrainStyles'
+import { useHistory } from 'react-router-dom'
 
 function Title({ props }) {
   return (
@@ -177,11 +178,12 @@ const Questions = (form, handleChange) => {
   )
 }
 const Button = props => {
+  const { push } = useHistory()
   return (
     <Half>
       <Submit
         onClick={() => {
-          props.history.push('/module2')
+          push('/userProfile')
         }}
       >
         Submit

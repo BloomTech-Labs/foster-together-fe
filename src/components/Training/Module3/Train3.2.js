@@ -96,6 +96,7 @@ export default function TrainingThreeTwo(props) {
         <Submit
           onClick={() => {
             handleSubmit()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
           Continue
