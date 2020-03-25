@@ -15,7 +15,7 @@ import {
 
 const CheckboxOne = ({ values, setFieldValue }) => {
   return (
-    <>
+    <FormGroup>
       <Label>
         How did you hear about us? * (check all that apply)
         <CheckLabel
@@ -37,7 +37,7 @@ const CheckboxOne = ({ values, setFieldValue }) => {
         >
           <Checkbox
             id='app_q1_a.option_b'
-            name='app_q1.option_b'
+            name='app_q1_a.option_b'
             checked={values.app_q1_a.option_b}
           />
           Social Media platform
@@ -49,7 +49,7 @@ const CheckboxOne = ({ values, setFieldValue }) => {
         >
           <Checkbox
             id='app_q1_a.option_c'
-            name='app_q1.option_c'
+            name='app_q1_a.option_c'
             checked={values.app_q1_a.option_c}
           />
           Radio Station
@@ -58,84 +58,116 @@ const CheckboxOne = ({ values, setFieldValue }) => {
           onClick={() => {
             setFieldValue('app_q1_a.option_d', !values.app_q1_a.option_d)
           }}
+          style={{ marginBottom: 35 }}
         >
           <Checkbox
             id='app_q1_a.option_d'
-            name='app_q1.option_d'
+            name='app_q1_a.option_d'
             checked={values.app_q1_a.option_d}
           />
           Current Foster Together member
         </CheckLabel>
       </Label>
-      <Label style={{ marginTop: 35 }}>
+      <Label>
         Can you give us the name of the person or platform?
         <Input id='app_q1_b' name='app_q1_b' placeholder='Your answer here' />
       </Label>
-    </>
+    </FormGroup>
   )
 }
 
-const CheckboxTwo = () => {
+const CheckboxTwo = ({ values, setFieldValue }) => {
   return (
-    <>
-      <Label>How do you see yourself helping? (check all that apply): *</Label>
-      <RadioHolder>
-        <input type='checkbox' value='option1' />
-        <RadioOption>Babysitting for a foster family </RadioOption>
-      </RadioHolder>
-      <RadioHolder>
-        <input type='checkbox' value='option1' />
-        <RadioOption>
-          Driving a child to activities and appointments{' '}
-        </RadioOption>
-      </RadioHolder>
-      <RadioHolder>
-        <input type='checkbox' value='option1' />
-        <RadioOption>Dropping a meal off to a foster family </RadioOption>
-      </RadioHolder>
-      <RadioHolder>
-        <input type='checkbox' value='option1' />
-        <RadioOption>
-          Donating new/gently used clothes, toys, supplies{' '}
-        </RadioOption>
-      </RadioHolder>
-      <RadioHolder>
-        <input type='checkbox' value='option1' />
-        <RadioOption>
-          Delivering a package of clothes, toys, supplies{' '}
-        </RadioOption>
-      </RadioHolder>
-    </>
+    <FormGroup>
+      <Label>
+        How do you see yourself helping? (check all that apply): *
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q2.option_a', !values.app_q2.option_a)
+          }}
+        >
+          <Checkbox
+            id='app_q2.option_a'
+            name='app_q2.option_a'
+            checked={values.app_q2.option_a}
+          />
+          Babysitting for a foster family
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q2.option_b', !values.app_q2.option_b)
+          }}
+        >
+          <Checkbox
+            id='app_q2.option_b'
+            name='app_q2.option_b'
+            checked={values.app_q2.option_b}
+          />
+          Driving a child to activities and appointments
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q2.option_c', !values.app_q2.option_c)
+          }}
+        >
+          <Checkbox
+            id='app_q2.option_c'
+            name='app_q2.option_c'
+            checked={values.app_q2.option_c}
+          />
+          Dropping a meal off to a foster family
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q2.option_d', !values.app_q2.option_d)
+          }}
+        >
+          <Checkbox
+            id='app_q2.option_d'
+            name='app_q2.option_d'
+            checked={values.app_q2.option_d}
+          />
+          Donating new/gently used clothes, toys, supplies
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q2.option_e', !values.app_q2.option_e)
+          }}
+        >
+          <Checkbox
+            id='app_q2.option_e'
+            name='app_q2.option_e'
+            checked={values.app_q2.option_e}
+          />
+          Delivering a package of clothes, toys, supplies
+        </CheckLabel>
+      </Label>
+    </FormGroup>
   )
 }
 
-const RadioOne = () => {
+const RadioOne = ({ values, setFieldValue }) => {
+  const handleClick = value => {
+    setFieldValue('app_q3', value)
+  }
   return (
     <FormGroup>
       <Label>
         Because sexual abuse by a friend or relative is a high risk, Foster
         Together seeks to lead the way in deterring abusers. We teach families
         and volunteers the red flags and how to prevent & report sexual abuse.
-        Are you willing to serve a family aware of these safeguards? *{' '}
+        Are you willing to serve a family aware of these safeguards? *
+        <CheckLabel onClick={() => handleClick(true)}>
+          <Checkbox radio checked={values.app_q3} />
+          Yes, I’m willing to adhere to and enforce sexual abuse prevention and
+          foster home rules and guidelines.
+        </CheckLabel>
+        <CheckLabel onClick={() => handleClick(false)}>
+          <Checkbox radio checked={!values.app_q3} />
+          No, I WILL NOT adhere to or enforce sexual abuse prevention and foster
+          home rules and guidelines.
+        </CheckLabel>
       </Label>
-      <div>
-        <RadioHolder>
-          <input type='radio' value='option1' />
-          <RadioOption>
-            Yes, I’m willing to adhere to and enforce sexual abuse prevention
-            and foster home rules and guidelines.
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='radio' value='option2' />
-          <RadioOption>
-            No, I WILL NOT adhere to or enforce sexual abuse prevention and
-            foster home rules and guidelines.
-          </RadioOption>
-        </RadioHolder>
-      </div>
     </FormGroup>
   )
 }

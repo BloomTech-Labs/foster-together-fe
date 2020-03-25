@@ -9,7 +9,7 @@ export const Form = styled(FormikForm)`
 `
 
 export const FormGroup = styled.div`
-  margin: 10px 0;
+  margin: 30px 0;
 `
 
 export const Label = styled.label`
@@ -18,7 +18,7 @@ export const Label = styled.label`
 
 export const Input = styled(Field)`
   width: 100%;
-  margin: 40px 0 60px;
+  margin-top: 15px;
   font-size: 1.8rem;
   height: 6rem;
   padding: 20px 15px;
