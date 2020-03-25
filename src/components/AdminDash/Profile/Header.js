@@ -15,12 +15,11 @@ import {
 } from './profileStyles'
 import { edit, address, email, phone } from './icons'
 import { formatPhone } from '../../../utils/formatPhone'
-import { useSelector } from 'react-redux'
 
-const ProfileHeader = ({ member, type }) => {
-  const { userInfo } = useSelector(state => state.auth)
+const ProfileHeader = ({ user }) => {
+  const userType = user?.type === 'families' ? 'Family' : 'Neighbor'
   function changeIcon() {
-    if (type === 'Family') {
+    if (userType === 'Family') {
       return <MemberIcon background='#3e8392'>F</MemberIcon>
     } else {
       return <MemberIcon background='#FF8D86'>N</MemberIcon>
@@ -33,11 +32,11 @@ const ProfileHeader = ({ member, type }) => {
           <NameWrapper>
             <div>{changeIcon()}</div>
             <Name>
-              {userInfo.first_name} {userInfo.last_name}
+              {user?.first_name} {user?.last_name}
             </Name>
             <img src={edit} alt='Edit icon' />
           </NameWrapper>
-          <Role>{type}</Role>
+          <Role>{userType}</Role>
         </NameContainer>
         <AssignedContainer>
           <h2>Assigned Family</h2>
@@ -47,18 +46,18 @@ const ProfileHeader = ({ member, type }) => {
           <ContactCard>
             <img src={address} alt='Icon of buildings' />
             <ContactInfo>
-              {userInfo.address}
+              {user?.address}
               <br />
-              {userInfo.city} {userInfo.state} {userInfo.zip}
+              {user?.city} {user?.state} {user?.zip}
             </ContactInfo>
           </ContactCard>
           <ContactCard>
             <img src={email} alt='Icon of an envelope' />
-            <ContactInfo>{userInfo.email}</ContactInfo>
+            <ContactInfo>{user?.email}</ContactInfo>
           </ContactCard>
           <ContactCard>
             <img src={phone} alt='Icon of a mobile phone' />
-            <ContactInfo>{formatPhone(userInfo.phone)}</ContactInfo>
+            <ContactInfo>{formatPhone(user?.phone)}</ContactInfo>
           </ContactCard>
         </Contact>
         <DocumentsContainer>
