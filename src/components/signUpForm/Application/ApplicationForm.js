@@ -1,125 +1,111 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { Formik } from 'formik'
 import {
   Page,
   MiddleSection,
   Label,
+  Form,
   FormGroup,
   Input,
-  Option,
-  Select,
   RadioOption,
   RadioHolder,
+  CheckLabel,
+  Checkbox,
 } from './ApplicationStyles'
-import { states } from '../signUpComponents/States'
 
-const FirstName = () => {
+const CheckboxOne = ({ values, setFieldValue }) => {
   return (
-    <FormGroup width='40%'>
-      <Label htmlFor='first_name'>First Name</Label>
-      <Input
-        id='first_name'
-        name='first_name'
-        placeholder='First Name'
-        autoComplete='fname'
-      />
-    </FormGroup>
+    <>
+      <Label>
+        How did you hear about us? * (check all that apply)
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q1_a.option_a', !values.app_q1_a.option_a)
+          }}
+        >
+          <Checkbox
+            id='app_q1_a.option_a'
+            name='app_q1_a.option_a'
+            checked={values.app_q1_a.option_a}
+          />
+          Referral from a friend or family
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q1_a.option_b', !values.app_q1_a.option_b)
+          }}
+        >
+          <Checkbox
+            id='app_q1_a.option_b'
+            name='app_q1.option_b'
+            checked={values.app_q1_a.option_b}
+          />
+          Social Media platform
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q1_a.option_c', !values.app_q1_a.option_c)
+          }}
+        >
+          <Checkbox
+            id='app_q1_a.option_c'
+            name='app_q1.option_c'
+            checked={values.app_q1_a.option_c}
+          />
+          Radio Station
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q1_a.option_d', !values.app_q1_a.option_d)
+          }}
+        >
+          <Checkbox
+            id='app_q1_a.option_d'
+            name='app_q1.option_d'
+            checked={values.app_q1_a.option_d}
+          />
+          Current Foster Together member
+        </CheckLabel>
+      </Label>
+      <Label style={{ marginTop: 35 }}>
+        Can you give us the name of the person or platform?
+        <Input id='app_q1_b' name='app_q1_b' placeholder='Your answer here' />
+      </Label>
+    </>
   )
 }
 
-const LastName = () => {
+const CheckboxTwo = () => {
   return (
-    <FormGroup width='40%'>
-      <Label htmlFor='last_name'>What's your last name?</Label>
-      <Input
-        id='last_name'
-        name='last_name'
-        placeholder='Last Name'
-        autoComplete='lname'
-      />
-    </FormGroup>
-  )
-}
-
-const Email = () => {
-  return (
-    <FormGroup width='85%'>
-      <Label htmlFor='email'>Email</Label>
-      <Input id='Email' name='email' placeholder='Email' autoComplete='email' />
-    </FormGroup>
-  )
-}
-
-const Phone = () => {
-  return (
-    <FormGroup>
-      <Label htmlFor='phone'>Phone*</Label>
-      <Input
-        id='phone'
-        name='phone'
-        placeholder='Phone Number'
-        autoComplete='phone'
-      />
-    </FormGroup>
-  )
-}
-const AddressInput = ({ handleChange, values, errors, touched }) => {
-  return (
-    <FormGroup>
-      <Label htmlFor='address'>Address</Label>
-      <Input
-        id='address'
-        name='address'
-        placeholder='Street Address'
-        onChange={handleChange}
-      />
-    </FormGroup>
-  )
-}
-
-const CityInput = ({ handleChange, values, errors, touched }) => {
-  return (
-    <FormGroup width='30%'>
-      <Label htmlFor='city'>City*</Label>
-      <Input
-        id='city'
-        name='city'
-        placeholder='City'
-        onChange={handleChange}
-        autoComplete='billing address-level2'
-      />
-    </FormGroup>
-  )
-}
-
-const StateInput = ({ handleChange, values, errors, touched }) => {
-  return (
-    <FormGroup width='18%'>
-      <Label htmlFor='state'>State*</Label>
-      <Select id='state' name='state' onChange={handleChange}>
-        <Option value='' disabled selected>
-          State
-        </Option>
-        {states.map(state => (
-          <Option key={state.value} value={state.value}>
-            {state.label}
-          </Option>
-        ))}
-      </Select>
-    </FormGroup>
-  )
-}
-
-const ZipInput = ({ handleChange, values, errors, touched }) => {
-  return (
-    <FormGroup width='27%'>
-      <Label htmlFor='zip'>Enter your 5-digit postal code</Label>
-      <Input
-        id='zip'
-        name='zip'
-        placeholder='Zip/Postal Code'
-        onChange={handleChange}
-      />
-    </FormGroup>
+    <>
+      <Label>How do you see yourself helping? (check all that apply): *</Label>
+      <RadioHolder>
+        <input type='checkbox' value='option1' />
+        <RadioOption>Babysitting for a foster family </RadioOption>
+      </RadioHolder>
+      <RadioHolder>
+        <input type='checkbox' value='option1' />
+        <RadioOption>
+          Driving a child to activities and appointments{' '}
+        </RadioOption>
+      </RadioHolder>
+      <RadioHolder>
+        <input type='checkbox' value='option1' />
+        <RadioOption>Dropping a meal off to a foster family </RadioOption>
+      </RadioHolder>
+      <RadioHolder>
+        <input type='checkbox' value='option1' />
+        <RadioOption>
+          Donating new/gently used clothes, toys, supplies{' '}
+        </RadioOption>
+      </RadioHolder>
+      <RadioHolder>
+        <input type='checkbox' value='option1' />
+        <RadioOption>
+          Delivering a package of clothes, toys, supplies{' '}
+        </RadioOption>
+      </RadioHolder>
+    </>
   )
 }
 
@@ -250,110 +236,47 @@ const RadioThree = () => {
   )
 }
 
-const CheckboxOne = () => {
-  return (
-    <FormGroup>
-      <Label>How did you hear about us? * (check all that apply)</Label>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>Referral from a friend or family</RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>Social Media platform</RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>Radio Station</RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>Current Foster Together member</RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>
-            Help around the house: Sweeping/cleaning floors
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <Label htmlFor=''>
-        Can you give us the name of the person or platform?
-      </Label>
-      <Input name='heardFrom' placeholder='Your answer here' />
-    </FormGroup>
-  )
-}
-const CheckboxTwo = () => {
-  return (
-    <FormGroup>
-      <Label>How do you see yourself helping? (check all that apply): *</Label>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>Babysitting for a foster family </RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>
-            Driving a child to activities and appointments{' '}
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>Dropping a meal off to a foster family </RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>
-            Donating new/gently used clothes, toys, supplies{' '}
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>
-            Delivering a package of clothes, toys, supplies{' '}
-          </RadioOption>
-        </RadioHolder>
-      </div>
-    </FormGroup>
-  )
+const initialValues = {
+  app_q1_a: {
+    option_a: false,
+    option_b: false,
+    option_c: false,
+    option_d: false, // checkboxes
+  },
+  app_q1_b: '', // optional referral name
+  app_q2: {
+    option_a: false,
+    option_b: false,
+    option_c: false,
+    option_d: false,
+    option_e: false, // checkboxes
+  },
+  app_q3: false, // yes or no
+  app_q4: 0, // 1-3, yes/no/maybe
+  app_q5: '', // experience with kids
+  app_q6_a: false, // yes or no
+  app_q6_b: {
+    answer_a: '',
+    answer_b: '',
+    answer_c: '', // list of certications/licenses
+  },
 }
 
 export default function AppForm() {
   return (
     <Page>
       <MiddleSection>
-        <FirstName />
-        <LastName />
-        <Email />
-        <AddressInput />
-        <CityInput />
-        <StateInput />
-        <ZipInput />
-        <Phone />
-        <CheckboxOne />
-        <CheckboxTwo />
-        <RadioOne />
-        <RadioTwo />
-        <RadioThree />
+        <Formik initialValues={initialValues}>
+          {props => (
+            <Form>
+              <CheckboxOne {...props} />
+              <CheckboxTwo {...props} />
+              <RadioOne {...props} />
+              <RadioTwo {...props} />
+              <RadioThree {...props} />
+            </Form>
+          )}
+        </Formik>
       </MiddleSection>
     </Page>
   )

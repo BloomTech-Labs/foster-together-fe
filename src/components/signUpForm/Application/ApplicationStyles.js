@@ -1,5 +1,59 @@
 import styled from 'styled-components'
+import { Field, Form as FormikForm } from 'formik'
 import { Flex, FlexCenter } from '../../../GlobalStyles'
+
+export const Form = styled(FormikForm)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`
+
+export const FormGroup = styled.div`
+  margin: 10px 0;
+`
+
+export const Label = styled.label`
+  font-size: 2.4rem;
+`
+
+export const Input = styled(Field)`
+  width: 100%;
+  margin: 40px 0 60px;
+  font-size: 1.8rem;
+  height: 6rem;
+  padding: 20px 15px;
+  background: #f9f9f9;
+  border-radius: 4px 4px 0 0;
+  border: none;
+  border-bottom: 1px solid #a1a1a1;
+`
+
+export const CheckLabel = styled.label`
+  display: block;
+  position: relative;
+  font-size: 1.8rem;
+  padding-left: 3.5rem;
+  margin-top: 2rem;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+`
+
+export const Checkbox = styled.span`
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #757575;
+  height: 20px;
+  width: 20px;
+  background: ${props => (props.checked ? '#c4c4c4' : '#fff')};
+  border-radius: ${props => (props.radio ? '100%' : 0)};
+`
 
 export const Page = styled(Flex)`
   width: 100%;
@@ -64,29 +118,9 @@ export const HalfInput = styled.input`
   margin-right: 10%;
 `
 
-export const Label = styled.label`
-  font-size: 2rem;
-`
-
 export const FormContainer = styled(Flex)`
   width: 100%;
   justify-content: space-between;
-`
-
-export const FormGroup = styled(Flex)`
-  flex-direction: column;
-  width: ${props => (props.width ? props.width : '100%')};
-  margin-bottom: 20px;
-  margin-left: 5%;
-`
-
-export const Input = styled.input`
-  height: 5.6rem;
-  font-size: 1.6rem;
-  background: #f9f9f9;
-  border: none;
-  border-bottom: 1px solid #a1a1a1;
-  padding: 10px;
 `
 
 export const Labels = styled.label`
