@@ -41,7 +41,10 @@ export const postMember = (type, values, push) => async dispatch => {
 
   try {
     await axiosWithBaseURL().post(`/members/${type}`, user)
-    push('/userProfile')
+    localStorage.setItem('token', data.token)
+    if (type === 'neighbors') {
+      push('/application')
+    } else push('/userProfile')
   } catch (e) {
     e.response
       ? dispatch(setMemError(e.response.data))
