@@ -7,11 +7,36 @@ import {
   Form,
   FormGroup,
   Input,
-  RadioOption,
-  RadioHolder,
   CheckLabel,
   Checkbox,
+  Submit,
 } from './ApplicationStyles'
+
+const initialValues = {
+  app_q1_a: {
+    option_a: false,
+    option_b: false,
+    option_c: false,
+    option_d: false, // checkboxes
+  },
+  app_q1_b: '', // optional referral name
+  app_q2: {
+    option_a: false,
+    option_b: false,
+    option_c: false,
+    option_d: false,
+    option_e: false, // checkboxes
+  },
+  app_q3: false, // yes or no
+  app_q4: 0, // 1-3, yes/no/maybe
+  app_q5: '', // experience with kids
+  app_q6_a: false, // yes or no
+  app_q6_b: {
+    answer_a: '',
+    answer_b: '',
+    answer_c: '', // list of certications/licenses
+  },
+}
 
 const CheckboxOne = ({ values, setFieldValue }) => {
   return (
@@ -263,32 +288,6 @@ const RadioThree = ({ values, setFieldValue }) => {
   )
 }
 
-const initialValues = {
-  app_q1_a: {
-    option_a: false,
-    option_b: false,
-    option_c: false,
-    option_d: false, // checkboxes
-  },
-  app_q1_b: '', // optional referral name
-  app_q2: {
-    option_a: false,
-    option_b: false,
-    option_c: false,
-    option_d: false,
-    option_e: false, // checkboxes
-  },
-  app_q3: false, // yes or no
-  app_q4: 0, // 1-3, yes/no/maybe
-  app_q5: '', // experience with kids
-  app_q6_a: false, // yes or no
-  app_q6_b: {
-    answer_a: '',
-    answer_b: '',
-    answer_c: '', // list of certications/licenses
-  },
-}
-
 export default function AppForm() {
   return (
     <Page>
@@ -301,6 +300,7 @@ export default function AppForm() {
               <RadioOne {...props} />
               <RadioTwo {...props} />
               <RadioThree {...props} />
+              <Submit>Submit</Submit>
             </Form>
           )}
         </Formik>

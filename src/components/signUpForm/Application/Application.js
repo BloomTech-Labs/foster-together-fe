@@ -63,8 +63,8 @@ export default function Application() {
             </Step>
             <Step>Process your background check online ($20)</Step>
             <Step>
-              Complete your online training here. (Password will be sent
-              directly to you.)
+              Complete your online training here once your application has been
+              approved.
             </Step>
           </List>
         </UpperSection>

@@ -1,59 +1,6 @@
 import styled from 'styled-components'
 import { Field, Form as FormikForm } from 'formik'
-import { Flex, FlexCenter } from '../../../GlobalStyles'
-
-export const Form = styled(FormikForm)`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`
-
-export const FormGroup = styled.div`
-  margin: 30px 0;
-`
-
-export const Label = styled.label`
-  font-size: 2.4rem;
-`
-
-export const Input = styled(Field)`
-  width: 100%;
-  margin: 25px 0 0;
-  font-size: 1.8rem;
-  height: ${props => (props.height ? props.height : '6rem')};
-  padding: 20px 15px;
-  background: #f9f9f9;
-  border-radius: 4px 4px 0 0;
-  border: none;
-  border-bottom: 1px solid #a1a1a1;
-`
-
-export const CheckLabel = styled.label`
-  display: block;
-  position: relative;
-  font-size: 1.8rem;
-  padding-left: 3.5rem;
-  margin-top: 2rem;
-
-  input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-`
-
-export const Checkbox = styled.span`
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 2px solid #757575;
-  height: 20px;
-  width: 20px;
-  background: ${props => (props.checked ? '#c4c4c4' : '#fff')};
-  border-radius: ${props => (props.radio ? '100%' : 0)};
-`
+import { Flex, FlexCenter, Btn } from '../../../GlobalStyles'
 
 export const Page = styled(Flex)`
   width: 100%;
@@ -109,24 +56,57 @@ export const MiddleSection = styled(Flex)`
   margin-top: 5%;
 `
 
-export const BigInput = styled.input`
+export const Form = styled(FormikForm)`
   width: 100%;
+  display: flex;
+  flex-direction: column;
 `
 
-export const HalfInput = styled.input`
-  width: 40%;
-  margin-right: 10%;
+export const FormGroup = styled.div`
+  margin: 30px 0;
 `
 
-export const FormContainer = styled(Flex)`
+export const Label = styled.label`
+  font-size: 2.4rem;
+`
+
+export const Input = styled(Field)`
   width: 100%;
-  justify-content: space-between;
+  margin: 25px 0 0;
+  font-size: 1.8rem;
+  height: ${props => (props.height ? props.height : '6rem')};
+  padding: 20px 15px;
+  background: #f9f9f9;
+  border-radius: 4px 4px 0 0;
+  border: none;
+  border-bottom: 1px solid #a1a1a1;
 `
 
-export const Labels = styled.label`
-  font-size: 1.2rem;
-  color: #545454;
-  margin: 4px 10px;
+export const CheckLabel = styled.label`
+  display: block;
+  position: relative;
+  font-size: 1.8rem;
+  padding-left: 3.5rem;
+  margin-top: 2rem;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+`
+
+export const Checkbox = styled.span`
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #757575;
+  height: 20px;
+  width: 20px;
+  background: ${props => (props.checked ? '#c4c4c4' : '#fff')};
+  border-radius: ${props => (props.radio ? '100%' : 0)};
 `
 
 export const Error = styled.p`
@@ -135,24 +115,10 @@ export const Error = styled.p`
   margin: 0 10px;
 `
 
-export const Select = styled.select`
-  height: 5.6rem;
-  font-size: 1.6rem;
-  background: #f9f9f9;
-  border: none;
-  border-bottom: 1px solid #a1a1a1;
-  padding: 10px;
-`
-
-export const Option = styled.option`
-  font-size: 1.6rem;
-`
-export const RadioOption = styled.p`
-  font-size: 2rem;
-  padding: 1%;
-  width: 100%;
-`
-
-export const RadioHolder = styled(Flex)`
-  align-items: center;
+export const Submit = styled(Btn)`
+  align-self: center;
+  width: 22rem;
+  background: ${({ theme: { palette } }) => palette.primary.main};
+  color: #fff;
+  margin: 25px 0 100px;
 `
