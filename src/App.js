@@ -9,7 +9,6 @@ import LoginForm from './components/logInForm/LoginForm'
 import SignUp from './components/signUpForm/SignUpOverlay/SignUpOverlay'
 import AdminDash from './components/AdminDash/AdminDashboard'
 import Profile from './components/AdminDash/Profile/Profile'
-import ConfirmationPage from './components/signUpForm/ConfirmationPage/ConfirmationPage'
 import Application from './components/signUpForm/Application/Application'
 import Training from './components/Training/Module3/TrainingOverlay'
 import ModuleLetter from './components/Training/module-0/trainingLetter'
@@ -35,7 +34,6 @@ function App() {
         <Route path='/login' component={LoginForm} />
         <Route exact path='/signup' component={SignUp} />
         <PrivateRoute exact path='/dashboard' component={AdminDash} />
-        <Route path='/confirmation' component={ConfirmationPage} />
         <PrivateRoute path='/:membertype/:id' component={Profile} />
         <Route path='/module0' component={StartTraining} />
         <Route path='/modulestart' component={ModuleLetter} />
