@@ -1,367 +1,322 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { useHistory } from 'react-router-dom'
+import axiosWithAuth from '../../../utils/axios/axiosWithAuth'
+import { Formik } from 'formik'
 import {
   Page,
   MiddleSection,
   Label,
+  Form,
   FormGroup,
   Input,
-  Option,
-  Select,
-  RadioOption,
-  RadioHolder
+  CheckLabel,
+  Checkbox,
+  Submit,
 } from './ApplicationStyles'
-import { states } from '../signUpComponents/States'
 
-const FirstName = () => {
+const initialValues = {
+  app_q1_a: {
+    option_1: false,
+    option_2: false,
+    option_3: false,
+    option_4: false, // checkboxes
+  },
+  app_q1_b: '', // optional referral name
+  app_q2: {
+    option_1: false,
+    option_2: false,
+    option_3: false,
+    option_4: false,
+    option_5: false, // checkboxes
+  },
+  app_q3: false, // yes or no
+  app_q4: 0, // 1-3, yes/no/maybe
+  app_q5: '', // experience with kids
+  app_q6_a: false, // yes or no
+  app_q6_b: {
+    answer_a: '',
+    answer_b: '',
+    answer_c: '', // list of certications/licenses
+  },
+}
+
+const CheckboxOne = ({ values, setFieldValue }) => {
   return (
-    <FormGroup width='40%'>
-      <Label htmlFor='first_name'>First Name</Label>
-      <Input
-        id='first_name'
-        name='first_name'
-        placeholder='First Name'
-        autoComplete='fname'
-      />
+    <FormGroup>
+      <Label>
+        How did you hear about us? * (check all that apply)
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q1_a.option_1', !values.app_q1_a.option_1)
+          }}
+        >
+          <Checkbox
+            id='app_q1_a.option_1'
+            name='app_q1_a.option_1'
+            checked={values.app_q1_a.option_1}
+          />
+          Referral from a friend or family
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q1_a.option_2', !values.app_q1_a.option_2)
+          }}
+        >
+          <Checkbox
+            id='app_q1_a.option_2'
+            name='app_q1_a.option_2'
+            checked={values.app_q1_a.option_2}
+          />
+          Social Media platform
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q1_a.option_3', !values.app_q1_a.option_3)
+          }}
+        >
+          <Checkbox
+            id='app_q1_a.option_3'
+            name='app_q1_a.option_3'
+            checked={values.app_q1_a.option_3}
+          />
+          Radio Station
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q1_a.option_4', !values.app_q1_a.option_4)
+          }}
+          style={{ marginBottom: 35 }}
+        >
+          <Checkbox
+            id='app_q1_a.option_4'
+            name='app_q1_a.option_4'
+            checked={values.app_q1_a.option_4}
+          />
+          Current Foster Together member
+        </CheckLabel>
+      </Label>
+      <Label>
+        Can you give us the name of the person or platform?
+        <Input id='app_q1_b' name='app_q1_b' placeholder='Your answer here' />
+      </Label>
     </FormGroup>
   )
 }
 
-const LastName = () => {
+const CheckboxTwo = ({ values, setFieldValue }) => {
   return (
-    <FormGroup width='40%'>
-      <Label htmlFor='last_name'>What's your last name?</Label>
-      <Input
-        id='last_name'
-        name='last_name'
-        placeholder='Last Name'
-        autoComplete='lname'
-      />
+    <FormGroup>
+      <Label>
+        How do you see yourself helping? (check all that apply): *
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q2.option_1', !values.app_q2.option_a)
+          }}
+        >
+          <Checkbox
+            id='app_q2.option_1'
+            name='app_q2.option_1'
+            checked={values.app_q2.option_1}
+          />
+          Babysitting for a foster family
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q2.option_2', !values.app_q2.option_2)
+          }}
+        >
+          <Checkbox
+            id='app_q2.option_2'
+            name='app_q2.option_2'
+            checked={values.app_q2.option_2}
+          />
+          Driving a child to activities and appointments
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q2.option_3', !values.app_q2.option_3)
+          }}
+        >
+          <Checkbox
+            id='app_q2.option_3'
+            name='app_q2.option_3'
+            checked={values.app_q2.option_3}
+          />
+          Dropping a meal off to a foster family
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q2.option_4', !values.app_q2.option_4)
+          }}
+        >
+          <Checkbox
+            id='app_q2.option_4'
+            name='app_q2.option_4'
+            checked={values.app_q2.option_4}
+          />
+          Donating new/gently used clothes, toys, supplies
+        </CheckLabel>
+        <CheckLabel
+          onClick={() => {
+            setFieldValue('app_q2.option_5', !values.app_q2.option_5)
+          }}
+        >
+          <Checkbox
+            id='app_q2.option_5'
+            name='app_q2.option_5'
+            checked={values.app_q2.option_5}
+          />
+          Delivering a package of clothes, toys, supplies
+        </CheckLabel>
+      </Label>
     </FormGroup>
   )
 }
 
-const Email = () => {
+const RadioOne = ({ values, setFieldValue }) => {
+  const handleClick = value => {
+    setFieldValue('app_q3', value)
+  }
   return (
-    <FormGroup width='85%'>
-      <Label htmlFor='email'>Email</Label>
-      <Input id='Email' name='email' placeholder='Email' autoComplete='email' />
-    </FormGroup>
-  )
-}
-
-const Phone = () => {
-  return (
-    <FormGroup width='45%'>
-      <Label htmlFor='phone'>Phone*</Label>
-      <Input
-        id='phone'
-        name='phone'
-        placeholder='Phone Number'
-        autoComplete='phone'
-      />
-    </FormGroup>
-  )
-}
-const AddressInput = ({ handleChange, values, errors, touched }) => {
-  return (
-    <FormGroup width='85%'>
-      <Label htmlFor='address'>Address</Label>
-      <Input
-        id='address'
-        name='address'
-        placeholder='Street Address'
-        onChange={handleChange}
-      />
-    </FormGroup>
-  )
-}
-
-const CityInput = ({ handleChange, values, errors, touched }) => {
-  return (
-    <FormGroup width='30%'>
-      <Label htmlFor='city'>City*</Label>
-      <Input
-        id='city'
-        name='city'
-        placeholder='City'
-        onChange={handleChange}
-        autoComplete='billing address-level2'
-      />
-    </FormGroup>
-  )
-}
-
-const StateInput = ({ handleChange, values, errors, touched }) => {
-  return (
-    <FormGroup width='18%'>
-      <Label htmlFor='state'>State*</Label>
-      <Select id='state' name='state' onChange={handleChange}>
-        <Option value='' disabled selected>
-          State
-        </Option>
-        {states.map(state => (
-          <Option key={state.value} value={state.value}>
-            {state.label}
-          </Option>
-        ))}
-      </Select>
-    </FormGroup>
-  )
-}
-
-const ZipInput = ({ handleChange, values, errors, touched }) => {
-  return (
-    <FormGroup width='27%'>
-      <Label htmlFor='zip'>Enter your 5-digit postal code</Label>
-      <Input
-        id='zip'
-        name='zip'
-        placeholder='Zip/Postal Code'
-        onChange={handleChange}
-      />
-    </FormGroup>
-  )
-}
-
-const RadioOne = () => {
-  return (
-    <FormGroup width='85%'>
+    <FormGroup>
       <Label>
         Because sexual abuse by a friend or relative is a high risk, Foster
         Together seeks to lead the way in deterring abusers. We teach families
         and volunteers the red flags and how to prevent & report sexual abuse.
-        Are you willing to serve a family aware of these safeguards? *{' '}
-      </Label>
-      <div >
-        <RadioHolder>
-          <input type='radio' value='option1' />
-          <RadioOption>
+        Are you willing to serve a family aware of these safeguards? *
+        <CheckLabel onClick={() => handleClick(true)}>
+          <Checkbox radio checked={values.app_q3} />
           Yes, I’m willing to adhere to and enforce sexual abuse prevention and
           foster home rules and guidelines.
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div >
-        <RadioHolder>
-          <input type='radio' value='option2' />
-          <RadioOption>
+        </CheckLabel>
+        <CheckLabel onClick={() => handleClick(false)}>
+          <Checkbox radio checked={!values.app_q3} />
           No, I WILL NOT adhere to or enforce sexual abuse prevention and foster
           home rules and guidelines.
-          </RadioOption>
-        </RadioHolder>
-      </div>
+        </CheckLabel>
+      </Label>
     </FormGroup>
   )
 }
 
-const RadioTwo = () => {
+const RadioTwo = ({ values, setFieldValue }) => {
+  const handleClick = value => {
+    setFieldValue('app_q4', value)
+  }
   return (
-    <FormGroup width='85%'>
-      <Label>
-        Foster care is meant to be temporary. After their parents work to create
-        a safe home, 60% of kids in Colorado foster care go home to mom or dad.
-        It's important to give kids and families continuous support, including
-        after the kids go home to their family of origin. Are you open to
-        supporting a family whose children have been sent home post-foster care?{' '}
-      </Label>
-      <div >
-        <RadioHolder>
-          <input type='radio' value='option1' />
-          <RadioOption>
-          Yes, I'm open to supporting a family whose children have been sent
-          home post-foster care
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div >
-        <RadioHolder>
-          <input type='radio' value='option2' />
-          <RadioOption>
-          No, I'd prefer to just work with foster families.
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div >
-        <RadioHolder>
-          <input type='radio' value='option3' />
-          <RadioOption>
-          Maybe, if I can get training on how to be most helpful to these
-          families I’m open to supporting that family.
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <Label >Tell us about your experience with, or knowledge of, supporting kids and families of any kind. What gifts and qualities do you bring to this work?</Label>
-      <Input
-        id='experience'
-        name='experience'
-        placeholder='Answer Here'
-      />
-    </FormGroup>
+    <>
+      <FormGroup>
+        <Label>
+          Foster care is meant to be temporary. After their parents work to
+          create a safe home, 60% of kids in Colorado foster care go home to mom
+          or dad. It's important to give kids and families continuous support,
+          including after the kids go home to their family of origin. Are you
+          open to supporting a family whose children have been sent home
+          post-foster care?
+          <CheckLabel onClick={() => handleClick(1)}>
+            <Checkbox radio checked={values.app_q4 === 1} />
+            Yes, I'm open to supporting a family whose children have been sent
+            home post-foster care
+          </CheckLabel>
+          <CheckLabel onClick={() => handleClick(2)}>
+            <Checkbox radio checked={values.app_q4 === 2} />
+            No, I'd prefer to just work with foster families.
+          </CheckLabel>
+          <CheckLabel
+            onClick={() => handleClick(3)}
+            style={{ marginBottom: 35 }}
+          >
+            <Checkbox radio checked={values.app_q4 === 3} />
+            Maybe, if I can get training on how to be most helpful to these
+            families I’m open to supporting that family.
+          </CheckLabel>
+        </Label>
+      </FormGroup>
+      <FormGroup>
+        <Label>
+          Tell us about your experience with, or knowledge of, supporting kids
+          and families of any kind. What gifts and qualities do you bring to
+          this work?
+          <Input
+            component='textarea'
+            id='app_q5'
+            name='app_q5'
+            placeholder='Your answer here'
+            height='10rem'
+          />
+        </Label>
+      </FormGroup>
+    </>
   )
 }
 
-const RadioThree = () => {
-    return (
-      <FormGroup width='85%'>
-        <Label>
-            <RadioOption>
-        Do you hold any certifications or licenses relevant to child care and safety that you feel could be of help to how you support as a Foster Neighbor? * (If so, please list them below separately)
-        </RadioOption>
-        </Label>
-        <div >
-          <RadioHolder>
-            <input type='radio' value='option1' />
-            <RadioOption>
-            No, I DO NOT have certifications/liceses relevant to child care and safety that I believe would be helpful in supporting a family.
-            </RadioOption>
-          </RadioHolder>
-        </div>
-        <div >
-          <RadioHolder>
-            <Input type='radio' value='option2' />
-            <RadioOption>
-            Yes, I have certifications/liceses relevant to child care and safety that I believe would be helpful in supporting a family.
-            </RadioOption>
-          </RadioHolder>
-        </div>
-        <Label>Certification One</Label>
-    <Input
-        id='certification1'
-        name='certification1'
-        placeholder='Answer Here'
-      />
-      <Label>Certification Two</Label>
-    <Input
-        id='certification2'
-        name='certification2'
-        placeholder='Answer Here'
-      />
-      <Label>Certification Three</Label>
-    <Input
-        id='certification3'
-        name='certification3'
-        placeholder='Answer Here'
-      />
-      </FormGroup>
-    )
+const RadioThree = ({ values, setFieldValue }) => {
+  const handleClick = value => {
+    setFieldValue('app_q6_a', value)
   }
-
-  const CheckboxOne = () => {
-      return(
-        <FormGroup width='85%'>
-        <Label>
-            How did you hear about us? * (check all that apply)
-        </Label>
-        <div>
-          <RadioHolder>
-            <input type='checkbox' value='option1' />
-            <RadioOption>
-            Referral from a friend or family
-            </RadioOption>
-          </RadioHolder>
-        </div>
-        <div >
-        <RadioHolder>
-            <input type='checkbox' value='option1' />
-            <RadioOption>
-            Social Media platform
-            </RadioOption>
-          </RadioHolder>
-        </div>
-        <div >
-        <RadioHolder>
-            <input type='checkbox' value='option1' />
-            <RadioOption>
-            Radio Station
-            </RadioOption>
-          </RadioHolder>
-        </div>
-        <div >
-        <RadioHolder>
-            <input type='checkbox' value='option1' />
-            <RadioOption>
-            Current Foster Together member
-            </RadioOption>
-          </RadioHolder>
-        </div>
-        <div >
-        <RadioHolder>
-            <input type='checkbox' value='option1' />
-            <RadioOption>
-            Help around the house: Sweeping/cleaning floors
-            </RadioOption>
-          </RadioHolder>
-        </div>
-      <Label htmlFor=''>Can you give us the name of the person or platform?</Label>
-      <Input
-        name='heardFrom'
-        placeholder='Your answer here'
-      />
-      </FormGroup>
-      )
-  }
-  const CheckboxTwo = () => {
-    return(
-      <FormGroup width='85%'>
+  return (
+    <FormGroup>
       <Label>
-      How do you see yourself helping? (check all that apply): *
+        Do you hold any certifications or licenses relevant to child care and
+        safety that you feel could be of help to how you support as a Foster
+        Neighbor? * (If so, please list them below separately)
+        <CheckLabel onClick={() => handleClick(false)}>
+          <Checkbox radio checked={!values.app_q6_a} />
+          No, I DO NOT have certifications/licenses relevant to child care and
+          safety that I believe would be helpful in supporting a family.
+        </CheckLabel>
+        <CheckLabel onClick={() => handleClick(true)}>
+          <Checkbox radio checked={values.app_q6_a} />
+          Yes, I have certifications/licenses relevant to child care and safety
+          that I believe would be helpful in supporting a family.
+        </CheckLabel>
+        <Input
+          id='app_q6_b.answer_a'
+          name='app_q6_b.answer_a'
+          placeholder='Certification/License 1'
+        />
+        <Input
+          id='app_q6_b.answer_b'
+          name='app_q6_b.answer_b'
+          placeholder='Certification/License 2'
+        />
+        <Input
+          id='app_q6_b.answer_c'
+          name='app_q6_b.answer_c'
+          placeholder='Certification/License 3'
+        />
       </Label>
-      <div>
-        <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>
-          Babysitting for a foster family          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div >
-      <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>
-          Driving a child to activities and appointments          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div >
-      <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>
-          Dropping a meal off to a foster family          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div >
-      <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>
-          Donating new/gently used clothes, toys, supplies          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div >
-      <RadioHolder>
-          <input type='checkbox' value='option1' />
-          <RadioOption>
-          Delivering a package of clothes, toys, supplies          </RadioOption>
-        </RadioHolder>
-      </div>
     </FormGroup>
-    )
+  )
 }
 
 export default function AppForm() {
+  const { push } = useHistory()
+  const handleSubmit = values => {
+    axiosWithAuth()
+      .post('/application', values)
+      .then(() => {
+        push('/userProfile')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
   return (
     <Page>
       <MiddleSection>
-        <FirstName />
-        <LastName />
-        <Email />
-        <AddressInput />
-        <CityInput />
-        <StateInput />
-        <ZipInput />
-        <Phone />
-        <CheckboxOne />
-        <CheckboxTwo />
-        <RadioOne />
-        <RadioTwo />
-        <RadioThree />
+        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+          {props => (
+            <Form>
+              <CheckboxOne {...props} />
+              <CheckboxTwo {...props} />
+              <RadioOne {...props} />
+              <RadioTwo {...props} />
+              <RadioThree {...props} />
+              <Submit type='submit'>Submit</Submit>
+            </Form>
+          )}
+        </Formik>
       </MiddleSection>
     </Page>
   )
