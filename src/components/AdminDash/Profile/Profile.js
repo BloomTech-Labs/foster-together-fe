@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {
   Link,
@@ -33,11 +33,11 @@ const ProfileActivity = () => (
   </ActivityContainer>
 )
 
-const Profile = (steps, activeStep) => {
-  const { id, membertype } = useParams()
-  const { selectedMember } = useSelector(state => state.mem)
-  const singleType = membertype === 'families' ? 'Family' : 'Neighbor'
+const Profile = () => {
+  const { id } = useParams()
   const dispatch = useDispatch()
+  const { selectedMember } = useSelector(state => state.mem)
+
   useEffect(() => {
     dispatch(getMemberById(id))
   }, [dispatch, id])
@@ -45,7 +45,7 @@ const Profile = (steps, activeStep) => {
     <>
       <Navigation />
       <ProfileContainer>
-        <Header member={selectedMember} type={singleType} />
+        <Header user={selectedMember} />
         <ContentWrapper>
           <AppProgress>
             <ContentTitle>Application Progress</ContentTitle>
