@@ -5,32 +5,32 @@ import { useHistory } from 'react-router-dom'
 const Notification = () => {
   const { push } = useHistory()
   return (
-    <div>
-      <NotifyDiv>
-        <img src={require('../icons/info.svg')} width='41px' height='42px' />
-        <NotifyText>
-          Your application has been submitted and is currently awaiting admin
-          confirmation. An email notification will be sent to you when it has
-          been approved. It should take no longer than 3 days.
-        </NotifyText>
-      </NotifyDiv>
-    </div>
+    <NotifyDiv>
+      <NotifyText>
+        Congratulations, your application has been approved. You are now ready
+        to take the training.
+        <NotifyLink
+          onClick={() => {
+            push('/modulestart')
+          }}
+        >
+          Click here to get started
+        </NotifyLink>
+      </NotifyText>
+    </NotifyDiv>
   )
 }
 
 const Step2 = props => {
   return (
-    <NotifyText>
-      Congratulations, your application has been approved. You are now ready to
-      take the training.
-      <NotifyLink
-        onClick={push => {
-          push('/modulestart')
-        }}
-      >
-        Click here to get started
-      </NotifyLink>
-    </NotifyText>
+    <>
+      <img src={require('../icons/info.svg')} width='41px' height='42px' />
+      <NotifyText>
+        Your application has been submitted and is currently awaiting admin
+        confirmation. An email notification will be sent to you when it has been
+        approved. It should take no longer than 3 days.
+      </NotifyText>
+    </>
   )
 }
 

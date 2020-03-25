@@ -230,9 +230,6 @@ function ModuleOne() {
           )}
         </Formik>
       </Wrapper>
-      <Footer>
-        <Stepper activeStep={0} />
-      </Footer>
     </>
   )
 }
