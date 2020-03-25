@@ -172,98 +172,93 @@ const RadioOne = ({ values, setFieldValue }) => {
   )
 }
 
-const RadioTwo = () => {
+const RadioTwo = ({ values, setFieldValue }) => {
+  const handleClick = value => {
+    setFieldValue('app_q4', value)
+  }
   return (
-    <FormGroup>
-      <Label>
-        Foster care is meant to be temporary. After their parents work to create
-        a safe home, 60% of kids in Colorado foster care go home to mom or dad.
-        It's important to give kids and families continuous support, including
-        after the kids go home to their family of origin. Are you open to
-        supporting a family whose children have been sent home post-foster care?{' '}
-      </Label>
-      <div>
-        <RadioHolder>
-          <input type='radio' value='option1' />
-          <RadioOption>
+    <>
+      <FormGroup>
+        <Label>
+          Foster care is meant to be temporary. After their parents work to
+          create a safe home, 60% of kids in Colorado foster care go home to mom
+          or dad. It's important to give kids and families continuous support,
+          including after the kids go home to their family of origin. Are you
+          open to supporting a family whose children have been sent home
+          post-foster care?
+          <CheckLabel onClick={() => handleClick(1)}>
+            <Checkbox radio checked={values.app_q4 === 1} />
             Yes, I'm open to supporting a family whose children have been sent
             home post-foster care
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='radio' value='option2' />
-          <RadioOption>
+          </CheckLabel>
+          <CheckLabel onClick={() => handleClick(2)}>
+            <Checkbox radio checked={values.app_q4 === 2} />
             No, I'd prefer to just work with foster families.
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <input type='radio' value='option3' />
-          <RadioOption>
+          </CheckLabel>
+          <CheckLabel
+            onClick={() => handleClick(3)}
+            style={{ marginBottom: 35 }}
+          >
+            <Checkbox radio checked={values.app_q4 === 3} />
             Maybe, if I can get training on how to be most helpful to these
             families I’m open to supporting that family.
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <Label>
-        Tell us about your experience with, or knowledge of, supporting kids and
-        families of any kind. What gifts and qualities do you bring to this
-        work?
-      </Label>
-      <Input id='experience' name='experience' placeholder='Answer Here' />
-    </FormGroup>
+          </CheckLabel>
+        </Label>
+      </FormGroup>
+      <FormGroup>
+        <Label>
+          Tell us about your experience with, or knowledge of, supporting kids
+          and families of any kind. What gifts and qualities do you bring to
+          this work?
+          <Input
+            component='textarea'
+            id='app_q5'
+            name='app_q5'
+            placeholder='Your answer here'
+            height='10rem'
+          />
+        </Label>
+      </FormGroup>
+    </>
   )
 }
 
-const RadioThree = () => {
+const RadioThree = ({ values, setFieldValue }) => {
+  const handleClick = value => {
+    setFieldValue('app_q6_a', value)
+  }
   return (
     <FormGroup>
       <Label>
-        <RadioOption>
-          Do you hold any certifications or licenses relevant to child care and
-          safety that you feel could be of help to how you support as a Foster
-          Neighbor? * (If so, please list them below separately)
-        </RadioOption>
+        Do you hold any certifications or licenses relevant to child care and
+        safety that you feel could be of help to how you support as a Foster
+        Neighbor? * (If so, please list them below separately)
+        <CheckLabel onClick={() => handleClick(false)}>
+          <Checkbox radio checked={!values.app_q6_a} />
+          No, I DO NOT have certifications/licenses relevant to child care and
+          safety that I believe would be helpful in supporting a family.
+        </CheckLabel>
+        <CheckLabel onClick={() => handleClick(true)}>
+          <Checkbox radio checked={values.app_q6_a} />
+          Yes, I have certifications/licenses relevant to child care and safety
+          that I believe would be helpful in supporting a family.
+        </CheckLabel>
+        <Input
+          id='app_q6_b.answer_a'
+          name='app_q6_b.answer_a'
+          placeholder='Certification/License 1'
+        />
+        <Input
+          id='app_q6_b.answer_b'
+          name='app_q6_b.answer_b'
+          placeholder='Certification/License 2'
+        />
+        <Input
+          id='app_q6_b.answer_c'
+          name='app_q6_b.answer_c'
+          placeholder='Certification/License 3'
+        />
       </Label>
-      <div>
-        <RadioHolder>
-          <input type='radio' value='option1' />
-          <RadioOption>
-            No, I DO NOT have certifications/liceses relevant to child care and
-            safety that I believe would be helpful in supporting a family.
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <div>
-        <RadioHolder>
-          <Input type='radio' value='option2' />
-          <RadioOption>
-            Yes, I have certifications/liceses relevant to child care and safety
-            that I believe would be helpful in supporting a family.
-          </RadioOption>
-        </RadioHolder>
-      </div>
-      <Label>Certification One</Label>
-      <Input
-        id='certification1'
-        name='certification1'
-        placeholder='Answer Here'
-      />
-      <Label>Certification Two</Label>
-      <Input
-        id='certification2'
-        name='certification2'
-        placeholder='Answer Here'
-      />
-      <Label>Certification Three</Label>
-      <Input
-        id='certification3'
-        name='certification3'
-        placeholder='Answer Here'
-      />
     </FormGroup>
   )
 }

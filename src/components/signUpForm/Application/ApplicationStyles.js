@@ -18,9 +18,9 @@ export const Label = styled.label`
 
 export const Input = styled(Field)`
   width: 100%;
-  margin-top: 15px;
+  margin: 25px 0 0;
   font-size: 1.8rem;
-  height: 6rem;
+  height: ${props => (props.height ? props.height : '6rem')};
   padding: 20px 15px;
   background: #f9f9f9;
   border-radius: 4px 4px 0 0;
