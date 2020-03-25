@@ -191,7 +191,7 @@ export const TitleContainer = styled.div`
 `
 
 export const Circle = styled.div`
-  width: 3%;
+  width: 50px;
   display: flex;
   margin-bottom: -25px;
   justify-content: center;
