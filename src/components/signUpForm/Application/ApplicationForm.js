@@ -1,4 +1,6 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
+import axiosWithAuth from '../../../utils/axios/axiosWithAuth'
 import { Formik } from 'formik'
 import {
   Page,
@@ -14,18 +16,18 @@ import {
 
 const initialValues = {
   app_q1_a: {
-    option_a: false,
-    option_b: false,
-    option_c: false,
-    option_d: false, // checkboxes
+    option_1: false,
+    option_2: false,
+    option_3: false,
+    option_4: false, // checkboxes
   },
   app_q1_b: '', // optional referral name
   app_q2: {
-    option_a: false,
-    option_b: false,
-    option_c: false,
-    option_d: false,
-    option_e: false, // checkboxes
+    option_1: false,
+    option_2: false,
+    option_3: false,
+    option_4: false,
+    option_5: false, // checkboxes
   },
   app_q3: false, // yes or no
   app_q4: 0, // 1-3, yes/no/maybe
@@ -45,50 +47,50 @@ const CheckboxOne = ({ values, setFieldValue }) => {
         How did you hear about us? * (check all that apply)
         <CheckLabel
           onClick={() => {
-            setFieldValue('app_q1_a.option_a', !values.app_q1_a.option_a)
+            setFieldValue('app_q1_a.option_1', !values.app_q1_a.option_1)
           }}
         >
           <Checkbox
-            id='app_q1_a.option_a'
-            name='app_q1_a.option_a'
-            checked={values.app_q1_a.option_a}
+            id='app_q1_a.option_1'
+            name='app_q1_a.option_1'
+            checked={values.app_q1_a.option_1}
           />
           Referral from a friend or family
         </CheckLabel>
         <CheckLabel
           onClick={() => {
-            setFieldValue('app_q1_a.option_b', !values.app_q1_a.option_b)
+            setFieldValue('app_q1_a.option_2', !values.app_q1_a.option_2)
           }}
         >
           <Checkbox
-            id='app_q1_a.option_b'
-            name='app_q1_a.option_b'
-            checked={values.app_q1_a.option_b}
+            id='app_q1_a.option_2'
+            name='app_q1_a.option_2'
+            checked={values.app_q1_a.option_2}
           />
           Social Media platform
         </CheckLabel>
         <CheckLabel
           onClick={() => {
-            setFieldValue('app_q1_a.option_c', !values.app_q1_a.option_c)
+            setFieldValue('app_q1_a.option_3', !values.app_q1_a.option_3)
           }}
         >
           <Checkbox
-            id='app_q1_a.option_c'
-            name='app_q1_a.option_c'
-            checked={values.app_q1_a.option_c}
+            id='app_q1_a.option_3'
+            name='app_q1_a.option_3'
+            checked={values.app_q1_a.option_3}
           />
           Radio Station
         </CheckLabel>
         <CheckLabel
           onClick={() => {
-            setFieldValue('app_q1_a.option_d', !values.app_q1_a.option_d)
+            setFieldValue('app_q1_a.option_4', !values.app_q1_a.option_4)
           }}
           style={{ marginBottom: 35 }}
         >
           <Checkbox
-            id='app_q1_a.option_d'
-            name='app_q1_a.option_d'
-            checked={values.app_q1_a.option_d}
+            id='app_q1_a.option_4'
+            name='app_q1_a.option_4'
+            checked={values.app_q1_a.option_4}
           />
           Current Foster Together member
         </CheckLabel>
@@ -108,61 +110,61 @@ const CheckboxTwo = ({ values, setFieldValue }) => {
         How do you see yourself helping? (check all that apply): *
         <CheckLabel
           onClick={() => {
-            setFieldValue('app_q2.option_a', !values.app_q2.option_a)
+            setFieldValue('app_q2.option_1', !values.app_q2.option_a)
           }}
         >
           <Checkbox
-            id='app_q2.option_a'
-            name='app_q2.option_a'
-            checked={values.app_q2.option_a}
+            id='app_q2.option_1'
+            name='app_q2.option_1'
+            checked={values.app_q2.option_1}
           />
           Babysitting for a foster family
         </CheckLabel>
         <CheckLabel
           onClick={() => {
-            setFieldValue('app_q2.option_b', !values.app_q2.option_b)
+            setFieldValue('app_q2.option_2', !values.app_q2.option_2)
           }}
         >
           <Checkbox
-            id='app_q2.option_b'
-            name='app_q2.option_b'
-            checked={values.app_q2.option_b}
+            id='app_q2.option_2'
+            name='app_q2.option_2'
+            checked={values.app_q2.option_2}
           />
           Driving a child to activities and appointments
         </CheckLabel>
         <CheckLabel
           onClick={() => {
-            setFieldValue('app_q2.option_c', !values.app_q2.option_c)
+            setFieldValue('app_q2.option_3', !values.app_q2.option_3)
           }}
         >
           <Checkbox
-            id='app_q2.option_c'
-            name='app_q2.option_c'
-            checked={values.app_q2.option_c}
+            id='app_q2.option_3'
+            name='app_q2.option_3'
+            checked={values.app_q2.option_3}
           />
           Dropping a meal off to a foster family
         </CheckLabel>
         <CheckLabel
           onClick={() => {
-            setFieldValue('app_q2.option_d', !values.app_q2.option_d)
+            setFieldValue('app_q2.option_4', !values.app_q2.option_4)
           }}
         >
           <Checkbox
-            id='app_q2.option_d'
-            name='app_q2.option_d'
-            checked={values.app_q2.option_d}
+            id='app_q2.option_4'
+            name='app_q2.option_4'
+            checked={values.app_q2.option_4}
           />
           Donating new/gently used clothes, toys, supplies
         </CheckLabel>
         <CheckLabel
           onClick={() => {
-            setFieldValue('app_q2.option_e', !values.app_q2.option_e)
+            setFieldValue('app_q2.option_5', !values.app_q2.option_5)
           }}
         >
           <Checkbox
-            id='app_q2.option_e'
-            name='app_q2.option_e'
-            checked={values.app_q2.option_e}
+            id='app_q2.option_5'
+            name='app_q2.option_5'
+            checked={values.app_q2.option_5}
           />
           Delivering a package of clothes, toys, supplies
         </CheckLabel>
@@ -289,10 +291,21 @@ const RadioThree = ({ values, setFieldValue }) => {
 }
 
 export default function AppForm() {
+  const { push } = useHistory()
+  const handleSubmit = values => {
+    axiosWithAuth()
+      .post('/application', values)
+      .then(() => {
+        push('/userProfile')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
   return (
     <Page>
       <MiddleSection>
-        <Formik initialValues={initialValues}>
+        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
           {props => (
             <Form>
               <CheckboxOne {...props} />
@@ -300,7 +313,7 @@ export default function AppForm() {
               <RadioOne {...props} />
               <RadioTwo {...props} />
               <RadioThree {...props} />
-              <Submit>Submit</Submit>
+              <Submit type='submit'>Submit</Submit>
             </Form>
           )}
         </Formik>
