@@ -7,15 +7,7 @@ const Notification = () => {
   return (
     <NotifyDiv>
       <NotifyText>
-        Congratulations, your application has been approved. You are now ready
-        to take the training.
-        <NotifyLink
-          onClick={() => {
-            push('/modulestart')
-          }}
-        >
-          Click here to get started
-        </NotifyLink>
+        Thank you for your application. We will be in touch with you soon.
       </NotifyText>
     </NotifyDiv>
   )
