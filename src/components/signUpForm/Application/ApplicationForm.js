@@ -2,6 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import axiosWithAuth from '../../../utils/axios/axiosWithAuth'
 import { Formik } from 'formik'
+import { AppSchema } from '../../../utils/yupSchemas'
 import {
   Page,
   MiddleSection,
@@ -12,6 +13,7 @@ import {
   CheckLabel,
   Checkbox,
   Submit,
+  Error,
 } from './ApplicationStyles'
 
 const initialValues = {
@@ -40,7 +42,7 @@ const initialValues = {
   },
 }
 
-const CheckboxOne = ({ values, setFieldValue }) => {
+const CheckboxOne = ({ values, setFieldValue, errors, touched }) => {
   return (
     <FormGroup>
       <Label>
@@ -95,6 +97,9 @@ const CheckboxOne = ({ values, setFieldValue }) => {
           Current Foster Together member
         </CheckLabel>
       </Label>
+      {errors?.app_q1_a && touched?.app_q1_a && (
+        <Error>{errors?.app_q1_a}</Error>
+      )}
       <Label>
         Can you give us the name of the person or platform?
         <Input id='app_q1_b' name='app_q1_b' placeholder='Your answer here' />
@@ -103,14 +108,14 @@ const CheckboxOne = ({ values, setFieldValue }) => {
   )
 }
 
-const CheckboxTwo = ({ values, setFieldValue }) => {
+const CheckboxTwo = ({ values, setFieldValue, errors, touched }) => {
   return (
     <FormGroup>
       <Label>
         How do you see yourself helping? (check all that apply): *
         <CheckLabel
           onClick={() => {
-            setFieldValue('app_q2.option_1', !values.app_q2.option_a)
+            setFieldValue('app_q2.option_1', !values.app_q2.option_1)
           }}
         >
           <Checkbox
@@ -169,11 +174,12 @@ const CheckboxTwo = ({ values, setFieldValue }) => {
           Delivering a package of clothes, toys, supplies
         </CheckLabel>
       </Label>
+      {errors?.app_q2 && touched?.app_q2 && <Error>{errors?.app_q2}</Error>}
     </FormGroup>
   )
 }
 
-const RadioOne = ({ values, setFieldValue }) => {
+const RadioOne = ({ values, setFieldValue, errors, touched }) => {
   const handleClick = value => {
     setFieldValue('app_q3', value)
   }
@@ -195,11 +201,12 @@ const RadioOne = ({ values, setFieldValue }) => {
           home rules and guidelines.
         </CheckLabel>
       </Label>
+      {errors?.app_q3 && touched?.app_q3 && <Error>{errors?.app_q3}</Error>}
     </FormGroup>
   )
 }
 
-const RadioTwo = ({ values, setFieldValue }) => {
+const RadioTwo = ({ values, setFieldValue, errors, touched }) => {
   const handleClick = value => {
     setFieldValue('app_q4', value)
   }
@@ -231,6 +238,7 @@ const RadioTwo = ({ values, setFieldValue }) => {
             families I’m open to supporting that family.
           </CheckLabel>
         </Label>
+        {errors?.app_q4 && touched?.app_q4 && <Error>{errors?.app_q4}</Error>}
       </FormGroup>
       <FormGroup>
         <Label>
@@ -245,12 +253,13 @@ const RadioTwo = ({ values, setFieldValue }) => {
             height='10rem'
           />
         </Label>
+        {errors?.app_q5 && touched?.app_q5 && <Error>{errors?.app_q5}</Error>}
       </FormGroup>
     </>
   )
 }
 
-const RadioThree = ({ values, setFieldValue }) => {
+const RadioThree = ({ values, setFieldValue, errors, touched }) => {
   const handleClick = value => {
     setFieldValue('app_q6_a', value)
   }
@@ -293,19 +302,24 @@ const RadioThree = ({ values, setFieldValue }) => {
 export default function AppForm() {
   const { push } = useHistory()
   const handleSubmit = values => {
-    axiosWithAuth()
-      .post('/application', values)
-      .then(() => {
-        push('/userProfile')
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    // axiosWithAuth()
+    //   .post('/application', values)
+    //   .then(() => {
+    //     push('/userProfile')
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //   })
+    console.log(values)
   }
   return (
     <Page>
       <MiddleSection>
-        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={handleSubmit}
+          validationSchema={AppSchema}
+        >
           {props => (
             <Form>
               <CheckboxOne {...props} />
