@@ -15,12 +15,13 @@ import {
 import { useHistory } from 'react-router-dom'
 
 function Title({ props }) {
+  const { push } = useHistory()
   return (
     <TitleContainer>
       <img
         src={require('../../../images/icons/back-arrow.svg')}
         onClick={() => {
-          props.history.push('/module0')
+          push('/module4')
         }}
         alt=''
       />

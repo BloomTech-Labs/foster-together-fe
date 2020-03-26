@@ -22,6 +22,7 @@ export default function TrainingThreeOne(props) {
   const handleSubmit = () => {
     props.setModule(1)
   }
+
   return (
     <>
       <Wrapper>
