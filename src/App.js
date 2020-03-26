@@ -31,7 +31,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Route path='/application' component={Application} />
         <Route path='/training' component={Training} />
-        <Route path='/login' component={LoginForm} />
+        <Route exact path='/' component={LoginForm} />
         <Route exact path='/signup' component={SignUp} />
         <PrivateRoute exact path='/dashboard' component={AdminDash} />
         <PrivateRoute path='/:membertype/:id' component={Profile} />
