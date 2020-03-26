@@ -71,6 +71,7 @@ export const Label = styled.label`
 `
 
 export const Input = styled(Field)`
+  position: relative;
   width: 100%;
   margin: 25px 0 0;
   font-size: 1.8rem;
@@ -110,9 +111,10 @@ export const Checkbox = styled.span`
 `
 
 export const Error = styled.p`
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: red;
-  margin: 0 10px;
+  bottom: -5px;
+  left: 0;
 `
 
 export const Submit = styled(Btn)`

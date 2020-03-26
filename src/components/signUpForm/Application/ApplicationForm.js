@@ -16,7 +16,7 @@ import {
   Error,
 } from './ApplicationStyles'
 
-const initialValues = {
+export const initialValues = {
   app_q1_a: {
     option_1: false,
     option_2: false,
@@ -44,67 +44,70 @@ const initialValues = {
 
 const CheckboxOne = ({ values, setFieldValue, errors, touched }) => {
   return (
-    <FormGroup>
-      <Label>
-        How did you hear about us? * (check all that apply)
-        <CheckLabel
-          onClick={() => {
-            setFieldValue('app_q1_a.option_1', !values.app_q1_a.option_1)
-          }}
-        >
-          <Checkbox
-            id='app_q1_a.option_1'
-            name='app_q1_a.option_1'
-            checked={values.app_q1_a.option_1}
-          />
-          Referral from a friend or family
-        </CheckLabel>
-        <CheckLabel
-          onClick={() => {
-            setFieldValue('app_q1_a.option_2', !values.app_q1_a.option_2)
-          }}
-        >
-          <Checkbox
-            id='app_q1_a.option_2'
-            name='app_q1_a.option_2'
-            checked={values.app_q1_a.option_2}
-          />
-          Social Media platform
-        </CheckLabel>
-        <CheckLabel
-          onClick={() => {
-            setFieldValue('app_q1_a.option_3', !values.app_q1_a.option_3)
-          }}
-        >
-          <Checkbox
-            id='app_q1_a.option_3'
-            name='app_q1_a.option_3'
-            checked={values.app_q1_a.option_3}
-          />
-          Radio Station
-        </CheckLabel>
-        <CheckLabel
-          onClick={() => {
-            setFieldValue('app_q1_a.option_4', !values.app_q1_a.option_4)
-          }}
-          style={{ marginBottom: 35 }}
-        >
-          <Checkbox
-            id='app_q1_a.option_4'
-            name='app_q1_a.option_4'
-            checked={values.app_q1_a.option_4}
-          />
-          Current Foster Together member
-        </CheckLabel>
-      </Label>
-      {errors?.app_q1_a && touched?.app_q1_a && (
-        <Error>{errors?.app_q1_a}</Error>
-      )}
-      <Label>
-        Can you give us the name of the person or platform?
-        <Input id='app_q1_b' name='app_q1_b' placeholder='Your answer here' />
-      </Label>
-    </FormGroup>
+    <>
+      <FormGroup>
+        <Label>
+          How did you hear about us? * (check all that apply)
+          <CheckLabel
+            onClick={() => {
+              setFieldValue('app_q1_a.option_1', !values.app_q1_a.option_1)
+            }}
+          >
+            <Checkbox
+              id='app_q1_a.option_1'
+              name='app_q1_a.option_1'
+              checked={values.app_q1_a.option_1}
+            />
+            Referral from a friend or family
+          </CheckLabel>
+          <CheckLabel
+            onClick={() => {
+              setFieldValue('app_q1_a.option_2', !values.app_q1_a.option_2)
+            }}
+          >
+            <Checkbox
+              id='app_q1_a.option_2'
+              name='app_q1_a.option_2'
+              checked={values.app_q1_a.option_2}
+            />
+            Social Media platform
+          </CheckLabel>
+          <CheckLabel
+            onClick={() => {
+              setFieldValue('app_q1_a.option_3', !values.app_q1_a.option_3)
+            }}
+          >
+            <Checkbox
+              id='app_q1_a.option_3'
+              name='app_q1_a.option_3'
+              checked={values.app_q1_a.option_3}
+            />
+            Radio Station
+          </CheckLabel>
+          <CheckLabel
+            onClick={() => {
+              setFieldValue('app_q1_a.option_4', !values.app_q1_a.option_4)
+            }}
+          >
+            <Checkbox
+              id='app_q1_a.option_4'
+              name='app_q1_a.option_4'
+              checked={values.app_q1_a.option_4}
+            />
+            Current Foster Together member
+          </CheckLabel>
+        </Label>
+        {errors?.app_q1_a && touched?.app_q1_a && (
+          <Error>{errors?.app_q1_a}</Error>
+        )}
+      </FormGroup>
+      <FormGroup>
+        <Label>
+          Can you give us the name of the person or platform?
+          <Input id='app_q1_b' name='app_q1_b' placeholder='Your answer here' />
+        </Label>
+      </FormGroup>
+    </>
   )
 }
 
@@ -302,15 +305,14 @@ const RadioThree = ({ values, setFieldValue, errors, touched }) => {
 export default function AppForm() {
   const { push } = useHistory()
   const handleSubmit = values => {
-    // axiosWithAuth()
-    //   .post('/application', values)
-    //   .then(() => {
-    //     push('/userProfile')
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //   })
-    console.log(values)
+    axiosWithAuth()
+      .post('/application', values)
+      .then(() => {
+        push('/userProfile')
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
   return (
     <Page>
