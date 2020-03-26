@@ -22,7 +22,7 @@ You can find the deployed project at [https://app.fostertogether.co/signup](http
 <br>
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
+![React](https://img.shields.io/badge/react-v16.13.0-blue.svg)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ![Code Climate coverage](https://img.shields.io/codeclimate/coverage/Lambda-School-Labs/foster-together-fe)
 
