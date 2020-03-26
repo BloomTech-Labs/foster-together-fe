@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { Link as ReactLink } from 'react-router-dom'
+import { Btn } from '../../../GlobalStyles'
 
 export const Header = styled.header`
-  width: 450px;
+  width: 360px;
   background: #f9f9f9;
   height: 100vh;
   color: #676767;
@@ -59,7 +60,7 @@ export const ContactCard = styled.div`
   display: flex;
 `
 
-export const AppStatus = styled.p`
+export const AppStatus = styled.div`
   margin: 0px 10px 20px 25px;
 `
 
@@ -224,5 +225,29 @@ export const Application = styled.img`
 export const ProfileLabel = styled.label`
   color: red;
   z-index: 1;
-  position: relative; 
+  position: relative;
+`
+export const PseudoLink = styled.p`
+  font-weight: bold;
+  color: ${({ theme: { palette } }) => palette.secondary.main};
+
+  &:hover {
+    color: ${({ theme: { palette } }) => palette.primary.main};
+    cursor: pointer;
+  }
+`
+
+export const BtnContainer = styled.div`
+  width: 300px;
+  margin: 0 auto;
+`
+
+export const Submit = styled(Btn)`
+  width: 10rem;
+  margin: 5%;
+`
+
+export const Approve = styled(Submit)`
+  background: ${({ theme: { palette } }) => palette.secondary.main};
+  color: #fff;
 `
