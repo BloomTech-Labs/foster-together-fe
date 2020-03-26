@@ -16,7 +16,7 @@ import {
   Submit,
 } from '../TrainStyles'
 
-export default function TrainingThreeTwo() {
+export default function TrainingThreeFour() {
   const { push } = useHistory()
 
   const handleSubmit = () => {

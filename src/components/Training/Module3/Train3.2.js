@@ -94,6 +94,7 @@ export default function TrainingThreeTwo(props) {
           <Input id='m3_q2' name='m3_q2' placeholder='Your answer here' />
         </Label>
         <Submit
+          data-testid='next'
           onClick={() => {
             handleSubmit()
             window.scrollTo({ top: 0, behavior: 'smooth' })

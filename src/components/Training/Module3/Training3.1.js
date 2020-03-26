@@ -22,7 +22,7 @@ export default function TrainingThreeOne(props) {
   const handleSubmit = () => {
     props.setModule(1)
   }
-  const { push } = useHistory()
+
   return (
     <>
       <Wrapper>
