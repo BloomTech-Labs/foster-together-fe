@@ -57,7 +57,10 @@ const Profile = () => {
   const changeAppStatus = status => {
     axiosWithAuth()
       .put(`/application/${id}`, { newStatus: status })
-      .then(res => setApp(res.data))
+      .then(res => {
+        setApp(res.data)
+        setAppVisible(false)
+      })
       .catch(err => console.log(err.response.data))
   }
 
