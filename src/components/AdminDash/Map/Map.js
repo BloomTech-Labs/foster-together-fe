@@ -5,9 +5,12 @@ import FamMarker from './FamilyMarker'
 import NeighborMarker from './NeighborMarker'
 import { EggLocations } from './EggLocations'
 import EggMarker from './EggMarker'
+import { getMembers } from '../../../redux/thunks/memThunks'
+import { useSelector, useDispatch } from 'react-redux'
+
+
 
 function Map(props, { latitude, longitude, refresh }) {
-  console.log(process.env)
   const [zoom, setZoom] = useState()
   const [eggStep, setEggStep] = useState(0)
   const [viewport, setViewport] = useState({
@@ -17,10 +20,19 @@ function Map(props, { latitude, longitude, refresh }) {
     width: '60vw',
     height: '100%',
   })
-  const [locations, setLocations] = useState(props.locations)
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log('hi')
+    dispatch(getMembers())
+  }, [dispatch])
+
+  const location = useSelector(state => state.mem)
+
+  const [locations, setLocations] = useState(location.membersArray)
+
+
+  useEffect(() => {
     setLocations(props.locations)
   }, [props])
   return (
@@ -29,7 +41,7 @@ function Map(props, { latitude, longitude, refresh }) {
         width='100%'
         height='100%'
         {...viewport}
-        mapboxApiAccessToken={process.env.Map_Box}
+        mapboxApiAccessToken={process.env.MAP_BOX}
         onViewportChange={viewport => {
           setZoom(viewport.zoom)
           setViewport(viewport)
@@ -38,10 +50,11 @@ function Map(props, { latitude, longitude, refresh }) {
         {locations.map(location => (
           <Marker
             key={location.id}
-            latitude={location.latitude}
-            longitude={location.longitude}
+            latitude={parseInt(location.latitude)}
+            longitude={parseInt(location.longitude)}
           >
-            {location.type === 'neighbor' ? (
+            {location.type === 'neighbors' ? (
+      
               <NeighborMarker
                 setSelected={props.setSelected}
                 selected={props.selected}

@@ -14,7 +14,7 @@ export default function Filter(props) {
   }, [props])
   return (
     <InfoDiv>
-      <UserName>{selected.name} {selected.name !== undefined ? <SmallIcon onClick={() => history.push(`/${selected.type}/${selected.id}`)} src={require('./mapicons/redirect.png')}/> : null} </UserName>
+      <UserName>{selected.first_name} {selected.last_name} {selected.name !== undefined ? <SmallIcon onClick={() => history.push(`/${selected.type}/${selected.id}`)} src={require('./mapicons/redirect.png')}/> : null} </UserName>
       <IconContain><h3>{selected.type}</h3></IconContain>
       <IconContain><Icon src={require('./mapicons/home-building.png')} /><h1>{selected.address}</h1></IconContain>
       <IconContain><Icon src={require('./mapicons/email.png')} /><h1>{selected.email}</h1></IconContain>

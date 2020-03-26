@@ -46,8 +46,8 @@ height: 50px;
 `
 
 export const Buttons = styled.button`
-width: 1.8vw;
-height: 1.8vw;
+width: auto;
+height: auto;
 margin-top: 1%;
 background: white;
 border: none;

@@ -9,11 +9,13 @@ import {
   ButtonContain,
   Label,
 } from './MapStyles'
-import { locations } from './Locations'
 import { Buttons } from './MapStyles'
 
+
 export default function Filter(props) {
-  const [typeSelected, setTypeSelected] = useState('All')
+
+  const locations = props.locations
+  const [typeSelected, setTypeSelected] = useState(null)
   const [matchSelected, setMatchSelected] = useState('All')
   const [points, setPoints] = useState(locations)
   const [completed, setCompleted] = useState('All')
@@ -25,19 +27,25 @@ export default function Filter(props) {
   const handleZipChange = e => {
     setZipSearch(e.target.value)
   }
-  const neighbors = locations.filter(people => people.type === 'neighbor')
-  const families = locations.filter(people => people.type === 'family')
-  const matchedNeighbors = locations.filter(
-    people => people.type === 'neighbor' && people.match === true
+
+useEffect(() => {
+  setTimeout(function(){props.filter([])}, 1000);
+}, [])
+
+
+  const neighborss = locations.filter(people => people.type === 'neighbors')
+  const families = locations.filter(people => people.type === 'families')
+  const matchedNeighborss = locations.filter(
+    people => people.type === 'neighbors' && people.match === true
   )
-  const unmatchedNeighbors = locations.filter(
-    people => people.type === 'neighbor' && people.match === false
+  const unmatchedNeighborss = locations.filter(
+    people => people.type === 'neighbors' && people.match === false
   )
   const matchedFamilies = locations.filter(
-    people => people.type === 'family' && people.match === true
+    people => people.type === 'families' && people.match === true
   )
   const unmatchedFamilies = locations.filter(
-    people => people.type === 'family' && people.match === false
+    people => people.type === 'families' && people.match === false
   )
   const allMatched = locations.filter(people => people.match === true)
   const allUnmatched = locations.filter(people => people.match === false)
@@ -51,11 +59,11 @@ export default function Filter(props) {
   const completeFamilies = families.filter(
     people => people.application === true
   )
-  const completeNeighbors = neighbors.filter(
+  const completeNeighborss = neighborss.filter(
     people => people.application === true
   )
 
-  const uncompleteNeighbors = neighbors.filter(
+  const uncompleteNeighborss = neighborss.filter(
     people => people.application === false
   )
 
@@ -79,8 +87,8 @@ export default function Filter(props) {
       setPoints(allUnmatched)
     }
   }
-  function handleFamily() {
-    setTypeSelected('family')
+  function handleFamilies() {
+    setTypeSelected('families')
     if (matchSelected === 'All') {
       if (completed === false) {
         setPoints(uncompletedFamilies)
@@ -107,31 +115,31 @@ export default function Filter(props) {
       }
     }
   }
-  function handleNeighbor() {
-    setTypeSelected('neighbor')
+  function handleNeighbors() {
+    setTypeSelected('neighbors')
     if (matchSelected === 'All') {
       if (completed === false) {
-        setPoints(uncompleteNeighbors)
+        setPoints(uncompleteNeighborss)
       }
       if (completed === true) {
-        setPoints(completeNeighbors)
+        setPoints(completeNeighborss)
       }
       if (completed === 'All') {
-        setPoints(neighbors)
+        setPoints(neighborss)
       }
     }
     if (matchSelected === true) {
-      setPoints(matchedNeighbors)
+      setPoints(matchedNeighborss)
     }
     if (matchSelected === false) {
       if (completed === 'All') {
-        setPoints(unmatchedNeighbors)
+        setPoints(unmatchedNeighborss)
       }
       if (completed === true) {
-        setPoints(completeNeighbors)
+        setPoints(completeNeighborss)
       }
       if (completed === false) {
-        setPoints(uncompleteNeighbors)
+        setPoints(uncompleteNeighborss)
       }
     }
   }
@@ -148,18 +156,18 @@ export default function Filter(props) {
         setPoints(allUncompleted)
       }
     }
-    if (typeSelected === 'neighbor') {
+    if (typeSelected === 'neighbors') {
       if (completed === 'All') {
-        setPoints(neighbors)
+        setPoints(neighborss)
       }
       if (completed === true) {
-        setPoints(completeNeighbors)
+        setPoints(completeNeighborss)
       }
       if (completed === false) {
-        setPoints(uncompleteNeighbors)
+        setPoints(uncompleteNeighborss)
       }
     }
-    if (typeSelected === 'family') {
+    if (typeSelected === 'families') {
       if (completed === 'All') {
         setPoints(families)
       }
@@ -176,10 +184,10 @@ export default function Filter(props) {
     if (typeSelected === 'All') {
       setPoints(allMatched)
     }
-    if (typeSelected === 'neighbor') {
-      setPoints(matchedNeighbors)
+    if (typeSelected === 'neighbors') {
+      setPoints(matchedNeighborss)
     }
-    if (typeSelected === 'family') {
+    if (typeSelected === 'families') {
       setPoints(matchedFamilies)
     }
   }
@@ -196,18 +204,18 @@ export default function Filter(props) {
         setPoints(allUncompleted)
       }
     }
-    if (typeSelected === 'neighbor') {
+    if (typeSelected === 'neighbors') {
       if (completed === 'All') {
-        setPoints(unmatchedNeighbors)
+        setPoints(unmatchedNeighborss)
       }
       if (completed === true) {
-        setPoints(unmatchedNeighbors)
+        setPoints(unmatchedNeighborss)
       }
       if (completed === false) {
-        setPoints(uncompleteNeighbors)
+        setPoints(uncompleteNeighborss)
       }
     }
-    if (typeSelected === 'family') {
+    if (typeSelected === 'families') {
       if (completed === 'All') {
         setPoints(unmatchedFamilies)
       }
@@ -232,18 +240,18 @@ export default function Filter(props) {
         setPoints(allUnmatched)
       }
     }
-    if (typeSelected === 'neighbor') {
+    if (typeSelected === 'neighbors') {
       if (matchSelected === 'All') {
-        setPoints(neighbors)
+        setPoints(neighborss)
       }
       if (matchSelected === true) {
-        setPoints(matchedNeighbors)
+        setPoints(matchedNeighborss)
       }
       if (matchSelected === false) {
-        setPoints(unmatchedNeighbors)
+        setPoints(unmatchedNeighborss)
       }
     }
-    if (typeSelected === 'family') {
+    if (typeSelected === 'families') {
       if (matchSelected === 'All') {
         setPoints(families)
       }
@@ -261,10 +269,10 @@ export default function Filter(props) {
       if (typeSelected === 'All') {
         setPoints(allCompleted)
       }
-      if (typeSelected === 'neighbor') {
-        setPoints(completeNeighbors)
+      if (typeSelected === 'neighbors') {
+        setPoints(completeNeighborss)
       }
-      if (typeSelected === 'family') {
+      if (typeSelected === 'families') {
         setPoints(completeFamilies)
       }
     }
@@ -272,10 +280,10 @@ export default function Filter(props) {
       if (typeSelected === 'All') {
         setPoints(allMatched)
       }
-      if (typeSelected === 'neighbor') {
-        setPoints(matchedNeighbors)
+      if (typeSelected === 'neighbors') {
+        setPoints(matchedNeighborss)
       }
-      if (typeSelected === 'family') {
+      if (typeSelected === 'families') {
         setPoints(matchedFamilies)
       }
     }
@@ -283,10 +291,10 @@ export default function Filter(props) {
       if (typeSelected === 'All') {
         setPoints(allUnmatched)
       }
-      if (typeSelected === 'neighbor') {
-        setPoints(unmatchedNeighbors)
+      if (typeSelected === 'neighbors') {
+        setPoints(unmatchedNeighborss)
       }
-      if (typeSelected === 'family') {
+      if (typeSelected === 'families') {
         setPoints(unmatchedFamilies)
       }
     }
@@ -296,10 +304,10 @@ export default function Filter(props) {
     if (typeSelected === 'All') {
       setPoints(allUncompleted)
     }
-    if (typeSelected === 'neighbor') {
-      setPoints(uncompleteNeighbors)
+    if (typeSelected === 'neighbors') {
+      setPoints(uncompleteNeighborss)
     }
-    if (typeSelected === 'family') {
+    if (typeSelected === 'families') {
       setPoints(uncompletedFamilies)
     }
   }
@@ -309,7 +317,7 @@ export default function Filter(props) {
 
   useEffect(() => {
     setPoints(
-      locations.filter(people => people.name.toLowerCase().includes(search))
+      locations.filter(people => (people.first_name).toLowerCase().includes(search) || (people.last_name).toLowerCase().includes(search))
     )
   }, [search])
 
@@ -349,22 +357,22 @@ export default function Filter(props) {
         <ButtonContain>
           <Buttons
             selected={typeSelected}
-            current='family'
+            current='families'
             onClick={() => {
-              handleFamily()
+              handleFamilies()
             }}
           >X</Buttons>
-          <Label> Family </Label>
+          <Label> Families </Label>
         </ButtonContain>
         <ButtonContain>
           <Buttons
             selected={typeSelected}
-            current='neighbor'
+            current='neighbors'
             onClick={() => {
-              handleNeighbor()
+              handleNeighbors()
             }}
           > X </Buttons>
-          <Label>neighbor</Label>
+          <Label>neighbors</Label>
         </ButtonContain>
       </ButtonHolder>
 
