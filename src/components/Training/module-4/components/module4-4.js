@@ -21,8 +21,10 @@ import {
   Span,
   BigLink,
 } from './styles'
+import { useHistory } from 'react-router-dom'
 
 export const Module44 = ({ handleBack }) => {
+  const { push } = useHistory()
   return (
     <>
       <Header>
@@ -129,7 +131,14 @@ export const Module44 = ({ handleBack }) => {
           </MainContent7>
         </NewSection>
         <BigInput placeholder='Your Answer Here' />
-        <Submit>Submit</Submit>
+        <Submit
+          onClick={() => {
+            push('./module5')
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }}
+        >
+          Submit
+        </Submit>
       </Page>
     </>
   )

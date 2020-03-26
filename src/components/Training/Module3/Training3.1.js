@@ -18,6 +18,7 @@ import {
 import { useHistory } from 'react-router-dom'
 
 export default function TrainingThreeOne(props) {
+  const { push } = useHistory()
   const handleSubmit = () => {
     props.setModule(1)
   }
@@ -181,6 +182,7 @@ export default function TrainingThreeOne(props) {
           <Submit
             onClick={() => {
               handleSubmit()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
           >
             Continue

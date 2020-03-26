@@ -137,6 +137,7 @@ export const Submit = styled(Btn)`
   width: 22rem;
   background: ${({ theme: { palette } }) => palette.primary.main};
   color: #fff;
+  margin: 5%;
 `
 
 // end shared styles
@@ -191,7 +192,7 @@ export const TitleContainer = styled.div`
 `
 
 export const Circle = styled.div`
-  width: 3%;
+  width: 50px;
   display: flex;
   margin-bottom: -25px;
   justify-content: center;

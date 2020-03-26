@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import {
   Input,
   InputBox,
@@ -71,11 +72,12 @@ const Buttons = () => {
 }
 
 const LoginInputs = () => {
+  const { push } = useHistory()
   const dispatch = useDispatch()
   return (
     <Formik
       initialValues={{ email: '', password: '' }}
-      onSubmit={values => dispatch(login(values))}
+      onSubmit={values => dispatch(login(values, push))}
     >
       <InputContainer>
         <EmailInput />
