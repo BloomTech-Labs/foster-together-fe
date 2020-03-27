@@ -57,7 +57,10 @@ const Profile = () => {
   const changeAppStatus = status => {
     axiosWithAuth()
       .put(`/application/${id}`, { newStatus: status })
-      .then(res => setApp(res.data))
+      .then(res => {
+        setApp(res.data)
+        setAppVisible(false)
+      })
       .catch(err => console.log(err.response.data))
   }
 
@@ -71,10 +74,12 @@ const Profile = () => {
             <ContentTitle>Application Progress</ContentTitle>
             <AppStatus>
               <p>
-                {app?.app_status === 1
+                {selectedMember.type === 'families'
+                  ? `${selectedMember.first_name}'s training needs to be completed.`
+                  : app?.app_status === 1
                   ? `${selectedMember.first_name}'s application needs to be approved.`
                   : app?.app_status === 2
-                  ? `${selectedMember.first_name}'s application has been approved.`
+                  ? `${selectedMember.first_name}'s application has been approved, and a background check needs to be completed.`
                   : app?.app_status === 3
                   ? `${selectedMember.first_name}'s application has been denied.`
                   : null}

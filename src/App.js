@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import { GlobalStyle } from './GlobalStyles'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
@@ -29,9 +29,12 @@ function App() {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <Route exact path='/'>
+          <Redirect to='/login' />
+        </Route>
         <Route path='/application' component={Application} />
         <Route path='/training' component={Training} />
-        <Route exact path='/' component={LoginForm} />
+        <Route exact path='/login' component={LoginForm} />
         <Route exact path='/signup' component={SignUp} />
         <PrivateRoute exact path='/dashboard' component={AdminDash} />
         <PrivateRoute path='/:membertype/:id' component={Profile} />
