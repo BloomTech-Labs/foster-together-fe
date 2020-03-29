@@ -47,7 +47,7 @@ const Profile = () => {
     axiosWithAuth()
       .get(`/application/${id}`)
       .then(res => setApp(res.data))
-      .catch(err => console.log(err))
+      .catch(err => console.log(err.response.data))
   }, [dispatch, id])
 
   const viewApp = () => {
