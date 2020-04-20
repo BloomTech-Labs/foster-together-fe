@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Formik, Form as FormikForm } from 'formik'
 import NavBar from '../TrainingNav/NavBar'
-import TrainingThreeOne from './Training3.1'
-import TrainingThreeTwo from './Train3.2'
-import TrainingThreeThree from './Train3.3'
-import TrainingThreeFour from './Train3.4'
+import Module31 from './module3-1'
+import Module32 from './module3-2'
+import Module33 from './module3-3'
+import Module34 from './module3-4'
 
 const initialValues = {
   m3_q1: '',
@@ -19,13 +19,13 @@ function Overlay(props) {
   const { push } = useHistory()
   switch (props.module) {
     case 0:
-      return <TrainingThreeOne {...props} />
+      return <Module31 {...props} />
     case 1:
-      return <TrainingThreeTwo {...props} />
+      return <Module32 {...props} />
     case 2:
-      return <TrainingThreeThree {...props} />
+      return <Module33 {...props} />
     case 3:
-      return <TrainingThreeFour {...props} />
+      return <Module34 {...props} />
     default:
       push('/')
   }

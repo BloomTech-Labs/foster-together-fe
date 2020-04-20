@@ -17,7 +17,7 @@ import {
 } from '../TrainStyles'
 import { useHistory } from 'react-router-dom'
 
-export default function TrainingThreeOne(props) {
+export default function Module31(props) {
   const { push } = useHistory()
   const handleSubmit = () => {
     props.setModule(1)
