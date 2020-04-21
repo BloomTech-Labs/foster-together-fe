@@ -344,17 +344,6 @@ export default function Filter(props) {
         <ButtonContain>
           <Buttons
             selected={typeSelected}
-            current="All"
-            onClick={() => {
-              handleAll();
-            }}
-            checked="checked"
-          ></Buttons>
-          <Label>Both</Label>
-        </ButtonContain>
-        <ButtonContain>
-          <Buttons
-            selected={typeSelected}
             current="families"
             onClick={() => {
               handleFamilies();
@@ -372,22 +361,23 @@ export default function Filter(props) {
           ></Buttons>
           <Label>Neighbor</Label>
         </ButtonContain>
+        <ButtonContain>
+          <Buttons
+            selected={typeSelected}
+            current="All"
+            onClick={() => {
+              handleAll();
+            }}
+            checked="checked"
+          ></Buttons>
+          <Label>Both</Label>
+        </ButtonContain>
       </ButtonHolder>
 
       <ButtonHolder>
         <HeaderHolder>
           <Header>Match Status</Header>
         </HeaderHolder>
-        <ButtonContain>
-          <Buttons
-            selected={matchSelected}
-            current="All"
-            onClick={() => {
-              handleAllMatch();
-            }}
-          ></Buttons>
-          <Label>Both</Label>
-        </ButtonContain>
         <ButtonContain>
           <Buttons
             selected={matchSelected}
@@ -407,6 +397,16 @@ export default function Filter(props) {
             }}
           ></Buttons>
           <Label>Not Matched</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
+            selected={matchSelected}
+            current="All"
+            onClick={() => {
+              handleAllMatch();
+            }}
+          ></Buttons>
+          <Label>Both</Label>
         </ButtonContain>
       </ButtonHolder>
     </FilterDiv>
