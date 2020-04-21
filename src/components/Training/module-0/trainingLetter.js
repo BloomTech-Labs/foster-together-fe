@@ -9,6 +9,7 @@ import {
   Circle,
   LetterCircle,
   LetterText,
+ 
 } from '../TrainStyles'
 import next from '../TrainingIcons/next.png'
 import TrainingNav from '../TrainingNav/NavBar'
@@ -19,7 +20,7 @@ function LetterTitle() {
     <Title>
       <BackArrow
         onClick={() => {
-          push('/module0')
+          push('/modulestartcontinued')
         }}
       />
       A letter of gratitude
@@ -120,11 +121,12 @@ const LetterContext = () => {
   )
 }
 
-const ModuleLetter = () => {
+const ModuleStart = () => {
   const { push } = useHistory()
   return (
     <>
       <TrainingNav />
+   
       <Wrapper>
         <LetterTitle />
         <Page>
@@ -134,7 +136,7 @@ const ModuleLetter = () => {
           <LetterCircle>
             <Circle
               onClick={() => {
-                push('/module0')
+                push('/modulestartcontinued')
                 window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
             >
@@ -148,4 +150,4 @@ const ModuleLetter = () => {
   )
 }
 
-export default ModuleLetter
+export default ModuleStart

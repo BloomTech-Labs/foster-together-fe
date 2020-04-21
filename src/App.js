@@ -11,7 +11,7 @@ import AdminDash from './components/AdminDash/AdminDashboard'
 import Profile from './components/AdminDash/Profile/Profile'
 import Application from './components/signUpForm/Application/Application'
 import Training from './components/Training/module-3/TrainingOverlay'
-import ModuleLetter from './components/Training/module-0/trainingLetter'
+import ModuleStart from './components/Training/module-0/trainingLetter'
 import Module11 from './components/Training/module-1/module1-1'
 import Module12 from './components/Training/module-1/module1-2'
 import ModuleTwo from './components/Training/module-2'
@@ -19,6 +19,10 @@ import ModuleThree from './components/Training/module-3/TrainingOverlay'
 import ModuleFour from './components/Training/module-4'
 import ModuleFive from './components/Training/module-5/module5-1'
 import UserProfile from './components/AdminDash/Profile/User/UserProfile'
+
+import DennisBar from './components/Training/progressBarPlayground/DennisBar'
+import ProgressBar from './components/Training/progressBarPlayground/ProgressBar'
+import StacyBar from './components/Training/progressBarPlayground/stacy-example/progressBar'
 
 function App() {
   useEffect(() => {
@@ -38,14 +42,20 @@ function App() {
         <Route exact path='/signup' component={SignUp} />
         <PrivateRoute exact path='/dashboard' component={AdminDash} />
         <PrivateRoute path='/:membertype/:id' component={Profile} />
-        <Route path='/module0' component={Module11} />
-        <Route path='/modulestart' component={ModuleLetter} />
+        <Route path='/modulestart' component={ModuleStart} />
+        <Route path='/modulestartcontinued' component={Module11} />
         <Route path='/module1' component={Module12} />
         <Route path='/module2' component={ModuleTwo} />
         <Route path='/module3' component={ModuleThree} />
         <Route path='/module4' component={ModuleFour} />
         <Route path='/module5' component={ModuleFive} />
         <Route path='/userProfile' component={UserProfile} />
+
+        {/* testing */}
+        <Route path='/testing' component={DennisBar} />
+        <Route path='/testing2' component={ProgressBar} />
+        <Route path='/testing3' component={StacyBar} />
+
       </ThemeProvider>
     </>
   )

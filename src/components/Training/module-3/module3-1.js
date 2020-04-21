@@ -14,6 +14,7 @@ import {
   Label,
   Input,
   Submit,
+  TrainingModuleOverlay,
 } from '../TrainStyles'
 import { useHistory } from 'react-router-dom'
 

@@ -12,12 +12,15 @@ import {
   TestText,
   Submit,
   Half,
+  TrainingModuleOverlay,
 } from '../TrainStyles'
 import Player from 'react-player'
+import DennisBar from '../progressBarPlayground/DennisBar.js'
 
 function TitleWrapper() {
   const { push } = useHistory()
   return (
+
     <Title>
       <BackArrow
         onClick={() => {
@@ -99,6 +102,8 @@ const Module11 = () => {
   return (
     <>
       <TrainingNav />
+      <DennisBar />
+      <TrainingModuleOverlay/>
       <Wrapper>
         <TitleWrapper />
         <VideoPlayer />

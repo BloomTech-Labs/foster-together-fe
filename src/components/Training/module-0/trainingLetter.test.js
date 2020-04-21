@@ -1,6 +1,6 @@
 import React from 'react'
 import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
-import ModuleLetter from './trainingLetter'
+import ModuleStart from './trainingLetter'
 import {
   MainContent,
   img,
@@ -11,12 +11,12 @@ import {
 } from '../TrainStyles'
 import TrainingNav from '../TrainingNav/NavBar'
 
-test('ModuleLetter', async () => {
-  render(<ModuleLetter />)
+test('ModuleStart', async () => {
+  render(<ModuleStart />)
 })
 
 test('text is renderer', () => {
-  const { findByDisplayValue } = render(<ModuleLetter />)
+  const { findByDisplayValue } = render(<ModuleStart />)
   findByDisplayValue(<MainContent />, <TrainingNav />, <Letter />)
   findByDisplayValue({ img })
 })

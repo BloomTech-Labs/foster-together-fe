@@ -1,24 +1,40 @@
 import React from 'react'
+import { TrainingModuleOverlay,} from '../TrainStyles'
 
 export default function ModuleOverlay() {
     return (
+        <TrainingModuleOverlay> 
         <div className='moduleContainer'>
-            <span>
-                Module 1
-            </span>
-            <span>
-                Module 2
-            </span>
-            <span>
-                Module 3
-            </span>
-            <span>
-                Module 4
-            </span>
-            <span>
-                Module 5
-            </span>
-
+            <div>
+                <h3>Module 1</h3>
+                <div />
+                <div />
+            </div>
+            <div>
+           <h3>Module 2</h3>
+                <div />
+                <div />
+                <div />
+            </div>
+            <div>
+                <h3>Module 3</h3>
+                <div />
+                <div />
+                <div />
+                <div />
+            </div>
+            <div>
+                <h3>Module 4</h3>
+                <div />
+                <div />
+                <div />
+                <div />
+            </div>
+            <div>
+                <h3>Module 5</h3>
+                <div />
+            </div>
         </div>
+        </TrainingModuleOverlay> 
     )
 }

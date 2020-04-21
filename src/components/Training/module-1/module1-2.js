@@ -17,6 +17,7 @@ import {
   Error,
   Submit,
   Div,
+  TrainingModuleOverlay,
 } from '../TrainStyles'
 import Stepper from '../TrainingStepper'
 
@@ -209,6 +210,8 @@ function Module12() {
   return (
     <>
       <TrainingNav />
+      <TrainingModuleOverlay/>
+     
       <Wrapper>
         <TitleWrapper />
         <Context />
