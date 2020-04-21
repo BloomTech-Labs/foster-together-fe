@@ -92,15 +92,18 @@ export const SmallIcon = styled.img`
 
 export const FilterInput = styled.input`
   font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
-  width: 100%;
-  border: 0;
+  position: absolute;
+  z-index: 1;
+  left: 340px;
+  border: 1px solid #3a6e79;
+  border-radius: 3px;
   background-color: #fff;
   margin: 0;
   color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
-  width: 180px;
+  width: 280px;
 `;
 /* ================================================================================================================ */
 /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ Above is for MapFilter component ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
