@@ -28,7 +28,7 @@ export const MapContain = styled.div`
 export const FilterDiv = styled.div`
   width: 15vw;
   height: 92.5vh;
-  padding: 3vh 2vw;
+  padding: 3vh 0.5vw 0 3vw;
   background-color: #f9f9f9;
   color: #375762;
 `;
@@ -51,9 +51,14 @@ export const ButtonHolder = styled.div`
 `;
 
 export const Header = styled.h2`
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin: 0;
   color: #757575;
+`;
+
+export const Label = styled.p`
+  font-size: 1.3rem;
+  margin-left: 10%;
 `;
 
 export const Image = styled.img`
@@ -79,11 +84,6 @@ export const ButtonContain = styled.div`
   width: 100%;
 `;
 
-export const Label = styled.p`
-  font-size: 1.6rem;
-  margin-left: 10%;
-`;
-
 export const SmallIcon = styled.img`
   width: 20px;
   position: relative;
@@ -106,6 +106,8 @@ export const InfoContainer = styled.div`
 
 export const InfoDiv = styled.div`
   padding: 7.5vh 2vw;
+  white-space: nowrap;
+  overflow: auto;
 `;
 
 export const UserName = styled.div`
@@ -128,7 +130,6 @@ export const IconContain = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  font-size: 1.2rem;
   margin: 0px 0px 20px 0px;
 `;
 
@@ -139,6 +140,7 @@ export const SubInfoContainer = styled.div`
 export const InfoText = styled.p`
   margin: 0px 0px 20px 9px;
   color: #676767;
+  font-size: 1.2rem;
 `;
 
 export const Icon = styled.img`
