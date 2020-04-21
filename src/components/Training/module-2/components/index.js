@@ -1,6 +1,6 @@
 import { SimpleStep } from './SimpleStep'
-import { FiveSteps } from './FiveSteps'
-import { BestPractices } from './BestPractices'
-import { MealTips } from './MealTips'
+import { Module21 } from './module2-1'
+import { Module22 } from './module2-2'
+import { Module23 } from './module2-3'
 
-export { SimpleStep, FiveSteps, BestPractices, MealTips }
+export { SimpleStep, Module21, Module22, Module23 }

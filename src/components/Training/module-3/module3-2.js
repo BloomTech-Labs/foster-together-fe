@@ -14,7 +14,7 @@ import {
 } from '../TrainStyles'
 import { Indented } from './TrainStyle'
 
-export default function TrainingThreeTwo(props) {
+export default function Module32(props) {
   const handleSubmit = () => {
     props.setModule(2)
   }

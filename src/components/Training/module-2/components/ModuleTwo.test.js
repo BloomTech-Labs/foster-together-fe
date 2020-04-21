@@ -2,9 +2,9 @@ import React from 'react'
 import { renderWithReduxAndRouter as render } from '../../../../utils/testHelpers'
 import { Formik, Form } from 'formik'
 import ModuleTwo from '..'
-import { BestPractices } from './BestPractices'
+import { Module22 } from './Module22'
 import { Checkbox, FormGroup, CheckLabel } from '../styles'
-import { MealTips, Survey } from './MealTips'
+import { Module23, Survey } from './module2-3'
 import { fireEvent } from '@testing-library/react'
 
 const initialValues = {
@@ -37,7 +37,7 @@ test('Best Practices is rendered', async () => {
     <Formik initialValues={initialValues}>
       {props => (
         <Form>
-          <BestPractices {...props} />
+          <Module22 {...props} />
         </Form>
       )}
     </Formik>
@@ -49,7 +49,7 @@ test('Radio button', () => {
     <Formik initialValues={initialValues}>
       {props => (
         <Form>
-          <MealTips {...props} />
+          <Module23 {...props} />
         </Form>
       )}
     </Formik>

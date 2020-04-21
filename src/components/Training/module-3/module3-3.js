@@ -16,7 +16,7 @@ import {
   Submit,
 } from '../TrainStyles'
 
-export default function TrainingThreeThree(props) {
+export default function Module33(props) {
   const handleSubmit = () => {
     props.setModule(3)
   }
