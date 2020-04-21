@@ -7,7 +7,7 @@ import {
   HeaderHolder,
   Input,
   ButtonContain,
-  Label,
+  Label
 } from "./MapStyles";
 import { Buttons } from "./MapStyles";
 
@@ -19,53 +19,51 @@ export default function Filter(props) {
   const [completed, setCompleted] = useState("All");
   const [search, setSearch] = useState("");
   const [zipSearch, setZipSearch] = useState("");
-  const handleChange = (e) => {
-    setSearch(e.target.value);
+  const handleChange = e => {
+    setSearch(e.target.value.trim().toLowerCase());
   };
-  const handleZipChange = (e) => {
+  const handleZipChange = e => {
     setZipSearch(e.target.value);
   };
 
   useEffect(() => {
-    setTimeout(function () {
+    setTimeout(function() {
       props.filter([]);
     }, 1000);
   }, []);
 
-  const neighborss = locations.filter((people) => people.type === "neighbors");
-  const families = locations.filter((people) => people.type === "families");
+  const neighborss = locations.filter(people => people.type === "neighbors");
+  const families = locations.filter(people => people.type === "families");
   const matchedNeighborss = locations.filter(
-    (people) => people.type === "neighbors" && people.match === true
+    people => people.type === "neighbors" && people.match === true
   );
   const unmatchedNeighborss = locations.filter(
-    (people) => people.type === "neighbors" && people.match === false
+    people => people.type === "neighbors" && people.match === false
   );
   const matchedFamilies = locations.filter(
-    (people) => people.type === "families" && people.match === true
+    people => people.type === "families" && people.match === true
   );
   const unmatchedFamilies = locations.filter(
-    (people) => people.type === "families" && people.match === false
+    people => people.type === "families" && people.match === false
   );
-  const allMatched = locations.filter((people) => people.match === true);
-  const allUnmatched = locations.filter((people) => people.match === false);
-  const allCompleted = locations.filter(
-    (people) => people.application === true
-  );
+  const allMatched = locations.filter(people => people.match === true);
+  const allUnmatched = locations.filter(people => people.match === false);
+  const allCompleted = locations.filter(people => people.application === true);
   const allUncompleted = locations.filter(
-    (people) => people.application === false
+    people => people.application === false
   );
   const uncompletedFamilies = families.filter(
-    (people) => people.application === false
+    people => people.application === false
   );
   const completeFamilies = families.filter(
-    (people) => people.application === true
+    people => people.application === true
   );
   const completeNeighborss = neighborss.filter(
-    (people) => people.application === true
+    people => people.application === true
   );
 
   const uncompleteNeighborss = neighborss.filter(
-    (people) => people.application === false
+    people => people.application === false
   );
 
   function handleAll() {
@@ -319,7 +317,7 @@ export default function Filter(props) {
   useEffect(() => {
     setPoints(
       locations.filter(
-        (people) =>
+        people =>
           people.first_name.toLowerCase().includes(search) ||
           people.last_name.toLowerCase().includes(search)
       )
@@ -329,13 +327,20 @@ export default function Filter(props) {
   useEffect(() => {
     if (zipSearch.length === 5) {
       setPoints(
-        locations.filter((people) => people.zip.toString().includes(zipSearch))
+        locations.filter(people => people.zip.toString().includes(zipSearch))
       );
     }
   }, [zipSearch || matchSelected || typeSelected]);
 
   return (
     <FilterDiv>
+      <input
+        onChange={handleChange}
+        id="id"
+        type="text"
+        name="filter"
+        placeholder="Filter..."
+      />
       <ButtonHolder>
         <HeaderHolder>
           <Image src={require("./mapicons/Member.svg")} />
