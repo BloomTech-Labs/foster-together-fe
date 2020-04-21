@@ -36,7 +36,7 @@ export const FilterDiv = styled.div`
 export const Buttons = styled.button`
   width: 16px;
   height: 16px;
-  background: ${props =>
+  background: ${(props) =>
     props.selected === props.current ? "#375762" : "white"};
   border: none;
   font-size: 1.4rem;
@@ -58,7 +58,7 @@ export const Header = styled.h2`
 
 export const Label = styled.p`
   font-size: 1.3rem;
-  margin-left: 10%;
+  margin-left: 6px;
 `;
 
 export const Image = styled.img`
