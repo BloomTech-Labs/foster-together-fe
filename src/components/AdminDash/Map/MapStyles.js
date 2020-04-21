@@ -36,7 +36,7 @@ export const FilterDiv = styled.div`
 export const Buttons = styled.button`
   width: 16px;
   height: 16px;
-  background: ${(props) =>
+  background: ${props =>
     props.selected === props.current ? "#375762" : "white"};
   border: none;
   font-size: 1.4rem;
@@ -88,6 +88,19 @@ export const SmallIcon = styled.img`
   width: 20px;
   position: relative;
   top: -20px;
+`;
+
+export const FilterInput = styled.input`
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 0;
+  background-color: #fff;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  width: 180px;
 `;
 /* ================================================================================================================ */
 /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ Above is for MapFilter component ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
@@ -147,6 +160,7 @@ export const Icon = styled.img`
   width: 16px;
   height: 16px;
 `;
+
 /* ===================================================================================================================== */
 /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ Above is for the PersonInfo component ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
 /* ===================================================================================================================== */
