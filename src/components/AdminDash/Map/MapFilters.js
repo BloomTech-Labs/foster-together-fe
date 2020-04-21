@@ -7,7 +7,8 @@ import {
   HeaderHolder,
   Input,
   ButtonContain,
-  Label
+  Label,
+  FilterInput
 } from "./MapStyles";
 import { Buttons } from "./MapStyles";
 
@@ -319,7 +320,10 @@ export default function Filter(props) {
       locations.filter(
         people =>
           people.first_name.toLowerCase().includes(search) ||
-          people.last_name.toLowerCase().includes(search)
+          people.last_name.toLowerCase().includes(search) ||
+          people.address.toLowerCase().includes(search) ||
+          people.email.toLowerCase().includes(search) ||
+          people.phone.toLowerCase().includes(search)
       )
     );
   }, [search]);
@@ -334,12 +338,12 @@ export default function Filter(props) {
 
   return (
     <FilterDiv>
-      <input
+      <FilterInput
         onChange={handleChange}
         id="id"
         type="text"
         name="filter"
-        placeholder="Filter..."
+        placeholder="Search"
       />
       <ButtonHolder>
         <HeaderHolder>
