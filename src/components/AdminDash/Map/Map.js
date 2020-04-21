@@ -17,7 +17,7 @@ function Map(props, { latitude, longitude, refresh }) {
     longitude: -104.7,
     zoom: 11,
     width: "100%",
-    height: "100%"
+    height: "100%",
   });
 
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function Map(props, { latitude, longitude, refresh }) {
     dispatch(getMembers());
   }, [dispatch]);
 
-  const location = useSelector(state => state.mem);
+  const location = useSelector((state) => state.mem);
 
   const [locations, setLocations] = useState(location.membersArray);
 
@@ -40,12 +40,12 @@ function Map(props, { latitude, longitude, refresh }) {
         height="100%"
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        onViewportChange={viewport => {
+        onViewportChange={(viewport) => {
           setZoom(viewport.zoom);
           setViewport(viewport);
         }}
       >
-        {locations.map(location => (
+        {locations.map((location) => (
           <Marker
             key={location.id}
             latitude={parseInt(location.latitude)}
