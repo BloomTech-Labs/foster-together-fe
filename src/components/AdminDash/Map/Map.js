@@ -16,7 +16,7 @@ function Map(props, { latitude, longitude, refresh }) {
     latitude: 40,
     longitude: -104.7,
     zoom: 11,
-    width: "60vw",
+    width: "100%",
     height: "100%"
   });
 

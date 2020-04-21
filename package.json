@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.11",
     "@reduxjs/toolkit": "^1.2.5",
     "@sentry/browser": "^5.12.4",
     "animate-components": "^1.4.8",
