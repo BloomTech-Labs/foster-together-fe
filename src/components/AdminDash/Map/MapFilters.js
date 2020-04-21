@@ -7,17 +7,9 @@ import {
   HeaderHolder,
   Input,
   ButtonContain,
-  Label
+  Label,
 } from "./MapStyles";
 import { Buttons } from "./MapStyles";
-
-// Materiaul UI Style
-
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
 
 export default function Filter(props) {
   const locations = props.locations;
@@ -27,68 +19,53 @@ export default function Filter(props) {
   const [completed, setCompleted] = useState("All");
   const [search, setSearch] = useState("");
   const [zipSearch, setZipSearch] = useState("");
-  const handleChange = e => {
+  const handleChange = (e) => {
     setSearch(e.target.value);
   };
-  const handleZipChange = e => {
+  const handleZipChange = (e) => {
     setZipSearch(e.target.value);
   };
 
   useEffect(() => {
-    setTimeout(function() {
+    setTimeout(function () {
       props.filter([]);
     }, 1000);
   }, []);
 
-  // Materiaul UI Radio BUtton
-
-  const [value, setValue] = useState("");
-
-  const handleRadioChange = event => {
-    setValue(event.target.value);
-  };
-
-  // const styles = theme => ({
-  //   radio: {
-  //     '&$checked': {
-  //       color: '#4B8DF8'
-  //     }
-  //   },
-  //   checked: {}
-  // })
-
-  const neighborss = locations.filter(people => people.type === "neighbors");
-  const families = locations.filter(people => people.type === "families");
+  const neighborss = locations.filter((people) => people.type === "neighbors");
+  const families = locations.filter((people) => people.type === "families");
   const matchedNeighborss = locations.filter(
-    people => people.type === "neighbors" && people.match === true
+    (people) => people.type === "neighbors" && people.match === true
   );
   const unmatchedNeighborss = locations.filter(
-    people => people.type === "neighbors" && people.match === false
+    (people) => people.type === "neighbors" && people.match === false
   );
   const matchedFamilies = locations.filter(
-    people => people.type === "families" && people.match === true
+    (people) => people.type === "families" && people.match === true
   );
   const unmatchedFamilies = locations.filter(
-    people => people.type === "families" && people.match === false
+    (people) => people.type === "families" && people.match === false
   );
-  const allMatched = locations.filter(people => people.match === true);
-  const allUnmatched = locations.filter(people => people.match === false);
-  const allCompleted = locations.filter(people => people.application === true);
+  const allMatched = locations.filter((people) => people.match === true);
+  const allUnmatched = locations.filter((people) => people.match === false);
+  const allCompleted = locations.filter(
+    (people) => people.application === true
+  );
   const allUncompleted = locations.filter(
-    people => people.application === false
+    (people) => people.application === false
   );
   const uncompletedFamilies = families.filter(
-    people => people.application === false
+    (people) => people.application === false
   );
   const completeFamilies = families.filter(
-    people => people.application === true
+    (people) => people.application === true
   );
   const completeNeighborss = neighborss.filter(
-    people => people.application === true
+    (people) => people.application === true
   );
 
   const uncompleteNeighborss = neighborss.filter(
-    people => people.application === false
+    (people) => people.application === false
   );
 
   function handleAll() {
@@ -342,7 +319,7 @@ export default function Filter(props) {
   useEffect(() => {
     setPoints(
       locations.filter(
-        people =>
+        (people) =>
           people.first_name.toLowerCase().includes(search) ||
           people.last_name.toLowerCase().includes(search)
       )
@@ -352,7 +329,7 @@ export default function Filter(props) {
   useEffect(() => {
     if (zipSearch.length === 5) {
       setPoints(
-        locations.filter(people => people.zip.toString().includes(zipSearch))
+        locations.filter((people) => people.zip.toString().includes(zipSearch))
       );
     }
   }, [zipSearch || matchSelected || typeSelected]);
@@ -360,179 +337,127 @@ export default function Filter(props) {
   return (
     <FilterDiv>
       <ButtonHolder>
-        <Header> Search by Name</Header>
-        <Input value={search} onChange={handleChange} />
-      </ButtonHolder>
-      <ButtonHolder>
-        <Header> Search by Zip</Header>
-        <Input value={zipSearch} onChange={handleZipChange} />
-      </ButtonHolder>
-      <HeaderHolder>
-        <Image src={require("./mapicons/Member.svg")} />
-        <Header>Member Type</Header>
-      </HeaderHolder>
-      <FormControl component="fieldset">
-        <RadioGroup
-          aria-label="member"
-          name="membertype"
-          value={value}
-          onChange={handleRadioChange}
-        >
-          <FormControlLabel
+        <HeaderHolder>
+          <Image src={require("./mapicons/Member.svg")} />
+          <Header>Member Type</Header>
+        </HeaderHolder>
+        <ButtonContain>
+          <Buttons
             selected={typeSelected}
             current="All"
             onClick={() => {
               handleAll();
             }}
-            value="all"
-            control={<Radio />}
-            label="All"
-          />
-          <FormControlLabel
+            checked="checked"
+          ></Buttons>
+          <Label>Both</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
             selected={typeSelected}
             current="families"
             onClick={() => {
               handleFamilies();
             }}
-            value="family"
-            control={<Radio />}
-            label="Families"
-          />
-          <FormControlLabel
+          ></Buttons>
+          <Label>Parent</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
             selected={typeSelected}
             current="neighbors"
             onClick={() => {
               handleNeighbors();
             }}
-            value="neighbor"
-            control={<Radio />}
-            label="Neighbor"
-          />
-        </RadioGroup>
-      </FormControl>
+          ></Buttons>
+          <Label>Neighbor</Label>
+        </ButtonContain>
+      </ButtonHolder>
 
-      <FormLabel component="legend" color="primary">
-        Background Check
-      </FormLabel>
-      <RadioGroup
-        aria-label="backcheck"
-        name="backcheck"
-        value={value}
-        onChange={handleRadioChange}
-      >
-        <FormControlLabel
-          selected={completed}
-          current="All"
-          onClick={() => {
-            handleAllCompleted();
-          }}
-          value="allapp"
-          control={<Radio />}
-          label="All"
-        />
-        <FormControlLabel
-          selected={completed}
-          current={true}
-          onClick={() => {
-            handleCompleted();
-          }}
-          value="completed"
-          control={<Radio />}
-          label="Completed"
-        />
-        <FormControlLabel
-          selected={completed}
-          current={false}
-          onClick={() => {
-            handleUncompleted();
-          }}
-          value="incomplete"
-          control={<Radio />}
-          label="Incomplete"
-        />
-      </RadioGroup>
-
-      <FormLabel component="legend" color="primary">
-        Match Status
-      </FormLabel>
-      <RadioGroup
-        aria-label="gender"
-        name="gender1"
-        value={value}
-        onChange={handleRadioChange}
-      >
-        <FormControlLabel
-          selected={matchSelected}
-          current="All"
-          onClick={() => {
-            handleAllMatch();
-          }}
-          value="allmatch"
-          control={<Radio />}
-          label="All"
-        />
-        <FormControlLabel
-          selected={matchSelected}
-          current={true}
-          onClick={() => {
-            handleMatched();
-          }}
-          value="matched"
-          control={<Radio />}
-          label="Matched"
-        />
-        <FormControlLabel
-          selected={matchSelected}
-          current={false}
-          onClick={() => {
-            handleUnmatched();
-          }}
-          value="unmatched"
-          control={<Radio />}
-          label="Unmatched"
-        />{" "}
-      </RadioGroup>
-
-      <FormLabel component="legend" color="primary" font-size="14px">
-        App Status
-      </FormLabel>
-      <RadioGroup
-        aria-label="gender"
-        name="gender1"
-        value={value}
-        onChange={handleRadioChange}
-      >
-        <FormControlLabel
-          selected={completed}
-          current="All"
-          onClick={() => {
-            handleAllCompleted();
-          }}
-          value="allapp"
-          control={<Radio />}
-          label="All"
-        />
-        <FormControlLabel
-          selected={completed}
-          current={true}
-          onClick={() => {
-            handleCompleted();
-          }}
-          value="completed"
-          control={<Radio />}
-          label="Completed"
-        />
-        <FormControlLabel
-          selected={completed}
-          current={false}
-          onClick={() => {
-            handleUncompleted();
-          }}
-          value="incomplete"
-          control={<Radio />}
-          label="Incomplete"
-        />{" "}
-      </RadioGroup>
+      <ButtonHolder>
+        <HeaderHolder>
+          <Header>Match Status</Header>
+        </HeaderHolder>
+        <ButtonContain>
+          <Buttons
+            selected={matchSelected}
+            current="All"
+            onClick={() => {
+              handleAllMatch();
+            }}
+          ></Buttons>
+          <Label>Both</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
+            selected={matchSelected}
+            current={true}
+            onClick={() => {
+              handleMatched();
+            }}
+          ></Buttons>
+          <Label>Matched</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
+            selected={matchSelected}
+            current={false}
+            onClick={() => {
+              handleUnmatched();
+            }}
+          ></Buttons>
+          <Label>Not Matched</Label>
+        </ButtonContain>
+      </ButtonHolder>
     </FilterDiv>
   );
 }
+
+/* 
+  <ButtonHolder>
+      <Header> Search by Name</Header>
+      <Input value={search} onChange={handleChange} />
+  </ButtonHolder>
+  <ButtonHolder>
+      <Header> Search by Zip</Header>
+      <Input value={zipSearch} onChange={handleZipChange} />
+  </ButtonHolder> 
+*/
+
+/* 
+<ButtonHolder>
+        <HeaderHolder>
+          <Header>App Status</Header>
+        </HeaderHolder>
+        <ButtonContain>
+          <Buttons
+            selected={completed}
+            current="All"
+            onClick={() => {
+              handleAllCompleted();
+            }}
+          ></Buttons>
+          <Label>All</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
+            selected={completed}
+            current={true}
+            onClick={() => {
+              handleCompleted();
+            }}
+          ></Buttons>
+          <Label>Completed</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
+            selected={completed}
+            current={false}
+            onClick={() => {
+              handleUncompleted();
+            }}
+          ></Buttons>
+          <Label>Incomplete</Label>
+        </ButtonContain>
+      </ButtonHolder>
+*/
