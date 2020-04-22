@@ -18,6 +18,22 @@ export const MapContain = styled.div`
   width: 70vw;
   background-color: black;
 `;
+
+export const FilterInput = styled.input`
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  position: absolute;
+  z-index: 1;
+  left: 290px;
+  border: 1px solid #3a6e79;
+  border-radius: 3px;
+  background-color: #fff;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  width: 280px;
+`;
 /* ========================================================================================================== */
 /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ Above is for Map component ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
 /* ========================================================================================================== */
@@ -28,15 +44,16 @@ export const MapContain = styled.div`
 export const FilterDiv = styled.div`
   width: 15vw;
   height: 92.5vh;
-  padding: 3vh 0.5vw 0 3vw;
+  padding: 3vh 0vw 10vh 4vw;
   background-color: #f9f9f9;
   color: #375762;
 `;
 
+/* Bottom section of the filter buttons(radio) */
 export const Buttons = styled.button`
   width: 16px;
   height: 16px;
-  background: ${(props) =>
+  background: ${props =>
     props.selected === props.current ? "#375762" : "white"};
   border: none;
   font-size: 1.4rem;
@@ -44,10 +61,39 @@ export const Buttons = styled.button`
   border-radius: 50%;
 `;
 
+/* Top section of the filter buttons(checkbox) */
+export const TopSecButton = styled.button`
+  width: 16px;
+  height: 16px;
+  background: ${props =>
+    props.selected === props.current ? "#375762" : "white"};
+  border: none;
+  font-size: 1.4rem;
+  border: 1.2px solid #3a6e79;
+  border-radius: 3px;
+`;
+
+/* 
+  Buttonholder is the container that contains one of the
+  category such like Application selection, Background
+  check selection and so on...
+*/
 export const ButtonHolder = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1vh;
+`;
+
+/* 
+  Buttonholder is the container that contains one of the
+  category's selection buttons(checkboxs).
+*/
+export const ButtonContain = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 9px 0 3px;
+  padding: 0 0;
+  width: 100%;
 `;
 
 export const Header = styled.h2`
@@ -58,7 +104,17 @@ export const Header = styled.h2`
 
 export const Label = styled.p`
   font-size: 1.3rem;
-  margin-left: 6px;
+  text-align: center;
+  margin: 0px 0 0px 6px;
+  color: #375762;
+`;
+
+/* Progress Dot */
+export const Dot = styled.img`
+  width: 8px;
+  heigth: 8px;
+  position: absolute;
+  left: 195px;
 `;
 
 export const Image = styled.img`
@@ -78,32 +134,45 @@ export const Input = styled.input`
   height: 5%;
   font-size: 2rem;
 `;
-export const ButtonContain = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-`;
 
 export const SmallIcon = styled.img`
   width: 20px;
   position: relative;
   top: -20px;
 `;
-
-export const FilterInput = styled.input`
-  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+export const ArrowIcon = styled.span`
   position: absolute;
-  z-index: 1;
-  left: 340px;
-  border: 1px solid #3a6e79;
+  margin-top: 28px;
+  left: 81px;
+`;
+
+export const InputFilter = styled.input`
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  border: 1px solid ;
   border-radius: 3px;
   background-color: #fff;
-  margin: 0;
+  margin  10% 0%;
+  margin-bottom: 2%;
   color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  width: 280px;
+  text-align: center;
+  padding: 6px;
+  width: 165px;
+`;
+
+export const FilterDropdown = styled.select`
+  width: 165px;
+  height: 26px;
+  margin-bottom: 10px
+  font: 20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  border-style: none;
+  border-radius: 0;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  &:hover {
+    border: 1px solid;
+    cursor: pointer
+  }
 `;
 /* ================================================================================================================ */
 /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ Above is for MapFilter component ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
