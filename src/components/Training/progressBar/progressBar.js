@@ -1,15 +1,16 @@
 import React from 'react';
 import ProgressBar from 'react-dennis-progressbar';
-import "./progressBar.css"
+
+import './styles.scss'; 
 import ModuleBar from './moduleBar';
+
  
- 
-class StacyBar extends React.Component {
+class Progress extends React.Component {
   state = {
      stepNumber: 1,
      completed:false
   };
- 
+ //potentially move these step functions to progressBar.js, 
   changeStep = e => {
     e.preventDefault();
     this.setState((state) => 
@@ -29,7 +30,7 @@ class StacyBar extends React.Component {
       }
     })
   };
-
+//use/edit this function for module5 when training is complete. 
   completed = e =>{
       e.preventDefault();
       this.setState((state) =>
@@ -46,22 +47,21 @@ class StacyBar extends React.Component {
   render() {
     return (
       <div className= "bar">
+  
         <ModuleBar />
         <ProgressBar
             stepNumber={this.state.stepNumber}
             steps={[3,3,4,4,1]}
             bullets={true}
-            lineColor={{
-              right: '20px solid red',
-                active: ' #3A6E79',
-                inactive: 'lightgrey',
-                     
-                   }}
-              bulletColor={{
-                active: '#FF8D86',
-                inactive: 'whitesmoke'
-              }}
-            lineHeight={10}
+            // lineColor={{
+            //     active: 'darkgreen',
+            //     inactive: 'lightgrey'
+            //   }}
+            //   bulletColor={{
+            //     active: '#FF8D86',
+            //     inactive: 'green'
+            //   }}
+            lineHeight={20}
            
         />
         <div className = 'buttons'>
@@ -74,4 +74,4 @@ class StacyBar extends React.Component {
   }
 }
 
-export default StacyBar
+export default Progress
