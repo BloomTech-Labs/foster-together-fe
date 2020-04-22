@@ -15,7 +15,6 @@ import {
   TrainingModuleOverlay,
 } from '../TrainStyles'
 import Player from 'react-player'
-import DennisBar from '../progressBarPlayground/DennisBar.js'
 
 function TitleWrapper() {
   const { push } = useHistory()
@@ -102,7 +101,6 @@ const Module11 = () => {
   return (
     <>
       <TrainingNav />
-      <DennisBar />
       <TrainingModuleOverlay/>
       <Wrapper>
         <TitleWrapper />
