@@ -8,10 +8,16 @@ import {
   Input,
   ButtonContain,
   Label,
-  FilterInput
+  FilterInput,
+  InputFilter,
+  ArrowIcon,
+  Dot,
+  FilterDropdown
 } from "./MapStyles";
-import { Buttons } from "./MapStyles";
+import { Buttons, TopSecButton } from "./MapStyles";
+import { FaLocationArrow } from "react-icons/fa";
 
+/* Function Below */
 export default function Filter(props) {
   const locations = props.locations;
   const [typeSelected, setTypeSelected] = useState(null);
@@ -351,39 +357,112 @@ export default function Filter(props) {
 
       <ButtonHolder>
         <HeaderHolder>
-          <Header>App Status</Header>
+          <Header>Application</Header>
         </HeaderHolder>
+
         <ButtonContain>
-          <Buttons
-            selected={completed}
-            current="All"
-            onClick={() => {
-              handleAllCompleted();
-            }}
-          ></Buttons>
-          <Label>All</Label>
-        </ButtonContain>
-        <ButtonContain>
-          <Buttons
+          <TopSecButton
             selected={completed}
             current={true}
             onClick={() => {
               handleCompleted();
             }}
-          ></Buttons>
-          <Label>Completed</Label>
+          ></TopSecButton>
+          <Label>Approved</Label>
+          <Dot src={require("./mapicons/GreenDot.svg")} />
         </ButtonContain>
         <ButtonContain>
-          <Buttons
+          <TopSecButton
             selected={completed}
             current={false}
             onClick={() => {
               handleUncompleted();
             }}
-          ></Buttons>
-          <Label>Incomplete</Label>
+          ></TopSecButton>
+          <Label>Completed</Label>
+          <Dot src={require("./mapicons/GreenDot.svg")} />
+        </ButtonContain>
+
+        <ButtonContain>
+          <TopSecButton
+            selected={completed}
+            current="All"
+            onClick={() => {
+              handleAllCompleted();
+            }}
+          ></TopSecButton>
+          <Label>All</Label>
         </ButtonContain>
       </ButtonHolder>
+
+      <ButtonHolder>
+        <HeaderHolder>
+          <Header>Background Check</Header>
+        </HeaderHolder>
+
+        <ButtonContain>
+          <TopSecButton></TopSecButton>
+          <Label>Completed</Label>
+          <Dot src={require("./mapicons/GreenDot.svg")} />
+        </ButtonContain>
+        <ButtonContain>
+          <TopSecButton></TopSecButton>
+          <Label>In Progress</Label>
+          <Dot src={require("./mapicons/YellowDot.svg")} />
+        </ButtonContain>
+        <ButtonContain>
+          <TopSecButton></TopSecButton>
+          <Label>Not Started</Label>
+          <Dot src={require("./mapicons/RedDot.svg")} />
+        </ButtonContain>
+        <ButtonContain>
+          <TopSecButton></TopSecButton>
+          <Label>All</Label>
+        </ButtonContain>
+      </ButtonHolder>
+
+      <ButtonHolder>
+        <HeaderHolder>
+          <Header>Training Module</Header>
+        </HeaderHolder>
+
+        <ButtonContain>
+          <TopSecButton></TopSecButton>
+          <Label>Completed</Label>
+          <Dot src={require("./mapicons/GreenDot.svg")} />
+        </ButtonContain>
+        <ButtonContain>
+          <TopSecButton></TopSecButton>
+          <Label>In Progress</Label>
+          <Dot src={require("./mapicons/YellowDot.svg")} />
+        </ButtonContain>
+        <ButtonContain>
+          <TopSecButton></TopSecButton>
+          <Label>Not Started</Label>
+          <Dot src={require("./mapicons/RedDot.svg")} />
+        </ButtonContain>
+        <ButtonContain>
+          <TopSecButton></TopSecButton>
+          <Label>All</Label>
+        </ButtonContain>
+      </ButtonHolder>
+      <ArrowIcon>
+        <FaLocationArrow />
+      </ArrowIcon>
+      <InputFilter
+        onChange={handleChange}
+        id="id"
+        type="text"
+        name="filter"
+        placeholder="Search"
+      />
+
+      <FilterDropdown id="miles">
+        <option value="2miles">within 2 miles</option>
+        <option value="5miles">within 5 miles</option>
+        <option value="8miles">within 8 miles</option>
+        <option value="10miles">within 10 miles</option>
+      </FilterDropdown>
 
       <ButtonHolder>
         <HeaderHolder>
@@ -456,42 +535,6 @@ export default function Filter(props) {
             }}
           ></Buttons>
           <Label>Both</Label>
-        </ButtonContain>
-      </ButtonHolder>
-
-      <ButtonHolder>
-        <HeaderHolder>
-          <Header>Application Status</Header>
-        </HeaderHolder>
-        <ButtonContain>
-          <Buttons
-            selected={completed}
-            current="All"
-            onClick={() => {
-              handleAllCompleted();
-            }}
-          ></Buttons>
-          <Label> All</Label>
-        </ButtonContain>
-        <ButtonContain>
-          <Buttons
-            selected={completed}
-            current={true}
-            onClick={() => {
-              handleCompleted();
-            }}
-          ></Buttons>
-          <Label>Completed</Label>
-        </ButtonContain>
-        <ButtonContain>
-          <Buttons
-            selected={completed}
-            current={false}
-            onClick={() => {
-              handleUncompleted();
-            }}
-          ></Buttons>
-          <Label>Incompleted</Label>
         </ButtonContain>
       </ButtonHolder>
     </FilterDiv>
