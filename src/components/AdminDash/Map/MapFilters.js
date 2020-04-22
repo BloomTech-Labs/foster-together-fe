@@ -20,9 +20,12 @@ export default function Filter(props) {
   const [completed, setCompleted] = useState("All");
   const [search, setSearch] = useState("");
   const [zipSearch, setZipSearch] = useState("");
+
+  // Handles search functionality
   const handleChange = e => {
     setSearch(e.target.value.trim().toLowerCase());
   };
+
   const handleZipChange = e => {
     setZipSearch(e.target.value);
   };
@@ -358,7 +361,7 @@ export default function Filter(props) {
               handleFamilies();
             }}
           ></Buttons>
-          <Label>Parent</Label>
+          <Label>Families</Label>
         </ButtonContain>
         <ButtonContain>
           <Buttons
@@ -416,6 +419,42 @@ export default function Filter(props) {
             }}
           ></Buttons>
           <Label>Both</Label>
+        </ButtonContain>
+      </ButtonHolder>
+
+      <ButtonHolder>
+        <HeaderHolder>
+          <Header>Application Status</Header>
+        </HeaderHolder>
+        <ButtonContain>
+          <Buttons
+            selected={completed}
+            current="All"
+            onClick={() => {
+              handleAllCompleted();
+            }}
+          ></Buttons>
+          <Label> All</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
+            selected={completed}
+            current={true}
+            onClick={() => {
+              handleCompleted();
+            }}
+          ></Buttons>
+          <Label>Completed</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
+            selected={completed}
+            current={false}
+            onClick={() => {
+              handleUncompleted();
+            }}
+          ></Buttons>
+          <Label>Incompleted</Label>
         </ButtonContain>
       </ButtonHolder>
     </FilterDiv>
