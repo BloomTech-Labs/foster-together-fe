@@ -10,7 +10,6 @@ import {
   MediaWrapper,
   Media,
   Video,
-  Footer,
   Form,
   Label,
   Input,
@@ -19,7 +18,7 @@ import {
   Div,
   TrainingModuleOverlay,
 } from '../TrainStyles'
-import Stepper from '../TrainingStepper'
+
 
 import TrainingNav from '../TrainingNav/NavBar'
 

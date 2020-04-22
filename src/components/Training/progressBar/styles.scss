@@ -1,0 +1,85 @@
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top:100px;
+    
+}
+
+.progress-container {
+  height: 25px;
+  width: 100%;
+  margin-bottom: 20px;
+
+  .progress-step-container {
+    max-width: 1440px;
+    width: 95%;
+    top: 10px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .progress-line-container {
+    background-color: #F5F5F5;
+    height: 20px;
+    width: 100%;
+
+    .progress-line {
+      background: #6FD0A2 !important;
+      height: 20px;
+      width: 0;
+      transition: all 0.2s linear;
+      border-right: 100px solid#D1F6D1;
+    }
+  }
+
+  .progress-bullet-container {
+    background: black;
+    width: 0;
+    height: 0;
+    overflow: visible;
+    position: relative;
+    display: block;
+
+    .progress-bullet {
+      width: 4px !important;
+      height: 30px !important;
+    //   background: gray !important;
+      border-radius: 2px;
+      transform: translate(-10px, -10px);
+      transition: all 0.4s linear;
+    }
+
+    .progress-bullet.active {
+      background-color: #1fc477;
+    }
+  }
+}
+div.progress-bullet.progress-bullet {
+  border: 2px solid #375762;
+}
+
+div.progress-bullet.progress-bullet.active {
+  border: 2px solid black;
+}
+/////////////moduleBar styles
+
+div.one{
+    
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 16px;
+    color: #375762;
+}
+.module-bar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1500px;
+    width: 90%;
+    top: 10px;
+    margin: 0 auto;
+    background-color: rgb(246, 246, 247);
+    
+}
