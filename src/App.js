@@ -20,9 +20,8 @@ import ModuleFour from './components/Training/module-4'
 import ModuleFive from './components/Training/module-5/module5-1'
 import UserProfile from './components/AdminDash/Profile/User/UserProfile'
 
-import DennisBar from './components/Training/progressBarPlayground/DennisBar'
-import ProgressBar from './components/Training/progressBarPlayground/ProgressBar'
-import StacyBar from './components/Training/progressBarPlayground/stacy-example/progressBar'
+
+
 
 function App() {
   useEffect(() => {
@@ -52,9 +51,8 @@ function App() {
         <Route path='/userProfile' component={UserProfile} />
 
         {/* testing */}
-        <Route path='/testing' component={DennisBar} />
-        <Route path='/testing2' component={ProgressBar} />
-        <Route path='/testing3' component={StacyBar} />
+
+
 
       </ThemeProvider>
     </>
