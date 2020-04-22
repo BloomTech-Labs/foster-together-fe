@@ -178,7 +178,7 @@ const BeyondTheMeal = () => {
   )
 }
 
-export const MealTips = ({ handleBack, ...props }) => {
+export const Module23 = ({ handleBack, ...props }) => {
   return (
     <Wrapper>
       <Title>

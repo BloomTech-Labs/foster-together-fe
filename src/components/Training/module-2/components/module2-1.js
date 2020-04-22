@@ -29,7 +29,7 @@ const simpleStepData = [
   },
 ]
 
-export const FiveSteps = ({ handleBack, errors, touched }) => {
+export const Module21 = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
       <Title>

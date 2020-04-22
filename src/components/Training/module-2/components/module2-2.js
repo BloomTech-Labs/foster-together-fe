@@ -45,7 +45,7 @@ const simpleStepData = [
   },
 ]
 
-export const BestPractices = ({ handleBack, errors, touched }) => {
+export const Module22 = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
       <Title>
