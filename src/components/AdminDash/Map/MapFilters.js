@@ -348,6 +348,43 @@ export default function Filter(props) {
         name="filter"
         placeholder="Search"
       />
+
+      <ButtonHolder>
+        <HeaderHolder>
+          <Header>App Status</Header>
+        </HeaderHolder>
+        <ButtonContain>
+          <Buttons
+            selected={completed}
+            current="All"
+            onClick={() => {
+              handleAllCompleted();
+            }}
+          ></Buttons>
+          <Label>All</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
+            selected={completed}
+            current={true}
+            onClick={() => {
+              handleCompleted();
+            }}
+          ></Buttons>
+          <Label>Completed</Label>
+        </ButtonContain>
+        <ButtonContain>
+          <Buttons
+            selected={completed}
+            current={false}
+            onClick={() => {
+              handleUncompleted();
+            }}
+          ></Buttons>
+          <Label>Incomplete</Label>
+        </ButtonContain>
+      </ButtonHolder>
+
       <ButtonHolder>
         <HeaderHolder>
           <Image src={require("./mapicons/Member.svg")} />
