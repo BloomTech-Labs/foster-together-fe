@@ -32,7 +32,14 @@ function Overlay(props) {
 }
 
 function FullOverlay() {
-  const [module, setModule] = useState(0)
+  // Override the default value of 0 if a submodule is passed in via the url query parameters
+  // let submodule = 0
+  // if (route.query.submodule !== null) {
+  //   submodule = route.query.submodule;
+  // }
+
+  // const [module, setModule] = useState(submodule)
+  const [module, setModule] = useState(0);
   return (
     <>
       <NavBar />

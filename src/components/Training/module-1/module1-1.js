@@ -12,18 +12,12 @@ import {
   TestText,
   Submit,
   Half,
-<<<<<<< HEAD
-  TrainingModuleOverlay,
-} from '../TrainStyles'
-import Player from 'react-player'
-=======
   TrainingModuleOverlay
 } from "../TrainStyles";
 import Player from "react-player";
 
 import Progress from "../progressBar/progressBar.js";
 
->>>>>>> d8e5664a13420eb76f54ff214d5239a3b6a603c2
 
 function TitleWrapper() {
   const { push } = useHistory();
@@ -109,15 +103,11 @@ const Module11 = () => {
   return (
     <>
       <TrainingNav />
-<<<<<<< HEAD
-      <TrainingModuleOverlay/>
-=======
      
       <Progress />
       
 
       <TrainingModuleOverlay />
->>>>>>> d8e5664a13420eb76f54ff214d5239a3b6a603c2
       <Wrapper>
         <TitleWrapper />
         <VideoPlayer />
