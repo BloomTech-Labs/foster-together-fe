@@ -13,9 +13,13 @@ import {
   QuestionsInput,
 } from '../TrainStyles'
 import { useHistory } from 'react-router-dom'
+//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 function Title({ props }) {
   const { push } = useHistory()
+
+//!axios call here trainingAxiosWithAuth()
+
   return (
     <TitleContainer>
       <img
