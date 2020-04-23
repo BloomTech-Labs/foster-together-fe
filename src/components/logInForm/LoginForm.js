@@ -8,7 +8,7 @@ import LoginSideBar from "./LoginSideBar";
 
 const LoginForm = () => {
   const { push } = useHistory();
-  const { userType } = useSelector((state) => state.auth);
+  const { userType } = useSelector(state => state.auth);
 
   useEffect(() => {
     setTimeout(() => {

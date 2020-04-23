@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import {
   Input,
@@ -9,7 +9,7 @@ import {
   BtnContainer,
   Button,
   Forgot,
-  ForContainer,
+  ForContainer
 } from "./styles";
 import { useSelector } from "react-redux";
 import { Event } from "../../utils/analytics/index";
@@ -19,6 +19,7 @@ import { login } from "../../redux/thunks/authThunks";
 
 /* Below is lading */
 import Loading from "../Loading/Loading";
+
 /* Above is lading */
 
 const EmailInput = () => {
@@ -54,28 +55,29 @@ const ForgotPass = () => {
   );
 };
 
-const SubmitBtn = () => {
+const SubmitBtn = props => {
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   if (loading) return <Loading />;
 
-  function trueLoading() {
-    setLoading(true);
-  }
-
   return (
     <Button>
-<<<<<<< HEAD
-      {<Submit
-        type='submit'
-        onClick={() => Event('Login', 'Tried to login', 'submit')}
-      >
-=======
-      <Submit type="submit" onClick={trueLoading}>
->>>>>>> acb2dbf57713117575ef6fafff887717f0792449
-        Submit
-      </Submit>}
-      
+      {
+        <Submit
+          type="submit"
+          onClick={() => {
+            setLoading(true);
+            setTimeout(() => {
+              setLoading(false);
+              history.push("/dashboard");
+            }, 3500);
+            Event("Login", "Tried to login", "submit");
+          }}
+        >
+          Submit
+        </Submit>
+      }
     </Button>
   );
 };
@@ -95,7 +97,7 @@ const LoginInputs = () => {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={(values) => dispatch(login(values, push))}
+      onSubmit={values => dispatch(login(values, push))}
     >
       <InputContainer>
         <EmailInput />
