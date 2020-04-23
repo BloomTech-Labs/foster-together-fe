@@ -58,7 +58,6 @@ const ForgotPass = () => {
 const SubmitBtn = (props) => {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
-  const token = localStorage.getItem("token");
 
   if (loading) return <Loading />;
 

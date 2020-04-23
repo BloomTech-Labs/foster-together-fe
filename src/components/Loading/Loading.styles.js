@@ -13,7 +13,7 @@ export const LeftIcon = styled.img`
 
   @keyframes left-slide {
     from {
-      left: 55vw;
+      left: 15vw;
     }
 
     to {
@@ -36,7 +36,7 @@ export const RightIcon = styled.img`
 
   @keyframes right-slide {
     from {
-      left: 15vw;
+      left: 55vw;
     }
 
     to {
