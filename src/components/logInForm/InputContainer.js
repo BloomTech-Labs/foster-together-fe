@@ -9,7 +9,7 @@ import {
   BtnContainer,
   Button,
   Forgot,
-  ForContainer
+  ForContainer,
 } from "./styles";
 import { useSelector } from "react-redux";
 import { Event } from "../../utils/analytics/index";
@@ -55,9 +55,10 @@ const ForgotPass = () => {
   );
 };
 
-const SubmitBtn = props => {
+const SubmitBtn = (props) => {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+  const token = localStorage.getItem("token");
 
   if (loading) return <Loading />;
 
@@ -71,7 +72,7 @@ const SubmitBtn = props => {
             setTimeout(() => {
               setLoading(false);
               history.push("/dashboard");
-            }, 3500);
+            }, 3000);
             Event("Login", "Tried to login", "submit");
           }}
         >
@@ -97,7 +98,7 @@ const LoginInputs = () => {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={values => dispatch(login(values, push))}
+      onSubmit={(values) => dispatch(login(values, push))}
     >
       <InputContainer>
         <EmailInput />

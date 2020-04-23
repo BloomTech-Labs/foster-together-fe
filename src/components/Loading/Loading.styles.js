@@ -1,25 +1,46 @@
 import styled from "styled-components";
 
-export const Loader = styled.div`
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-
+export const LeftIcon = styled.img`
   position: absolute;
+  left: 35vw;
+  top: 40%;
+
+  transform: scale(0.75);
   z-index: 2;
-  left: 45%;
-  top: 35%;
 
-  animation: spin 2s linear infinite;
+  animation-name: left-slide;
+  animation-duration: 1s;
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
+  @keyframes left-slide {
+    from {
+      left: 55vw;
     }
-    100% {
-      transform: rotate(360deg);
+
+    to {
+      left: 35vw;
+    }
+  }
+`;
+
+export const RightIcon = styled.img`
+  transform: scale(0.75);
+  position: absolute;
+  left: 35vw;
+  top: 50%;
+
+  transform: scale(0.75);
+  z-index: 2;
+
+  animation-name: right-slide;
+  animation-duration: 1s;
+
+  @keyframes right-slide {
+    from {
+      left: 15vw;
+    }
+
+    to {
+      left: 35vw;
     }
   }
 `;
@@ -33,22 +54,6 @@ export const LoaderBackground = styled.div`
   text-align: center;
 
   z-index: 1;
-  background-color: grey;
-  opacity: 0.5;
-`;
-
-export const LoaderContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f8f8f8ad;
-`;
-
-export const LoaderTest = styled.div`
-  left: 50%;
-  top: 30%;
-  z-index: 1000;
-  position: absolute;
+  background-color: #828282;
+  opacity: 0.95;
 `;
