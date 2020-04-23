@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressBar from 'react-dennis-progressbar';
+import ProgressBar from './progressBar2';
 
 import './styles.scss'; 
 import ModuleBar from './moduleBar';
@@ -51,18 +51,16 @@ class Progress extends React.Component {
         <ModuleBar />
         <ProgressBar
             stepNumber={this.state.stepNumber}
-            steps={[3,3,4,4,1]}
+            //steps={[3,3,4,4,1]}
+            steps={
+              ['/module1', '/module1', '/module1'],
+              ['/module2', '/module2', '/module2'],
+              ['/module3?submodule=0', '/module3?submodule=1', '/module3?submodule=2', '/module3?submodule=3'],
+              ['/module4', '/module4', '/module4', '/module4'],
+              ['/module5']
+            }
             bullets={true}
-            // lineColor={{
-            //     active: 'darkgreen',
-            //     inactive: 'lightgrey'
-            //   }}
-            //   bulletColor={{
-            //     active: '#FF8D86',
-            //     inactive: 'green'
-            //   }}
             lineHeight={20}
-           
         />
         <div className = 'buttons'>
         <button onClick={this.minusStep}>Back</button>
