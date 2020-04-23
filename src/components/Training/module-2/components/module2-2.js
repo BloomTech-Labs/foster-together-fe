@@ -10,6 +10,7 @@ import {
   Label,
   Input,
   Submit,
+  TrainingModuleOverlay,
 } from '../../TrainStyles'
 import { Section, List, Step } from '../styles'
 import { SimpleStep } from './index'

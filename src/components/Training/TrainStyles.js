@@ -474,3 +474,21 @@ export const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
 `
+// training progress bar styles start
+export const TrainingModuleOverlay = styled.div`
+
+height: 50px;
+margin-top: 20px;
+p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+}
+`
+export const moduleContainer =styled.div`
+border: 2px solid green;
+
+`
+

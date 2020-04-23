@@ -13,6 +13,7 @@ import {
   SmallList,
   SmallStep,
   Text,
+  TrainingModuleOverlay,
 } from '../styles'
 import { SimpleStep } from './index'
 import { mealTipsImage } from '../../img'
