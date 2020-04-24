@@ -23,7 +23,7 @@ export const FilterInput = styled.input`
   font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
   position: absolute;
   z-index: 1;
-  left: 290px;
+  left: 17%;
   border: 1px solid #3a6e79;
   border-radius: 3px;
   background-color: #fff;
@@ -53,7 +53,7 @@ export const FilterDiv = styled.div`
 export const Buttons = styled.button`
   width: 16px;
   height: 16px;
-  background: ${props =>
+  background: ${(props) =>
     props.selected === props.current ? "#375762" : "white"};
   border: none;
   font-size: 1.4rem;
@@ -65,7 +65,7 @@ export const Buttons = styled.button`
 export const TopSecButton = styled.button`
   width: 16px;
   height: 16px;
-  background: ${props =>
+  background: ${(props) =>
     props.selected === props.current ? "#375762" : "white"};
   border: none;
   font-size: 1.4rem;
@@ -114,7 +114,8 @@ export const Dot = styled.img`
   width: 8px;
   heigth: 8px;
   position: absolute;
-  left: 195px;
+  left: 12%;
+  max-left: 12%;
 `;
 
 export const Image = styled.img`
@@ -143,7 +144,7 @@ export const SmallIcon = styled.img`
 export const ArrowIcon = styled.span`
   position: absolute;
   margin-top: 28px;
-  left: 81px;
+  left: 5%;
 `;
 
 export const InputFilter = styled.input`
