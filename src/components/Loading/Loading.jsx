@@ -6,9 +6,10 @@ import { LeftIcon, RightIcon, LoaderBackground } from "./Loading.styles";
 /* Below is the functions */
 export default function Loading() {
   return (
-    <LoaderBackground>
+    <>
+      <LoaderBackground></LoaderBackground>
       <LeftIcon src={require("./icons/logo_Left.svg")} alt="" />
       <RightIcon src={require("./icons/logo_Right.svg")} alt="" />
-    </LoaderBackground>
+    </>
   );
 }
