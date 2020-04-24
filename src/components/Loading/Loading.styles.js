@@ -54,6 +54,6 @@ export const LoaderBackground = styled.div`
   text-align: center;
 
   z-index: 1;
-  background-color: #828282;
-  opacity: 0.95;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.8;
 `;
