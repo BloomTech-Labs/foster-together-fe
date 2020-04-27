@@ -34,7 +34,6 @@ function App() {
         <Route path="/training" component={Training} />
         <Redirect strict from="/" to="/login" />
         <Route exact path="/login" component={LoginForm} />
-
         <Route exact path="/signup" component={SignUp} />
         <PrivateRoute exact path="/dashboard" component={AdminDash} />
         <Route exact path="/map" component={Map} />
