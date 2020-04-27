@@ -35,15 +35,16 @@
 
   .progress-bullet-container {
     background: black;
-    width: 0;
+    // border:2px solid red;
+    width: 1;
     height: 0;
     overflow: visible;
     position: relative;
     display: block;
 
     .progress-bullet {
-      width: 4px !important;
-      height: 30px !important;
+      width: 4px ;
+      height: 30px ;
     //   background: gray !important;
       border-radius: 2px;
       transform: translate(-10px, -10px);
@@ -60,12 +61,14 @@
 
 div.progress-bullet.progress-bullet {
   border: 2px solid #375762;
+
 }
 
 div.progress-bullet.progress-bullet.active {
-  border: 2px solid black;
+  border: 10px solid green;
+  width:10px;
 }
-/////////////moduleBar styles
+//!moduleBar styles start here
 
 div.one{
     
