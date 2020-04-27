@@ -8,8 +8,16 @@ export default function Loading() {
   return (
     <>
       <LoaderBackground></LoaderBackground>
-      <LeftIcon src={require("./icons/logo_Left.svg")} alt="" />
-      <RightIcon src={require("./icons/logo_Right.svg")} alt="" />
+      <LeftIcon
+        data-testid="LeftIcon"
+        src={require("./icons/logo_Left.svg")}
+        alt=""
+      />
+      <RightIcon
+        data-testid="RightIcon"
+        src={require("./icons/logo_Right.svg")}
+        alt=""
+      />
     </>
   );
 }
