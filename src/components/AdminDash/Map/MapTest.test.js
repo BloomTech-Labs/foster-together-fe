@@ -1,6 +1,5 @@
 import React from "react";
 import { renderWithReduxAndRouter as render } from "../../../utils/testHelpers";
-import { clicked } from "./FamilyMarker";
 import Map from "./MapOverlay";
 import FilterDiv from "./MapFilters";
 import PersonInfo from "./PersonInfo";
@@ -16,11 +15,13 @@ test("Markers display correctly", async () => {
   findByDisplayValue(location);
 });
 
+// Filter Bar Test
 test("Filter Bar renders properly", async () => {
   const { findByDisplayValue } = render(<Map />);
   findByDisplayValue(FilterDiv);
 });
 
+// Users Info Test
 test("PersonInfo render properly", async () => {
   const { findByDisplayValue } = render(<Map />);
   findByDisplayValue(PersonInfo);
