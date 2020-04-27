@@ -1,7 +1,7 @@
 import React from 'react'
 import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
-import FullOverlay from './TrainingOverlay'
+import ModuleFive from './moduleFive'
 
-test('Module 3 render', async () => {
-  render(<FullOverlay />)
+test('ModuleFive renders', () => {
+  render(<ModuleFive />)
 })

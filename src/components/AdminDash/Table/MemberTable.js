@@ -32,7 +32,22 @@ const columns = [
   {
     Header: 'APP',
     accessor: 'application',
-    Cell: props => <Circle color={'green'} />,
+    Cell: props => {
+      const status = props.data[props.row.id].application
+      return (
+        <Circle
+          color={
+            status === 1
+              ? 'yellow'
+              : status === 2
+              ? 'green'
+              : status === 3
+              ? 'red'
+              : 'orange'
+          }
+        />
+      )
+    },
   },
   {
     Header: 'BGC',
@@ -73,7 +88,7 @@ function mapping(members) {
       match: 'none',
       city: data.city,
       userType: data.type,
-      application: true,
+      application: data.application,
       background: data.background,
       training: data.training,
       email: data.email,

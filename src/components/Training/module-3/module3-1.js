@@ -15,16 +15,23 @@ import {
   Input,
   Submit,
 } from '../TrainStyles'
+import { useHistory } from 'react-router-dom'
 
-export default function TrainingThreeOne(props) {
+export default function Module31(props) {
+  const { push } = useHistory()
   const handleSubmit = () => {
     props.setModule(1)
   }
+
   return (
     <>
       <Wrapper>
         <Title>
-          <BackArrow />
+          <BackArrow
+            onClick={() => {
+              push('./module2')
+            }}
+          />
           What's your vision of a foster family?
         </Title>
         <MainSection>
@@ -175,6 +182,7 @@ export default function TrainingThreeOne(props) {
           <Submit
             onClick={() => {
               handleSubmit()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
           >
             Continue

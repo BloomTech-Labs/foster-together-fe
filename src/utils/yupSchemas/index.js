@@ -27,6 +27,49 @@ export const LocationSchema = Yup.object().shape({
     .required('ZIP is required'),
 })
 
+export const AppSchema = Yup.object().shape({
+  app_q1_a: Yup.object({
+    option_1: Yup.boolean(),
+    option_2: Yup.boolean(),
+    option_3: Yup.boolean(),
+    option_4: Yup.boolean(),
+  }).test('app_q1_a_test', null, item => {
+    if (item.option_1 || item.option_2 || item.option_3 || item.option_4) {
+      return true
+    }
+    return new Yup.ValidationError(
+      'Please choose at least one option',
+      null,
+      'app_q1_a'
+    )
+  }),
+  app_q2: Yup.object({
+    option_1: Yup.boolean(),
+    option_2: Yup.boolean(),
+    option_3: Yup.boolean(),
+    option_4: Yup.boolean(),
+    option_5: Yup.boolean(),
+  }).test('app_q2_test', null, item => {
+    if (
+      item.option_1 ||
+      item.option_2 ||
+      item.option_3 ||
+      item.option_4 ||
+      item.option_5
+    ) {
+      return true
+    }
+    return new Yup.ValidationError(
+      'Please choose at least one option',
+      null,
+      'app_q2'
+    )
+  }),
+  app_q3: Yup.boolean().required(),
+  app_q4: Yup.number().min(1, generic),
+  app_q5: Yup.string().required(generic),
+})
+
 export const ModuleOneSchema = Yup.object().shape({
   m1_q1: Yup.string().required(generic),
 })
