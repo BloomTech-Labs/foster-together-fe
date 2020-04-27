@@ -16,7 +16,7 @@ import {
   Submit,
 } from '../TrainStyles'
 
-export default function TrainingThreeTwo(props) {
+export default function Module33(props) {
   const handleSubmit = () => {
     props.setModule(3)
   }
@@ -166,6 +166,7 @@ export default function TrainingThreeTwo(props) {
         <Submit
           onClick={() => {
             handleSubmit()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
           Continue

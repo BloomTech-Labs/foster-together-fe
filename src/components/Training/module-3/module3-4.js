@@ -16,7 +16,7 @@ import {
   Submit,
 } from '../TrainStyles'
 
-export default function TrainingThreeTwo() {
+export default function Module34() {
   const { push } = useHistory()
 
   const handleSubmit = () => {
@@ -152,7 +152,14 @@ export default function TrainingThreeTwo() {
           difficult for you? Why or why not? *
           <Input id='m3_q5' name='m3_q5' placeholder='Your answer here' />
         </Label>
-        <Submit onClick={handleSubmit}>Continue</Submit>
+        <Submit
+          onClick={() => {
+            handleSubmit()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }}
+        >
+          Continue
+        </Submit>
       </Form>
     </Wrapper>
   )

@@ -21,7 +21,7 @@ function TitleWrapper() {
     <Title>
       <BackArrow
         onClick={() => {
-          push('/module0')
+          push('/modulestart')
         }}
       />
       A letter of gratitude continued...

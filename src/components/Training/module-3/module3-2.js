@@ -14,7 +14,7 @@ import {
 } from '../TrainStyles'
 import { Indented } from './TrainStyle'
 
-export default function TrainingThreeTwo(props) {
+export default function Module32(props) {
   const handleSubmit = () => {
     props.setModule(2)
   }
@@ -94,8 +94,10 @@ export default function TrainingThreeTwo(props) {
           <Input id='m3_q2' name='m3_q2' placeholder='Your answer here' />
         </Label>
         <Submit
+          data-testid='next'
           onClick={() => {
             handleSubmit()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
           Continue

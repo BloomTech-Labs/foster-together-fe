@@ -35,16 +35,15 @@ export default function Application() {
           <Header>Get Trained as a Foster Neighbor!</Header>
           <UpperSection>
             <LittleImages>
-              {imageArray.map(image => {
-                return (
-                  <LittleImage
-                    src={image.image}
-                    onClick={() => {
-                      setPicture(image.id)
-                    }}
-                  />
-                )
-              })}
+              {imageArray.map(image => (
+                <LittleImage
+                  key={image.id}
+                  src={image.image}
+                  onClick={() => {
+                    setPicture(image.id)
+                  }}
+                />
+              ))}
             </LittleImages>
             <UpperImage>
               <Image src={`${imageArray[picture].image}`} />

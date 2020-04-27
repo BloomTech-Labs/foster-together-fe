@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Formik, Form } from 'formik'
 import NavBar from '../TrainingNav/NavBar'
-import { FiveSteps, BestPractices, MealTips } from './components'
+import { Module21, Module22, Module23 } from './components/'
 import {
   ModuleTwoSchema1,
   ModuleTwoSchema2,
@@ -69,11 +69,11 @@ const ModuleTwo = () => {
         {props => (
           <Form>
             {activeStep === 0 ? (
-              <FiveSteps handleBack={handleBack} {...props} />
+              <Module21 handleBack={handleBack} {...props} />
             ) : activeStep === 1 ? (
-              <BestPractices handleBack={handleBack} {...props} />
+              <Module22 handleBack={handleBack} {...props} />
             ) : activeStep === 2 ? (
-              <MealTips handleBack={handleBack} {...props} />
+              <Module23 handleBack={handleBack} {...props} />
             ) : null}
           </Form>
         )}

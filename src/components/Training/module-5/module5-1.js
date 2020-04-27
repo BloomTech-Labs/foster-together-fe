@@ -12,14 +12,16 @@ import {
   Half,
   QuestionsInput,
 } from '../TrainStyles'
+import { useHistory } from 'react-router-dom'
 
 function Title({ props }) {
+  const { push } = useHistory()
   return (
     <TitleContainer>
       <img
         src={require('../../../images/icons/back-arrow.svg')}
         onClick={() => {
-          props.history.push('/module0')
+          push('/module4')
         }}
         alt=''
       />
@@ -177,11 +179,12 @@ const Questions = (form, handleChange) => {
   )
 }
 const Button = props => {
+  const { push } = useHistory()
   return (
     <Half>
       <Submit
         onClick={() => {
-          props.history.push('/module2')
+          push('/userProfile')
         }}
       >
         Submit
