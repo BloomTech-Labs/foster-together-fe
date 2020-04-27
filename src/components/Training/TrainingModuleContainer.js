@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from './progressBar2';
 import './styles.scss'; 
-// import ModuleBar from './moduleBar';
+
 import { useState } from 'react';
 import {TrainingModuleOverlay } from "./TrainStyles";
 
@@ -68,7 +68,7 @@ export default function Progress() {
         </div>
       </div>
     </TrainingModuleOverlay>
-    
+
       <ProgressBar
           stepNumber={progressState.stepNumber}
           // steps={[3,3,4,4,1]}
