@@ -17,7 +17,10 @@ import {
   Submit,
   Div,
   TrainingModuleOverlay,
-} from '../TrainStyles'
+} from '../TrainStyles';
+
+import Progress from "../TrainingModuleContainer.js";
+
 
 
 import TrainingNav from '../TrainingNav/NavBar'
@@ -223,7 +226,8 @@ const handleSubmit = values => {
   return (
     <>
       <TrainingNav />
-      <TrainingModuleOverlay/>
+      <Progress />
+    
      
       <Wrapper>
         <TitleWrapper />
