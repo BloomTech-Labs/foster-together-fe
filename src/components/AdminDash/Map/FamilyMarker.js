@@ -34,6 +34,7 @@ export default function FamMark(props) {
         />
       ) : (
         <div
+          name="marker"
           onClick={() => {
             clicked();
           }}
