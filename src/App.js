@@ -19,6 +19,7 @@ import ModuleThree from './components/Training/module-3/TrainingOverlay'
 import ModuleFour from './components/Training/module-4'
 import ModuleFive from './components/Training/module-5/module5-1'
 import UserProfile from './components/AdminDash/Profile/User/UserProfile'
+import Map from './components/AdminDash/Map/MapOverlay'
 
 function App() {
   useEffect(() => {
@@ -37,6 +38,7 @@ function App() {
         <Route exact path='/login' component={LoginForm} />
         <Route exact path='/signup' component={SignUp} />
         <PrivateRoute exact path='/dashboard' component={AdminDash} />
+        <Route exact path='/map' component={Map} />
         <PrivateRoute path='/:membertype/:id' component={Profile} />
         <Route path='/module0' component={StartTraining} />
         <Route path='/modulestart' component={ModuleLetter} />
