@@ -18,6 +18,7 @@ import {
 import { SimpleStep } from './index'
 import { mealTipsImage } from '../../img'
 import Survey from './Survey'
+//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 const mealTipsData = [
   `I am flexible on the day of the week I drop off, and so is she! With the first kids she fostered, there was one day a week in which she spent most of the day in meetings with the kids' families, so she didn't have much time to cook. So while she had those kids, I made a point of dropping off the same day each week. Now with a new set of siblings, she doesn't have the same restriction on her schedule, so I drop off when it works for me.`,
@@ -32,6 +33,9 @@ const mealTipsData = [
 ]
 
 const MealTipsWrapper = () => {
+  
+//!axios call here trainingAxiosWithAuth()
+
   return (
     <Section>
       <MediaWrapper>

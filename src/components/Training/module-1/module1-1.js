@@ -16,7 +16,7 @@ import {
 } from "../TrainStyles";
 import Player from "react-player";
 
-import Progress from "../progressBar/progressBar.js";
+import Progress from "../progressBar.js";
 
 
 function TitleWrapper() {

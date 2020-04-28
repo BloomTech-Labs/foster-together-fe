@@ -10,10 +10,11 @@ import {
   Label,
   Input,
   Submit,
-  TrainingModuleOverlay,
+
 } from '../../TrainStyles'
 import { Section, List, Step } from '../styles'
 import { SimpleStep } from './index'
+//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 const simpleStepData = [
   {
@@ -47,6 +48,10 @@ const simpleStepData = [
 ]
 
 export const Module22 = ({ handleBack, errors, touched }) => {
+
+//!axios call here trainingAxiosWithAuth()
+
+
   return (
     <Wrapper>
       <Title>

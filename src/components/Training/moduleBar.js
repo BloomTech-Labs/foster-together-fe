@@ -2,7 +2,7 @@ import React from "react";
 
 import "./styles.scss";
 
-import {TrainingModuleOverlay } from "../TrainStyles";
+import {TrainingModuleOverlay } from "./TrainStyles";
 
 const ModuleBar = props => {
   return (

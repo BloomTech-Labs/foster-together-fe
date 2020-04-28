@@ -486,9 +486,5 @@ p {
   font-size: 14px;
   line-height: 16px;
 }
-`
-export const moduleContainer =styled.div`
-border: 2px solid green;
 
 `
-

@@ -18,7 +18,8 @@ import ModuleThree from './components/Training/module-3/TrainingOverlay'
 import ModuleFour from './components/Training/module-4'
 import ModuleFive from './components/Training/module-5/module5-1'
 import UserProfile from './components/AdminDash/Profile/User/UserProfile'
-import ProgressBar from './components/Training/progressBar/progressBar2'
+// import ProgressBar from './components/Training/progressBar2'
+import ProgressBar from './components/Training/progressBar2'
 
 
 

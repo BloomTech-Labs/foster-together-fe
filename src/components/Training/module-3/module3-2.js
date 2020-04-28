@@ -14,11 +14,15 @@ import {
   TrainingModuleOverlay,
 } from '../TrainStyles'
 import { Indented } from './TrainStyle'
+//import axiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 export default function Module32(props) {
   const handleSubmit = () => {
     props.setModule(2)
   }
+
+//!axios call here trainingAxiosWithAuth()
+
   return (
     <Wrapper>
       <Title>
