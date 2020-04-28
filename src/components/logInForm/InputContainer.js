@@ -67,11 +67,11 @@ const SubmitBtn = props => {
         <Submit
           type="submit"
           onClick={() => {
-            setLoading(true);
-            setTimeout(() => {
-              setLoading(false);
-              history.push("/dashboard");
-            }, 3000);
+            // setLoading(true);
+            // setTimeout(() => {
+            //   setLoading(false);
+            //   history.push("/dashboard");
+            // }, 3000);
             Event("Login", "Tried to login", "submit");
           }}
         >
