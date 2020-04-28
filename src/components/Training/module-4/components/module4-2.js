@@ -27,6 +27,7 @@ import {
   Video1,
 } from './styles'
 import Player from 'react-player'
+import Progress from "../../TrainingModuleContainer";
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 export const Module42 = ({ handleNext, handleBack }) => {
@@ -34,6 +35,7 @@ export const Module42 = ({ handleNext, handleBack }) => {
 //!axios call here trainingAxiosWithAuth()
   return (
     <>
+     <Progress />
       <Header>
         <svg
           width='21'

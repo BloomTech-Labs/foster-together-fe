@@ -16,6 +16,7 @@ import {
   Submit,
 } from '../TrainStyles'
 //import axiosWithAuth from '../../../utils/axios/trainingaxiosWithAuth'
+import Progress from "../TrainingModuleContainer";
 
 export default function Module34() {
   const { push } = useHistory()
@@ -28,6 +29,7 @@ export default function Module34() {
 
   return (
     <Wrapper>
+      <Progress />
       <Title>
         <BackArrow />
         What kids need

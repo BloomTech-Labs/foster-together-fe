@@ -13,6 +13,7 @@ import {
   QuestionsInput,
 } from '../TrainStyles'
 import { useHistory } from 'react-router-dom'
+import Progress from "../TrainingModuleContainer";
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 function Title({ props }) {
@@ -209,6 +210,7 @@ const ModuleFive = props => {
   return (
     <section>
       <TrainingNav />
+      <Progress />
       <Title />
       <Page>
         <Responsibilities />

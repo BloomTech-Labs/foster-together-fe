@@ -17,6 +17,7 @@ import {
   Body4,
   Span1,
 } from './styles'
+import Progress from "../../TrainingModuleContainer";
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 export const Module43 = ({ handleBack, handleNext }) => {
@@ -26,6 +27,7 @@ export const Module43 = ({ handleBack, handleNext }) => {
   return(
 
     <>
+     <Progress />
       <Header>
         <svg
           width='21'

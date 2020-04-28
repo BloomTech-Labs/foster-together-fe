@@ -14,6 +14,7 @@ import {
   TrainingModuleOverlay,
 } from '../TrainStyles'
 import { Indented } from './TrainStyle'
+import Progress from "../TrainingModuleContainer";
 //import axiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 export default function Module32(props) {
@@ -25,6 +26,7 @@ export default function Module32(props) {
 
   return (
     <Wrapper>
+      <Progress />
       <Title>
         <BackArrow />
         What makes a great foster family helper?

@@ -16,7 +16,8 @@ import {
 } from "../TrainStyles";
 import Player from "react-player";
 
-import Progress from "../progressBar.js";
+import Progress from "../TrainingModuleContainer.js";
+//!import Progress from "../ModuleOverlay.js"
 
 
 function TitleWrapper() {
