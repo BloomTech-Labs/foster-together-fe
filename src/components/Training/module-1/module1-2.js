@@ -144,7 +144,7 @@ function TitleWrapper() {
     <Title>
       <BackArrow
         onClick={() => {
-          push('/modulestart')
+          push('/training-start')
         }}
       />
       Benefits of supporting foster families

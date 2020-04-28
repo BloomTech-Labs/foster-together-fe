@@ -50,14 +50,13 @@ export default function Progress() {
       <ModuleBar />
       <ProgressBar
           stepNumber={progressState.stepNumber}
-          // steps={[3,3,4,4,1]}
-          steps={
-            ['/module1', '/module1', '/module1'],
-            ['/module2', '/module2', '/module2'],
-            ['/module3?submodule=0', '/module3?submodule=1', '/module3?submodule=2', '/module3?submodule=3'],
-            ['/module4', '/module4', '/module4', '/module4'],
+          steps={[
+            ['/training-start-2', '/module1'],
+            ['/module2?page=1', '/module2?page=2', '/module2?page=3'],
+            ['/module3?page=1', '/module3?page=2', '/module3?page=3', '/module3?page=4'],
+            ['/module4?page=1', '/module4?page=2', '/module4?page=3', '/module4?page=4'],
             ['/module5']
-          }
+          ]}
           bullets={true}
           lineHeight={20}
       />

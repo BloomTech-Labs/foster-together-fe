@@ -41,8 +41,8 @@ function App() {
         <Route exact path='/signup' component={SignUp} />
         <PrivateRoute exact path='/dashboard' component={AdminDash} />
         <PrivateRoute path='/:membertype/:id' component={Profile} />
-        <Route path='/modulestart' component={ModuleStart} />
-        <Route path='/modulestartcontinued' component={Module11} />
+        <Route path='/training-start' component={ModuleStart} />
+        <Route path='/training-start-2' component={Module11} />
         <Route path='/module1' component={Module12} />
         <Route path='/module2' component={ModuleTwo} />
          {/* Need to pass route query parameters   */}
