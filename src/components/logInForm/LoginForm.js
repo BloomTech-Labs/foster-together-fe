@@ -19,7 +19,6 @@ const LoginForm = () => {
       }
     }, 3000);
   }, [userType, push]);
-
   return (
     <Container>
       <LoginSideBar />

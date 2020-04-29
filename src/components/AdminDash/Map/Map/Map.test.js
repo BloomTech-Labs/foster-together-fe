@@ -1,8 +1,8 @@
 import React from "react";
-import { renderWithReduxAndRouter as render } from "../../../utils/testHelpers";
-import Map from "./MapOverlay";
-import FilterDiv from "./MapFilters";
-import PersonInfo from "./PersonInfo";
+import { renderWithReduxAndRouter as render } from "../../../../utils/testHelpers";
+import Map from "../MapOverlay";
+import FilterDiv from "../MapFilters/MapFilters";
+import PersonInfo from "../PersonInfo/PersonInfo";
 
 // Map renders properly
 test("Map renders no issue", async () => {
