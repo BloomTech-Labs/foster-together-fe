@@ -1,5 +1,5 @@
 import React from 'react'
-import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
+import { renderWithReduxAndRouter as render } from '../../../../utils/testHelpers'
 import FullOverlay from './TrainingOverlay'
 import TrainingThreeFour from './Train3.4'
 import { Formik, Form } from 'formik'

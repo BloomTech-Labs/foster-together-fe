@@ -20,7 +20,7 @@ function LetterTitle() {
     <Title>
       <BackArrow
         onClick={() => {
-          push('/modulestartcontinued')
+          push('/training-start-2')
         }}
       />
       A letter of gratitude
@@ -136,7 +136,7 @@ const ModuleStart = () => {
           <LetterCircle>
             <Circle
               onClick={() => {
-                push('/modulestartcontinued')
+                push('/training-start-2')
                 window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
             >

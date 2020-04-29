@@ -15,8 +15,10 @@ import {
   Input,
   Submit,
   TrainingModuleOverlay,
-} from '../TrainStyles'
+} from '../../TrainStyles'
 import { useHistory } from 'react-router-dom'
+import Progress from "../../TrainingModuleContainer";
+
 //import axiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 export default function Module31(props) {
@@ -30,6 +32,7 @@ export default function Module31(props) {
   return (
     <>
       <Wrapper>
+        <Progress />
         <Title>
           <BackArrow
             onClick={() => {

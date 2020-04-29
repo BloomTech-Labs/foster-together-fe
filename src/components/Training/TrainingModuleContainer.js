@@ -1,8 +1,9 @@
 import React from 'react';
-import ProgressBar from './progressBar2';
-// import './styles.scss'; 
-import ModuleBar from './moduleBar';
+import ProgressBar from './TrainingProgressBar.js';
+import './styles.scss'; 
+
 import { useState } from 'react';
+import {TrainingModuleOverlay } from "./TrainStyles";
 
 
 
@@ -47,17 +48,36 @@ export default function Progress() {
   return (
     <div className= "bar">
 
-      <ModuleBar />
+     
+    <TrainingModuleOverlay>
+      <div className="module-bar-container">
+        <div className="one">
+          <p>Module 1</p>
+        </div>
+        <div className="two">
+          <p>Module 2</p>
+        </div>
+        <div className="three">
+          <p>Module 3</p>
+        </div>
+        <div className="four">
+          <p>Module 4</p>
+        </div>
+        <div className="five">
+          <p>Module 5</p>
+        </div>
+      </div>
+    </TrainingModuleOverlay>
+
       <ProgressBar
           stepNumber={progressState.stepNumber}
-          // steps={[3,3,4,4,1]}
-          steps={
-            ['/module1', '/module1', '/module1'],
-            ['/module2', '/module2', '/module2'],
-            ['/module3?submodule=0', '/module3?submodule=1', '/module3?submodule=2', '/module3?submodule=3'],
-            ['/module4', '/module4', '/module4', '/module4'],
+          steps={[
+            ['/training-start-2', '/module1'],
+            ['/module2?page=1', '/module2?page=2', '/module2?page=3'],
+            ['/module3?page=1', '/module3?page=2', '/module3?page=3', '/module3?page=4'],
+            ['/module4?page=1', '/module4?page=2', '/module4?page=3', '/module4?page=4'],
             ['/module5']
-          }
+          ]}
           bullets={true}
           lineHeight={20}
       />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { Formik, Form } from 'formik'
 import NavBar from '../TrainingNav/NavBar'
 import { Module21, Module22, Module23 } from './components/'
@@ -32,8 +32,18 @@ const initialValues = {
 
 const ModuleTwo = () => {
   const { push } = useHistory()
-  const [activeStep, setActiveStep] = useState(0)
-  console.log(activeStep)
+  let query = useQuery();
+  let page = parseInt(query.get('page')) - 1;
+  let defaultStep = 0;
+  if (page !== null && page < 3) {
+    defaultStep = page;
+  }
+
+  const [activeStep, setActiveStep] = useState(defaultStep)
+
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
 
   const handleNext = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })

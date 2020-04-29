@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import TrainingNav from '../TrainingNav/NavBar'
+import TrainingNav from '../../TrainingNav/NavBar'
 import {
   Page,
   TitleContainer,
@@ -11,8 +11,9 @@ import {
   Submit,
   Half,
   QuestionsInput,
-} from '../TrainStyles'
+} from '../../TrainStyles'
 import { useHistory } from 'react-router-dom'
+import Progress from "../../TrainingModuleContainer";
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 function Title({ props }) {
@@ -23,7 +24,7 @@ function Title({ props }) {
   return (
     <TitleContainer>
       <img
-        src={require('../../../images/icons/back-arrow.svg')}
+        src={require('../../../../images/icons/back-arrow.svg')}
         onClick={() => {
           push('/module4')
         }}
@@ -209,6 +210,7 @@ const ModuleFive = props => {
   return (
     <section>
       <TrainingNav />
+      <Progress />
       <Title />
       <Page>
         <Responsibilities />

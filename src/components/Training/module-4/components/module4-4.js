@@ -22,6 +22,7 @@ import {
   BigLink,
 } from './styles'
 import { useHistory } from 'react-router-dom'
+import Progress from "../../TrainingModuleContainer";
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 export const Module44 = ({ handleBack }) => {
@@ -31,6 +32,7 @@ export const Module44 = ({ handleBack }) => {
   
   return (
     <>
+    <Progress />
       <Header>
         <svg
           width='21'

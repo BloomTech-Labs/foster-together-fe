@@ -1,5 +1,5 @@
 import React from 'react'
-import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
+import { renderWithReduxAndRouter as render } from '../../../../utils/testHelpers'
 import { Module41 } from './components/module4-1'
 import { Module42 } from './components/module4-2'
 import { Module43 } from './components/module4-3'
