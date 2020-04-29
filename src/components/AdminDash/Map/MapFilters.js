@@ -58,10 +58,8 @@ export default function Filter(props) {
   );
   const allMatched = locations.filter(people => people.match === true);
   const allUnmatched = locations.filter(people => people.match === false);
-  const allCompleted = locations.filter(people => people.application === true);
-  const allUncompleted = locations.filter(
-    people => people.application === false
-  );
+  const allCompleted = locations.filter(people => people.application === 2);
+  const allUncompleted = locations.filter(people => people.application === 1);
   const uncompletedFamilies = families.filter(
     people => people.application === false
   );
@@ -69,11 +67,11 @@ export default function Filter(props) {
     people => people.application === true
   );
   const completeNeighborss = neighborss.filter(
-    people => people.application === true
+    people => people.application === 2
   );
 
   const uncompleteNeighborss = neighborss.filter(
-    people => people.application === false
+    people => people.application === 1 || 2
   );
 
   function handleAll() {
@@ -130,7 +128,7 @@ export default function Filter(props) {
       if (completed === false) {
         setPoints(uncompleteNeighborss);
       }
-      if (completed === true) {
+      if (completed === 2) {
         setPoints(completeNeighborss);
       }
       if (completed === "All") {

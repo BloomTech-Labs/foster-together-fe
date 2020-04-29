@@ -1,7 +1,7 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { Formik, Form as FormikForm } from 'formik'
-import { ModuleOneSchema } from '../../../utils/yupSchemas'
+import React from "react";
+import { useHistory } from "react-router-dom";
+import { Formik, Form as FormikForm } from "formik";
+import { ModuleOneSchema } from "../../../utils/yupSchemas";
 
 import {
   Wrapper,
@@ -16,11 +16,11 @@ import {
   Input,
   Error,
   Submit,
-  Div,
-} from '../TrainStyles'
-import Stepper from '../TrainingStepper'
+  Div
+} from "../TrainStyles";
+import Stepper from "../TrainingStepper";
 
-import TrainingNav from '../TrainingNav/NavBar'
+import TrainingNav from "../TrainingNav/NavBar";
 
 const Context3 = () => {
   return (
@@ -37,8 +37,8 @@ const Context3 = () => {
         often feel inadequate and exhausted.
       </p>
     </Div>
-  )
-}
+  );
+};
 
 const Context4 = () => {
   return (
@@ -55,8 +55,8 @@ const Context4 = () => {
         life of your foster family neighbors.
       </p>
     </Div>
-  )
-}
+  );
+};
 
 const Context5 = () => {
   return (
@@ -71,8 +71,8 @@ const Context5 = () => {
         care will decrease.
       </p>
     </Div>
-  )
-}
+  );
+};
 
 const Context6 = () => {
   return (
@@ -94,8 +94,8 @@ const Context6 = () => {
         answer your questions.
       </p>
     </Div>
-  )
-}
+  );
+};
 
 const Context7 = () => {
   return (
@@ -111,8 +111,8 @@ const Context7 = () => {
         hours a month may help excellent families stay in it for the long haul.
       </p>
     </Div>
-  )
-}
+  );
+};
 
 const Context8 = ({ errors, touched }) => {
   return (
@@ -123,33 +123,33 @@ const Context8 = ({ errors, touched }) => {
           Are any of the "reasons to help" listed above new to you? In your own
           words, how do you anticipate this aspect enriching your life or the
           foster parents' lives? (2+ sentences) *
-          <Input component='textarea' id='m1_q1' name='m1_q1' />
-          {errors?.m1_q1 && touched?.m1_q1 && <Error>{errors?.m1_q1}</Error>}
+          <Input component="textarea" id="m1_q1" name="m1_q1" />
+          {/* {errors?.m1_q1 && touched?.m1_q1 && <Error>{errors?.m1_q1}</Error>} */}
         </Label>
         <Label>
           How can we improve this module? What would you add, shorten, or
           eliminate? This program is just getting started, so your feedback is
           helpful!
-          <Input component='textarea' id='m1_q2' name='m1_q2' />
+          <Input component="textarea" id="m1_q2" name="m1_q2" />
         </Label>
-        <Submit type='submit'>Submit</Submit>
+        <Submit type="submit">Submit</Submit>
       </Form>
     </>
-  )
-}
+  );
+};
 
 function TitleWrapper() {
-  const { push } = useHistory()
+  const { push } = useHistory();
   return (
     <Title>
       <BackArrow
         onClick={() => {
-          push('/modulestart')
+          push("/modulestart");
         }}
       />
       Benefits of supporting foster families
     </Title>
-  )
+  );
 }
 
 const Img1 = () => {
@@ -159,14 +159,14 @@ const Img1 = () => {
         <Context3 />
         <Media style={{ marginTop: 100 }}>
           <Video
-            url='https://player.vimeo.com/video/288661409'
+            url="https://player.vimeo.com/video/288661409"
             controls={false}
             width={480}
           />
         </Media>
       </MediaWrapper>
       <Div>
-        <p style={{ marginTop: '-50px' }}>
+        <p style={{ marginTop: "-50px" }}>
           In an ideal world, foster parents could depend on their existing
           circle of friends as support, and some do. But lack of general
           awareness about the needs of kids dealing with trauma means that
@@ -177,19 +177,19 @@ const Img1 = () => {
         </p>
       </Div>
     </>
-  )
-}
+  );
+};
 
 const Img2 = () => {
   return (
     <MediaWrapper>
       <Context6 />
       <Media style={{ marginTop: 50 }}>
-        <img src={require('../TrainingIcons/image19.png')} alt='' />
+        <img src={require("../TrainingIcons/image19.png")} alt="" />
       </Media>
     </MediaWrapper>
-  )
-}
+  );
+};
 
 const Context = () => {
   return (
@@ -200,11 +200,11 @@ const Context = () => {
       <Img2 />
       <Context7 />
     </>
-  )
-}
+  );
+};
 
 function ModuleOne() {
-  const { push } = useHistory()
+  const { push } = useHistory();
 
   return (
     <>
@@ -214,13 +214,13 @@ function ModuleOne() {
         <Context />
         <Formik
           initialValues={{
-            m1_q1: '',
-            m1_q2: '',
+            m1_q1: "",
+            m1_q2: ""
           }}
           validationSchema={ModuleOneSchema}
           onSubmit={() => {
-            push('/module2')
-            window.scrollTo({ top: 0, behavior: 'smooth' })
+            push("/module2");
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
           {props => (
@@ -231,7 +231,7 @@ function ModuleOne() {
         </Formik>
       </Wrapper>
     </>
-  )
+  );
 }
 
-export default ModuleOne
+export default ModuleOne;
