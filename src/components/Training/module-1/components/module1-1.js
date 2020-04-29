@@ -1,8 +1,8 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { Formik, Form as FormikForm } from 'formik'
-import { ModuleOneSchema } from '../../../utils/yupSchemas'
-import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
+import { ModuleOneSchema } from '../../../../utils/yupSchemas'
+import trainingAxiosWithAuth from '../../../../utils/axios/trainingAxiosWithAuth'
 import {
   Wrapper,
   Title,
@@ -17,10 +17,13 @@ import {
   Submit,
   Div,
   TrainingModuleOverlay,
-} from '../TrainStyles'
+} from '../../TrainStyles';
+
+import Progress from "../../TrainingModuleContainer.js";
 
 
-import TrainingNav from '../TrainingNav/NavBar'
+
+import TrainingNav from '../../TrainingNav/NavBar'
 
 const Context3 = () => {
   return (
@@ -144,7 +147,7 @@ function TitleWrapper() {
     <Title>
       <BackArrow
         onClick={() => {
-          push('/modulestart')
+          push('/training-start')
         }}
       />
       Benefits of supporting foster families
@@ -185,7 +188,7 @@ const Img2 = () => {
     <MediaWrapper>
       <Context6 />
       <Media style={{ marginTop: 50 }}>
-        <img src={require('../TrainingIcons/image19.png')} alt='' />
+        <img src={require('../../TrainingIcons/image19.png')} alt='' />
       </Media>
     </MediaWrapper>
   )
@@ -203,7 +206,7 @@ const Context = () => {
   )
 }
 
-function Module12() {
+function Module11() {
   const { push } = useHistory()
   
 //!axios call here trainingAxiosWithAuth()
@@ -223,7 +226,8 @@ const handleSubmit = values => {
   return (
     <>
       <TrainingNav />
-      <TrainingModuleOverlay/>
+      <Progress />
+    
      
       <Wrapper>
         <TitleWrapper />
@@ -250,4 +254,4 @@ const handleSubmit = values => {
   )
 }
 
-export default Module12
+export default Module11

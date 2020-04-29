@@ -14,8 +14,9 @@ import {
   Label,
   Input,
   Submit,
-} from '../TrainStyles'
+} from '../../TrainStyles'
 //import axiosWithAuth from '../../../utils/axios/trainingaxiosWithAuth'
+import Progress from "../../TrainingModuleContainer";
 
 export default function Module34() {
   const { push } = useHistory()
@@ -28,6 +29,7 @@ export default function Module34() {
 
   return (
     <Wrapper>
+      <Progress />
       <Title>
         <BackArrow />
         What kids need
@@ -60,7 +62,7 @@ export default function Module34() {
               </Step>
             </div>
             <Media>
-              <img src={require('./train3.png')} />
+              <img src={require('../train3.png')} />
             </Media>
           </MediaWrapper>
           <Step>

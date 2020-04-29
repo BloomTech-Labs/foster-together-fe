@@ -16,7 +16,8 @@ import {
 } from "../TrainStyles";
 import Player from "react-player";
 
-import Progress from "../progressBar.js";
+import Progress from "../TrainingModuleContainer.js";
+//!import Progress from "../ModuleOverlay.js"
 
 
 function TitleWrapper() {
@@ -25,7 +26,7 @@ function TitleWrapper() {
     <Title>
       <BackArrow
         onClick={() => {
-          push("/modulestart");
+          push("/training-start");
         }}
       />
       A letter of gratitude continued...
@@ -98,7 +99,7 @@ const TestContext2 = () => {
   );
 };
 
-const Module11 = () => {
+const ModuleStart2 = () => {
   const { push } = useHistory();
   return (
     <>
@@ -130,4 +131,4 @@ const Module11 = () => {
   );
 };
 
-export default Module11;
+export default ModuleStart2;

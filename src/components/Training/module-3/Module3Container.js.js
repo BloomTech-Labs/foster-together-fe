@@ -1,18 +1,22 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { Formik, Form as FormikForm } from 'formik'
 import NavBar from '../TrainingNav/NavBar'
-import Module31 from './module3-1'
-import Module32 from './module3-2'
-import Module33 from './module3-3'
-import Module34 from './module3-4'
-
+import Module31 from './components/module3-1'
+import Module32 from './components/module3-2'
+import Module33 from './components/module3-3'
+import Module34 from './components/module3-4'
+// /components
 const initialValues = {
   m3_q1: '',
   m3_q2: '',
   m3_q3: '',
   m3_q4: '',
   m3_q5: '',
+}
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
 }
 
 function Overlay(props) {
@@ -32,14 +36,15 @@ function Overlay(props) {
 }
 
 function FullOverlay() {
-  // Override the default value of 0 if a submodule is passed in via the url query parameters
-  // let submodule = 0
-  // if (route.query.submodule !== null) {
-  //   submodule = route.query.submodule;
-  // }
+  let query = useQuery();
+  let page = parseInt(query.get('page')) - 1;
+  let defaultModule = 0;
+  if (page !== null && page < 4) {
+    defaultModule = page;
+  }
 
-  // const [module, setModule] = useState(submodule)
-  const [module, setModule] = useState(0);
+  const [module, setModule] = useState(defaultModule);
+
   return (
     <>
       <NavBar />
@@ -53,4 +58,5 @@ function FullOverlay() {
     </>
   )
 }
+
 export default FullOverlay

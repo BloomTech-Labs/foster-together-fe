@@ -1,4 +1,7 @@
 import React from "react";
+
+// import TrainingNav from "../TrainingNav/NavBar";
+
 import {
   Wrapper,
   Title,
@@ -14,6 +17,7 @@ import {
 import { Section, List, Step } from "../styles";
 import { fiveStepsImage } from "../../img";
 import { SimpleStep } from "./index";
+import Progress from "../../TrainingModuleContainer";
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 const simpleStepData = [
@@ -35,8 +39,12 @@ export const Module21 = ({ handleBack, errors, touched }) => {
 //!axios call here trainingAxiosWithAuth()
 
   return (
+    
     <Wrapper>
+      <Progress />
+     
       <Title>
+        
         <BackArrow onClick={handleBack} />
         Five steps in the matching process
       </Title>

@@ -86,12 +86,17 @@ class ProgressBar extends React.Component {
       width: 22 + (lineHeight <= 2 ? 0 : lineHeight - 2) + 'px',
     };
 
-    // This logic is wrong with new steps prop
-    // [3,3,4,4,1] = 3 + 3 + 4 + 4 +1
-    // Needs to use .length with new format to work properly
-    // Calculates the width of each progress segment in the progress bar
     steps = steps.concat([['']]);
-    let calculatedPercentage = width < 100 ? 100 * stepNumber / steps.reduce((a, b) => a.length + b.length) + '%' : '100%';
+    let numberOfSteps = steps.reduce(function(a, b) {
+      let count = a;
+      if (a.length) {
+        count = a.length;
+      }
+
+      return count + b.length;
+    });
+    let calculatedPercentage = width < 100 ? 100 * stepNumber / numberOfSteps + '%' : '100%';
+
     return (
       <div>
         <div className="progress-container form-progress">
@@ -104,6 +109,8 @@ class ProgressBar extends React.Component {
               {
                 bullets ?
                   <div className="progress-line"
+                  // progress-line is just moving the width to fill the container based off of the calculatedPercentage 
+                  // change width to divs somehow
                        style={{
                          width: width + '%',
                          backgroundColor: lineColor.active,
@@ -118,22 +125,18 @@ class ProgressBar extends React.Component {
                        }}>&nbsp;</div>
               }
             </div>
-            {/* // This loop needs to be refactored to work with the sub-arrays
-            // Right now it just loops the numbers in the steps [3,3,4,1] etc
-            // Needs to loop twice (through the arrays, and then through each array item) */}
+
             {this.props.bullets ?
               steps.map((item, key) =>
                 <div key={key} className="progress-bullet-container progress-bullet-1"
                      style={{left: (100 / (steps.length - 1) * key) + '%'}}>
-                  <a href='key'>
-                    <div
-                      className={`progress-bullet ${width >= (100 / (steps.length - 1) * key) ? 'active' : ''}`}
-                      style={width >= (100 / (steps.length - 1) * key) ?
-                        {...bulletsStyles, ...{backgroundColor: bulletColor.active}}
-                        :
-                        {...bulletsStyles, ...{backgroundColor: bulletColor.inactive}}
-                      }>&nbsp;</div>
-                  </a>
+                  <div
+                    className={`progress-bullet ${width >= (100 / (steps.length - 1) * key) ? 'active' : ''}`}
+                    style={width >= (100 / (steps.length - 1) * key) ?
+                      {...bulletsStyles, ...{backgroundColor: bulletColor.active}}
+                      :
+                      {...bulletsStyles, ...{backgroundColor: bulletColor.inactive}}
+                    }>&nbsp;</div>
                 </div>)
               :
               null

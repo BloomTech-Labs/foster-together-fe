@@ -18,6 +18,9 @@ import {
 import { SimpleStep } from './index'
 import { mealTipsImage } from '../../img'
 import Survey from './Survey'
+import Progress from "../../TrainingModuleContainer";
+
+
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 const mealTipsData = [
@@ -186,6 +189,7 @@ const BeyondTheMeal = () => {
 export const Module23 = ({ handleBack, ...props }) => {
   return (
     <Wrapper>
+      <Progress />
       <Title>
         <BackArrow onClick={handleBack} />
         Meal Delivery Tips (From Michele, a Current Family Helper)

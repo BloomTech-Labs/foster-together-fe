@@ -14,6 +14,8 @@ import {
 } from '../../TrainStyles'
 import { Section, List, Step } from '../styles'
 import { SimpleStep } from './index'
+import Progress from "../../TrainingModuleContainer";
+
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 const simpleStepData = [
@@ -53,7 +55,9 @@ export const Module22 = ({ handleBack, errors, touched }) => {
 
 
   return (
+    
     <Wrapper>
+      <Progress />
       <Title>
         <BackArrow onClick={handleBack} />
         Best practices for a happy match

@@ -14,8 +14,9 @@ import {
   Label,
   Input,
   Submit,
-} from '../TrainStyles'
+} from '../../TrainStyles'
 //import axiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
+import Progress from "../../TrainingModuleContainer";
 
 export default function Module33(props) {
   const handleSubmit = () => {
@@ -25,6 +26,7 @@ export default function Module33(props) {
 
   return (
     <Wrapper>
+      <Progress />
       <Title>
         <BackArrow />
         Foster parents' least favorite compliments (and a few ideas for what you
