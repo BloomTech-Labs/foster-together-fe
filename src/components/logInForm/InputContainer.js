@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import {
   Input,
@@ -9,9 +9,8 @@ import {
   BtnContainer,
   Button,
   Forgot,
-  ForContainer,
+  ForContainer
 } from "./styles";
-import { useSelector } from "react-redux";
 import { Event } from "../../utils/analytics/index";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
@@ -55,7 +54,7 @@ const ForgotPass = () => {
   );
 };
 
-const SubmitBtn = (props) => {
+const SubmitBtn = props => {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
@@ -97,7 +96,7 @@ const LoginInputs = () => {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={(values) => dispatch(login(values, push))}
+      onSubmit={values => dispatch(login(values, push))}
     >
       <InputContainer>
         <EmailInput />

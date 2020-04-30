@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import { MapContain } from "./MapStyles";
-import FamMarker from "./FamilyMarker";
-import NeighborMarker from "./NeighborMarker";
-import { getMembers } from "../../../redux/thunks/memThunks";
+import { MapContain } from "../MapStyles";
+import FamMarker from "../Markers/FamilyMarker/FamilyMarker";
+import NeighborMarker from "../Markers/NeighborMarker/NeighborMarker";
+import { getMembers } from "../../../../redux/thunks/memThunks";
 import { useSelector, useDispatch } from "react-redux";
-import * as locations from "./Locations";
 
 function Map(props, { latitude, longitude, refresh }) {
   const [zoom, setZoom] = useState();

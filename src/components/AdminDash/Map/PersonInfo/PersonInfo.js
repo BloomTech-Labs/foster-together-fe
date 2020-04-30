@@ -8,8 +8,8 @@ import {
   SmallIcon,
   SubInfoContainer,
   InfoText,
-  InfoType,
-} from "./MapStyles";
+  InfoType
+} from "../MapStyles";
 import { useHistory } from "react-router-dom";
 
 export default function Filter(props) {
@@ -26,7 +26,7 @@ export default function Filter(props) {
           {selected.name !== undefined ? (
             <SmallIcon
               onClick={() => history.push(`/${selected.type}/${selected.id}`)}
-              src={require("./mapicons/redirect.png")}
+              src={require("../mapicons/redirect.png")}
             />
           ) : null}{" "}
         </UserName>
@@ -35,15 +35,15 @@ export default function Filter(props) {
         </IconContain>
         <SubInfoContainer>
           <IconContain>
-            <Icon src={require("./mapicons/Address.svg")} />
+            <Icon src={require("../mapicons/Address.svg")} />
             <InfoText>{selected.address}</InfoText>
           </IconContain>
           <IconContain>
-            <Icon src={require("./mapicons/Email.svg")} />
+            <Icon src={require("../mapicons/Email.svg")} />
             <InfoText>{selected.email}</InfoText>
           </IconContain>
           <IconContain>
-            <Icon src={require("./mapicons/Phone.svg")} />
+            <Icon src={require("../mapicons/Phone.svg")} />
             <InfoText>{selected.phone}</InfoText>
           </IconContain>
         </SubInfoContainer>

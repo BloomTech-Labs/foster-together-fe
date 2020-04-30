@@ -5,7 +5,6 @@ import {
   Header,
   Image,
   HeaderHolder,
-  Input,
   ButtonContain,
   Label,
   FilterInput,
@@ -13,36 +12,27 @@ import {
   ArrowIcon,
   Dot,
   FilterDropdown
-} from "./MapStyles";
-import { Buttons, TopSecButton } from "./MapStyles";
+} from "../MapStyles";
+import { Buttons, TopSecButton } from "../MapStyles";
 import { FaLocationArrow } from "react-icons/fa";
 
 /* Function Below */
 export default function Filter(props) {
   const locations = props.locations;
-  const [typeSelected, setTypeSelected] = useState(null);
+  const [typeSelected, setTypeSelected] = useState("All");
   const [matchSelected, setMatchSelected] = useState("All");
   const [points, setPoints] = useState(locations);
   const [completed, setCompleted] = useState("All");
   const [search, setSearch] = useState("");
-  const [zipSearch, setZipSearch] = useState("");
 
   // Handles search functionality
   const handleChange = e => {
     setSearch(e.target.value.trim().toLowerCase());
   };
 
-  const handleZipChange = e => {
-    setZipSearch(e.target.value);
-  };
-
-  useEffect(() => {
-    setTimeout(function() {
-      props.filter([]);
-    }, 1000);
-  }, []);
-
   const neighborss = locations.filter(people => people.type === "neighbors");
+  console.log("neighbors here", neighborss);
+
   const families = locations.filter(people => people.type === "families");
   const matchedNeighborss = locations.filter(
     people => people.type === "neighbors" && people.match === true
@@ -330,23 +320,17 @@ export default function Filter(props) {
           people.last_name.toLowerCase().includes(search) ||
           people.address.toLowerCase().includes(search) ||
           people.email.toLowerCase().includes(search) ||
-          people.phone.toLowerCase().includes(search)
+          people.phone.toLowerCase().includes(search) ||
+          people.zip.includes(search)
       )
     );
   }, [search]);
-
-  useEffect(() => {
-    if (zipSearch.length === 5) {
-      setPoints(
-        locations.filter(people => people.zip.toString().includes(zipSearch))
-      );
-    }
-  }, [zipSearch || matchSelected || typeSelected]);
 
   return (
     <FilterDiv>
       <FilterInput
         onChange={handleChange}
+        data-testid="input-filter"
         id="id"
         type="text"
         name="filter"
@@ -367,7 +351,7 @@ export default function Filter(props) {
             }}
           ></TopSecButton>
           <Label>Approved</Label>
-          <Dot src={require("./mapicons/GreenDot.svg")} />
+          <Dot src={require("../mapicons/GreenDot.svg")} />
         </ButtonContain>
         <ButtonContain>
           <TopSecButton
@@ -378,7 +362,7 @@ export default function Filter(props) {
             }}
           ></TopSecButton>
           <Label>Completed</Label>
-          <Dot src={require("./mapicons/GreenDot.svg")} />
+          <Dot src={require("../mapicons/GreenDot.svg")} />
         </ButtonContain>
 
         <ButtonContain>
@@ -401,17 +385,17 @@ export default function Filter(props) {
         <ButtonContain>
           <TopSecButton></TopSecButton>
           <Label>Completed</Label>
-          <Dot src={require("./mapicons/GreenDot.svg")} />
+          <Dot src={require("../mapicons/GreenDot.svg")} />
         </ButtonContain>
         <ButtonContain>
           <TopSecButton></TopSecButton>
           <Label>In Progress</Label>
-          <Dot src={require("./mapicons/YellowDot.svg")} />
+          <Dot src={require("../mapicons/YellowDot.svg")} />
         </ButtonContain>
         <ButtonContain>
           <TopSecButton></TopSecButton>
           <Label>Not Started</Label>
-          <Dot src={require("./mapicons/RedDot.svg")} />
+          <Dot src={require("../mapicons/RedDot.svg")} />
         </ButtonContain>
         <ButtonContain>
           <TopSecButton></TopSecButton>
@@ -427,17 +411,17 @@ export default function Filter(props) {
         <ButtonContain>
           <TopSecButton></TopSecButton>
           <Label>Completed</Label>
-          <Dot src={require("./mapicons/GreenDot.svg")} />
+          <Dot src={require("../mapicons/GreenDot.svg")} />
         </ButtonContain>
         <ButtonContain>
           <TopSecButton></TopSecButton>
           <Label>In Progress</Label>
-          <Dot src={require("./mapicons/YellowDot.svg")} />
+          <Dot src={require("../mapicons/YellowDot.svg")} />
         </ButtonContain>
         <ButtonContain>
           <TopSecButton></TopSecButton>
           <Label>Not Started</Label>
-          <Dot src={require("./mapicons/RedDot.svg")} />
+          <Dot src={require("../mapicons/RedDot.svg")} />
         </ButtonContain>
         <ButtonContain>
           <TopSecButton></TopSecButton>
@@ -464,7 +448,7 @@ export default function Filter(props) {
 
       <ButtonHolder>
         <HeaderHolder>
-          <Image src={require("./mapicons/Member.svg")} />
+          <Image src={require("../mapicons/Member.svg")} />
           <Header>Member Type</Header>
         </HeaderHolder>
         <ButtonContain>
@@ -494,7 +478,6 @@ export default function Filter(props) {
             onClick={() => {
               handleAll();
             }}
-            checked="checked"
           ></Buttons>
           <Label>Both</Label>
         </ButtonContain>
@@ -538,52 +521,3 @@ export default function Filter(props) {
     </FilterDiv>
   );
 }
-
-/* 
-  <ButtonHolder>
-      <Header> Search by Name</Header>
-      <Input value={search} onChange={handleChange} />
-  </ButtonHolder>
-  <ButtonHolder>
-      <Header> Search by Zip</Header>
-      <Input value={zipSearch} onChange={handleZipChange} />
-  </ButtonHolder> 
-*/
-
-/* 
-<ButtonHolder>
-        <HeaderHolder>
-          <Header>App Status</Header>
-        </HeaderHolder>
-        <ButtonContain>
-          <Buttons
-            selected={completed}
-            current="All"
-            onClick={() => {
-              handleAllCompleted();
-            }}
-          ></Buttons>
-          <Label>All</Label>
-        </ButtonContain>
-        <ButtonContain>
-          <Buttons
-            selected={completed}
-            current={true}
-            onClick={() => {
-              handleCompleted();
-            }}
-          ></Buttons>
-          <Label>Completed</Label>
-        </ButtonContain>
-        <ButtonContain>
-          <Buttons
-            selected={completed}
-            current={false}
-            onClick={() => {
-              handleUncompleted();
-            }}
-          ></Buttons>
-          <Label>Incomplete</Label>
-        </ButtonContain>
-      </ButtonHolder>
-*/

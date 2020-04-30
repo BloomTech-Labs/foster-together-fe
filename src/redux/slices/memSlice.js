@@ -1,28 +1,28 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const memSlice = createSlice({
-  name: 'mem',
+  name: "mem",
   initialState: {
     membersArray: [],
     memError: null,
-    selectedMember: {},
+    selectedMember: {}
   },
   reducers: {
     setMembersArray(state, action) {
-      state.membersArray = action.payload
+      state.membersArray = action.payload;
     },
     setMemError(state, action) {
-      state.memError = action.payload
+      state.memError = action.payload;
     },
     setSelectedMember(state, action) {
-      state.selectedMember = action.payload
-    },
-  },
-})
+      state.selectedMember = action.payload;
+    }
+  }
+});
 
 export const {
   setMembersArray,
   setMemError,
-  setSelectedMember,
-} = memSlice.actions
-export default memSlice.reducer
+  setSelectedMember
+} = memSlice.actions;
+export default memSlice.reducer;
