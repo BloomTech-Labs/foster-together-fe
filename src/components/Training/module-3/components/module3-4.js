@@ -15,7 +15,6 @@ import {
   Input,
   Submit,
 } from '../../TrainStyles'
-//import axiosWithAuth from '../../../utils/axios/trainingaxiosWithAuth'
 import Progress from "../../TrainingModuleContainer";
 
 export default function Module34() {

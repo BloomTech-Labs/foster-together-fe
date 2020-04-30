@@ -237,24 +237,24 @@ export const Bold = styled.text`
   font-weight: 800;
 `
 
-export const Cards = styled.div`
-  display: flex;
-  margin-bottom: 3%;
-  .closed {
-    color: red;
-  }
-  #open {
-    flex-direction: column;
-  }
-  &:hover {
-    .img {
-      transform: rotate(90deg);
-      transition: transform 300ms ease-in-out;
-    }
-    background-color: #253b44;
-    color: #ff8d86;
-  }
-`
+// export const Cards = styled.div`
+//   display: flex;
+//   margin-bottom: 3%;
+//   .closed {
+//     color: red;
+//   }
+//   #open {
+//     flex-direction: column;
+//   }
+//   &:hover {
+//     .img {
+//       transform: rotate(90deg);
+//       transition: transform 300ms ease-in-out;
+//     }
+//     background-color: #253b44;
+//     color: #ff8d86;
+//   }
+// `
 export const Arrow = styled.img`
   width: 10%;
 `
@@ -582,3 +582,158 @@ export const Checkbox = styled.span`
 
 
 //! module 2 training styles END
+
+
+
+
+//! module 3 training styles START
+
+
+// export const Module3BigTitle = styled.h1`
+//   font-size: 3rem;
+// `
+// export const Module3Page = styled.div`
+//   display: flex;
+//   align-items: start;
+//   flex-direction: column;
+//   width: 90%;
+//   margin-left: 5%;
+//   margin-top: 5%;
+// `
+
+// export const Module3Header = styled.h1`
+//   font-size: 3.1rem;
+//   text-align: left;
+//   font-weight: 500;
+// `
+
+// export const Module3Section = styled.div`
+//   display: flex;
+//   width: 75%;
+//   max-width: 850px;
+
+//   border-top: 1px solid black;
+// `
+
+// export const Module3PlayerWrapper = styled.div`
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 5%;
+// `
+
+// export const Module3Bold = styled.text`
+//   font-size: 1.7rem;
+//   line-height: 4rem;
+//   font-weight: 800;
+// `
+
+// export const Letter = styled.div`
+//   background-color: #faf9f6;
+//   width: 80vw;
+//   padding: 2% 5%;
+// `
+
+// export const Circle = styled.div`
+//   width: 8%;
+//   display: flex;
+//   justify-content: center;
+//   position: relative;
+//   top: -20px;
+// `
+
+export const Cards = styled.div`
+  display: flex;
+  margin-bottom: 3%;
+  .closed {
+    color: red;
+  }
+  &:hover {
+    .img {
+      transform: rotate(90deg);
+      transition: transform 300ms ease-in-out;
+    }
+    background-color: #c0c0c0;
+    color: blue;
+  }
+  .open {
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+`
+
+
+// export const Module3Input = styled.textarea`
+//   width: 100%;
+//   height: 150px;
+//   resize: none;
+//   font-size: 2rem;
+//   padding: 1rem;
+// `
+
+// export const Footer = styled.div`
+//   width: 100%;
+//   background-color: #253b44;
+//   margin-top: 5%;
+// `
+
+
+
+// export const Module3Half = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-bottom: 50px;
+//   width: 100%;
+// `
+
+
+// export const Module3Image3 = styled.img`
+//   margin: auto;
+//   max-height: 50%;
+//   width: 35%;
+//   padding-left: 5%;
+// `
+
+export const Ordered = styled.ol``
+
+export const VideoHolder = styled.div`
+  width: 50%;
+  margin-left: 5%;
+`
+export const Indented = styled.ul`
+  list-style-type: none;
+  li {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+`
+
+export const ProgressBar = styled.div`
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0vw;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: space-evenly;
+  flex-direction: column;
+`
+
+export const ProgressHeader = styled.div`
+  width: 20%;
+  padding: 1%;
+  font-size: 3rem;
+  border-right: 1px solid black;
+  text-align: center;
+`
+
+export const HeaderHolder = styled.div`
+  display: flex;
+`
+//! module 3 training styles END
