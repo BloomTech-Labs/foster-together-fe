@@ -3,7 +3,7 @@ import { renderWithReduxAndRouter as render } from '../../../../utils/testHelper
 import { Formik, Form } from 'formik'
 import ModuleTwo from '..'
 import { Module22 } from './Module22'
-import { Checkbox, FormGroup, CheckLabel } from '../styles'
+import { Checkbox, FormGroup, CheckLabel } from '../../TrainStyles'
 import { Module23, Survey } from './module2-3'
 import { fireEvent } from '@testing-library/react'
 

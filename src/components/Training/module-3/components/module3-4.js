@@ -62,7 +62,7 @@ export default function Module34() {
               </Step>
             </div>
             <Media>
-              <img src={require('../train3.png')} />
+              <img src={require('../../img/train3.png')} />
             </Media>
           </MediaWrapper>
           <Step>
