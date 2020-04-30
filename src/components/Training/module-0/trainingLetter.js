@@ -11,7 +11,7 @@ import {
   LetterText,
  
 } from '../TrainStyles'
-import next from '../TrainingIcons/next.png'
+import next from '../img/next.png'
 import TrainingNav from '../TrainingNav/NavBar'
 
 function LetterTitle() {

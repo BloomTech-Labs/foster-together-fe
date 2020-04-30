@@ -1,15 +1,15 @@
 import React from 'react'
 import {
-  Page,
+  Module4Page,
   MainContent7,
   Signature,
-  Submit,
-  Header,
+  Module4Submit,
+  Module4Header,
   BigLink1,
   BigInput,
   InputHolder,
   SignContain,
-  Link,
+  Module4Link,
   Header7,
   Body,
   Header6,
@@ -19,8 +19,8 @@ import {
   Header8,
   NewSection,
   Span,
-  BigLink,
-} from './styles'
+  Module4BigLink,
+} from '../../TrainStyles.js'
 import { useHistory } from 'react-router-dom'
 import Progress from "../../TrainingModuleContainer";
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
@@ -33,7 +33,7 @@ export const Module44 = ({ handleBack }) => {
   return (
     <>
     <Progress />
-      <Header>
+      <Module4Header>
         <svg
           width='21'
           height='18'
@@ -48,8 +48,8 @@ export const Module44 = ({ handleBack }) => {
           />
         </svg>
         What to do if you suspect abuse, or a child discloses abuse{' '}
-      </Header>
-      <Page>
+      </Module4Header>
+      <Module4Page>
         <Header6>
           <ol>
             <li>
@@ -75,9 +75,9 @@ export const Module44 = ({ handleBack }) => {
             </li>
             <li>
               <span>Seek treatment for the child. </span>
-              <BigLink href='https://www.safepassagecac.org/'>
+              <Module4BigLink href='https://www.safepassagecac.org/'>
                 Safe Passage Colorado{' '}
-              </BigLink>{' '}
+              </Module4BigLink>{' '}
               provides a seamless referral and treatment system, lessening the
               trauma to the child and caretaker during an investigation. Contact
               them here: safepassagecac.org/
@@ -87,10 +87,10 @@ export const Module44 = ({ handleBack }) => {
               you realize that someone you know (or yourself) is abusing
               children, please get help. Treatment can be very effective and may
               even save a life.{' '}
-              <BigLink href='https://www.atsa.com/referral'>
+              <Module4BigLink href='https://www.atsa.com/referral'>
                 {' '}
                 This referral form{' '}
-              </BigLink>{' '}
+              </Module4BigLink>{' '}
               with the Association for Treatment of Sexual Offenders is
               completely anonymous: atsa.com/referral
             </li>
@@ -137,15 +137,15 @@ export const Module44 = ({ handleBack }) => {
           </MainContent7>
         </NewSection>
         <BigInput placeholder='Your Answer Here' />
-        <Submit
+        <Module4Submit
           onClick={() => {
             push('./module5')
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
           Submit
-        </Submit>
-      </Page>
+        </Module4Submit>
+      </Module4Page>
     </>
   )
 }
