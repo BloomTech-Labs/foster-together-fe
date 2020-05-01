@@ -8,16 +8,16 @@ import LoginSideBar from "./LoginSideBar";
 
 const LoginForm = () => {
   const { push } = useHistory();
-  const { userType } = useSelector(state => state.auth);
+  const { userType } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (userType === "admins") {
-        push("/dashboard");
-      } else if (userType === "families" || userType === "neighbors") {
-        push("/userProfile");
-      }
-    }, 3000);
+    /* setTimeout(() => { */
+    if (userType === "admins") {
+      push("/dashboard");
+    } else if (userType === "families" || userType === "neighbors") {
+      push("/userProfile");
+    }
+    /* }, 3000); */
   }, [userType, push]);
   return (
     <Container>
