@@ -9,17 +9,16 @@ import {
   BtnContainer,
   Button,
   Forgot,
-  ForContainer
+  ForContainer,
 } from "./styles";
 import { Event } from "../../utils/analytics/index";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/thunks/authThunks";
 
-/* Below is lading */
+/* Below is loading */
 import Loading from "../Loading/Loading";
-
-/* Above is lading */
+/* Above is loading */
 
 const EmailInput = () => {
   return (
@@ -54,11 +53,11 @@ const ForgotPass = () => {
   );
 };
 
-const SubmitBtn = props => {
-  const [loading, setLoading] = useState(false);
-  const history = useHistory();
+const SubmitBtn = () => {
+  /* const [loading, setLoading] = useState(false);
+  const { push } = useHistory();
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading />; */
 
   return (
     <Button>
@@ -66,12 +65,12 @@ const SubmitBtn = props => {
         <Submit
           type="submit"
           onClick={() => {
-            setLoading(true);
+            Event("Login", "Tried to login", "submit");
+            /* setLoading(true);
             setTimeout(() => {
               setLoading(false);
-              history.push("/dashboard");
-            }, 3000);
-            Event("Login", "Tried to login", "submit");
+              push("/dashboard");
+            }, 3000); */
           }}
         >
           Submit
@@ -96,7 +95,7 @@ const LoginInputs = () => {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={values => dispatch(login(values, push))}
+      onSubmit={(values) => dispatch(login(values, push))}
     >
       <InputContainer>
         <EmailInput />
