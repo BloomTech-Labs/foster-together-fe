@@ -135,7 +135,7 @@ const Context8 = ({ errors, touched }) => {
           helpful!
           <Input component='textarea' id='m1_q2' name='m1_q2' />
         </Label>
-        <Submit type='submit'>Submit</Submit>
+        <Submit type='submit'>Complete Module 1</Submit>
       </Form>
     </>
   )
