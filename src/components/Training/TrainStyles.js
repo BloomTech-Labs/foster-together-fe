@@ -500,7 +500,8 @@ p {
 
 
 export const Module2Section = styled.section`
-  width: 100%;
+
+width: 100%;
   margin: 50px 0 75px;
 `
 export const Module2Text = styled.p`
@@ -512,37 +513,13 @@ export const List = styled.ol`
   padding: 0 0 0 2.5rem;
 `
 
-export const Module2BulletList = styled.ul`
-  margin: 0;
-  padding: 0 0 0 2.5rem;
-`
+
 
 export const SmallList = styled(BulletList)`
   padding: 0 0 0 9rem;
 `
 
-export const Module2Step = styled.li`
-  font-size: 2.4rem;
-  margin: 50px 0;
-  padding-left: 1.7rem;
-  font-weight: bold;
-  h3,
-  p,
-  span {
-    font-size: 2.4rem;
-  }
-  p {
-    margin: 0 0 30px;
-    font-weight: normal;
-  }
-  span {
-    font-weight: bold;
-  }
 
-  &:first-child {
-    margin-top: 0;
-  }
-`
 
 export const SmallStep = styled(Step)`
   margin: 25px 0;

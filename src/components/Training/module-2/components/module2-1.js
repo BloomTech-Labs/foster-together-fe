@@ -15,7 +15,7 @@ import {
   Submit,
   Module2Section, 
   List, 
-  Module2Step
+ Step
 } from "../../TrainStyles";
 
 import { fiveStepsImage } from "../../img";
@@ -56,7 +56,7 @@ export const Module21 = ({ handleBack, errors, touched }) => {
           {simpleStepData.map((step, index) => (
             <SimpleStep key={index} title={step.title} text={step.text} />
           ))}
-          <Module2Step>
+          <Step>
             <h3>
               Get an overview of the family closest to you, and agree to be
               matched.
@@ -83,8 +83,8 @@ export const Module21 = ({ handleBack, errors, touched }) => {
                 />
               </Media>
             </MediaWrapper>
-          </Module2Step>
-          <Module2Step>
+          </Step>
+          <Step>
             <h3>Set your initial meeting.</h3>
             <p>
               Let the foster family know a bit about yourself, and{" "}
@@ -120,8 +120,8 @@ export const Module21 = ({ handleBack, errors, touched }) => {
                 <img src={fiveStepsImage} alt="" />
               </Media>
             </MediaWrapper>
-          </Module2Step>
-          <Module2Step>
+          </Step>
+          <Step>
             <h3>Check in every month. Develop a relationship!</h3>
             <p>
               Drop the foster parents a line every few weeks to make sure your
@@ -134,7 +134,7 @@ export const Module21 = ({ handleBack, errors, touched }) => {
               drop-off, always with the oversight of the family’s county or
               agency (for childcare or transportation).
             </p>
-          </Module2Step>
+          </Step>
         </List>
       </Module2Section>
       <Title>Understanding the five steps: Complete before proceeding</Title>

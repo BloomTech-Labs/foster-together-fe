@@ -12,7 +12,7 @@ import {
   Submit,
   Section, 
   List, 
-  Module2Step 
+  Step 
 } from '../../TrainStyles'
 
 import { SimpleStep } from './index'
@@ -70,7 +70,7 @@ export const Module22 = ({ handleBack, errors, touched }) => {
             <div key={index}>
               <SimpleStep title={step.title} text={step.text} />
               {index === 0 && (
-                <Module2Step>
+                <Step>
                   <h3>Start with simple, small tasks.</h3>
                   <MediaWrapper>
                     <div>
@@ -100,7 +100,7 @@ export const Module22 = ({ handleBack, errors, touched }) => {
                     budget or time demands. You can always add tasks, but it's
                     best not to over commit.
                   </p>
-                </Module2Step>
+                </Step>
               )}
             </div>
           ))}

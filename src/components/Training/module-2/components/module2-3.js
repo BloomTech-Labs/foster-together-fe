@@ -6,8 +6,8 @@ import {
   MediaWrapper,
   Media,
   Section,
-  Module2BulletList,
-  Module2Step,
+BulletList,
+ Step,
   SmallList,
   SmallStep,
   Module2Text,
@@ -17,9 +17,6 @@ import { SimpleStep } from './index'
 import { mealTipsImage } from '../../img'
 import Survey from './Survey'
 import Progress from "../../TrainingModuleContainer";
-
-
-//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 const mealTipsData = [
   `I am flexible on the day of the week I drop off, and so is she! With the first kids she fostered, there was one day a week in which she spent most of the day in meetings with the kids' families, so she didn't have much time to cook. So while she had those kids, I made a point of dropping off the same day each week. Now with a new set of siblings, she doesn't have the same restriction on her schedule, so I drop off when it works for me.`,
@@ -35,54 +32,54 @@ const mealTipsData = [
 
 const MealTipsWrapper = () => {
   
-//!axios call here trainingAxiosWithAuth()
+
 
   return (
     <Section>
       <MediaWrapper>
         <div>
-          <Module2BulletList>
-            <Module2Step>
+          <BulletList>
+            <Step>
               <p>Buy foil baking pans on sale to keep on hand.</p>
-            </Module2Step>
-            <Module2Step>
+            </Step>
+            <Step>
               <p>Enclose baking/cooking instructions (if needed).</p>
-            </Module2Step>
-            <Module2Step>
+            </Step>
+            <Step>
               <p>
                 <span>Less logistical coordination is better.</span> I told the
                 foster mom, “Leave a cooler on your porch, and I’ll fill it up
                 on Monday mornings.” (This may change over time--keep reading!)
               </p>
-            </Module2Step>
-            <Module2Step>
+            </Step>
+            <Step>
               <p>
                 <span>Use containers you don't need back.</span> The last thing
                 I want to do is add to her burden, so if she's not able to clean
                 them, she is welcome to recycle or toss.
               </p>
-            </Module2Step>
-            <Module2Step>
+            </Step>
+            <Step>
               <p>
                 If something should be refrigerated quickly (i.e., raw cookie
                 dough, potato salad, etc.) I over-communicate (sending an extra
                 text after drop-off) to make sure the foster mom remembers to
                 grab it from the cooler.
               </p>
-            </Module2Step>
-          </Module2BulletList>
+            </Step>
+          </BulletList>
         </div>
         <Media>
           <img src={mealTipsImage} alt='' />
         </Media>
-      </MediaWrapper>
-      <Module2BulletList>
+      
+      <BulletList>
         {mealTipsData.map((step, index) => (
           <div key={index}>
             <SimpleStep text={step} />
             {index === 2 ? (
               <>
-                <Module2Step>
+                <Step>
                   <p>
                     <span>
                       I try to take good care of all the kids in the house--kids
@@ -93,18 +90,18 @@ const MealTipsWrapper = () => {
                     have an 11 year old daughter and a 10 year old son: perfect
                     ages to pass along my kids' clothes & books.
                   </p>
-                </Module2Step>
-                <Module2Step>
+                </Step>
+                <Step>
                   <p>
                     If I drop off clothes or supplies,{' '}
                     <span>I organize by size and gender,</span> and only drop
                     off what the foster parent can use. Extra can go to the
                     thrift store or one of Foster Together's clothing partners.
                   </p>
-                </Module2Step>
+                </Step>
               </>
             ) : index === 4 ? (
-              <Module2Step>
+              <Step>
                 <p>
                   While a well-rounded, delicious, and kid-friendly meal is the
                   most requested support, you are free to get creative! Foster
@@ -118,9 +115,9 @@ const MealTipsWrapper = () => {
                     and supported.
                   </span>
                 </p>
-              </Module2Step>
+              </Step>
             ) : index === 5 ? (
-              <Module2Step>
+              <Step>
                 <p>
                   <span>
                     Some Family Helpers prefer picking up takeout over cooking,
@@ -135,11 +132,12 @@ const MealTipsWrapper = () => {
                   Listening to what the family wants and needs will make this an
                   extremely effective gift.
                 </p>
-              </Module2Step>
+              </Step>
             ) : null}
           </div>
         ))}
-      </Module2BulletList>
+      </BulletList>
+      </MediaWrapper>
     </Section>
   )
 }
