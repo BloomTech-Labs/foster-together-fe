@@ -16,7 +16,7 @@ import {
 } from "../TrainStyles";
 import Player from "react-player";
 
-import Progress from "../TrainingModuleContainer.js";
+
 //!import Progress from "../ModuleOverlay.js"
 
 
@@ -104,12 +104,7 @@ const ModuleStart2 = () => {
   return (
     <>
       <TrainingNav />
-     
-      <Progress />
-      
-
-      <TrainingModuleOverlay />
-      <Wrapper>
+      <Wrapper> 
         <TitleWrapper />
         <VideoPlayer />
         <LetterContainer>

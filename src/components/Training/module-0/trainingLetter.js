@@ -9,6 +9,7 @@ import {
   Circle,
   LetterCircle,
   LetterText,
+  
  
 } from '../TrainStyles'
 import next from '../img/next.png'
@@ -17,6 +18,7 @@ import TrainingNav from '../TrainingNav/NavBar'
 function LetterTitle() {
   const { push } = useHistory()
   return (
+    
     <Title>
       <BackArrow
         onClick={() => {
@@ -25,6 +27,7 @@ function LetterTitle() {
       />
       A letter of gratitude
     </Title>
+  
   )
 }
 

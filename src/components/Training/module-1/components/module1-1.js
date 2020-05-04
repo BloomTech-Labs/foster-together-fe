@@ -226,10 +226,11 @@ const handleSubmit = values => {
   return (
     <>
       <TrainingNav />
+      <Wrapper>
       <Progress />
     
      
-      <Wrapper>
+    
         <TitleWrapper />
         <Context />
         <Formik
