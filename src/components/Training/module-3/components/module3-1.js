@@ -171,7 +171,7 @@ export default function Module31(props) {
         <Title>Family differences: Complete before proceeding</Title>
         <Form>
           <Label>
-            Are you surprised by any of the possibile differences in family
+            Are you surprised by any of the possible differences in family
             structure or norms? Do any of them make you feel uneasy? (2+
             sentences) *
             <Input
