@@ -31,8 +31,6 @@ const mealTipsData = [
 ]
 
 const MealTipsWrapper = () => {
-  
-
 
   return (
     <Section>

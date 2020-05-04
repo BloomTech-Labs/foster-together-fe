@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { Formik, Form } from 'formik'
 import NavBar from '../TrainingNav/NavBar'
-// import { Module21, Module22, Module23 } from './components/'
+
 import Module21 from './components/module2-1'
 import Module22 from './components/module2-2'
 import Module23 from './components/module2-3'

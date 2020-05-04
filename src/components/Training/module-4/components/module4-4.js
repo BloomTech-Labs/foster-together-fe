@@ -138,10 +138,11 @@ export const Module44 = ({ handleBack }) => {
         </NewSection>
         <BigInput placeholder='Your Answer Here' />
         <Module4Submit
-          onClick={() => {
-            push('./module5')
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
+          type="submit"
+          // onClick={() => {
+          //   push('./module5')
+          //   window.scrollTo({ top: 0, behavior: 'smooth' })
+          // }}
         >
           Submit
         </Module4Submit>

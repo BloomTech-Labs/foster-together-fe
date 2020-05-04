@@ -16,16 +16,13 @@ import {
 
 import Progress from "../../TrainingModuleContainer";
 
-export default function Module32(props) {
-  const handleSubmit = () => {
-    props.setModule(2)
-  }
+export const Module32 = ({ handleBack }) => {  
 
   return (
     <Wrapper>
       <Progress />
       <Title>
-        <BackArrow />
+        <BackArrow onClick={handleBack} />
         What makes a great foster family helper?
       </Title>
       <MainSection>
@@ -97,16 +94,10 @@ export default function Module32(props) {
           bring to the match. *
           <Input id='m3_q2' name='m3_q2' placeholder='Your answer here' />
         </Label>
-        <Submit
-          data-testid='next'
-          onClick={() => {
-            handleSubmit()
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
-        >
-          Continue
-        </Submit>
+        <Submit type="submit">Continue</Submit>
       </Form>
     </Wrapper>
   )
 }
+
+export default Module32
