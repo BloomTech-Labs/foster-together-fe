@@ -1,23 +1,21 @@
-import React from 'react'
-import { Menu, LogOut, Display } from '../Navigation/navStyles'
-import { useHistory } from 'react-router-dom'
+import React from "react";
+import { Menu, LogOut, Display } from "../Navigation/navStyles";
 
 const Container = () => {
-  const { push } = useHistory()
   return (
     <Menu>
       <Display>
         <LogOut
           onClick={() => {
-            localStorage.removeItem('token')
-            push('/login')
+            localStorage.clear();
+            window.location.href = "/";
           }}
         >
           Log Out
         </LogOut>
       </Display>
     </Menu>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;
