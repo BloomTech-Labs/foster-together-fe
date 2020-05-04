@@ -13,7 +13,7 @@ BulletList,
   Module2Text,
 } from '../../TrainStyles'
 
-import { SimpleStep } from './index'
+import { SimpleStep } from './SimpleStep'
 import { mealTipsImage } from '../../img'
 import Survey from './Survey'
 import Progress from "../../TrainingModuleContainer";
@@ -198,3 +198,5 @@ export const Module23 = ({ handleBack, ...props }) => {
     </Wrapper>
   )
 }
+
+export default Module23;
