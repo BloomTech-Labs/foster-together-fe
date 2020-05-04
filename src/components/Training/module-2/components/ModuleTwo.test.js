@@ -1,15 +1,15 @@
-import React from 'react'
-import { renderWithReduxAndRouter as render } from '../../../../utils/testHelpers'
-import { Formik, Form } from 'formik'
-import ModuleTwo from '..'
-import { Module22 } from './Module22'
-import { Checkbox, FormGroup, CheckLabel } from '../../TrainStyles'
-import { Module23, Survey } from './module2-3'
-import { fireEvent } from '@testing-library/react'
+import React from "react";
+import { renderWithReduxAndRouter as render } from "../../../../utils/testHelpers";
+import { Formik, Form } from "formik";
+import ModuleTwo from "..";
+import { Module22 } from "./module2-2";
+import { Checkbox, FormGroup, CheckLabel } from "../styles";
+import { Module23, Survey } from "./module2-3";
+import { fireEvent } from "@testing-library/react";
 
 const initialValues = {
-  m2_q1: '',
-  m2_q2: '',
+  m2_q1: "",
+  m2_q2: "",
   m2_q3: 0,
   m2_q4: false,
   // m2_q5
@@ -22,17 +22,17 @@ const initialValues = {
   answer_a7: false,
   answer_a8: false,
   answer_a9: false,
-  answer_b: '',
+  answer_b: "",
   m2_q6: false,
   m2_q7: false,
-  m2_q8: '',
-}
+  m2_q8: ""
+};
 
-test('ModuleTwo is rendered', async () => {
-  render(<ModuleTwo />)
-})
+test("ModuleTwo is rendered", async () => {
+  render(<ModuleTwo />);
+});
 
-test('Best Practices is rendered', async () => {
+test("Best Practices is rendered", async () => {
   render(
     <Formik initialValues={initialValues}>
       {props => (
@@ -41,10 +41,10 @@ test('Best Practices is rendered', async () => {
         </Form>
       )}
     </Formik>
-  )
-})
+  );
+});
 
-test('Radio button', () => {
+test("Radio button", () => {
   render(
     <Formik initialValues={initialValues}>
       {props => (
@@ -53,9 +53,9 @@ test('Radio button', () => {
         </Form>
       )}
     </Formik>
-  )
-})
+  );
+});
 
-test('renders button correctly', () => {
-  const { getByText, findByText } = render(<CheckLabel></CheckLabel>)
-})
+test("renders button correctly", () => {
+  const { getByText, findByText } = render(<CheckLabel></CheckLabel>);
+});

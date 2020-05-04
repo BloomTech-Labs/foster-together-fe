@@ -1,7 +1,7 @@
-import React from 'react'
-import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers/index.js'
-import ModuleFive from './moduleFive'
+import React from "react";
+import { renderWithReduxAndRouter as render } from "../../../utils/testHelpers";
+import ModuleFive from "./module5-1";
 
-test('ModuleFive renders', () => {
-  render(<ModuleFive />)
-})
+test("ModuleFive renders", () => {
+  render(<ModuleFive />);
+});
