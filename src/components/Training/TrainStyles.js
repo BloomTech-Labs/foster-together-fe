@@ -17,6 +17,7 @@ export const BulletList = styled.ul`
   padding: 0 0 0 2.5rem;
 `;
 
+
 //! Module 2.1, 2.2, 2.3, 3.1, 3.3, 3.4 and simpleStep
 export const Step = styled.li`
   font-size: 2.4rem;
@@ -174,7 +175,12 @@ export const TestText = styled.p`
   font-style: italic;
   line-height: 4.2rem;
 `;
-
+export const Page = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: auto;
+`;
 //!Module TrainingLetter and TrainingLetter2 end
 
 //!Module ONE styles start
@@ -365,15 +371,7 @@ export const Module4Link = styled.a`
   font-size: 2rem;
 `;
 
-//!4.2, 4.3
-export const Page1 = styled.div`
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 64%;
-  margin: auto;
-`;
+
 //! 4.2, 4.3
 export const Link = styled.a`
   color: black;
@@ -410,6 +408,62 @@ export const SignContain = styled.div`
 `;
 
 //! 4.1 START
+
+export const Header1 = styled.h1`
+  font-size: 3rem;
+  display: flex;
+  width: 100vw;
+  position: relative;
+  right: 1rem;
+  margin: 5rem 0rem 4rem 0rem;
+`;
+
+export const Module4Title = styled.h1`
+  display: flex;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: -1rem;
+`;
+
+export const Module4MainContent = styled.h1`
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-dirction: row;
+  margin: 0rem 0rem -2rem 0rem;
+`;
+
+export const MainContent1 = styled.text`
+  line-height: 2.5rem;
+  ul {
+    li {
+      position: relative;
+      left: 5rem;
+      list-style-type: none;
+    }
+  }
+`;
+
+export const Section = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+export const Section1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+`;
+
+export const Paragraph = styled.text`
+  font-size: 1.8rem;
+  font-weight: 400;
+  width: 45%;
+  height: 100%;
+  line-height: 3rem;
+  margin: 4rem 8rem 0rem 0rem;
+`;
+
 export const Paragraph1 = styled.text`
   display: flex;
   font-size: 1.8rem;
@@ -424,56 +478,20 @@ export const Paragraph1 = styled.text`
     font-size: 1.8rem;
   }
 `;
-export const Header1 = styled.h1`
-  font-size: 3rem;
-  display: flex;
-  width: 100vw;
-  position: relative;
-  right: 1rem;
-  margin: 5rem 0rem 4rem 0rem;
-`;
-export const Module4MainContent = styled.h1`
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  flex-dirction: row;
-  margin: 0rem 0rem -2rem 0rem;
-`;
 
 export const Module4Video = styled.div`
   display: flex;
   justify-content: center;
   margin-right: 0.5rem;
 `;
-export const Paragraph = styled.text`
-  font-size: 1.8rem;
-  font-weight: 400;
-  width: 45%;
-  height: 100%;
-  line-height: 3rem;
-  margin: 4rem 8rem 0rem 0rem;
-`;
-export const Section1 = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-size: 1.8rem;
-`;
+
 export const Or = styled.ul`
   font-size: 1.8rem;
   width: 100%;
   margin: 1rem 0rem 1rem -2rem;
 `;
 
-export const MainContent1 = styled.text`
-  line-height: 2.5rem;
-  ul {
-    li {
-      position: relative;
-      left: 5rem;
-      list-style-type: none;
-    }
-  }
-`;
+
 
 export const Diamond = styled.div`
   font-size: 1rem;
@@ -488,55 +506,26 @@ export const Question = styled.li`
   margin: 0rem 8rem 1.8rem 0rem;
 `;
 
-export const Module4Title = styled.h1`
-  display: flex;
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: -1rem;
-`;
-
-export const Section = styled.div`
-  display: flex;
-  width: 100%;
-`;
 //!4.2 START
-
-export const Section2 = styled.div`
-  display: flex;
-  // width: 75%;
-  // border-top: 1px solid black;
-  flex-direction: column;
-`;
-
-export const Module4ATag = styled.a`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-`;
-export const ATag1 = styled.a`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-`;
-export const MainContent2 = styled.text`
-  font-size: 1.7rem;
-  line-height: 4rem;
-  text-align: left;
-  padding: 1%;
-`;
 export const Header2 = styled.h1`
   text-align: center;
   font-size: 3rem;
   margin-top: 3rem;
 `;
-export const Image2 = styled.img`
-  margin: auto;
-  max-height: 50%;
-  width: 50%;
-  padding-right: 5%;
+export const Header3 = styled.h1`
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 5rem 0rem 4rem 0rem;
 `;
+export const Header4 = styled.h1`
+  text-align: center;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.8rem;
+  font-weight: 300px;
+`;
+
 export const Body = styled.div`
   flex-direction: coloumn;
   font-size: 1.8rem;
@@ -551,23 +540,28 @@ export const Body1 = styled.text`
   margin-bottom: 1rem;
 `;
 
-export const Quote = styled.p`
+export const Body2 = styled.text`
+  font-size: 1.8rem;
+  line-height: 3rem;
+`;
+
+export const Body3 = styled.h1`
+  font-size: 1.8rem;
+`;
+
+export const Section2 = styled.div`
+  display: flex;
+  // width: 75%;
+  // border-top: 1px solid black;
+  flex-direction: column;
+`;
+
+export const MainContent2 = styled.text`
   font-size: 1.7rem;
   line-height: 4rem;
   text-align: left;
-  margin: 4%;
-  font-style: italic;
+  padding: 1%;
 `;
-export const Video1 = styled.div`
-  margin: 1rem 0rem 0rem 5rem;
-`;
-
-export const Span = styled.text`
-  font-weight: bold;
-  font-size: 1.8rem;
-  color: black;
-`;
-
 export const MainContent3 = styled.text`
   line-height: 2.5rem;
   width: 42%;
@@ -579,9 +573,46 @@ export const MainContent4 = styled.text`
   line-height: 2.5rem;
 `;
 
-export const Body2 = styled.text`
+export const Module4ATag = styled.a`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+`;
+export const ATag1 = styled.a`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+`;
+
+export const Statement = styled.h1`
   font-size: 1.8rem;
-  line-height: 3rem;
+`;
+
+export const Quote = styled.p`
+  font-size: 1.7rem;
+  line-height: 4rem;
+  text-align: left;
+  margin: 4%;
+  font-style: italic;
+`;
+
+export const Span = styled.text`
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: black;
+`;
+
+export const Image2 = styled.img`
+  margin: auto;
+  max-height: 50%;
+  width: 50%;
+  padding-right: 5%;
+`;
+
+export const Video1 = styled.div`
+  margin: 1rem 0rem 0rem 5rem;
 `;
 
 export const Half1 = styled.div`
@@ -591,41 +622,39 @@ export const Half1 = styled.div`
   margin-top: 1rem;
 `;
 
-export const Question1 = styled.text`
-  font-size: 2rem;
-  text-align: left;
-  margin-bottom: 3rem;
-`;
-
-export const Header3 = styled.h1`
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin: 5rem 0rem 4rem 0rem;
-`;
-
 export const ClickHere = styled.text`
   color: grey;
   font-size: 1.8rem;
 `;
 
-export const Header4 = styled.h1`
-  text-align: center;
-  margin-top: 3rem;
-  display: flex;
-  justify-content: flex-start;
-  font-size: 1.8rem;
-  font-weight: 300px;
+export const Question1 = styled.text`
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 3rem;
 `;
-
-export const Body3 = styled.h1`
-  font-size: 1.8rem;
-`;
-
-export const Statement = styled.h1`
-  font-size: 1.8rem;
-`;
-
 //!4.3 START
+export const Header5 = styled.h1`
+  display: flex;
+  align-items: left;
+  font-size: 3.4rem;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  line-height: 4rem;
+`;
+
+export const Body4 = styled.text`
+  font-size: 2rem;
+  margin: 4rem 0rem 3rem 0rem;
+  font-style: italic;
+`;
+export const Page1 = styled.div`
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 64%;
+  margin: auto;
+`;
 export const MainContent5 = styled.text`
   font-size: 2rem;
   display: block;
@@ -635,6 +664,15 @@ export const MainContent5 = styled.text`
   align-items: center;
   color: black;
 `;
+export const MainContent6 = styled.h1`
+  width: 100%;
+  font-size: 2rem;
+  display: block;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+  text-align: left;
+`;
+
 export const MainContent8 = styled.text`
   font-size: 2rem;
   line-height: 3rem;
@@ -647,101 +685,12 @@ export const Span1 = styled.text`
   font-size: 2rem;
 `;
 
-export const Body4 = styled.text`
-  font-size: 2rem;
-  margin: 4rem 0rem 3rem 0rem;
-  font-style: italic;
-`;
-
-export const Header5 = styled.h1`
-  display: flex;
-  align-items: left;
-  font-size: 3.4rem;
-  margin-bottom: 3rem;
-  font-weight: 400;
-  line-height: 4rem;
-`;
-
-export const MainContent6 = styled.h1`
-  width: 100%;
-  font-size: 2rem;
-  display: block;
-  line-height: 3rem;
-  margin-bottom: 3rem;
-  text-align: left;
-`;
-
 export const Image4 = styled.img`
   width: 80%;
   height: auto;
   margin: auto;
 `;
 //!4.4 START
-export const Link1 = styled.a`
-  color: black;
-  font-size: 2rem;
-  line-height: 3rem;
-  text-decoration: none;
-`;
-
-export const Header8 = styled.h1`
-  display: flex;
-  flex-direction: row;
-  font-size: 2.5rem;
-  width: 50%;
-  font-weight: 400;
-  margin: 6rem 0rem 4rem 0rem;
-  padding-left: 15%;
-  svg {
-    margin: 0.5rem 1.5rem 0rem 0rem;
-  }
-`;
-
-export const Header7 = styled.h1`
-  font-size: 3rem;
-  font-weight: 400;
-  display: flex;
-  margin: 2rem 15rem 4rem 0rem;
-`;
-
-export const Signature2 = styled.div`
-  width: 100%;
-  height: 12rem;
-  resize: none;
-  font-size: 2rem;
-  padding: 1.4rem;
-  background: #f9f9f9;
-  border-radius: 4px 4px 0 0;
-  border: none;
-  border-bottom: 1px solid #a1a1a1;
-`;
-
-export const Todo = styled.text`
-  font-style: italic;
-  font-size: 2.1rem;
-  margin-top: 1rem;
-`;
-
-export const NewSection = styled.text`
-  display: flex;
-  align-items: left;
-  flex-direction: column;
-`;
-
-export const BigLink = styled.a`
-  font-size: 2.1rem;
-  text-align: left;
-  font-weight: 500;
-  color: black;
-  text-decoration: none;
-  //color: #a1a1a1;
-`;
-
-export const MainContent7 = styled.text`
-  font-size: 1.8rem;
-  line-height: 3rem;
-  margin-bottom: 4rem;
-`;
 
 export const Header6 = styled.li`
   display: flex;
@@ -764,6 +713,71 @@ export const Header6 = styled.li`
     }
   }
 `;
+export const Header7 = styled.h1`
+  font-size: 3rem;
+  font-weight: 400;
+  display: flex;
+  margin: 2rem 15rem 4rem 0rem;
+`;
+
+export const Header8 = styled.h1`
+  display: flex;
+  flex-direction: row;
+  font-size: 2.5rem;
+  width: 50%;
+  font-weight: 400;
+  margin: 6rem 0rem 4rem 0rem;
+  padding-left: 15%;
+  svg {
+    margin: 0.5rem 1.5rem 0rem 0rem;
+  }
+`;
+
+export const MainContent7 = styled.text`
+  font-size: 1.8rem;
+  line-height: 3rem;
+  margin-bottom: 4rem;
+`;
+
+export const NewSection = styled.text`
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+`;
+
+export const Link1 = styled.a`
+  color: black;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-decoration: none;
+`;
+
+export const Signature2 = styled.div`
+  width: 100%;
+  height: 12rem;
+  resize: none;
+  font-size: 2rem;
+  padding: 1.4rem;
+  background: #f9f9f9;
+  border-radius: 4px 4px 0 0;
+  border: none;
+  border-bottom: 1px solid #a1a1a1;
+`;
+
+export const Todo = styled.text`
+  font-style: italic;
+  font-size: 2.1rem;
+  margin-top: 1rem;
+`;
+
+export const BigLink = styled.a`
+  font-size: 2.1rem;
+  text-align: left;
+  font-weight: 500;
+  color: black;
+  text-decoration: none;
+  //color: #a1a1a1;
+`;
 
 export const Span2 = styled.text`
   font-size: 2.1rem;
@@ -773,11 +787,10 @@ export const Span2 = styled.text`
 
 //!Module FIVE styles start
 
-export const Page = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 85%;
-  margin: auto;
+export const Header = styled.h2`
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #676767;
 `;
 
 export const TitleContainer = styled.div`
@@ -791,26 +804,12 @@ export const BigTitle = styled.h1`
   margin: 0 5%;
 `;
 
-export const Header = styled.h2`
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: #676767;
-`;
-
-export const QuestionsInput = styled.textarea`
-  width: 64%;
-  height: 150px;
-  resize: none;
-  font-size: 2rem;
-`;
-
 export const LetterText = styled.p`
   font-size: 1.8rem;
   text-align: left;
   line-height: 3rem;
   color: #375762;
   margin: 3% 0;
-
   b {
     font-size: 1.8rem;
   }
@@ -819,7 +818,7 @@ export const LetterText = styled.p`
 export const ContextDiv = styled.div`
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width:80%;
   margin: 0 auto;
   align-content: space-between;
 `;
@@ -827,5 +826,12 @@ export const QuestionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const QuestionsInput = styled.textarea`
+  width: 64%;
+  height: 150px;
+  resize: none;
+  font-size: 2rem;
 `;
 //!Module FIVE styles end

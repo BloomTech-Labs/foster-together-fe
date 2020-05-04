@@ -5,9 +5,9 @@ import {
   BackArrow,
   MediaWrapper,
   Media,
-  Section,
-BulletList,
- Step,
+  Module2Section,
+  BulletList,
+  Step,
   SmallList,
   SmallStep,
   Module2Text,
@@ -35,7 +35,7 @@ const MealTipsWrapper = () => {
 
 
   return (
-    <Section>
+    <Module2Section>
       <MediaWrapper>
         <div>
           <BulletList>
@@ -138,7 +138,7 @@ const MealTipsWrapper = () => {
         ))}
       </BulletList>
       </MediaWrapper>
-    </Section>
+    </Module2Section>
   )
 }
 
@@ -150,7 +150,7 @@ const beyondTheMealData = [
 
 const BeyondTheMeal = () => {
   return (
-    <Section>
+    <Module2Section>
       <Module2Text>
         If you're the type who wants to customize the match to the foster
         parent's most-needed tasks, here's how you do that:
@@ -178,7 +178,7 @@ const BeyondTheMeal = () => {
           </div>
         ))}
       </SmallList>
-    </Section>
+    </Module2Section>
   )
 }
 
