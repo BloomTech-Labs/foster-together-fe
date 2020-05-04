@@ -1,25 +1,17 @@
 import React from 'react'
 import {
-  Module4Page,
   MainContent7,
   Signature,
   Module4Submit,
-  Module4Header,
-  BigLink1,
   BigInput,
   InputHolder,
-  SignContain,
-  Module4Link,
   Header7,
   Body,
   Header6,
-  Signature2,
   Todo,
   Span2,
-  Header8,
   NewSection,
-  Span,
-  Module4BigLink,
+  BigLink,
   Wrapper,
   Title
 } from '../../TrainStyles.js'
@@ -54,12 +46,12 @@ export const Module44 = ({ handleBack }) => {
           <ol>
             <li>
               <Span2>Be prepared: </Span2>
-              <BigLink1
+              <BigLink
                 href='https://themamabeareffect.org/prevent/when-to-speak-up/'
                 target='blank'
               >
                 {'  '}How to Know, Who to Call, What to Say (Click to read){' '}
-              </BigLink1>
+              </BigLink>
             </li>
             <li>
               <span>You need to call it in:</span> Colorado has our own child
@@ -75,9 +67,9 @@ export const Module44 = ({ handleBack }) => {
             </li>
             <li>
               <span>Seek treatment for the child. </span>
-              <Module4BigLink href='https://www.safepassagecac.org/'>
+              <BigLink href='https://www.safepassagecac.org/'>
                 Safe Passage Colorado{' '}
-              </Module4BigLink>{' '}
+              </BigLink>{' '}
               provides a seamless referral and treatment system, lessening the
               trauma to the child and caretaker during an investigation. Contact
               them here: safepassagecac.org/
@@ -87,10 +79,10 @@ export const Module44 = ({ handleBack }) => {
               you realize that someone you know (or yourself) is abusing
               children, please get help. Treatment can be very effective and may
               even save a life.{' '}
-              <Module4BigLink href='https://www.atsa.com/referral'>
+              <BigLink href='https://www.atsa.com/referral'>
                 {' '}
                 This referral form{' '}
-              </Module4BigLink>{' '}
+              </BigLink>{' '}
               with the Association for Treatment of Sexual Offenders is
               completely anonymous: atsa.com/referral
             </li>

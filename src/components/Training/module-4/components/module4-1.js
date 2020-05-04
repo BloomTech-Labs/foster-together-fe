@@ -1,18 +1,15 @@
 import React, { useState } from 'react'
 import {
-  Module4Page,
+  
   Section,
   Module4MainContent,
   Module4Input,
   Module4Submit,
   Module4ATag,
-  ATag1,
-  Module4Header,
   Question,
   Module4Title,
   MainContent1,
   Paragraph,
-  Span,
   Header1,
   Paragraph1,
   Module4Video,
@@ -72,7 +69,7 @@ export const Module41 = ({ handleNext, handleBack }) => {
         </svg>
         When do you need a background check?
       </Title>
-      {/* <Module4Page> */}
+   
         <Section> 
           <Module4Title>Basic Overview of Safety and Legal Requirements: </Module4Title>
           <Module4MainContent>
@@ -242,7 +239,7 @@ export const Module41 = ({ handleNext, handleBack }) => {
         <Module4ATag>
           <Module4Submit onClick={handleNext}>Continue</Module4Submit>
         </Module4ATag>
-      {/* </Module4Page> */}
+  
       </Wrapper>
     </>
   )

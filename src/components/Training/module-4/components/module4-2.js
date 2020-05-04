@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import {
-  Page1,
-  Header,
   Body,
   Body1,
   MainContent2,

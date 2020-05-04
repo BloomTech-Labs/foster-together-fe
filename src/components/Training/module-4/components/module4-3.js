@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import {
-  Page1,
   MainContent6,
   MainContent5,
   MainContent8,
   Signature,
   Module4Submit,
   ATag1,
-  Module4Header,
   Image4,
   InputHolder,
   SignContain,
@@ -20,11 +18,10 @@ import {
   Title
 } from '../../TrainStyles.js'
 import Progress from "../../TrainingModuleContainer";
-//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
+
 
 export const Module43 = ({ handleBack, handleNext }) => {
 
-  //!axios call here trainingAxiosWithAuth()
   
   return(
 
@@ -47,7 +44,7 @@ export const Module43 = ({ handleBack, handleNext }) => {
         </svg>
         Body Safety Rules by The Mama Bear Effect{' '}
       </Title>
-      {/* <Page1> */}
+   
         <>
           <MainContent8>
             Foster parents wishing to use a Foster Together parent helper are

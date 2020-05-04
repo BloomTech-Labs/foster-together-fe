@@ -12,7 +12,6 @@ import {
   TestText,
   Submit,
   Half,
-  TrainingModuleOverlay
 } from "../TrainStyles";
 import Player from "react-player";
 
