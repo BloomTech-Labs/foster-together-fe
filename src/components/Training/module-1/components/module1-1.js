@@ -16,7 +16,6 @@ import {
   Error,
   Submit,
   Div,
-  TrainingModuleOverlay,
 } from '../../TrainStyles';
 
 import Progress from "../../TrainingModuleContainer.js";

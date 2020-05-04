@@ -1,25 +1,17 @@
 import React from 'react'
 import {
-  Module4Page,
   MainContent7,
   Signature,
   Module4Submit,
-  Module4Header,
-  // BigLink1,
   BigInput,
   InputHolder,
-  SignContain,
-  Module4Link,
   Header7,
   Body,
   Header6,
-  Signature2,
   Todo,
   Span2,
-  Header8,
   NewSection,
-  Span,
-BigLink,
+  BigLink,
   Wrapper,
   Title
 } from '../../TrainStyles.js'
