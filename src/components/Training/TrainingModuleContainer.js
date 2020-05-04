@@ -3,7 +3,7 @@ import ProgressBar from './TrainingProgressBar.js';
 import './styles.scss'; 
 
 import { useState } from 'react';
-import {TrainingModuleOverlay } from "./TrainStyles";
+// import {TrainingModuleOverlay } from "./TrainStyles";
 
 
 
@@ -46,10 +46,11 @@ export default function Progress() {
   }
 
   return (
+  
     <div className= "bar">
 
      
-    <TrainingModuleOverlay>
+    {/* <TrainingModuleOverlay> */}
       <div className="module-bar-container">
         <div className="one">
           <p>Module 1</p>
@@ -67,7 +68,7 @@ export default function Progress() {
           <p>Module 5</p>
         </div>
       </div>
-    </TrainingModuleOverlay>
+    {/* </TrainingModuleOverlay> */}
 
       <ProgressBar
           stepNumber={progressState.stepNumber}

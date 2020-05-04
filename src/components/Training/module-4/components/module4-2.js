@@ -28,14 +28,15 @@ import {
 } from '../../TrainStyles.js'
 import Player from 'react-player'
 import Progress from "../../TrainingModuleContainer";
-//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
+
 
 export const Module42 = ({ handleNext, handleBack }) => {
-  
-//!axios call here trainingAxiosWithAuth()
+
   return (
     <>
+    <Page1>
      <Progress />
+     
       <Header>
         <svg
           width='21'
@@ -52,7 +53,7 @@ export const Module42 = ({ handleNext, handleBack }) => {
         </svg>
         Sexual abuse prevention{' '}
       </Header>
-      <Page1>
+      
         <Section1>
           <MainContent2>
             <Section2>

@@ -324,8 +324,8 @@ export const Wrap = styled.div`
 
 export const Section2 = styled.div`
   display: flex;
-  width: 75%;
-  border-top: 1px solid black;
+  // width: 75%;
+  // border-top: 1px solid black;
   flex-direction: column;
 `
 export const Module4ATag = styled.a`
@@ -346,7 +346,7 @@ export const MainContent2 = styled.text`
   font-size: 1.7rem;
   line-height: 4rem;
   text-align: left;
-  border: 1px solid green;
+
   padding: 1%;
 `
 
@@ -433,7 +433,7 @@ export const Signature = styled.textarea`
 
 export const SignContain = styled.div`
   margin-bottom: 4rem;
-  border: 2px solid black;
+  // border: 2px solid black;
   padding: 5px;
 `
 

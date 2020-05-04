@@ -45,7 +45,7 @@ export const Module41 = ({ handleNext, handleBack }) => {
         When do you need a background check?
       </Module4Header>
       <Module4Page>
-        <Section>
+        <Section> 
           <Module4Title>Basic Overview of Safety and Legal Requirements: </Module4Title>
           <Module4MainContent>
             <Paragraph>
@@ -66,6 +66,8 @@ export const Module41 = ({ handleNext, handleBack }) => {
               />
             </Module4Video>
           </Module4MainContent>
+          </Section> 
+          <Section> 
           <MainContent1>
             <Question>Option One: Casual Helping</Question>
             <Paragraph1>

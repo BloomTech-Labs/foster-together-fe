@@ -23,13 +23,10 @@ import {
 } from '../../TrainStyles.js'
 import { useHistory } from 'react-router-dom'
 import Progress from "../../TrainingModuleContainer";
-//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 export const Module44 = ({ handleBack }) => {
   const { push } = useHistory()
 
-  //!axios call here trainingAxiosWithAuth()
-  
   return (
     <>
     <Progress />
