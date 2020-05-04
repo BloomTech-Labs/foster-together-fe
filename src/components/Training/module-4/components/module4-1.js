@@ -18,6 +18,8 @@ import {
   Module4Video,
   Or,
   Header2,
+  Wrapper,
+  Title
 } from '../../TrainStyles.js'
 import Player from 'react-player'
 import Diamond from './diamond'
@@ -27,8 +29,9 @@ export const Module41 = ({ handleNext, handleBack }) => {
 
   return (
     <>
+    <Wrapper>
      <Progress />
-      <Module4Header>
+      <Title>
         <svg
           width='21'
           height='17'
@@ -43,8 +46,8 @@ export const Module41 = ({ handleNext, handleBack }) => {
           />
         </svg>
         When do you need a background check?
-      </Module4Header>
-      <Module4Page>
+      </Title>
+      {/* <Module4Page> */}
         <Section> 
           <Module4Title>Basic Overview of Safety and Legal Requirements: </Module4Title>
           <Module4MainContent>
@@ -214,7 +217,8 @@ export const Module41 = ({ handleNext, handleBack }) => {
         <Module4ATag>
           <Module4Submit onClick={handleNext}>Continue</Module4Submit>
         </Module4ATag>
-      </Module4Page>
+      {/* </Module4Page> */}
+      </Wrapper>
     </>
   )
 }
