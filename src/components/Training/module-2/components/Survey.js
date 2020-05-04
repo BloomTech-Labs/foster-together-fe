@@ -1,6 +1,14 @@
 import React from 'react'
-import { Label, Input, Submit, Form } from '../../TrainStyles'
-import { FormGroup, CheckLabel, Checkbox } from '../styles'
+import { 
+  Label, 
+  Input, 
+  Submit, 
+  Form,
+  FormGroup, 
+  CheckLabel, 
+  Checkbox  
+} from '../../TrainStyles'
+
 
 const questionOneData = [
   '2 hours a month (minimum for monthly meal drop-off)',

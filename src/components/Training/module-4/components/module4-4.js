@@ -1,33 +1,31 @@
 import React from 'react'
 import {
-  Page,
   MainContent7,
   Signature,
-  Submit,
-  Header,
-  BigLink1,
+  Module4Submit,
   BigInput,
   InputHolder,
-  SignContain,
-  Link,
   Header7,
   Body,
   Header6,
-  Signature2,
   Todo,
   Span2,
-  Header8,
   NewSection,
-  Span,
   BigLink,
-} from './styles'
+  Wrapper,
+  Title
+} from '../../TrainStyles.js'
 import { useHistory } from 'react-router-dom'
+import Progress from "../../TrainingModuleContainer";
 
 export const Module44 = ({ handleBack }) => {
   const { push } = useHistory()
+
   return (
     <>
-      <Header>
+    <Wrapper>
+    <Progress />
+      <Title>
         <svg
           width='21'
           height='18'
@@ -42,18 +40,18 @@ export const Module44 = ({ handleBack }) => {
           />
         </svg>
         What to do if you suspect abuse, or a child discloses abuse{' '}
-      </Header>
-      <Page>
+      </Title>
+      {/* <Module4Page> */}
         <Header6>
           <ol>
             <li>
               <Span2>Be prepared: </Span2>
-              <BigLink1
+              <BigLink
                 href='https://themamabeareffect.org/prevent/when-to-speak-up/'
                 target='blank'
               >
                 {'  '}How to Know, Who to Call, What to Say (Click to read){' '}
-              </BigLink1>
+              </BigLink>
             </li>
             <li>
               <span>You need to call it in:</span> Colorado has our own child
@@ -131,15 +129,19 @@ export const Module44 = ({ handleBack }) => {
           </MainContent7>
         </NewSection>
         <BigInput placeholder='Your Answer Here' />
-        <Submit
-          onClick={() => {
-            push('./module5')
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
+        <Module4Submit
+          type="submit"
+          // onClick={() => {
+          //   push('./module5')
+          //   window.scrollTo({ top: 0, behavior: 'smooth' })
+          // }}
         >
           Submit
-        </Submit>
-      </Page>
+        </Module4Submit>
+      {/* </Module4Page> */}
+      </Wrapper>
     </>
   )
 }
+
+export default Module44;

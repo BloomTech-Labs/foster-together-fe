@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import TrainingNav from '../TrainingNav/NavBar'
+import TrainingNav from '../../TrainingNav/NavBar'
 import {
-  Page,
+  // Page,
   TitleContainer,
   BigTitle,
   LetterText,
@@ -11,15 +11,18 @@ import {
   Submit,
   Half,
   QuestionsInput,
-} from '../TrainStyles'
+  Wrapper
+} from '../../TrainStyles'
 import { useHistory } from 'react-router-dom'
+import Progress from "../../TrainingModuleContainer";
 
 function Title({ props }) {
   const { push } = useHistory()
+
   return (
     <TitleContainer>
       <img
-        src={require('../../../images/icons/back-arrow.svg')}
+        src={require('../../../../images/icons/back-arrow.svg')}
         onClick={() => {
           push('/module4')
         }}
@@ -42,7 +45,7 @@ const Responsibilities = () => {
 
 const Context = () => {
   return (
-    <div>
+    // <div>
       <LetterText>
         <LetterText>
           1. To recruit and minimally vet potential foster family helpers
@@ -69,13 +72,13 @@ const Context = () => {
           6. As requested, to assist with problem-solving throughout the match.
         </LetterText>
       </LetterText>
-    </div>
+    // </div>
   )
 }
 
 const Context1 = () => {
   return (
-    <div>
+    <>
       <Header>Foster Parent’s Responsibility:</Header>
       <LetterText>
         1. To be responsive to Foster Together and the foster family helper,
@@ -101,13 +104,13 @@ const Context1 = () => {
         the family helper, recognizing that the family helper also has
         responsibilities and time commitments.
       </LetterText>
-    </div>
+    </>
   )
 }
 
 const Context2 = () => {
   return (
-    <div>
+    <>
       <Header>Foster Neighbor’s Responsibility:</Header>
       <LetterText>
         1. To be responsive to Foster Together and the foster parent,
@@ -139,14 +142,15 @@ const Context2 = () => {
         in the background as much as possible, increasing the capacity of the
         foster parent.
       </LetterText>
-    </div>
+    </>
   )
 }
 
 const Questions = (form, handleChange) => {
   console.log(form)
   return (
-    <QuestionContainer>
+    <Wrapper>
+    {/* <QuestionContainer> */}
       <Header>Understanding Responsibility: Complete before proceeding</Header>
       <LetterText>
         As the Foster Neighbor in this match, I understand and agree to my
@@ -175,7 +179,8 @@ const Questions = (form, handleChange) => {
         value={form.answer3}
         onChange={handleChange}
       />
-    </QuestionContainer>
+    {/* </QuestionContainer> */}
+    </Wrapper>
   )
 }
 const Button = props => {
@@ -205,12 +210,15 @@ const ModuleFive = props => {
   return (
     <section>
       <TrainingNav />
+      <Wrapper>
+      <Progress />
       <Title />
-      <Page>
+      {/* <Page> */}
         <Responsibilities />
         <Questions handleChange={handleChange} form={form} />
         <Button />
-      </Page>
+      {/* </Page> */}
+      </Wrapper>
     </section>
   )
 }

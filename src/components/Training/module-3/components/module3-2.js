@@ -10,18 +10,19 @@ import {
   Form,
   Label,
   Input,
-  Submit,
-} from '../TrainStyles'
-import { Indented } from './TrainStyle'
+  Indented,
+  Submit
+} from '../../TrainStyles'
 
-export default function Module32(props) {
-  const handleSubmit = () => {
-    props.setModule(2)
-  }
+import Progress from "../../TrainingModuleContainer";
+
+export const Module32 = ({ handleBack }) => {  
+
   return (
     <Wrapper>
+      <Progress />
       <Title>
-        <BackArrow />
+        <BackArrow onClick={handleBack} />
         What makes a great foster family helper?
       </Title>
       <MainSection>
@@ -93,16 +94,10 @@ export default function Module32(props) {
           bring to the match. *
           <Input id='m3_q2' name='m3_q2' placeholder='Your answer here' />
         </Label>
-        <Submit
-          data-testid='next'
-          onClick={() => {
-            handleSubmit()
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
-        >
-          Continue
-        </Submit>
+        <Submit type="submit">Continue</Submit>
       </Form>
     </Wrapper>
   )
 }
+
+export default Module32

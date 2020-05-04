@@ -10,13 +10,13 @@ import {
   MediaWrapper,
   Media,
   Video,
-  Footer,
   Form,
   Label,
   Input,
   Error,
   Submit,
-  Div
+  Div,
+  Progress
 } from "../TrainStyles";
 import Stepper from "../TrainingStepper";
 
@@ -210,6 +210,10 @@ function ModuleOne() {
     <>
       <TrainingNav />
       <Wrapper>
+      <Progress />
+    
+     
+    
         <TitleWrapper />
         <Context />
         <Formik

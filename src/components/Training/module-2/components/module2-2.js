@@ -7,12 +7,18 @@ import {
   Media,
   Video,
   Form,
-  Label,
+  Module2Label,
   Input,
   Submit,
+  Section, 
+  List, 
+  Step 
 } from '../../TrainStyles'
-import { Section, List, Step } from '../styles'
-import { SimpleStep } from './index'
+
+import { SimpleStep } from './SimpleStep'
+import Progress from "../../TrainingModuleContainer";
+
+//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 const simpleStepData = [
   {
@@ -46,8 +52,14 @@ const simpleStepData = [
 ]
 
 export const Module22 = ({ handleBack, errors, touched }) => {
+
+//!axios call here trainingAxiosWithAuth()
+
+
   return (
+    
     <Wrapper>
+      <Progress />
       <Title>
         <BackArrow onClick={handleBack} />
         Best practices for a happy match
@@ -96,10 +108,10 @@ export const Module22 = ({ handleBack, errors, touched }) => {
       </Section>
       <Title>Understanding of responsibility: Complete before proceeding</Title>
       <Form>
-        <Label>
+        <Module2Label>
           Please summarize your responsibility (relationally and practically) in
           this match with a sentence or two. *
-        </Label>
+        </Module2Label>
         <Input
           component='textarea'
           id='m2_q2'
@@ -114,3 +126,5 @@ export const Module22 = ({ handleBack, errors, touched }) => {
     </Wrapper>
   )
 }
+
+export default Module22;

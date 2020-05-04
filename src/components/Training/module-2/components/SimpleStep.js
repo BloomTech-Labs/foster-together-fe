@@ -1,5 +1,5 @@
 import React from 'react'
-import { Step } from '../styles'
+import { Step } from '../../TrainStyles'
 
 export const SimpleStep = ({ title, text }) => {
   return (

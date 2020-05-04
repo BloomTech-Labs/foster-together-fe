@@ -1,30 +1,59 @@
 import React, { useState } from 'react'
 import {
-  Page,
+  
   Section,
-  MainContent,
-  Input,
-  Submit,
-  ATag,
-  Header,
+  Module4MainContent,
+  Module4Input,
+  Module4Submit,
+  Module4ATag,
   Question,
-  Title,
+  Module4Title,
   MainContent1,
   Paragraph,
-  Span,
   Header1,
   Paragraph1,
-  Video,
+  Module4Video,
   Or,
   Header2,
-} from './styles'
+  Wrapper,
+  Title
+} from '../../TrainStyles.js'
 import Player from 'react-player'
-import Diamond from './diamond'
+// import Diamond from './diamond'
+import Progress from "../../TrainingModuleContainer";
+
+export const Diamond = ({
+  style = {},
+  fill = '#000',
+  width = '100%',
+  className = '',
+  viewBox = '0 0 32 32',
+}) => (
+  <svg
+    width='9'
+    height='9'
+    viewBox='0 0 12 12'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <rect
+      x='6'
+      y='0.343262'
+      width='7'
+      height='7'
+      transform='rotate(45 6 0.343262)'
+      fill='#343434'
+    />
+  </svg>
+)
 
 export const Module41 = ({ handleNext, handleBack }) => {
+
   return (
     <>
-      <Header>
+    <Wrapper>
+     <Progress />
+      <Title>
         <svg
           width='21'
           height='17'
@@ -39,11 +68,11 @@ export const Module41 = ({ handleNext, handleBack }) => {
           />
         </svg>
         When do you need a background check?
-      </Header>
-      <Page>
-        <Section>
-          <Title>Basic Overview of Safety and Legal Requirements: </Title>
-          <MainContent>
+      </Title>
+   
+        <Section> 
+          <Module4Title>Basic Overview of Safety and Legal Requirements: </Module4Title>
+          <Module4MainContent>
             <Paragraph>
               We perform a basic Colorado Arrest Records check before each
               match. Foster Together defers to foster parents whether to reveal
@@ -54,14 +83,16 @@ export const Module41 = ({ handleNext, handleBack }) => {
               background check and training requirements differ across
               institutions.
             </Paragraph>
-            <Video>
+            <Module4Video>
               <Player
                 url='https://player.vimeo.com/video/288657921'
                 width='500px'
                 height='300px'
               />
-            </Video>
-          </MainContent>
+            </Module4Video>
+          </Module4MainContent>
+          </Section> 
+          <Section> 
           <MainContent1>
             <Question>Option One: Casual Helping</Question>
             <Paragraph1>
@@ -204,11 +235,14 @@ export const Module41 = ({ handleNext, handleBack }) => {
             listed here, so we can clarify. *
           </Header2>
         </Section>
-        <Input placeholder='Your Answer Here' />
-        <ATag>
-          <Submit onClick={handleNext}>Continue</Submit>
-        </ATag>
-      </Page>
+        <Module4Input placeholder='Your Answer Here' />
+        <Module4ATag>
+          <Module4Submit onClick={handleNext}>Continue</Module4Submit>
+        </Module4ATag>
+  
+      </Wrapper>
     </>
   )
 }
+
+export default Module41;

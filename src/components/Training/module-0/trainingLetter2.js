@@ -1,6 +1,6 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
-import TrainingNav from '../TrainingNav/NavBar'
+import React from "react";
+import { useHistory } from "react-router-dom";
+import TrainingNav from "../TrainingNav/NavBar";
 import {
   Wrapper,
   BackArrow,
@@ -12,30 +12,34 @@ import {
   TestText,
   Submit,
   Half,
-} from '../TrainStyles'
-import Player from 'react-player'
+} from "../TrainStyles";
+import Player from "react-player";
+
+
+//!import Progress from "../ModuleOverlay.js"
+
 
 function TitleWrapper() {
-  const { push } = useHistory()
+  const { push } = useHistory();
   return (
     <Title>
       <BackArrow
         onClick={() => {
-          push('/modulestart')
+          push("/training-start");
         }}
       />
       A letter of gratitude continued...
     </Title>
-  )
+  );
 }
 
 function VideoPlayer() {
   return (
     <PlayerWrapper>
       <Player
-        url='https://player.vimeo.com/video/288657929'
+        url="https://player.vimeo.com/video/288657929"
         controls={false}
-        margin='auto'
+        margin="auto"
       />
       <VideoText>
         When a specific family in your area, or a family you meet at a
@@ -44,7 +48,7 @@ function VideoPlayer() {
         you exchange info and meet up.
       </VideoText>
     </PlayerWrapper>
-  )
+  );
 }
 
 const Testimonies = () => {
@@ -53,8 +57,8 @@ const Testimonies = () => {
       <TestContext1 />
       <TestContext2 />
     </>
-  )
-}
+  );
+};
 
 const TestContext1 = () => {
   return (
@@ -67,7 +71,7 @@ const TestContext1 = () => {
         playing with Nicole and the break for me is so important at a time when
         financial and emotional resources are thin. And on top of that, she
         makes us the BEST food! - Brooke, foster mom in Arvada (who happens to
-        parent solo, run her therapy practice full time, and foster a toddler!){' '}
+        parent solo, run her therapy practice full time, and foster a toddler!){" "}
       </TestText>
       <TestText>
         “Doubling my dinner recipe or taking a walk to the park with my new
@@ -76,8 +80,8 @@ const TestContext1 = () => {
         Helper in Arvada
       </TestText>
     </>
-  )
-}
+  );
+};
 
 const TestContext2 = () => {
   return (
@@ -91,15 +95,15 @@ const TestContext2 = () => {
         manageable in real life.” - Michele, Foster Family Helper in Broomfield
       </TestText>
     </>
-  )
-}
+  );
+};
 
-const StartTraining = () => {
-  const { push } = useHistory()
+const ModuleStart2 = () => {
+  const { push } = useHistory();
   return (
     <>
       <TrainingNav />
-      <Wrapper>
+      <Wrapper> 
         <TitleWrapper />
         <VideoPlayer />
         <LetterContainer>
@@ -109,8 +113,8 @@ const StartTraining = () => {
         <Half>
           <Submit
             onClick={() => {
-              push('/module1')
-              window.scrollTo({ top: 0, behavior: 'smooth' })
+              push("/module1");
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
             Start Training
@@ -118,7 +122,7 @@ const StartTraining = () => {
         </Half>
       </Wrapper>
     </>
-  )
-}
+  );
+};
 
-export default StartTraining
+export default ModuleStart2;

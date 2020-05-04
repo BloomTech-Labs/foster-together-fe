@@ -5,18 +5,18 @@ import {
   BackArrow,
   MediaWrapper,
   Media,
-} from '../../TrainStyles'
-import {
-  Section,
+  Module2Section,
   BulletList,
   Step,
   SmallList,
   SmallStep,
-  Text,
-} from '../styles'
-import { SimpleStep } from './index'
+  Module2Text,
+} from '../../TrainStyles'
+
+import { SimpleStep } from './SimpleStep'
 import { mealTipsImage } from '../../img'
 import Survey from './Survey'
+import Progress from "../../TrainingModuleContainer";
 
 const mealTipsData = [
   `I am flexible on the day of the week I drop off, and so is she! With the first kids she fostered, there was one day a week in which she spent most of the day in meetings with the kids' families, so she didn't have much time to cook. So while she had those kids, I made a point of dropping off the same day each week. Now with a new set of siblings, she doesn't have the same restriction on her schedule, so I drop off when it works for me.`,
@@ -31,8 +31,9 @@ const mealTipsData = [
 ]
 
 const MealTipsWrapper = () => {
+
   return (
-    <Section>
+    <Module2Section>
       <MediaWrapper>
         <div>
           <BulletList>
@@ -69,7 +70,7 @@ const MealTipsWrapper = () => {
         <Media>
           <img src={mealTipsImage} alt='' />
         </Media>
-      </MediaWrapper>
+      
       <BulletList>
         {mealTipsData.map((step, index) => (
           <div key={index}>
@@ -134,7 +135,8 @@ const MealTipsWrapper = () => {
           </div>
         ))}
       </BulletList>
-    </Section>
+      </MediaWrapper>
+    </Module2Section>
   )
 }
 
@@ -146,11 +148,11 @@ const beyondTheMealData = [
 
 const BeyondTheMeal = () => {
   return (
-    <Section>
-      <Text>
+    <Module2Section>
+      <Module2Text>
         If you're the type who wants to customize the match to the foster
         parent's most-needed tasks, here's how you do that:
-      </Text>
+      </Module2Text>
       <SmallList>
         {beyondTheMealData.map((step, index) => (
           <div key={index}>
@@ -174,13 +176,14 @@ const BeyondTheMeal = () => {
           </div>
         ))}
       </SmallList>
-    </Section>
+    </Module2Section>
   )
 }
 
 export const Module23 = ({ handleBack, ...props }) => {
   return (
     <Wrapper>
+      <Progress />
       <Title>
         <BackArrow onClick={handleBack} />
         Meal Delivery Tips (From Michele, a Current Family Helper)
@@ -193,3 +196,5 @@ export const Module23 = ({ handleBack, ...props }) => {
     </Wrapper>
   )
 }
+
+export default Module23;

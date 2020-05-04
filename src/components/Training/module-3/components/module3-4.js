@@ -14,19 +14,18 @@ import {
   Label,
   Input,
   Submit,
-} from '../TrainStyles'
+} from '../../TrainStyles'
+import Progress from "../../TrainingModuleContainer";
 
-export default function Module34() {
-  const { push } = useHistory()
+export const Module34 = ({ handleBack }) => {
 
-  const handleSubmit = () => {
-    push('/module4')
-  }
+//!axios call here trainingAxiosWithAuth()
 
   return (
     <Wrapper>
+      <Progress />
       <Title>
-        <BackArrow />
+        <BackArrow onClick={handleBack} />
         What kids need
       </Title>
       <MainSection>
@@ -57,7 +56,7 @@ export default function Module34() {
               </Step>
             </div>
             <Media>
-              <img src={require('./train3.png')} />
+              <img src={require('../../img/train3.png')} />
             </Media>
           </MediaWrapper>
           <Step>
@@ -152,15 +151,12 @@ export default function Module34() {
           difficult for you? Why or why not? *
           <Input id='m3_q5' name='m3_q5' placeholder='Your answer here' />
         </Label>
-        <Submit
-          onClick={() => {
-            handleSubmit()
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
-        >
+        <Submit type="submit" >
           Continue
         </Submit>
       </Form>
     </Wrapper>
   )
 }
+
+export default Module34;

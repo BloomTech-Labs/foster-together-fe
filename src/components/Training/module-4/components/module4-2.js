@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import {
-  Page1,
-  Header,
   Body,
   Body1,
   MainContent2,
@@ -15,23 +13,32 @@ import {
   Image2,
   Span,
   Section1,
-  Input,
-  Submit,
+  Module4Input,
+  Module4Submit,
   ClickHere,
-  ATag1,
+ ATag1,
   Header4,
   Body3,
-  Link,
+  Module4Link,
   Quote,
   Statement,
   Video1,
-} from './styles'
+  Wrapper,
+  Title
+} from '../../TrainStyles.js'
 import Player from 'react-player'
+import Progress from "../../TrainingModuleContainer";
+
 
 export const Module42 = ({ handleNext, handleBack }) => {
+
   return (
     <>
-      <Header>
+    <Wrapper>
+    {/* <Page1> */}
+     <Progress />
+     
+      <Title>
         <svg
           width='21'
           height='22'
@@ -46,8 +53,8 @@ export const Module42 = ({ handleNext, handleBack }) => {
           />
         </svg>
         Sexual abuse prevention{' '}
-      </Header>
-      <Page1>
+      </Title>
+      
         <Section1>
           <MainContent2>
             <Section2>
@@ -135,10 +142,10 @@ export const Module42 = ({ handleNext, handleBack }) => {
         <Section2>
           <Body3>
             <Span>PLEASE CLICK TO READ:</Span>
-            <Link href='https://parentingsafechildren.com/what-offenders-want-you-to-know/'>
+            <Module4Link href='https://parentingsafechildren.com/what-offenders-want-you-to-know/'>
               {' '}
               WHAT SEXUAL OFFENDERS WANT YOU TO KNOW
-            </Link>
+            </Module4Link>
           </Body3>
           <MainContent4>
             <Statement>
@@ -164,9 +171,9 @@ export const Module42 = ({ handleNext, handleBack }) => {
             a child’s side, manipulation, introducing kids to sexual material,
             or talking about sex (i.e., sexualizing the relationship). Read the
             rest by clicking{' '}
-            <Link href='https://parentingsafechildren.com/what-offenders-want-you-to-know/'>
+            <Module4Link href='https://parentingsafechildren.com/what-offenders-want-you-to-know/'>
               here.
-            </Link>
+            </Module4Link>
             <br />
             <br />
           </MainContent4>
@@ -180,9 +187,9 @@ export const Module42 = ({ handleNext, handleBack }) => {
               </Span>{' '}
               Top 10 Questions on Preventing Sexual Abuse (Includes
               developmentally appropriate explanations, click{' '}
-              <Link href='https://parentingsafechildren.com/your-top-10-questions-about-body-safety-2/'>
+              <Module4Link href='https://parentingsafechildren.com/your-top-10-questions-about-body-safety-2/'>
                 HERE
-              </Link>{' '}
+              </Module4Link>{' '}
               to read)
             </ClickHere>
           </MainContent4>
@@ -193,11 +200,14 @@ export const Module42 = ({ handleNext, handleBack }) => {
             What did you learn from the above article(s)? (3+ sentences)
           </Question1>
         </Section2>
-        <Input placeholder='Your Answer Here' />
+        <Module4Input placeholder='Your Answer Here' />
         <ATag1>
-          <Submit onClick={handleNext}>Continue</Submit>
+          <Module4Submit onClick={handleNext}>Continue</Module4Submit>
         </ATag1>
-      </Page1>
+      {/* </Page1> */}
+      </Wrapper>
     </>
   )
 }
+
+export default Module42;
