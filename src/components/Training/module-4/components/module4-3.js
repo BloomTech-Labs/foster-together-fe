@@ -16,6 +16,8 @@ import {
   Header5,
   Body4,
   Span1,
+  Wrapper,
+  Title
 } from '../../TrainStyles.js'
 import Progress from "../../TrainingModuleContainer";
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
@@ -27,8 +29,9 @@ export const Module43 = ({ handleBack, handleNext }) => {
   return(
 
     <>
+    <Wrapper>
      <Progress />
-      <Module4Header>
+      <Title>
         <svg
           width='21'
           height='18'
@@ -43,8 +46,8 @@ export const Module43 = ({ handleBack, handleNext }) => {
           />
         </svg>
         Body Safety Rules by The Mama Bear Effect{' '}
-      </Module4Header>
-      <Page1>
+      </Title>
+      {/* <Page1> */}
         <>
           <MainContent8>
             Foster parents wishing to use a Foster Together parent helper are
@@ -149,7 +152,8 @@ export const Module43 = ({ handleBack, handleNext }) => {
         <ATag1>
           <Module4Submit onClick={handleNext}>Continue</Module4Submit>
         </ATag1>
-      </Page1>
+      {/* </Page1> */}
+      </Wrapper>
     </>
   )
 }

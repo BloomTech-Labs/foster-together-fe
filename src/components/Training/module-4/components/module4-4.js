@@ -20,6 +20,8 @@ import {
   NewSection,
   Span,
   Module4BigLink,
+  Wrapper,
+  Title
 } from '../../TrainStyles.js'
 import { useHistory } from 'react-router-dom'
 import Progress from "../../TrainingModuleContainer";
@@ -29,8 +31,9 @@ export const Module44 = ({ handleBack }) => {
 
   return (
     <>
+    <Wrapper>
     <Progress />
-      <Module4Header>
+      <Title>
         <svg
           width='21'
           height='18'
@@ -45,8 +48,8 @@ export const Module44 = ({ handleBack }) => {
           />
         </svg>
         What to do if you suspect abuse, or a child discloses abuse{' '}
-      </Module4Header>
-      <Module4Page>
+      </Title>
+      {/* <Module4Page> */}
         <Header6>
           <ol>
             <li>
@@ -142,7 +145,8 @@ export const Module44 = ({ handleBack }) => {
         >
           Submit
         </Module4Submit>
-      </Module4Page>
+      {/* </Module4Page> */}
+      </Wrapper>
     </>
   )
 }

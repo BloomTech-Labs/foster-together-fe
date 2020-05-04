@@ -224,9 +224,11 @@ function Module11() {
   return (
     <>
       <TrainingNav />
-      <Progress />
-      
       <Wrapper>
+      <Progress />
+    
+     
+    
         <TitleWrapper />
         <Context />
         <Formik
