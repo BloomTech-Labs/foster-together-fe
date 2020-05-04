@@ -18,22 +18,14 @@ import {
 import { useHistory } from 'react-router-dom'
 import Progress from "../../TrainingModuleContainer";
 
-export default function Module31(props) {
-  const { push } = useHistory()
-  const handleSubmit = () => {
-    props.setModule(1)
-  }
+export const Module31 = ({ handleBack }) => {
 
   return (
     <>
       <Wrapper>
         <Progress />
         <Title>
-          <BackArrow
-            onClick={() => {
-              push('./module2')
-            }}
-          />
+          <BackArrow onClick={handleBack} />
           What's your vision of a foster family?
         </Title>
         <MainSection>
@@ -181,16 +173,11 @@ export default function Module31(props) {
               placeholder='Your answer here'
             />
           </Label>
-          <Submit
-            onClick={() => {
-              handleSubmit()
-              window.scrollTo({ top: 0, behavior: 'smooth' })
-            }}
-          >
-            Continue
-          </Submit>
+          <Submit type="submit">Continue</Submit>
         </Form>
       </Wrapper>
     </>
   )
 }
+
+export default Module31

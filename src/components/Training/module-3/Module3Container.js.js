@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { Formik, Form as FormikForm } from 'formik'
+import { Formik, Form } from 'formik'
 import NavBar from '../TrainingNav/NavBar'
 import Module31 from './components/module3-1'
 import Module32 from './components/module3-2'
 import Module33 from './components/module3-3'
 import Module34 from './components/module3-4'
+
 // /components
 const initialValues = {
   m3_q1: '',
@@ -15,48 +16,61 @@ const initialValues = {
   m3_q5: '',
 }
 
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
-
-function Overlay(props) {
-  const { push } = useHistory()
-  switch (props.module) {
-    case 0:
-      return <Module31 {...props} />
-    case 1:
-      return <Module32 {...props} />
-    case 2:
-      return <Module33 {...props} />
-    case 3:
-      return <Module34 {...props} />
-    default:
-      push('/')
-  }
-}
-
-function FullOverlay() {
+const ModuleThree = () => {
+  const { push } = useHistory();
   let query = useQuery();
   let page = parseInt(query.get('page')) - 1;
-  let defaultModule = 0;
-  if (page !== null && page < 4) {
-    defaultModule = page;
+  let defaultStep = 0;
+  if (page !== null && page < 3) {
+    defaultStep = page;
   }
 
-  const [module, setModule] = useState(defaultModule);
+  const [activeStep, setActiveStep] = useState(defaultStep)
+
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
+
+  const handleNext = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    if (activeStep === 0 || activeStep === 1 || activeStep === 2 ) {
+      setActiveStep(activeStep + 1)
+    } else if (activeStep === 3) {
+      push('/module4')
+    }
+  }
+
+  const handleBack = () => {
+    if (activeStep === 0) {
+      push('/module2')
+    } else if (activeStep === 1 || activeStep === 2 || activeStep === 3) {
+      setActiveStep(activeStep - 1)
+    }
+  }
 
   return (
     <>
       <NavBar />
-      <Formik initialValues={initialValues}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleNext}
+      >
         {props => (
-          <FormikForm>
-            <Overlay module={module} setModule={setModule} {...props} />
-          </FormikForm>
+          <Form>
+            {activeStep === 0 ? (
+              <Module31 handleBack={handleBack} handleNext={handleNext} {...props} />
+            ) : activeStep === 1 ? (
+              <Module32 handleBack={handleBack} {...props} />
+            ) : activeStep === 2 ? (
+              <Module33 handleBack={handleBack} {...props} />
+            ) : activeStep === 3 ? (
+              <Module34 handleBack={handleBack} {...props} />
+            ) : null}
+          </Form>
         )}
       </Formik>
     </>
   )
 }
 
-export default FullOverlay
+export default ModuleThree
