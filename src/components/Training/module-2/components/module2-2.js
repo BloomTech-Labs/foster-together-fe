@@ -15,7 +15,7 @@ import {
   Step 
 } from '../../TrainStyles'
 
-import { SimpleStep } from './index'
+import { SimpleStep } from './SimpleStep'
 import Progress from "../../TrainingModuleContainer";
 
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
@@ -126,3 +126,5 @@ export const Module22 = ({ handleBack, errors, touched }) => {
     </Wrapper>
   )
 }
+
+export default Module22;

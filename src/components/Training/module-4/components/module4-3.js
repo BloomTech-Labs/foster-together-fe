@@ -153,3 +153,5 @@ export const Module43 = ({ handleBack, handleNext }) => {
     </>
   )
 }
+
+export default Module43;

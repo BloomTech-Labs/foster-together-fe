@@ -19,7 +19,7 @@ import {
 } from "../../TrainStyles";
 
 import { fiveStepsImage } from "../../img";
-import { SimpleStep } from "./index";
+import { SimpleStep } from "./SimpleStep";
 import Progress from "../../TrainingModuleContainer";
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
@@ -157,3 +157,5 @@ export const Module21 = ({ handleBack, errors, touched }) => {
     </Wrapper>
   );
 };
+
+export default Module21;

@@ -209,26 +209,23 @@ const Context = () => {
 function Module11() {
   const { push } = useHistory()
   
-//!axios call here trainingAxiosWithAuth()
-const handleSubmit = values => {
-  trainingAxiosWithAuth()
-    .post('/update', values)
-    .then(() => {
-      push('/module2')
-    })
-    .catch(err => {
-      console.log(err)
-    })
-}
-
-
+  //!axios call here trainingAxiosWithAuth()
+  const handleSubmit = values => {
+    trainingAxiosWithAuth()
+      .post('/update', values)
+      .then(() => {
+        push('/module2')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
   return (
     <>
       <TrainingNav />
       <Progress />
-    
-     
+      
       <Wrapper>
         <TitleWrapper />
         <Context />
