@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Wrapper,
   Title,
@@ -10,56 +10,47 @@ import {
   Module2Label,
   Input,
   Submit,
-  Section, 
-  List, 
-  Step 
-} from '../../TrainStyles'
+  Section,
+  List,
+  Step
+} from "../../TrainStyles";
 
-import { SimpleStep } from './SimpleStep'
-import Progress from "../../TrainingModuleContainer";
-
-//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
+import { SimpleStep } from "./SimpleStep";
 
 const simpleStepData = [
   {
-    title: 'Be clear.',
+    title: "Be clear.",
     text:
-      'Before offering specific details on meal drop-off at the first meeting, the Helper already has an idea of what would work well for his or her schedule and budget (see questionnaire below).',
+      "Before offering specific details on meal drop-off at the first meeting, the Helper already has an idea of what would work well for his or her schedule and budget (see questionnaire below)."
   },
   {
-    title: 'Stay focused.',
-    text: `The Family Helper’s main job is to give the foster parent additional capacity (time, emotional energy, physical energy, encouragement) to remain emotionally present with the child(ren). Therefore, in addition to meals, specific helping tasks may include errands, housework, homework in a family setting, or supervising playtime while the parent is home. As the parent-helper relationship develops and trust is warranted, more interaction with the children may be helpful (driving, babysitting, respite), as approval by county or agency is granted. Keep in mind, though, the Family Helper’s primary job is not to develop a relationship with the child, become a mentor, or show special attention. In other words, you are a warm presence and practical help for the whole family, and not a "special friend" to the kids (you'll see specific examples and more explanations in Module Three).`,
+    title: "Stay focused.",
+    text: `The Family Helper’s main job is to give the foster parent additional capacity (time, emotional energy, physical energy, encouragement) to remain emotionally present with the child(ren). Therefore, in addition to meals, specific helping tasks may include errands, housework, homework in a family setting, or supervising playtime while the parent is home. As the parent-helper relationship develops and trust is warranted, more interaction with the children may be helpful (driving, babysitting, respite), as approval by county or agency is granted. Keep in mind, though, the Family Helper’s primary job is not to develop a relationship with the child, become a mentor, or show special attention. In other words, you are a warm presence and practical help for the whole family, and not a "special friend" to the kids (you'll see specific examples and more explanations in Module Three).`
   },
   {
-    title: 'If one party begins to feel uneasy...',
+    title: "If one party begins to feel uneasy...",
     text:
-      'If one party begins to feel uneasy about any aspect of the match, and clear, kind communication does not resolve the problem, contact Foster Together for assistance.',
+      "If one party begins to feel uneasy about any aspect of the match, and clear, kind communication does not resolve the problem, contact Foster Together for assistance."
   },
   {
-    title: 'Let the relationship benefit others naturally.',
+    title: "Let the relationship benefit others naturally.",
     text:
-      'Let the relationship benefit others naturally, as far as both parties are comfortable. Does the Helper have a friend who would like to deliver a meal? Does the Foster Parent know a fellow foster parent who needs help? Open communication and idea-sharing can make the best kinds of neighborly connection.',
+      "Let the relationship benefit others naturally, as far as both parties are comfortable. Does the Helper have a friend who would like to deliver a meal? Does the Foster Parent know a fellow foster parent who needs help? Open communication and idea-sharing can make the best kinds of neighborly connection."
   },
   {
-    title: 'Approach the matching relationship as you would a new friendship.',
+    title: "Approach the matching relationship as you would a new friendship.",
     text:
-      'Be courteous (on time, predictable), anticipate the needs of the other person, don’t make assumptions (please DO over-communicate at first!), and get to know each other.',
+      "Be courteous (on time, predictable), anticipate the needs of the other person, don’t make assumptions (please DO over-communicate at first!), and get to know each other."
   },
   {
-    title: 'Know when you need to get official.',
-    text: `If the family needs help with driving or babysitting, ask the family, or Foster Together, for background requirements from the foster care agency or county. You'll get the details of possible requirements in Module Four.`,
-  },
-]
+    title: "Know when you need to get official.",
+    text: `If the family needs help with driving or babysitting, ask the family, or Foster Together, for background requirements from the foster care agency or county. You'll get the details of possible requirements in Module Four.`
+  }
+];
 
 export const Module22 = ({ handleBack, errors, touched }) => {
-
-//!axios call here trainingAxiosWithAuth()
-
-
   return (
-    
     <Wrapper>
-      <Progress />
       <Title>
         <BackArrow onClick={handleBack} />
         Best practices for a happy match
@@ -87,7 +78,7 @@ export const Module22 = ({ handleBack, errors, touched }) => {
                     </div>
                     <Media>
                       <Video
-                        url='https://player.vimeo.com/video/288657931'
+                        url="https://player.vimeo.com/video/288657931"
                         controls={false}
                         width={480}
                       />
@@ -113,18 +104,18 @@ export const Module22 = ({ handleBack, errors, touched }) => {
           this match with a sentence or two. *
         </Module2Label>
         <Input
-          component='textarea'
-          id='m2_q2'
-          name='m2_q2'
-          placeholder='Your answer here'
+          component="textarea"
+          id="m2_q2"
+          name="m2_q2"
+          placeholder="Your answer here"
         />
         {errors?.m2_q2 && touched?.m2_q2 && (
-          <p style={{ color: 'red' }}>{errors?.m2_q2}</p>
+          <p style={{ color: "red" }}>{errors?.m2_q2}</p>
         )}
-        <Submit type='submit'>Continue</Submit>
+        <Submit type="submit">Continue</Submit>
       </Form>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default Module22;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Wrapper,
   BackArrow,
@@ -14,30 +14,26 @@ import {
   Label,
   Input,
   Submit
-} from '../../TrainStyles'
-import { useHistory } from 'react-router-dom'
-import Progress from "../../TrainingModuleContainer";
-
+} from "../../TrainStyles";
+import { useHistory } from "react-router-dom";
 export const Module31 = ({ handleBack }) => {
-
   return (
     <>
       <Wrapper>
-        <Progress />
         <Title>
           <BackArrow onClick={handleBack} />
           What's your vision of a foster family?
         </Title>
         <MainSection>
           <ol>
-            <Text style={{ margin: '0 0 50px -30px' }}>
+            <Text style={{ margin: "0 0 50px -30px" }}>
               Helpers are often surprised when they meet their foster parent
               match. As humans, we tend to make assumptions about what a “type”
               might look like, and it’s best when we leave room to be pleasantly
               surprised by reality. For example, here are a few of the massive
               variations in foster families:
             </Text>
-            <MediaWrapper style={{ marginBottom: '-50px' }}>
+            <MediaWrapper style={{ marginBottom: "-50px" }}>
               <div>
                 <Step>
                   <p>
@@ -61,7 +57,7 @@ export const Module31 = ({ handleBack }) => {
               </div>
               <Media>
                 <Video
-                  url='https://player.vimeo.com/video/288657927'
+                  url="https://player.vimeo.com/video/288657927"
                   width={480}
                 />
               </Media>
@@ -90,11 +86,11 @@ export const Module31 = ({ handleBack }) => {
             <Step>
               <p>They might be religious or secular.</p>
             </Step>
-            <MediaWrapper style={{ marginBottom: '-50px' }}>
+            <MediaWrapper style={{ marginBottom: "-50px" }}>
               <MediaLeft>
                 <img
-                  src='https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525385623625-BVHPKT4NS4BBS6YU07S0/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/FT+7.jpg?format=750w'
-                  alt=''
+                  src="https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525385623625-BVHPKT4NS4BBS6YU07S0/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/FT+7.jpg?format=750w"
+                  alt=""
                   style={{ width: 480 }}
                 />
               </MediaLeft>
@@ -150,7 +146,7 @@ export const Module31 = ({ handleBack }) => {
                 their homes.
               </p>
             </Step>
-            <Text style={{ margin: '0 0 50px -30px' }}>
+            <Text style={{ margin: "0 0 50px -30px" }}>
               Again, whether money is tight or plentiful, whether the kids look
               like they jumped out of a magazine or have been playing outside
               for three days straight, whether parents are accomplished in
@@ -167,17 +163,17 @@ export const Module31 = ({ handleBack }) => {
             structure or norms? Do any of them make you feel uneasy? (2+
             sentences) *
             <Input
-              component='textarea'
-              id='m3_q1'
-              name='m3_q1'
-              placeholder='Your answer here'
+              component="textarea"
+              id="m3_q1"
+              name="m3_q1"
+              placeholder="Your answer here"
             />
           </Label>
           <Submit type="submit">Continue</Submit>
         </Form>
       </Wrapper>
     </>
-  )
-}
+  );
+};
 
-export default Module31
+export default Module31;

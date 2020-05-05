@@ -64,13 +64,13 @@ const TestContext1 = () => {
   return (
     <>
       <TestText>
-        I have been so grateful for the support Nicole (helper) gives us. The
+        "I have been so grateful for the support Nicole (helper) gives us. The
         stress [of fostering as a single mom] has been really difficult to
         manage. On top of that [child’s] Grandpa, one of our main supports, just
         had shoulder surgery and had not been able to watch her. She loves
         playing with Nicole and the break for me is so important at a time when
         financial and emotional resources are thin. And on top of that, she
-        makes us the BEST food! - Brooke, foster mom in Arvada (who happens to
+        makes us the BEST food!" - Brooke, foster mom in Arvada (who happens to
         parent solo, run her therapy practice full time, and foster a toddler!){" "}
       </TestText>
       <TestText>

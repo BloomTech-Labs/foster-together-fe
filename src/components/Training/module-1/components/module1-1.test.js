@@ -1,10 +1,9 @@
-import React from 'react'
-import { renderWithReduxAndRouter as render } from '../../../utils/testHelpers'
-import Module11 from './moduleOne'
+import React from "react";
+import { renderWithReduxAndRouter as render } from "../../../../utils/testHelpers/index";
+import Module11 from "./module1-1";
 
-import '@testing-library/jest-dom/extend-expect'
+import "@testing-library/jest-dom/extend-expect";
 
-
-test('Module1-1 Renders', async () => {
-    render(<Module11 />)
-  }) 
+it("module1-1 Renders", async () => {
+  render(<Module11 />);
+});
