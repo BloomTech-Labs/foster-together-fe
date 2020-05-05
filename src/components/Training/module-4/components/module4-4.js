@@ -17,7 +17,7 @@ import {
 } from "../../TrainStyles.js";
 import { useHistory } from "react-router-dom";
 
-export const Module44 = ({ handleBack }) => {
+export const Module44 = ({ handleBack, handleNext }) => {
   const { push } = useHistory();
 
   return (
@@ -127,13 +127,7 @@ export const Module44 = ({ handleBack }) => {
           </MainContent7>
         </NewSection>
         <BigInput placeholder="Your Answer Here" />
-        <Module4Submit
-          type="submit"
-          // onClick={() => {
-          //   push('./module5')
-          //   window.scrollTo({ top: 0, behavior: 'smooth' })
-          // }}
-        >
+        <Module4Submit onClick={handleNext}>
           Submit
         </Module4Submit>
         {/* </Module4Page> */}

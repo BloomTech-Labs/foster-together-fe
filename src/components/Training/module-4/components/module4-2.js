@@ -196,7 +196,7 @@ export const Module42 = ({ handleNext, handleBack }) => {
         </Section2>
         <Module4Input placeholder="Your Answer Here" />
         <ATag1>
-          <Module4Submit onClick={handleNext}>Continue</Module4Submit>
+          <Module4Submit onClick={handleNext} >Continue</Module4Submit>
         </ATag1>
         {/* </Page1> */}
       </Wrapper>
