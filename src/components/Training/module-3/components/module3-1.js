@@ -175,6 +175,16 @@ export const Module31 = ({ handleBack, errors, touched }) => {
             sentences) *
             <Input
               component="textarea"
+              id="m3_q1"
+              name="m3_q1"
+              placeholder="Your answer here"
+            />
+            {errors?.m3_q1 && touched?.m3_q1 && (
+              <p style={{ color: "red" }}>{errors?.m3_q1}</p>
+            )}
+            </Label>
+          <Submit type="submit">Continue</Submit>
+          </FormContent>
       </Wrapper>
     </>
   );
