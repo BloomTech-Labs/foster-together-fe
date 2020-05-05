@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   MainContent7,
   Signature,
@@ -14,43 +14,41 @@ import {
   BigLink,
   Wrapper,
   Title
-} from '../../TrainStyles.js'
-import { useHistory } from 'react-router-dom'
-import Progress from "../../TrainingModuleContainer";
+} from "../../TrainStyles.js";
+import { useHistory } from "react-router-dom";
 
 export const Module44 = ({ handleBack }) => {
-  const { push } = useHistory()
+  const { push } = useHistory();
 
   return (
     <>
-    <Wrapper>
-    <Progress />
-      <Title>
-        <svg
-          width='21'
-          height='18'
-          viewBox='0 0 27 24'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-          onClick={handleBack}
-        >
-          <path
-            d='M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z'
-            fill='#517E92'
-          />
-        </svg>
-        What to do if you suspect abuse, or a child discloses abuse{' '}
-      </Title>
-      {/* <Module4Page> */}
+      <Wrapper>
+        <Title>
+          <svg
+            width="21"
+            height="18"
+            viewBox="0 0 27 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            onClick={handleBack}
+          >
+            <path
+              d="M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z"
+              fill="#517E92"
+            />
+          </svg>
+          What to do if you suspect abuse, or a child discloses abuse{" "}
+        </Title>
+        {/* <Module4Page> */}
         <Header6>
           <ol>
             <li>
               <Span2>Be prepared: </Span2>
               <BigLink
-                href='https://themamabeareffect.org/prevent/when-to-speak-up/'
-                target='blank'
+                href="https://themamabeareffect.org/prevent/when-to-speak-up/"
+                target="blank"
               >
-                {'  '}How to Know, Who to Call, What to Say (Click to read){' '}
+                {"  "}How to Know, Who to Call, What to Say (Click to read){" "}
               </BigLink>
             </li>
             <li>
@@ -67,9 +65,9 @@ export const Module44 = ({ handleBack }) => {
             </li>
             <li>
               <span>Seek treatment for the child. </span>
-              <BigLink href='https://www.safepassagecac.org/'>
-                Safe Passage Colorado{' '}
-              </BigLink>{' '}
+              <BigLink href="https://www.safepassagecac.org/">
+                Safe Passage Colorado{" "}
+              </BigLink>{" "}
               provides a seamless referral and treatment system, lessening the
               trauma to the child and caretaker during an investigation. Contact
               them here: safepassagecac.org/
@@ -78,11 +76,11 @@ export const Module44 = ({ handleBack }) => {
               <span>Get help for the offender.</span> If, after reading this,
               you realize that someone you know (or yourself) is abusing
               children, please get help. Treatment can be very effective and may
-              even save a life.{' '}
-              <BigLink href='https://www.atsa.com/referral'>
-                {' '}
-                This referral form{' '}
-              </BigLink>{' '}
+              even save a life.{" "}
+              <BigLink href="https://www.atsa.com/referral">
+                {" "}
+                This referral form{" "}
+              </BigLink>{" "}
               with the Association for Treatment of Sexual Offenders is
               completely anonymous: atsa.com/referral
             </li>
@@ -105,21 +103,21 @@ export const Module44 = ({ handleBack }) => {
             being abused?
           </MainContent7>
           <InputHolder>
-            <Signature placeholder='Your Answer Here' />
+            <Signature placeholder="Your Answer Here" />
           </InputHolder>
           <MainContent7>
             What is the name of the local program that walks abused kids through
             the investigation and initial recovery process? *
           </MainContent7>
           <InputHolder>
-            <Signature placeholder='Your Answer Here' />
+            <Signature placeholder="Your Answer Here" />
           </InputHolder>
           <MainContent7>
             Where can you request a referral for the treatment of someone who
             has abused children? *
           </MainContent7>
           <InputHolder>
-            <Signature placeholder='Your Answer Here' />
+            <Signature placeholder="Your Answer Here" />
           </InputHolder>
           <MainContent7>
             From what you’ve learned so far how can we improve the modules
@@ -128,7 +126,7 @@ export const Module44 = ({ handleBack }) => {
             definitely helpful!
           </MainContent7>
         </NewSection>
-        <BigInput placeholder='Your Answer Here' />
+        <BigInput placeholder="Your Answer Here" />
         <Module4Submit
           type="submit"
           // onClick={() => {
@@ -138,10 +136,10 @@ export const Module44 = ({ handleBack }) => {
         >
           Submit
         </Module4Submit>
-      {/* </Module4Page> */}
+        {/* </Module4Page> */}
       </Wrapper>
     </>
-  )
-}
+  );
+};
 
 export default Module44;

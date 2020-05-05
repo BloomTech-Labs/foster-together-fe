@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import TrainingNav from '../../TrainingNav/NavBar'
+import React, { useState } from "react";
+import TrainingNav from "../../TrainingNav/NavBar";
 import {
   // Page,
   BackArrow,
@@ -13,23 +13,22 @@ import {
   Half,
   QuestionsInput,
   Wrapper
-} from '../../TrainStyles'
-import { useHistory } from 'react-router-dom'
-import Progress from "../../TrainingModuleContainer";
+} from "../../TrainStyles";
+import { useHistory } from "react-router-dom";
 
 function Title({ props }) {
-  const { push } = useHistory()
+  const { push } = useHistory();
 
   return (
     <TitleContainer>
       <BackArrow
         onClick={() => {
-          push('/module4')
+          push("/module4");
         }}
       />
       <BigTitle>Foster Together Colorado's Responsibility</BigTitle>
     </TitleContainer>
-  )
+  );
 }
 
 const Responsibilities = () => {
@@ -39,41 +38,38 @@ const Responsibilities = () => {
       <Context1 />
       <Context2 />
     </ContextDiv>
-  )
-}
+  );
+};
 
 const Context = () => {
   return (
     // <div>
+    <LetterText>
       <LetterText>
-        <LetterText>
-          1. To recruit and minimally vet potential foster family helpers
-          through marketing and application process.
-        </LetterText>
-        <LetterText>
-          2. To train and support foster families and Family Helpers in the
-          purpose, implementation, and safeguards of the Foster Together
-          process.
-        </LetterText>
-        <LetterText>
-          3. To match the helper with a foster family within 10 miles of the
-          helper’s home (unless otherwise requested).
-        </LetterText>
-        <LetterText>
-          4. As requested, to assist the foster family in obtaining County or
-          CPA approval to use the family helper for babysitting, transportation,
-          or respite.
-        </LetterText>
-        <LetterText>
-          5. To explain general expectations to each party.
-        </LetterText>
-        <LetterText>
-          6. As requested, to assist with problem-solving throughout the match.
-        </LetterText>
+        1. To recruit and minimally vet potential foster family helpers through
+        marketing and application process.
       </LetterText>
+      <LetterText>
+        2. To train and support foster families and Family Helpers in the
+        purpose, implementation, and safeguards of the Foster Together process.
+      </LetterText>
+      <LetterText>
+        3. To match the helper with a foster family within 10 miles of the
+        helper’s home (unless otherwise requested).
+      </LetterText>
+      <LetterText>
+        4. As requested, to assist the foster family in obtaining County or CPA
+        approval to use the family helper for babysitting, transportation, or
+        respite.
+      </LetterText>
+      <LetterText>5. To explain general expectations to each party.</LetterText>
+      <LetterText>
+        6. As requested, to assist with problem-solving throughout the match.
+      </LetterText>
+    </LetterText>
     // </div>
-  )
-}
+  );
+};
 
 const Context1 = () => {
   return (
@@ -104,8 +100,8 @@ const Context1 = () => {
         responsibilities and time commitments.
       </LetterText>
     </>
-  )
-}
+  );
+};
 
 const Context2 = () => {
   return (
@@ -142,21 +138,21 @@ const Context2 = () => {
         foster parent.
       </LetterText>
     </>
-  )
-}
+  );
+};
 
 const Questions = ({ form, handleChange }) => {
   console.log(form)
   return (
     <Wrapper>
-    {/* <QuestionContainer> */}
+      {/* <QuestionContainer> */}
       <Header>Understanding Responsibility: Complete before proceeding</Header>
       <LetterText>
         As the Foster Neighbor in this match, I understand and agree to my
         responsibilities outlined above.
       </LetterText>
       <QuestionsInput
-        name='answer1'
+        name="answer1"
         value={form.answer1}
         onChange={handleChange}
       />
@@ -166,7 +162,7 @@ const Questions = ({ form, handleChange }) => {
         and/or the county department.
       </LetterText>
       <QuestionsInput
-        name='answer2'
+        name="answer2"
         value={form.answer2}
         onChange={handleChange}
       />
@@ -174,52 +170,51 @@ const Questions = ({ form, handleChange }) => {
         Any questions we can address before helping you find a foster family?
       </LetterText>
       <QuestionsInput
-        name='answer3'
+        name="answer3"
         value={form.answer3}
         onChange={handleChange}
       />
-    {/* </QuestionContainer> */}
+      {/* </QuestionContainer> */}
     </Wrapper>
-  )
-}
+  );
+};
 const Button = props => {
-  const { push } = useHistory()
+  const { push } = useHistory();
   return (
     <Half>
       <Submit
         onClick={() => {
-          push('/userProfile')
+          push("/userProfile");
         }}
       >
         Submit
       </Submit>
     </Half>
-  )
-}
+  );
+};
 
 const Module5 = props => {
   const [form, setForm] = useState({
-    answer1: '',
-    answer2: '',
-    answer3: '',
-  })
+    answer1: "",
+    answer2: "",
+    answer3: ""
+  });
   const handleChange = e => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
   return (
     <section>
       <TrainingNav />
       <Wrapper>
-      <Progress />
-      <Title />
-      {/* <Page> */}
+        <Title />
+        {/* <Page> */}
         <Responsibilities />
         <Questions handleChange={handleChange} form={form} />
         <Button />
-      {/* </Page> */}
+        {/* </Page> */}
       </Wrapper>
     </section>
-  )
-}
+  );
+};
 
 export default Module5

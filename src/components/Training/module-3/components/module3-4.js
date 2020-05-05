@@ -1,5 +1,5 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
+import React from "react";
+import { useHistory } from "react-router-dom";
 import {
   Wrapper,
   BackArrow,
@@ -13,17 +13,12 @@ import {
   Form,
   Label,
   Input,
-  Submit,
-} from '../../TrainStyles'
-import Progress from "../../TrainingModuleContainer";
+  Submit
+} from "../../TrainStyles";
 
 export const Module34 = ({ handleBack }) => {
-
-//!axios call here trainingAxiosWithAuth()
-
   return (
     <Wrapper>
-      <Progress />
       <Title>
         <BackArrow onClick={handleBack} />
         What kids need
@@ -31,13 +26,13 @@ export const Module34 = ({ handleBack }) => {
       <MainSection>
         <Text>From Homecoming FAQs and Straight from a Foster Mom:</Text>
         <BulletList>
-          <MediaWrapper style={{ marginBottom: '-50px' }}>
+          <MediaWrapper style={{ marginBottom: "-50px" }}>
             <div>
               <Step>
                 <p>
                   <span>
                     Please don’t ask questions about their past, their parents,
-                  </span>{' '}
+                  </span>{" "}
                   their health status. If you do ask, we’re not offended but
                   also don’t want you to be offended if we decline to answer.
                 </p>
@@ -47,7 +42,7 @@ export const Module34 = ({ handleBack }) => {
                   <span>
                     Please don’t tell them or us how "lucky" they are to have a
                     family.
-                  </span>{' '}
+                  </span>{" "}
                   We are a flawed family with limited patience and resources
                   just like everyone else, and in the end we will probably be
                   far more blessed by their presence in our lives than visa
@@ -56,16 +51,16 @@ export const Module34 = ({ handleBack }) => {
               </Step>
             </div>
             <Media>
-              <img src={require('../../img/train3.png')} />
+              <img src={require("../../img/train3.png")} />
             </Media>
           </MediaWrapper>
           <Step>
             <p>
-              Don’t label the kids, and{' '}
+              Don’t label the kids, and{" "}
               <span>
                 only differentiate kids by how they entered a family while
                 necessary.
-              </span>{' '}
+              </span>{" "}
               When we do distinguish, we call [kids born to us] “bio” kids, not
               “real” or “natural.” [Also avoid “your own kids.” Instead of
               “foster kids,” say “children in foster care.” Other ideas: “kids
@@ -75,7 +70,7 @@ export const Module34 = ({ handleBack }) => {
           </Step>
           <Step>
             <p>
-              <span>Give attention to the children already in the home.</span>{' '}
+              <span>Give attention to the children already in the home.</span>{" "}
               Having a new child in the home is a big adjustment as parents may
               feel consumed with visits, therapy appointments, and providing the
               new child with attention and nurturing in order to best meet their
@@ -90,10 +85,10 @@ export const Module34 = ({ handleBack }) => {
       <MainSection>
         <Title>Perspective from foster mom Traci Schmidley:</Title>
         <Text>
-          Excerpts from:{' '}
+          Excerpts from:{" "}
           <a
-            href='https://medium.com/@tracischmidley/please-dont-give-my-foster-child-another-stuffed-animal-45435641c8ff'
-            target='blank'
+            href="https://medium.com/@tracischmidley/please-dont-give-my-foster-child-another-stuffed-animal-45435641c8ff"
+            target="blank"
           >
             My Foster Children Have Too Many Toys— but let me tell you what they
             do need
@@ -116,23 +111,23 @@ export const Module34 = ({ handleBack }) => {
             We can’t undo (sometimes years of) neglect by giving excessive
             attention now. Hurting children need affection, no doubt, but they
             also need to learn boundaries, and to be guided toward forming safe
-            connections and trust with their new caretaker first.{' '}
+            connections and trust with their new caretaker first.{" "}
           </span>
         </Text>
         <Text>
-          I appreciate you the most when you give my foster children a{' '}
+          I appreciate you the most when you give my foster children a{" "}
           <span>
             quick hug, a few kind words, and encourage him or her to continue
             doing whatever activity
-          </span>{' '}
+          </span>{" "}
           they were previously engaged in, just like you would any other child.
         </Text>
         <Text>
           <span>
-            Read the rest of Traci's article{' '}
+            Read the rest of Traci's article{" "}
             <a
-              href='https://medium.com/@tracischmidley/please-dont-give-my-foster-child-another-stuffed-animal-45435641c8ff'
-              target='blank'
+              href="https://medium.com/@tracischmidley/please-dont-give-my-foster-child-another-stuffed-animal-45435641c8ff"
+              target="blank"
             >
               here.
             </a>
@@ -144,19 +139,17 @@ export const Module34 = ({ handleBack }) => {
         <Label>
           What, if anything, was new to you in this section on how to approach
           the kids? *
-          <Input id='m3_q4' name='m3_q4' placeholder='Your answer here' />
+          <Input id="m3_q4" name="m3_q4" placeholder="Your answer here" />
         </Label>
         <Label>
           Do you anticipate any of these foster parent requests will be
           difficult for you? Why or why not? *
-          <Input id='m3_q5' name='m3_q5' placeholder='Your answer here' />
+          <Input id="m3_q5" name="m3_q5" placeholder="Your answer here" />
         </Label>
-        <Submit type="submit" >
-          Continue
-        </Submit>
+        <Submit type="submit">Continue</Submit>
       </Form>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default Module34;

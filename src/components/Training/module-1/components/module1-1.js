@@ -17,7 +17,7 @@ import {
   Submit,
   Div,
 } from '../../TrainStyles';
-import Progress from "../../TrainingModuleContainer.js";
+// import Progress from "../../TrainingModuleContainer.js";
 import TrainingNav from '../../TrainingNav/NavBar'
 const Context3 = () => {
   return (
@@ -206,7 +206,7 @@ function Module11() {
   return (
     <>
       <Wrapper>
-      <Progress />
+      
         <TitleWrapper />
         <Context />
         <Formik
