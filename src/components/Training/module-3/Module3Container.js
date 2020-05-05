@@ -7,6 +7,13 @@ import Module32 from './components/module3-2'
 import Module33 from './components/module3-3'
 import Module34 from './components/module3-4'
 
+import {
+  ModuleThreeSchema1,
+  ModuleThreeSchema2,
+  ModuleThreeSchema3,
+  ModuleThreeSchema4
+} from '../../../utils/yupSchemas'
+
 // /components
 const initialValues = {
   m3_q1: '',
@@ -24,6 +31,9 @@ const ModuleThree = () => {
   if (page !== null && page < 3) {
     defaultStep = page;
   }
+
+  // page on line 30 may need to be 4
+
 
   const [activeStep, setActiveStep] = useState(defaultStep)
 
@@ -54,11 +64,24 @@ const ModuleThree = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={handleNext}
+
+        validationSchema={
+          activeStep === 0
+            ? ModuleThreeSchema1
+            : activeStep === 1
+            ? ModuleThreeSchema2
+            : activeStep === 2
+            ? ModuleThreeSchema3
+            : ModuleThreeSchema4
+        }
+
       >
         {props => (
           <Form>
             {activeStep === 0 ? (
-              <Module31 handleBack={handleBack} handleNext={handleNext} {...props} />
+
+              <Module31 handleBack={handleBack} {...props} />
+
             ) : activeStep === 1 ? (
               <Module32 handleBack={handleBack} {...props} />
             ) : activeStep === 2 ? (

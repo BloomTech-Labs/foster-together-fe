@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import NavBar from '../TrainingNav/NavBar'
-import Module5 from './components/module5-1'
+import Module5 from './components/module5'
 
 const ModuleFive = () => {
   const { push } = useHistory()

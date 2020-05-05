@@ -4,7 +4,7 @@ import {
   Module4MainContent,
   Module4Input,
   Module4Submit,
-  Module4ATag,
+  ATag1,
   Question,
   Module4Title,
   MainContent1,
@@ -55,7 +55,9 @@ export const Diamond = ({
   </svg>
 );
 
-export const Module41 = ({ handleNext, handleBack }) => {
+export const Module41 = (props) => {
+  const { handleNext, handleBack, errors, touched } = props
+  
   return (
     <>
       <Wrapper>
@@ -229,11 +231,18 @@ export const Module41 = ({ handleNext, handleBack }) => {
             Please let us know if you have any questions about the requirements
             listed here, so we can clarify. *
           </Header2>
-
-          <Module4Input placeholder="Your Answer Here" />
-          <Module4ATag>
-            <Module4Submit onClick={handleNext}>Continue</Module4Submit>
-          </Module4ATag>
+          <Module4Input
+            component="textarea"
+            id="m4_q1"
+            name="m4_q1"
+            placeholder="Your Answer Here" 
+          />
+          {errors?.m4_q1 && touched?.m4_q1 && (
+            <p style={{ color: "red" }}>{errors.m4_q1}</p>
+          )}
+          <ATag1>
+            <Module4Submit type="submit">Continue</Module4Submit>
+          </ATag1>
         </FormContent>
       </Wrapper>
     </>

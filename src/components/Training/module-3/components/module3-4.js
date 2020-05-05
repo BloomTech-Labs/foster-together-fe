@@ -24,7 +24,7 @@ import {
   FormContent,
 } from "../../GlobalModule.styles.js";
 
-export const Module34 = ({ handleBack }) => {
+export const Module34 = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
       <PageTitle>
@@ -147,11 +147,17 @@ export const Module34 = ({ handleBack }) => {
           What, if anything, was new to you in this section on how to approach
           the kids? *
           <Input id="m3_q4" name="m3_q4" placeholder="Your answer here" />
+          {errors?.m3_q4 && touched?.m3_q4 && (
+          <p style={{ color: "red" }}>{errors?.m3_q4}</p>
+        )}
         </Label>
         <Label>
           Do you anticipate any of these foster parent requests will be
           difficult for you? Why or why not? *
           <Input id="m3_q5" name="m3_q5" placeholder="Your answer here" />
+          {errors?.m3_q5 && touched?.m3_q5 && (
+          <p style={{ color: "red" }}>{errors?.m3_q5}</p>
+        )}
         </Label>
         <Submit type="submit">Continue</Submit>
       </FormContent>

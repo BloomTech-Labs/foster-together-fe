@@ -70,10 +70,14 @@ export const AppSchema = Yup.object().shape({
   app_q5: Yup.string().required(generic),
 })
 
+// Training Module Schemas 
+
+// Module One Schema
 export const ModuleOneSchema = Yup.object().shape({
   m1_q1: Yup.string().required(generic),
 })
 
+// Module Two Schemas
 export const ModuleTwoSchema1 = Yup.object().shape({
   m2_q1: Yup.string().required(generic),
 })
@@ -83,5 +87,45 @@ export const ModuleTwoSchema2 = Yup.object().shape({
 })
 
 export const ModuleTwoSchema3 = Yup.object().shape({
+  m2_q3: Yup.number().min(1, generic),
+})
+
+// Module Three Schemas
+export const ModuleThreeSchema1 = Yup.object().shape({
+  m3_q1: Yup.string().required(generic),
+})
+
+export const ModuleThreeSchema2 = Yup.object().shape({
+  m3_q2: Yup.string().required(generic),
+})
+
+export const ModuleThreeSchema3 = Yup.object().shape({
+  m4_q3: Yup.string().required(generic),
+})
+
+export const ModuleThreeSchema4 = Yup.object().shape({
+  m3_q4: Yup.string().required(generic),
+  m3_q5: Yup.string().required(generic),
+})
+
+// Module Four Schemas
+export const ModuleFourSchema1 = Yup.object().shape({
+  m4_q1: Yup.string().required(generic),
+})
+
+export const ModuleFourSchema2 = Yup.object().shape({
+  m4_q2: Yup.string().required(generic),
+})
+
+export const ModuleFourSchema3 = Yup.object().shape({
+  m2_q3: Yup.number().min(1, generic),
+})
+
+export const ModuleFourSchema4 = Yup.object().shape({
+  m2_q3: Yup.number().min(1, generic),
+})
+
+// Module Five Schema
+export const ModuleFiveSchema1 = Yup.object().shape({
   m2_q3: Yup.number().min(1, generic),
 })

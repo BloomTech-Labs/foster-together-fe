@@ -329,7 +329,7 @@ export const Indented = styled.ul`
 //! 4 SHARED STYLES START
 
 //!4.1, 4.2
-export const Module4Input = styled.textarea`
+export const Module4Input = styled(Field)`
   resize: none;
   font-size: 1.6rem;
   width: 100vw;
@@ -573,12 +573,6 @@ export const MainContent4 = styled.text`
   line-height: 2.5rem;
 `;
 
-export const Module4ATag = styled.a`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-`;
 export const ATag1 = styled.a`
   width: 100%;
   display: flex;
