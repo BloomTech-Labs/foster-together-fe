@@ -14,17 +14,28 @@ import {
   Module4Video,
   Or,
   Header2,
-  Wrapper,
-  Title
+  // BackArrow,
+  /* Wrapper, */
+  // Title,
+  // Page,
 } from "../../TrainStyles.js";
 import Player from "react-player";
+
+import {
+  Wrapper,
+  PageTitle,
+  FormTitle,
+  BackArrow,
+  MainContent,
+  FormContent,
+} from "../../GlobalModule.styles";
 
 export const Diamond = ({
   style = {},
   fill = "#000",
   width = "100%",
   className = "",
-  viewBox = "0 0 32 32"
+  viewBox = "0 0 32 32",
 }) => (
   <svg
     width="9"
@@ -48,24 +59,12 @@ export const Module41 = ({ handleNext, handleBack }) => {
   return (
     <>
       <Wrapper>
-        <Title>
-          <svg
-            width="21"
-            height="17"
-            viewBox="0 0 27 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            onClick={handleBack}
-          >
-            <path
-              d="M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z"
-              fill="#517E92"
-            />
-          </svg>
+        <PageTitle>
+          <BackArrow onClick={handleBack} />
           When do you need a background check?
-        </Title>
+        </PageTitle>
 
-        <Section>
+        <MainContent>
           <Module4Title>
             Basic Overview of Safety and Legal Requirements:{" "}
           </Module4Title>
@@ -88,8 +87,7 @@ export const Module41 = ({ handleNext, handleBack }) => {
               />
             </Module4Video>
           </Module4MainContent>
-        </Section>
-        <Section>
+
           <MainContent1>
             <Question>Option One: Casual Helping</Question>
             <Paragraph1>
@@ -222,20 +220,21 @@ export const Module41 = ({ handleNext, handleBack }) => {
               needed.
             </Paragraph1>
           </MainContent1>
-        </Section>
-        <Section>
-          <Header1>
+        </MainContent>
+        <FormContent>
+          <FormTitle>
             Understanding legal requirements: Complete before proceeding
-          </Header1>
+          </FormTitle>
           <Header2>
             Please let us know if you have any questions about the requirements
             listed here, so we can clarify. *
           </Header2>
-        </Section>
-        <Module4Input placeholder="Your Answer Here" />
-        <Module4ATag>
-          <Module4Submit onClick={handleNext}>Continue</Module4Submit>
-        </Module4ATag>
+
+          <Module4Input placeholder="Your Answer Here" />
+          <Module4ATag>
+            <Module4Submit onClick={handleNext}>Continue</Module4Submit>
+          </Module4ATag>
+        </FormContent>
       </Wrapper>
     </>
   );

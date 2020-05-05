@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  Wrapper,
+  // Wrapper,
   BackArrow,
   Title,
   Text,
-  MainSection,
+  /* MainSection, */
   BulletList,
   MediaWrapper,
   Media,
@@ -13,18 +13,26 @@ import {
   Form,
   Label,
   Input,
-  Submit
+  Submit,
 } from "../../TrainStyles";
+
+import {
+  Wrapper,
+  PageTitle,
+  FormTitle,
+  MainContent,
+  FormContent,
+} from "../../GlobalModule.styles.js";
 
 export const Module33 = ({ handleBack }) => {
   return (
     <Wrapper>
-      <Title>
+      <PageTitle>
         <BackArrow onclick={handleBack} />
         Foster parents' least favorite compliments (and a few ideas for what you
         should say instead)
-      </Title>
-      <MainSection>
+      </PageTitle>
+      <MainContent>
         <Text>
           <span>
             Challenge yourself to take your conversations off auto-pilot. Foster
@@ -152,16 +160,16 @@ export const Module33 = ({ handleBack }) => {
           If you come up with your own great phrase to say to a foster parent,
           you let us know.
         </Text>
-      </MainSection>
-      <Title>What to say: Complete before proceeding</Title>
-      <Form>
+      </MainContent>
+      <FormContent>
+        <FormTitle>What to say: Complete before proceeding</FormTitle>
         <Label>
           To you, what is the most surprising phrase on the "to avoid saying"
           list? *
           <Input id="m3_q3" name="m3_q3" placeholder="Your answer here" />
         </Label>
         <Submit type="submit">Continue</Submit>
-      </Form>
+      </FormContent>
     </Wrapper>
   );
 };

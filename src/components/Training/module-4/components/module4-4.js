@@ -12,35 +12,32 @@ import {
   Span2,
   NewSection,
   BigLink,
-  Wrapper,
-  Title
+  // Wrapper,
+  Title,
+  BackArrow,
 } from "../../TrainStyles.js";
 import { useHistory } from "react-router-dom";
 
-export const Module44 = ({ handleBack }) => {
+import {
+  Wrapper,
+  PageTitle,
+  FormTitle,
+  MainContent,
+  FormContent,
+} from "../../GlobalModule.styles";
+
+export const Module44 = ({ handleBack, handleNext }) => {
   const { push } = useHistory();
 
   return (
     <>
       <Wrapper>
-        <Title>
-          <svg
-            width="21"
-            height="18"
-            viewBox="0 0 27 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            onClick={handleBack}
-          >
-            <path
-              d="M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z"
-              fill="#517E92"
-            />
-          </svg>
+        <PageTitle>
+          <BackArrow onClick={handleBack} />
           What to do if you suspect abuse, or a child discloses abuse{" "}
-        </Title>
-        {/* <Module4Page> */}
-        <Header6>
+        </PageTitle>
+
+        <MainContent>
           <ol>
             <li>
               <Span2>Be prepared: </Span2>
@@ -85,58 +82,53 @@ export const Module44 = ({ handleBack }) => {
               completely anonymous: atsa.com/referral
             </li>
           </ol>
-        </Header6>
-        <Body>
-          P.S. For those who want to do even more to help kids: For Foster
-          Together to recruit and train our average volunteer, it costs us $200.
-          That's pretty good when you consider the long term friendships we're
-          providing to foster families. If you'd like to help us cover the costs
-          for the next volunteer, please join our donor team! CLICK HERE.
-        </Body>
-        <Header7>
-          Understanding actions in cases of potential abuse: Complete before
-          proceeding
-        </Header7>
-        <NewSection>
-          <MainContent7>
-            What Colorado-based number do you call if you suspect a child is
-            being abused?
-          </MainContent7>
-          <InputHolder>
-            <Signature placeholder="Your Answer Here" />
-          </InputHolder>
-          <MainContent7>
-            What is the name of the local program that walks abused kids through
-            the investigation and initial recovery process? *
-          </MainContent7>
-          <InputHolder>
-            <Signature placeholder="Your Answer Here" />
-          </InputHolder>
-          <MainContent7>
-            Where can you request a referral for the treatment of someone who
-            has abused children? *
-          </MainContent7>
-          <InputHolder>
-            <Signature placeholder="Your Answer Here" />
-          </InputHolder>
-          <MainContent7>
-            From what you’ve learned so far how can we improve the modules
-            you’ve completed? What would you add, shorten, or eliminate? This
-            program is always looking for ways to be better, so your feedback is
-            definitely helpful!
-          </MainContent7>
-        </NewSection>
-        <BigInput placeholder="Your Answer Here" />
-        <Module4Submit
-          type="submit"
-          // onClick={() => {
-          //   push('./module5')
-          //   window.scrollTo({ top: 0, behavior: 'smooth' })
-          // }}
-        >
-          Submit
-        </Module4Submit>
-        {/* </Module4Page> */}
+
+          <Body>
+            P.S. For those who want to do even more to help kids: For Foster
+            Together to recruit and train our average volunteer, it costs us
+            $200. That's pretty good when you consider the long term friendships
+            we're providing to foster families. If you'd like to help us cover
+            the costs for the next volunteer, please join our donor team! CLICK
+            HERE.
+          </Body>
+        </MainContent>
+        <FormContent>
+          <FormTitle>
+            Understanding actions in cases of potential abuse: Complete before
+            proceeding
+          </FormTitle>
+          <NewSection>
+            <MainContent7>
+              What Colorado-based number do you call if you suspect a child is
+              being abused?
+            </MainContent7>
+            <InputHolder>
+              <Signature placeholder="Your Answer Here" />
+            </InputHolder>
+            <MainContent7>
+              What is the name of the local program that walks abused kids
+              through the investigation and initial recovery process? *
+            </MainContent7>
+            <InputHolder>
+              <Signature placeholder="Your Answer Here" />
+            </InputHolder>
+            <MainContent7>
+              Where can you request a referral for the treatment of someone who
+              has abused children? *
+            </MainContent7>
+            <InputHolder>
+              <Signature placeholder="Your Answer Here" />
+            </InputHolder>
+            <MainContent7>
+              From what you’ve learned so far how can we improve the modules
+              you’ve completed? What would you add, shorten, or eliminate? This
+              program is always looking for ways to be better, so your feedback
+              is definitely helpful!
+            </MainContent7>
+          </NewSection>
+          <BigInput placeholder="Your Answer Here" />
+          <Module4Submit type="submit">Submit</Module4Submit>
+        </FormContent>
       </Wrapper>
     </>
   );
