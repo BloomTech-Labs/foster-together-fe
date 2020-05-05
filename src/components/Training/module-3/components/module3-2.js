@@ -1,27 +1,35 @@
 import React from "react";
 import {
-  Wrapper,
+  // Wrapper,
   BackArrow,
   Title,
   Text,
-  MainSection,
+  /* MainSection, */
   MediaWrapper,
   Media,
   Form,
   Label,
   Input,
   Indented,
-  Submit
+  Submit,
 } from "../../TrainStyles";
+
+import {
+  Wrapper,
+  PageTitle,
+  FormTitle,
+  MainContent,
+  FormContent,
+} from "../../GlobalModule.styles.js";
 
 export const Module32 = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
-      <Title>
+      <PageTitle>
         <BackArrow onClick={handleBack} />
         What makes a great foster family helper?
-      </Title>
-      <MainSection>
+      </PageTitle>
+      <MainContent>
         <MediaWrapper>
           <div>
             <Text>
@@ -82,9 +90,9 @@ export const Module32 = ({ handleBack, errors, touched }) => {
             customize the deliveries to whatever they have time and money for.”
           </span>
         </Text>
-      </MainSection>
-      <Title>My strengths: Complete before proceeding</Title>
-      <Form>
+      </MainContent>
+      <FormContent>
+        <FormTitle>My strengths: Complete before proceeding</FormTitle>
         <Label>
           After reading this list, please name one or two strengths you will
           bring to the match. *
@@ -94,7 +102,7 @@ export const Module32 = ({ handleBack, errors, touched }) => {
         )}
         </Label>
         <Submit type="submit">Continue</Submit>
-      </Form>
+      </FormContent>
     </Wrapper>
   );
 };

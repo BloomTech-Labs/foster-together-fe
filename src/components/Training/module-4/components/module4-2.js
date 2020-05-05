@@ -8,7 +8,7 @@ import {
   Half1,
   Question1,
   MainContent4,
-  Section2,
+  // Section2,
   Header3,
   Image2,
   Span,
@@ -23,13 +23,21 @@ import {
   Quote,
   Statement,
   Video1,
-  Wrapper,
+  /* BackArrow, */
+  /* Wrapper, */
   Title,
-  BackArrow,
-  Form,
   Input,
 } from "../../TrainStyles.js";
 import Player from "react-player";
+
+import {
+  Wrapper,
+  PageTitle,
+  FormTitle,
+  BackArrow,
+  MainContent,
+  FormContent,
+} from "../../GlobalModule.styles";
 
 export const Module42 = (props) => {
   const { handleNext, handleBack, errors, touched } = props
@@ -37,41 +45,40 @@ export const Module42 = (props) => {
   return (
     <>
       <Wrapper>
-        <Title>
+        <PageTitle>
           <BackArrow onClick={handleBack} />
           Sexual abuse prevention{" "}
-        </Title>
+        </PageTitle>
 
-        <Section1>
+        <MainContent>
           <MainContent2>
-            <Section2>
-              <Body>
-                Because one in three girls and one in four boys will be targets
-                for sexual abuse, we can't leave this part out. <br />
-              </Body>
-              <Body>
-                Because kids in foster care are one of the groups most at-risk
-                to be abused, we can't afford not to prepare every Foster Family
-                Helper to prevent abuse. <br />
-              </Body>
-              <Body>
-                <Span>
-                  For many people, this may be the toughest part of the Foster
-                  Together process.{" "}
-                </Span>
-                And we thank you for doing it anyway. <br />
-              </Body>
-              <Body>
-                We are looking for adults who are willing to feel uncomfortable
-                in this training, so that they can decrease the likelihood of
-                abuse for the kids they care about. <br />
-              </Body>
-              <Body1>
-                We are looking for adults who are willing to feel <br />
-                uncomfortable in this training, so that they can <br />
-                decrease the likelihood of abuse for the kids they care about.{" "}
-              </Body1>
-            </Section2>
+            <Body>
+              Because one in three girls and one in four boys will be targets
+              for sexual abuse, we can't leave this part out. <br />
+            </Body>
+            <Body>
+              Because kids in foster care are one of the groups most at-risk to
+              be abused, we can't afford not to prepare every Foster Family
+              Helper to prevent abuse. <br />
+            </Body>
+            <Body>
+              <Span>
+                For many people, this may be the toughest part of the Foster
+                Together process.{" "}
+              </Span>
+              And we thank you for doing it anyway. <br />
+            </Body>
+            <Body>
+              We are looking for adults who are willing to feel uncomfortable in
+              this training, so that they can decrease the likelihood of abuse
+              for the kids they care about. <br />
+            </Body>
+            <Body1>
+              We are looking for adults who are willing to feel <br />
+              uncomfortable in this training, so that they can <br />
+              decrease the likelihood of abuse for the kids they care about.{" "}
+            </Body1>
+
             <Video1>
               <Player
                 url="https://www.youtube.com/embed/ULGJphesPnk"
@@ -80,6 +87,7 @@ export const Module42 = (props) => {
               />
             </Video1>
           </MainContent2>
+
           <Body1>
             <Span>
               We do not include this section to scare you or make people
@@ -89,6 +97,7 @@ export const Module42 = (props) => {
             conversations and clarity.
             <br />
           </Body1>
+
           <Half1>
             <Image2
               src="https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525386132069-86G9CUPJYIFKEVYT5SKY/ke17ZwdGBToddI8pDm48kAUFOTPMSVxuKvNFAx6DKiZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ouw-8l5B_J38LMU7OZFvYc0yAe_x11zxahcI_hfw238yWAp0jGKzhuVZoU5dfkFlA/FT+37.jpg?format=750w"
@@ -125,8 +134,7 @@ export const Module42 = (props) => {
             </MainContent3>
           </Half1>
           <Header4>Again, thank you for sticking with us.</Header4>
-        </Section1>
-        <Section2>
+
           <Body3>
             <Span>PLEASE CLICK TO READ:</Span>
             <Module4Link href="https://parentingsafechildren.com/what-offenders-want-you-to-know/">
@@ -134,6 +142,7 @@ export const Module42 = (props) => {
               WHAT SEXUAL OFFENDERS WANT YOU TO KNOW
             </Module4Link>
           </Body3>
+
           <MainContent4>
             <Statement>
               Excerpt: Pay attention to our behaviors. <br />
@@ -164,8 +173,7 @@ export const Module42 = (props) => {
             <br />
             <br />
           </MainContent4>
-        </Section2>
-        <Section2>
+
           <MainContent4>
             <ClickHere>
               <Span>
@@ -180,14 +188,14 @@ export const Module42 = (props) => {
               to read)
             </ClickHere>
           </MainContent4>
-          <Header3>
+        </MainContent>
+        <FormContent>
+          <FormTitle>
             Understanding sexual abuse prevention: Complete before proceeding
-          </Header3>
+          </FormTitle>
           <Question1>
             What did you learn from the above article(s)? (3+ sentences)
           </Question1>
-        </Section2>
-        <Form>
           <Input 
             component="textarea"
             id="m4_q2"
@@ -200,9 +208,8 @@ export const Module42 = (props) => {
           <ATag1>
             <Module4Submit type="submit">Continue</Module4Submit>
           </ATag1>  
-        </Form>
+        </FormContent>
 
-        {/* </Page1> */}
       </Wrapper>
     </>
   );

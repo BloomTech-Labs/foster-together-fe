@@ -1,11 +1,11 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import {
-  Wrapper,
+  // Wrapper,
   BackArrow,
   Title,
   Text,
-  MainSection,
+  /* MainSection, */
   BulletList,
   MediaWrapper,
   Media,
@@ -13,17 +13,25 @@ import {
   Form,
   Label,
   Input,
-  Submit
+  Submit,
 } from "../../TrainStyles";
+
+import {
+  Wrapper,
+  PageTitle,
+  FormTitle,
+  MainContent,
+  FormContent,
+} from "../../GlobalModule.styles.js";
 
 export const Module34 = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
-      <Title>
+      <PageTitle>
         <BackArrow onClick={handleBack} />
         What kids need
-      </Title>
-      <MainSection>
+      </PageTitle>
+      <MainContent>
         <Text>From Homecoming FAQs and Straight from a Foster Mom:</Text>
         <BulletList>
           <MediaWrapper style={{ marginBottom: "-50px" }}>
@@ -81,8 +89,7 @@ export const Module34 = ({ handleBack, errors, touched }) => {
             </p>
           </Step>
         </BulletList>
-      </MainSection>
-      <MainSection>
+
         <Title>Perspective from foster mom Traci Schmidley:</Title>
         <Text>
           Excerpts from:{" "}
@@ -133,9 +140,9 @@ export const Module34 = ({ handleBack, errors, touched }) => {
             </a>
           </span>
         </Text>
-      </MainSection>
-      <Title>What kids need: Complete before proceeding</Title>
-      <Form>
+      </MainContent>
+      <FormContent>
+        <FormTitle>What kids need: Complete before proceeding</FormTitle>
         <Label>
           What, if anything, was new to you in this section on how to approach
           the kids? *
@@ -153,7 +160,7 @@ export const Module34 = ({ handleBack, errors, touched }) => {
         )}
         </Label>
         <Submit type="submit">Continue</Submit>
-      </Form>
+      </FormContent>
     </Wrapper>
   );
 };
