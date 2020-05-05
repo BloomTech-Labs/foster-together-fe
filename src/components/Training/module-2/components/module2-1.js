@@ -13,15 +13,12 @@ import {
   Module2Label,
   Input,
   Submit,
-  Module2Section, 
-  List, 
- Step
+  Module2Section,
+  List,
+  Step
 } from "../../TrainStyles";
-
 import { fiveStepsImage } from "../../img";
 import { SimpleStep } from "./SimpleStep";
-import Progress from "../../TrainingModuleContainer";
-//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
 const simpleStepData = [
   {
@@ -38,16 +35,11 @@ const simpleStepData = [
 ];
 
 export const Module21 = ({ handleBack, errors, touched }) => {
-
-//!axios call here trainingAxiosWithAuth()
+  //!axios call here trainingAxiosWithAuth()
 
   return (
-    
     <Wrapper>
-      <Progress />
-     
       <Title>
-        
         <BackArrow onClick={handleBack} />
         Five steps in the matching process
       </Title>
