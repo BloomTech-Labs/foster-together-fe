@@ -1,12 +1,11 @@
 import React from "react";
-import { renderWithReduxAndRouter as render } from "../../../utils/testHelpers";
-import FullOverlay from "./TrainingOverlay";
+import { renderWithReduxAndRouter as render } from "../../../../utils/testHelpers/index";
+import FullOverlay from "../Module3Container";
 import TrainingThreeFour from "./module3-4";
 import { Formik, Form } from "formik";
 import TrainingThreethree from "./module3-3";
 import TrainingThreeTwo from "./module3-2";
 import TrainingThreeOne from "./module3-1";
-import { Submit } from "./TrainStyle";
 
 const initialValues = {
   m3_q1: "",

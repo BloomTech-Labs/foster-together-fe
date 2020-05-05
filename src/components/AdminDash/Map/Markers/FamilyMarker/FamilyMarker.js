@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function FamMark(props) {
+const FamMark = props => {
   const [open, setOpen] = useState(false);
   function clicked() {
     setOpen(true);
@@ -50,4 +50,6 @@ export default function FamMark(props) {
       )}
     </>
   );
-}
+};
+
+export default FamMark;
