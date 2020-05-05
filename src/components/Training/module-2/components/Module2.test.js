@@ -1,7 +1,6 @@
 import React from "react";
 import { renderWithReduxAndRouter as render } from "../../../../utils/testHelpers";
 import { Formik, Form } from "formik";
-import ModuleTwo from "./module2-1";
 import { Module22 } from "./module2-2";
 import { Checkbox, FormGroup, CheckLabel } from "../../TrainStyles";
 import { Module23 } from "./module2-3";
@@ -27,10 +26,6 @@ const initialValues = {
   m2_q7: false,
   m2_q8: ""
 };
-
-test("ModuleTwo is rendered", async () => {
-  render(<ModuleTwo />);
-});
 
 test("Best Practices is rendered", async () => {
   render(
