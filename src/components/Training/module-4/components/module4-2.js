@@ -26,6 +26,7 @@ import {
   /* BackArrow, */
   /* Wrapper, */
   Title,
+  Input,
 } from "../../TrainStyles.js";
 import Player from "react-player";
 
@@ -38,7 +39,9 @@ import {
   FormContent,
 } from "../../GlobalModule.styles";
 
-export const Module42 = ({ handleNext, handleBack }) => {
+export const Module42 = (props) => {
+  const { handleNext, handleBack, errors, touched } = props
+
   return (
     <>
       <Wrapper>
@@ -193,12 +196,20 @@ export const Module42 = ({ handleNext, handleBack }) => {
           <Question1>
             What did you learn from the above article(s)? (3+ sentences)
           </Question1>
-
-          <Module4Input placeholder="Your Answer Here" />
+          <Input 
+            component="textarea"
+            id="m4_q2"
+            name="m4_q2"
+            placeholder="Your Answer Here" 
+          />
+          {errors?.m4_q2 && touched?.m4_q2 && (
+            <p style={{ color: "red" }}>{errors.m4_q2}</p>
+          )}
           <ATag1>
-            <Module4Submit onClick={handleNext}>Continue</Module4Submit>
-          </ATag1>
+            <Module4Submit type="submit">Continue</Module4Submit>
+          </ATag1>  
         </FormContent>
+
       </Wrapper>
     </>
   );

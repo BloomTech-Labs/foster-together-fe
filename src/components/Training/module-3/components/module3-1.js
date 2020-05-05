@@ -25,7 +25,8 @@ import {
 } from "../../GlobalModule.styles.js";
 
 import { useHistory } from "react-router-dom";
-export const Module31 = ({ handleBack }) => {
+
+export const Module31 = ({ handleBack, errors, touched }) => {
   return (
     <>
       <Wrapper>
@@ -174,13 +175,6 @@ export const Module31 = ({ handleBack }) => {
             sentences) *
             <Input
               component="textarea"
-              id="m3_q1"
-              name="m3_q1"
-              placeholder="Your answer here"
-            />
-          </Label>
-          <Submit type="submit">Continue</Submit>
-        </FormContent>
       </Wrapper>
     </>
   );
