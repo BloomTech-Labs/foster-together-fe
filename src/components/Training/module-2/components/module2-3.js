@@ -5,16 +5,14 @@ import {
   BackArrow,
   MediaWrapper,
   Media,
-} from '../../TrainStyles'
-import {
   Section,
-  BulletList,
-  Step,
+  Module2BulletList,
+  Module2Step,
   SmallList,
   SmallStep,
-  Text,
-  TrainingModuleOverlay,
-} from '../styles'
+  Module2Text,
+} from '../../TrainStyles'
+
 import { SimpleStep } from './index'
 import { mealTipsImage } from '../../img'
 import Survey from './Survey'
@@ -43,48 +41,48 @@ const MealTipsWrapper = () => {
     <Section>
       <MediaWrapper>
         <div>
-          <BulletList>
-            <Step>
+          <Module2BulletList>
+            <Module2Step>
               <p>Buy foil baking pans on sale to keep on hand.</p>
-            </Step>
-            <Step>
+            </Module2Step>
+            <Module2Step>
               <p>Enclose baking/cooking instructions (if needed).</p>
-            </Step>
-            <Step>
+            </Module2Step>
+            <Module2Step>
               <p>
                 <span>Less logistical coordination is better.</span> I told the
                 foster mom, “Leave a cooler on your porch, and I’ll fill it up
                 on Monday mornings.” (This may change over time--keep reading!)
               </p>
-            </Step>
-            <Step>
+            </Module2Step>
+            <Module2Step>
               <p>
                 <span>Use containers you don't need back.</span> The last thing
                 I want to do is add to her burden, so if she's not able to clean
                 them, she is welcome to recycle or toss.
               </p>
-            </Step>
-            <Step>
+            </Module2Step>
+            <Module2Step>
               <p>
                 If something should be refrigerated quickly (i.e., raw cookie
                 dough, potato salad, etc.) I over-communicate (sending an extra
                 text after drop-off) to make sure the foster mom remembers to
                 grab it from the cooler.
               </p>
-            </Step>
-          </BulletList>
+            </Module2Step>
+          </Module2BulletList>
         </div>
         <Media>
           <img src={mealTipsImage} alt='' />
         </Media>
       </MediaWrapper>
-      <BulletList>
+      <Module2BulletList>
         {mealTipsData.map((step, index) => (
           <div key={index}>
             <SimpleStep text={step} />
             {index === 2 ? (
               <>
-                <Step>
+                <Module2Step>
                   <p>
                     <span>
                       I try to take good care of all the kids in the house--kids
@@ -95,18 +93,18 @@ const MealTipsWrapper = () => {
                     have an 11 year old daughter and a 10 year old son: perfect
                     ages to pass along my kids' clothes & books.
                   </p>
-                </Step>
-                <Step>
+                </Module2Step>
+                <Module2Step>
                   <p>
                     If I drop off clothes or supplies,{' '}
                     <span>I organize by size and gender,</span> and only drop
                     off what the foster parent can use. Extra can go to the
                     thrift store or one of Foster Together's clothing partners.
                   </p>
-                </Step>
+                </Module2Step>
               </>
             ) : index === 4 ? (
-              <Step>
+              <Module2Step>
                 <p>
                   While a well-rounded, delicious, and kid-friendly meal is the
                   most requested support, you are free to get creative! Foster
@@ -120,9 +118,9 @@ const MealTipsWrapper = () => {
                     and supported.
                   </span>
                 </p>
-              </Step>
+              </Module2Step>
             ) : index === 5 ? (
-              <Step>
+              <Module2Step>
                 <p>
                   <span>
                     Some Family Helpers prefer picking up takeout over cooking,
@@ -137,11 +135,11 @@ const MealTipsWrapper = () => {
                   Listening to what the family wants and needs will make this an
                   extremely effective gift.
                 </p>
-              </Step>
+              </Module2Step>
             ) : null}
           </div>
         ))}
-      </BulletList>
+      </Module2BulletList>
     </Section>
   )
 }
@@ -155,10 +153,10 @@ const beyondTheMealData = [
 const BeyondTheMeal = () => {
   return (
     <Section>
-      <Text>
+      <Module2Text>
         If you're the type who wants to customize the match to the foster
         parent's most-needed tasks, here's how you do that:
-      </Text>
+      </Module2Text>
       <SmallList>
         {beyondTheMealData.map((step, index) => (
           <div key={index}>

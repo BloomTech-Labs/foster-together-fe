@@ -10,11 +10,14 @@ import {
   Media,
   Video,
   Form,
-  Label,
+  Module2Label,
   Input,
-  Submit
+  Submit,
+  Module2Section, 
+  List, 
+  Module2Step
 } from "../../TrainStyles";
-import { Section, List, Step } from "../styles";
+
 import { fiveStepsImage } from "../../img";
 import { SimpleStep } from "./index";
 import Progress from "../../TrainingModuleContainer";
@@ -48,12 +51,12 @@ export const Module21 = ({ handleBack, errors, touched }) => {
         <BackArrow onClick={handleBack} />
         Five steps in the matching process
       </Title>
-      <Section>
+      <Module2Section>
         <List>
           {simpleStepData.map((step, index) => (
             <SimpleStep key={index} title={step.title} text={step.text} />
           ))}
-          <Step>
+          <Module2Step>
             <h3>
               Get an overview of the family closest to you, and agree to be
               matched.
@@ -80,8 +83,8 @@ export const Module21 = ({ handleBack, errors, touched }) => {
                 />
               </Media>
             </MediaWrapper>
-          </Step>
-          <Step>
+          </Module2Step>
+          <Module2Step>
             <h3>Set your initial meeting.</h3>
             <p>
               Let the foster family know a bit about yourself, and{" "}
@@ -117,8 +120,8 @@ export const Module21 = ({ handleBack, errors, touched }) => {
                 <img src={fiveStepsImage} alt="" />
               </Media>
             </MediaWrapper>
-          </Step>
-          <Step>
+          </Module2Step>
+          <Module2Step>
             <h3>Check in every month. Develop a relationship!</h3>
             <p>
               Drop the foster parents a line every few weeks to make sure your
@@ -131,15 +134,15 @@ export const Module21 = ({ handleBack, errors, touched }) => {
               drop-off, always with the oversight of the family’s county or
               agency (for childcare or transportation).
             </p>
-          </Step>
+          </Module2Step>
         </List>
-      </Section>
+      </Module2Section>
       <Title>Understanding the five steps: Complete before proceeding</Title>
       <Form>
-        <Label>
+        <Module2Label>
           Do you have any questions about the five steps? Write them here so we
           can provide clarity. *
-        </Label>
+        </Module2Label>
         <Input
           component="textarea"
           id="m2_q1"

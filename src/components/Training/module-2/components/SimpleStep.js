@@ -1,11 +1,11 @@
 import React from 'react'
-import { Step } from '../styles'
+import { Module2Step } from '../../TrainStyles'
 
 export const SimpleStep = ({ title, text }) => {
   return (
-    <Step>
+    <Module2Step>
       <h3>{title}</h3>
       <p>{text}</p>
-    </Step>
+    </Module2Step>
   )
 }

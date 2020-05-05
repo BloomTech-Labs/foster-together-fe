@@ -5,18 +5,18 @@ import {
   MainContent5,
   MainContent8,
   Signature,
-  Submit,
+  Module4Submit,
   ATag1,
-  Header,
+  Module4Header,
   Image4,
   InputHolder,
   SignContain,
   BigInput,
-  Link,
+  Module4Link,
   Header5,
   Body4,
   Span1,
-} from './styles'
+} from '../../TrainStyles.js'
 import Progress from "../../TrainingModuleContainer";
 //import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
 
@@ -28,7 +28,7 @@ export const Module43 = ({ handleBack, handleNext }) => {
 
     <>
      <Progress />
-      <Header>
+      <Module4Header>
         <svg
           width='21'
           height='18'
@@ -43,7 +43,7 @@ export const Module43 = ({ handleBack, handleNext }) => {
           />
         </svg>
         Body Safety Rules by The Mama Bear Effect{' '}
-      </Header>
+      </Module4Header>
       <Page1>
         <>
           <MainContent8>
@@ -51,13 +51,13 @@ export const Module43 = ({ handleBack, handleNext }) => {
             required to post the body safety rules in their home. We purchase a
             poster for each of our foster families, and if you'd like one for
             your own home, you may order by clicking
-            <Link
+            <Module4Link
               href='https://mamabeareffect.ecwid.com/Body-Safety-Poster-p51112142'
               target='blank'
             >
               {' '}
               here.
-            </Link>
+            </Module4Link>
           </MainContent8>
           <Image4 src='https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1524686041133-7YL55J2UUCA0HGFQ9DFQ/ke17ZwdGBToddI8pDm48kGrEzKbmlT1aXa03pZYZUlJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmD3GJgI7_jN764QbmlaUTk5WyFFzHgH39gSTvnaFnniHmMoF0B1QmrvergKLtg00N/mama+bear+effect.jpg?format=1500w' />
         </>
@@ -69,9 +69,9 @@ export const Module43 = ({ handleBack, handleNext }) => {
           </Span1>
           and the live workshop Parenting Safe Children. To book a Parenting
           Safe Children workshop with Feather Berkower in Colorado,{' '}
-          <Link href='https://parentingsafechildren.com/parents/calendar-register'>
+          <Module4Link href='https://parentingsafechildren.com/parents/calendar-register'>
             click here.
-          </Link>
+          </Module4Link>
           It's a half-day training with your neighborhood, school, church, or
           club teaching you to prevent child abuse from happening right under
           your nose.
@@ -147,7 +147,7 @@ export const Module43 = ({ handleBack, handleNext }) => {
           </InputHolder>
         </>
         <ATag1>
-          <Submit onClick={handleNext}>Continue</Submit>
+          <Module4Submit onClick={handleNext}>Continue</Module4Submit>
         </ATag1>
       </Page1>
     </>
