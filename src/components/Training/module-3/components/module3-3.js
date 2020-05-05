@@ -17,15 +17,13 @@ import {
 } from '../../TrainStyles'
 import Progress from "../../TrainingModuleContainer";
 
-export default function Module33(props) {
-  const handleSubmit = () => {
-    props.setModule(3)
-  }
+export const Module33 = ({ handleBack }) => {
+  
   return (
     <Wrapper>
       <Progress />
       <Title>
-        <BackArrow />
+        <BackArrow onclick={handleBack} />
         Foster parents' least favorite compliments (and a few ideas for what you
         should say instead)
       </Title>
@@ -165,15 +163,10 @@ export default function Module33(props) {
           list? *
           <Input id='m3_q3' name='m3_q3' placeholder='Your answer here' />
         </Label>
-        <Submit
-          onClick={() => {
-            handleSubmit()
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
-        >
-          Continue
-        </Submit>
+        <Submit type="submit">Continue</Submit>
       </Form>
     </Wrapper>
   )
 }
+
+export default Module33

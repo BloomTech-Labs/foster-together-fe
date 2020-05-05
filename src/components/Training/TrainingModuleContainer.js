@@ -1,15 +1,8 @@
 import React from 'react';
 import ProgressBar from './TrainingProgressBar.js';
 import './styles.scss'; 
-
 import { useState } from 'react';
-import {TrainingModuleOverlay } from "./TrainStyles";
 
-
-
-//! export default Progress
-
-// Needs to be renamed to Progress and "export default" added when ready
 export default function Progress() {
   const [progressState, setProgressState] = useState({
     stepNumber: 1,
@@ -46,10 +39,11 @@ export default function Progress() {
   }
 
   return (
+  
     <div className= "bar">
 
      
-    <TrainingModuleOverlay>
+
       <div className="module-bar-container">
         <div className="one">
           <p>Module 1</p>
@@ -67,7 +61,7 @@ export default function Progress() {
           <p>Module 5</p>
         </div>
       </div>
-    </TrainingModuleOverlay>
+
 
       <ProgressBar
           stepNumber={progressState.stepNumber}

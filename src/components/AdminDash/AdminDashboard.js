@@ -14,6 +14,7 @@ export default function Distance() {
     dispatch(getMembers())
   }, [dispatch])
   const { membersArray } = useSelector(state => state.mem)
+
   return (
     <>
       <Navigation />

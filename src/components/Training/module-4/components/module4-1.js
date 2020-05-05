@@ -1,34 +1,59 @@
 import React, { useState } from 'react'
 import {
-  Module4Page,
+  
   Section,
   Module4MainContent,
   Module4Input,
   Module4Submit,
   Module4ATag,
-  ATag1,
-  Module4Header,
   Question,
   Module4Title,
   MainContent1,
   Paragraph,
-  Span,
   Header1,
   Paragraph1,
   Module4Video,
   Or,
   Header2,
+  Wrapper,
+  Title
 } from '../../TrainStyles.js'
 import Player from 'react-player'
-import Diamond from './diamond'
+// import Diamond from './diamond'
 import Progress from "../../TrainingModuleContainer";
+
+export const Diamond = ({
+  style = {},
+  fill = '#000',
+  width = '100%',
+  className = '',
+  viewBox = '0 0 32 32',
+}) => (
+  <svg
+    width='9'
+    height='9'
+    viewBox='0 0 12 12'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <rect
+      x='6'
+      y='0.343262'
+      width='7'
+      height='7'
+      transform='rotate(45 6 0.343262)'
+      fill='#343434'
+    />
+  </svg>
+)
 
 export const Module41 = ({ handleNext, handleBack }) => {
 
   return (
     <>
+    <Wrapper>
      <Progress />
-      <Module4Header>
+      <Title>
         <svg
           width='21'
           height='17'
@@ -43,9 +68,9 @@ export const Module41 = ({ handleNext, handleBack }) => {
           />
         </svg>
         When do you need a background check?
-      </Module4Header>
-      <Module4Page>
-        <Section>
+      </Title>
+   
+        <Section> 
           <Module4Title>Basic Overview of Safety and Legal Requirements: </Module4Title>
           <Module4MainContent>
             <Paragraph>
@@ -66,6 +91,8 @@ export const Module41 = ({ handleNext, handleBack }) => {
               />
             </Module4Video>
           </Module4MainContent>
+          </Section> 
+          <Section> 
           <MainContent1>
             <Question>Option One: Casual Helping</Question>
             <Paragraph1>
@@ -212,7 +239,10 @@ export const Module41 = ({ handleNext, handleBack }) => {
         <Module4ATag>
           <Module4Submit onClick={handleNext}>Continue</Module4Submit>
         </Module4ATag>
-      </Module4Page>
+  
+      </Wrapper>
     </>
   )
 }
+
+export default Module41;

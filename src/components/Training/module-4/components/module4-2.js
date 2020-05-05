@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import {
-  Page1,
-  Header,
   Body,
   Body1,
   MainContent2,
@@ -25,18 +23,22 @@ import {
   Quote,
   Statement,
   Video1,
+  Wrapper,
+  Title
 } from '../../TrainStyles.js'
 import Player from 'react-player'
 import Progress from "../../TrainingModuleContainer";
-//import trainingAxiosWithAuth from '../../../utils/axios/trainingAxiosWithAuth'
+
 
 export const Module42 = ({ handleNext, handleBack }) => {
-  
-//!axios call here trainingAxiosWithAuth()
+
   return (
     <>
+    <Wrapper>
+    {/* <Page1> */}
      <Progress />
-      <Header>
+     
+      <Title>
         <svg
           width='21'
           height='22'
@@ -51,8 +53,8 @@ export const Module42 = ({ handleNext, handleBack }) => {
           />
         </svg>
         Sexual abuse prevention{' '}
-      </Header>
-      <Page1>
+      </Title>
+      
         <Section1>
           <MainContent2>
             <Section2>
@@ -202,7 +204,10 @@ export const Module42 = ({ handleNext, handleBack }) => {
         <ATag1>
           <Module4Submit onClick={handleNext}>Continue</Module4Submit>
         </ATag1>
-      </Page1>
+      {/* </Page1> */}
+      </Wrapper>
     </>
   )
 }
+
+export default Module42;

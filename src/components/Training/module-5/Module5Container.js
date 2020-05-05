@@ -10,9 +10,9 @@
 import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import NavBar from '../TrainingNav/NavBar'
-import { ModuleFive } from './components'
+import Module5 from './components/module5-1'
 
-const Module5 = () => {
+const ModuleFive = () => {
   const { push } = useHistory()
   let query = useQuery();
   let page = parseInt(query.get('page')) - 1;
@@ -26,25 +26,23 @@ const Module5 = () => {
     return new URLSearchParams(useLocation().search);
   }
 
-  const handleBack = e => {
-    e.preventDefault()
+  const handleNext = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     if (activeStep === 0) {
-      push('/module3')
-    } else if (activeStep === 1 || activeStep === 2 || activeStep === 3) {
+      setActiveStep(activeStep + 1)
+    } else if (activeStep === 1) {
+      push('/userProfile')
+    }
+  }
+
+  const handleBack = () => {
+    if (activeStep === 0) {
+      push('/module4')
+    } else if (activeStep === 1) {
       setActiveStep(activeStep - 1)
     }
   }
 
-  const handleNext = e => {
-    e.preventDefault()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-    if (activeStep === 0 || activeStep === 1 || activeStep === 2) {
-      setActiveStep(activeStep + 1)
-    } else if (activeStep === 3) {
-      setActiveStep(0)
-    }
-  }
 
   return (
     <>

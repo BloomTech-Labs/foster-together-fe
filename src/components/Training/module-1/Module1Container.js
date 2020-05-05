@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import NavBar from '../TrainingNav/NavBar'
-import { Module11 } from './components'
+import Module11 from './components/module1-1'
 
 const ModuleOne = () => {
   const { push } = useHistory()
@@ -17,23 +17,20 @@ const ModuleOne = () => {
     return new URLSearchParams(useLocation().search);
   }
 
-  const handleBack = e => {
-    e.preventDefault()
+  const handleNext = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     if (activeStep === 0) {
-      push('/training-start')
-    } else if (activeStep === 1 || activeStep === 2 || activeStep === 3) {
-      setActiveStep(activeStep - 1)
+      setActiveStep(activeStep + 1)
+    } else if (activeStep === 1) {
+      push('/module2')
     }
   }
 
-  const handleNext = e => {
-    e.preventDefault()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-    if (activeStep === 0 || activeStep === 1 || activeStep === 2) {
-      setActiveStep(activeStep + 1)
-    } else if (activeStep === 3) {
-      setActiveStep(0)
+  const handleBack = () => {
+    if (activeStep === 0) {
+      push('/training-start')
+    } else if (activeStep === 1 ) {
+      setActiveStep(activeStep - 1)
     }
   }
 
