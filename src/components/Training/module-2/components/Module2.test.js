@@ -1,7 +1,7 @@
 import React from "react";
 import { renderWithReduxAndRouter as render } from "../../../../utils/testHelpers";
 import { Formik, Form } from "formik";
-import ModuleTwo from "..";
+import ModuleTwo from "./module2-1";
 import { Module22 } from "./module2-2";
 import { Checkbox, FormGroup, CheckLabel } from "../styles";
 import { Module23, Survey } from "./module2-3";
