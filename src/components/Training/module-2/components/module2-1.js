@@ -3,8 +3,8 @@ import React from "react";
 // import TrainingNav from "../TrainingNav/NavBar";
 
 import {
-  Wrapper,
-  Title,
+  // Wrapper,
+  // Title,
   BackArrow,
   MediaWrapper,
   Media,
@@ -13,10 +13,19 @@ import {
   Module2Label,
   Input,
   Submit,
-  Module2Section,
+  // Module2Section,
   List,
-  Step
+  Step,
 } from "../../TrainStyles";
+
+import {
+  Wrapper,
+  PageTitle,
+  FormTitle,
+  MainContent,
+  FormContent,
+} from "../../GlobalModule.styles.js";
+
 import { fiveStepsImage } from "../../img";
 import { SimpleStep } from "./SimpleStep";
 
@@ -24,14 +33,14 @@ const simpleStepData = [
   {
     title: `Submit your application. You're already DONE with this one!`,
     text:
-      "Want to grow our team? Send your friends to fostertogether.co/help or contact us to set up a Neighborhood Party with local foster parents and your friends!"
+      "Want to grow our team? Send your friends to fostertogether.co/help or contact us to set up a Neighborhood Party with local foster parents and your friends!",
   },
   {
     title:
       "At your own pace, read and answer questions in all four training modules, then sign the contract.",
     text:
-      "More good news: you are already on Module Two of four! The full process should take two to three hours, and can happen over a few days or all at once."
-  }
+      "More good news: you are already on Module Two of four! The full process should take two to three hours, and can happen over a few days or all at once.",
+  },
 ];
 
 export const Module21 = ({ handleBack, errors, touched }) => {
@@ -39,11 +48,11 @@ export const Module21 = ({ handleBack, errors, touched }) => {
 
   return (
     <Wrapper>
-      <Title>
+      <PageTitle>
         <BackArrow onClick={handleBack} />
         Five steps in the matching process
-      </Title>
-      <Module2Section>
+      </PageTitle>
+      <MainContent>
         <List>
           {simpleStepData.map((step, index) => (
             <SimpleStep key={index} title={step.title} text={step.text} />
@@ -128,9 +137,11 @@ export const Module21 = ({ handleBack, errors, touched }) => {
             </p>
           </Step>
         </List>
-      </Module2Section>
-      <Title>Understanding the five steps: Complete before proceeding</Title>
-      <Form>
+      </MainContent>
+      <FormContent>
+        <FormTitle>
+          Understanding the five steps: Complete before proceeding
+        </FormTitle>
         <Module2Label>
           Do you have any questions about the five steps? Write them here so we
           can provide clarity. *
@@ -145,7 +156,7 @@ export const Module21 = ({ handleBack, errors, touched }) => {
           <p style={{ color: "red" }}>{errors?.m2_q1}</p>
         )}
         <Submit type="submit">Continue</Submit>
-      </Form>
+      </FormContent>
     </Wrapper>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
+import { Formik, Form } from 'formik'
 import NavBar from '../TrainingNav/NavBar'
 import Module41 from './components/module4-1'
 import Module42 from './components/module4-2'
@@ -20,9 +21,36 @@ const ModuleFour = () => {
     return new URLSearchParams(useLocation().search);
   }
 
-  const handleBack = e => {
-    e.preventDefault()
+  // const handleBack = e => {
+  //   e.preventDefault()
+  //   window.scrollTo({ top: 0, behavior: 'smooth' })
+  //   if (activeStep === 0) {
+  //     push('/module3')
+  //   } else if (activeStep === 1 || activeStep === 2 || activeStep === 3) {
+  //     setActiveStep(activeStep - 1)
+  //   }
+  // }
+
+  // const handleNext = e => {
+  //   e.preventDefault()
+  //   window.scrollTo({ top: 0, behavior: 'smooth' })
+  //   if (activeStep === 0 || activeStep === 1 || activeStep === 2) {
+  //     setActiveStep(activeStep + 1)
+  //   } else if (activeStep === 3) {
+  //     setActiveStep(0)
+  //   }
+  // }
+
+  const handleNext = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+    if (activeStep === 0 || activeStep === 1 || activeStep === 2 ) {
+      setActiveStep(activeStep + 1)
+    } else if (activeStep === 3) {
+      push('/module5')
+    }
+  }
+
+  const handleBack = () => {
     if (activeStep === 0) {
       push('/module3')
     } else if (activeStep === 1 || activeStep === 2 || activeStep === 3) {
@@ -30,28 +58,26 @@ const ModuleFour = () => {
     }
   }
 
-  const handleNext = e => {
-    e.preventDefault()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-    if (activeStep === 0 || activeStep === 1 || activeStep === 2) {
-      setActiveStep(activeStep + 1)
-    } else if (activeStep === 3) {
-      setActiveStep(0)
-    }
-  }
-
   return (
     <>
       <NavBar />
-      {activeStep === 0 ? (
-        <Module41 handleNext={handleNext} handleBack={handleBack} />
-      ) : activeStep === 1 ? (
-        <Module42 handleNext={handleNext} handleBack={handleBack} />
-      ) : activeStep === 2 ? (
-        <Module43 handleNext={handleNext} handleBack={handleBack} />
-      ) : activeStep === 3 ? (
-        <Module44 handleNext={handleNext} handleBack={handleBack} />
-      ) : null}
+      <Formik
+        onSubmit={handleNext}
+      >
+        {props => (
+          <Form>
+            {activeStep === 0 ? (
+              <Module41 handleNext={handleNext} handleBack={handleBack} {...props} />
+            ) : activeStep === 1 ? (
+              <Module42 handleNext={handleNext} handleBack={handleBack} {...props} />
+            ) : activeStep === 2 ? (
+              <Module43 handleNext={handleNext} handleBack={handleBack} {...props} />
+            ) : activeStep === 3 ? (
+              <Module44 handleNext={handleNext} handleBack={handleBack} {...props} />
+            ) : null}
+          </Form>
+        )}
+      </Formik>
     </>
   )
 }

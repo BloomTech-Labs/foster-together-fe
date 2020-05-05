@@ -1,23 +1,22 @@
-import React from 'react'
-import { 
-  Label, 
-  Input, 
-  Submit, 
+import React from "react";
+import {
+  Label,
+  Input,
+  Submit,
   Form,
-  FormGroup, 
-  CheckLabel, 
-  Checkbox  
-} from '../../TrainStyles'
-
+  FormGroup,
+  CheckLabel,
+  Checkbox,
+} from "../../TrainStyles";
 
 const questionOneData = [
-  '2 hours a month (minimum for monthly meal drop-off)',
-  '5 hours a month',
-  '2 hours a week',
-  '5 hours a week',
-  'One weekend every two months',
-  'One weekend a month',
-]
+  "2 hours a month (minimum for monthly meal drop-off)",
+  "5 hours a month",
+  "2 hours a week",
+  "5 hours a week",
+  "One weekend every two months",
+  "One weekend a month",
+];
 
 const QuestionOne = ({ setFieldValue, values }) => {
   return (
@@ -28,7 +27,7 @@ const QuestionOne = ({ setFieldValue, values }) => {
           <CheckLabel
             key={index}
             onClick={() => {
-              setFieldValue('m2_q3', index + 1)
+              setFieldValue("m2_q3", index + 1);
             }}
           >
             {answer}
@@ -37,13 +36,13 @@ const QuestionOne = ({ setFieldValue, values }) => {
         ))}
       </Label>
     </FormGroup>
-  )
-}
+  );
+};
 
 const QuestionTwo = ({ setFieldValue, values }) => {
-  const handleClick = value => {
-    setFieldValue('m2_q4', value)
-  }
+  const handleClick = (value) => {
+    setFieldValue("m2_q4", value);
+  };
 
   return (
     <FormGroup>
@@ -61,43 +60,43 @@ const QuestionTwo = ({ setFieldValue, values }) => {
         </CheckLabel>
       </Label>
     </FormGroup>
-  )
-}
+  );
+};
 
 const QuestionThree = ({ setFieldValue, values }) => {
   const questionThreeData = [
     {
       text:
-        'Additional meal drop-offs monthly (option to have foster parent provide a gift card for groceries)',
+        "Additional meal drop-offs monthly (option to have foster parent provide a gift card for groceries)",
       value: values.answer_a1,
     },
     {
-      text: 'Help around the house: Cleaning the kitchen',
+      text: "Help around the house: Cleaning the kitchen",
       value: values.answer_a2,
     },
-    { text: 'Help around the house: Laundry', value: values.answer_a3 },
-    { text: 'Help around the house: Yardwork', value: values.answer_a4 },
+    { text: "Help around the house: Laundry", value: values.answer_a3 },
+    { text: "Help around the house: Yardwork", value: values.answer_a4 },
     {
-      text: 'Help around the house: Sweeping/cleaning floors',
+      text: "Help around the house: Sweeping/cleaning floors",
       value: values.answer_a5,
     },
     {
       text:
-        'Driving kids to visits with parents, therapy, or school activity (Requires foster agency/county approval. Contact Hope for help with approval.)',
+        "Driving kids to visits with parents, therapy, or school activity (Requires foster agency/county approval. Contact Hope for help with approval.)",
       value: values.answer_a6,
     },
     {
       text:
-        'Babysitting under six hours (May require foster agency/county approval. Contact Hope for help with approval.)',
+        "Babysitting under six hours (May require foster agency/county approval. Contact Hope for help with approval.)",
       value: values.answer_a7,
     },
     {
       text:
-        'Respite for more than six hours or overnight (Requires CPA/county approval. Contact Hope for help with approval.)',
+        "Respite for more than six hours or overnight (Requires CPA/county approval. Contact Hope for help with approval.)",
       value: values.answer_a8,
     },
-    { text: 'Other (please specify below)', value: values.answer_a9 },
-  ]
+    { text: "Other (please specify below)", value: values.answer_a9 },
+  ];
   return (
     <>
       <FormGroup>
@@ -121,21 +120,21 @@ const QuestionThree = ({ setFieldValue, values }) => {
         <Label>
           Other ways I'd like to help (if any)
           <Input
-            component='textarea'
-            id='answer_b'
-            name='answer_b'
-            placeholder='Your answer here'
+            component="textarea"
+            id="answer_b"
+            name="answer_b"
+            placeholder="Your answer here"
           />
         </Label>
       </FormGroup>
     </>
-  )
-}
+  );
+};
 
 const QuestionFour = ({ setFieldValue, values }) => {
-  const handleClick = value => {
-    setFieldValue('m2_q6', value)
-  }
+  const handleClick = (value) => {
+    setFieldValue("m2_q6", value);
+  };
 
   return (
     <FormGroup>
@@ -153,13 +152,13 @@ const QuestionFour = ({ setFieldValue, values }) => {
         </CheckLabel>
       </Label>
     </FormGroup>
-  )
-}
+  );
+};
 
 const QuestionFive = ({ setFieldValue, values }) => {
-  const handleClick = value => {
-    setFieldValue('m2_q7', value)
-  }
+  const handleClick = (value) => {
+    setFieldValue("m2_q7", value);
+  };
 
   return (
     <FormGroup>
@@ -178,10 +177,10 @@ const QuestionFive = ({ setFieldValue, values }) => {
         </CheckLabel>
       </Label>
     </FormGroup>
-  )
-}
+  );
+};
 
-const Survey = props => {
+const Survey = (props) => {
   return (
     <Form>
       <QuestionOne {...props} />
@@ -196,19 +195,19 @@ const Survey = props => {
           always looking for ways to be better, so your feedback is definitely
           helpful!
           <Input
-            component='textarea'
-            id='m2_q8'
-            name='m2_q8'
-            placeholder='Your answer here'
+            component="textarea"
+            id="m2_q8"
+            name="m2_q8"
+            placeholder="Your answer here"
           />
         </Label>
       </FormGroup>
-      <Submit type='submit'>Complete Module 2</Submit>
+      <Submit type="submit">Complete Module 2</Submit>
       {props.errors.m2_q3 && props.touched.m2_q3 && (
-        <p style={{ color: 'red' }}>Please answer all required questions</p>
+        <p style={{ color: "red" }}>Please answer all required questions</p>
       )}
     </Form>
-  )
-}
+  );
+};
 
-export default Survey
+export default Survey;

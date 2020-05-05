@@ -14,30 +14,25 @@ import {
   Header5,
   Body4,
   Span1,
-  Wrapper,
-  Title
+  // Wrapper,
+  Title,
 } from "../../TrainStyles.js";
+
+import {
+  Wrapper,
+  PageTitle,
+  FormTitle,
+  BackArrow,
+} from "../../GlobalModule.styles";
 
 export const Module43 = ({ handleBack, handleNext }) => {
   return (
     <>
       <Wrapper>
-        <Title>
-          <svg
-            width="21"
-            height="18"
-            viewBox="0 0 27 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            onClick={handleBack}
-          >
-            <path
-              d="M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z"
-              fill="#517E92"
-            />
-          </svg>
+        <PageTitle>
+          <BackArrow onClick={handleBack} />
           Body Safety Rules by The Mama Bear Effect{" "}
-        </Title>
+        </PageTitle>
 
         <>
           <MainContent8>
@@ -143,7 +138,6 @@ export const Module43 = ({ handleBack, handleNext }) => {
         <ATag1>
           <Module4Submit onClick={handleNext}>Continue</Module4Submit>
         </ATag1>
-        {/* </Page1> */}
       </Wrapper>
     </>
   );

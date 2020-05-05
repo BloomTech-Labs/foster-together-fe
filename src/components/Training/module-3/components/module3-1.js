@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  Wrapper,
+  // Wrapper,
   BackArrow,
   Title,
   Text,
-  MainSection,
+  /* MainSection, */
   MediaWrapper,
   Media,
   MediaLeft,
@@ -13,18 +13,27 @@ import {
   Form,
   Label,
   Input,
-  Submit
+  Submit,
 } from "../../TrainStyles";
+
+import {
+  Wrapper,
+  PageTitle,
+  FormTitle,
+  MainContent,
+  FormContent,
+} from "../../GlobalModule.styles.js";
+
 import { useHistory } from "react-router-dom";
 export const Module31 = ({ handleBack }) => {
   return (
     <>
       <Wrapper>
-        <Title>
+        <PageTitle>
           <BackArrow onClick={handleBack} />
           What's your vision of a foster family?
-        </Title>
-        <MainSection>
+        </PageTitle>
+        <MainContent>
           <ol>
             <Text style={{ margin: "0 0 50px -30px" }}>
               Helpers are often surprised when they meet their foster parent
@@ -155,9 +164,10 @@ export const Module31 = ({ handleBack }) => {
               thriving.
             </Text>
           </ol>
-        </MainSection>
-        <Title>Family differences: Complete before proceeding</Title>
-        <Form>
+        </MainContent>
+        <FormContent>
+          <FormTitle>Family differences: Complete before proceeding</FormTitle>
+
           <Label>
             Are you surprised by any of the possible differences in family
             structure or norms? Do any of them make you feel uneasy? (2+
@@ -170,7 +180,7 @@ export const Module31 = ({ handleBack }) => {
             />
           </Label>
           <Submit type="submit">Continue</Submit>
-        </Form>
+        </FormContent>
       </Wrapper>
     </>
   );

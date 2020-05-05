@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Wrapper,
+  // Wrapper,
   Title,
   BackArrow,
   MediaWrapper,
@@ -10,8 +10,16 @@ import {
   Step,
   SmallList,
   SmallStep,
-  Module2Text
+  Module2Text,
 } from "../../TrainStyles";
+
+import {
+  Wrapper,
+  PageTitle,
+  FormTitle,
+  MainContent,
+  FormContent,
+} from "../../GlobalModule.styles.js";
 
 import { SimpleStep } from "./SimpleStep";
 import { mealTipsImage } from "../../img";
@@ -26,12 +34,12 @@ const mealTipsData = [
   "Friendly gestures are always a bonus. Some Family Helpers write short notes of gratitude and solidarity to the foster parents. Others text an encouraging message every few weeks. When many foster parents feel isolated, being thoughtful goes a long way.",
   `Consider the family’s desires and needs, then find the best option to fit your schedule.`,
   "Offer specific drop-off times to choose from (“Tuesday at 6, Thursday at 4, or Sunday at noon?”). This is better than an open-ended question, (“Is there a good day for me to bring a meal?”) which can lead to a slower process.",
-  "When foster parents go on to adopt, they can use support through that process, too."
+  "When foster parents go on to adopt, they can use support through that process, too.",
 ];
 
 const MealTipsWrapper = () => {
   return (
-    <Module2Section>
+    <MainContent>
       <MediaWrapper>
         <div>
           <BulletList>
@@ -136,19 +144,19 @@ const MealTipsWrapper = () => {
           ))}
         </BulletList>
       </MediaWrapper>
-    </Module2Section>
+    </MainContent>
   );
 };
 
 const beyondTheMealData = [
   `After a few meal deliveries, consider asking the family if they’d like to meet for a playdate, or would like help with a specific chore.`,
   `When your foster family receives a new placement of a child, consider asking if the child needs any additional supplies or clothes. You’re welcome to collect items from friends or family. For example, after her foster family welcomed two little ones in November, who did not have their own coats, one Helper posted a request for winter gear with the children’s sizes--explaining they are in foster care and giving no additional identifying information--on a local buy-sell-trade group. The next week, she dropped off five bags full of clothes, toys, coats, and boots along with the family’s weekly meal.`,
-  "Foster Together also collaborates with three foster parent-owned nonprofits to provide additional resources, physical supplies, and support to foster families. If a need arises, please let us know so that our group can partner with you find and deliver the items. Connect@fostertogether.co."
+  "Foster Together also collaborates with three foster parent-owned nonprofits to provide additional resources, physical supplies, and support to foster families. If a need arises, please let us know so that our group can partner with you find and deliver the items. Connect@fostertogether.co.",
 ];
 
 const BeyondTheMeal = () => {
   return (
-    <Module2Section>
+    <MainContent>
       <Module2Text>
         If you're the type who wants to customize the match to the foster
         parent's most-needed tasks, here's how you do that:
@@ -176,21 +184,21 @@ const BeyondTheMeal = () => {
           </div>
         ))}
       </SmallList>
-    </Module2Section>
+    </MainContent>
   );
 };
 
 export const Module23 = ({ handleBack, ...props }) => {
   return (
     <Wrapper>
-      <Title>
+      <PageTitle>
         <BackArrow onClick={handleBack} />
         Meal Delivery Tips (From Michele, a Current Family Helper)
-      </Title>
+      </PageTitle>
       <MealTipsWrapper />
       <Title>Tips for Those Who Want to Go Beyond the Meal</Title>
       <BeyondTheMeal />
-      <Title>Capacity Survey: Complete Before Proceeding</Title>
+      <FormTitle>Capacity Survey: Complete Before Proceeding</FormTitle>
       <Survey {...props} />
     </Wrapper>
   );
