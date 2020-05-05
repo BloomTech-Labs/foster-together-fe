@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Wrapper,
   BackArrow,
@@ -13,15 +13,12 @@ import {
   Form,
   Label,
   Input,
-  Submit,
-} from '../../TrainStyles'
-import Progress from "../../TrainingModuleContainer";
+  Submit
+} from "../../TrainStyles";
 
 export const Module33 = ({ handleBack }) => {
-  
   return (
     <Wrapper>
-      <Progress />
       <Title>
         <BackArrow onclick={handleBack} />
         Foster parents' least favorite compliments (and a few ideas for what you
@@ -39,7 +36,7 @@ export const Module33 = ({ handleBack }) => {
           example:
         </Text>
         <BulletList>
-          <MediaWrapper style={{ marginBottom: '-50px' }}>
+          <MediaWrapper style={{ marginBottom: "-50px" }}>
             <div>
               <Step>
                 <h3>"You’re so amazing to do this!"</h3>
@@ -54,7 +51,7 @@ export const Module33 = ({ handleBack }) => {
             </div>
             <Media>
               <Video
-                url='https://player.vimeo.com/video/288657930'
+                url="https://player.vimeo.com/video/288657930"
                 width={480}
               />
             </Media>
@@ -103,7 +100,7 @@ export const Module33 = ({ handleBack }) => {
         <BulletList>
           <Step>
             <p>
-              A phrase that almost always fits is{' '}
+              A phrase that almost always fits is{" "}
               <span>“Thank you for loving them.”</span> It works for hard days.
               It works for celebrations. It affirms the hard work of love
               without idolizing or isolating the foster parent.
@@ -139,7 +136,7 @@ export const Module33 = ({ handleBack }) => {
         <Text>
           Find the joy. Celebrate kids. Foster parents want you to see the
           beautiful childhoods they’re nurturing--not just the trauma and
-          struggle.{' '}
+          struggle.{" "}
           <span>
             Treat foster families with the joy and normalcy you’d want for your
             own family, all while giving them your needed gifts of warm
@@ -161,12 +158,12 @@ export const Module33 = ({ handleBack }) => {
         <Label>
           To you, what is the most surprising phrase on the "to avoid saying"
           list? *
-          <Input id='m3_q3' name='m3_q3' placeholder='Your answer here' />
+          <Input id="m3_q3" name="m3_q3" placeholder="Your answer here" />
         </Label>
         <Submit type="submit">Continue</Submit>
       </Form>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Module33
+export default Module33;

@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import {
-  
   Section,
   Module4MainContent,
   Module4Input,
@@ -17,82 +16,80 @@ import {
   Header2,
   Wrapper,
   Title
-} from '../../TrainStyles.js'
-import Player from 'react-player'
-// import Diamond from './diamond'
-import Progress from "../../TrainingModuleContainer";
+} from "../../TrainStyles.js";
+import Player from "react-player";
 
 export const Diamond = ({
   style = {},
-  fill = '#000',
-  width = '100%',
-  className = '',
-  viewBox = '0 0 32 32',
+  fill = "#000",
+  width = "100%",
+  className = "",
+  viewBox = "0 0 32 32"
 }) => (
   <svg
-    width='9'
-    height='9'
-    viewBox='0 0 12 12'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
+    width="9"
+    height="9"
+    viewBox="0 0 12 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <rect
-      x='6'
-      y='0.343262'
-      width='7'
-      height='7'
-      transform='rotate(45 6 0.343262)'
-      fill='#343434'
+      x="6"
+      y="0.343262"
+      width="7"
+      height="7"
+      transform="rotate(45 6 0.343262)"
+      fill="#343434"
     />
   </svg>
-)
+);
 
 export const Module41 = ({ handleNext, handleBack }) => {
-
   return (
     <>
-    <Wrapper>
-     <Progress />
-      <Title>
-        <svg
-          width='21'
-          height='17'
-          viewBox='0 0 27 24'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-          onClick={handleBack}
-        >
-          <path
-            d='M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z'
-            fill='#517E92'
-          />
-        </svg>
-        When do you need a background check?
-      </Title>
-   
-        <Section> 
-          <Module4Title>Basic Overview of Safety and Legal Requirements: </Module4Title>
+      <Wrapper>
+        <Title>
+          <svg
+            width="21"
+            height="17"
+            viewBox="0 0 27 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            onClick={handleBack}
+          >
+            <path
+              d="M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z"
+              fill="#517E92"
+            />
+          </svg>
+          When do you need a background check?
+        </Title>
+
+        <Section>
+          <Module4Title>
+            Basic Overview of Safety and Legal Requirements:{" "}
+          </Module4Title>
           <Module4MainContent>
             <Paragraph>
               We perform a basic Colorado Arrest Records check before each
               match. Foster Together defers to foster parents whether to reveal
               their home address after the initial meeting with the helping
               family. In the case of Foster Family Helpers who desire to do more
-              with families (babysitting, driving, etc), Foster Together{' '}
+              with families (babysitting, driving, etc), Foster Together{" "}
               <span>defers to the licensing county or agency</span>, as
               background check and training requirements differ across
               institutions.
             </Paragraph>
             <Module4Video>
               <Player
-                url='https://player.vimeo.com/video/288657921'
-                width='500px'
-                height='300px'
+                url="https://player.vimeo.com/video/288657921"
+                width="500px"
+                height="300px"
               />
             </Module4Video>
           </Module4MainContent>
-          </Section> 
-          <Section> 
+        </Section>
+        <Section>
           <MainContent1>
             <Question>Option One: Casual Helping</Question>
             <Paragraph1>
@@ -102,10 +99,10 @@ export const Module41 = ({ handleNext, handleBack }) => {
                 off meals, meeting at the park with the foster parents and
                 kids), we do run a Colorado Arrest Records check as a buffer.
                 <span>
-                  {' '}
+                  {" "}
                   As a Foster Family Helper, you are developing a natural
                   relationship with the family, and are allowed to help out as
-                  any other friend or neighbor would.{' '}
+                  any other friend or neighbor would.{" "}
                 </span>
                 As a best practice, Foster Together Colorado seeks to deter
                 predators from our matching program by educating families in
@@ -114,7 +111,7 @@ export const Module41 = ({ handleNext, handleBack }) => {
                 talking openly about prevention with adults in the child’s life
                 is the best way to keep kids safe.
                 <span>
-                  {' '}
+                  {" "}
                   As with any family connections, foster parents have the
                   responsibility to be aware and cautious as all parties earn
                   trust.
@@ -124,7 +121,7 @@ export const Module41 = ({ handleNext, handleBack }) => {
             <br></br>
             <Question>
               Option Two: Regular Babysitting for Less than Six Hours, or
-              Driving Children{' '}
+              Driving Children{" "}
             </Question>
             <Paragraph1>
               For anyone who babysits for less than six hours or transports kids
@@ -134,22 +131,22 @@ export const Module41 = ({ handleNext, handleBack }) => {
             <ul>
               <li>
                 <Diamond />
-                {'  '}CBI, FBI, TRAILS (BIU), sexual offender registry
+                {"  "}CBI, FBI, TRAILS (BIU), sexual offender registry
                 background checks
               </li>
               <li>
                 <Diamond />
-                {'  '}Proof of auto insurance and valid driver’s license.
+                {"  "}Proof of auto insurance and valid driver’s license.
               </li>
               <li>
                 <Diamond />
-                {'  '}Check references, personal interview, training, and/or
+                {"  "}Check references, personal interview, training, and/or
                 other agency-specific vetting.
               </li>
               <Or>OR</Or>
               <li>
                 <Diamond />
-                {'  '}Acceptability under the agency or county’s individual
+                {"  "}Acceptability under the agency or county’s individual
                 interpretation of the Reasonable and Prudent Parenting Standard.
               </li>
             </ul>
@@ -160,9 +157,9 @@ export const Module41 = ({ handleNext, handleBack }) => {
             <Paragraph1>
               <p>
                 For anyone who provides respite (babysitting for over six hours
-                or overnight) in the{' '}
+                or overnight) in the{" "}
                 <span>
-                  licensed foster home, agency and county requirements{' '}
+                  licensed foster home, agency and county requirements{" "}
                 </span>
                 likely include:
               </p>
@@ -170,21 +167,21 @@ export const Module41 = ({ handleNext, handleBack }) => {
             <ul>
               <li>
                 <Diamond />
-                {'  '}CBI, FBI, TRAILS (BIU), sexual offender registry
+                {"  "}CBI, FBI, TRAILS (BIU), sexual offender registry
                 background checks
               </li>
               <li>
                 <Diamond />
-                {'    '}Core foster care training on rules and regulations
+                {"    "}Core foster care training on rules and regulations
               </li>
               <li>
                 <Diamond />
-                {'    '}CPR and first aid certification
+                {"    "}CPR and first aid certification
               </li>
               <Or>OR</Or>
               <li>
                 <Diamond />
-                {'    '} Acceptability under the agency or county’s individual
+                {"    "} Acceptability under the agency or county’s individual
                 interpretation of the Reasonable and Prudent Parenting Standard.
               </li>
             </ul>
@@ -194,7 +191,7 @@ export const Module41 = ({ handleNext, handleBack }) => {
             <Paragraph1>
               <p>
                 For anyone who provides respite (babysitting for over six hours
-                or overnight) in their{'  '}
+                or overnight) in their{"  "}
                 <span>own home, agency and county requirements </span>
                 likely include:
               </p>
@@ -235,14 +232,13 @@ export const Module41 = ({ handleNext, handleBack }) => {
             listed here, so we can clarify. *
           </Header2>
         </Section>
-        <Module4Input placeholder='Your Answer Here' />
+        <Module4Input placeholder="Your Answer Here" />
         <Module4ATag>
           <Module4Submit onClick={handleNext}>Continue</Module4Submit>
         </Module4ATag>
-  
       </Wrapper>
     </>
-  )
-}
+  );
+};
 
 export default Module41;

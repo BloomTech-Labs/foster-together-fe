@@ -22,7 +22,7 @@ function LetterTitle() {
     <Title>
       <BackArrow
         onClick={() => {
-          push('/training-start-2')
+          push('/')
         }}
       />
       A letter of gratitude

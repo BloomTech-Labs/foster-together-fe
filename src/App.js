@@ -12,11 +12,11 @@ import Profile from "./components/AdminDash/Profile/Profile";
 import Application from "./components/signUpForm/Application/Application";
 import ModuleStart from "./components/Training/module-0/trainingLetter";
 import ModuleStart2 from "./components/Training/module-0/trainingLetter2.js";
-import Module11 from "./components/Training/module-1/components/module1-1";
+import ModuleOne from "./components/Training/module-1/Module1Container";
 import ModuleTwo from "./components/Training/module-2/Module2Container.js";
 import ModuleThree from "./components/Training/module-3/Module3Container.js";
 import ModuleFour from "./components/Training/module-4/Module4Container.js";
-import ModuleFive from "./components/Training/module-5/components/module5-1";
+import ModuleFive from "./components/Training/module-5/Module5Container";
 import UserProfile from "./components/AdminDash/Profile/User/UserProfile";
 import Map from "./components/AdminDash/Map/MapOverlay";
 
@@ -41,7 +41,7 @@ function App() {
         <PrivateRoute path="/:membertype/:id" component={Profile} />
         <Route path="/training-start" component={ModuleStart} />
         <Route path="/training-start-2" component={ModuleStart2} />
-        <Route path="/module1" component={Module11} />
+        <Route path="/module1" component={ModuleOne} />
         <Route path="/module2" component={ModuleTwo} />
         <Route path="/module3" component={ModuleThree} />
         <Route path="/module4" component={ModuleFour} />

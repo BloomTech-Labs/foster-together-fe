@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Wrapper,
   BackArrow,
@@ -12,15 +12,11 @@ import {
   Input,
   Indented,
   Submit
-} from '../../TrainStyles'
+} from "../../TrainStyles";
 
-import Progress from "../../TrainingModuleContainer";
-
-export const Module32 = ({ handleBack }) => {  
-
+export const Module32 = ({ handleBack }) => {
   return (
     <Wrapper>
-      <Progress />
       <Title>
         <BackArrow onClick={handleBack} />
         What makes a great foster family helper?
@@ -29,7 +25,7 @@ export const Module32 = ({ handleBack }) => {
         <MediaWrapper>
           <div>
             <Text>
-              We love our Family Helpers! They are usually{' '}
+              We love our Family Helpers! They are usually{" "}
               <span>
                 self-starters who aren’t afraid to take initiative and want
                 their relationships to be meaningful and helpful to those who
@@ -73,14 +69,14 @@ export const Module32 = ({ handleBack }) => {
           </div>
           <Media>
             <img
-              src='https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525385742778-FWVIMH270TN6KNWXQBAA/ke17ZwdGBToddI8pDm48kHk9taYkEy7sLhgS3EyD6457gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0kMlYkjvFlctRdmAM11rxFQmF03bpsbun_LAh8ZlxTmgswgaiiNAbnlkQr7g4-9D1w/FT+5.jpg?format=750w'
-              alt=''
+              src="https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525385742778-FWVIMH270TN6KNWXQBAA/ke17ZwdGBToddI8pDm48kHk9taYkEy7sLhgS3EyD6457gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0kMlYkjvFlctRdmAM11rxFQmF03bpsbun_LAh8ZlxTmgswgaiiNAbnlkQr7g4-9D1w/FT+5.jpg?format=750w"
+              alt=""
               style={{ width: 480, marginTop: 25 }}
             />
           </Media>
         </MediaWrapper>
         <Text>
-          As one of our first Helpers said,{' '}
+          As one of our first Helpers said,{" "}
           <span>
             “I quickly realized that no level of help is too little. Anyone can
             customize the deliveries to whatever they have time and money for.”
@@ -92,12 +88,12 @@ export const Module32 = ({ handleBack }) => {
         <Label>
           After reading this list, please name one or two strengths you will
           bring to the match. *
-          <Input id='m3_q2' name='m3_q2' placeholder='Your answer here' />
+          <Input id="m3_q2" name="m3_q2" placeholder="Your answer here" />
         </Label>
         <Submit type="submit">Continue</Submit>
       </Form>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Module32
+export default Module32;
