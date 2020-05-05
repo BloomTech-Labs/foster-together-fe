@@ -1,12 +1,3 @@
-// import React from 'react'
-
-// export default function Module5() {
-//     return (
-//         <div>
-            
-//         </div>
-//     )
-// }
 import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import NavBar from '../TrainingNav/NavBar'
@@ -42,7 +33,6 @@ const ModuleFive = () => {
       setActiveStep(activeStep - 1)
     }
   }
-
 
   return (
     <>
