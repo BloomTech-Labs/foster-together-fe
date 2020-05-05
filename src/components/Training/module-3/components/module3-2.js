@@ -14,7 +14,7 @@ import {
   Submit
 } from "../../TrainStyles";
 
-export const Module32 = ({ handleBack }) => {
+export const Module32 = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
       <Title>
@@ -89,6 +89,9 @@ export const Module32 = ({ handleBack }) => {
           After reading this list, please name one or two strengths you will
           bring to the match. *
           <Input id="m3_q2" name="m3_q2" placeholder="Your answer here" />
+          {errors?.m3_q2 && touched?.m3_q2 && (
+          <p style={{ color: "red" }}>{errors?.m3_q2}</p>
+        )}
         </Label>
         <Submit type="submit">Continue</Submit>
       </Form>

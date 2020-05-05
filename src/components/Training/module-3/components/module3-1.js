@@ -16,7 +16,8 @@ import {
   Submit
 } from "../../TrainStyles";
 import { useHistory } from "react-router-dom";
-export const Module31 = ({ handleBack }) => {
+
+export const Module31 = ({ handleBack, errors, touched }) => {
   return (
     <>
       <Wrapper>
@@ -168,6 +169,9 @@ export const Module31 = ({ handleBack }) => {
               name="m3_q1"
               placeholder="Your answer here"
             />
+            {errors?.m3_q1 && touched?.m3_q1 && (
+              <p style={{ color: "red" }}>{errors?.m3_q1}</p>
+            )}
           </Label>
           <Submit type="submit">Continue</Submit>
         </Form>

@@ -24,28 +24,21 @@ import {
   Statement,
   Video1,
   Wrapper,
-  Title
+  Title,
+  BackArrow,
+  Form,
+  Input,
 } from "../../TrainStyles.js";
 import Player from "react-player";
 
-export const Module42 = ({ handleNext, handleBack }) => {
+export const Module42 = (props) => {
+  const { handleNext, handleBack, errors, touched } = props
+
   return (
     <>
       <Wrapper>
         <Title>
-          <svg
-            width="21"
-            height="22"
-            viewBox="0 0 27 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            onClick={handleBack}
-          >
-            <path
-              d="M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z"
-              fill="#517E92"
-            />
-          </svg>
+          <BackArrow onClick={handleBack} />
           Sexual abuse prevention{" "}
         </Title>
 
@@ -194,10 +187,21 @@ export const Module42 = ({ handleNext, handleBack }) => {
             What did you learn from the above article(s)? (3+ sentences)
           </Question1>
         </Section2>
-        <Module4Input placeholder="Your Answer Here" />
-        <ATag1>
-          <Module4Submit onClick={handleNext} >Continue</Module4Submit>
-        </ATag1>
+        <Form>
+          <Input 
+            component="textarea"
+            id="m4_q2"
+            name="m4_q2"
+            placeholder="Your Answer Here" 
+          />
+          {errors?.m4_q2 && touched?.m4_q2 && (
+            <p style={{ color: "red" }}>{errors.m4_q2}</p>
+          )}
+          <ATag1>
+            <Module4Submit type="submit">Continue</Module4Submit>
+          </ATag1>  
+        </Form>
+
         {/* </Page1> */}
       </Wrapper>
     </>

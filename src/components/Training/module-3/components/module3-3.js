@@ -16,7 +16,7 @@ import {
   Submit
 } from "../../TrainStyles";
 
-export const Module33 = ({ handleBack }) => {
+export const Module33 = ({ handleBack, errors, touched }) => {
   return (
     <Wrapper>
       <Title>
@@ -159,6 +159,9 @@ export const Module33 = ({ handleBack }) => {
           To you, what is the most surprising phrase on the "to avoid saying"
           list? *
           <Input id="m3_q3" name="m3_q3" placeholder="Your answer here" />
+          {errors?.m3_q3 && touched?.m3_q3 && (
+          <p style={{ color: "red" }}>{errors?.m3_q3}</p>
+        )}
         </Label>
         <Submit type="submit">Continue</Submit>
       </Form>

@@ -4,7 +4,7 @@ import {
   Module4MainContent,
   Module4Input,
   Module4Submit,
-  Module4ATag,
+  ATag1,
   Question,
   Module4Title,
   MainContent1,
@@ -15,7 +15,10 @@ import {
   Or,
   Header2,
   Wrapper,
-  Title
+  Title,
+  BackArrow,
+  Form,
+  Input,
 } from "../../TrainStyles.js";
 import Player from "react-player";
 
@@ -44,24 +47,14 @@ export const Diamond = ({
   </svg>
 );
 
-export const Module41 = ({ handleNext, handleBack }) => {
+export const Module41 = (props) => {
+  const { handleNext, handleBack, errors, touched } = props
+  
   return (
     <>
       <Wrapper>
         <Title>
-          <svg
-            width="21"
-            height="17"
-            viewBox="0 0 27 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            onClick={handleBack}
-          >
-            <path
-              d="M27 10.443H5.6129L13.3739 2.20163L11.3006 0L0 12L11.3006 24L13.3739 21.7984L5.6129 13.557H27V10.443Z"
-              fill="#517E92"
-            />
-          </svg>
+          <BackArrow onClick={handleBack} />
           When do you need a background check?
         </Title>
 
@@ -232,10 +225,21 @@ export const Module41 = ({ handleNext, handleBack }) => {
             listed here, so we can clarify. *
           </Header2>
         </Section>
-        <Module4Input placeholder="Your Answer Here" />
-        <Module4ATag>
-          <Module4Submit onClick={handleNext}>Continue</Module4Submit>
-        </Module4ATag>
+        <Form>
+          <Module4Input
+            component="textarea"
+            id="m4_q1"
+            name="m4_q1"
+            placeholder="Your Answer Here" 
+          />
+          {errors?.m4_q1 && touched?.m4_q1 && (
+            <p style={{ color: "red" }}>{errors.m4_q1}</p>
+          )}
+          <ATag1>
+            <Module4Submit type="submit">Continue</Module4Submit>
+          </ATag1>
+        </Form>
+        
       </Wrapper>
     </>
   );
