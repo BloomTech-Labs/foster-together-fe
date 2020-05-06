@@ -393,7 +393,7 @@ export const BigInput = styled.textarea`
 `;
 
 //! 4.3, 4.4
-export const Signature = styled.textarea`
+export const Signature = styled(Field)`
   width: 86%;
   height: 4.4rem;
   resize: none;
@@ -822,7 +822,7 @@ export const QuestionContainer = styled.div`
   align-items: center;
 `;
 
-export const QuestionsInput = styled.textarea`
+export const QuestionsInput = styled(Field)`
   width: 64%;
   height: 150px;
   resize: none;

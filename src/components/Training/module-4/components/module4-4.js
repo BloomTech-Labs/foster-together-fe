@@ -26,8 +26,8 @@ import {
   FormContent,
 } from "../../GlobalModule.styles";
 
-export const Module44 = ({ handleBack, handleNext }) => {
-  const { push } = useHistory();
+export const Module44 = (props) => {
+  const { handleBack, errors, touched } = props
 
   return (
     <>
@@ -103,21 +103,39 @@ export const Module44 = ({ handleBack, handleNext }) => {
               being abused?
             </MainContent7>
             <InputHolder>
-              <Signature placeholder="Your Answer Here" />
+              <Signature 
+                id='m4_q9'
+                name='m4_q9'
+                placeholder="Your Answer Here" />
+              {errors?.m4_q9 && touched?.m4_q9 && (
+                <p style={{ color: "red" }}>{errors?.m4_q9}</p>
+              )}
             </InputHolder>
             <MainContent7>
               What is the name of the local program that walks abused kids
               through the investigation and initial recovery process? *
             </MainContent7>
             <InputHolder>
-              <Signature placeholder="Your Answer Here" />
+              <Signature 
+                id="m4_q10"
+                name="m4_q10"
+                placeholder="Your Answer Here" />
+              {errors?.m4_q10 && touched?.m4_q10 && (
+                <p style={{ color: "red" }}>{errors?.m4_q10}</p>
+              )}
             </InputHolder>
             <MainContent7>
               Where can you request a referral for the treatment of someone who
               has abused children? *
             </MainContent7>
             <InputHolder>
-              <Signature placeholder="Your Answer Here" />
+              <Signature
+               id="m4_q11"
+               name="m4_q11"
+               placeholder="Your Answer Here" />
+              {errors?.m4_q11 && touched?.m4_q11 && (
+                <p style={{ color: "red" }}>{errors?.m4_q11}</p>
+              )}
             </InputHolder>
             <MainContent7>
               From what you’ve learned so far how can we improve the modules

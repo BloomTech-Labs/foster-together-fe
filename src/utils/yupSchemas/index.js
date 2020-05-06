@@ -118,14 +118,23 @@ export const ModuleFourSchema2 = Yup.object().shape({
 })
 
 export const ModuleFourSchema3 = Yup.object().shape({
-  m2_q3: Yup.number().min(1, generic),
+  m4_q3: Yup.string().required(generic),
+  m4_q4: Yup.string().required(generic),
+  m4_q5: Yup.string().required(generic),
+  m4_q6: Yup.string().required(generic),
+  m4_q7: Yup.string().required(generic),
+  m4_q8: Yup.string().required(generic),
 })
 
 export const ModuleFourSchema4 = Yup.object().shape({
-  m2_q3: Yup.number().min(1, generic),
+  m4_q9: Yup.string().required(generic),
+  m4_q10: Yup.string().required(generic),
+  m4_q11: Yup.string().required(generic),
 })
 
 // Module Five Schema
 export const ModuleFiveSchema1 = Yup.object().shape({
-  m2_q3: Yup.number().min(1, generic),
+  m5_q1: Yup.string().required(generic),
+  m5_q2: Yup.string().required(generic),
+  m5_q3: Yup.string()
 })

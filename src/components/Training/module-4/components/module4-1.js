@@ -56,7 +56,7 @@ export const Diamond = ({
 );
 
 export const Module41 = (props) => {
-  const { handleNext, handleBack, errors, touched } = props
+  const { handleBack, errors, touched } = props
   
   return (
     <>

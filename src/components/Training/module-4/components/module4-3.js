@@ -23,9 +23,12 @@ import {
   PageTitle,
   FormTitle,
   BackArrow,
+  FormContent,
 } from "../../GlobalModule.styles";
 
-export const Module43 = ({ handleBack, handleNext }) => {
+export const Module43 = (props) => {
+  const { handleBack, errors, touched } = props
+  
   return (
     <>
       <Wrapper>
@@ -78,7 +81,15 @@ export const Module43 = ({ handleBack, handleNext }) => {
               communication. *
             </MainContent5>
             <InputHolder>
-              <Signature placeholder="If you understand, please type your full name here to agree" />
+              <Signature
+                component="textarea" 
+                id="m4_q3"
+                name="m4_q3"
+                placeholder="If you understand, please type your full name here to agree" 
+              />
+              {errors?.m4_q3 && touched?.m4_q3 && (
+                <p style={{ color: "red" }}>{`\n`+errors?.m4_q3}</p>
+              )}
             </InputHolder>
           </SignContain>
           <SignContain>
@@ -87,7 +98,15 @@ export const Module43 = ({ handleBack, handleNext }) => {
               private parts and no one is allowed to touch theirs.
             </MainContent5>
             <InputHolder>
-              <Signature placeholder="If you understand, please type your full name here to agree" />
+              <Signature
+                component="textarea" 
+                id="m4_q4"
+                name="m4_q4"
+                placeholder="If you understand, please type your full name here to agree" 
+              />
+              {errors?.m4_q4 && touched?.m4_q4 && (
+                <p style={{ color: "red" }}>{errors?.m4_q4}</p>
+              )}
             </InputHolder>
           </SignContain>
           <SignContain>
@@ -96,7 +115,15 @@ export const Module43 = ({ handleBack, handleNext }) => {
               keep secrets from the parents in their lives. *
             </MainContent5>
             <InputHolder>
-              <Signature placeholder="If you understand, please type your full name here to agree" />
+              <Signature
+                component="textarea" 
+                id="m4_q5"
+                name="m4_q5"
+                placeholder="If you understand, please type your full name here to agree" 
+              />
+              {errors?.m4_q5 && touched?.m4_q5 && (
+                <p style={{ color: "red" }}>{errors?.m4_q5}</p>
+              )}
             </InputHolder>
           </SignContain>
           <SignContain>
@@ -106,7 +133,15 @@ export const Module43 = ({ handleBack, handleNext }) => {
               or asks them to do anything that worries or frightens them. *
             </MainContent5>
             <InputHolder>
-              <Signature placeholder="If you understand, please type your full name here to agree" />
+              <Signature
+                component="textarea" 
+                id="m4_q6"
+                name="m4_q6"
+                placeholder="If you understand, please type your full name here to agree" 
+              />
+              {errors?.m4_q6 && touched?.m4_q6 && (
+                <p style={{ color: "red" }}>{errors?.m4_q6}</p>
+              )}
             </InputHolder>
           </SignContain>
           <SignContain>
@@ -115,7 +150,15 @@ export const Module43 = ({ handleBack, handleNext }) => {
               and no topics are off-limits. *
             </MainContent5>
             <InputHolder>
-              <Signature placeholder="If you understand, please type your full name here to agree" />
+              <Signature
+                component="textarea" 
+                id="m4_q7"
+                name="m4_q7"
+                placeholder="If you understand, please type your full name here to agree" 
+              />
+              {errors?.m4_q7 && touched?.m4_q7 && (
+                <p style={{ color: "red" }}>{errors?.m4_q7}</p>
+              )}
             </InputHolder>
           </SignContain>
           <SignContain>
@@ -125,7 +168,15 @@ export const Module43 = ({ handleBack, handleNext }) => {
               with all kids at home. *
             </MainContent5>
             <InputHolder>
-              <Signature placeholder="If you understand, please type your full name here to agree" />
+              <Signature
+                component="textarea" 
+                id="m4_q8"
+                name="m4_q8"
+                placeholder="If you understand, please type your full name here to agree" 
+              />
+              {errors?.m4_q8 && touched?.m4_q8 && (
+                <p style={{ color: "red" }}>{errors?.m4_q8}</p>
+              )}
             </InputHolder>
           </SignContain>
           <MainContent6>
@@ -136,7 +187,7 @@ export const Module43 = ({ handleBack, handleNext }) => {
           </InputHolder>
         </>
         <ATag1>
-          <Module4Submit onClick={handleNext}>Continue</Module4Submit>
+          <Module4Submit type="submit">Continue</Module4Submit>
         </ATag1>
       </Wrapper>
     </>
