@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import {
-  // Section,
-  Module4MainContent,
   Module4Input,
   Module4Submit,
   ATag1,
@@ -9,17 +7,12 @@ import {
   Module4Title,
   MainContent1,
   Paragraph,
-  // Header1,
   Paragraph1,
   Module4Video,
   Or,
-  Header2
-  // BackArrow,
-  /* Wrapper, */
-  // Title,
-  // Page,
+  Header2,
+  Input
 } from "../../TrainStyles.js";
-import Player from "react-player";
 
 import {
   PageWrapper,
@@ -28,7 +21,10 @@ import {
   BackArrow,
   MainContent,
   FormContent,
-  Text
+  Text,
+  MediaWrapper,
+  Media,
+  Video
 } from "../../GlobalModule.styles";
 
 export const Diamond = ({
@@ -60,102 +56,94 @@ export const Module41 = props => {
   const { handleNext, handleBack, errors, touched } = props;
 
   return (
-    <>
-      <PageWrapper>
-        <PageTitle>
-          <BackArrow onClick={handleBack} />
-          When do you need a background check?
-        </PageTitle>
+    <PageWrapper>
+      <PageTitle>
+        <BackArrow onClick={handleBack} />
+        When do you need a background check?
+      </PageTitle>
 
-        <MainContent>
-          <Module4Title>
-            Basic Overview of Safety and Legal Requirements:{" "}
-          </Module4Title>
-          <Module4MainContent>
-            <Text>
-              We perform a basic Colorado Arrest Records check before each
-              match. Foster Together defers to foster parents whether to reveal
-              their home address after the initial meeting with the helping
-              family. In the case of Foster Family Helpers who desire to do more
-              with families (babysitting, driving, etc), Foster Together{" "}
-              <span>defers to the licensing county or agency</span>, as
-              background check and training requirements differ across
-              institutions.
-            </Text>
-            <Module4Video>
-              <Player
-                url="https://player.vimeo.com/video/288657921"
-                width="500px"
-                height="300px"
-              />
-            </Module4Video>
-          </Module4MainContent>
+      <MainContent>
+        <Text>
+          <ul>
+            <h3>Basic Overview of Safety and Legal Requirements: </h3>
+            <MediaWrapper>
+              <p>
+                We perform a basic Colorado Arrest Records check before each
+                match. Foster Together defers to foster parents whether to
+                reveal their home address after the initial meeting with the
+                helping family. In the case of Foster Family Helpers who desire
+                to do more with families (babysitting, driving, etc), Foster
+                Together <span>defers to the licensing county or agency</span>,
+                as background check and training requirements differ across
+                institutions.
+              </p>
 
-          <MainContent1>
-            <Question>Option One: Casual Helping</Question>
-            <Text>
+              <Media>
+                <Video
+                  url="https://player.vimeo.com/video/288657921"
+                  width="500px"
+                  height="300px"
+                />
+              </Media>
+            </MediaWrapper>
+
+            <li>
+              <h3>Option One: Casual Helping</h3>
               <p>
                 While there is no legal requirement for a background check or
                 training for casual contact with a foster family (i.e. dropping
                 off meals, meeting at the park with the foster parents and
-                kids), we do run a Colorado Arrest Records check as a buffer.
-                <span>
-                  {" "}
-                  As a Foster Family Helper, you are developing a natural
-                  relationship with the family, and are allowed to help out as
-                  any other friend or neighbor would.{" "}
-                </span>
-                As a best practice, Foster Together Colorado seeks to deter
-                predators from our matching program by educating families in
-                sexual abuse prevention, red flags for predatory grooming, and
-                body safety rules (more info in the next section). We know that
-                talking openly about prevention with adults in the child’s life
-                is the best way to keep kids safe.
-                <span>
-                  {" "}
-                  As with any family connections, foster parents have the
-                  responsibility to be aware and cautious as all parties earn
-                  trust.
-                </span>
+                kids), we do run a Colorado Arrest Records check as a buffer. As
+                a Foster Family Helper, you are developing a natural
+                relationship with the family, and are allowed to help out as any
+                other friend or neighbor would. As a best practice, Foster
+                Together Colorado seeks to deter predators from our matching
+                program by educating families in sexual abuse prevention, red
+                flags for predatory grooming, and body safety rules (more info
+                in the next section). We know that talking openly about
+                prevention with adults in the child’s life is the best way to As
+                with any family connections, foster parents have the
+                responsibility to be aware and cautious as all parties earn
+                trust.
               </p>
-            </Text>
+            </li>
+
             <br></br>
-            <Question>
-              Option Two: Regular Babysitting for Less than Six Hours, or
-              Driving Children{" "}
-            </Question>
-            <Text>
-              For anyone who babysits for less than six hours or transports kids
-              in a car, foster parents may be required to do one of the
-              following. Agency and county requirements likely include:
-            </Text>
-            <ul>
+
+            <li>
+              <h3>
+                Option Two: Regular Babysitting for Less than Six Hours, or
+                Driving Children{" "}
+              </h3>
+              <p>
+                For anyone who babysits for less than six hours or transports
+                kids in a car, foster parents may be required to do one of the
+                following. Agency and county requirements likely include:
+              </p>
+            </li>
+
+            <div style={{ margin: "50px" }}>
               <li>
-                <Diamond />
                 {"  "}CBI, FBI, TRAILS (BIU), sexual offender registry
                 background checks
               </li>
+              <li>{"  "}Proof of auto insurance and valid driver’s license.</li>
               <li>
-                <Diamond />
-                {"  "}Proof of auto insurance and valid driver’s license.
-              </li>
-              <li>
-                <Diamond />
                 {"  "}Check references, personal interview, training, and/or
                 other agency-specific vetting.
               </li>
-              <Or>OR</Or>
+              <span>OR</span>
               <li>
-                <Diamond />
                 {"  "}Acceptability under the agency or county’s individual
                 interpretation of the Reasonable and Prudent Parenting Standard.
               </li>
-            </ul>
-            <Question>
-              Option Three: Babysitting More than Six Hours or Overnight Respite
-              in Foster Home
-            </Question>
-            <Text>
+            </div>
+
+            <li>
+              <h3>
+                Option Three: Babysitting More than Six Hours or Overnight
+                Respite in Foster Home
+              </h3>
               <p>
                 For anyone who provides respite (babysitting for over six hours
                 or overnight) in the{" "}
@@ -164,40 +152,35 @@ export const Module41 = props => {
                 </span>
                 likely include:
               </p>
-            </Text>
-            <ul>
+            </li>
+
+            <div style={{ margin: "50px" }}>
               <li>
-                <Diamond />
-                {"  "}CBI, FBI, TRAILS (BIU), sexual offender registry
-                background checks
+                CBI, FBI, TRAILS (BIU), sexual offender registry background
+                checks
               </li>
+              <li>Core foster care training on rules and regulations</li>
+              <li>CPR and first aid certification</li>
+              <span>OR</span>
               <li>
-                <Diamond />
-                {"    "}Core foster care training on rules and regulations
-              </li>
-              <li>
-                <Diamond />
-                {"    "}CPR and first aid certification
-              </li>
-              <Or>OR</Or>
-              <li>
-                <Diamond />
-                {"    "} Acceptability under the agency or county’s individual
+                Acceptability under the agency or county’s individual
                 interpretation of the Reasonable and Prudent Parenting Standard.
               </li>
-            </ul>
-            <Question>
-              Option Four: Babysitting Overnight in Family Helper’s Home
-            </Question>
-            <Text>
+            </div>
+
+            <li>
+              <h3>
+                Option Four: Babysitting Overnight in Family Helper’s Home
+              </h3>
               <p>
                 For anyone who provides respite (babysitting for over six hours
-                or overnight) in their{"  "}
+                or overnight) in their
                 <span>own home, agency and county requirements </span>
                 likely include:
               </p>
-            </Text>
-            <ul>
+            </li>
+
+            <div style={{ margin: "50px" }}>
               <li>
                 CBI, FBI, TRAILS, and sexual offender registry background checks
               </li>
@@ -207,13 +190,14 @@ export const Module41 = props => {
                 Family Helper’s home
               </li>
               <li>Full state-required foster care training</li>
-              <Or>OR</Or>
+              <span>OR</span>
               <li>
                 Acceptability under the agency or county’s individual
                 interpretation of the Reasonable and Prudent Parenting Standard.
               </li>
-            </ul>
-            <Text>
+            </div>
+
+            <span>
               At any time in the match, foster parents and Foster Family Helpers
               may contact the agency or county to request specific next steps
               for allowing childcare, transportation, or other contact with
@@ -221,32 +205,32 @@ export const Module41 = props => {
               Family Helpers are encouraged to pay for their own background
               checks, but Foster Together is willing to subsidize these costs if
               needed.
-            </Text>
-          </MainContent1>
-        </MainContent>
-        <FormContent>
-          <FormTitle>
-            Understanding legal requirements: Complete before proceeding
-          </FormTitle>
-          <Header2>
-            Please let us know if you have any questions about the requirements
-            listed here, so we can clarify. *
-          </Header2>
-          <Module4Input
-            component="textarea"
-            id="m4_q1"
-            name="m4_q1"
-            placeholder="Your Answer Here"
-          />
-          {errors?.m4_q1 && touched?.m4_q1 && (
-            <p style={{ color: "red" }}>{errors.m4_q1}</p>
-          )}
-          <ATag1>
-            <Module4Submit type="submit">Continue</Module4Submit>
-          </ATag1>
-        </FormContent>
-      </PageWrapper>
-    </>
+            </span>
+          </ul>
+        </Text>
+      </MainContent>
+      <FormContent>
+        <FormTitle>
+          Understanding legal requirements: Complete before proceeding
+        </FormTitle>
+        <FormTitle>
+          Please let us know if you have any questions about the requirements
+          listed here, so we can clarify. *
+        </FormTitle>
+        <Input
+          component="textarea"
+          id="m4_q1"
+          name="m4_q1"
+          placeholder="Your Answer Here"
+        />
+        {errors?.m4_q1 && touched?.m4_q1 && (
+          <p style={{ color: "red" }}>{errors.m4_q1}</p>
+        )}
+        <ATag1>
+          <Module4Submit type="submit">Continue</Module4Submit>
+        </ATag1>
+      </FormContent>
+    </PageWrapper>
   );
 };
 

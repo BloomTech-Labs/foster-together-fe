@@ -1,16 +1,10 @@
 import React from "react";
 import {
-  // Wrapper,
-  BackArrow,
-  // Title,
-  /* Text, */
-  /* MainSection, */
   MediaWrapper,
   Media,
   MediaLeft,
   Video,
   Step,
-  // Form,
   Label,
   Input,
   Submit
@@ -22,7 +16,8 @@ import {
   FormTitle,
   MainContent,
   FormContent,
-  Text
+  Text,
+  BackArrow
 } from "../../GlobalModule.styles.js";
 
 import { useHistory } from "react-router-dom";

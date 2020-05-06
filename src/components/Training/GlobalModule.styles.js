@@ -108,4 +108,22 @@ export const Text = styled.div`
     margin-bottom: 16px;
 `;
 
+export const MediaWrapper = styled(Flex)`
+  width: 100%;
+  justify-content: space-between;
+  div {
+    width: 49%;
+  }
+`;
+
+export const Media = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+`;
+
+export const Video = styled(Player)`
+  margin-top: -45px;
+`;
+
 /* ====================== End of the Style ====================== */
