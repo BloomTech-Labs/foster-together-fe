@@ -27,8 +27,8 @@ import {
   Text
 } from "../../GlobalModule.styles";
 
-export const Module44 = ({ handleBack, handleNext }) => {
-  const { push } = useHistory();
+export const Module44 = (props) => {
+  const { handleBack, errors, touched } = props
 
   return (
     <>
@@ -98,35 +98,51 @@ export const Module44 = ({ handleBack, handleNext }) => {
             Understanding actions in cases of potential abuse: Complete before
             proceeding
           </FormTitle>
-
-          <Text>
-            What Colorado-based number do you call if you suspect a child is
-            being abused?
-          </Text>
-          <InputHolder>
-            <Signature placeholder="Your Answer Here" />
-          </InputHolder>
-          <Text>
-            What is the name of the local program that walks abused kids through
-            the investigation and initial recovery process? *
-          </Text>
-          <InputHolder>
-            <Signature placeholder="Your Answer Here" />
-          </InputHolder>
-          <Text>
-            Where can you request a referral for the treatment of someone who
-            has abused children? *
-          </Text>
-          <InputHolder>
-            <Signature placeholder="Your Answer Here" />
-          </InputHolder>
-          <Text>
-            From what you’ve learned so far how can we improve the modules
-            you’ve completed? What would you add, shorten, or eliminate? This
-            program is always looking for ways to be better, so your feedback is
-            definitely helpful!
-          </Text>
-
+            <Text>
+              What Colorado-based number do you call if you suspect a child is
+              being abused?
+            </Text>
+            <InputHolder>
+              <Signature 
+                id='m4_q9'
+                name='m4_q9'
+                placeholder="Your Answer Here" />
+              {errors?.m4_q9 && touched?.m4_q9 && (
+                <p style={{ color: "red" }}>{errors?.m4_q9}</p>
+              )}
+            </InputHolder>
+            <Text>
+              What is the name of the local program that walks abused kids
+              through the investigation and initial recovery process? *
+            </Text>
+            <InputHolder>
+              <Signature 
+                id="m4_q10"
+                name="m4_q10"
+                placeholder="Your Answer Here" />
+              {errors?.m4_q10 && touched?.m4_q10 && (
+                <p style={{ color: "red" }}>{errors?.m4_q10}</p>
+              )}
+            </InputHolder>
+            <Text>
+              Where can you request a referral for the treatment of someone who
+              has abused children? *
+            </Text>
+            <InputHolder>
+              <Signature
+               id="m4_q11"
+               name="m4_q11"
+               placeholder="Your Answer Here" />
+              {errors?.m4_q11 && touched?.m4_q11 && (
+                <p style={{ color: "red" }}>{errors?.m4_q11}</p>
+              )}
+            </InputHolder>
+            <Text>
+              From what you’ve learned so far how can we improve the modules
+              you’ve completed? What would you add, shorten, or eliminate? This
+              program is always looking for ways to be better, so your feedback
+              is definitely helpful!
+            </Text>
           <BigInput placeholder="Your Answer Here" />
           <Module4Submit type="submit">Submit</Module4Submit>
         </FormContent>

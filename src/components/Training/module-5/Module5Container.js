@@ -1,7 +1,16 @@
 import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
+import { Formik, Form } from 'formik'
 import NavBar from '../TrainingNav/NavBar'
 import Module5 from './components/module5'
+
+import { ModuleFiveSchema1 } from '../../../utils/yupSchemas'
+
+const initialValues = {
+  m5_q1: '',
+  m5_q2: '',
+  m5_q3: '',
+}
 
 const ModuleFive = () => {
   const { push } = useHistory()
@@ -19,11 +28,12 @@ const ModuleFive = () => {
 
   const handleNext = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    if (activeStep === 0) {
-      setActiveStep(activeStep + 1)
-    } else if (activeStep === 1) {
-      push('/userProfile')
-    }
+    push('/userProfile')
+    // if (activeStep === 0) {
+    //   setActiveStep(activeStep + 1)
+    // } else if (activeStep === 1) {
+    //   push('/userProfile')
+    // }
   }
 
   const handleBack = () => {
@@ -37,14 +47,28 @@ const ModuleFive = () => {
   return (
     <>
       <NavBar />
-      {activeStep === 0 ? (
-        <ModuleFive handleNext={handleNext} handleBack={handleBack} />
-      ) : activeStep === 1 ? (
-        <ModuleFive handleNext={handleNext} handleBack={handleBack} />
-      ) : null}
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleNext}
+        validationSchema={
+          activeStep === 0
+            ? ModuleFiveSchema1
+            : null
+        }
+      >
+        {props => (
+          <Form>
+            {activeStep === 0 ? (
+          <Module5 handleBack={handleBack} {...props} />
+        ) : activeStep === 1 ? (
+          <Module5 handleBack={handleBack} {...props} />
+        ) : null}
+          </Form>
+        )}
+      </Formik>
     </>
   )
 }
 
-export default Module5
+export default ModuleFive
 

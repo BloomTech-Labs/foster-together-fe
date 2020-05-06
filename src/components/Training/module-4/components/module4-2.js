@@ -43,7 +43,7 @@ import {
 } from "../../GlobalModule.styles";
 
 export const Module42 = props => {
-  const { handleNext, handleBack, errors, touched } = props;
+  const { handleBack, errors, touched } = props
 
   return (
     <PageWrapper>

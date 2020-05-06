@@ -10,9 +10,8 @@ import {
   Header,
   // QuestionContainer,
   Submit,
-  Half,
   QuestionsInput,
-  Wrapper
+  Wrapper,
 } from "../../TrainStyles";
 import { useHistory } from "react-router-dom";
 
@@ -141,67 +140,50 @@ const Context2 = () => {
   );
 };
 
-const Questions = ({ form, handleChange }) => {
-  console.log(form);
+const Questions = ({ errors, touched }) => {
   return (
     <Wrapper>
       {/* <QuestionContainer> */}
       <Header>Understanding Responsibility: Complete before proceeding</Header>
       <LetterText>
         As the Foster Neighbor in this match, I understand and agree to my
-        responsibilities outlined above.
+        responsibilities outlined above. *
       </LetterText>
       <QuestionsInput
-        name="answer1"
-        value={form.answer1}
-        onChange={handleChange}
+        component="textarea"
+        id="m5_q1"
+        name="m5_q1"
       />
+      {errors?.m5_q1 && touched?.m5_q1 && (
+        <p style={{ color: "red" }}>{errors?.m5_q1}</p>
+      )}
       <LetterText>
         I understand that I may not babysit or provide transportation to the
         children without prior approval from the family's foster care agency
-        and/or the county department.
+        and/or the county department. *
       </LetterText>
       <QuestionsInput
-        name="answer2"
-        value={form.answer2}
-        onChange={handleChange}
+        component="textarea"
+        id="m5_q2"
+        name="m5_q2"
       />
+      {errors?.m5_q2 && touched?.m5_q2 && (
+        <p style={{ color: "red" }}>{errors?.m5_q2}</p>
+      )}
       <LetterText>
         Any questions we can address before helping you find a foster family?
       </LetterText>
       <QuestionsInput
-        name="answer3"
-        value={form.answer3}
-        onChange={handleChange}
+        component="textarea"
+        id="m5_q3"
+        name="m5_q3"
       />
       {/* </QuestionContainer> */}
     </Wrapper>
   );
 };
-const Button = props => {
-  const { push } = useHistory();
-  return (
-    <Half>
-      <Submit
-        onClick={() => {
-          push("/userProfile");
-        }}
-      >
-        Submit
-      </Submit>
-    </Half>
-  );
-};
 
-const Module5 = props => {
-  const [form, setForm] = useState({
-    answer1: "",
-    answer2: "",
-    answer3: ""
-  });
-  const handleChange = e => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+const Module5 = ({ errors, touched }) => {
   return (
     <section>
       <TrainingNav />
@@ -209,8 +191,8 @@ const Module5 = props => {
         <Title />
         {/* <Page> */}
         <Responsibilities />
-        <Questions handleChange={handleChange} form={form} />
-        <Button />
+        <Questions errors={errors} touched={touched} />
+        <Submit type="submit">Complete Module 5</Submit>
         {/* </Page> */}
       </Wrapper>
     </section>
