@@ -34,7 +34,6 @@ const ModuleThree = () => {
 
   // page on line 30 may need to be 4
 
-
   const [activeStep, setActiveStep] = useState(defaultStep)
 
   function useQuery() {
@@ -64,7 +63,6 @@ const ModuleThree = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={handleNext}
-
         validationSchema={
           activeStep === 0
             ? ModuleThreeSchema1
@@ -79,9 +77,7 @@ const ModuleThree = () => {
         {props => (
           <Form>
             {activeStep === 0 ? (
-
               <Module31 handleBack={handleBack} {...props} />
-
             ) : activeStep === 1 ? (
               <Module32 handleBack={handleBack} {...props} />
             ) : activeStep === 2 ? (

@@ -100,7 +100,7 @@ export const ModuleThreeSchema2 = Yup.object().shape({
 })
 
 export const ModuleThreeSchema3 = Yup.object().shape({
-  m4_q3: Yup.string().required(generic),
+  m3_q3: Yup.string().required(generic),
 })
 
 export const ModuleThreeSchema4 = Yup.object().shape({
