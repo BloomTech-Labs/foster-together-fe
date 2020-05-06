@@ -8,7 +8,7 @@ import {
   LetterText,
   ContextDiv,
   Header,
-  QuestionContainer,
+  // QuestionContainer,
   Submit,
   Half,
   QuestionsInput,
@@ -142,7 +142,7 @@ const Context2 = () => {
 };
 
 const Questions = ({ form, handleChange }) => {
-  console.log(form)
+  console.log(form);
   return (
     <Wrapper>
       {/* <QuestionContainer> */}
@@ -217,4 +217,4 @@ const Module5 = props => {
   );
 };
 
-export default Module5
+export default Module5;

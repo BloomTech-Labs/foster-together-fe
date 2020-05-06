@@ -2,29 +2,30 @@ import React from "react";
 import {
   // Wrapper,
   BackArrow,
-  Title,
-  Text,
+  // Title,
+  /* Text, */
   /* MainSection, */
   MediaWrapper,
   Media,
-  Form,
+  // Form,
   Label,
   Input,
   Indented,
-  Submit,
+  Submit
 } from "../../TrainStyles";
 
 import {
-  Wrapper,
+  PageWrapper,
   PageTitle,
   FormTitle,
   MainContent,
   FormContent,
+  Text
 } from "../../GlobalModule.styles.js";
 
 export const Module32 = ({ handleBack, errors, touched }) => {
   return (
-    <Wrapper>
+    <PageWrapper>
       <PageTitle>
         <BackArrow onClick={handleBack} />
         What makes a great foster family helper?
@@ -98,12 +99,12 @@ export const Module32 = ({ handleBack, errors, touched }) => {
           bring to the match. *
           <Input id="m3_q2" name="m3_q2" placeholder="Your answer here" />
           {errors?.m3_q2 && touched?.m3_q2 && (
-          <p style={{ color: "red" }}>{errors?.m3_q2}</p>
-        )}
+            <p style={{ color: "red" }}>{errors?.m3_q2}</p>
+          )}
         </Label>
         <Submit type="submit">Continue</Submit>
       </FormContent>
-    </Wrapper>
+    </PageWrapper>
   );
 };
 

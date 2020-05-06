@@ -4,29 +4,30 @@ import {
   // Wrapper,
   BackArrow,
   Title,
-  Text,
+  /* Text, */
   /* MainSection, */
   BulletList,
   MediaWrapper,
   Media,
   Step,
-  Form,
+  // Form,
   Label,
   Input,
-  Submit,
+  Submit
 } from "../../TrainStyles";
 
 import {
-  Wrapper,
+  PageWrapper,
   PageTitle,
   FormTitle,
   MainContent,
   FormContent,
+  Text
 } from "../../GlobalModule.styles.js";
 
 export const Module34 = ({ handleBack, errors, touched }) => {
   return (
-    <Wrapper>
+    <PageWrapper>
       <PageTitle>
         <BackArrow onClick={handleBack} />
         What kids need
@@ -148,20 +149,20 @@ export const Module34 = ({ handleBack, errors, touched }) => {
           the kids? *
           <Input id="m3_q4" name="m3_q4" placeholder="Your answer here" />
           {errors?.m3_q4 && touched?.m3_q4 && (
-          <p style={{ color: "red" }}>{errors?.m3_q4}</p>
-        )}
+            <p style={{ color: "red" }}>{errors?.m3_q4}</p>
+          )}
         </Label>
         <Label>
           Do you anticipate any of these foster parent requests will be
           difficult for you? Why or why not? *
           <Input id="m3_q5" name="m3_q5" placeholder="Your answer here" />
           {errors?.m3_q5 && touched?.m3_q5 && (
-          <p style={{ color: "red" }}>{errors?.m3_q5}</p>
-        )}
+            <p style={{ color: "red" }}>{errors?.m3_q5}</p>
+          )}
         </Label>
         <Submit type="submit">Continue</Submit>
       </FormContent>
-    </Wrapper>
+    </PageWrapper>
   );
 };
 
