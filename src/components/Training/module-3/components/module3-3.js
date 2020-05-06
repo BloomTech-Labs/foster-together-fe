@@ -2,31 +2,32 @@ import React from "react";
 import {
   // Wrapper,
   BackArrow,
-  Title,
-  Text,
+  // Title,
+  /* Text, */
   /* MainSection, */
   BulletList,
   MediaWrapper,
   Media,
   Video,
   Step,
-  Form,
+  // Form,
   Label,
   Input,
-  Submit,
+  Submit
 } from "../../TrainStyles";
 
 import {
-  Wrapper,
+  PageWrapper,
   PageTitle,
   FormTitle,
   MainContent,
   FormContent,
+  Text
 } from "../../GlobalModule.styles.js";
 
 export const Module33 = ({ handleBack, errors, touched }) => {
   return (
-    <Wrapper>
+    <PageWrapper>
       <PageTitle>
         <BackArrow onclick={handleBack} />
         Foster parents' least favorite compliments (and a few ideas for what you
@@ -168,12 +169,12 @@ export const Module33 = ({ handleBack, errors, touched }) => {
           list? *
           <Input id="m3_q3" name="m3_q3" placeholder="Your answer here" />
           {errors?.m3_q3 && touched?.m3_q3 && (
-          <p style={{ color: "red" }}>{errors?.m3_q3}</p>
-        )}
+            <p style={{ color: "red" }}>{errors?.m3_q3}</p>
+          )}
         </Label>
         <Submit type="submit">Continue</Submit>
       </FormContent>
-    </Wrapper>
+    </PageWrapper>
   );
 };
 

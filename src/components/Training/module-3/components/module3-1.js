@@ -2,26 +2,27 @@ import React from "react";
 import {
   // Wrapper,
   BackArrow,
-  Title,
-  Text,
+  // Title,
+  /* Text, */
   /* MainSection, */
   MediaWrapper,
   Media,
   MediaLeft,
   Video,
   Step,
-  Form,
+  // Form,
   Label,
   Input,
-  Submit,
+  Submit
 } from "../../TrainStyles";
 
 import {
-  Wrapper,
+  PageWrapper,
   PageTitle,
   FormTitle,
   MainContent,
   FormContent,
+  Text
 } from "../../GlobalModule.styles.js";
 
 import { useHistory } from "react-router-dom";
@@ -29,7 +30,7 @@ import { useHistory } from "react-router-dom";
 export const Module31 = ({ handleBack, errors, touched }) => {
   return (
     <>
-      <Wrapper>
+      <PageWrapper>
         <PageTitle>
           <BackArrow onClick={handleBack} />
           What's your vision of a foster family?
@@ -182,10 +183,10 @@ export const Module31 = ({ handleBack, errors, touched }) => {
             {errors?.m3_q1 && touched?.m3_q1 && (
               <p style={{ color: "red" }}>{errors?.m3_q1}</p>
             )}
-            </Label>
+          </Label>
           <Submit type="submit">Continue</Submit>
-          </FormContent>
-      </Wrapper>
+        </FormContent>
+      </PageWrapper>
     </>
   );
 };

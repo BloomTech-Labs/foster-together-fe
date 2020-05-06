@@ -17,7 +17,6 @@ export const BulletList = styled.ul`
   padding: 0 0 0 2.5rem;
 `;
 
-
 //! Module 2.1, 2.2, 2.3, 3.1, 3.3, 3.4 and simpleStep
 export const Step = styled.li`
   font-size: 2.4rem;
@@ -61,8 +60,13 @@ export const Title = styled.h2`
   font-weight: normal;
 `;
 
-export const Text = styled.p`
-  font-size: 2.4rem;
+export const Text = styled.div`
+  p {
+    font-size: 4.4rem;
+  }
+  h3 {
+    font-size: 5rem;
+  }
   span {
     font-size: 2.4rem;
     font-weight: bold;
@@ -298,9 +302,9 @@ export const Module2Header2 = styled.h2`
   position: relative;
   right: 1rem;
 `;
-export const Module2Section2 = styled.text`
-  margin-bottom: 3rem;
-`;
+// export const Module2Section2 = styled.text`
+//   margin-bottom: 3rem;
+// `;
 
 //!Module TWO styles end
 
@@ -370,7 +374,6 @@ export const Module4Link = styled.a`
   color: Grey;
   font-size: 2rem;
 `;
-
 
 //! 4.2, 4.3
 export const Link = styled.a`
@@ -490,8 +493,6 @@ export const Or = styled.ul`
   width: 100%;
   margin: 1rem 0rem 1rem -2rem;
 `;
-
-
 
 export const Diamond = styled.div`
   font-size: 1rem;
@@ -812,7 +813,7 @@ export const LetterText = styled.p`
 export const ContextDiv = styled.div`
   display: flex;
   flex-direction: column;
-  width:80%;
+  width: 80%;
   margin: 0 auto;
   align-content: space-between;
 `;

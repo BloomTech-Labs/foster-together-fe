@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  Section,
+  // Section,
   Module4MainContent,
   Module4Input,
   Module4Submit,
@@ -9,11 +9,11 @@ import {
   Module4Title,
   MainContent1,
   Paragraph,
-  Header1,
+  // Header1,
   Paragraph1,
   Module4Video,
   Or,
-  Header2,
+  Header2
   // BackArrow,
   /* Wrapper, */
   // Title,
@@ -22,12 +22,13 @@ import {
 import Player from "react-player";
 
 import {
-  Wrapper,
+  PageWrapper,
   PageTitle,
   FormTitle,
   BackArrow,
   MainContent,
   FormContent,
+  Text
 } from "../../GlobalModule.styles";
 
 export const Diamond = ({
@@ -35,7 +36,7 @@ export const Diamond = ({
   fill = "#000",
   width = "100%",
   className = "",
-  viewBox = "0 0 32 32",
+  viewBox = "0 0 32 32"
 }) => (
   <svg
     width="9"
@@ -55,12 +56,12 @@ export const Diamond = ({
   </svg>
 );
 
-export const Module41 = (props) => {
+export const Module41 = props => {
   const { handleBack, errors, touched } = props
   
   return (
     <>
-      <Wrapper>
+      <PageWrapper>
         <PageTitle>
           <BackArrow onClick={handleBack} />
           When do you need a background check?
@@ -71,7 +72,7 @@ export const Module41 = (props) => {
             Basic Overview of Safety and Legal Requirements:{" "}
           </Module4Title>
           <Module4MainContent>
-            <Paragraph>
+            <Text>
               We perform a basic Colorado Arrest Records check before each
               match. Foster Together defers to foster parents whether to reveal
               their home address after the initial meeting with the helping
@@ -80,7 +81,7 @@ export const Module41 = (props) => {
               <span>defers to the licensing county or agency</span>, as
               background check and training requirements differ across
               institutions.
-            </Paragraph>
+            </Text>
             <Module4Video>
               <Player
                 url="https://player.vimeo.com/video/288657921"
@@ -92,7 +93,7 @@ export const Module41 = (props) => {
 
           <MainContent1>
             <Question>Option One: Casual Helping</Question>
-            <Paragraph1>
+            <Text>
               <p>
                 While there is no legal requirement for a background check or
                 training for casual contact with a foster family (i.e. dropping
@@ -117,17 +118,17 @@ export const Module41 = (props) => {
                   trust.
                 </span>
               </p>
-            </Paragraph1>
+            </Text>
             <br></br>
             <Question>
               Option Two: Regular Babysitting for Less than Six Hours, or
               Driving Children{" "}
             </Question>
-            <Paragraph1>
+            <Text>
               For anyone who babysits for less than six hours or transports kids
               in a car, foster parents may be required to do one of the
               following. Agency and county requirements likely include:
-            </Paragraph1>
+            </Text>
             <ul>
               <li>
                 <Diamond />
@@ -154,7 +155,7 @@ export const Module41 = (props) => {
               Option Three: Babysitting More than Six Hours or Overnight Respite
               in Foster Home
             </Question>
-            <Paragraph1>
+            <Text>
               <p>
                 For anyone who provides respite (babysitting for over six hours
                 or overnight) in the{" "}
@@ -163,7 +164,7 @@ export const Module41 = (props) => {
                 </span>
                 likely include:
               </p>
-            </Paragraph1>
+            </Text>
             <ul>
               <li>
                 <Diamond />
@@ -188,14 +189,14 @@ export const Module41 = (props) => {
             <Question>
               Option Four: Babysitting Overnight in Family Helper’s Home
             </Question>
-            <Paragraph1>
+            <Text>
               <p>
                 For anyone who provides respite (babysitting for over six hours
                 or overnight) in their{"  "}
                 <span>own home, agency and county requirements </span>
                 likely include:
               </p>
-            </Paragraph1>
+            </Text>
             <ul>
               <li>
                 CBI, FBI, TRAILS, and sexual offender registry background checks
@@ -212,7 +213,7 @@ export const Module41 = (props) => {
                 interpretation of the Reasonable and Prudent Parenting Standard.
               </li>
             </ul>
-            <Paragraph1>
+            <Text>
               At any time in the match, foster parents and Foster Family Helpers
               may contact the agency or county to request specific next steps
               for allowing childcare, transportation, or other contact with
@@ -220,7 +221,7 @@ export const Module41 = (props) => {
               Family Helpers are encouraged to pay for their own background
               checks, but Foster Together is willing to subsidize these costs if
               needed.
-            </Paragraph1>
+            </Text>
           </MainContent1>
         </MainContent>
         <FormContent>
@@ -235,7 +236,7 @@ export const Module41 = (props) => {
             component="textarea"
             id="m4_q1"
             name="m4_q1"
-            placeholder="Your Answer Here" 
+            placeholder="Your Answer Here"
           />
           {errors?.m4_q1 && touched?.m4_q1 && (
             <p style={{ color: "red" }}>{errors.m4_q1}</p>
@@ -244,7 +245,7 @@ export const Module41 = (props) => {
             <Module4Submit type="submit">Continue</Module4Submit>
           </ATag1>
         </FormContent>
-      </Wrapper>
+      </PageWrapper>
     </>
   );
 };

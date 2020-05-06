@@ -1,50 +1,51 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  Body,
-  Body1,
+  // Body,
+  // Body1,
   MainContent2,
   MainContent3,
-  Body2,
+  // Body2,
   Half1,
-  Question1,
+  // Question1,
   MainContent4,
   // Section2,
-  Header3,
+  // Header3,
   Image2,
   Span,
-  Section1,
-  Module4Input,
+  // Section1,
+  // Module4Input,
   Module4Submit,
   ClickHere,
   ATag1,
   Header4,
   Body3,
   Module4Link,
-  Quote,
+  // Text,
   Statement,
   Video1,
   /* BackArrow, */
   /* Wrapper, */
-  Title,
-  Input,
+  // Title,
+  Input
 } from "../../TrainStyles.js";
 import Player from "react-player";
 
 import {
-  Wrapper,
+  PageWrapper,
   PageTitle,
   FormTitle,
   BackArrow,
   MainContent,
   FormContent,
+  Text
 } from "../../GlobalModule.styles";
 
-export const Module42 = (props) => {
+export const Module42 = props => {
   const { handleBack, errors, touched } = props
 
   return (
     <>
-      <Wrapper>
+      <PageWrapper>
         <PageTitle>
           <BackArrow onClick={handleBack} />
           Sexual abuse prevention{" "}
@@ -52,32 +53,32 @@ export const Module42 = (props) => {
 
         <MainContent>
           <MainContent2>
-            <Body>
+            <Text>
               Because one in three girls and one in four boys will be targets
               for sexual abuse, we can't leave this part out. <br />
-            </Body>
-            <Body>
+            </Text>
+            <Text>
               Because kids in foster care are one of the groups most at-risk to
               be abused, we can't afford not to prepare every Foster Family
               Helper to prevent abuse. <br />
-            </Body>
-            <Body>
+            </Text>
+            <Text>
               <Span>
                 For many people, this may be the toughest part of the Foster
                 Together process.{" "}
               </Span>
               And we thank you for doing it anyway. <br />
-            </Body>
-            <Body>
+            </Text>
+            <Text>
               We are looking for adults who are willing to feel uncomfortable in
               this training, so that they can decrease the likelihood of abuse
               for the kids they care about. <br />
-            </Body>
-            <Body1>
+            </Text>
+            <Text>
               We are looking for adults who are willing to feel <br />
               uncomfortable in this training, so that they can <br />
               decrease the likelihood of abuse for the kids they care about.{" "}
-            </Body1>
+            </Text>
 
             <Video1>
               <Player
@@ -88,7 +89,7 @@ export const Module42 = (props) => {
             </Video1>
           </MainContent2>
 
-          <Body1>
+          <Text>
             <Span>
               We do not include this section to scare you or make people
               super-suspicious of each other.{" "}
@@ -96,7 +97,7 @@ export const Module42 = (props) => {
             Rather, we want to create a Foster Together culture of open
             conversations and clarity.
             <br />
-          </Body1>
+          </Text>
 
           <Half1>
             <Image2
@@ -105,7 +106,7 @@ export const Module42 = (props) => {
               height="570px"
             />
             <MainContent3>
-              <Body2>
+              <Text>
                 The main point is that secrets and wrong motivations can't exist
                 in the light of open communication and savvy supervision. So if
                 you have nothing to hide, you have nothing to worry about.{" "}
@@ -130,7 +131,7 @@ export const Module42 = (props) => {
                   you understand that our foster parents are aware of red flags
                   for sexual abuse, and regularly enforcing the rules below.
                 </Span>
-              </Body2>
+              </Text>
             </MainContent3>
           </Half1>
           <Header4>Again, thank you for sticking with us.</Header4>
@@ -149,12 +150,12 @@ export const Module42 = (props) => {
             </Statement>
             People who sexually abuse children methodically groom to gain
             access—and then compliance. <br />
-            <Quote>
+            <Text>
               “The kids I abused were all seeking love. I would shower the child
               with gifts, special treatment and attention, and painstakingly
               move toward the moment when I could gain compliance and cross the
               line.”
-            </Quote>
+            </Text>
             In some instances, the parent is also being groomed through a level
             of generosity that is probably too good to be true – free
             babysitting, financial support, and perhaps an excessive willingness
@@ -193,24 +194,23 @@ export const Module42 = (props) => {
           <FormTitle>
             Understanding sexual abuse prevention: Complete before proceeding
           </FormTitle>
-          <Question1>
+          <Text>
             What did you learn from the above article(s)? (3+ sentences)
-          </Question1>
-          <Input 
+          </Text>
+          <Input
             component="textarea"
             id="m4_q2"
             name="m4_q2"
-            placeholder="Your Answer Here" 
+            placeholder="Your Answer Here"
           />
           {errors?.m4_q2 && touched?.m4_q2 && (
             <p style={{ color: "red" }}>{errors.m4_q2}</p>
           )}
           <ATag1>
             <Module4Submit type="submit">Continue</Module4Submit>
-          </ATag1>  
+          </ATag1>
         </FormContent>
-
-      </Wrapper>
+      </PageWrapper>
     </>
   );
 };

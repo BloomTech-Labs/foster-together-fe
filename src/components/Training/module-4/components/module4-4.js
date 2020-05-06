@@ -5,25 +5,26 @@ import {
   Module4Submit,
   BigInput,
   InputHolder,
-  Header7,
-  Body,
-  Header6,
+  // Header7,
+  // Body,
+  // Header6,
   Todo,
   Span2,
   NewSection,
   BigLink,
   // Wrapper,
-  Title,
-  BackArrow,
+  // Title,
+  BackArrow
 } from "../../TrainStyles.js";
 import { useHistory } from "react-router-dom";
 
 import {
-  Wrapper,
+  PageWrapper,
   PageTitle,
   FormTitle,
   MainContent,
   FormContent,
+  Text
 } from "../../GlobalModule.styles";
 
 export const Module44 = (props) => {
@@ -31,7 +32,7 @@ export const Module44 = (props) => {
 
   return (
     <>
-      <Wrapper>
+      <PageWrapper>
         <PageTitle>
           <BackArrow onClick={handleBack} />
           What to do if you suspect abuse, or a child discloses abuse{" "}
@@ -55,10 +56,10 @@ export const Module44 = (props) => {
               Most people are too afraid to take this step, but the child needs
               you to do it.
               <br />
-              <Todo>
+              <Text>
                 TO DO: Save this number, and send a screenshot of the contact in
                 your phone to connect@fostertogether.co.
-              </Todo>
+              </Text>
             </li>
             <li>
               <span>Seek treatment for the child. </span>
@@ -83,25 +84,24 @@ export const Module44 = (props) => {
             </li>
           </ol>
 
-          <Body>
+          <Text>
             P.S. For those who want to do even more to help kids: For Foster
             Together to recruit and train our average volunteer, it costs us
             $200. That's pretty good when you consider the long term friendships
             we're providing to foster families. If you'd like to help us cover
             the costs for the next volunteer, please join our donor team! CLICK
             HERE.
-          </Body>
+          </Text>
         </MainContent>
         <FormContent>
           <FormTitle>
             Understanding actions in cases of potential abuse: Complete before
             proceeding
           </FormTitle>
-          <NewSection>
-            <MainContent7>
+            <Text>
               What Colorado-based number do you call if you suspect a child is
               being abused?
-            </MainContent7>
+            </Text>
             <InputHolder>
               <Signature 
                 id='m4_q9'
@@ -111,10 +111,10 @@ export const Module44 = (props) => {
                 <p style={{ color: "red" }}>{errors?.m4_q9}</p>
               )}
             </InputHolder>
-            <MainContent7>
+            <Text>
               What is the name of the local program that walks abused kids
               through the investigation and initial recovery process? *
-            </MainContent7>
+            </Text>
             <InputHolder>
               <Signature 
                 id="m4_q10"
@@ -124,10 +124,10 @@ export const Module44 = (props) => {
                 <p style={{ color: "red" }}>{errors?.m4_q10}</p>
               )}
             </InputHolder>
-            <MainContent7>
+            <Text>
               Where can you request a referral for the treatment of someone who
               has abused children? *
-            </MainContent7>
+            </Text>
             <InputHolder>
               <Signature
                id="m4_q11"
@@ -137,17 +137,16 @@ export const Module44 = (props) => {
                 <p style={{ color: "red" }}>{errors?.m4_q11}</p>
               )}
             </InputHolder>
-            <MainContent7>
+            <Text>
               From what you’ve learned so far how can we improve the modules
               you’ve completed? What would you add, shorten, or eliminate? This
               program is always looking for ways to be better, so your feedback
               is definitely helpful!
-            </MainContent7>
-          </NewSection>
+            </Text>
           <BigInput placeholder="Your Answer Here" />
           <Module4Submit type="submit">Submit</Module4Submit>
         </FormContent>
-      </Wrapper>
+      </PageWrapper>
     </>
   );
 };
