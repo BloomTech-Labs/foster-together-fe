@@ -1,12 +1,14 @@
 import React from "react";
-import { BackArrow, MediaWrapper, Media } from "../../TrainStyles";
 
 import {
   PageWrapper,
   PageTitle,
   FormTitle,
   MainContent,
-  Text
+  Text,
+  BackArrow,
+  MediaWrapper,
+  Media
 } from "../../GlobalModule.styles.js";
 
 import { mealTipsImage } from "../../img";

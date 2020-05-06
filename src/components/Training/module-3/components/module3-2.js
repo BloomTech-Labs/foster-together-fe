@@ -1,18 +1,5 @@
 import React from "react";
-import {
-  // Wrapper,
-  BackArrow,
-  // Title,
-  /* Text, */
-  /* MainSection, */
-  MediaWrapper,
-  Media,
-  // Form,
-  Label,
-  Input,
-  Indented,
-  Submit
-} from "../../TrainStyles";
+import { Label, Input, Indented, Submit } from "../../TrainStyles";
 
 import {
   PageWrapper,
@@ -20,7 +7,10 @@ import {
   FormTitle,
   MainContent,
   FormContent,
-  Text
+  Text,
+  BackArrow,
+  MediaWrapper,
+  Media
 } from "../../GlobalModule.styles.js";
 
 export const Module32 = ({ handleBack, errors, touched }) => {

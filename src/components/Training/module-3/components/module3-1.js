@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  MediaWrapper,
-  Media,
-  MediaLeft,
-  Video,
-  Step,
-  Label,
-  Input,
-  Submit
-} from "../../TrainStyles";
+import { MediaLeft, Step, Label, Input, Submit } from "../../TrainStyles";
 
 import {
   PageWrapper,
@@ -17,7 +8,10 @@ import {
   MainContent,
   FormContent,
   Text,
-  BackArrow
+  BackArrow,
+  MediaWrapper,
+  Media,
+  Video
 } from "../../GlobalModule.styles.js";
 
 import { useHistory } from "react-router-dom";

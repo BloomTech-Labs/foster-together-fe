@@ -1,34 +1,12 @@
 import React from "react";
 import {
-  // Body,
-  // Body1,
-  MainContent2,
-  MainContent3,
-  // Body2,
-  Half1,
-  // Question1,
-  MainContent4,
-  // Section2,
-  // Header3,
-  Image2,
-  Span,
-  // Section1,
-  // Module4Input,
   Module4Submit,
   ClickHere,
   ATag1,
-  Header4,
-  Body3,
   Module4Link,
-  // Text,
-  Statement,
-  Video1,
-  /* BackArrow, */
-  /* Wrapper, */
-  // Title,
-  Input
+  Input,
+  Image2
 } from "../../TrainStyles.js";
-import Player from "react-player";
 
 import {
   PageWrapper,
@@ -38,151 +16,148 @@ import {
   MainContent,
   FormContent,
   Text,
+  MediaWrapper,
   Media,
   Video
 } from "../../GlobalModule.styles";
 
 export const Module42 = props => {
-  const { handleBack, errors, touched } = props
+  const { handleBack, errors, touched } = props;
 
   return (
     <PageWrapper>
       <PageTitle>
         <BackArrow onClick={handleBack} />
-        Sexual abuse prevention{" "}
+        Sexual abuse prevention
       </PageTitle>
 
       <MainContent>
         <Text>
-          <p>
-            Because one in three girls and one in four boys will be targets for
-            sexual abuse, we can't leave this part out.{" "}
-          </p>
-          <p>
-            Because kids in foster care are one of the groups most at-risk to be
-            abused, we can't afford not to prepare every Foster Family Helper to
-            prevent abuse.
-          </p>
-          <p>
-            <Span>
-              For many people, this may be the toughest part of the Foster
-              Together process.{" "}
-            </Span>
-            And we thank you for doing it anyway. <br />
-          </p>
+          <MediaWrapper>
+            <div>
+              <p>
+                Because one in three girls and one in four boys will be targets
+                for sexual abuse, we can't leave this part out.
+              </p>
+              <p>
+                Because kids in foster care are one of the groups most at-risk
+                to be abused, we can't afford not to prepare every Foster Family
+                Helper to prevent abuse.
+              </p>
+
+              <span style={{ fontWeight: "bold" }}>
+                For many people, this may be the toughest part of the Foster
+                Together process.
+              </span>
+              <p>And we thank you for doing it anyway.</p>
+
+              <p>
+                We are looking for adults who are willing to feel uncomfortable
+                in this training, so that they can decrease the likelihood of
+                abuse for the kids they care about.
+              </p>
+            </div>
+            <Media>
+              <Video
+                url="https://www.youtube.com/embed/ULGJphesPnk"
+                width="550px"
+                height="400px"
+              />
+            </Media>
+          </MediaWrapper>
           <p>
             We are looking for adults who are willing to feel uncomfortable in
             this training, so that they can decrease the likelihood of abuse for
-            the kids they care about. <br />
+            the kids they care about.
           </p>
           <p>
-            We are looking for adults who are willing to feel <br />
-            uncomfortable in this training, so that they can <br />
-            decrease the likelihood of abuse for the kids they care about.{" "}
+            <span style={{ fontWeight: "bold" }}>
+              We do not include this section to scare you or make people
+              super-suspicious of each other.
+            </span>{" "}
+            Rather, we want to create a Foster Together culture of open
+            conversations and clarity.
           </p>
-          <Media>
-            <Video
-              url="https://www.youtube.com/embed/ULGJphesPnk"
-              width="550px"
-              height="400px"
+          <MediaWrapper>
+            <Image2
+              src="https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525386132069-86G9CUPJYIFKEVYT5SKY/ke17ZwdGBToddI8pDm48kAUFOTPMSVxuKvNFAx6DKiZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ouw-8l5B_J38LMU7OZFvYc0yAe_x11zxahcI_hfw238yWAp0jGKzhuVZoU5dfkFlA/FT+37.jpg?format=750w"
+              width="450px"
+              height="570px"
             />
-          </Media>
-          <Span>
-            We do not include this section to scare you or make people
-            super-suspicious of each other.{" "}
-          </Span>
-          Rather, we want to create a Foster Together culture of open
-          conversations and clarity.
-          <br />
-        </Text>
 
-        <Half1>
-          <Image2
-            src="https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525386132069-86G9CUPJYIFKEVYT5SKY/ke17ZwdGBToddI8pDm48kAUFOTPMSVxuKvNFAx6DKiZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ouw-8l5B_J38LMU7OZFvYc0yAe_x11zxahcI_hfw238yWAp0jGKzhuVZoU5dfkFlA/FT+37.jpg?format=750w"
-            width="450px"
-            height="570px"
-          />
-          <MainContent3>
-            <Text>
-              The main point is that secrets and wrong motivations can't exist
-              in the light of open communication and savvy supervision. So if
-              you have nothing to hide, you have nothing to worry about. <br />
-              <br></br>
-              We also know that the most effective way to prevent predators from
-              targeting our kids is by setting the expectation for all adults
-              involved that private parts are off limits and secrets are a
-              no-go. As a foster care volunteer opportunity, we realize that
-              someone who wants to gain access to children might see Foster
-              Together as an easy target.{" "}
-              <Span>
-                Requiring this training for all foster parents and Family
-                Helpers is the best way we know to say "Not on our watch."
-              </Span>
-              <br></br>
-              <br></br>
-              Please read the two linked articles, review the chart of “body
-              safety rules,” and fill out the following form, stating that
-              <Span>
-                {" "}
-                you understand that our foster parents are aware of red flags
-                for sexual abuse, and regularly enforcing the rules below.
-              </Span>
-            </Text>
-          </MainContent3>
-        </Half1>
-        <Header4>Again, thank you for sticking with us.</Header4>
-
-        <Body3>
-          <Span>PLEASE CLICK TO READ:</Span>
-          <Module4Link href="https://parentingsafechildren.com/what-offenders-want-you-to-know/">
-            {" "}
-            WHAT SEXUAL OFFENDERS WANT YOU TO KNOW
-          </Module4Link>
-        </Body3>
-
-        <MainContent4>
-          <Statement>
-            Excerpt: Pay attention to our behaviors. <br />
-          </Statement>
-          People who sexually abuse children methodically groom to gain
-          access—and then compliance. <br />
-          <Text>
+            <div>
+              <p>
+                The main point is that secrets and wrong motivations can't exist
+                in the light of open communication and savvy supervision. So if
+                you have nothing to hide, you have nothing to worry about. We
+                also know that the most effective way to prevent predators from
+                targeting our kids is by setting the expectation for all adults
+                involved that private parts are off limits and secrets are a
+                no-go. As a foster care volunteer opportunity, we realize that
+                someone who wants to gain access to children might see Foster
+                Together as an easy target.{" "}
+                <span>
+                  Requiring this training for all foster parents and Family
+                  Helpers is the best way we know to say "Not on our watch."
+                </span>
+              </p>
+              <p>
+                Please read the two linked articles, review the chart of “body
+                safety rules,” and fill out the following form, stating that{" "}
+                <span>
+                  you understand that our foster parents are aware of red flags
+                  for sexual abuse, and regularly enforcing the rules below.
+                </span>
+              </p>
+            </div>
+          </MediaWrapper>
+          <p>Again, thank you for sticking with us.</p>
+          <h3>
+            <p>PLEASE CLICK TO READ:</p>
+            <a href="https://parentingsafechildren.com/what-offenders-want-you-to-know/">
+              WHAT SEXUAL OFFENDERS WANT YOU TO KNOW
+            </a>
+          </h3>
+          <p>Excerpt: Pay attention to our behaviors.</p>
+          <p>
+            People who sexually abuse children methodically groom to gain
+            access—and then compliance.
+          </p>
+          <p>
             “The kids I abused were all seeking love. I would shower the child
             with gifts, special treatment and attention, and painstakingly move
             toward the moment when I could gain compliance and cross the line.”
-          </Text>
-          In some instances, the parent is also being groomed through a level of
-          generosity that is probably too good to be true – free babysitting,
-          financial support, and perhaps an excessive willingness to “help out.”{" "}
-          <br /> <br />
-          There is good news. With knowledge, you can recognize grooming
-          behaviors and with courage, you can speak up. <br /> <br />
-          <Span>Lesson:</Span> Pay attention to these kinds of behaviors and
-          patterns: favoring children, special treatment, allowing kids to break
-          rules, gift-giving, lots of attention, a listening ear, taking a
-          child’s side, manipulation, introducing kids to sexual material, or
-          talking about sex (i.e., sexualizing the relationship). Read the rest
-          by clicking{" "}
-          <Module4Link href="https://parentingsafechildren.com/what-offenders-want-you-to-know/">
-            here.
-          </Module4Link>
-          <br />
-          <br />
-        </MainContent4>
-
-        <MainContent4>
-          <ClickHere>
-            <Span>
-              For a deeper idea of how to keep kids safe, you might want to read
-            </Span>{" "}
+          </p>
+          <p>
+            In some instances, the parent is also being groomed through a level
+            of generosity that is probably too good to be true – free
+            babysitting, financial support, and perhaps an excessive willingness
+            to “help out.” There is good news. With knowledge, you can recognize
+            grooming behaviors and with courage, you can speak up.
+          </p>
+          <p>
+            <span>Lesson:</span> Pay attention to these kinds of behaviors and
+            patterns: favoring children, special treatment, allowing kids to
+            break rules, gift-giving, lots of attention, a listening ear, taking
+            a child’s side, manipulation, introducing kids to sexual material,
+            or talking about sex (i.e., sexualizing the relationship). Read the
+            rest by clicking
+            <a href="https://parentingsafechildren.com/what-offenders-want-you-to-know/">
+              here.
+            </a>
+          </p>
+          <p>
+            For a deeper idea of how to keep kids safe, you might want to read
+          </p>
+          <p>
             Top 10 Questions on Preventing Sexual Abuse (Includes
-            developmentally appropriate explanations, click{" "}
-            <Module4Link href="https://parentingsafechildren.com/your-top-10-questions-about-body-safety-2/">
+            developmentally appropriate explanations, click
+            <a href="https://parentingsafechildren.com/your-top-10-questions-about-body-safety-2/">
               HERE
-            </Module4Link>{" "}
+            </a>
             to read)
-          </ClickHere>
-        </MainContent4>
+          </p>
+        </Text>
       </MainContent>
 
       <FormContent>
@@ -190,7 +165,7 @@ export const Module42 = props => {
           Understanding sexual abuse prevention: Complete before proceeding
         </FormTitle>
         <Text>
-          What did you learn from the above article(s)? (3+ sentences)
+          <h4>What did you learn from the above article(s)? (3+ sentences)</h4>
         </Text>
         <Input
           component="textarea"

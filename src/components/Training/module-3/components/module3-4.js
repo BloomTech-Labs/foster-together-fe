@@ -1,16 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import {
-  // Wrapper,
-  BackArrow,
   Title,
-  /* Text, */
-  /* MainSection, */
   BulletList,
-  MediaWrapper,
-  Media,
   Step,
-  // Form,
   Label,
   Input,
   Submit
@@ -22,7 +15,10 @@ import {
   FormTitle,
   MainContent,
   FormContent,
-  Text
+  Text,
+  MediaWrapper,
+  Media,
+  BackArrow
 } from "../../GlobalModule.styles.js";
 
 export const Module34 = ({ handleBack, errors, touched }) => {

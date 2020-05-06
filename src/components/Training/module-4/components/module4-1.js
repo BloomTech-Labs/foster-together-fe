@@ -53,8 +53,8 @@ export const Diamond = ({
 );
 
 export const Module41 = props => {
-  const { handleBack, errors, touched } = props
-  
+  const { handleBack, errors, touched } = props;
+
   return (
     <PageWrapper>
       <PageTitle>
@@ -67,22 +67,25 @@ export const Module41 = props => {
           <ul>
             <h3>Basic Overview of Safety and Legal Requirements: </h3>
             <MediaWrapper>
-              <p>
-                We perform a basic Colorado Arrest Records check before each
-                match. Foster Together defers to foster parents whether to
-                reveal their home address after the initial meeting with the
-                helping family. In the case of Foster Family Helpers who desire
-                to do more with families (babysitting, driving, etc), Foster
-                Together <span>defers to the licensing county or agency</span>,
-                as background check and training requirements differ across
-                institutions.
-              </p>
+              <div>
+                <p>
+                  We perform a basic Colorado Arrest Records check before each
+                  match. Foster Together defers to foster parents whether to
+                  reveal their home address after the initial meeting with the
+                  helping family. In the case of Foster Family Helpers who
+                  desire to do more with families (babysitting, driving, etc),
+                  Foster Together{" "}
+                  <span>defers to the licensing county or agency</span>, as
+                  background check and training requirements differ across
+                  institutions.
+                </p>
+              </div>
 
               <Media>
                 <Video
                   url="https://player.vimeo.com/video/288657921"
-                  width="500px"
-                  height="300px"
+                  controls={false}
+                  width={480}
                 />
               </Media>
             </MediaWrapper>
@@ -213,10 +216,10 @@ export const Module41 = props => {
         <FormTitle>
           Understanding legal requirements: Complete before proceeding
         </FormTitle>
-        <FormTitle>
+        <h4>
           Please let us know if you have any questions about the requirements
           listed here, so we can clarify. *
-        </FormTitle>
+        </h4>
         <Input
           component="textarea"
           id="m4_q1"

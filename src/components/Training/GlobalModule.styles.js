@@ -21,7 +21,7 @@ export const PageWrapper = styled.div`
 
 /* Base Title is the base style for all the module titles. */
 const baseTitleStyle = css`
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: normal;
 `;
 
@@ -89,9 +89,15 @@ export const Text = styled.div`
   h3 {
     font-size: 3rem;
   }
+  h4 {
+    font-size: 2.4rem;
+  }
   span {
     font-size: 2.4rem;
     font-weight: bold;
+  }
+  i {
+    font-size: 2.4rem;
   }
   a {
     font-size: 2.4rem;
@@ -123,7 +129,7 @@ export const Media = styled.div`
 `;
 
 export const Video = styled(Player)`
-  margin-top: -45px;
+  margin: 0;
 `;
 
 /* ====================== End of the Style ====================== */

@@ -1,21 +1,18 @@
 import React from "react";
 
-import {
-  BackArrow,
-  MediaWrapper,
-  Media,
-  Video,
-  Input,
-  Submit
-} from "../../TrainStyles";
+import { Input, Submit } from "../../TrainStyles";
 
 import {
+  BackArrow,
   PageWrapper,
   PageTitle,
   FormTitle,
   MainContent,
   FormContent,
-  Text
+  Text,
+  MediaWrapper,
+  Media,
+  Video
 } from "../../GlobalModule.styles.js";
 
 import { fiveStepsImage } from "../../img";
@@ -144,10 +141,10 @@ export const Module21 = ({ handleBack, errors, touched }) => {
           Understanding the five steps: Complete before proceeding
         </FormTitle>
         <Text>
-          <h3>
+          <h4>
             Do you have any questions about the five steps? Write them here so
             we can provide clarity. *
-          </h3>
+          </h4>
         </Text>
         <Input
           component="textarea"

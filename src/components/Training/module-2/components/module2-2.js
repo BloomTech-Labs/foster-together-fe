@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  BackArrow,
-  MediaWrapper,
-  Media,
-  Video,
-  Input,
-  Submit
-} from "../../TrainStyles";
+import { Input, Submit } from "../../TrainStyles";
 
 import {
   PageWrapper,
@@ -14,7 +7,11 @@ import {
   FormTitle,
   MainContent,
   FormContent,
-  Text
+  Text,
+  BackArrow,
+  MediaWrapper,
+  Media,
+  Video
 } from "../../GlobalModule.styles.js";
 
 export const Module22 = ({ handleBack, errors, touched }) => {
@@ -143,10 +140,10 @@ export const Module22 = ({ handleBack, errors, touched }) => {
         </FormTitle>
 
         <Text>
-          <h3>
+          <h4>
             Please summarize your responsibility (relationally and practically)
             in this match with a sentence or two. *
-          </h3>
+          </h4>
         </Text>
         <Input
           component="textarea"
