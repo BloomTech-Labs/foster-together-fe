@@ -1,18 +1,4 @@
-import React, { useState } from "react";
-import {
-  Module4Input,
-  Module4Submit,
-  ATag1,
-  Question,
-  Module4Title,
-  MainContent1,
-  Paragraph,
-  Paragraph1,
-  Module4Video,
-  Or,
-  Header2,
-  Input
-} from "../../TrainStyles.js";
+import React from "react";
 
 import {
   PageWrapper,
@@ -24,35 +10,14 @@ import {
   Text,
   MediaWrapper,
   Media,
-  Video
+  Video,
+  FormInput,
+  ContinueBtn,
+  ButtonWrapper,
+  FormLabel,
 } from "../../GlobalModule.styles";
 
-export const Diamond = ({
-  style = {},
-  fill = "#000",
-  width = "100%",
-  className = "",
-  viewBox = "0 0 32 32"
-}) => (
-  <svg
-    width="9"
-    height="9"
-    viewBox="0 0 12 12"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect
-      x="6"
-      y="0.343262"
-      width="7"
-      height="7"
-      transform="rotate(45 6 0.343262)"
-      fill="#343434"
-    />
-  </svg>
-);
-
-export const Module41 = props => {
+export const Module41 = (props) => {
   const { handleBack, errors, touched } = props;
 
   return (
@@ -80,7 +45,6 @@ export const Module41 = props => {
                   institutions.
                 </p>
               </div>
-
               <Media>
                 <Video
                   url="https://player.vimeo.com/video/288657921"
@@ -89,7 +53,6 @@ export const Module41 = props => {
                 />
               </Media>
             </MediaWrapper>
-
             <li>
               <h3>Option One: Casual Helping</h3>
               <p>
@@ -127,18 +90,27 @@ export const Module41 = props => {
 
             <div style={{ margin: "50px" }}>
               <li>
-                {"  "}CBI, FBI, TRAILS (BIU), sexual offender registry
-                background checks
+                <p>
+                  {"  "}CBI, FBI, TRAILS (BIU), sexual offender registry
+                  background checks
+                </p>
               </li>
-              <li>{"  "}Proof of auto insurance and valid driver’s license.</li>
               <li>
-                {"  "}Check references, personal interview, training, and/or
-                other agency-specific vetting.
+                <p>{"  "}Proof of auto insurance and valid driver’s license.</p>
+              </li>
+              <li>
+                <p>
+                  {"  "}Check references, personal interview, training, and/or
+                  other agency-specific vetting.
+                </p>
               </li>
               <span>OR</span>
               <li>
-                {"  "}Acceptability under the agency or county’s individual
-                interpretation of the Reasonable and Prudent Parenting Standard.
+                <p>
+                  {"  "}Acceptability under the agency or county’s individual
+                  interpretation of the Reasonable and Prudent Parenting
+                  Standard.
+                </p>
               </li>
             </div>
 
@@ -159,15 +131,24 @@ export const Module41 = props => {
 
             <div style={{ margin: "50px" }}>
               <li>
-                CBI, FBI, TRAILS (BIU), sexual offender registry background
-                checks
+                <p>
+                  CBI, FBI, TRAILS (BIU), sexual offender registry background
+                  checks
+                </p>
               </li>
-              <li>Core foster care training on rules and regulations</li>
-              <li>CPR and first aid certification</li>
+              <li>
+                <p>Core foster care training on rules and regulations</p>
+              </li>
+              <li>
+                <p>CPR and first aid certification</p>
+              </li>
               <span>OR</span>
               <li>
-                Acceptability under the agency or county’s individual
-                interpretation of the Reasonable and Prudent Parenting Standard.
+                <p>
+                  Acceptability under the agency or county’s individual
+                  interpretation of the Reasonable and Prudent Parenting
+                  Standard.
+                </p>
               </li>
             </div>
 
@@ -185,22 +166,34 @@ export const Module41 = props => {
 
             <div style={{ margin: "50px" }}>
               <li>
-                CBI, FBI, TRAILS, and sexual offender registry background checks
+                <p>
+                  CBI, FBI, TRAILS, and sexual offender registry background
+                  checks
+                </p>
               </li>
-              <li>CPR and first aid certification</li>
               <li>
-                Full home study (foster home certification process) on the
-                Family Helper’s home
+                <p>CPR and first aid certification</p>
               </li>
-              <li>Full state-required foster care training</li>
+              <li>
+                <p>
+                  Full home study (foster home certification process) on the
+                  Family Helper’s home
+                </p>
+              </li>
+              <li>
+                <p>Full state-required foster care training</p>
+              </li>
               <span>OR</span>
               <li>
-                Acceptability under the agency or county’s individual
-                interpretation of the Reasonable and Prudent Parenting Standard.
+                <p>
+                  Acceptability under the agency or county’s individual
+                  interpretation of the Reasonable and Prudent Parenting
+                  Standard.
+                </p>
               </li>
             </div>
 
-            <span>
+            <p>
               At any time in the match, foster parents and Foster Family Helpers
               may contact the agency or county to request specific next steps
               for allowing childcare, transportation, or other contact with
@@ -208,30 +201,31 @@ export const Module41 = props => {
               Family Helpers are encouraged to pay for their own background
               checks, but Foster Together is willing to subsidize these costs if
               needed.
-            </span>
+            </p>
           </ul>
         </Text>
       </MainContent>
+
       <FormContent>
         <FormTitle>
           Understanding legal requirements: Complete before proceeding
         </FormTitle>
-        <h4>
+        <FormLabel>
           Please let us know if you have any questions about the requirements
           listed here, so we can clarify. *
-        </h4>
-        <Input
-          component="textarea"
-          id="m4_q1"
-          name="m4_q1"
-          placeholder="Your Answer Here"
-        />
-        {errors?.m4_q1 && touched?.m4_q1 && (
-          <p style={{ color: "red" }}>{errors.m4_q1}</p>
-        )}
-        <ATag1>
-          <Module4Submit type="submit">Continue</Module4Submit>
-        </ATag1>
+          <FormInput
+            component="textarea"
+            id="m4_q1"
+            name="m4_q1"
+            placeholder="Your Answer Here"
+          />
+          {errors?.m4_q1 && touched?.m4_q1 && (
+            <p style={{ color: "red" }}>{errors.m4_q1}</p>
+          )}
+        </FormLabel>
+        <ButtonWrapper>
+          <ContinueBtn type="submit">Continue</ContinueBtn>
+        </ButtonWrapper>
       </FormContent>
     </PageWrapper>
   );

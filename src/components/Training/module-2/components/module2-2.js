@@ -1,5 +1,4 @@
 import React from "react";
-import { Input, Submit } from "../../TrainStyles";
 
 import {
   PageWrapper,
@@ -11,7 +10,11 @@ import {
   BackArrow,
   MediaWrapper,
   Media,
-  Video
+  Video,
+  FormInput,
+  ButtonWrapper,
+  ContinueBtn,
+  FormLabel,
 } from "../../GlobalModule.styles.js";
 
 export const Module22 = ({ handleBack, errors, touched }) => {
@@ -33,7 +36,6 @@ export const Module22 = ({ handleBack, errors, touched }) => {
                 for his or her schedule and budget (see questionnaire below).
               </p>
             </li>
-
             <li>
               <h3>Start with simple, small tasks.</h3>
               <MediaWrapper>
@@ -48,7 +50,6 @@ export const Module22 = ({ handleBack, errors, touched }) => {
                     task (meal drop-off) within your time/money budget before
                     adding more.
                   </p>
-
                   <p>
                     In the past, some Helpers have jumped in enthusiastically
                     (for example, creating ten freezer meals per month), then
@@ -138,23 +139,22 @@ export const Module22 = ({ handleBack, errors, touched }) => {
         <FormTitle>
           Understanding of responsibility: Complete before proceeding
         </FormTitle>
-
-        <Text>
-          <h4>
-            Please summarize your responsibility (relationally and practically)
-            in this match with a sentence or two. *
-          </h4>
-        </Text>
-        <Input
-          component="textarea"
-          id="m2_q2"
-          name="m2_q2"
-          placeholder="Your answer here"
-        />
-        {errors?.m2_q2 && touched?.m2_q2 && (
-          <p style={{ color: "red" }}>{errors?.m2_q2}</p>
-        )}
-        <Submit type="submit">Continue</Submit>
+        <FormLabel>
+          Please summarize your responsibility (relationally and practically) in
+          this match with a sentence or two. *
+          <FormInput
+            component="textarea"
+            id="m2_q2"
+            name="m2_q2"
+            placeholder="Your answer here"
+          />
+          {errors?.m2_q2 && touched?.m2_q2 && (
+            <p style={{ color: "red" }}>{errors?.m2_q2}</p>
+          )}
+        </FormLabel>
+        <ButtonWrapper>
+          <ContinueBtn type="submit">Continue</ContinueBtn>
+        </ButtonWrapper>
       </FormContent>
     </PageWrapper>
   );

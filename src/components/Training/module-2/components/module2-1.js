@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Input, Submit } from "../../TrainStyles";
-
 import {
   BackArrow,
   PageWrapper,
@@ -12,7 +10,11 @@ import {
   Text,
   MediaWrapper,
   Media,
-  Video
+  Video,
+  FormInput,
+  ButtonWrapper,
+  ContinueBtn,
+  FormLabel,
 } from "../../GlobalModule.styles.js";
 
 import { fiveStepsImage } from "../../img";
@@ -24,6 +26,7 @@ export const Module21 = ({ handleBack, errors, touched }) => {
         <BackArrow onClick={handleBack} />
         Five steps in the matching process
       </PageTitle>
+
       <MainContent>
         <Text>
           <ol>
@@ -78,31 +81,30 @@ export const Module21 = ({ handleBack, errors, touched }) => {
                 </Media>
               </MediaWrapper>
             </li>
-
             <li>
               <h3>Set your initial meeting.</h3>
+              <div>
+                <p>
+                  Let the foster family know a bit about yourself, and{" "}
+                  <span>
+                    offer three options of a time to meet the family and deliver
+                    their first meal.
+                  </span>
+                </p>
+                <p>
+                  Foster Together will do the work{" "}
+                  <span>
+                    of sharing the foster parent's family evaluation (especially
+                    dietary restrictions, and most-needed helping tasks) with
+                    you.
+                  </span>{" "}
+                  By this time, both you and the foster family have signed the
+                  contract (at the end of these four training modules) outlining
+                  expectations and responsibilities for both parties.
+                </p>
+              </div>
               <MediaWrapper>
                 <div>
-                  <p>
-                    Let the foster family know a bit about yourself, and{" "}
-                    <span>
-                      offer three options of a time to meet the family and
-                      deliver their first meal.
-                    </span>
-                  </p>
-
-                  <p>
-                    Foster Together will do the work{" "}
-                    <span>
-                      of sharing the foster parent's family evaluation
-                      (especially dietary restrictions, and most-needed helping
-                      tasks) with you.
-                    </span>{" "}
-                    By this time, both you and the foster family have signed the
-                    contract (at the end of these four training modules)
-                    outlining expectations and responsibilities for both
-                    parties.
-                  </p>
                   <p>
                     <span>
                       Some foster parents prefer to meet at a neutral location
@@ -118,7 +120,6 @@ export const Module21 = ({ handleBack, errors, touched }) => {
                 </Media>
               </MediaWrapper>
             </li>
-
             <li>
               <h3>Check in every month. Develop a relationship!</h3>
               <p>
@@ -136,26 +137,27 @@ export const Module21 = ({ handleBack, errors, touched }) => {
           </ol>
         </Text>
       </MainContent>
+
       <FormContent>
         <FormTitle>
           Understanding the five steps: Complete before proceeding
         </FormTitle>
-        <Text>
-          <h4>
-            Do you have any questions about the five steps? Write them here so
-            we can provide clarity. *
-          </h4>
-        </Text>
-        <Input
-          component="textarea"
-          id="m2_q1"
-          name="m2_q1"
-          placeholder="Your answer here"
-        />
-        {errors?.m2_q1 && touched?.m2_q1 && (
-          <p style={{ color: "red" }}>{errors?.m2_q1}</p>
-        )}
-        <Submit type="submit">Continue</Submit>
+        <FormLabel>
+          Do you have any questions about the five steps? Write them here so we
+          can provide clarity. *
+          <FormInput
+            component="textarea"
+            id="m2_q1"
+            name="m2_q1"
+            placeholder="Your answer here"
+          />
+          {errors?.m2_q1 && touched?.m2_q1 && (
+            <p style={{ color: "red" }}>{errors?.m2_q1}</p>
+          )}
+        </FormLabel>
+        <ButtonWrapper>
+          <ContinueBtn type="submit">Continue</ContinueBtn>
+        </ButtonWrapper>
       </FormContent>
     </PageWrapper>
   );

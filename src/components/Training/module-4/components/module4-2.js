@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Module4Submit,
-  ClickHere,
-  ATag1,
-  Module4Link,
-  Input,
-  Image2
-} from "../../TrainStyles.js";
+import { Image2 } from "../../TrainStyles.js";
 
 import {
   PageWrapper,
@@ -18,10 +11,14 @@ import {
   Text,
   MediaWrapper,
   Media,
-  Video
+  Video,
+  FormInput,
+  ButtonWrapper,
+  ContinueBtn,
+  FormLabel,
 } from "../../GlobalModule.styles";
 
-export const Module42 = props => {
+export const Module42 = (props) => {
   const { handleBack, errors, touched } = props;
 
   return (
@@ -141,22 +138,24 @@ export const Module42 = props => {
             break rules, gift-giving, lots of attention, a listening ear, taking
             a child’s side, manipulation, introducing kids to sexual material,
             or talking about sex (i.e., sexualizing the relationship). Read the
-            rest by clicking
+            rest by
             <a href="https://parentingsafechildren.com/what-offenders-want-you-to-know/">
-              here.
+              {" "}
+              clicking here.{" "}
             </a>
           </p>
           <p>
             For a deeper idea of how to keep kids safe, you might want to read
           </p>
-          <p>
+          <span>
             Top 10 Questions on Preventing Sexual Abuse (Includes
-            developmentally appropriate explanations, click
+            developmentally appropriate explanations,
             <a href="https://parentingsafechildren.com/your-top-10-questions-about-body-safety-2/">
-              HERE
+              {" "}
+              click here{" "}
             </a>
             to read)
-          </p>
+          </span>
         </Text>
       </MainContent>
 
@@ -164,21 +163,21 @@ export const Module42 = props => {
         <FormTitle>
           Understanding sexual abuse prevention: Complete before proceeding
         </FormTitle>
-        <Text>
-          <h4>What did you learn from the above article(s)? (3+ sentences)</h4>
-        </Text>
-        <Input
-          component="textarea"
-          id="m4_q2"
-          name="m4_q2"
-          placeholder="Your Answer Here"
-        />
-        {errors?.m4_q2 && touched?.m4_q2 && (
-          <p style={{ color: "red" }}>{errors.m4_q2}</p>
-        )}
-        <ATag1>
-          <Module4Submit type="submit">Continue</Module4Submit>
-        </ATag1>
+        <FormLabel>
+          What did you learn from the above article(s)? (3+ sentences)
+          <FormInput
+            component="textarea"
+            id="m4_q2"
+            name="m4_q2"
+            placeholder="Your Answer Here"
+          />
+          {errors?.m4_q2 && touched?.m4_q2 && (
+            <p style={{ color: "red" }}>{errors.m4_q2}</p>
+          )}
+        </FormLabel>
+        <ButtonWrapper>
+          <ContinueBtn type="submit">Continue</ContinueBtn>
+        </ButtonWrapper>
       </FormContent>
     </PageWrapper>
   );
