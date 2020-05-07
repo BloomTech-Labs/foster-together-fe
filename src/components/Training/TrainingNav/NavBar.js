@@ -9,6 +9,7 @@ const TrainingNav = () => {
       <Logo>
         <LogoImg src={require('../../../images/logo.png')} />
       </Logo>
+      
       <UtilitiesContainer open={open} setOpen={setOpen} />
     </NavBar>
   )

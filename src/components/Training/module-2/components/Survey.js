@@ -1,13 +1,14 @@
 import React from "react";
+
 import {
-  Label,
-  Input,
-  Submit,
-  Form,
-  FormGroup,
+  FormContent,
+  FormLabel,
+  FormInput,
+  ButtonWrapper,
+  SubmitBtn,
   CheckLabel,
   Checkbox,
-} from "../../TrainStyles";
+} from "../../GlobalModule.styles";
 
 const questionOneData = [
   "2 hours a month (minimum for monthly meal drop-off)",
@@ -20,22 +21,20 @@ const questionOneData = [
 
 const QuestionOne = ({ setFieldValue, values }) => {
   return (
-    <FormGroup>
-      <Label>
-        How much time do you want to spend helping a foster family? *
-        {questionOneData.map((answer, index) => (
-          <CheckLabel
-            key={index}
-            onClick={() => {
-              setFieldValue("m2_q3", index + 1);
-            }}
-          >
-            {answer}
-            <Checkbox radio checked={values.m2_q3 === index + 1} />
-          </CheckLabel>
-        ))}
-      </Label>
-    </FormGroup>
+    <FormLabel>
+      How much time do you want to spend helping a foster family? *
+      {questionOneData.map((answer, index) => (
+        <CheckLabel
+          key={index}
+          onClick={() => {
+            setFieldValue("m2_q3", index + 1);
+          }}
+        >
+          {answer}
+          <Checkbox radio checked={values.m2_q3 === index + 1} />
+        </CheckLabel>
+      ))}
+    </FormLabel>
   );
 };
 
@@ -45,21 +44,19 @@ const QuestionTwo = ({ setFieldValue, values }) => {
   };
 
   return (
-    <FormGroup>
-      <Label>
-        Do you understand that the decision to add additional meals or helping
-        tasks is at the discretion of you and the foster family? *
-        <CheckLabel onClick={() => handleClick(true)}>
-          Yes, I understand that adding additional meal and helping tasks would
-          be at the discretion of me and the foster family.
-          <Checkbox radio checked={values.m2_q4} />
-        </CheckLabel>
-        <CheckLabel onClick={() => handleClick(false)}>
-          No.
-          <Checkbox radio checked={!values.m2_q4} />
-        </CheckLabel>
-      </Label>
-    </FormGroup>
+    <FormLabel>
+      Do you understand that the decision to add additional meals or helping
+      tasks is at the discretion of you and the foster family? *
+      <CheckLabel onClick={() => handleClick(true)}>
+        Yes, I understand that adding additional meal and helping tasks would be
+        at the discretion of me and the foster family.
+        <Checkbox radio checked={values.m2_q4} />
+      </CheckLabel>
+      <CheckLabel onClick={() => handleClick(false)}>
+        No.
+        <Checkbox radio checked={!values.m2_q4} />
+      </CheckLabel>
+    </FormLabel>
   );
 };
 
@@ -99,34 +96,31 @@ const QuestionThree = ({ setFieldValue, values }) => {
   ];
   return (
     <>
-      <FormGroup>
-        <Label>
-          As you get to know them, are you open to providing practical support
-          to the foster family, beyond meals?
-          {questionThreeData.map((question, index) => (
-            <CheckLabel
-              key={index}
-              onClick={() =>
-                setFieldValue(`answer_a${index + 1}`, !question.value)
-              }
-            >
-              {question.text}
-              <Checkbox checked={question.value} />
-            </CheckLabel>
-          ))}
-        </Label>
-      </FormGroup>
-      <FormGroup>
-        <Label>
-          Other ways I'd like to help (if any)
-          <Input
-            component="textarea"
-            id="answer_b"
-            name="answer_b"
-            placeholder="Your answer here"
-          />
-        </Label>
-      </FormGroup>
+      <FormLabel>
+        As you get to know them, are you open to providing practical support to
+        the foster family, beyond meals?
+        {questionThreeData.map((question, index) => (
+          <CheckLabel
+            key={index}
+            onClick={() =>
+              setFieldValue(`answer_a${index + 1}`, !question.value)
+            }
+          >
+            {question.text}
+            <Checkbox checked={question.value} />
+          </CheckLabel>
+        ))}
+      </FormLabel>
+
+      <FormLabel>
+        Other ways I'd like to help (if any)
+        <FormInput
+          component="textarea"
+          id="answer_b"
+          name="answer_b"
+          placeholder="Your answer here"
+        />
+      </FormLabel>
     </>
   );
 };
@@ -137,21 +131,19 @@ const QuestionFour = ({ setFieldValue, values }) => {
   };
 
   return (
-    <FormGroup>
-      <Label>
-        Do you understand that you may need a background check in order to
-        provide assistance beyond meal drop-off? *
-        <CheckLabel onClick={() => handleClick(true)}>
-          Yes, I understand that may need a background check in order to provide
-          assistance beyond meal meal drop-off.
-          <Checkbox radio checked={values.m2_q6} />
-        </CheckLabel>
-        <CheckLabel onClick={() => handleClick(false)}>
-          No.
-          <Checkbox radio checked={!values.m2_q6} />
-        </CheckLabel>
-      </Label>
-    </FormGroup>
+    <FormLabel>
+      Do you understand that you may need a background check in order to provide
+      assistance beyond meal drop-off? *
+      <CheckLabel onClick={() => handleClick(true)}>
+        Yes, I understand that may need a background check in order to provide
+        assistance beyond meal meal drop-off.
+        <Checkbox radio checked={values.m2_q6} />
+      </CheckLabel>
+      <CheckLabel onClick={() => handleClick(false)}>
+        No.
+        <Checkbox radio checked={!values.m2_q6} />
+      </CheckLabel>
+    </FormLabel>
   );
 };
 
@@ -161,52 +153,51 @@ const QuestionFive = ({ setFieldValue, values }) => {
   };
 
   return (
-    <FormGroup>
-      <Label>
-        Do you understand that Foster Together and the foster parents are here
-        to help facilitate any needed background checks with the family's foster
-        care agency or county, and that this process can take one to four weeks,
-        depending on the requirements of the specific county or agency? *
-        <CheckLabel onClick={() => handleClick(true)}>
-          Yes
-          <Checkbox radio checked={values.m2_q7} />
-        </CheckLabel>
-        <CheckLabel onClick={() => handleClick(false)}>
-          No
-          <Checkbox radio checked={!values.m2_q7} />
-        </CheckLabel>
-      </Label>
-    </FormGroup>
+    <FormLabel>
+      Do you understand that Foster Together and the foster parents are here to
+      help facilitate any needed background checks with the family's foster care
+      agency or county, and that this process can take one to four weeks,
+      depending on the requirements of the specific county or agency? *
+      <CheckLabel onClick={() => handleClick(true)}>
+        Yes
+        <Checkbox radio checked={values.m2_q7} />
+      </CheckLabel>
+      <CheckLabel onClick={() => handleClick(false)}>
+        No
+        <Checkbox radio checked={!values.m2_q7} />
+      </CheckLabel>
+    </FormLabel>
   );
 };
 
 const Survey = (props) => {
   return (
-    <Form>
+    <FormContent>
       <QuestionOne {...props} />
       <QuestionTwo {...props} />
       <QuestionThree {...props} />
       <QuestionFour {...props} />
       <QuestionFive {...props} />
-      <FormGroup>
-        <Label>
-          From what you’ve learned so far how can we improve the modules you’ve
-          completed? What would you add, shorten, or eliminate? This program is
-          always looking for ways to be better, so your feedback is definitely
-          helpful!
-          <Input
-            component="textarea"
-            id="m2_q8"
-            name="m2_q8"
-            placeholder="Your answer here"
-          />
-        </Label>
-      </FormGroup>
-      <Submit type="submit">Complete Module 2</Submit>
+
+      <FormLabel>
+        From what you’ve learned so far how can we improve the modules you’ve
+        completed? What would you add, shorten, or eliminate? This program is
+        always looking for ways to be better, so your feedback is definitely
+        helpful!
+        <FormInput
+          component="textarea"
+          id="m2_q8"
+          name="m2_q8"
+          placeholder="Your answer here"
+        />
+      </FormLabel>
       {props.errors.m2_q3 && props.touched.m2_q3 && (
         <p style={{ color: "red" }}>Please answer all required questions</p>
       )}
-    </Form>
+      <ButtonWrapper>
+        <SubmitBtn type="submit">Complete Module 2</SubmitBtn>
+      </ButtonWrapper>
+    </FormContent>
   );
 };
 
