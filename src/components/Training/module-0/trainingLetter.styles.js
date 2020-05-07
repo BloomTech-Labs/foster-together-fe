@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import { Flex } from "../../../GlobalStyles";
 
 export const Page = styled.div`
   display: flex;
@@ -41,7 +42,7 @@ export const LetterText = styled.p`
 `;
 
 export const VideoText = styled.p`
-  width: 50%;
+  width: 100%;
   font-size: 1.2rem;
   color: #676767;
   line-height: 2rem;
@@ -60,4 +61,10 @@ export const LetterContainer = styled.div`
   flex-direction: column;
   width: 100%;
   margin: 3% auto;
+`;
+
+export const MediaWrapper = styled(Flex)`
+  width: 100%;
+  justify-content: center;
+  padding: 0 150px 0;
 `;

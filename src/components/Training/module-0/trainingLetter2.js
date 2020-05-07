@@ -2,28 +2,25 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import TrainingNav from "../TrainingNav/NavBar";
 
+import {
+  VideoText,
+  TestText,
+  LetterContainer,
+  MediaWrapper,
+} from "./trainingLetter.styles";
 
 import {
- VideoText,
- TestText,
- LetterContainer
-} from "./trainingLetter.styles"
-
-import {
-  
   PageWrapper,
   BackArrow,
   PageTitle,
-  MediaWrapper,
-  Media,
+  Text,
   Video,
   FormContent,
-  SubmitBtn
-} from "../GlobalTraining.styles"
-
+  ButtonWrapper,
+  SubmitBtn,
+} from "../GlobalTraining.styles";
 
 //!import Progress from "../ModuleOverlay.js"
-
 
 function TitleWrapper() {
   const { push } = useHistory();
@@ -41,22 +38,23 @@ function TitleWrapper() {
 
 function VideoPlayer() {
   return (
-    <div styled={{margin: "center"}}>
-      
-      <Video
-        url="https://player.vimeo.com/video/288657929"
-        controls={false}
-        margin="auto"
-      />
-      
-      <VideoText>
-        When a specific family in your area, or a family you meet at a
-        Neighborhood Party, is ready for help, Foster Together will email or
-        call you with a basic overview of the family. If you agree, we'll help
-        you exchange info and meet up.
-      </VideoText>
-      
-    </div>
+    <MediaWrapper>
+      <div>
+        <Video
+          url="https://player.vimeo.com/video/288657929"
+          controls={false}
+          margin="auto"
+        />
+      </div>
+      <div>
+        <VideoText>
+          When a specific family in your area, or a family you meet at a
+          Neighborhood Party, is ready for help, Foster Together will email or
+          call you with a basic overview of the family. If you agree, we'll help
+          you exchange info and meet up.
+        </VideoText>
+      </div>
+    </MediaWrapper>
   );
 }
 
@@ -112,27 +110,29 @@ const ModuleStart2 = () => {
   return (
     <>
       <TrainingNav />
-      <PageWrapper> 
-        
+      <PageWrapper>
         <TitleWrapper />
         <VideoPlayer />
-          
+
         <LetterContainer>
-          <h2>Testimonials from foster parents</h2>
+          <Text>
+            <h2>Testimonials from foster parents</h2>
+          </Text>
           <Testimonies />
         </LetterContainer>
-          
+
         <FormContent>
-          <SubmitBtn
-            onClick={() => {
-              push("/module1");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          >
-            Start Training
-          </SubmitBtn>
+          <ButtonWrapper>
+            <SubmitBtn
+              onClick={() => {
+                push("/module1");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Start Training
+            </SubmitBtn>
+          </ButtonWrapper>
         </FormContent>
-        
       </PageWrapper>
     </>
   );
