@@ -40,7 +40,7 @@ export const FormTitle = styled.h2`
 export const BackArrow = styled.div`
   position: relative;
   top: 25px;
-  left: -30px;
+  left: -45px;
   height: 24px;
   width: 27px;
   background-image: url(${backArrow});
@@ -131,6 +131,9 @@ export const Media = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  img{
+    width:70%;
+  }
 `;
 
 export const Video = styled(Player)`

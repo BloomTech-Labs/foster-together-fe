@@ -6,7 +6,7 @@ import {
   VideoText,
   TestText,
   LetterContainer,
-  MediaWrapper,
+  MediaWrapper
 } from "./trainingLetter.styles";
 
 import {
@@ -17,7 +17,7 @@ import {
   Video,
   FormContent,
   ButtonWrapper,
-  SubmitBtn,
+  SubmitBtn
 } from "../GlobalTraining.styles";
 
 //!import Progress from "../ModuleOverlay.js"
@@ -116,7 +116,7 @@ const ModuleStart2 = () => {
 
         <LetterContainer>
           <Text>
-            <h2>Testimonials from foster parents</h2>
+            <h4>Testimonials from foster parents</h4>
           </Text>
           <Testimonies />
         </LetterContainer>

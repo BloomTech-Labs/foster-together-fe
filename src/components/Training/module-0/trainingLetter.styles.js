@@ -51,7 +51,7 @@ export const VideoText = styled.p`
 export const TestText = styled.p`
   color: #343434;
   margin: 3% 0;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-style: italic;
   line-height: 4.2rem;
 `;

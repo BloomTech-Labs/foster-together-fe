@@ -170,7 +170,7 @@ export const Module41 = props => {
               <p>
                 For anyone who provides respite (babysitting for over six hours
                 or overnight) in their
-                <span>own home, agency and county requirements </span>
+                <span> own home, agency and county requirements </span>
                 likely include:
               </p>
             </li>

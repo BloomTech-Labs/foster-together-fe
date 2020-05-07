@@ -12,10 +12,10 @@ import {
   CommentInput,
   ButtonWrapper,
   SubmitBtn,
-  FormLabel,
+  FormLabel
 } from "../../GlobalTraining.styles";
 
-export const Module44 = (props) => {
+export const Module44 = props => {
   const { handleBack, errors, touched } = props;
 
   return (
@@ -47,7 +47,7 @@ export const Module44 = (props) => {
                   job. Most people are too afraid to take this step, but the
                   child needs you to do it.
                 </p>
-                <br />
+
                 <i>
                   TO DO: Save this number, and send a screenshot of the contact
                   in your phone to connect@fostertogether.co.
@@ -56,13 +56,16 @@ export const Module44 = (props) => {
 
               <li>
                 <p>
-                  <span>Seek treatment for the child.</span>
+                  <span>Seek treatment for the child. </span>
                   <a href="https://www.safepassagecac.org/">
                     Safe Passage Colorado{" "}
                   </a>{" "}
                   provides a seamless referral and treatment system, lessening
                   the trauma to the child and caretaker during an investigation.
-                  Contact them here: safepassagecac.org/
+                  Contact them here:
+                  <a href="https://www.safepassagecac.org/">
+                    safepassagecac.org.
+                  </a>
                 </p>
               </li>
 
@@ -77,7 +80,11 @@ export const Module44 = (props) => {
                     This referral form{" "}
                   </a>{" "}
                   with the Association for Treatment of Sexual Offenders is
-                  completely anonymous: atsa.com/referral
+                  completely anonymous:
+                  <a href="https://www.atsa.com/referral">
+                    {" "}
+                    atsa.com/referral.
+                  </a>
                 </p>
               </li>
             </ol>
@@ -88,7 +95,10 @@ export const Module44 = (props) => {
               $200. That's pretty good when you consider the long term
               friendships we're providing to foster families. If you'd like to
               help us cover the costs for the next volunteer, please join our
-              donor team! CLICK HERE.
+              donor team!
+              <a href=" https://www.fostertogether.co/donate">
+                <span> Click here!</span>
+              </a>
             </p>
           </Text>
         </MainContent>
@@ -99,9 +109,8 @@ export const Module44 = (props) => {
             proceeding
           </FormTitle>
           <FormLabel>
-            <h4>
             What Colorado-based number do you call if you suspect a child is
-            being abused?</h4>
+            being abused?
             <ShortFormInput
               id="m4_q9"
               name="m4_q9"

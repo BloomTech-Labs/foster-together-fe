@@ -14,7 +14,7 @@ import {
   FormLabel,
   FormInput,
   ButtonWrapper,
-  ContinueBtn,
+  ContinueBtn
 } from "../../GlobalTraining.styles.js";
 
 export const Module31 = ({ handleBack, errors, touched }) => {
@@ -95,6 +95,7 @@ export const Module31 = ({ handleBack, errors, touched }) => {
                   <img
                     src="https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525385623625-BVHPKT4NS4BBS6YU07S0/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/FT+7.jpg?format=750w"
                     alt=""
+                    style={{ width: "100%" }}
                   />
                 </Media>
                 <div style={{ paddingLeft: "20px" }}>

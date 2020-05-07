@@ -18,19 +18,19 @@ import {
   FormLabel,
   FormInput,
   ButtonWrapper,
-  SubmitBtn,
+  SubmitBtn
 } from "../../GlobalTraining.styles.js";
 
 export const Module11 = ({ errors, touched }) => {
   const { push } = useHistory();
   //!axios call here trainingAxiosWithAuth()
-  const handleSubmit = (values) => {
+  const handleSubmit = values => {
     trainingAxiosWithAuth()
       .post("/update", values)
       .then(() => {
         push("/module2");
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   };
@@ -107,10 +107,7 @@ export const Module11 = ({ errors, touched }) => {
                   </li>
                 </div>
                 <Media>
-                  <img
-                    src={require("../../img/image19.png")}
-                    alt=""
-                  />
+                  <img src={require("../../img/image19.png")} alt="" />
                 </Media>
               </MediaWrapper>
               <li>
@@ -153,7 +150,7 @@ export const Module11 = ({ errors, touched }) => {
 
         <Formik
           initialValues={{
-            m1_q1: "",
+            m1_q1: ""
           }}
           validationSchema={ModuleOneSchema}
           onSubmit={() => {

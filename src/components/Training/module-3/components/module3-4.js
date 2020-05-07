@@ -13,7 +13,7 @@ import {
   FormLabel,
   FormInput,
   ButtonWrapper,
-  SubmitBtn,
+  SubmitBtn
 } from "../../GlobalTraining.styles.js";
 
 export const Module34 = ({ handleBack, errors, touched }) => {
@@ -91,9 +91,9 @@ export const Module34 = ({ handleBack, errors, touched }) => {
               </p>
             </li>
           </ul>
-          <h2 style={{ fontWeight: "normal" }}>
+          <h4 style={{ fontWeight: "normal" }}>
             Perspective from foster mom Traci Schmidley:
-          </h2>
+          </h4>
           <p>
             Excerpts from:{" "}
             <a
@@ -105,32 +105,47 @@ export const Module34 = ({ handleBack, errors, touched }) => {
             </a>
           </p>
           <p>
-            Many children who come into foster care may be overly clingy and
-            lack appropriate boundaries. It’s easy to want to cuddle and coddle
-            them and shower them with attention and affection to help heal their
-            pain. However, [sometimes this is a sign that he or she has] made so
-            many transitions they are confused as to who is “their person” and
-            may seek the attention of any adult willing to give affection, which
-            can be quite dangerous. Many of our friends will experience a foster
-            child climbing up onto their laps and refuse to get down, and
-            believe “Oh we have such a special bond! She loves me!” But the
-            truth is the child likely does that to every single stranger we
-            pass.
+            <i>
+              Many children who come into foster care may be overly clingy and
+              lack appropriate boundaries. It’s easy to want to cuddle and
+              coddle them and shower them with attention and affection to help
+              heal their pain. However, [sometimes this is a sign that he or she
+              has] made so many transitions they are confused as to who is
+              “their person” and may seek the attention of any adult willing to
+              give affection, which can be quite dangerous. Many of our friends
+              will experience a foster child climbing up onto their laps and
+              refuse to get down, and believe “Oh we have such a special bond!
+              She loves me!” But the truth is the child likely does that to
+              every single stranger we pass.
+            </i>
           </p>
           <span>
-            We can’t undo (sometimes years of) neglect by giving excessive
-            attention now. Hurting children need affection, no doubt, but they
-            also need to learn boundaries, and to be guided toward forming safe
-            connections and trust with their new caretaker first.{" "}
+            <i>
+              We can’t undo (sometimes years of) neglect by giving excessive
+              attention now. Hurting children need affection, no doubt, but they
+              also need to learn boundaries, and to be guided toward forming
+              safe connections and trust with their new caretaker first.{" "}
+            </i>
           </span>
           <p>
-            I appreciate you the most when you give my foster children a{" "}
-            <span>
-              quick hug, a few kind words, and encourage him or her to continue
-              doing whatever activity
-            </span>{" "}
-            they were previously engaged in, just like you would any other
-            child.
+            <i>
+              I appreciate you the most when you give my foster children a{" "}
+              <span>
+                quick hug, a few kind words, and encourage him or her to
+                continue doing whatever activity
+              </span>{" "}
+              they were previously engaged in, just like you would any other
+              child.
+            </i>
+          </p>
+          <p>
+            <i>
+              While meant as a compliment, most foster parents will tell you
+              this bothers them because they want the focus on the kids, who are
+              struggling to heal and learn how to live (and that's an amazing
+              task). It also doesn’t give the foster parent much to hold onto if
+              he or she feels like quitting on a hard day.
+            </i>
           </p>
           <span>
             Read the rest of Traci's article{" "}
