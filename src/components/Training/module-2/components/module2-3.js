@@ -11,7 +11,7 @@ import {
   Media,
   FormContent,
   FormLabel,
-} from "../../GlobalModule.styles.js";
+} from "../../GlobalTraining.styles.js";
 
 import { mealTipsImage } from "../../img";
 import Survey from "./Survey";

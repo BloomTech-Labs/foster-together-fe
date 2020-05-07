@@ -15,7 +15,7 @@ import {
   ButtonWrapper,
   ContinueBtn,
   FormLabel,
-} from "../../GlobalModule.styles.js";
+} from "../../GlobalTraining.styles.js";
 
 export const Module22 = ({ handleBack, errors, touched }) => {
   return (

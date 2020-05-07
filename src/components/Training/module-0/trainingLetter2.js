@@ -1,19 +1,25 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import TrainingNav from "../TrainingNav/NavBar";
+
+
 import {
-  Wrapper,
+ VideoText,
+ TestText,
+ LetterContainer
+} from "./trainingLetter.styles"
+
+import {
+  
+  PageWrapper,
   BackArrow,
-  Title,
-  PlayerWrapper,
-  VideoText,
-  Header,
-  LetterContainer,
-  TestText,
-  Submit,
-  Half,
-} from "../TrainStyles";
-import Player from "react-player";
+  PageTitle,
+  MediaWrapper,
+  Media,
+  Video,
+  FormContent,
+  SubmitBtn
+} from "../GlobalTraining.styles"
 
 
 //!import Progress from "../ModuleOverlay.js"
@@ -22,32 +28,35 @@ import Player from "react-player";
 function TitleWrapper() {
   const { push } = useHistory();
   return (
-    <Title>
+    <PageTitle>
       <BackArrow
         onClick={() => {
           push("/training-start");
         }}
       />
       A letter of gratitude continued...
-    </Title>
+    </PageTitle>
   );
 }
 
 function VideoPlayer() {
   return (
-    <PlayerWrapper>
-      <Player
+    <div styled={{margin: "center"}}>
+      
+      <Video
         url="https://player.vimeo.com/video/288657929"
         controls={false}
         margin="auto"
       />
+      
       <VideoText>
         When a specific family in your area, or a family you meet at a
         Neighborhood Party, is ready for help, Foster Together will email or
         call you with a basic overview of the family. If you agree, we'll help
         you exchange info and meet up.
       </VideoText>
-    </PlayerWrapper>
+      
+    </div>
   );
 }
 
@@ -103,24 +112,28 @@ const ModuleStart2 = () => {
   return (
     <>
       <TrainingNav />
-      <Wrapper> 
+      <PageWrapper> 
+        
         <TitleWrapper />
         <VideoPlayer />
+          
         <LetterContainer>
-          <Header>Testimonials from foster parents</Header>
+          <h2>Testimonials from foster parents</h2>
           <Testimonies />
         </LetterContainer>
-        <Half>
-          <Submit
+          
+        <FormContent>
+          <SubmitBtn
             onClick={() => {
               push("/module1");
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
             Start Training
-          </Submit>
-        </Half>
-      </Wrapper>
+          </SubmitBtn>
+        </FormContent>
+        
+      </PageWrapper>
     </>
   );
 };

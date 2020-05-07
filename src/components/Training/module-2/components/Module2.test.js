@@ -2,7 +2,7 @@ import React from "react";
 import { renderWithReduxAndRouter as render } from "../../../../utils/testHelpers";
 import { Formik, Form } from "formik";
 import { Module22 } from "./module2-2";
-import { Checkbox, FormGroup, CheckLabel } from "../../TrainStyles";
+import {  CheckLabel } from "../../GlobalTraining.styles.js";
 import { Module23 } from "./module2-3";
 import { fireEvent } from "@testing-library/react";
 

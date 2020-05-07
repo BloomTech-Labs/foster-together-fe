@@ -13,7 +13,7 @@ import {
   ButtonWrapper,
   SubmitBtn,
   FormLabel,
-} from "../../GlobalModule.styles";
+} from "../../GlobalTraining.styles";
 
 export const Module44 = (props) => {
   const { handleBack, errors, touched } = props;
@@ -99,8 +99,9 @@ export const Module44 = (props) => {
             proceeding
           </FormTitle>
           <FormLabel>
+            <h4>
             What Colorado-based number do you call if you suspect a child is
-            being abused?
+            being abused?</h4>
             <ShortFormInput
               id="m4_q9"
               name="m4_q9"

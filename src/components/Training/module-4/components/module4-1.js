@@ -14,10 +14,10 @@ import {
   FormInput,
   ContinueBtn,
   ButtonWrapper,
-  FormLabel,
-} from "../../GlobalModule.styles";
+  FormLabel
+} from "../../GlobalTraining.styles";
 
-export const Module41 = (props) => {
+export const Module41 = props => {
   const { handleBack, errors, touched } = props;
 
   return (
@@ -59,18 +59,29 @@ export const Module41 = (props) => {
                 While there is no legal requirement for a background check or
                 training for casual contact with a foster family (i.e. dropping
                 off meals, meeting at the park with the foster parents and
-                kids), we do run a Colorado Arrest Records check as a buffer. As
-                a Foster Family Helper, you are developing a natural
-                relationship with the family, and are allowed to help out as any
-                other friend or neighbor would. As a best practice, Foster
-                Together Colorado seeks to deter predators from our matching
-                program by educating families in sexual abuse prevention, red
-                flags for predatory grooming, and body safety rules (more info
-                in the next section). We know that talking openly about
-                prevention with adults in the child’s life is the best way to As
-                with any family connections, foster parents have the
-                responsibility to be aware and cautious as all parties earn
-                trust.
+                kids), we do run a Colorado Arrest Records check as a buffer.
+              </p>
+              <p>
+                <span>
+                  As a Foster Family Helper, you are developing a natural
+                  relationship with the family, and are allowed to help out as
+                  any other friend or neighbor would.
+                </span>
+              </p>
+              <p>
+                As a best practice, Foster Together Colorado seeks to deter
+                predators from our matching program by educating families in
+                sexual abuse prevention, red flags for predatory grooming, and
+                body safety rules (more info in the next section). We know that
+                talking openly about prevention with adults in the child’s life
+                is the best way to keep kids safe.
+              </p>
+              <p>
+                <span>
+                  As with any family connections, foster parents have the
+                  responsibility to be aware and cautious as all parties earn
+                  trust.
+                </span>
               </p>
             </li>
 

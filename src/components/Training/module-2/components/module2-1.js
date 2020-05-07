@@ -15,7 +15,7 @@ import {
   ButtonWrapper,
   ContinueBtn,
   FormLabel,
-} from "../../GlobalModule.styles.js";
+} from "../../GlobalTraining.styles.js";
 
 import { fiveStepsImage } from "../../img";
 

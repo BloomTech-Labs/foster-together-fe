@@ -1,17 +1,21 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+
 import {
-  Wrapper,
+  PageWrapper,
   BackArrow,
-  Title,
+  PageTitle
+} from "../GlobalTraining.styles"
+
+import {
   Page,
   Letter,
   Circle,
   LetterCircle,
-  LetterText,
-  
- 
-} from '../TrainStyles'
+  LetterText
+} from "./trainingLetter.styles"
+
+
 import next from '../img/next.png'
 import TrainingNav from '../TrainingNav/NavBar'
 
@@ -19,14 +23,14 @@ function LetterTitle() {
   const { push } = useHistory()
   return (
     
-    <Title>
+    <PageTitle>
       <BackArrow
         onClick={() => {
           push('/')
         }}
       />
       A letter of gratitude
-    </Title>
+    </PageTitle>
   
   )
 }
@@ -130,7 +134,7 @@ const ModuleStart = () => {
     <>
       <TrainingNav />
    
-      <Wrapper>
+      <PageWrapper>
         <LetterTitle />
         <Page>
           <Letter>
@@ -148,7 +152,7 @@ const ModuleStart = () => {
             <h3>Continue</h3>
           </LetterCircle>
         </Page>
-      </Wrapper>
+      </PageWrapper>
     </>
   )
 }

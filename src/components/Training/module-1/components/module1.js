@@ -19,7 +19,7 @@ import {
   FormInput,
   ButtonWrapper,
   SubmitBtn,
-} from "../../GlobalModule.styles.js";
+} from "../../GlobalTraining.styles.js";
 
 export const Module11 = ({ errors, touched }) => {
   const { push } = useHistory();
@@ -48,11 +48,11 @@ export const Module11 = ({ errors, touched }) => {
 
         <MainContent>
           <Text>
-            <ul>
+            <ol>
               <MediaWrapper>
                 <div>
                   <li>
-                    <h3>1. Help families beat isolation.</h3>
+                    <h3>Help families beat isolation.</h3>
                     <p>
                       You've probably heard the idea that foster parents are
                       heroes or saints. But they're regular people pushing
@@ -76,7 +76,7 @@ export const Module11 = ({ errors, touched }) => {
                 </Media>
               </MediaWrapper>
               <li>
-                <h3>2. Go beyond transactions. Build relationships.</h3>
+                <h3>Go beyond transactions. Build relationships.</h3>
                 <p>
                   You might be surprised to hear that delivering a meal is only
                   half of your service to the foster family. The rest is your
@@ -93,7 +93,7 @@ export const Module11 = ({ errors, touched }) => {
                 <div>
                   <li>
                     <h3>
-                      3. More relationships = more transparency = safer kids.{" "}
+                      More relationships = more transparency = safer kids.{" "}
                     </h3>
                     <p>
                       While Foster Together tends to attract excellent, caring,
@@ -108,13 +108,13 @@ export const Module11 = ({ errors, touched }) => {
                 </div>
                 <Media>
                   <img
-                    src={require("../../TrainingIcons/image19.png")}
+                    src={require("../../img/image19.png")}
                     alt=""
                   />
                 </Media>
               </MediaWrapper>
               <li>
-                <h3>4. See beyond your comfort zone/social circle.</h3>
+                <h3>See beyond your comfort zone/social circle.</h3>
                 <p>
                   This one's just for you, helper. We are in an era of political
                   tension, social media debates, and moral questions (racism,
@@ -134,7 +134,7 @@ export const Module11 = ({ errors, touched }) => {
                 </p>
               </li>
               <li>
-                <h3>5. Help great foster homes stay "open"</h3>
+                <h3>Help great foster homes stay "open"</h3>
                 <p>
                   In Colorado, the average foster home "deactivates" (or stops
                   fostering) after two years. Sometimes this is due to adopting,
@@ -147,7 +147,7 @@ export const Module11 = ({ errors, touched }) => {
                   long haul.
                 </p>
               </li>
-            </ul>
+            </ol>
           </Text>
         </MainContent>
 

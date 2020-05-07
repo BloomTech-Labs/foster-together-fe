@@ -14,7 +14,7 @@ import {
   ShortFormInput,
   ButtonWrapper,
   SubmitBtn,
-} from "../../GlobalModule.styles.js";
+} from "../../GlobalTraining.styles.js";
 
 const Module5 = ({ errors, touched }) => {
   const { push } = useHistory();
@@ -27,96 +27,114 @@ const Module5 = ({ errors, touched }) => {
             push("/module4");
           }}
         />
+        Foster Together Colorado's Responsibility
       </PageTitle>
 
       <MainContent>
         <Text>
-          <h2>Foster Together Colorado's Responsibility</h2>
+          
           <ol>
             <li>
+              <p>
               To recruit and minimally vet potential foster family helpers
-              through marketing and application process.
+              through marketing and application process.</p>
             </li>
             <li>
+              <p>
               To train and support foster families and Family Helpers in the
               purpose, implementation, and safeguards of the Foster Together
-              process.
+              process.</p>
             </li>
             <li>
+              <p> 
               To match the helper with a foster family within 10 miles of the
-              helper’s home (unless otherwise requested).
+              helper’s home (unless otherwise requested).</p>
             </li>
             <li>
+            <p> 
               As requested, to assist the foster family in obtaining County or
               CPA approval to use the family helper for babysitting,
-              transportation, or respite.
+              transportation, or respite.</p>
             </li>
-            <li>To explain general expectations to each party.</li>
             <li>
-              As requested, to assist with problem-solving throughout the match.
+            <p> To explain general expectations to each party.</p></li>
+            <li>
+              <p>
+              As requested, to assist with problem-solving throughout the match.</p>
             </li>
           </ol>
 
-          <h2>Foster Parent’s Responsibility:</h2>
+          <PageTitle>Foster Parent’s Responsibility:</PageTitle>
           <ol>
             <li>
+              <p>
               To be responsive to Foster Together and the foster family helper,
               acknowledging receipt of any texts, emails, or voicemails within
-              48 hours.
+              48 hours.</p>
             </li>
             <li>
+            <p>
               To practice discretion as the matching relationship progresses,
               using reasonable parental judgment AND obtaining written approval
               from placing county and/or CPA before allowing the foster family
-              helper to provide babysitting, transportation, or respite.
+              helper to provide babysitting, transportation, or respite.</p>
             </li>
             <li>
+            <p>
               To post Body Safety Rules poster in your home and regularly review
-              body safety rules with kids.
+              body safety rules with kids.</p>
             </li>
             <li>
+            <p>
               To communicate from a tone of gratitude with the helper,
               recognizing the gift of time and care that the helper desires to
-              give.
+              give.</p>
             </li>
             <li>
+            <p>
               To communicate your needs with forethought, rather than urgency,
               to the family helper, recognizing that the family helper also has
-              responsibilities and time commitments.
+              responsibilities and time commitments.</p>
             </li>
           </ol>
 
-          <h2>Foster Neighbor’s Responsibility:</h2>
+          <PageTitle>Foster Neighbor’s Responsibility:</PageTitle>
           <ol>
             <li>
+            <p>
               To be responsive to Foster Together and the foster parent,
               acknowledging receipt of any texts, emails, or voicemails within
-              48 hours.
+              48 hours.</p>
             </li>
             <li>
+            <p>
               To ensure that the foster family has obtained approval from the
               licensing county or child placement agency before babysitting,
-              driving, or providing respite.
+              driving, or providing respite.</p>
             </li>
             <li>
+            <p>
               To communicate with clarity your limits and logistics for helping
-              the foster parent.
+              the foster parent.</p>
             </li>
             <li>
+            <p>
               To be dependable with your commitments to the family, and
               communicate immediately when you need to adjust plans.
-              Dependability lessens the stress on a foster family.
+              Dependability lessens the stress on a foster family.</p>
             </li>
             <li>
+            <p>
               To respect and protect the privacy of the foster family and the
               children in the home. Do not ask questions about the child(ren)’s
               histories. If the need arises for you to know something, the
-              foster parent can reveal information as appropriate.
+              foster parent can reveal information as appropriate.</p>
             </li>
             <li>
+            <p>
               Not to become a primary adult in the child’s life, but to take a
               role in the background as much as possible, increasing the
-              capacity of the foster parent.
+              capacity of the foster parent.</p>
             </li>
           </ol>
         </Text>

@@ -7,11 +7,10 @@ import "@testing-library/jest-dom/extend-expect";
 import {
   MainContent,
   img,
-  LetterContext,
-  Circle,
-  Letter,
-  onClick
-} from "../TrainStyles";
+} from "../GlobalTraining.styles.js";
+
+import{ Letter} from "../trainingLetter.styles.js"
+
 import TrainingNav from "../TrainingNav/NavBar";
 
 test("ModuleStart", async () => {

@@ -1,5 +1,4 @@
 import React from "react";
-import { Image2 } from "../../TrainStyles.js";
 
 import {
   PageWrapper,
@@ -16,7 +15,7 @@ import {
   ButtonWrapper,
   ContinueBtn,
   FormLabel,
-} from "../../GlobalModule.styles";
+} from "../../GlobalTraining.styles";
 
 export const Module42 = (props) => {
   const { handleBack, errors, touched } = props;
@@ -71,16 +70,20 @@ export const Module42 = (props) => {
             <span style={{ fontWeight: "bold" }}>
               We do not include this section to scare you or make people
               super-suspicious of each other.
-            </span>{" "}
+            </span></p>
+            <p>
             Rather, we want to create a Foster Together culture of open
             conversations and clarity.
           </p>
           <MediaWrapper>
-            <Image2
+            <Media>
+            <img
               src="https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525386132069-86G9CUPJYIFKEVYT5SKY/ke17ZwdGBToddI8pDm48kAUFOTPMSVxuKvNFAx6DKiZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ouw-8l5B_J38LMU7OZFvYc0yAe_x11zxahcI_hfw238yWAp0jGKzhuVZoU5dfkFlA/FT+37.jpg?format=750w"
               width="450px"
               height="570px"
+              alt=""
             />
+            </Media>
 
             <div>
               <p>

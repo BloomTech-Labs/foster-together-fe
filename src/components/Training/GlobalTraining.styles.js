@@ -106,16 +106,16 @@ export const Text = styled.div`
   }
   a {
     font-size: 2rem;
-    color: #bababa;
+    color: rgb(255,140,85);
     text-decoration: none;
 
     &:hover {
-      color: #343434;
+      color: #375762;
     }
   }
   li {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: bold ;
 `;
 
 export const MediaWrapper = styled(Flex)`
@@ -153,10 +153,12 @@ export const FormInput = styled(Field)`
   border-radius: 4px 4px 0 0;
   border: none;
   border-bottom: 1px solid #a1a1a1;
+  margin: 20px 0 20px 0;
 `;
 
 export const FormLabel = styled.label`
   font-size: 2.4rem;
+  margin: 20px 0 20px 0;
 `;
 
 export const ShortFormInput = styled(Field)`

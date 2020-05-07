@@ -8,7 +8,7 @@ import {
   SubmitBtn,
   CheckLabel,
   Checkbox,
-} from "../../GlobalModule.styles";
+} from "../../GlobalTraining.styles";
 
 const questionOneData = [
   "2 hours a month (minimum for monthly meal drop-off)",
