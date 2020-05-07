@@ -61,6 +61,8 @@ export const Module34 = ({ handleBack, errors, touched }) => {
                 <img src={require("../../img/train3.png")} alt="" />
               </Media>
             </MediaWrapper>
+            <br></br>
+            <br></br>
             <li>
               <p>
                 Don’t label the kids, and{" "}

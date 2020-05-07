@@ -21,8 +21,9 @@ export const PageWrapper = styled.div`
 
 /* Base Title is the base style for all the module titles. */
 const baseTitleStyle = css`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: normal;
+ 
 `;
 
 /* Main Title is for the main title of each specific sub-modules */
@@ -39,7 +40,7 @@ export const FormTitle = styled.h2`
 export const BackArrow = styled.div`
   position: relative;
   top: 25px;
-  left: -45px;
+  left: -30px;
   height: 24px;
   width: 27px;
   background-image: url(${backArrow});
@@ -83,29 +84,29 @@ export const MainContent = styled.section`
 /* Text will be the universal font for all module texts. */
 export const Text = styled.div`
   p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: normal;
     line-height: 25px;
   }
   h2 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
   h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   h4 {
     font-size: 2rem;
     font-weight: normal;
   }
   span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   i {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   a {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: rgb(255,140,85);
     text-decoration: none;
 
@@ -114,7 +115,7 @@ export const Text = styled.div`
     }
   }
   li {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold ;
 `;
 
@@ -146,7 +147,7 @@ export const FormContent = styled.section`
 
 export const FormInput = styled(Field)`
   width: 100%;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   height: 16rem;
   padding: 20px 15px;
   background: #f9f9f9;
@@ -157,13 +158,13 @@ export const FormInput = styled(Field)`
 `;
 
 export const FormLabel = styled.label`
-  font-size: 2.4rem;
+  font-size: 1.5rem;
   margin: 20px 0 20px 0;
 `;
 
 export const ShortFormInput = styled(Field)`
   width: 100%;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   height: 7rem;
   padding: 20px 15px;
   background: #f9f9f9;
@@ -175,7 +176,7 @@ export const ShortFormInput = styled(Field)`
 export const CommentInput = styled.textarea`
   width: 100%;
   margin: 40px 0 60px;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   height: 16rem;
   padding: 20px 15px;
   background: #f9f9f9;
@@ -187,7 +188,7 @@ export const CommentInput = styled.textarea`
 export const CheckLabel = styled.label`
   display: block;
   position: relative;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   padding-left: 3.5rem;
   margin-top: 2rem;
 

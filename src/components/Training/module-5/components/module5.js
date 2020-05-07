@@ -64,7 +64,7 @@ const Module5 = ({ errors, touched }) => {
             </li>
           </ol>
 
-          <PageTitle>Foster Parent’s Responsibility:</PageTitle>
+          <h4>Foster Parent’s Responsibility:</h4>
           <ol>
             <li>
               <p>
@@ -98,7 +98,7 @@ const Module5 = ({ errors, touched }) => {
             </li>
           </ol>
 
-          <PageTitle>Foster Neighbor’s Responsibility:</PageTitle>
+          <h4>Foster Neighbor’s Responsibility:</h4>
           <ol>
             <li>
             <p>
