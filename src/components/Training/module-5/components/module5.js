@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import TrainingNav from "../../TrainingNav/NavBar";
 import {
   // Page,
   BackArrow,
@@ -186,7 +185,6 @@ const Questions = ({ errors, touched }) => {
 const Module5 = ({ errors, touched }) => {
   return (
     <section>
-      <TrainingNav />
       <Wrapper>
         <Title />
         {/* <Page> */}

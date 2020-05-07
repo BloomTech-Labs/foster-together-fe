@@ -18,7 +18,6 @@ import {
   Div
 } from "../../TrainStyles";
 // import Progress from "../../TrainingModuleContainer.js";
-// import TrainingNav from '../../TrainingNav/NavBar'
 const Context3 = () => {
   return (
     <Div>
