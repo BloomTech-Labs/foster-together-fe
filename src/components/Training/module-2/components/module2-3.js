@@ -10,8 +10,8 @@ import {
   MediaWrapper,
   Media,
   FormContent,
-  FormLabel,
-} from "../../GlobalModule.styles.js";
+  FormLabel
+} from "../../GlobalTraining.styles.js";
 
 import { mealTipsImage } from "../../img";
 import Survey from "./Survey";
@@ -33,16 +33,17 @@ const MealTipsWrapper = () => {
                 </li>
                 <li>
                   <p>
-                    Less logistical coordination is better.I told the foster mo
-                    “Leave a cooler on your porch, and I’ll fill it up on Monday
-                    mornings.” (This may change over time--keep reading!)
+                    <span>Less logistical coordination is better. </span>I told
+                    the foster mom “Leave a cooler on your porch, and I’ll fill
+                    it up on Monday mornings.” (This may change over time--keep
+                    reading!)
                   </p>
                 </li>
                 <li>
                   <p>
-                    Use containers you don't need back. The last thing I want to
-                    is add to her burden, so if she's not able to clean them,
-                    she is welcome to recycle or toss.
+                    <span> Use containers you don't need back.</span> The last
+                    thing I want to is add to her burden, so if she's not able
+                    to clean them, she is welcome to recycle or toss.
                   </p>
                 </li>
                 <li>
@@ -85,6 +86,29 @@ const MealTipsWrapper = () => {
                 on time?
               </p>
             </li>
+
+            <li>
+              <p>
+                <span>
+                  I try to take good care of all the kids in the house- kids
+                  born to the foster family, and kids in foster care, so no one
+                  feels left out.
+                </span>{" "}
+                It just so happens that she has nine year old twins, and I have
+                an eleven year old daughter and a ten year old son: perfect ages
+                to pass along my kids' clothes and books.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                If I drop off clothes,{" "}
+                <span>I organize by size and gender</span>, and only drop off
+                what the foster parent can use. Extra can go to the thrift store
+                or one of Foster Together's clothing partners.
+              </p>
+            </li>
+
             <li>
               <p>
                 I keep track of the foods I drop off to avoid too much
@@ -101,6 +125,23 @@ const MealTipsWrapper = () => {
                 of it.
               </p>
             </li>
+
+            <li>
+              <p>
+                While a well-rounded, delicious, and kid-friendly meal is the
+                most requested support, you are free to get creative! Foster
+                Family Helpers sometimes include a treat like fresh-baked
+                cookies, the kids’ favorite fruit or veggies already sliced for
+                snack time throughout the week, a loaf of fresh bread, breakfast
+                burritos, or a bar of chocolate or tub of gelato as a
+                post-bedtime treat for mom or dad.{" "}
+                <span>
+                  Have fun thinking of ways to make the family feel special and
+                  supported.
+                </span>
+              </p>
+            </li>
+
             <li>
               <p>
                 Friendly gestures are always a bonus. Some Family Helpers write
@@ -147,10 +188,14 @@ const MealTipsWrapper = () => {
               <li>
                 <p>
                   If you and the foster parent decide to make arrangements for
-                  you providing babysitting or transportation, the foster
-                  parent’s agency or county may require a background check,
-                  which can take up to three weeks. We are here to help with
-                  that process. Email connect@fostertogether.co to get started.
+                  you providing babysitting or transportation, the{" "}
+                  <span>
+                    {" "}
+                    foster parent’s agency or county may require a background
+                    check, which can take up to three weeks.{" "}
+                  </span>
+                  We are here to help with that process. Email
+                  connect@fostertogether.co to get started.
                 </p>
               </li>
 

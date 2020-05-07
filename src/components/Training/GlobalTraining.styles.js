@@ -21,8 +21,9 @@ export const PageWrapper = styled.div`
 
 /* Base Title is the base style for all the module titles. */
 const baseTitleStyle = css`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: normal;
+ 
 `;
 
 /* Main Title is for the main title of each specific sub-modules */
@@ -83,39 +84,39 @@ export const MainContent = styled.section`
 /* Text will be the universal font for all module texts. */
 export const Text = styled.div`
   p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: normal;
     line-height: 25px;
   }
   h2 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
   h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   h4 {
     font-size: 2rem;
     font-weight: normal;
   }
   span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   i {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   a {
-    font-size: 2rem;
-    color: #bababa;
+    font-size: 1.5rem;
+    color: rgb(255,140,85);
     text-decoration: none;
 
     &:hover {
-      color: #343434;
+      color: #375762;
     }
   }
   li {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: bold ;
 `;
 
 export const MediaWrapper = styled(Flex)`
@@ -130,6 +131,9 @@ export const Media = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  img{
+    width:70%;
+  }
 `;
 
 export const Video = styled(Player)`
@@ -146,22 +150,24 @@ export const FormContent = styled.section`
 
 export const FormInput = styled(Field)`
   width: 100%;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   height: 16rem;
   padding: 20px 15px;
   background: #f9f9f9;
   border-radius: 4px 4px 0 0;
   border: none;
   border-bottom: 1px solid #a1a1a1;
+  margin: 20px 0 20px 0;
 `;
 
 export const FormLabel = styled.label`
-  font-size: 2.4rem;
+  font-size: 1.5rem;
+  margin: 20px 0 20px 0;
 `;
 
 export const ShortFormInput = styled(Field)`
   width: 100%;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   height: 7rem;
   padding: 20px 15px;
   background: #f9f9f9;
@@ -173,7 +179,7 @@ export const ShortFormInput = styled(Field)`
 export const CommentInput = styled.textarea`
   width: 100%;
   margin: 40px 0 60px;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   height: 16rem;
   padding: 20px 15px;
   background: #f9f9f9;
@@ -185,7 +191,7 @@ export const CommentInput = styled.textarea`
 export const CheckLabel = styled.label`
   display: block;
   position: relative;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   padding-left: 3.5rem;
   margin-top: 2rem;
 

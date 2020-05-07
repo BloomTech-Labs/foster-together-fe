@@ -1,5 +1,4 @@
 import React from "react";
-import { Image2 } from "../../TrainStyles.js";
 
 import {
   PageWrapper,
@@ -15,10 +14,10 @@ import {
   FormInput,
   ButtonWrapper,
   ContinueBtn,
-  FormLabel,
-} from "../../GlobalModule.styles";
+  FormLabel
+} from "../../GlobalTraining.styles";
 
-export const Module42 = (props) => {
+export const Module42 = props => {
   const { handleBack, errors, touched } = props;
 
   return (
@@ -71,16 +70,20 @@ export const Module42 = (props) => {
             <span style={{ fontWeight: "bold" }}>
               We do not include this section to scare you or make people
               super-suspicious of each other.
-            </span>{" "}
+            </span>
+          </p>
+          <p>
             Rather, we want to create a Foster Together culture of open
             conversations and clarity.
           </p>
           <MediaWrapper>
-            <Image2
-              src="https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525386132069-86G9CUPJYIFKEVYT5SKY/ke17ZwdGBToddI8pDm48kAUFOTPMSVxuKvNFAx6DKiZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ouw-8l5B_J38LMU7OZFvYc0yAe_x11zxahcI_hfw238yWAp0jGKzhuVZoU5dfkFlA/FT+37.jpg?format=750w"
-              width="450px"
-              height="570px"
-            />
+            <Media>
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/5823691a725e2518e78c6c50/1525386132069-86G9CUPJYIFKEVYT5SKY/ke17ZwdGBToddI8pDm48kAUFOTPMSVxuKvNFAx6DKiZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ouw-8l5B_J38LMU7OZFvYc0yAe_x11zxahcI_hfw238yWAp0jGKzhuVZoU5dfkFlA/FT+37.jpg?format=750w"
+                style={{ width: "80%", position: "relative" }}
+                alt=""
+              />
+            </Media>
 
             <div>
               <p>
@@ -115,15 +118,20 @@ export const Module42 = (props) => {
               WHAT SEXUAL OFFENDERS WANT YOU TO KNOW
             </a>
           </h3>
-          <p>Excerpt: Pay attention to our behaviors.</p>
+          <p>
+            <span>Excerpt: Pay attention to our behaviors.</span>
+          </p>
           <p>
             People who sexually abuse children methodically groom to gain
             access—and then compliance.
           </p>
-          <p>
-            “The kids I abused were all seeking love. I would shower the child
-            with gifts, special treatment and attention, and painstakingly move
-            toward the moment when I could gain compliance and cross the line.”
+          <p style={{ margin: "30px" }}>
+            <i>
+              “The kids I abused were all seeking love. I would shower the child
+              with gifts, special treatment and attention, and painstakingly
+              move toward the moment when I could gain compliance and cross the
+              line.”
+            </i>
           </p>
           <p>
             In some instances, the parent is also being groomed through a level
@@ -145,16 +153,13 @@ export const Module42 = (props) => {
             </a>
           </p>
           <p>
-            For a deeper idea of how to keep kids safe, you might want to read
+            For a deeper idea of how to keep kids safe, you might want to read:
           </p>
           <span>
-            Top 10 Questions on Preventing Sexual Abuse (Includes
-            developmentally appropriate explanations,
             <a href="https://parentingsafechildren.com/your-top-10-questions-about-body-safety-2/">
-              {" "}
-              click here{" "}
+              Top 10 Questions on Preventing Sexual Abuse (Includes
+              developmentally appropriate explanations)
             </a>
-            to read)
           </span>
         </Text>
       </MainContent>

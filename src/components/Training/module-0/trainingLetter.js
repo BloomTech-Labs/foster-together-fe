@@ -1,34 +1,31 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
+import React from "react";
+import { useHistory } from "react-router-dom";
+
+import { PageWrapper, BackArrow, PageTitle } from "../GlobalTraining.styles";
+
 import {
-  Wrapper,
-  BackArrow,
-  Title,
   Page,
   Letter,
   Circle,
   LetterCircle,
-  LetterText,
-  
- 
-} from '../TrainStyles'
-import next from '../img/next.png'
-import TrainingNav from '../TrainingNav/NavBar'
+  LetterText
+} from "./trainingLetter.styles";
+
+import next from "../img/next.png";
+import TrainingNav from "../TrainingNav/NavBar";
 
 function LetterTitle() {
-  const { push } = useHistory()
+  const { push } = useHistory();
   return (
-    
-    <Title>
+    <PageTitle>
       <BackArrow
         onClick={() => {
-          push('/')
+          push("/");
         }}
       />
       A letter of gratitude
-    </Title>
-  
-  )
+    </PageTitle>
+  );
 }
 
 const Text1 = () => {
@@ -49,8 +46,8 @@ const Text1 = () => {
         and customization of a match like yours is where the magic happens.
       </LetterText>
     </>
-  )
-}
+  );
+};
 
 const Text2 = () => {
   return (
@@ -59,7 +56,7 @@ const Text2 = () => {
         While good neighbors want to do something simple to help a foster
         family, most people in Colorado don’t know a foster parent. We're fixing
         this by matching helpers with foster families within 10 miles of each
-        other{' '}
+        other{" "}
         <b>
           with the simple commitment of dropping off a meal once a month (and
           freedom, but not obligation, to do more).
@@ -70,8 +67,8 @@ const Text2 = () => {
         and complete.
       </LetterText>
     </>
-  )
-}
+  );
+};
 
 const Text3 = () => {
   return (
@@ -80,7 +77,7 @@ const Text3 = () => {
         My goal is NEVER to overwhelm you or give you needless busywork (who has
         time for that?),
         <b>
-          {' '}
+          {" "}
           but to set you up for success by answering common misconceptions and
           answering the questions you may not know to ask yet.
         </b>
@@ -94,8 +91,8 @@ const Text3 = () => {
         matched!
       </LetterText>
     </>
-  )
-}
+  );
+};
 
 const Text4 = () => {
   return (
@@ -110,8 +107,8 @@ const Text4 = () => {
       </LetterText>
       <LetterText>Hope Forti, Founding Foster Mom</LetterText>
     </>
-  )
-}
+  );
+};
 
 const LetterContext = () => {
   return (
@@ -121,16 +118,16 @@ const LetterContext = () => {
       <Text3 />
       <Text4 />
     </>
-  )
-}
+  );
+};
 
 const ModuleStart = () => {
-  const { push } = useHistory()
+  const { push } = useHistory();
   return (
     <>
       <TrainingNav />
-   
-      <Wrapper>
+
+      <PageWrapper>
         <LetterTitle />
         <Page>
           <Letter>
@@ -139,18 +136,18 @@ const ModuleStart = () => {
           <LetterCircle>
             <Circle
               onClick={() => {
-                push('/training-start-2')
-                window.scrollTo({ top: 0, behavior: 'smooth' })
+                push("/training-start-2");
+                window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              <img src={next} type='button' width='100%' alt='next button' />
+              <img src={next} type="button" width="100%" alt="next button" />
             </Circle>
             <h3>Continue</h3>
           </LetterCircle>
         </Page>
-      </Wrapper>
+      </PageWrapper>
     </>
-  )
-}
+  );
+};
 
-export default ModuleStart
+export default ModuleStart;
