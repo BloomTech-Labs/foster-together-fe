@@ -88,3 +88,26 @@ export const Display = styled(FlexCenter)`
     color: ${({ theme: { palette } }) => palette.primary.main};
   }
 `;
+
+/* NavBar Module Titles */
+
+// Sorry, Lisa!
+// CSS taken from figma. position: absolute was causing it to not render
+export const ModuleTitle = styled.h1`
+  // position: absolute;
+  width: 208px;
+  height: 19px;
+  left: 615px;
+  top: calc(50% - 19px / 2 + 0.5px);
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+
+  /* identical to box height */
+  text-align: center;
+
+  color: #ffffff;
+`;
