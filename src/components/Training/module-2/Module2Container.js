@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
-import { Formik, Form } from 'formik'
-import NavBar from '../TrainingNav/NavBar'
+import React, { useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
+import { Formik, Form } from "formik";
+import NavBar from "../TrainingNav/NavBar";
 
-import Module21 from './components/module2-1'
-import Module22 from './components/module2-2'
-import Module23 from './components/module2-3'
+import Module21 from "./components/module2-1";
+import Module22 from "./components/module2-2";
+import Module23 from "./components/module2-3";
 
 import {
   ModuleTwoSchema1,
   ModuleTwoSchema2,
   ModuleTwoSchema3,
-} from '../../../utils/yupSchemas'
+} from "../../../utils/yupSchemas";
 
 const initialValues = {
-  m2_q1: '',
-  m2_q2: '',
+  m2_q1: "",
+  m2_q2: "",
   m2_q3: 0,
   m2_q4: false,
   // m2_q5
@@ -28,47 +28,47 @@ const initialValues = {
   answer_a7: false,
   answer_a8: false,
   answer_a9: false,
-  answer_b: '',
+  answer_b: "",
   m2_q6: false,
   m2_q7: false,
-  m2_q8: '',
-}
+  m2_q8: "",
+};
 
 const ModuleTwo = () => {
-  const { push } = useHistory()
+  const { push } = useHistory();
   let query = useQuery();
-  let page = parseInt(query.get('page')) - 1;
+  let page = parseInt(query.get("page")) - 1;
   let defaultStep = 0;
   if (page !== null && page < 3) {
     defaultStep = page;
   }
 
-  const [activeStep, setActiveStep] = useState(defaultStep)
+  const [activeStep, setActiveStep] = useState(defaultStep);
 
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
 
   const handleNext = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: "smooth" });
     if (activeStep === 0 || activeStep === 1) {
-      setActiveStep(activeStep + 1)
+      setActiveStep(activeStep + 1);
     } else if (activeStep === 2) {
-      push('/module3')
+      push("/module3");
     }
-  }
+  };
 
   const handleBack = () => {
     if (activeStep === 0) {
-      push('/module1')
+      push("/module1");
     } else if (activeStep === 1 || activeStep === 2) {
-      setActiveStep(activeStep - 1)
+      setActiveStep(activeStep - 1);
     }
-  }
+  };
 
   return (
     <>
-      <NavBar />
+      <NavBar title="Two: How to do it?" />
       <Formik
         initialValues={initialValues}
         onSubmit={handleNext}
@@ -80,7 +80,7 @@ const ModuleTwo = () => {
             : ModuleTwoSchema3
         }
       >
-        {props => (
+        {(props) => (
           <Form>
             {activeStep === 0 ? (
               <Module21 handleBack={handleBack} {...props} />
@@ -93,7 +93,7 @@ const ModuleTwo = () => {
         )}
       </Formik>
     </>
-  )
-}
+  );
+};
 
-export default ModuleTwo
+export default ModuleTwo;
