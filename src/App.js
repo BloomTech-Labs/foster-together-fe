@@ -4,7 +4,8 @@ import { GlobalStyle } from "./GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { initGA, PageView } from "./utils/analytics";
-import { PrivateRoute } from "./utils/customRoutes";
+import { PrivateRouteAdmins, PrivateRouteUsers } from "./utils/customRoutes";
+import { login } from "./redux/thunks/authThunks";
 import LoginForm from "./components/logInForm/LoginForm";
 import SignUp from "./components/signUpForm/SignUpOverlay/SignUpOverlay";
 import AdminDash from "./components/AdminDash/AdminDashboard";
@@ -25,6 +26,7 @@ function App() {
     initGA("UA-159166357-1");
     PageView();
   }, []);
+
   return (
     <>
       <GlobalStyle />
@@ -36,17 +38,18 @@ function App() {
           <Redirect to="/login" />
         </Route>
         <Route exact path="/signup" component={SignUp} />
-        <PrivateRoute exact path="/dashboard" component={AdminDash} />
-        <Route exact path="/map" component={Map} />
-        <PrivateRoute path="/:membertype/:id" component={Profile} />
-        <Route path="/training-start" component={ModuleStart} />
-        <Route path="/training-start-2" component={ModuleStart2} />
-        <Route path="/module1" component={ModuleOne} />
-        <Route path="/module2" component={ModuleTwo} />
-        <Route path="/module3" component={ModuleThree} />
-        <Route path="/module4" component={ModuleFour} />
-        <Route path="/module5" component={ModuleFive} />
-        <Route path="/userProfile" component={UserProfile} />
+
+        <PrivateRouteAdmins exact path="/dashboard" component={AdminDash} />
+        <PrivateRouteAdmins exact path="/map" component={Map} />
+        <PrivateRouteUsers path="/:membertype/:id" component={Profile} />
+        <PrivateRouteUsers path="/training-start" component={ModuleStart} />
+        <PrivateRouteUsers path="/training-start-2" component={ModuleStart2} />
+        <PrivateRouteUsers path="/module1" component={ModuleOne} />
+        <PrivateRouteUsers path="/module2" component={ModuleTwo} />
+        <PrivateRouteUsers path="/module3" component={ModuleThree} />
+        <PrivateRouteUsers path="/module4" component={ModuleFour} />
+        <PrivateRouteUsers path="/module5" component={ModuleFive} />
+        <PrivateRouteUsers path="/userProfile" component={UserProfile} />
       </ThemeProvider>
     </>
   );
