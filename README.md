@@ -18,6 +18,13 @@ You can find the deployed project at [https://app.fostertogether.co/signup](http
 |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jarrod847)                          |                                                                              [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                                                                               |                                                                                  [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                                                                                   |                      [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/StacyWilliams)                      |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jarrod-skahill-561059197) |                                                        [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/marcdandoy)                                                        |                                                        [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/frantz-eder-audige)                                                        | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/stacy-marie-williams) |
 
+|                                                           [Lihuang Zheng](https://github.com/lihuang-zheng)                                                            |                                                           [Ricardo Leite](https://github.com/ricardo-ljr)                                                            |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                          Full Stack Developer                                                                          |                                                                         Full Stack Developer                                                                         |
+| [<img src="https://avatars2.githubusercontent.com/u/57441586?s=460&u=243e425b8a1af3e050703e588805282d2c34c800&v=4" width = "150" />](https://github.com/lihuang-zheng) | [<img src="https://avatars0.githubusercontent.com/u/56242343?s=460&u=1e386d5ef6ef473bcfb1bf9b7dd3001cb53c3401&v=4" width = "150" />](https://github.com/ricardo-ljr) |
+|                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lihuang-zheng)                                       |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ricardo-ljr)                                       |
+|                     [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/lihuang-zheng/)                     |             [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ricardo-leite-jr-651b92115/)              |
+
 <br>
 <br>
 
@@ -100,11 +107,18 @@ PostgreSQL is a powerful, open source object-relational database system with ove
 
 Checkr is a modern, RESTful API-driven background screening service. The Checkr API uses resource-oriented URLs, supports HTTPS authentication and HTTPS verbs, and leverages JSON in all responses passed back to customers.
 
+#### [MapBox](https://www.mapbox.com/)
+
+MapBox allows for precise location data with a built-in map. This is the API used for the map on the Admins dashboard.
+To use it, you'll need to create a free account and get a free token. You'll need to change the enviroment variable to the token you get as well as the token in Redux memthunks.
+https://api.mapbox.com/geocoding/v5/mapbox.places/${values.address}%20${values.city}%20${values.state}.json?country=US&access_token={TOKEN HERE}
+
 # Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
     *  REACT_APP_API_URL - base URL for backend API (should end with /api)
+    *  REACT_APP_MAPBOX_TOKEN - you need a token from mapbox.com - use default public token here
 
 # Testing
 
@@ -158,4 +172,5 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 ## Documentation
 
 See [Backend Documentation](https://github.com/Lambda-School-Labs/foster-together-be#readme) for details on the backend of our project.
+
 ## For Deps
