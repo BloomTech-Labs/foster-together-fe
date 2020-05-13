@@ -154,7 +154,7 @@ export const Module11 = ({ errors, touched }) => {
           }}
           validationSchema={ModuleOneSchema}
           onSubmit={() => {
-            push("/module2");
+            push("/module2-1");
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
