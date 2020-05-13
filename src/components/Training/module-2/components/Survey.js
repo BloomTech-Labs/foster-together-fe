@@ -40,40 +40,6 @@ const questionOneData = [
   "One weekend a month"
 ];
 
-const questionThreeData = [
-  {
-    text:
-      "Additional meal drop-offs monthly (option to have foster parent provide a gift card for groceries)",
-    value: initialValues.answer_a1
-  },
-  {
-    text: "Help around the house: Cleaning the kitchen",
-    value: initialValues.answer_a2
-  },
-  { text: "Help around the house: Laundry", value: initialValues.answer_a3 },
-  { text: "Help around the house: Yardwork", value: initialValues.answer_a4 },
-  {
-    text: "Help around the house: Sweeping/cleaning floors",
-    value: initialValues.answer_a5
-  },
-  {
-    text:
-      "Driving kids to visits with parents, therapy, or school activity (Requires foster agency/county approval. Contact Hope for help with approval.)",
-    value: initialValues.answer_a6
-  },
-  {
-    text:
-      "Babysitting under six hours (May require foster agency/county approval. Contact Hope for help with approval.)",
-    value: initialValues.answer_a7
-  },
-  {
-    text:
-      "Respite for more than six hours or overnight (Requires CPA/county approval. Contact Hope for help with approval.)",
-    value: initialValues.answer_a8
-  },
-  { text: "Other (please specify below)", value: initialValues.answer_a9 }
-];
-
 const QuestionFour = ({ setFieldValue, values }) => {
   const handleClick = value => {
     setFieldValue("m2_q6", value);
@@ -120,6 +86,41 @@ const QuestionFive = ({ setFieldValue, values }) => {
 };
 
 const Survey = props => {
+  const { values } = props;
+
+  const questionThreeData = [
+    {
+      text:
+        "Additional meal drop-offs monthly (option to have foster parent provide a gift card for groceries)",
+      value: props.answer_a1
+    },
+    {
+      text: "Help around the house: Cleaning the kitchen",
+      value: props.answer_a2
+    },
+    { text: "Help around the house: Laundry", value: props.answer_a3 },
+    { text: "Help around the house: Yardwork", value: props.answer_a4 },
+    {
+      text: "Help around the house: Sweeping/cleaning floors",
+      value: props.answer_a5
+    },
+    {
+      text:
+        "Driving kids to visits with parents, therapy, or school activity (Requires foster agency/county approval. Contact Hope for help with approval.)",
+      value: props.answer_a6
+    },
+    {
+      text:
+        "Babysitting under six hours (May require foster agency/county approval. Contact Hope for help with approval.)",
+      value: props.answer_a7
+    },
+    {
+      text:
+        "Respite for more than six hours or overnight (Requires CPA/county approval. Contact Hope for help with approval.)",
+      value: props.answer_a8
+    },
+    { text: "Other (please specify below)", value: props.answer_a9 }
+  ];
   const { push } = useHistory();
 
   // onClick functions for setFieldValues
