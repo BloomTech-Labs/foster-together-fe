@@ -13,8 +13,6 @@ const TaskBar = props => {
 
   const familiesToMatch = props.familiesToMatch;
 
-  console.log("Props here", props.members);
-
   const tasks = [
     {
       id: 1,
