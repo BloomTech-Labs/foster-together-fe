@@ -15,7 +15,6 @@ import {
 
 import { mealTipsImage } from "../../img";
 import Survey from "./Survey";
-import { Form } from "formik";
 
 const MealTipsWrapper = () => {
   return (
