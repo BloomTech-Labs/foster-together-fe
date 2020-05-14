@@ -13,7 +13,9 @@ import {
   FormLabel,
   ShortFormInput,
   ButtonWrapper,
-  SubmitBtn
+  SubmitBtn,
+  Media,
+  MediaWrapper
 } from "../../GlobalTraining.styles.js";
 
 const Module5 = ({ errors, touched }) => {
@@ -32,7 +34,10 @@ const Module5 = ({ errors, touched }) => {
 
       <MainContent>
         <Text>
+        <MediaWrapper>
+          <div>
           <ol>
+          
             <li>
               <p>
                 To recruit and minimally vet potential foster family helpers
@@ -68,7 +73,13 @@ const Module5 = ({ errors, touched }) => {
                 match.
               </p>
             </li>
-          </ol>
+            </ol>
+            </div>
+            <Media style={{ justifyContent: "center" }}>
+                  <img src={require("../../img/FT1.png")} alt="" />
+                </Media>
+              </MediaWrapper>
+       
 
           <h4>Foster Parent’s Responsibility</h4>
           <ol>
@@ -156,6 +167,9 @@ const Module5 = ({ errors, touched }) => {
               </p>
             </li>
           </ol>
+          <Media style={{ justifyContent: "center", padding:  "30px"}}>
+                  <img src={require("../../img/FT20.png")} alt="" />
+                </Media>
         </Text>
       </MainContent>
 

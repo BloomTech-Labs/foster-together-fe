@@ -8,6 +8,7 @@ import {
   MainContent,
   FormContent,
   Text,
+  Media,
   ShortFormInput,
   CommentInput,
   ButtonWrapper,
@@ -101,6 +102,10 @@ export const Module44 = props => {
               </a>
             </p>
           </Text>
+          <Media style={{ justifyContent: "center" }}>
+                  <img src={require("../../img/FT6.png")} alt=""
+                   />
+                </Media>
         </MainContent>
 
         <FormContent>
