@@ -40,28 +40,6 @@ const questionOneData = [
   "One weekend a month"
 ];
 
-const QuestionFour = ({ setFieldValue, values }) => {
-  const handleClick = value => {
-    setFieldValue("m2_q6", value);
-  };
-
-  return (
-    <FormLabel>
-      Do you understand that you may need a background check in order to provide
-      assistance beyond meal drop-off? *
-      <CheckLabel onClick={() => handleClick(true)}>
-        Yes, I understand that may need a background check in order to provide
-        assistance beyond meal meal drop-off.
-        <Checkbox radio /* checked={values.m2_q6} */ />
-      </CheckLabel>
-      <CheckLabel onClick={() => handleClick(false)}>
-        No.
-        <Checkbox radio /* checked={!values.m2_q6} */ />
-      </CheckLabel>
-    </FormLabel>
-  );
-};
-
 const QuestionFive = ({ setFieldValue, values }) => {
   const handleClick = value => {
     setFieldValue("m2_q7", value);
@@ -73,11 +51,11 @@ const QuestionFive = ({ setFieldValue, values }) => {
       help facilitate any needed background checks with the family's foster care
       agency or county, and that this process can take one to four weeks,
       depending on the requirements of the specific county or agency? *
-      <CheckLabel onClick={() => handleClick(true)}>
+      <CheckLabel onClick={() => setFieldValue("m2_q7", true)}>
         Yes
-        <Checkbox radio /* checked={values.m2_q7} */ />
+        <Checkbox radio checked={values.m2_q7} />
       </CheckLabel>
-      <CheckLabel onClick={() => handleClick(false)}>
+      <CheckLabel onClick={() => setFieldValue("m2_q7", false)}>
         No
         <Checkbox radio /* checked={!values.m2_q7} */ />
       </CheckLabel>
@@ -86,43 +64,7 @@ const QuestionFive = ({ setFieldValue, values }) => {
 };
 
 const Survey = props => {
-  const { values } = props;
-
-  const questionThreeData = [
-    {
-      text:
-        "Additional meal drop-offs monthly (option to have foster parent provide a gift card for groceries)",
-      value: initialValues.answer_a1
-    },
-    {
-      text: "Help around the house: Cleaning the kitchen",
-      value: initialValues.answer_a2
-    },
-    { text: "Help around the house: Laundry", value: initialValues.answer_a3 },
-    { text: "Help around the house: Yardwork", value: initialValues.answer_a4 },
-    {
-      text: "Help around the house: Sweeping/cleaning floors",
-      value: initialValues.answer_a5
-    },
-    {
-      text:
-        "Driving kids to visits with parents, therapy, or school activity (Requires foster agency/county approval. Contact Hope for help with approval.)",
-      value: initialValues.answer_a6
-    },
-    {
-      text:
-        "Babysitting under six hours (May require foster agency/county approval. Contact Hope for help with approval.)",
-      value: initialValues.answer_a7
-    },
-    {
-      text:
-        "Respite for more than six hours or overnight (Requires CPA/county approval. Contact Hope for help with approval.)",
-      value: initialValues.answer_a8
-    },
-    { text: "Other (please specify below)", value: initialValues.answer_a9 }
-  ];
   const { push } = useHistory();
-
   // onClick functions for setFieldValues
 
   return (
@@ -169,20 +111,122 @@ const Survey = props => {
             <FormLabel>
               As you get to know them, are you open to providing practical
               support to the foster family, beyond meals?
-              <CheckLabel onClick={() => setFieldValue("answer_a1", true)}>
-                "Additional meal drop-offs monthly (option to have foster parent
-                provide a gift card for groceries)"
+              <CheckLabel
+                onClick={() => {
+                  if (values.answer_a1 === false) {
+                    setFieldValue("answer_a1", true);
+                  } else {
+                    setFieldValue("answer_a1", false);
+                  }
+                }}
+              >
+                Additional meal drop-offs monthly (option to have foster parent
+                provide a gift card for groceries)
                 <Checkbox checked={values.answer_a1} />
               </CheckLabel>
-              <CheckLabel onClick={() => setFieldValue("answer_a2", true)}>
-                "Additional meal drop-offs monthly (option to have foster parent
-                provide a gift card for groceries)"
+              <CheckLabel
+                onClick={() => {
+                  if (values.answer_a2 === false) {
+                    setFieldValue("answer_a2", true);
+                  } else {
+                    setFieldValue("answer_a2", false);
+                  }
+                }}
+              >
+                Help around the house: Cleaning the kitchen
                 <Checkbox checked={values.answer_a2} />
+              </CheckLabel>
+              <CheckLabel
+                onClick={() => {
+                  if (values.answer_a3 === false) {
+                    setFieldValue("answer_a3", true);
+                  } else {
+                    setFieldValue("answer_a3", false);
+                  }
+                }}
+              >
+                Help around the house: Laundry
+                <Checkbox checked={values.answer_a3} />
+              </CheckLabel>
+              <CheckLabel
+                onClick={() => {
+                  if (values.answer_a4 === false) {
+                    setFieldValue("answer_a4", true);
+                  } else {
+                    setFieldValue("answer_a4", false);
+                  }
+                }}
+              >
+                Help around the house: Yardwork
+                <Checkbox checked={values.answer_a4} />
+              </CheckLabel>
+              <CheckLabel
+                onClick={() => {
+                  if (values.answer_a5 === false) {
+                    setFieldValue("answer_a5", true);
+                  } else {
+                    setFieldValue("answer_a5", false);
+                  }
+                }}
+              >
+                Help around the house: Sweeping/cleaning floors
+                <Checkbox checked={values.answer_a5} />
+              </CheckLabel>
+              <CheckLabel
+                onClick={() => {
+                  if (values.answer_a6 === false) {
+                    setFieldValue("answer_a6", true);
+                  } else {
+                    setFieldValue("answer_a6", false);
+                  }
+                }}
+              >
+                Driving kids to visits with parents, therapy, or school activity
+                (Requires foster agency/county approval. Contact Hope for help
+                with approval.)
+                <Checkbox checked={values.answer_a6} />
+              </CheckLabel>
+              <CheckLabel
+                onClick={() => {
+                  if (values.answer_a7 === false) {
+                    setFieldValue("answer_a7", true);
+                  } else {
+                    setFieldValue("answer_a7", false);
+                  }
+                }}
+              >
+                Babysitting under six hours (May require foster agency/county
+                approval. Contact Hope for help with approval.)
+                <Checkbox checked={values.answer_a7} />
+              </CheckLabel>
+              <CheckLabel
+                onClick={() => {
+                  if (values.answer_a8 === false) {
+                    setFieldValue("answer_a8", true);
+                  } else {
+                    setFieldValue("answer_a8", false);
+                  }
+                }}
+              >
+                Respite for more than six hours or overnight (Requires
+                CPA/county approval. Contact Hope for help with approval.)
+                <Checkbox checked={values.answer_a8} />
               </CheckLabel>
             </FormLabel>
 
-            <FormLabel>
+            <CheckLabel
+              onClick={() => {
+                if (values.answer_a9 === false) {
+                  setFieldValue("answer_a9", true);
+                } else {
+                  setFieldValue("answer_a9", false);
+                }
+              }}
+            >
               Other ways I'd like to help (if any)
+              <Checkbox checked={values.answer_a9} />
+            </CheckLabel>
+            <FormLabel>
               <FormInput
                 component="textarea"
                 id="answer_b"
@@ -191,8 +235,36 @@ const Survey = props => {
               />
             </FormLabel>
 
-            <QuestionFour {...props} />
-            <QuestionFive {...props} />
+            <FormLabel>
+              Do you understand that Foster Together and the foster parents are
+              here to help facilitate any needed background checks with the
+              family's foster care agency or county, and that this process can
+              take one to four weeks, depending on the requirements of the
+              specific county or agency? *
+              <CheckLabel onClick={() => setFieldValue("m2_q6", true)}>
+                Yes
+                <Checkbox radio checked={values.m2_q6} />
+              </CheckLabel>
+              <CheckLabel onClick={() => setFieldValue("m2_q6", false)}>
+                No
+                <Checkbox radio checked={!values.m2_q6} />
+              </CheckLabel>
+            </FormLabel>
+            <FormLabel>
+              Do you understand that Foster Together and the foster parents are
+              here to help facilitate any needed background checks with the
+              family's foster care agency or county, and that this process can
+              take one to four weeks, depending on the requirements of the
+              specific county or agency? *
+              <CheckLabel onClick={() => setFieldValue("m2_q7", true)}>
+                Yes
+                <Checkbox radio checked={values.m2_q7} />
+              </CheckLabel>
+              <CheckLabel onClick={() => setFieldValue("m2_q7", false)}>
+                No
+                <Checkbox radio checked={!values.m2_q7} />
+              </CheckLabel>
+            </FormLabel>
 
             <FormLabel>
               From what you’ve learned so far how can we improve the modules
