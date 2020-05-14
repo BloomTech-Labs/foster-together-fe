@@ -1,5 +1,7 @@
 import React from "react";
-
+import { useHistory } from "react-router-dom";
+import { Formik, Form } from "formik";
+import { ModuleFourSchema4 } from "../../../../utils/yupSchemas/index";
 import {
   BackArrow,
   PageWrapper,
@@ -8,6 +10,7 @@ import {
   MainContent,
   FormContent,
   Text,
+  Media,
   ShortFormInput,
   CommentInput,
   ButtonWrapper,
@@ -16,7 +19,10 @@ import {
 } from "../../GlobalTraining.styles";
 
 export const Module44 = props => {
-  const { handleBack, errors, touched } = props;
+  const handleBack = () => {
+    push("/module4-3");
+  };
+  const { push } = useHistory();
 
   return (
     <>
@@ -101,59 +107,79 @@ export const Module44 = props => {
               </a>
             </p>
           </Text>
+          <Media style={{ justifyContent: "center" }}>
+            <img src={require("../../img/FT6.png")} alt="" />
+          </Media>
         </MainContent>
 
         <FormContent>
-          <FormTitle>
-            Understanding actions in cases of potential abuse: Complete before
-            proceeding
-          </FormTitle>
-          <FormLabel>
-            What Colorado-based number do you call if you suspect a child is
-            being abused?
-            <ShortFormInput
-              id="m4_q9"
-              name="m4_q9"
-              placeholder="Your Answer Here"
-            />
-            {errors?.m4_q9 && touched?.m4_q9 && (
-              <p style={{ color: "red" }}>{errors?.m4_q9}</p>
+          <Formik
+            initialValues={{
+              m4_q9: "",
+              m4_q10: "",
+              m4_q11: ""
+            }}
+            validationSchema={ModuleFourSchema4}
+            onSubmit={() => {
+              push("/module5");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            {({ errors, touched }) => (
+              <Form>
+                <FormTitle>
+                  Understanding actions in cases of potential abuse: Complete
+                  before proceeding
+                </FormTitle>
+                <FormLabel>
+                  What Colorado-based number do you call if you suspect a child
+                  is being abused?
+                  <ShortFormInput
+                    id="m4_q9"
+                    name="m4_q9"
+                    placeholder="Your Answer Here"
+                  />
+                  {errors?.m4_q9 && touched?.m4_q9 && (
+                    <p style={{ color: "red" }}>{errors?.m4_q9}</p>
+                  )}
+                </FormLabel>
+                <FormLabel>
+                  What is the name of the local program that walks abused kids
+                  through the investigation and initial recovery process? *
+                  <ShortFormInput
+                    id="m4_q10"
+                    name="m4_q10"
+                    placeholder="Your Answer Here"
+                  />
+                  {errors?.m4_q10 && touched?.m4_q10 && (
+                    <p style={{ color: "red" }}>{errors?.m4_q10}</p>
+                  )}
+                </FormLabel>
+                <FormLabel>
+                  Where can you request a referral for the treatment of someone
+                  who has abused children? *
+                  <ShortFormInput
+                    id="m4_q11"
+                    name="m4_q11"
+                    placeholder="Your Answer Here"
+                  />
+                  {errors?.m4_q11 && touched?.m4_q11 && (
+                    <p style={{ color: "red" }}>{errors?.m4_q11}</p>
+                  )}
+                </FormLabel>
+                <FormLabel>
+                  From what you’ve learned so far how can we improve the modules
+                  you’ve completed? What would you add, shorten, or eliminate?
+                  This program is always looking for ways to be better, so your
+                  feedback is definitely helpful!
+                  <CommentInput placeholder="Your Answer Here" />
+                </FormLabel>
+                <ButtonWrapper>
+                  <SubmitBtn type="submit">Complete Module 4</SubmitBtn>
+                </ButtonWrapper>
+              </Form>
             )}
-          </FormLabel>
-          <FormLabel>
-            What is the name of the local program that walks abused kids through
-            the investigation and initial recovery process? *
-            <ShortFormInput
-              id="m4_q10"
-              name="m4_q10"
-              placeholder="Your Answer Here"
-            />
-            {errors?.m4_q10 && touched?.m4_q10 && (
-              <p style={{ color: "red" }}>{errors?.m4_q10}</p>
-            )}
-          </FormLabel>
-          <FormLabel>
-            Where can you request a referral for the treatment of someone who
-            has abused children? *
-            <ShortFormInput
-              id="m4_q11"
-              name="m4_q11"
-              placeholder="Your Answer Here"
-            />
-            {errors?.m4_q11 && touched?.m4_q11 && (
-              <p style={{ color: "red" }}>{errors?.m4_q11}</p>
-            )}
-          </FormLabel>
-          <FormLabel>
-            From what you’ve learned so far how can we improve the modules
-            you’ve completed? What would you add, shorten, or eliminate? This
-            program is always looking for ways to be better, so your feedback is
-            definitely helpful!
-            <CommentInput placeholder="Your Answer Here" />
-          </FormLabel>
-          <ButtonWrapper>
-            <SubmitBtn type="submit">Complete Module 4</SubmitBtn>
-          </ButtonWrapper>
+          </Formik>
         </FormContent>
       </PageWrapper>
     </>

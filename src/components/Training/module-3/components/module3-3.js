@@ -1,5 +1,7 @@
 import React from "react";
-
+import { useHistory } from "react-router-dom";
+import { Formik, Form } from "formik";
+import { ModuleThreeSchema3 } from "../../../../utils/yupSchemas/index.js";
 import {
   PageWrapper,
   PageTitle,
@@ -17,11 +19,16 @@ import {
   ContinueBtn
 } from "../../GlobalTraining.styles.js";
 
-export const Module33 = ({ handleBack, errors, touched }) => {
+export const Module33 = () => {
+  const handleBack = () => {
+    push("/module3-2");
+  };
+  const { push } = useHistory();
+
   return (
     <PageWrapper>
       <PageTitle>
-        <BackArrow onclick={handleBack} />
+        <BackArrow onClick={handleBack} />
         Foster parents' least favorite compliments (and a few ideas for what you
         should say instead)
       </PageTitle>
@@ -157,18 +164,37 @@ export const Module33 = ({ handleBack, errors, touched }) => {
       </MainContent>
 
       <FormContent>
-        <FormTitle>What to say: Complete before proceeding</FormTitle>
-        <FormLabel>
-          To you, what is the most surprising phrase on the "to avoid saying"
-          list? *
-          <FormInput id="m3_q3" name="m3_q3" placeholder="Your answer here" />
-          {errors?.m3_q3 && touched?.m3_q3 && (
-            <p style={{ color: "red" }}>{errors?.m3_q3}</p>
+        <Formik
+          initialValues={{
+            m3_q3: ""
+          }}
+          validationSchema={ModuleThreeSchema3}
+          onSubmit={() => {
+            push("/module3-4");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form>
+              <FormTitle>What to say: Complete before proceeding</FormTitle>
+              <FormLabel>
+                To you, what is the most surprising phrase on the "to avoid
+                saying" list? *
+                <FormInput
+                  id="m3_q3"
+                  name="m3_q3"
+                  placeholder="Your answer here"
+                />
+                {errors?.m3_q3 && touched?.m3_q3 && (
+                  <p style={{ color: "red" }}>{errors?.m3_q3}</p>
+                )}
+              </FormLabel>
+              <ButtonWrapper>
+                <ContinueBtn type="submit">Continue</ContinueBtn>
+              </ButtonWrapper>
+            </Form>
           )}
-        </FormLabel>
-        <ButtonWrapper>
-          <ContinueBtn type="submit">Continue</ContinueBtn>
-        </ButtonWrapper>
+        </Formik>
       </FormContent>
     </PageWrapper>
   );

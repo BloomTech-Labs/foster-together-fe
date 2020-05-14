@@ -22,13 +22,13 @@ const ModuleOne = () => {
     if (activeStep === 0) {
       setActiveStep(activeStep + 1);
     } else if (activeStep === 1) {
-      push("/module2");
+      push("/module2-1");
     }
   };
 
   const handleBack = () => {
     if (activeStep === 0) {
-      push("/training-start");
+      push("/training-start-2");
     } else if (activeStep === 1) {
       setActiveStep(activeStep - 1);
     }

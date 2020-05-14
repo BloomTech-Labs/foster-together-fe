@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import {
   PageWrapper,
@@ -15,7 +16,6 @@ import {
 
 import { mealTipsImage } from "../../img";
 import Survey from "./Survey";
-import { Form } from "formik";
 
 const MealTipsWrapper = () => {
   return (
@@ -241,7 +241,11 @@ const MealTipsWrapper = () => {
   );
 };
 
-export const Module23 = ({ handleBack, ...props }) => {
+export const Module23 = (...props) => {
+  const handleBack = () => {
+    push("/module2-2");
+  };
+  const { push } = useHistory();
   return (
     <PageWrapper>
       <PageTitle>

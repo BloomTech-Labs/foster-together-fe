@@ -1,4 +1,7 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { Formik, Form } from "formik";
+import { ModuleThreeSchema2 } from "../../../../utils/yupSchemas/index.js";
 
 import {
   PageWrapper,
@@ -16,7 +19,12 @@ import {
   ContinueBtn
 } from "../../GlobalTraining.styles.js";
 
-export const Module32 = ({ handleBack, errors, touched }) => {
+export const Module32 = () => {
+  const handleBack = () => {
+    push("/module3-1");
+  };
+  const { push } = useHistory();
+
   return (
     <PageWrapper>
       <PageTitle>
@@ -104,18 +112,37 @@ export const Module32 = ({ handleBack, errors, touched }) => {
       </MainContent>
 
       <FormContent>
-        <FormTitle>My strengths: Complete before proceeding</FormTitle>
-        <FormLabel>
-          After reading this list, please name one or two strengths you will
-          bring to the match. *
-          <FormInput id="m3_q2" name="m3_q2" placeholder="Your answer here" />
-          {errors?.m3_q2 && touched?.m3_q2 && (
-            <p style={{ color: "red" }}>{errors?.m3_q2}</p>
+        <Formik
+          initialValues={{
+            m3_q2: ""
+          }}
+          validationSchema={ModuleThreeSchema2}
+          onSubmit={() => {
+            push("/module3-3");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form>
+              <FormTitle>My strengths: Complete before proceeding</FormTitle>
+              <FormLabel>
+                After reading this list, please name one or two strengths you
+                will bring to the match. *
+                <FormInput
+                  id="m3_q2"
+                  name="m3_q2"
+                  placeholder="Your answer here"
+                />
+                {errors?.m3_q2 && touched?.m3_q2 && (
+                  <p style={{ color: "red" }}>{errors?.m3_q2}</p>
+                )}
+              </FormLabel>
+              <ButtonWrapper>
+                <ContinueBtn type="submit">Continue</ContinueBtn>
+              </ButtonWrapper>
+            </Form>
           )}
-        </FormLabel>
-        <ButtonWrapper>
-          <ContinueBtn type="submit">Continue</ContinueBtn>
-        </ButtonWrapper>
+        </Formik>
       </FormContent>
     </PageWrapper>
   );

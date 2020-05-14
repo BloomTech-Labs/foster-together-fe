@@ -1,5 +1,7 @@
 import React from "react";
-
+import { useHistory } from "react-router-dom";
+import { Formik, Form } from "formik";
+import { ModuleFourSchema2 } from "../../../../utils/yupSchemas/index";
 import {
   PageWrapper,
   PageTitle,
@@ -18,7 +20,10 @@ import {
 } from "../../GlobalTraining.styles";
 
 export const Module42 = props => {
-  const { handleBack, errors, touched } = props;
+  const handleBack = () => {
+    push("/module4-1");
+  };
+  const { push } = useHistory();
 
   return (
     <PageWrapper>
@@ -165,24 +170,40 @@ export const Module42 = props => {
       </MainContent>
 
       <FormContent>
-        <FormTitle>
-          Understanding sexual abuse prevention: Complete before proceeding
-        </FormTitle>
-        <FormLabel>
-          What did you learn from the above article(s)? (3+ sentences)
-          <FormInput
-            component="textarea"
-            id="m4_q2"
-            name="m4_q2"
-            placeholder="Your Answer Here"
-          />
-          {errors?.m4_q2 && touched?.m4_q2 && (
-            <p style={{ color: "red" }}>{errors.m4_q2}</p>
+        <Formik
+          initialValues={{
+            m4_q2: ""
+          }}
+          validationSchema={ModuleFourSchema2}
+          onSubmit={() => {
+            push("/module4-3");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form>
+              <FormTitle>
+                Understanding sexual abuse prevention: Complete before
+                proceeding
+              </FormTitle>
+              <FormLabel>
+                What did you learn from the above article(s)? (3+ sentences)
+                <FormInput
+                  component="textarea"
+                  id="m4_q2"
+                  name="m4_q2"
+                  placeholder="Your Answer Here"
+                />
+                {errors?.m4_q2 && touched?.m4_q2 && (
+                  <p style={{ color: "red" }}>{errors.m4_q2}</p>
+                )}
+              </FormLabel>
+              <ButtonWrapper>
+                <ContinueBtn type="submit">Continue</ContinueBtn>
+              </ButtonWrapper>
+            </Form>
           )}
-        </FormLabel>
-        <ButtonWrapper>
-          <ContinueBtn type="submit">Continue</ContinueBtn>
-        </ButtonWrapper>
+        </Formik>
       </FormContent>
     </PageWrapper>
   );
