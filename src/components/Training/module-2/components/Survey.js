@@ -92,34 +92,34 @@ const Survey = props => {
     {
       text:
         "Additional meal drop-offs monthly (option to have foster parent provide a gift card for groceries)",
-      value: props.answer_a1
+      value: initialValues.answer_a1
     },
     {
       text: "Help around the house: Cleaning the kitchen",
-      value: props.answer_a2
+      value: initialValues.answer_a2
     },
-    { text: "Help around the house: Laundry", value: props.answer_a3 },
-    { text: "Help around the house: Yardwork", value: props.answer_a4 },
+    { text: "Help around the house: Laundry", value: initialValues.answer_a3 },
+    { text: "Help around the house: Yardwork", value: initialValues.answer_a4 },
     {
       text: "Help around the house: Sweeping/cleaning floors",
-      value: props.answer_a5
+      value: initialValues.answer_a5
     },
     {
       text:
         "Driving kids to visits with parents, therapy, or school activity (Requires foster agency/county approval. Contact Hope for help with approval.)",
-      value: props.answer_a6
+      value: initialValues.answer_a6
     },
     {
       text:
         "Babysitting under six hours (May require foster agency/county approval. Contact Hope for help with approval.)",
-      value: props.answer_a7
+      value: initialValues.answer_a7
     },
     {
       text:
         "Respite for more than six hours or overnight (Requires CPA/county approval. Contact Hope for help with approval.)",
-      value: props.answer_a8
+      value: initialValues.answer_a8
     },
-    { text: "Other (please specify below)", value: props.answer_a9 }
+    { text: "Other (please specify below)", value: initialValues.answer_a9 }
   ];
   const { push } = useHistory();
 
@@ -169,17 +169,16 @@ const Survey = props => {
             <FormLabel>
               As you get to know them, are you open to providing practical
               support to the foster family, beyond meals?
-              {questionThreeData.map((question, index) => (
-                <CheckLabel
-                  key={index}
-                  onClick={() =>
-                    setFieldValue(`answer_a${index + 1}`, !question.value)
-                  }
-                >
-                  {question.text}
-                  <Checkbox checked={question.value} />
-                </CheckLabel>
-              ))}
+              <CheckLabel onClick={() => setFieldValue("answer_a1", true)}>
+                "Additional meal drop-offs monthly (option to have foster parent
+                provide a gift card for groceries)"
+                <Checkbox checked={values.answer_a1} />
+              </CheckLabel>
+              <CheckLabel onClick={() => setFieldValue("answer_a2", true)}>
+                "Additional meal drop-offs monthly (option to have foster parent
+                provide a gift card for groceries)"
+                <Checkbox checked={values.answer_a2} />
+              </CheckLabel>
             </FormLabel>
 
             <FormLabel>
