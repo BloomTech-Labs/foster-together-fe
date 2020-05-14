@@ -1,4 +1,8 @@
 import React from "react";
+import { Link, useHistory } from "react-router-dom";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+import { ModuleThreeSchema1 } from "../../../../utils/yupSchemas/index";
 
 import {
   PageWrapper,
@@ -17,7 +21,12 @@ import {
   ContinueBtn
 } from "../../GlobalTraining.styles.js";
 
-export const Module31 = ({ handleBack, errors, touched }) => {
+export const Module31 = () => {
+  const handleBack = () => {
+    push("/module2-3");
+  };
+  const { push } = useHistory();
+
   return (
     <>
       <PageWrapper>
@@ -165,24 +174,41 @@ export const Module31 = ({ handleBack, errors, touched }) => {
         </MainContent>
 
         <FormContent>
-          <FormTitle>Family differences: Complete before proceeding</FormTitle>
-          <FormLabel>
-            Are you surprised by any of the possible differences in family
-            structure or norms? Do any of them make you feel uneasy? (2+
-            sentences) *
-            <FormInput
-              component="textarea"
-              id="m3_q1"
-              name="m3_q1"
-              placeholder="Your answer here"
-            />
-            {errors?.m3_q1 && touched?.m3_q1 && (
-              <p style={{ color: "red" }}>{errors?.m3_q1}</p>
+          <Formik
+            initialValues={{
+              m3_q1: ""
+            }}
+            validationSchema={ModuleThreeSchema1}
+            onSubmit={() => {
+              push("/module3-2");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            {({ errors, touched }) => (
+              <Form>
+                <FormTitle>
+                  Family differences: Complete before proceeding
+                </FormTitle>
+                <FormLabel>
+                  Are you surprised by any of the possible differences in family
+                  structure or norms? Do any of them make you feel uneasy? (2+
+                  sentences) *
+                  <FormInput
+                    component="textarea"
+                    id="m3_q1"
+                    name="m3_q1"
+                    placeholder="Your answer here"
+                  />
+                  {errors?.m3_q1 && touched?.m3_q1 && (
+                    <p style={{ color: "red" }}>{errors?.m3_q1}</p>
+                  )}
+                </FormLabel>
+                <ButtonWrapper>
+                  <ContinueBtn type="submit">Continue</ContinueBtn>
+                </ButtonWrapper>
+              </Form>
             )}
-          </FormLabel>
-          <ButtonWrapper>
-            <ContinueBtn type="submit">Continue</ContinueBtn>
-          </ButtonWrapper>
+          </Formik>
         </FormContent>
       </PageWrapper>
     </>

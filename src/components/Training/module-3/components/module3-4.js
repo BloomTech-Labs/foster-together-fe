@@ -1,5 +1,8 @@
 import React from "react";
-
+import { Link, useHistory } from "react-router-dom";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+import { ModuleThreeSchema4 } from "../../../../utils/yupSchemas/index.js";
 import {
   PageWrapper,
   PageTitle,
@@ -16,7 +19,12 @@ import {
   SubmitBtn
 } from "../../GlobalTraining.styles.js";
 
-export const Module34 = ({ handleBack, errors, touched }) => {
+export const Module34 = () => {
+  const handleBack = () => {
+    push("/module3-3");
+  };
+  const { push } = useHistory();
+
   return (
     <PageWrapper>
       <PageTitle>
@@ -160,26 +168,52 @@ export const Module34 = ({ handleBack, errors, touched }) => {
       </MainContent>
 
       <FormContent>
-        <FormTitle>What kids need: Complete before proceeding</FormTitle>
-        <FormLabel>
-          What, if anything, was new to you in this section on how to approach
-          the kids? *
-          <FormInput id="m3_q4" name="m3_q4" placeholder="Your answer here" />
-          {errors?.m3_q4 && touched?.m3_q4 && (
-            <p style={{ color: "red" }}>{errors?.m3_q4}</p>
+        <Formik
+          initialValues={{
+            m3_q4: "",
+            m3_q5: ""
+          }}
+          validationSchema={ModuleThreeSchema4}
+          onSubmit={() => {
+            push("/module4");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form>
+              <FormTitle>What kids need: Complete before proceeding</FormTitle>
+              <FormLabel>
+                What, if anything, was new to you in this section on how to
+                approach the kids? *
+                <FormInput
+                  id="m3_q4"
+                  name="m3_q4"
+                  placeholder="Your answer here"
+                />
+                {errors?.m3_q4 && touched?.m3_q4 && (
+                  <p style={{ color: "red" }}>{errors?.m3_q4}</p>
+                )}
+              </FormLabel>
+
+              <FormLabel>
+            
+                Do you anticipate any of these foster parent requests will be
+                difficult for you? Why or why not? *
+                <FormInput
+                  id="m3_q5"
+                  name="m3_q5"
+                  placeholder="Your answer here"
+                />
+                {errors?.m3_q5 && touched?.m3_q5 && (
+                  <p style={{ color: "red" }}>{errors?.m3_q5}</p>
+                )}
+              </FormLabel>
+              <ButtonWrapper>
+                <SubmitBtn type="submit">Complete Module 3</SubmitBtn>
+              </ButtonWrapper>
+            </Form>
           )}
-        </FormLabel>
-        <FormLabel>
-          Do you anticipate any of these foster parent requests will be
-          difficult for you? Why or why not? *
-          <FormInput id="m3_q5" name="m3_q5" placeholder="Your answer here" />
-          {errors?.m3_q5 && touched?.m3_q5 && (
-            <p style={{ color: "red" }}>{errors?.m3_q5}</p>
-          )}
-        </FormLabel>
-        <ButtonWrapper>
-          <SubmitBtn type="submit">Complete Module 3</SubmitBtn>
-        </ButtonWrapper>
+        </Formik>
       </FormContent>
     </PageWrapper>
   );

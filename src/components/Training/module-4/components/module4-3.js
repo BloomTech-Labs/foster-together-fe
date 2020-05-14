@@ -1,5 +1,8 @@
 import React from "react";
-
+import { Link, useHistory } from "react-router-dom";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+import { ModuleFourSchema3 } from "../../../../utils/yupSchemas/index";
 import {
   PageWrapper,
   PageTitle,
@@ -16,10 +19,13 @@ import {
 } from "../../GlobalTraining.styles";
 
 export const Module43 = props => {
-  const { handleBack, errors, touched } = props;
+  const handleBack = () => {
+    push("/module4-2");
+  };
+  const { push } = useHistory();
 
   return (
-    <>
+
       <PageWrapper>
         <PageTitle>
           <BackArrow onClick={handleBack} />
@@ -69,6 +75,25 @@ export const Module43 = props => {
         </MainContent>
 
         <FormContent>
+
+        <Formik
+          initialValues={{
+            m4_q3: "",
+            m4_q4: "",
+            m4_q5: "",
+            m4_q6: "",
+            m4_q7: "",
+            m4_q8: ""
+          }}
+          validationSchema={ModuleFourSchema3}
+          onSubmit={() => {
+            push("/module4-4");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form>
+
           <FormTitle>
             Body safety rules for all Foster Together Homes: Complete before
             proceeding
@@ -160,13 +185,17 @@ export const Module43 = props => {
             <h4>Any questions or concerns about this section?</h4>
             <CommentInput placeholder="Your Answer Here" />
           </FormLabel>
-        </FormContent>
+     
 
         <ButtonWrapper>
           <ContinueBtn type="submit">Continue</ContinueBtn>
         </ButtonWrapper>
+            </Form>
+            )}
+          </Formik>
+          </FormContent>
       </PageWrapper>
-    </>
+    
   );
 };
 

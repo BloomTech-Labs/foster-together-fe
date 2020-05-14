@@ -1,5 +1,8 @@
 import React from "react";
-
+import { Link, useHistory } from "react-router-dom";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+import { ModuleFourSchema1 } from "../../../../utils/yupSchemas/index";
 import {
   PageWrapper,
   PageTitle,
@@ -18,7 +21,10 @@ import {
 } from "../../GlobalTraining.styles";
 
 export const Module41 = props => {
-  const { handleBack, errors, touched } = props;
+  const handleBack = () => {
+    push("/module3-3");
+  };
+  const { push } = useHistory();
 
   return (
     <PageWrapper>
@@ -218,6 +224,23 @@ export const Module41 = props => {
       </MainContent>
 
       <FormContent>
+      <Formik
+            initialValues={{
+              m4_q1: ""
+            }}
+            validationSchema={ModuleFourSchema1}
+            onSubmit={() => {
+              push("/module4-2");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            {({ errors, touched }) => (
+              <Form>
+
+
+
+
+
         <FormTitle>
           Understanding legal requirements: Complete before proceeding
         </FormTitle>
@@ -237,6 +260,9 @@ export const Module41 = props => {
         <ButtonWrapper>
           <ContinueBtn type="submit">Continue</ContinueBtn>
         </ButtonWrapper>
+        </Form>
+            )}
+          </Formik>
       </FormContent>
     </PageWrapper>
   );

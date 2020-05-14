@@ -17,8 +17,19 @@ import ModuleOne from "./components/Training/module-1/Module1Container";
 import Module2_1 from "./components/Training/module-2/components/module2-1";
 import Module2_2 from "./components/Training/module-2/components/module2-2";
 import Module2_3 from "./components/Training/module-2/components/module2-3";
-import ModuleThree from "./components/Training/module-3/Module3Container.js";
-import ModuleFour from "./components/Training/module-4/Module4Container.js";
+
+import Module3_1 from "./components/Training/module-3/components/module3-1";
+import Module3_2 from "./components/Training/module-3/components/module3-2";
+import Module3_3 from "./components/Training/module-3/components/module3-3";
+import Module3_4 from "./components/Training/module-3/components/module3-4";
+
+import Module4_1 from "./components/Training/module-4/components/module4-1";
+import Module4_2 from "./components/Training/module-4/components/module4-2";
+import Module4_3 from "./components/Training/module-4/components/module4-3";
+import Module4_4 from "./components/Training/module-4/components/module4-4";
+
+// import ModuleThree from "./components/Training/module-3/Module3Container.js";
+// import ModuleFour from "./components/Training/module-4/Module4Container.js";
 import ModuleFive from "./components/Training/module-5/Module5Container";
 import UserProfile from "./components/AdminDash/Profile/User/UserProfile";
 import Map from "./components/AdminDash/Map/MapOverlay";
@@ -46,12 +57,23 @@ function App() {
         <PrivateRouteUsers path="/training-start" component={ModuleStart} />
         <PrivateRouteUsers path="/training-start-2" component={ModuleStart2} />
         <PrivateRouteUsers path="/module1" component={ModuleOne} />
+
         <PrivateRouteUsers path="/module2-1" component={Module2_1} />
         <PrivateRouteUsers path="/module2-2" component={Module2_2} />
         <PrivateRouteUsers path="/module2-3" component={Module2_3} />
+
+        <PrivateRouteUsers path="/module3-1" component={Module3_1} />
+        <PrivateRouteUsers path="/module3-2" component={Module3_2} />
+        <PrivateRouteUsers path="/module3-3" component={Module3_3} />
+        <PrivateRouteUsers path="/module3-4" component={Module3_4} />
+
+        <PrivateRouteUsers path="/module4-1" component={Module4_1} />
+        <PrivateRouteUsers path="/module4-2" component={Module4_2} />
+        <PrivateRouteUsers path="/module4-3" component={Module4_3} />
+        <PrivateRouteUsers path="/module4-4" component={Module4_4} />
         {/* <Route path="module2-2" componet={Module2_2} /> */}
-        <PrivateRouteUsers path="/module3" component={ModuleThree} />
-        <PrivateRouteUsers path="/module4" component={ModuleFour} />
+        {/* <PrivateRouteUsers path="/module3" component={ModuleThree} /> */}
+        {/* <PrivateRouteUsers path="/module4" component={ModuleFour} /> */}
         <PrivateRouteUsers path="/module5" component={ModuleFive} />
         <PrivateRouteUsers path="/userProfile" component={UserProfile} />
       </ThemeProvider>
