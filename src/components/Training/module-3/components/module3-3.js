@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
 import { ModuleThreeSchema3 } from "../../../../utils/yupSchemas/index.js";
 import {
   PageWrapper,
@@ -29,7 +28,7 @@ export const Module33 = () => {
   return (
     <PageWrapper>
       <PageTitle>
-        <BackArrow onclick={handleBack} />
+        <BackArrow onClick={handleBack} />
         Foster parents' least favorite compliments (and a few ideas for what you
         should say instead)
       </PageTitle>

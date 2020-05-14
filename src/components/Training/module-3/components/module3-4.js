@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
 import { ModuleThreeSchema4 } from "../../../../utils/yupSchemas/index.js";
 import {
   PageWrapper,
@@ -175,7 +174,7 @@ export const Module34 = () => {
           }}
           validationSchema={ModuleThreeSchema4}
           onSubmit={() => {
-            push("/module4");
+            push("/module4-1");
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
@@ -196,7 +195,6 @@ export const Module34 = () => {
               </FormLabel>
 
               <FormLabel>
-            
                 Do you anticipate any of these foster parent requests will be
                 difficult for you? Why or why not? *
                 <FormInput

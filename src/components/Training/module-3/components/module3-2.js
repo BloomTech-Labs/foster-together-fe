@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
+import { ModuleThreeSchema2 } from "../../../../utils/yupSchemas/index.js";
+
 import {
   PageWrapper,
   PageTitle,
@@ -17,7 +18,6 @@ import {
   ButtonWrapper,
   ContinueBtn
 } from "../../GlobalTraining.styles.js";
-import { ModuleThreeSchema2 } from "../../../../utils/yupSchemas/index.js";
 
 export const Module32 = () => {
   const handleBack = () => {

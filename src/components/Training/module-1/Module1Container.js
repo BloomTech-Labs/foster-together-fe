@@ -28,7 +28,7 @@ const ModuleOne = () => {
 
   const handleBack = () => {
     if (activeStep === 0) {
-      push("/training-start");
+      push("/training-start-2");
     } else if (activeStep === 1) {
       setActiveStep(activeStep - 1);
     }

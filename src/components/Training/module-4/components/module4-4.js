@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
 import { ModuleFourSchema4 } from "../../../../utils/yupSchemas/index";
 import {
   BackArrow,
@@ -19,11 +18,9 @@ import {
   FormLabel
 } from "../../GlobalTraining.styles";
 
-
-
 export const Module44 = props => {
   const handleBack = () => {
-    push("/module4-2");
+    push("/module4-3");
   };
   const { push } = useHistory();
 

@@ -21,7 +21,10 @@ import {
 } from "../../GlobalTraining.styles.js";
 import { Formik, Form } from "formik";
 
-export const Module22 = ({ handleBack }) => {
+export const Module22 = () => {
+  const handleBack = () => {
+    push("/module2-1");
+  };
   const { push } = useHistory();
   return (
     <>

@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
 import { ModuleFourSchema1 } from "../../../../utils/yupSchemas/index";
 import {
   PageWrapper,
@@ -22,7 +21,7 @@ import {
 
 export const Module41 = props => {
   const handleBack = () => {
-    push("/module3-3");
+    push("/module3-4");
   };
   const { push } = useHistory();
 
@@ -224,45 +223,40 @@ export const Module41 = props => {
       </MainContent>
 
       <FormContent>
-      <Formik
-            initialValues={{
-              m4_q1: ""
-            }}
-            validationSchema={ModuleFourSchema1}
-            onSubmit={() => {
-              push("/module4-2");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          >
-            {({ errors, touched }) => (
-              <Form>
-
-
-
-
-
-        <FormTitle>
-          Understanding legal requirements: Complete before proceeding
-        </FormTitle>
-        <FormLabel>
-          Please let us know if you have any questions about the requirements
-          listed here, so we can clarify. *
-          <FormInput
-            component="textarea"
-            id="m4_q1"
-            name="m4_q1"
-            placeholder="Your Answer Here"
-          />
-          {errors?.m4_q1 && touched?.m4_q1 && (
-            <p style={{ color: "red" }}>{errors.m4_q1}</p>
+        <Formik
+          initialValues={{
+            m4_q1: ""
+          }}
+          validationSchema={ModuleFourSchema1}
+          onSubmit={() => {
+            push("/module4-2");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form>
+              <FormTitle>
+                Understanding legal requirements: Complete before proceeding
+              </FormTitle>
+              <FormLabel>
+                Please let us know if you have any questions about the
+                requirements listed here, so we can clarify. *
+                <FormInput
+                  component="textarea"
+                  id="m4_q1"
+                  name="m4_q1"
+                  placeholder="Your Answer Here"
+                />
+                {errors?.m4_q1 && touched?.m4_q1 && (
+                  <p style={{ color: "red" }}>{errors.m4_q1}</p>
+                )}
+              </FormLabel>
+              <ButtonWrapper>
+                <ContinueBtn type="submit">Continue</ContinueBtn>
+              </ButtonWrapper>
+            </Form>
           )}
-        </FormLabel>
-        <ButtonWrapper>
-          <ContinueBtn type="submit">Continue</ContinueBtn>
-        </ButtonWrapper>
-        </Form>
-            )}
-          </Formik>
+        </Formik>
       </FormContent>
     </PageWrapper>
   );

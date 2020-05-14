@@ -1,8 +1,7 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
 import NavBar from "../../TrainingNav/NavBar";
-import * as Yup from "yup";
 import { ModuleTwoSchema1 } from "../../../../utils/yupSchemas/index";
 
 import {

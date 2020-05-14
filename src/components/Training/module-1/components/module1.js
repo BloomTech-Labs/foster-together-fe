@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Formik, Form as FormikForm } from "formik";
+import { Formik, Form } from "formik";
 import { ModuleOneSchema } from "../../../../utils/yupSchemas";
 import trainingAxiosWithAuth from "../../../../utils/axios/trainingAxiosWithAuth";
 
@@ -40,7 +40,7 @@ export const Module11 = ({ errors, touched }) => {
         <PageTitle>
           <BackArrow
             onClick={() => {
-              push("/training-start");
+              push("/training-start-2");
             }}
           />
           Benefits of supporting foster families
@@ -158,24 +158,28 @@ export const Module11 = ({ errors, touched }) => {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <FormikForm>
-            <FormContent>
-              <FormTitle>What you offer: Complete before proceeding</FormTitle>
+          {({ errors, touched }) => (
+            <Form>
+              <FormContent>
+                <FormTitle>
+                  What you offer: Complete before proceeding
+                </FormTitle>
 
-              <FormLabel>
-                Are any of the "reasons to help" listed above new to you? In
-                your own words, how do you anticipate this aspect enriching your
-                life or the foster parents' lives? (2+ sentences) *
-                <FormInput component="textarea" id="m1_q1" name="m1_q1" />
-                {errors?.m1_q1 && touched?.m1_q1 && (
-                  <p style={{ color: "red" }}>{errors?.m1_q1}</p>
-                )}
-              </FormLabel>
-              <ButtonWrapper>
-                <SubmitBtn type="submit">Complete Module 1</SubmitBtn>
-              </ButtonWrapper>
-            </FormContent>
-          </FormikForm>
+                <FormLabel>
+                  Are any of the "reasons to help" listed above new to you? In
+                  your own words, how do you anticipate this aspect enriching
+                  your life or the foster parents' lives? (2+ sentences) *
+                  <FormInput component="textarea" id="m1_q1" name="m1_q1" />
+                  {errors?.m1_q1 && touched?.m1_q1 && (
+                    <p style={{ color: "red" }}>{errors?.m1_q1}</p>
+                  )}
+                </FormLabel>
+                <ButtonWrapper>
+                  <SubmitBtn type="submit">Complete Module 1</SubmitBtn>
+                </ButtonWrapper>
+              </FormContent>
+            </Form>
+          )}
         </Formik>
       </PageWrapper>
     </>

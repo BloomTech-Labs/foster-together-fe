@@ -72,7 +72,7 @@ const Survey = props => {
       initialValues={initialValues}
       validationSchema={ModuleTwoSchema3}
       onSubmit={() => {
-        push("/module3");
+        push("/module3-1");
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
